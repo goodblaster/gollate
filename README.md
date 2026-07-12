@@ -1,6 +1,9 @@
 
 # gollate
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/goodblaster/gollate.svg)](https://pkg.go.dev/github.com/goodblaster/gollate)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **gollate** sorts ocr-extracted data using supplied, canonical text. 
 It analyzes the text and ocr blocks, tries to determine the most logical order for those blocks, 
 and then returns them to a user for further use.
@@ -509,3 +512,7 @@ If all words were run together without breaks,
 Also, as we received the original ocr text, 
 "printing and typesetting industry" is a term we could not have found 
 because the words appeared on separate lines.
+
+## License
+
+gollate is released under the [MIT License](LICENSE).
