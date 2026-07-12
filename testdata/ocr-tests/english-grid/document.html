@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head><meta charset="UTF-8"><style>
+	@page { size: letter; margin: 0; }
+	* { box-sizing: border-box; }
+	html, body { margin: 0; padding: 0; }
+	.page {
+		width: 816px; height: 1056px;
+		padding: 1in;
+		display: flex; flex-direction: column;
+		font-family: "Helvetica Neue", Arial, sans-serif;
+		font-size: 11pt;
+		line-height: 1.50;
+	}
+	.title { font-size: 2em; font-weight: bold; text-align: center; margin-bottom: 18pt; flex: none; }
+	.content { flex: 1 1 auto; min-height: 0; }
+	.content.columns { column-count: 1; column-gap: 24pt; column-fill: auto; height: 100%; }
+	.content.vertical { writing-mode: vertical-rl; }
+	p { margin: 0 0 10pt 0; }
+	p.small { font-size: 0.8em; }
+	h2 { font-size: 1.4em; margin: 6pt 0 8pt 0; }
+	.footer { flex: none; text-align: center; font-size: 0.75em; font-style: italic; margin-top: 8pt; }
+
+	.content { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 10pt; }
+	.tile { border: 1px solid #ccc; border-radius: 6pt; padding: 8pt; text-align: center; }
+	.tile h3 { font-size: 1.1em; margin: 0 0 4pt 0; }
+	.tile .desc { font-size: 0.85em; margin: 0 0 6pt 0; }
+	.tile .action { color: #0066cc; font-size: 0.9em; margin: 0 0 2pt 0; }
+</style></head>
+<body><div class="page">
+<div class="title">The Fabric of Everyday Life</div>
+<div class="content">
+<div class="tile">
+<h3>Aurora Lamp</h3>
+<p class="desc">Soft northern light for any room.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Breeze Fan</h3>
+<p class="desc">Quiet airflow with adaptive speed.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Cascade Kettle</h3>
+<p class="desc">Pour-over precision at exact temperatures.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Drift Pillow</h3>
+<p class="desc">Cooling foam that shapes to you.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Ember Heater</h3>
+<p class="desc">Focused warmth without the noise.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Flux Charger</h3>
+<p class="desc">One pad for every device.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Glide Mouse</h3>
+<p class="desc">Effortless tracking on any surface.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Halo Speaker</h3>
+<p class="desc">Room-filling sound in a small ring.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Iris Camera</h3>
+<p class="desc">Sharp detail from dawn to dusk.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Juno Clock</h3>
+<p class="desc">Sunrise alarms tuned to your sleep.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Kite Router</h3>
+<p class="desc">Fast mesh coverage for the whole home.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+<div class="tile">
+<h3>Lumen Torch</h3>
+<p class="desc">Pocket light with a week of power.</p>
+<p class="action">Learn more</p>
+<p class="action">Buy</p>
+</div>
+</div>
+<div class="footer">OCR Test: english (grid, ltr)</div>
+</div></body>
+</html>

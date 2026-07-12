@@ -1,0 +1,5386 @@
+{
+  "words": [
+    {
+      "text": "早晨",
+      "line_num": 1,
+      "left": 194,
+      "top": 345,
+      "width": 74,
+      "height": 30,
+      "conf": 91.239967
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 270,
+      "top": 345,
+      "width": 31,
+      "height": 30,
+      "conf": 96.280418
+    },
+    {
+      "text": "阳光",
+      "line_num": 1,
+      "left": 303,
+      "top": 346,
+      "width": 48,
+      "height": 29,
+      "conf": 93.302681
+    },
+    {
+      "text": "照",
+      "line_num": 1,
+      "left": 367,
+      "top": 345,
+      "width": 39,
+      "height": 30,
+      "conf": 90.796524
+    },
+    {
+      "text": "亮",
+      "line_num": 1,
+      "left": 419,
+      "top": 347,
+      "width": 14,
+      "height": 28,
+      "conf": 43.97987
+    },
+    {
+      "text": "了",
+      "line_num": 1,
+      "left": 433,
+      "top": 341,
+      "width": 24,
+      "height": 48,
+      "conf": 96.87339
+    },
+    {
+      "text": "安静",
+      "line_num": 1,
+      "left": 457,
+      "top": 345,
+      "width": 63,
+      "height": 30,
+      "conf": 94.795029
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 526,
+      "top": 345,
+      "width": 16,
+      "height": 30,
+      "conf": 96.835159
+    },
+    {
+      "text": "街道",
+      "line_num": 2,
+      "left": 193,
+      "top": 393,
+      "width": 72,
+      "height": 32,
+      "conf": 93.191956
+    },
+    {
+      "text": "，",
+      "line_num": 2,
+      "left": 290,
+      "top": 394,
+      "width": 8,
+      "height": 29,
+      "conf": 93.220657
+    },
+    {
+      "text": "温",
+      "line_num": 2,
+      "left": 300,
+      "top": 395,
+      "width": 31,
+      "height": 27,
+      "conf": 92.933823
+    },
+    {
+      "text": "暖",
+      "line_num": 2,
+      "left": 333,
+      "top": 393,
+      "width": 32,
+      "height": 30,
+      "conf": 90.474373
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 369,
+      "top": 393,
+      "width": 13,
+      "height": 30,
+      "conf": 93.156876
+    },
+    {
+      "text": "光线",
+      "line_num": 2,
+      "left": 385,
+      "top": 393,
+      "width": 158,
+      "height": 30,
+      "conf": 93.243622
+    },
+    {
+      "text": "穿",
+      "line_num": 2,
+      "left": 465,
+      "top": 389,
+      "width": 30,
+      "height": 48,
+      "conf": 91.488052
+    },
+    {
+      "text": "过",
+      "line_num": 2,
+      "left": 495,
+      "top": 389,
+      "width": 27,
+      "height": 48,
+      "conf": 92.00631
+    },
+    {
+      "text": "树",
+      "line_num": 2,
+      "left": 522,
+      "top": 389,
+      "width": 24,
+      "height": 48,
+      "conf": 92.313263
+    },
+    {
+      "text": "叶",
+      "line_num": 3,
+      "left": 195,
+      "top": 442,
+      "width": 38,
+      "height": 31,
+      "conf": 92.606537
+    },
+    {
+      "text": "，",
+      "line_num": 3,
+      "left": 233,
+      "top": 437,
+      "width": 30,
+      "height": 48,
+      "conf": 91.7528
+    },
+    {
+      "text": "在",
+      "line_num": 3,
+      "left": 263,
+      "top": 441,
+      "width": 23,
+      "height": 30,
+      "conf": 92.652512
+    },
+    {
+      "text": "地",
+      "line_num": 3,
+      "left": 299,
+      "top": 441,
+      "width": 39,
+      "height": 30,
+      "conf": 93.264626
+    },
+    {
+      "text": "面",
+      "line_num": 3,
+      "left": 354,
+      "top": 441,
+      "width": 17,
+      "height": 29,
+      "conf": 90.215866
+    },
+    {
+      "text": "上",
+      "line_num": 3,
+      "left": 371,
+      "top": 437,
+      "width": 24,
+      "height": 48,
+      "conf": 96.947815
+    },
+    {
+      "text": "投下",
+      "line_num": 3,
+      "left": 395,
+      "top": 442,
+      "width": 63,
+      "height": 29,
+      "conf": 96.368111
+    },
+    {
+      "text": "斑驳",
+      "line_num": 3,
+      "left": 458,
+      "top": 441,
+      "width": 63,
+      "height": 30,
+      "conf": 50.510834
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 526,
+      "top": 441,
+      "width": 16,
+      "height": 30,
+      "conf": 94.339897
+    },
+    {
+      "text": "影子",
+      "line_num": 4,
+      "left": 193,
+      "top": 490,
+      "width": 75,
+      "height": 29,
+      "conf": 93.123985
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 273,
+      "top": 485,
+      "width": 30,
+      "height": 48,
+      "conf": 93.247749
+    },
+    {
+      "text": "鸟",
+      "line_num": 4,
+      "left": 303,
+      "top": 489,
+      "width": 29,
+      "height": 30,
+      "conf": 91.006538
+    },
+    {
+      "text": "儿",
+      "line_num": 4,
+      "left": 338,
+      "top": 490,
+      "width": 13,
+      "height": 28,
+      "conf": 88.749458
+    },
+    {
+      "text": "在",
+      "line_num": 4,
+      "left": 366,
+      "top": 489,
+      "width": 36,
+      "height": 30,
+      "conf": 93.232422
+    },
+    {
+      "text": "树",
+      "line_num": 4,
+      "left": 404,
+      "top": 489,
+      "width": 11,
+      "height": 30,
+      "conf": 92.437904
+    },
+    {
+      "text": "上",
+      "line_num": 4,
+      "left": 429,
+      "top": 489,
+      "width": 17,
+      "height": 29,
+      "conf": 93.267601
+    },
+    {
+      "text": "轻声",
+      "line_num": 4,
+      "left": 449,
+      "top": 489,
+      "width": 94,
+      "height": 30,
+      "conf": 92.866745
+    },
+    {
+      "text": "歌",
+      "line_num": 4,
+      "left": 528,
+      "top": 485,
+      "width": 18,
+      "height": 48,
+      "conf": 0
+    },
+    {
+      "text": "唱",
+      "line_num": 5,
+      "left": 194,
+      "top": 539,
+      "width": 39,
+      "height": 30,
+      "conf": 86.793793
+    },
+    {
+      "text": "，",
+      "line_num": 5,
+      "left": 238,
+      "top": 533,
+      "width": 27,
+      "height": 48,
+      "conf": 90.824249
+    },
+    {
+      "text": "它",
+      "line_num": 5,
+      "left": 265,
+      "top": 537,
+      "width": 33,
+      "height": 30,
+      "conf": 87.87458
+    },
+    {
+      "text": "们",
+      "line_num": 5,
+      "left": 299,
+      "top": 537,
+      "width": 29,
+      "height": 30,
+      "conf": 89.881363
+    },
+    {
+      "text": "的",
+      "line_num": 5,
+      "left": 334,
+      "top": 537,
+      "width": 16,
+      "height": 30,
+      "conf": 96.659859
+    },
+    {
+      "text": "歌声",
+      "line_num": 5,
+      "left": 367,
+      "top": 537,
+      "width": 63,
+      "height": 30,
+      "conf": 96.137711
+    },
+    {
+      "text": "欢快",
+      "line_num": 5,
+      "left": 430,
+      "top": 537,
+      "width": 49,
+      "height": 30,
+      "conf": 96.964127
+    },
+    {
+      "text": "而",
+      "line_num": 5,
+      "left": 493,
+      "top": 540,
+      "width": 17,
+      "height": 27,
+      "conf": 93.208939
+    },
+    {
+      "text": "清",
+      "line_num": 5,
+      "left": 523,
+      "top": 537,
+      "width": 20,
+      "height": 30,
+      "conf": 93.115898
+    },
+    {
+      "text": "脆",
+      "line_num": 6,
+      "left": 193,
+      "top": 586,
+      "width": 40,
+      "height": 31,
+      "conf": 92.061935
+    },
+    {
+      "text": ",",
+      "line_num": 6,
+      "left": 228,
+      "top": 581,
+      "width": 12,
+      "height": 48,
+      "conf": 92.406853
+    },
+    {
+      "text": "喚醒",
+      "line_num": 6,
+      "left": 258,
+      "top": 585,
+      "width": 263,
+      "height": 32,
+      "conf": 96.320503
+    },
+    {
+      "text": "了",
+      "line_num": 6,
+      "left": 336,
+      "top": 581,
+      "width": 24,
+      "height": 48,
+      "conf": 96.904526
+    },
+    {
+      "text": "沉睡",
+      "line_num": 6,
+      "left": 360,
+      "top": 585,
+      "width": 72,
+      "height": 32,
+      "conf": 95.893867
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 432,
+      "top": 581,
+      "width": 30,
+      "height": 48,
+      "conf": 97.005173
+    },
+    {
+      "text": "城市",
+      "line_num": 6,
+      "left": 462,
+      "top": 581,
+      "width": 54,
+      "height": 48,
+      "conf": 93.081276
+    },
+    {
+      "text": ",",
+      "line_num": 6,
+      "left": 516,
+      "top": 581,
+      "width": 9,
+      "height": 48,
+      "conf": 91.478394
+    },
+    {
+      "text": "开始",
+      "line_num": 7,
+      "left": 194,
+      "top": 633,
+      "width": 77,
+      "height": 30,
+      "conf": 96.615471
+    },
+    {
+      "text": "新",
+      "line_num": 7,
+      "left": 271,
+      "top": 633,
+      "width": 30,
+      "height": 30,
+      "conf": 96.926949
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 304,
+      "top": 633,
+      "width": 33,
+      "height": 30,
+      "conf": 96.971008
+    },
+    {
+      "text": "一",
+      "line_num": 7,
+      "left": 337,
+      "top": 629,
+      "width": 27,
+      "height": 48,
+      "conf": 96.829147
+    },
+    {
+      "text": "天",
+      "line_num": 7,
+      "left": 364,
+      "top": 635,
+      "width": 19,
+      "height": 28,
+      "conf": 96.979683
+    },
+    {
+      "text": "充满",
+      "line_num": 7,
+      "left": 394,
+      "top": 633,
+      "width": 72,
+      "height": 30,
+      "conf": 91.426498
+    },
+    {
+      "text": "希望",
+      "line_num": 7,
+      "left": 482,
+      "top": 633,
+      "width": 44,
+      "height": 30,
+      "conf": 96.356667
+    },
+    {
+      "text": "和",
+      "line_num": 7,
+      "left": 529,
+      "top": 636,
+      "width": 12,
+      "height": 26,
+      "conf": 97.008301
+    },
+    {
+      "text": "可",
+      "line_num": 8,
+      "left": 194,
+      "top": 683,
+      "width": 29,
+      "height": 28,
+      "conf": 96.882416
+    },
+    {
+      "text": "能",
+      "line_num": 8,
+      "left": 234,
+      "top": 682,
+      "width": 26,
+      "height": 29,
+      "conf": 96.739624
+    },
+    {
+      "text": "性",
+      "line_num": 8,
+      "left": 269,
+      "top": 682,
+      "width": 18,
+      "height": 29,
+      "conf": 93.125237
+    },
+    {
+      "text": "。",
+      "line_num": 8,
+      "left": 292,
+      "top": 703,
+      "width": 8,
+      "height": 8,
+      "conf": 93.20118
+    },
+    {
+      "text": "科技",
+      "line_num": 1,
+      "left": 193,
+      "top": 755,
+      "width": 74,
+      "height": 30,
+      "conf": 96.862823
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 270,
+      "top": 755,
+      "width": 16,
+      "height": 30,
+      "conf": 96.981171
+    },
+    {
+      "text": "发",
+      "line_num": 1,
+      "left": 303,
+      "top": 755,
+      "width": 15,
+      "height": 30,
+      "conf": 93.305939
+    },
+    {
+      "text": "展",
+      "line_num": 1,
+      "left": 336,
+      "top": 757,
+      "width": 15,
+      "height": 28,
+      "conf": 93.232651
+    },
+    {
+      "text": "正",
+      "line_num": 1,
+      "left": 366,
+      "top": 757,
+      "width": 16,
+      "height": 27,
+      "conf": 92.926193
+    },
+    {
+      "text": "在",
+      "line_num": 1,
+      "left": 399,
+      "top": 755,
+      "width": 15,
+      "height": 30,
+      "conf": 96.981918
+    },
+    {
+      "text": "以",
+      "line_num": 1,
+      "left": 429,
+      "top": 756,
+      "width": 18,
+      "height": 29,
+      "conf": 96.223518
+    },
+    {
+      "text": "前",
+      "line_num": 1,
+      "left": 462,
+      "top": 755,
+      "width": 30,
+      "height": 30,
+      "conf": 96.80426
+    },
+    {
+      "text": "所",
+      "line_num": 1,
+      "left": 495,
+      "top": 756,
+      "width": 16,
+      "height": 29,
+      "conf": 96.931213
+    },
+    {
+      "text": "未",
+      "line_num": 1,
+      "left": 522,
+      "top": 756,
+      "width": 20,
+      "height": 29,
+      "conf": 96.836151
+    },
+    {
+      "text": "有",
+      "line_num": 2,
+      "left": 193,
+      "top": 803,
+      "width": 29,
+      "height": 30,
+      "conf": 96.699989
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 231,
+      "top": 803,
+      "width": 23,
+      "height": 30,
+      "conf": 96.598305
+    },
+    {
+      "text": "速度",
+      "line_num": 2,
+      "left": 270,
+      "top": 803,
+      "width": 63,
+      "height": 30,
+      "conf": 94.243179
+    },
+    {
+      "text": "改变",
+      "line_num": 2,
+      "left": 333,
+      "top": 803,
+      "width": 50,
+      "height": 30,
+      "conf": 95.275108
+    },
+    {
+      "text": "我",
+      "line_num": 2,
+      "left": 399,
+      "top": 804,
+      "width": 33,
+      "height": 29,
+      "conf": 93.22496
+    },
+    {
+      "text": "们",
+      "line_num": 2,
+      "left": 435,
+      "top": 803,
+      "width": 24,
+      "height": 30,
+      "conf": 92.223244
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 462,
+      "top": 803,
+      "width": 16,
+      "height": 30,
+      "conf": 96.985016
+    },
+    {
+      "text": "生活",
+      "line_num": 2,
+      "left": 489,
+      "top": 804,
+      "width": 54,
+      "height": 29,
+      "conf": 96.524132
+    },
+    {
+      "text": "方式",
+      "line_num": 3,
+      "left": 194,
+      "top": 851,
+      "width": 234,
+      "height": 30,
+      "conf": 96.684532
+    },
+    {
+      "text": "和",
+      "line_num": 3,
+      "left": 271,
+      "top": 847,
+      "width": 30,
+      "height": 48,
+      "conf": 96.559181
+    },
+    {
+      "text": "工作",
+      "line_num": 3,
+      "left": 301,
+      "top": 847,
+      "width": 63,
+      "height": 48,
+      "conf": 95.920219
+    },
+    {
+      "text": "模式",
+      "line_num": 3,
+      "left": 364,
+      "top": 847,
+      "width": 66,
+      "height": 48,
+      "conf": 93.154877
+    },
+    {
+      "text": "。",
+      "line_num": 3,
+      "left": 430,
+      "top": 847,
+      "width": 30,
+      "height": 48,
+      "conf": 93.250031
+    },
+    {
+      "text": "每",
+      "line_num": 3,
+      "left": 449,
+      "top": 851,
+      "width": 93,
+      "height": 30,
+      "conf": 92.859955
+    },
+    {
+      "text": "天",
+      "line_num": 3,
+      "left": 493,
+      "top": 847,
+      "width": 30,
+      "height": 48,
+      "conf": 96.941513
+    },
+    {
+      "text": "都",
+      "line_num": 3,
+      "left": 523,
+      "top": 847,
+      "width": 21,
+      "height": 48,
+      "conf": 96.795174
+    },
+    {
+      "text": "有",
+      "line_num": 4,
+      "left": 193,
+      "top": 899,
+      "width": 29,
+      "height": 30,
+      "conf": 96.695534
+    },
+    {
+      "text": "新",
+      "line_num": 4,
+      "left": 231,
+      "top": 899,
+      "width": 38,
+      "height": 30,
+      "conf": 96.810944
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 270,
+      "top": 899,
+      "width": 36,
+      "height": 30,
+      "conf": 96.997192
+    },
+    {
+      "text": "创新",
+      "line_num": 4,
+      "left": 309,
+      "top": 899,
+      "width": 136,
+      "height": 30,
+      "conf": 96.742722
+    },
+    {
+      "text": "和",
+      "line_num": 4,
+      "left": 363,
+      "top": 895,
+      "width": 33,
+      "height": 48,
+      "conf": 97.003166
+    },
+    {
+      "text": "发",
+      "line_num": 4,
+      "left": 396,
+      "top": 895,
+      "width": 33,
+      "height": 48,
+      "conf": 92.244438
+    },
+    {
+      "text": "明",
+      "line_num": 4,
+      "left": 429,
+      "top": 895,
+      "width": 33,
+      "height": 48,
+      "conf": 90.255318
+    },
+    {
+      "text": "出",
+      "line_num": 4,
+      "left": 462,
+      "top": 899,
+      "width": 30,
+      "height": 30,
+      "conf": 93.147675
+    },
+    {
+      "text": "现",
+      "line_num": 4,
+      "left": 492,
+      "top": 901,
+      "width": 19,
+      "height": 28,
+      "conf": 93.273087
+    },
+    {
+      "text": "，",
+      "line_num": 4,
+      "left": 516,
+      "top": 922,
+      "width": 5,
+      "height": 9,
+      "conf": 81.741264
+    },
+    {
+      "text": "從",
+      "line_num": 5,
+      "left": 193,
+      "top": 948,
+      "width": 30,
+      "height": 29,
+      "conf": 95.924774
+    },
+    {
+      "text": "人",
+      "line_num": 5,
+      "left": 237,
+      "top": 948,
+      "width": 18,
+      "height": 29,
+      "conf": 93.242348
+    },
+    {
+      "text": "工",
+      "line_num": 5,
+      "left": 261,
+      "top": 950,
+      "width": 26,
+      "height": 25,
+      "conf": 92.802429
+    },
+    {
+      "text": "智能",
+      "line_num": 5,
+      "left": 303,
+      "top": 947,
+      "width": 66,
+      "height": 30,
+      "conf": 96.725609
+    },
+    {
+      "text": "到",
+      "line_num": 5,
+      "left": 372,
+      "top": 948,
+      "width": 10,
+      "height": 29,
+      "conf": 96.876938
+    },
+    {
+      "text": "可",
+      "line_num": 5,
+      "left": 396,
+      "top": 949,
+      "width": 19,
+      "height": 28,
+      "conf": 96.948143
+    },
+    {
+      "text": "再",
+      "line_num": 5,
+      "left": 429,
+      "top": 949,
+      "width": 18,
+      "height": 28,
+      "conf": 96.710297
+    },
+    {
+      "text": "生",
+      "line_num": 5,
+      "left": 459,
+      "top": 948,
+      "width": 20,
+      "height": 28,
+      "conf": 96.824615
+    },
+    {
+      "text": "能",
+      "line_num": 5,
+      "left": 489,
+      "top": 948,
+      "width": 22,
+      "height": 29,
+      "conf": 95.733917
+    },
+    {
+      "text": "影響",
+      "line_num": 6,
+      "left": 193,
+      "top": 1043,
+      "width": 61,
+      "height": 30,
+      "conf": 88.16967
+    },
+    {
+      "text": "著",
+      "line_num": 6,
+      "left": 270,
+      "top": 1043,
+      "width": 30,
+      "height": 30,
+      "conf": 95.669434
+    },
+    {
+      "text": "社會",
+      "line_num": 6,
+      "left": 300,
+      "top": 1043,
+      "width": 65,
+      "height": 30,
+      "conf": 96.65387
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 366,
+      "top": 1043,
+      "width": 16,
+      "height": 30,
+      "conf": 96.762276
+    },
+    {
+      "text": "方方面面",
+      "line_num": 6,
+      "left": 386,
+      "top": 1043,
+      "width": 135,
+      "height": 32,
+      "conf": 93.225533
+    },
+    {
+      "text": ",",
+      "line_num": 6,
+      "left": 516,
+      "top": 1039,
+      "width": 9,
+      "height": 48,
+      "conf": 92.209961
+    },
+    {
+      "text": "重",
+      "line_num": 7,
+      "left": 194,
+      "top": 1092,
+      "width": 28,
+      "height": 28,
+      "conf": 93.171577
+    },
+    {
+      "text": "塑",
+      "line_num": 7,
+      "left": 238,
+      "top": 1092,
+      "width": 16,
+      "height": 28,
+      "conf": 91.779839
+    },
+    {
+      "text": "著",
+      "line_num": 7,
+      "left": 268,
+      "top": 1091,
+      "width": 39,
+      "height": 30,
+      "conf": 92.58313
+    },
+    {
+      "text": "我",
+      "line_num": 7,
+      "left": 321,
+      "top": 1092,
+      "width": 16,
+      "height": 29,
+      "conf": 93.295639
+    },
+    {
+      "text": "們",
+      "line_num": 7,
+      "left": 339,
+      "top": 1094,
+      "width": 11,
+      "height": 27,
+      "conf": 93.245163
+    },
+    {
+      "text": "與",
+      "line_num": 7,
+      "left": 367,
+      "top": 1091,
+      "width": 14,
+      "height": 30,
+      "conf": 87.645302
+    },
+    {
+      "text": "世界",
+      "line_num": 7,
+      "left": 397,
+      "top": 1092,
+      "width": 50,
+      "height": 29,
+      "conf": 96.507652
+    },
+    {
+      "text": "互動",
+      "line_num": 7,
+      "left": 460,
+      "top": 1091,
+      "width": 65,
+      "height": 30,
+      "conf": 96.417397
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 526,
+      "top": 1091,
+      "width": 16,
+      "height": 30,
+      "conf": 96.797318
+    },
+    {
+      "text": "方式",
+      "line_num": 8,
+      "left": 194,
+      "top": 1139,
+      "width": 74,
+      "height": 30,
+      "conf": 92.849007
+    },
+    {
+      "text": "。",
+      "line_num": 8,
+      "left": 259,
+      "top": 1135,
+      "width": 12,
+      "height": 48,
+      "conf": 93.217239
+    },
+    {
+      "text": "古代",
+      "line_num": 1,
+      "left": 194,
+      "top": 1215,
+      "width": 60,
+      "height": 30,
+      "conf": 96.268837
+    },
+    {
+      "text": "文明",
+      "line_num": 1,
+      "left": 268,
+      "top": 1215,
+      "width": 49,
+      "height": 30,
+      "conf": 96.551453
+    },
+    {
+      "text": "建造",
+      "line_num": 1,
+      "left": 334,
+      "top": 1215,
+      "width": 72,
+      "height": 30,
+      "conf": 91.409157
+    },
+    {
+      "text": "了",
+      "line_num": 1,
+      "left": 417,
+      "top": 1216,
+      "width": 16,
+      "height": 29,
+      "conf": 93.006241
+    },
+    {
+      "text": "令",
+      "line_num": 1,
+      "left": 433,
+      "top": 1211,
+      "width": 30,
+      "height": 48,
+      "conf": 82.022087
+    },
+    {
+      "text": "人",
+      "line_num": 1,
+      "left": 463,
+      "top": 1216,
+      "width": 21,
+      "height": 29,
+      "conf": 92.672775
+    },
+    {
+      "text": "惊叹",
+      "line_num": 1,
+      "left": 493,
+      "top": 1215,
+      "width": 50,
+      "height": 30,
+      "conf": 94.68399
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 194,
+      "top": 1263,
+      "width": 41,
+      "height": 30,
+      "conf": 96.109795
+    },
+    {
+      "text": "纪念",
+      "line_num": 2,
+      "left": 238,
+      "top": 1264,
+      "width": 63,
+      "height": 29,
+      "conf": 93.269775
+    },
+    {
+      "text": "碑",
+      "line_num": 2,
+      "left": 307,
+      "top": 1263,
+      "width": 24,
+      "height": 30,
+      "conf": 90.545563
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 337,
+      "top": 1266,
+      "width": 12,
+      "height": 26,
+      "conf": 96.588432
+    },
+    {
+      "text": "建筑",
+      "line_num": 2,
+      "left": 364,
+      "top": 1263,
+      "width": 72,
+      "height": 30,
+      "conf": 66.133896
+    },
+    {
+      "text": "奇迹",
+      "line_num": 2,
+      "left": 449,
+      "top": 1264,
+      "width": 40,
+      "height": 31,
+      "conf": 93.11097
+    },
+    {
+      "text": "，",
+      "line_num": 2,
+      "left": 496,
+      "top": 1259,
+      "width": 21,
+      "height": 48,
+      "conf": 93.140869
+    },
+    {
+      "text": "这",
+      "line_num": 2,
+      "left": 514,
+      "top": 1264,
+      "width": 29,
+      "height": 29,
+      "conf": 89.9991
+    },
+    {
+      "text": "些",
+      "line_num": 3,
+      "left": 193,
+      "top": 1312,
+      "width": 29,
+      "height": 28,
+      "conf": 91.782242
+    },
+    {
+      "text": "宏偉",
+      "line_num": 3,
+      "left": 237,
+      "top": 1311,
+      "width": 64,
+      "height": 30,
+      "conf": 93.845001
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 306,
+      "top": 1311,
+      "width": 12,
+      "height": 30,
+      "conf": 96.827744
+    },
+    {
+      "text": "結構",
+      "line_num": 3,
+      "left": 336,
+      "top": 1311,
+      "width": 46,
+      "height": 30,
+      "conf": 95.156593
+    },
+    {
+      "text": "歷經",
+      "line_num": 3,
+      "left": 393,
+      "top": 1312,
+      "width": 54,
+      "height": 29,
+      "conf": 90.220276
+    },
+    {
+      "text": "千年",
+      "line_num": 3,
+      "left": 459,
+      "top": 1311,
+      "width": 51,
+      "height": 30,
+      "conf": 93.208954
+    },
+    {
+      "text": "依",
+      "line_num": 3,
+      "left": 525,
+      "top": 1311,
+      "width": 18,
+      "height": 30,
+      "conf": 92.76339
+    },
+    {
+      "text": "然",
+      "line_num": 4,
+      "left": 193,
+      "top": 1359,
+      "width": 50,
+      "height": 30,
+      "conf": 92.299271
+    },
+    {
+      "text": "屹立",
+      "line_num": 4,
+      "left": 243,
+      "top": 1355,
+      "width": 44,
+      "height": 48,
+      "conf": 64.30352
+    },
+    {
+      "text": "不",
+      "line_num": 4,
+      "left": 303,
+      "top": 1360,
+      "width": 38,
+      "height": 29,
+      "conf": 93.209297
+    },
+    {
+      "text": "倒",
+      "line_num": 4,
+      "left": 342,
+      "top": 1360,
+      "width": 22,
+      "height": 29,
+      "conf": 91.511284
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 369,
+      "top": 1355,
+      "width": 24,
+      "height": 48,
+      "conf": 92.991669
+    },
+    {
+      "text": "从",
+      "line_num": 4,
+      "left": 393,
+      "top": 1360,
+      "width": 22,
+      "height": 29,
+      "conf": 92.479126
+    },
+    {
+      "text": "埃及",
+      "line_num": 4,
+      "left": 417,
+      "top": 1359,
+      "width": 126,
+      "height": 30,
+      "conf": 96.659943
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 489,
+      "top": 1355,
+      "width": 36,
+      "height": 48,
+      "conf": 93.279266
+    },
+    {
+      "text": "金",
+      "line_num": 4,
+      "left": 525,
+      "top": 1355,
+      "width": 21,
+      "height": 48,
+      "conf": 91.025162
+    },
+    {
+      "text": "字",
+      "line_num": 5,
+      "left": 194,
+      "top": 1407,
+      "width": 41,
+      "height": 30,
+      "conf": 93.254738
+    },
+    {
+      "text": "塔",
+      "line_num": 5,
+      "left": 238,
+      "top": 1408,
+      "width": 36,
+      "height": 29,
+      "conf": 88.491791
+    },
+    {
+      "text": "到",
+      "line_num": 5,
+      "left": 276,
+      "top": 1408,
+      "width": 10,
+      "height": 29,
+      "conf": 92.721352
+    },
+    {
+      "text": "中",
+      "line_num": 5,
+      "left": 301,
+      "top": 1407,
+      "width": 16,
+      "height": 30,
+      "conf": 96.254784
+    },
+    {
+      "text": "國",
+      "line_num": 5,
+      "left": 331,
+      "top": 1407,
+      "width": 34,
+      "height": 30,
+      "conf": 96.834686
+    },
+    {
+      "text": "的",
+      "line_num": 5,
+      "left": 367,
+      "top": 1407,
+      "width": 15,
+      "height": 30,
+      "conf": 96.403313
+    },
+    {
+      "text": "長",
+      "line_num": 5,
+      "left": 397,
+      "top": 1408,
+      "width": 29,
+      "height": 29,
+      "conf": 93.208771
+    },
+    {
+      "text": "城",
+      "line_num": 5,
+      "left": 433,
+      "top": 1407,
+      "width": 24,
+      "height": 32,
+      "conf": 92.488831
+    },
+    {
+      "text": ",",
+      "line_num": 5,
+      "left": 457,
+      "top": 1403,
+      "width": 12,
+      "height": 48,
+      "conf": 92.525406
+    },
+    {
+      "text": "這",
+      "line_num": 5,
+      "left": 482,
+      "top": 1408,
+      "width": 60,
+      "height": 29,
+      "conf": 93.289207
+    },
+    {
+      "text": "些",
+      "line_num": 5,
+      "left": 523,
+      "top": 1403,
+      "width": 21,
+      "height": 48,
+      "conf": 92.57032
+    },
+    {
+      "text": "建筑",
+      "line_num": 6,
+      "left": 194,
+      "top": 1455,
+      "width": 61,
+      "height": 30,
+      "conf": 96.414146
+    },
+    {
+      "text": "不",
+      "line_num": 6,
+      "left": 271,
+      "top": 1455,
+      "width": 27,
+      "height": 30,
+      "conf": 93.256325
+    },
+    {
+      "text": "仅",
+      "line_num": 6,
+      "left": 304,
+      "top": 1457,
+      "width": 36,
+      "height": 28,
+      "conf": 93.134544
+    },
+    {
+      "text": "展示",
+      "line_num": 6,
+      "left": 354,
+      "top": 1451,
+      "width": 40,
+      "height": 48,
+      "conf": 96.550804
+    },
+    {
+      "text": "了",
+      "line_num": 6,
+      "left": 394,
+      "top": 1457,
+      "width": 18,
+      "height": 28,
+      "conf": 96.826111
+    },
+    {
+      "text": "我",
+      "line_num": 6,
+      "left": 427,
+      "top": 1456,
+      "width": 36,
+      "height": 29,
+      "conf": 93.169197
+    },
+    {
+      "text": "们",
+      "line_num": 6,
+      "left": 467,
+      "top": 1455,
+      "width": 26,
+      "height": 30,
+      "conf": 93.088608
+    },
+    {
+      "text": "祖先",
+      "line_num": 6,
+      "left": 493,
+      "top": 1456,
+      "width": 50,
+      "height": 29,
+      "conf": 96.137993
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 194,
+      "top": 1503,
+      "width": 44,
+      "height": 30,
+      "conf": 96.676193
+    },
+    {
+      "text": "非凡",
+      "line_num": 7,
+      "left": 242,
+      "top": 1504,
+      "width": 45,
+      "height": 29,
+      "conf": 96.72261
+    },
+    {
+      "text": "智慧",
+      "line_num": 7,
+      "left": 301,
+      "top": 1503,
+      "width": 66,
+      "height": 30,
+      "conf": 93.042358
+    },
+    {
+      "text": "和",
+      "line_num": 7,
+      "left": 369,
+      "top": 1503,
+      "width": 34,
+      "height": 30,
+      "conf": 96.888786
+    },
+    {
+      "text": "惊人",
+      "line_num": 7,
+      "left": 417,
+      "top": 1503,
+      "width": 40,
+      "height": 30,
+      "conf": 94.887962
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 462,
+      "top": 1503,
+      "width": 31,
+      "height": 30,
+      "conf": 96.745979
+    },
+    {
+      "text": "创造",
+      "line_num": 7,
+      "left": 501,
+      "top": 1504,
+      "width": 42,
+      "height": 29,
+      "conf": 96.752785
+    },
+    {
+      "text": "力",
+      "line_num": 8,
+      "left": 194,
+      "top": 1552,
+      "width": 39,
+      "height": 31,
+      "conf": 92.016876
+    },
+    {
+      "text": "，",
+      "line_num": 8,
+      "left": 241,
+      "top": 1547,
+      "width": 21,
+      "height": 48,
+      "conf": 92.001122
+    },
+    {
+      "text": "也",
+      "line_num": 8,
+      "left": 262,
+      "top": 1551,
+      "width": 25,
+      "height": 29,
+      "conf": 93.040253
+    },
+    {
+      "text": "见证",
+      "line_num": 8,
+      "left": 290,
+      "top": 1551,
+      "width": 252,
+      "height": 30,
+      "conf": 94.803886
+    },
+    {
+      "text": "了",
+      "line_num": 8,
+      "left": 373,
+      "top": 1547,
+      "width": 18,
+      "height": 48,
+      "conf": 96.933899
+    },
+    {
+      "text": "人",
+      "line_num": 8,
+      "left": 391,
+      "top": 1547,
+      "width": 30,
+      "height": 48,
+      "conf": 96.478256
+    },
+    {
+      "text": "类",
+      "line_num": 8,
+      "left": 421,
+      "top": 1547,
+      "width": 39,
+      "height": 48,
+      "conf": 95.561684
+    },
+    {
+      "text": "文明",
+      "line_num": 8,
+      "left": 460,
+      "top": 1547,
+      "width": 60,
+      "height": 48,
+      "conf": 95.854851
+    },
+    {
+      "text": "的",
+      "line_num": 8,
+      "left": 520,
+      "top": 1547,
+      "width": 24,
+      "height": 48,
+      "conf": 96.813103
+    },
+    {
+      "text": "辉煌",
+      "line_num": 9,
+      "left": 193,
+      "top": 1599,
+      "width": 62,
+      "height": 30,
+      "conf": 84.354248
+    },
+    {
+      "text": "历程",
+      "line_num": 9,
+      "left": 264,
+      "top": 1600,
+      "width": 55,
+      "height": 29,
+      "conf": 92.728836
+    },
+    {
+      "text": "。",
+      "line_num": 9,
+      "left": 327,
+      "top": 1621,
+      "width": 5,
+      "height": 8,
+      "conf": 93.091446
+    },
+    {
+      "text": "教育",
+      "line_num": 1,
+      "left": 193,
+      "top": 1673,
+      "width": 62,
+      "height": 30,
+      "conf": 96.947311
+    },
+    {
+      "text": "是",
+      "line_num": 1,
+      "left": 270,
+      "top": 1675,
+      "width": 16,
+      "height": 28,
+      "conf": 96.896896
+    },
+    {
+      "text": "推动",
+      "line_num": 1,
+      "left": 303,
+      "top": 1673,
+      "width": 63,
+      "height": 30,
+      "conf": 96.87896
+    },
+    {
+      "text": "社会",
+      "line_num": 1,
+      "left": 369,
+      "top": 1673,
+      "width": 66,
+      "height": 30,
+      "conf": 96.743698
+    },
+    {
+      "text": "进步",
+      "line_num": 1,
+      "left": 450,
+      "top": 1673,
+      "width": 45,
+      "height": 30,
+      "conf": 96.621223
+    },
+    {
+      "text": "和",
+      "line_num": 1,
+      "left": 497,
+      "top": 1676,
+      "width": 12,
+      "height": 26,
+      "conf": 97.012474
+    },
+    {
+      "text": "个",
+      "line_num": 1,
+      "left": 522,
+      "top": 1674,
+      "width": 21,
+      "height": 29,
+      "conf": 96.919884
+    },
+    {
+      "text": "人",
+      "line_num": 2,
+      "left": 193,
+      "top": 1722,
+      "width": 30,
+      "height": 29,
+      "conf": 96.193108
+    },
+    {
+      "text": "发",
+      "line_num": 2,
+      "left": 234,
+      "top": 1721,
+      "width": 20,
+      "height": 30,
+      "conf": 93.304512
+    },
+    {
+      "text": "展",
+      "line_num": 2,
+      "left": 270,
+      "top": 1721,
+      "width": 31,
+      "height": 30,
+      "conf": 93.282089
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 303,
+      "top": 1721,
+      "width": 30,
+      "height": 30,
+      "conf": 82.773956
+    },
+    {
+      "text": "根本",
+      "line_num": 2,
+      "left": 336,
+      "top": 1722,
+      "width": 47,
+      "height": 29,
+      "conf": 96.904221
+    },
+    {
+      "text": "基础",
+      "line_num": 2,
+      "left": 386,
+      "top": 1721,
+      "width": 74,
+      "height": 30,
+      "conf": 93.254051
+    },
+    {
+      "text": "。",
+      "line_num": 2,
+      "left": 468,
+      "top": 1717,
+      "width": 24,
+      "height": 48,
+      "conf": 92.430649
+    },
+    {
+      "text": "通",
+      "line_num": 2,
+      "left": 482,
+      "top": 1722,
+      "width": 61,
+      "height": 29,
+      "conf": 93.079887
+    },
+    {
+      "text": "过",
+      "line_num": 2,
+      "left": 522,
+      "top": 1717,
+      "width": 24,
+      "height": 48,
+      "conf": 97.012154
+    },
+    {
+      "text": "系统",
+      "line_num": 3,
+      "left": 194,
+      "top": 1769,
+      "width": 154,
+      "height": 30,
+      "conf": 96.86216
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 271,
+      "top": 1765,
+      "width": 36,
+      "height": 48,
+      "conf": 96.808182
+    },
+    {
+      "text": "学",
+      "line_num": 3,
+      "left": 307,
+      "top": 1765,
+      "width": 30,
+      "height": 48,
+      "conf": 93.257851
+    },
+    {
+      "text": "习",
+      "line_num": 3,
+      "left": 353,
+      "top": 1770,
+      "width": 8,
+      "height": 29,
+      "conf": 93.147408
+    },
+    {
+      "text": "和",
+      "line_num": 3,
+      "left": 369,
+      "top": 1772,
+      "width": 12,
+      "height": 26,
+      "conf": 93.21978
+    },
+    {
+      "text": "持续",
+      "line_num": 3,
+      "left": 386,
+      "top": 1769,
+      "width": 157,
+      "height": 30,
+      "conf": 96.636887
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 463,
+      "top": 1765,
+      "width": 30,
+      "height": 48,
+      "conf": 96.890007
+    },
+    {
+      "text": "知识",
+      "line_num": 3,
+      "left": 493,
+      "top": 1769,
+      "width": 50,
+      "height": 30,
+      "conf": 96.749893
+    },
+    {
+      "text": "积累",
+      "line_num": 4,
+      "left": 193,
+      "top": 1818,
+      "width": 72,
+      "height": 31,
+      "conf": 92.384354
+    },
+    {
+      "text": "，",
+      "line_num": 4,
+      "left": 276,
+      "top": 1813,
+      "width": 18,
+      "height": 48,
+      "conf": 91.337952
+    },
+    {
+      "text": "人",
+      "line_num": 4,
+      "left": 294,
+      "top": 1818,
+      "width": 25,
+      "height": 29,
+      "conf": 92.717461
+    },
+    {
+      "text": "们",
+      "line_num": 4,
+      "left": 324,
+      "top": 1818,
+      "width": 26,
+      "height": 29,
+      "conf": 92.620987
+    },
+    {
+      "text": "能",
+      "line_num": 4,
+      "left": 360,
+      "top": 1818,
+      "width": 39,
+      "height": 29,
+      "conf": 93.268265
+    },
+    {
+      "text": "够",
+      "line_num": 4,
+      "left": 399,
+      "top": 1817,
+      "width": 16,
+      "height": 30,
+      "conf": 92.879044
+    },
+    {
+      "text": "获得",
+      "line_num": 4,
+      "left": 432,
+      "top": 1817,
+      "width": 60,
+      "height": 30,
+      "conf": 96.918671
+    },
+    {
+      "text": "改善",
+      "line_num": 4,
+      "left": 493,
+      "top": 1817,
+      "width": 49,
+      "height": 30,
+      "conf": 96.606392
+    },
+    {
+      "text": "日",
+      "line_num": 1,
+      "left": 603,
+      "top": 211,
+      "width": 43,
+      "height": 57,
+      "conf": 96.527397
+    },
+    {
+      "text": "常生",
+      "line_num": 1,
+      "left": 660,
+      "top": 208,
+      "width": 376,
+      "height": 61,
+      "conf": 93.072662
+    },
+    {
+      "text": "活",
+      "line_num": 1,
+      "left": 804,
+      "top": 204,
+      "width": 68,
+      "height": 89,
+      "conf": 91.974419
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 871,
+      "top": 204,
+      "width": 68,
+      "height": 89,
+      "conf": 96.274529
+    },
+    {
+      "text": "织锦",
+      "line_num": 1,
+      "left": 938,
+      "top": 208,
+      "width": 98,
+      "height": 61,
+      "conf": 95.575722
+    },
+    {
+      "text": "自己",
+      "line_num": 1,
+      "left": 634,
+      "top": 345,
+      "width": 58,
+      "height": 30,
+      "conf": 96.661613
+    },
+    {
+      "text": "生活",
+      "line_num": 1,
+      "left": 708,
+      "top": 346,
+      "width": 60,
+      "height": 29,
+      "conf": 96.383888
+    },
+    {
+      "text": "和",
+      "line_num": 1,
+      "left": 774,
+      "top": 348,
+      "width": 13,
+      "height": 26,
+      "conf": 95.833328
+    },
+    {
+      "text": "周围",
+      "line_num": 1,
+      "left": 801,
+      "top": 345,
+      "width": 66,
+      "height": 30,
+      "conf": 95.752609
+    },
+    {
+      "text": "社区",
+      "line_num": 1,
+      "left": 873,
+      "top": 346,
+      "width": 54,
+      "height": 29,
+      "conf": 96.456429
+    },
+    {
+      "text": "所",
+      "line_num": 1,
+      "left": 932,
+      "top": 346,
+      "width": 16,
+      "height": 29,
+      "conf": 93.276955
+    },
+    {
+      "text": "需",
+      "line_num": 1,
+      "left": 957,
+      "top": 347,
+      "width": 23,
+      "height": 28,
+      "conf": 89.986526
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 632,
+      "top": 393,
+      "width": 27,
+      "height": 30,
+      "conf": 96.552879
+    },
+    {
+      "text": "各",
+      "line_num": 2,
+      "left": 673,
+      "top": 393,
+      "width": 33,
+      "height": 30,
+      "conf": 96.128326
+    },
+    {
+      "text": "种",
+      "line_num": 2,
+      "left": 708,
+      "top": 394,
+      "width": 34,
+      "height": 29,
+      "conf": 96.855751
+    },
+    {
+      "text": "工具",
+      "line_num": 2,
+      "left": 759,
+      "top": 395,
+      "width": 42,
+      "height": 28,
+      "conf": 93.267975
+    },
+    {
+      "text": "、",
+      "line_num": 2,
+      "left": 799,
+      "top": 389,
+      "width": 30,
+      "height": 48,
+      "conf": 92.479515
+    },
+    {
+      "text": "技",
+      "line_num": 2,
+      "left": 822,
+      "top": 393,
+      "width": 157,
+      "height": 30,
+      "conf": 92.258682
+    },
+    {
+      "text": "能",
+      "line_num": 2,
+      "left": 871,
+      "top": 389,
+      "width": 27,
+      "height": 48,
+      "conf": 93.14373
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 898,
+      "top": 389,
+      "width": 27,
+      "height": 48,
+      "conf": 96.664558
+    },
+    {
+      "text": "深刻",
+      "line_num": 2,
+      "left": 925,
+      "top": 393,
+      "width": 54,
+      "height": 30,
+      "conf": 96.668449
+    },
+    {
+      "text": "见解",
+      "line_num": 3,
+      "left": 631,
+      "top": 441,
+      "width": 71,
+      "height": 32,
+      "conf": 93.21524
+    },
+    {
+      "text": "，",
+      "line_num": 3,
+      "left": 726,
+      "top": 442,
+      "width": 9,
+      "height": 29,
+      "conf": 93.156639
+    },
+    {
+      "text": "从",
+      "line_num": 3,
+      "left": 739,
+      "top": 442,
+      "width": 17,
+      "height": 29,
+      "conf": 92.7491
+    },
+    {
+      "text": "而",
+      "line_num": 3,
+      "left": 765,
+      "top": 444,
+      "width": 23,
+      "height": 27,
+      "conf": 96.777145
+    },
+    {
+      "text": "为",
+      "line_num": 3,
+      "left": 804,
+      "top": 441,
+      "width": 14,
+      "height": 30,
+      "conf": 96.837029
+    },
+    {
+      "text": "建设",
+      "line_num": 3,
+      "left": 837,
+      "top": 441,
+      "width": 47,
+      "height": 30,
+      "conf": 96.700859
+    },
+    {
+      "text": "更",
+      "line_num": 3,
+      "left": 900,
+      "top": 441,
+      "width": 36,
+      "height": 30,
+      "conf": 96.015907
+    },
+    {
+      "text": "美好",
+      "line_num": 3,
+      "left": 951,
+      "top": 441,
+      "width": 29,
+      "height": 30,
+      "conf": 96.766556
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 632,
+      "top": 489,
+      "width": 27,
+      "height": 30,
+      "conf": 96.640221
+    },
+    {
+      "text": "未",
+      "line_num": 4,
+      "left": 673,
+      "top": 490,
+      "width": 19,
+      "height": 29,
+      "conf": 95.685234
+    },
+    {
+      "text": "来",
+      "line_num": 4,
+      "left": 709,
+      "top": 490,
+      "width": 26,
+      "height": 29,
+      "conf": 96.866295
+    },
+    {
+      "text": "做",
+      "line_num": 4,
+      "left": 742,
+      "top": 490,
+      "width": 14,
+      "height": 29,
+      "conf": 96.930122
+    },
+    {
+      "text": "出",
+      "line_num": 4,
+      "left": 772,
+      "top": 489,
+      "width": 14,
+      "height": 30,
+      "conf": 96.900681
+    },
+    {
+      "text": "贡献",
+      "line_num": 4,
+      "left": 799,
+      "top": 489,
+      "width": 53,
+      "height": 30,
+      "conf": 93.201614
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 857,
+      "top": 511,
+      "width": 9,
+      "height": 8,
+      "conf": 93.150757
+    },
+    {
+      "text": "大",
+      "line_num": 1,
+      "left": 631,
+      "top": 564,
+      "width": 29,
+      "height": 29,
+      "conf": 95.372475
+    },
+    {
+      "text": "自",
+      "line_num": 1,
+      "left": 669,
+      "top": 563,
+      "width": 19,
+      "height": 30,
+      "conf": 93.180641
+    },
+    {
+      "text": "然",
+      "line_num": 1,
+      "left": 708,
+      "top": 563,
+      "width": 21,
+      "height": 30,
+      "conf": 93.002869
+    },
+    {
+      "text": "慷慨",
+      "line_num": 1,
+      "left": 741,
+      "top": 563,
+      "width": 47,
+      "height": 30,
+      "conf": 89.525436
+    },
+    {
+      "text": "地",
+      "line_num": 1,
+      "left": 801,
+      "top": 563,
+      "width": 19,
+      "height": 30,
+      "conf": 96.670845
+    },
+    {
+      "text": "提供",
+      "line_num": 1,
+      "left": 828,
+      "top": 563,
+      "width": 56,
+      "height": 30,
+      "conf": 96.192383
+    },
+    {
+      "text": "了",
+      "line_num": 1,
+      "left": 897,
+      "top": 565,
+      "width": 16,
+      "height": 28,
+      "conf": 96.772179
+    },
+    {
+      "text": "無",
+      "line_num": 1,
+      "left": 927,
+      "top": 565,
+      "width": 21,
+      "height": 28,
+      "conf": 91.135841
+    },
+    {
+      "text": "與",
+      "line_num": 1,
+      "left": 960,
+      "top": 563,
+      "width": 18,
+      "height": 30,
+      "conf": 77.834129
+    },
+    {
+      "text": "伦比",
+      "line_num": 2,
+      "left": 630,
+      "top": 611,
+      "width": 76,
+      "height": 30,
+      "conf": 96.726425
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 707,
+      "top": 611,
+      "width": 36,
+      "height": 30,
+      "conf": 96.937614
+    },
+    {
+      "text": "美丽",
+      "line_num": 2,
+      "left": 743,
+      "top": 607,
+      "width": 66,
+      "height": 48,
+      "conf": 96.260269
+    },
+    {
+      "text": "景观",
+      "line_num": 2,
+      "left": 823,
+      "top": 612,
+      "width": 43,
+      "height": 29,
+      "conf": 96.257866
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 870,
+      "top": 612,
+      "width": 26,
+      "height": 28,
+      "conf": 97.018257
+    },
+    {
+      "text": "维持",
+      "line_num": 2,
+      "left": 896,
+      "top": 611,
+      "width": 52,
+      "height": 30,
+      "conf": 93.200218
+    },
+    {
+      "text": "生",
+      "line_num": 2,
+      "left": 959,
+      "top": 612,
+      "width": 21,
+      "height": 28,
+      "conf": 92.660179
+    },
+    {
+      "text": "命",
+      "line_num": 3,
+      "left": 631,
+      "top": 659,
+      "width": 44,
+      "height": 30,
+      "conf": 91.978546
+    },
+    {
+      "text": "所",
+      "line_num": 3,
+      "left": 676,
+      "top": 660,
+      "width": 16,
+      "height": 29,
+      "conf": 93.295273
+    },
+    {
+      "text": "必需",
+      "line_num": 3,
+      "left": 699,
+      "top": 659,
+      "width": 71,
+      "height": 30,
+      "conf": 96.194305
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 771,
+      "top": 659,
+      "width": 16,
+      "height": 30,
+      "conf": 96.9375
+    },
+    {
+      "text": "各",
+      "line_num": 3,
+      "left": 801,
+      "top": 659,
+      "width": 30,
+      "height": 30,
+      "conf": 96.984467
+    },
+    {
+      "text": "种",
+      "line_num": 3,
+      "left": 836,
+      "top": 660,
+      "width": 15,
+      "height": 29,
+      "conf": 96.529015
+    },
+    {
+      "text": "宝贵",
+      "line_num": 3,
+      "left": 867,
+      "top": 660,
+      "width": 49,
+      "height": 29,
+      "conf": 93.273445
+    },
+    {
+      "text": "资",
+      "line_num": 3,
+      "left": 930,
+      "top": 659,
+      "width": 17,
+      "height": 30,
+      "conf": 93.132591
+    },
+    {
+      "text": "源",
+      "line_num": 4,
+      "left": 631,
+      "top": 708,
+      "width": 43,
+      "height": 29,
+      "conf": 92.34549
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 675,
+      "top": 703,
+      "width": 24,
+      "height": 48,
+      "conf": 93.105354
+    },
+    {
+      "text": "从",
+      "line_num": 4,
+      "left": 699,
+      "top": 708,
+      "width": 36,
+      "height": 29,
+      "conf": 93.245659
+    },
+    {
+      "text": "清新",
+      "line_num": 4,
+      "left": 735,
+      "top": 707,
+      "width": 67,
+      "height": 30,
+      "conf": 96.628891
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 804,
+      "top": 707,
+      "width": 36,
+      "height": 30,
+      "conf": 96.878899
+    },
+    {
+      "text": "空气",
+      "line_num": 4,
+      "left": 855,
+      "top": 707,
+      "width": 42,
+      "height": 30,
+      "conf": 93.817451
+    },
+    {
+      "text": "到",
+      "line_num": 4,
+      "left": 906,
+      "top": 708,
+      "width": 9,
+      "height": 29,
+      "conf": 96.969078
+    },
+    {
+      "text": "纯净",
+      "line_num": 4,
+      "left": 927,
+      "top": 707,
+      "width": 53,
+      "height": 30,
+      "conf": 96.446114
+    },
+    {
+      "text": "的",
+      "line_num": 5,
+      "left": 632,
+      "top": 755,
+      "width": 42,
+      "height": 30,
+      "conf": 96.760674
+    },
+    {
+      "text": "水",
+      "line_num": 5,
+      "left": 676,
+      "top": 755,
+      "width": 27,
+      "height": 30,
+      "conf": 93.269638
+    },
+    {
+      "text": "源",
+      "line_num": 5,
+      "left": 712,
+      "top": 757,
+      "width": 22,
+      "height": 30,
+      "conf": 91.671631
+    },
+    {
+      "text": "，",
+      "line_num": 5,
+      "left": 742,
+      "top": 751,
+      "width": 21,
+      "height": 48,
+      "conf": 92.843819
+    },
+    {
+      "text": "从",
+      "line_num": 5,
+      "left": 763,
+      "top": 756,
+      "width": 25,
+      "height": 29,
+      "conf": 92.582336
+    },
+    {
+      "text": "肥沃",
+      "line_num": 5,
+      "left": 791,
+      "top": 755,
+      "width": 188,
+      "height": 30,
+      "conf": 94.838005
+    },
+    {
+      "text": "的",
+      "line_num": 5,
+      "left": 871,
+      "top": 751,
+      "width": 33,
+      "height": 48,
+      "conf": 96.798103
+    },
+    {
+      "text": "土壤",
+      "line_num": 5,
+      "left": 904,
+      "top": 751,
+      "width": 54,
+      "height": 48,
+      "conf": 94.735313
+    },
+    {
+      "text": "到",
+      "line_num": 5,
+      "left": 958,
+      "top": 751,
+      "width": 24,
+      "height": 48,
+      "conf": 96.229538
+    },
+    {
+      "text": "多",
+      "line_num": 6,
+      "left": 632,
+      "top": 803,
+      "width": 170,
+      "height": 30,
+      "conf": 92.960457
+    },
+    {
+      "text": "样",
+      "line_num": 6,
+      "left": 676,
+      "top": 799,
+      "width": 39,
+      "height": 48,
+      "conf": 92.344193
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 715,
+      "top": 799,
+      "width": 27,
+      "height": 48,
+      "conf": 96.582291
+    },
+    {
+      "text": "生物",
+      "line_num": 6,
+      "left": 742,
+      "top": 803,
+      "width": 60,
+      "height": 30,
+      "conf": 93.176018
+    },
+    {
+      "text": "。",
+      "line_num": 6,
+      "left": 822,
+      "top": 803,
+      "width": 10,
+      "height": 30,
+      "conf": 93.206917
+    },
+    {
+      "text": "保",
+      "line_num": 6,
+      "left": 832,
+      "top": 804,
+      "width": 33,
+      "height": 29,
+      "conf": 92.751289
+    },
+    {
+      "text": "护",
+      "line_num": 6,
+      "left": 871,
+      "top": 803,
+      "width": 24,
+      "height": 30,
+      "conf": 92.376122
+    },
+    {
+      "text": "和",
+      "line_num": 6,
+      "left": 902,
+      "top": 806,
+      "width": 23,
+      "height": 26,
+      "conf": 92.738251
+    },
+    {
+      "text": "珍惜",
+      "line_num": 6,
+      "left": 928,
+      "top": 804,
+      "width": 52,
+      "height": 29,
+      "conf": 10.442009
+    },
+    {
+      "text": "环境",
+      "line_num": 7,
+      "left": 631,
+      "top": 851,
+      "width": 61,
+      "height": 30,
+      "conf": 96.842186
+    },
+    {
+      "text": "不",
+      "line_num": 7,
+      "left": 708,
+      "top": 851,
+      "width": 28,
+      "height": 30,
+      "conf": 93.253128
+    },
+    {
+      "text": "仅",
+      "line_num": 7,
+      "left": 741,
+      "top": 853,
+      "width": 15,
+      "height": 28,
+      "conf": 93.115608
+    },
+    {
+      "text": "是",
+      "line_num": 7,
+      "left": 771,
+      "top": 852,
+      "width": 36,
+      "height": 29,
+      "conf": 93.24369
+    },
+    {
+      "text": "我",
+      "line_num": 7,
+      "left": 822,
+      "top": 851,
+      "width": 10,
+      "height": 30,
+      "conf": 93.281738
+    },
+    {
+      "text": "们",
+      "line_num": 7,
+      "left": 837,
+      "top": 852,
+      "width": 14,
+      "height": 29,
+      "conf": 92.656296
+    },
+    {
+      "text": "这",
+      "line_num": 7,
+      "left": 864,
+      "top": 852,
+      "width": 20,
+      "height": 29,
+      "conf": 95.694016
+    },
+    {
+      "text": "一",
+      "line_num": 7,
+      "left": 900,
+      "top": 852,
+      "width": 28,
+      "height": 29,
+      "conf": 93.214622
+    },
+    {
+      "text": "代",
+      "line_num": 7,
+      "left": 933,
+      "top": 851,
+      "width": 15,
+      "height": 30,
+      "conf": 92.951347
+    },
+    {
+      "text": "人",
+      "line_num": 7,
+      "left": 960,
+      "top": 852,
+      "width": 20,
+      "height": 29,
+      "conf": 89.924332
+    },
+    {
+      "text": "的",
+      "line_num": 8,
+      "left": 632,
+      "top": 899,
+      "width": 27,
+      "height": 30,
+      "conf": 96.99836
+    },
+    {
+      "text": "责任",
+      "line_num": 8,
+      "left": 676,
+      "top": 900,
+      "width": 58,
+      "height": 31,
+      "conf": 92.773003
+    },
+    {
+      "text": "，",
+      "line_num": 8,
+      "left": 742,
+      "top": 895,
+      "width": 27,
+      "height": 48,
+      "conf": 93.14917
+    },
+    {
+      "text": "更",
+      "line_num": 8,
+      "left": 769,
+      "top": 901,
+      "width": 19,
+      "height": 28,
+      "conf": 91.085716
+    },
+    {
+      "text": "是",
+      "line_num": 8,
+      "left": 802,
+      "top": 901,
+      "width": 32,
+      "height": 28,
+      "conf": 96.9925
+    },
+    {
+      "text": "确保",
+      "line_num": 8,
+      "left": 833,
+      "top": 899,
+      "width": 146,
+      "height": 30,
+      "conf": 96.62722
+    },
+    {
+      "text": "后",
+      "line_num": 8,
+      "left": 901,
+      "top": 895,
+      "width": 30,
+      "height": 48,
+      "conf": 92.439766
+    },
+    {
+      "text": "代",
+      "line_num": 8,
+      "left": 931,
+      "top": 895,
+      "width": 27,
+      "height": 48,
+      "conf": 92.798592
+    },
+    {
+      "text": "子",
+      "line_num": 8,
+      "left": 958,
+      "top": 895,
+      "width": 24,
+      "height": 48,
+      "conf": 93.154182
+    },
+    {
+      "text": "孙",
+      "line_num": 9,
+      "left": 630,
+      "top": 948,
+      "width": 30,
+      "height": 29,
+      "conf": 92.563736
+    },
+    {
+      "text": "能",
+      "line_num": 9,
+      "left": 671,
+      "top": 948,
+      "width": 37,
+      "height": 29,
+      "conf": 50.369667
+    },
+    {
+      "text": "够",
+      "line_num": 9,
+      "left": 710,
+      "top": 947,
+      "width": 14,
+      "height": 30,
+      "conf": 91.58783
+    },
+    {
+      "text": "继续",
+      "line_num": 9,
+      "left": 740,
+      "top": 947,
+      "width": 66,
+      "height": 30,
+      "conf": 96.914528
+    },
+    {
+      "text": "享受",
+      "line_num": 9,
+      "left": 823,
+      "top": 943,
+      "width": 43,
+      "height": 48,
+      "conf": 90.498505
+    },
+    {
+      "text": "地",
+      "line_num": 9,
+      "left": 866,
+      "top": 947,
+      "width": 30,
+      "height": 30,
+      "conf": 93.204308
+    },
+    {
+      "text": "球",
+      "line_num": 9,
+      "left": 896,
+      "top": 948,
+      "width": 20,
+      "height": 29,
+      "conf": 93.219139
+    },
+    {
+      "text": "奇观",
+      "line_num": 9,
+      "left": 932,
+      "top": 948,
+      "width": 48,
+      "height": 29,
+      "conf": 95.174538
+    },
+    {
+      "text": "的",
+      "line_num": 10,
+      "left": 632,
+      "top": 995,
+      "width": 27,
+      "height": 30,
+      "conf": 96.230545
+    },
+    {
+      "text": "关键",
+      "line_num": 10,
+      "left": 673,
+      "top": 995,
+      "width": 51,
+      "height": 30,
+      "conf": 92.421196
+    },
+    {
+      "text": "。",
+      "line_num": 10,
+      "left": 733,
+      "top": 1017,
+      "width": 5,
+      "height": 8,
+      "conf": 91.7472
+    },
+    {
+      "text": "有",
+      "line_num": 1,
+      "left": 630,
+      "top": 1071,
+      "width": 30,
+      "height": 30,
+      "conf": 92.726524
+    },
+    {
+      "text": "效",
+      "line_num": 1,
+      "left": 668,
+      "top": 1071,
+      "width": 38,
+      "height": 30,
+      "conf": 85.281219
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 707,
+      "top": 1071,
+      "width": 16,
+      "height": 30,
+      "conf": 96.20639
+    },
+    {
+      "text": "交流",
+      "line_num": 1,
+      "left": 734,
+      "top": 1071,
+      "width": 54,
+      "height": 30,
+      "conf": 96.876953
+    },
+    {
+      "text": "在",
+      "line_num": 1,
+      "left": 803,
+      "top": 1071,
+      "width": 17,
+      "height": 30,
+      "conf": 96.984863
+    },
+    {
+      "text": "不",
+      "line_num": 1,
+      "left": 836,
+      "top": 1073,
+      "width": 16,
+      "height": 28,
+      "conf": 96.778099
+    },
+    {
+      "text": "同文",
+      "line_num": 1,
+      "left": 866,
+      "top": 1071,
+      "width": 65,
+      "height": 30,
+      "conf": 96.779427
+    },
+    {
+      "text": "化",
+      "line_num": 1,
+      "left": 932,
+      "top": 1072,
+      "width": 16,
+      "height": 29,
+      "conf": 93.118393
+    },
+    {
+      "text": "、",
+      "line_num": 1,
+      "left": 953,
+      "top": 1093,
+      "width": 8,
+      "height": 8,
+      "conf": 91.842316
+    },
+    {
+      "text": "民族",
+      "line_num": 2,
+      "left": 633,
+      "top": 1119,
+      "width": 71,
+      "height": 30,
+      "conf": 94.809647
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 710,
+      "top": 1122,
+      "width": 13,
+      "height": 26,
+      "conf": 96.944481
+    },
+    {
+      "text": "国家",
+      "line_num": 2,
+      "left": 734,
+      "top": 1119,
+      "width": 54,
+      "height": 30,
+      "conf": 95.741035
+    },
+    {
+      "text": "之",
+      "line_num": 2,
+      "left": 800,
+      "top": 1119,
+      "width": 27,
+      "height": 30,
+      "conf": 96.976097
+    },
+    {
+      "text": "间架",
+      "line_num": 2,
+      "left": 830,
+      "top": 1119,
+      "width": 75,
+      "height": 30,
+      "conf": 89.885818
+    },
+    {
+      "text": "起",
+      "line_num": 2,
+      "left": 905,
+      "top": 1115,
+      "width": 27,
+      "height": 48,
+      "conf": 95.917084
+    },
+    {
+      "text": "了",
+      "line_num": 2,
+      "left": 932,
+      "top": 1121,
+      "width": 13,
+      "height": 28,
+      "conf": 93.261131
+    },
+    {
+      "text": "理",
+      "line_num": 2,
+      "left": 956,
+      "top": 1121,
+      "width": 24,
+      "height": 27,
+      "conf": 91.093033
+    },
+    {
+      "text": "解",
+      "line_num": 3,
+      "left": 630,
+      "top": 1167,
+      "width": 47,
+      "height": 30,
+      "conf": 92.776726
+    },
+    {
+      "text": "与",
+      "line_num": 3,
+      "left": 694,
+      "top": 1167,
+      "width": 19,
+      "height": 30,
+      "conf": 96.683334
+    },
+    {
+      "text": "合作",
+      "line_num": 3,
+      "left": 726,
+      "top": 1167,
+      "width": 41,
+      "height": 30,
+      "conf": 96.587685
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 771,
+      "top": 1167,
+      "width": 16,
+      "height": 30,
+      "conf": 96.789474
+    },
+    {
+      "text": "重要",
+      "line_num": 3,
+      "left": 803,
+      "top": 1168,
+      "width": 49,
+      "height": 29,
+      "conf": 96.097382
+    },
+    {
+      "text": "桥梁",
+      "line_num": 3,
+      "left": 866,
+      "top": 1167,
+      "width": 63,
+      "height": 30,
+      "conf": 90.37899
+    },
+    {
+      "text": "。",
+      "line_num": 3,
+      "left": 929,
+      "top": 1163,
+      "width": 27,
+      "height": 48,
+      "conf": 91.134216
+    },
+    {
+      "text": "语",
+      "line_num": 3,
+      "left": 950,
+      "top": 1168,
+      "width": 30,
+      "height": 29,
+      "conf": 92.005898
+    },
+    {
+      "text": "言",
+      "line_num": 4,
+      "left": 631,
+      "top": 1215,
+      "width": 41,
+      "height": 30,
+      "conf": 92.988976
+    },
+    {
+      "text": "作为",
+      "line_num": 4,
+      "left": 678,
+      "top": 1215,
+      "width": 66,
+      "height": 30,
+      "conf": 95.994522
+    },
+    {
+      "text": "人",
+      "line_num": 4,
+      "left": 744,
+      "top": 1211,
+      "width": 21,
+      "height": 48,
+      "conf": 96.992401
+    },
+    {
+      "text": "类",
+      "line_num": 4,
+      "left": 765,
+      "top": 1215,
+      "width": 22,
+      "height": 30,
+      "conf": 96.597382
+    },
+    {
+      "text": "最",
+      "line_num": 4,
+      "left": 798,
+      "top": 1217,
+      "width": 22,
+      "height": 28,
+      "conf": 96.435593
+    },
+    {
+      "text": "伟大",
+      "line_num": 4,
+      "left": 834,
+      "top": 1215,
+      "width": 60,
+      "height": 30,
+      "conf": 96.96656
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 899,
+      "top": 1215,
+      "width": 34,
+      "height": 30,
+      "conf": 96.44577
+    },
+    {
+      "text": "发",
+      "line_num": 4,
+      "left": 952,
+      "top": 1217,
+      "width": 10,
+      "height": 25,
+      "conf": 92.83403
+    },
+    {
+      "text": "明",
+      "line_num": 4,
+      "left": 963,
+      "top": 1217,
+      "width": 15,
+      "height": 28,
+      "conf": 92.621033
+    },
+    {
+      "text": "之",
+      "line_num": 5,
+      "left": 631,
+      "top": 1263,
+      "width": 71,
+      "height": 32,
+      "conf": 96.708542
+    },
+    {
+      "text": "一",
+      "line_num": 5,
+      "left": 684,
+      "top": 1259,
+      "width": 24,
+      "height": 48,
+      "conf": 93.228508
+    },
+    {
+      "text": "，",
+      "line_num": 5,
+      "left": 726,
+      "top": 1263,
+      "width": 9,
+      "height": 30,
+      "conf": 93.055809
+    },
+    {
+      "text": "使",
+      "line_num": 5,
+      "left": 735,
+      "top": 1263,
+      "width": 42,
+      "height": 30,
+      "conf": 92.617722
+    },
+    {
+      "text": "我",
+      "line_num": 5,
+      "left": 790,
+      "top": 1263,
+      "width": 10,
+      "height": 30,
+      "conf": 93.147476
+    },
+    {
+      "text": "们",
+      "line_num": 5,
+      "left": 807,
+      "top": 1264,
+      "width": 12,
+      "height": 29,
+      "conf": 93.272186
+    },
+    {
+      "text": "能",
+      "line_num": 5,
+      "left": 834,
+      "top": 1264,
+      "width": 34,
+      "height": 29,
+      "conf": 93.039085
+    },
+    {
+      "text": "够",
+      "line_num": 5,
+      "left": 870,
+      "top": 1263,
+      "width": 14,
+      "height": 30,
+      "conf": 91.532066
+    },
+    {
+      "text": "跨越",
+      "line_num": 5,
+      "left": 900,
+      "top": 1263,
+      "width": 48,
+      "height": 30,
+      "conf": 96.760086
+    },
+    {
+      "text": "地",
+      "line_num": 5,
+      "left": 963,
+      "top": 1263,
+      "width": 17,
+      "height": 30,
+      "conf": 96.643661
+    },
+    {
+      "text": "理",
+      "line_num": 6,
+      "left": 631,
+      "top": 1312,
+      "width": 41,
+      "height": 29,
+      "conf": 92.789291
+    },
+    {
+      "text": "和",
+      "line_num": 6,
+      "left": 678,
+      "top": 1314,
+      "width": 13,
+      "height": 26,
+      "conf": 93.301208
+    },
+    {
+      "text": "文",
+      "line_num": 6,
+      "left": 705,
+      "top": 1311,
+      "width": 34,
+      "height": 30,
+      "conf": 96.691368
+    },
+    {
+      "text": "化",
+      "line_num": 6,
+      "left": 741,
+      "top": 1311,
+      "width": 29,
+      "height": 30,
+      "conf": 96.288841
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 771,
+      "top": 1311,
+      "width": 16,
+      "height": 30,
+      "conf": 97.012886
+    },
+    {
+      "text": "界限",
+      "line_num": 6,
+      "left": 790,
+      "top": 1313,
+      "width": 72,
+      "height": 30,
+      "conf": 93.294838
+    },
+    {
+      "text": ",",
+      "line_num": 6,
+      "left": 861,
+      "top": 1307,
+      "width": 12,
+      "height": 48,
+      "conf": 92.200264
+    },
+    {
+      "text": "分",
+      "line_num": 6,
+      "left": 894,
+      "top": 1312,
+      "width": 22,
+      "height": 29,
+      "conf": 93.294357
+    },
+    {
+      "text": "享",
+      "line_num": 6,
+      "left": 927,
+      "top": 1311,
+      "width": 21,
+      "height": 30,
+      "conf": 91.511696
+    },
+    {
+      "text": "彼",
+      "line_num": 6,
+      "left": 960,
+      "top": 1311,
+      "width": 20,
+      "height": 30,
+      "conf": 93.103745
+    },
+    {
+      "text": "此",
+      "line_num": 7,
+      "left": 630,
+      "top": 1360,
+      "width": 30,
+      "height": 28,
+      "conf": 96.568832
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 668,
+      "top": 1359,
+      "width": 36,
+      "height": 30,
+      "conf": 96.825218
+    },
+    {
+      "text": "想",
+      "line_num": 7,
+      "left": 704,
+      "top": 1360,
+      "width": 31,
+      "height": 29,
+      "conf": 96.808548
+    },
+    {
+      "text": "法",
+      "line_num": 7,
+      "left": 743,
+      "top": 1359,
+      "width": 26,
+      "height": 30,
+      "conf": 92.819145
+    },
+    {
+      "text": "、",
+      "line_num": 7,
+      "left": 791,
+      "top": 1360,
+      "width": 9,
+      "height": 28,
+      "conf": 93.267616
+    },
+    {
+      "text": "經",
+      "line_num": 7,
+      "left": 801,
+      "top": 1361,
+      "width": 33,
+      "height": 28,
+      "conf": 92.737564
+    },
+    {
+      "text": "驗",
+      "line_num": 7,
+      "left": 839,
+      "top": 1360,
+      "width": 24,
+      "height": 29,
+      "conf": 91.464096
+    },
+    {
+      "text": "和",
+      "line_num": 7,
+      "left": 870,
+      "top": 1362,
+      "width": 13,
+      "height": 26,
+      "conf": 93.302422
+    },
+    {
+      "text": "智慧",
+      "line_num": 7,
+      "left": 887,
+      "top": 1359,
+      "width": 71,
+      "height": 32,
+      "conf": 91.368179
+    },
+    {
+      "text": ",",
+      "line_num": 7,
+      "left": 953,
+      "top": 1355,
+      "width": 9,
+      "height": 48,
+      "conf": 91.791344
+    },
+    {
+      "text": "从",
+      "line_num": 8,
+      "left": 630,
+      "top": 1408,
+      "width": 30,
+      "height": 29,
+      "conf": 96.683937
+    },
+    {
+      "text": "而",
+      "line_num": 8,
+      "left": 668,
+      "top": 1410,
+      "width": 24,
+      "height": 27,
+      "conf": 96.698738
+    },
+    {
+      "text": "建立",
+      "line_num": 8,
+      "left": 707,
+      "top": 1403,
+      "width": 66,
+      "height": 48,
+      "conf": 95.809593
+    },
+    {
+      "text": "起",
+      "line_num": 8,
+      "left": 773,
+      "top": 1407,
+      "width": 27,
+      "height": 30,
+      "conf": 96.890442
+    },
+    {
+      "text": "相互",
+      "line_num": 8,
+      "left": 803,
+      "top": 1409,
+      "width": 62,
+      "height": 28,
+      "conf": 96.447365
+    },
+    {
+      "text": "理解",
+      "line_num": 8,
+      "left": 869,
+      "top": 1407,
+      "width": 60,
+      "height": 30,
+      "conf": 93.267281
+    },
+    {
+      "text": "、",
+      "line_num": 8,
+      "left": 935,
+      "top": 1403,
+      "width": 24,
+      "height": 48,
+      "conf": 93.031181
+    },
+    {
+      "text": "尊",
+      "line_num": 8,
+      "left": 951,
+      "top": 1407,
+      "width": 28,
+      "height": 30,
+      "conf": 89.272095
+    },
+    {
+      "text": "重",
+      "line_num": 9,
+      "left": 631,
+      "top": 1456,
+      "width": 41,
+      "height": 29,
+      "conf": 89.405823
+    },
+    {
+      "text": "和",
+      "line_num": 9,
+      "left": 678,
+      "top": 1458,
+      "width": 13,
+      "height": 26,
+      "conf": 93.048172
+    },
+    {
+      "text": "信任",
+      "line_num": 9,
+      "left": 694,
+      "top": 1455,
+      "width": 172,
+      "height": 30,
+      "conf": 96.724709
+    },
+    {
+      "text": "的",
+      "line_num": 9,
+      "left": 771,
+      "top": 1451,
+      "width": 30,
+      "height": 48,
+      "conf": 96.981636
+    },
+    {
+      "text": "关系",
+      "line_num": 9,
+      "left": 801,
+      "top": 1451,
+      "width": 54,
+      "height": 48,
+      "conf": 93.020622
+    },
+    {
+      "text": "。",
+      "line_num": 9,
+      "left": 855,
+      "top": 1451,
+      "width": 15,
+      "height": 48,
+      "conf": 93.169662
+    },
+    {
+      "text": "科學",
+      "line_num": 1,
+      "left": 630,
+      "top": 1529,
+      "width": 77,
+      "height": 30,
+      "conf": 96.710472
+    },
+    {
+      "text": "研究",
+      "line_num": 1,
+      "left": 707,
+      "top": 1529,
+      "width": 49,
+      "height": 30,
+      "conf": 96.126068
+    },
+    {
+      "text": "通過",
+      "line_num": 1,
+      "left": 773,
+      "top": 1530,
+      "width": 47,
+      "height": 29,
+      "conf": 96.896851
+    },
+    {
+      "text": "嚴謹",
+      "line_num": 1,
+      "left": 836,
+      "top": 1529,
+      "width": 60,
+      "height": 30,
+      "conf": 83.868958
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 899,
+      "top": 1529,
+      "width": 16,
+      "height": 30,
+      "conf": 97.006935
+    },
+    {
+      "text": "方法",
+      "line_num": 1,
+      "left": 926,
+      "top": 1529,
+      "width": 54,
+      "height": 30,
+      "conf": 94.098717
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 631,
+      "top": 1578,
+      "width": 28,
+      "height": 29,
+      "conf": 96.67263
+    },
+    {
+      "text": "不",
+      "line_num": 2,
+      "left": 666,
+      "top": 1579,
+      "width": 31,
+      "height": 28,
+      "conf": 84.449684
+    },
+    {
+      "text": "懈",
+      "line_num": 2,
+      "left": 705,
+      "top": 1577,
+      "width": 33,
+      "height": 30,
+      "conf": 86.102585
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 739,
+      "top": 1577,
+      "width": 29,
+      "height": 30,
+      "conf": 92.750244
+    },
+    {
+      "text": "探索",
+      "line_num": 2,
+      "left": 767,
+      "top": 1577,
+      "width": 63,
+      "height": 32,
+      "conf": 92.939186
+    },
+    {
+      "text": ",",
+      "line_num": 2,
+      "left": 831,
+      "top": 1573,
+      "width": 12,
+      "height": 48,
+      "conf": 90.912086
+    },
+    {
+      "text": "正在",
+      "line_num": 2,
+      "left": 864,
+      "top": 1577,
+      "width": 52,
+      "height": 30,
+      "conf": 96.181862
+    },
+    {
+      "text": "逐步",
+      "line_num": 2,
+      "left": 930,
+      "top": 1577,
+      "width": 50,
+      "height": 30,
+      "conf": 96.860764
+    },
+    {
+      "text": "揭示",
+      "line_num": 3,
+      "left": 630,
+      "top": 1626,
+      "width": 61,
+      "height": 29,
+      "conf": 96.432129
+    },
+    {
+      "text": "宇宙",
+      "line_num": 3,
+      "left": 704,
+      "top": 1625,
+      "width": 51,
+      "height": 30,
+      "conf": 94.46434
+    },
+    {
+      "text": "中",
+      "line_num": 3,
+      "left": 764,
+      "top": 1625,
+      "width": 36,
+      "height": 30,
+      "conf": 90.886963
+    },
+    {
+      "text": "那些",
+      "line_num": 3,
+      "left": 808,
+      "top": 1626,
+      "width": 55,
+      "height": 29,
+      "conf": 93.263077
+    },
+    {
+      "text": "深",
+      "line_num": 3,
+      "left": 866,
+      "top": 1625,
+      "width": 36,
+      "height": 30,
+      "conf": 93.174706
+    },
+    {
+      "text": "藏",
+      "line_num": 3,
+      "left": 920,
+      "top": 1625,
+      "width": 10,
+      "height": 29,
+      "conf": 92.842606
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 935,
+      "top": 1625,
+      "width": 12,
+      "height": 30,
+      "conf": 93.069
+    },
+    {
+      "text": "奥",
+      "line_num": 3,
+      "left": 965,
+      "top": 1625,
+      "width": 15,
+      "height": 30,
+      "conf": 91.585373
+    },
+    {
+      "text": "秘",
+      "line_num": 4,
+      "left": 630,
+      "top": 1673,
+      "width": 140,
+      "height": 30,
+      "conf": 89.366753
+    },
+    {
+      "text": "和",
+      "line_num": 4,
+      "left": 674,
+      "top": 1669,
+      "width": 30,
+      "height": 48,
+      "conf": 92.677338
+    },
+    {
+      "text": "规律",
+      "line_num": 4,
+      "left": 704,
+      "top": 1673,
+      "width": 66,
+      "height": 30,
+      "conf": 92.938934
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 773,
+      "top": 1669,
+      "width": 27,
+      "height": 48,
+      "conf": 93.057793
+    },
+    {
+      "text": "每",
+      "line_num": 4,
+      "left": 800,
+      "top": 1673,
+      "width": 20,
+      "height": 30,
+      "conf": 90.336739
+    },
+    {
+      "text": "一",
+      "line_num": 4,
+      "left": 836,
+      "top": 1687,
+      "width": 16,
+      "height": 2,
+      "conf": 96.965683
+    },
+    {
+      "text": "个",
+      "line_num": 4,
+      "left": 869,
+      "top": 1673,
+      "width": 30,
+      "height": 30,
+      "conf": 95.422836
+    },
+    {
+      "text": "新",
+      "line_num": 4,
+      "left": 899,
+      "top": 1673,
+      "width": 30,
+      "height": 30,
+      "conf": 96.999832
+    },
+    {
+      "text": "的",
+      "line_num": 4,
+      "left": 931,
+      "top": 1673,
+      "width": 16,
+      "height": 30,
+      "conf": 96.956573
+    },
+    {
+      "text": "发",
+      "line_num": 4,
+      "left": 962,
+      "top": 1673,
+      "width": 17,
+      "height": 30,
+      "conf": 96.993294
+    },
+    {
+      "text": "現",
+      "line_num": 5,
+      "left": 631,
+      "top": 1723,
+      "width": 29,
+      "height": 28,
+      "conf": 92.741699
+    },
+    {
+      "text": "都",
+      "line_num": 5,
+      "left": 675,
+      "top": 1722,
+      "width": 28,
+      "height": 29,
+      "conf": 93.233932
+    },
+    {
+      "text": "像",
+      "line_num": 5,
+      "left": 711,
+      "top": 1721,
+      "width": 33,
+      "height": 30,
+      "conf": 92.287056
+    },
+    {
+      "text": "是",
+      "line_num": 5,
+      "left": 758,
+      "top": 1722,
+      "width": 13,
+      "height": 29,
+      "conf": 92.789108
+    },
+    {
+      "text": "打",
+      "line_num": 5,
+      "left": 771,
+      "top": 1723,
+      "width": 36,
+      "height": 28,
+      "conf": 96.806328
+    },
+    {
+      "text": "開",
+      "line_num": 5,
+      "left": 807,
+      "top": 1717,
+      "width": 27,
+      "height": 48,
+      "conf": 96.44696
+    },
+    {
+      "text": "了",
+      "line_num": 5,
+      "left": 834,
+      "top": 1723,
+      "width": 15,
+      "height": 28,
+      "conf": 96.762222
+    },
+    {
+      "text": "一",
+      "line_num": 5,
+      "left": 861,
+      "top": 1735,
+      "width": 23,
+      "height": 2,
+      "conf": 93.249672
+    },
+    {
+      "text": "扇",
+      "line_num": 5,
+      "left": 900,
+      "top": 1721,
+      "width": 14,
+      "height": 30,
+      "conf": 88.250542
+    },
+    {
+      "text": "通",
+      "line_num": 5,
+      "left": 930,
+      "top": 1722,
+      "width": 30,
+      "height": 29,
+      "conf": 93.21653
+    },
+    {
+      "text": "往",
+      "line_num": 5,
+      "left": 960,
+      "top": 1722,
+      "width": 20,
+      "height": 28,
+      "conf": 92.931038
+    },
+    {
+      "text": "未",
+      "line_num": 6,
+      "left": 631,
+      "top": 1769,
+      "width": 44,
+      "height": 30,
+      "conf": 93.280861
+    },
+    {
+      "text": "知",
+      "line_num": 6,
+      "left": 679,
+      "top": 1773,
+      "width": 12,
+      "height": 25,
+      "conf": 92.809464
+    },
+    {
+      "text": "世界",
+      "line_num": 6,
+      "left": 695,
+      "top": 1769,
+      "width": 167,
+      "height": 32,
+      "conf": 79.857605
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 777,
+      "top": 1765,
+      "width": 30,
+      "height": 48,
+      "conf": 96.049866
+    },
+    {
+      "text": "大",
+      "line_num": 6,
+      "left": 807,
+      "top": 1765,
+      "width": 36,
+      "height": 48,
+      "conf": 92.863213
+    },
+    {
+      "text": "门",
+      "line_num": 6,
+      "left": 843,
+      "top": 1765,
+      "width": 30,
+      "height": 48,
+      "conf": 92.357292
+    },
+    {
+      "text": "，",
+      "line_num": 6,
+      "left": 873,
+      "top": 1765,
+      "width": 24,
+      "height": 48,
+      "conf": 92.994019
+    },
+    {
+      "text": "同",
+      "line_num": 6,
+      "left": 888,
+      "top": 1769,
+      "width": 92,
+      "height": 30,
+      "conf": 93.081551
+    },
+    {
+      "text": "时",
+      "line_num": 6,
+      "left": 930,
+      "top": 1765,
+      "width": 27,
+      "height": 48,
+      "conf": 95.643227
+    },
+    {
+      "text": "也",
+      "line_num": 6,
+      "left": 957,
+      "top": 1765,
+      "width": 27,
+      "height": 48,
+      "conf": 96.767319
+    },
+    {
+      "text": "帶",
+      "line_num": 7,
+      "left": 631,
+      "top": 1818,
+      "width": 53,
+      "height": 29,
+      "conf": 94.779884
+    },
+    {
+      "text": "來",
+      "line_num": 7,
+      "left": 697,
+      "top": 1819,
+      "width": 14,
+      "height": 28,
+      "conf": 96.646866
+    },
+    {
+      "text": "了",
+      "line_num": 7,
+      "left": 711,
+      "top": 1813,
+      "width": 27,
+      "height": 48,
+      "conf": 96.775452
+    },
+    {
+      "text": "更",
+      "line_num": 7,
+      "left": 738,
+      "top": 1819,
+      "width": 18,
+      "height": 28,
+      "conf": 96.635582
+    },
+    {
+      "text": "多",
+      "line_num": 7,
+      "left": 768,
+      "top": 1818,
+      "width": 19,
+      "height": 29,
+      "conf": 93.290169
+    },
+    {
+      "text": "令",
+      "line_num": 7,
+      "left": 801,
+      "top": 1818,
+      "width": 19,
+      "height": 29,
+      "conf": 91.74633
+    },
+    {
+      "text": "人",
+      "line_num": 7,
+      "left": 831,
+      "top": 1818,
+      "width": 21,
+      "height": 29,
+      "conf": 93.297371
+    },
+    {
+      "text": "著",
+      "line_num": 7,
+      "left": 861,
+      "top": 1817,
+      "width": 23,
+      "height": 30,
+      "conf": 69.207573
+    },
+    {
+      "text": "迷",
+      "line_num": 7,
+      "left": 894,
+      "top": 1817,
+      "width": 33,
+      "height": 30,
+      "conf": 84.279755
+    },
+    {
+      "text": "的",
+      "line_num": 7,
+      "left": 931,
+      "top": 1817,
+      "width": 24,
+      "height": 30,
+      "conf": 93.289703
+    },
+    {
+      "text": "問",
+      "line_num": 7,
+      "left": 957,
+      "top": 1817,
+      "width": 21,
+      "height": 30,
+      "conf": 80.07354
+    },
+    {
+      "text": "OCR",
+      "line_num": 1,
+      "left": 608,
+      "top": 1892,
+      "width": 51,
+      "height": 18,
+      "conf": 96.811356
+    },
+    {
+      "text": "Test:",
+      "line_num": 1,
+      "left": 670,
+      "top": 1893,
+      "width": 52,
+      "height": 17,
+      "conf": 96.174019
+    },
+    {
+      "text": "chinese",
+      "line_num": 1,
+      "left": 731,
+      "top": 1892,
+      "width": 83,
+      "height": 18,
+      "conf": 92.570862
+    },
+    {
+      "text": "(three-column,",
+      "line_num": 1,
+      "left": 824,
+      "top": 1890,
+      "width": 163,
+      "height": 24,
+      "conf": 60.168312
+    },
+    {
+      "text": "Itr)",
+      "line_num": 1,
+      "left": 998,
+      "top": 1890,
+      "width": 30,
+      "height": 23,
+      "conf": 89.216499
+    },
+    {
+      "text": "题",
+      "line_num": 1,
+      "left": 1068,
+      "top": 347,
+      "width": 39,
+      "height": 30,
+      "conf": 92.643524
+    },
+    {
+      "text": "，",
+      "line_num": 1,
+      "left": 1132,
+      "top": 346,
+      "width": 7,
+      "height": 29,
+      "conf": 92.598259
+    },
+    {
+      "text": "激",
+      "line_num": 1,
+      "left": 1139,
+      "top": 345,
+      "width": 23,
+      "height": 30,
+      "conf": 91.072517
+    },
+    {
+      "text": "励",
+      "line_num": 1,
+      "left": 1178,
+      "top": 345,
+      "width": 33,
+      "height": 30,
+      "conf": 92.015518
+    },
+    {
+      "text": "着",
+      "line_num": 1,
+      "left": 1228,
+      "top": 346,
+      "width": 10,
+      "height": 29,
+      "conf": 93.213188
+    },
+    {
+      "text": "科学",
+      "line_num": 1,
+      "left": 1242,
+      "top": 345,
+      "width": 47,
+      "height": 30,
+      "conf": 96.059441
+    },
+    {
+      "text": "家",
+      "line_num": 1,
+      "left": 1304,
+      "top": 345,
+      "width": 27,
+      "height": 30,
+      "conf": 93.219696
+    },
+    {
+      "text": "们",
+      "line_num": 1,
+      "left": 1334,
+      "top": 346,
+      "width": 30,
+      "height": 29,
+      "conf": 92.584274
+    },
+    {
+      "text": "继续",
+      "line_num": 1,
+      "left": 1368,
+      "top": 345,
+      "width": 49,
+      "height": 29,
+      "conf": 96.497215
+    },
+    {
+      "text": "前",
+      "line_num": 2,
+      "left": 1068,
+      "top": 393,
+      "width": 71,
+      "height": 32,
+      "conf": 93.236214
+    },
+    {
+      "text": "行",
+      "line_num": 2,
+      "left": 1121,
+      "top": 389,
+      "width": 30,
+      "height": 48,
+      "conf": 91.564995
+    },
+    {
+      "text": "，",
+      "line_num": 2,
+      "left": 1151,
+      "top": 389,
+      "width": 27,
+      "height": 48,
+      "conf": 91.793488
+    },
+    {
+      "text": "探",
+      "line_num": 2,
+      "left": 1164,
+      "top": 393,
+      "width": 125,
+      "height": 30,
+      "conf": 92.164955
+    },
+    {
+      "text": "索",
+      "line_num": 2,
+      "left": 1211,
+      "top": 389,
+      "width": 30,
+      "height": 48,
+      "conf": 93.017059
+    },
+    {
+      "text": "更",
+      "line_num": 2,
+      "left": 1241,
+      "top": 393,
+      "width": 33,
+      "height": 30,
+      "conf": 93.168427
+    },
+    {
+      "text": "广阔",
+      "line_num": 2,
+      "left": 1294,
+      "top": 393,
+      "width": 42,
+      "height": 30,
+      "conf": 71.666145
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 1337,
+      "top": 393,
+      "width": 15,
+      "height": 30,
+      "conf": 94.386673
+    },
+    {
+      "text": "未",
+      "line_num": 2,
+      "left": 1370,
+      "top": 393,
+      "width": 30,
+      "height": 30,
+      "conf": 89.672203
+    },
+    {
+      "text": "知",
+      "line_num": 2,
+      "left": 1405,
+      "top": 397,
+      "width": 11,
+      "height": 25,
+      "conf": 89.682381
+    },
+    {
+      "text": "领域",
+      "line_num": 3,
+      "left": 1068,
+      "top": 442,
+      "width": 75,
+      "height": 29,
+      "conf": 92.941452
+    },
+    {
+      "text": "。",
+      "line_num": 3,
+      "left": 1137,
+      "top": 438,
+      "width": 10,
+      "height": 47,
+      "conf": 92.643448
+    },
+    {
+      "text": "艺术",
+      "line_num": 1,
+      "left": 1068,
+      "top": 515,
+      "width": 61,
+      "height": 30,
+      "conf": 96.717857
+    },
+    {
+      "text": "以",
+      "line_num": 1,
+      "left": 1142,
+      "top": 516,
+      "width": 20,
+      "height": 29,
+      "conf": 96.748512
+    },
+    {
+      "text": "其",
+      "line_num": 1,
+      "left": 1178,
+      "top": 515,
+      "width": 30,
+      "height": 30,
+      "conf": 96.99189
+    },
+    {
+      "text": "独特",
+      "line_num": 1,
+      "left": 1211,
+      "top": 515,
+      "width": 60,
+      "height": 30,
+      "conf": 95.366966
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 1273,
+      "top": 515,
+      "width": 15,
+      "height": 30,
+      "conf": 96.968056
+    },
+    {
+      "text": "方式",
+      "line_num": 1,
+      "left": 1304,
+      "top": 511,
+      "width": 63,
+      "height": 48,
+      "conf": 96.682083
+    },
+    {
+      "text": "表达",
+      "line_num": 1,
+      "left": 1367,
+      "top": 516,
+      "width": 51,
+      "height": 29,
+      "conf": 95.934074
+    },
+    {
+      "text": "和",
+      "line_num": 2,
+      "left": 1068,
+      "top": 564,
+      "width": 41,
+      "height": 29,
+      "conf": 94.79274
+    },
+    {
+      "text": "传递",
+      "line_num": 2,
+      "left": 1109,
+      "top": 563,
+      "width": 70,
+      "height": 30,
+      "conf": 95.240707
+    },
+    {
+      "text": "那些",
+      "line_num": 2,
+      "left": 1181,
+      "top": 559,
+      "width": 57,
+      "height": 48,
+      "conf": 96.289772
+    },
+    {
+      "text": "超越",
+      "line_num": 2,
+      "left": 1238,
+      "top": 563,
+      "width": 65,
+      "height": 30,
+      "conf": 96.860695
+    },
+    {
+      "text": "语言",
+      "line_num": 2,
+      "left": 1304,
+      "top": 563,
+      "width": 69,
+      "height": 30,
+      "conf": 96.558037
+    },
+    {
+      "text": "文字",
+      "line_num": 2,
+      "left": 1373,
+      "top": 559,
+      "width": 44,
+      "height": 48,
+      "conf": 96.686676
+    },
+    {
+      "text": "限制",
+      "line_num": 3,
+      "left": 1069,
+      "top": 612,
+      "width": 75,
+      "height": 29,
+      "conf": 96.828117
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 1146,
+      "top": 611,
+      "width": 14,
+      "height": 30,
+      "conf": 96.975731
+    },
+    {
+      "text": "深刻",
+      "line_num": 3,
+      "left": 1176,
+      "top": 611,
+      "width": 55,
+      "height": 30,
+      "conf": 96.864159
+    },
+    {
+      "text": "情感",
+      "line_num": 3,
+      "left": 1242,
+      "top": 607,
+      "width": 63,
+      "height": 48,
+      "conf": 96.443756
+    },
+    {
+      "text": "和",
+      "line_num": 3,
+      "left": 1305,
+      "top": 612,
+      "width": 15,
+      "height": 29,
+      "conf": 96.995476
+    },
+    {
+      "text": "抽象",
+      "line_num": 3,
+      "left": 1329,
+      "top": 611,
+      "width": 65,
+      "height": 30,
+      "conf": 92.573807
+    },
+    {
+      "text": "思",
+      "line_num": 3,
+      "left": 1398,
+      "top": 613,
+      "width": 19,
+      "height": 28,
+      "conf": 93.113297
+    },
+    {
+      "text": "想",
+      "line_num": 4,
+      "left": 1068,
+      "top": 660,
+      "width": 43,
+      "height": 29,
+      "conf": 92.638832
+    },
+    {
+      "text": "。",
+      "line_num": 4,
+      "left": 1112,
+      "top": 655,
+      "width": 30,
+      "height": 48,
+      "conf": 93.059608
+    },
+    {
+      "text": "无",
+      "line_num": 4,
+      "left": 1142,
+      "top": 660,
+      "width": 33,
+      "height": 29,
+      "conf": 90.438896
+    },
+    {
+      "text": "论",
+      "line_num": 4,
+      "left": 1178,
+      "top": 659,
+      "width": 16,
+      "height": 30,
+      "conf": 93.14312
+    },
+    {
+      "text": "是",
+      "line_num": 4,
+      "left": 1208,
+      "top": 660,
+      "width": 36,
+      "height": 29,
+      "conf": 97.000305
+    },
+    {
+      "text": "绘画",
+      "line_num": 4,
+      "left": 1260,
+      "top": 661,
+      "width": 43,
+      "height": 28,
+      "conf": 92.623894
+    },
+    {
+      "text": "、",
+      "line_num": 4,
+      "left": 1307,
+      "top": 655,
+      "width": 24,
+      "height": 48,
+      "conf": 93.237877
+    },
+    {
+      "text": "音",
+      "line_num": 4,
+      "left": 1324,
+      "top": 659,
+      "width": 75,
+      "height": 30,
+      "conf": 88.809326
+    },
+    {
+      "text": "乐",
+      "line_num": 4,
+      "left": 1370,
+      "top": 655,
+      "width": 24,
+      "height": 48,
+      "conf": 92.938759
+    },
+    {
+      "text": "、",
+      "line_num": 4,
+      "left": 1394,
+      "top": 655,
+      "width": 9,
+      "height": 48,
+      "conf": 81.489731
+    },
+    {
+      "text": "雕塑",
+      "line_num": 5,
+      "left": 1068,
+      "top": 707,
+      "width": 199,
+      "height": 32,
+      "conf": 88.130066
+    },
+    {
+      "text": "還",
+      "line_num": 5,
+      "left": 1142,
+      "top": 703,
+      "width": 30,
+      "height": 48,
+      "conf": 71.009422
+    },
+    {
+      "text": "是",
+      "line_num": 5,
+      "left": 1172,
+      "top": 703,
+      "width": 39,
+      "height": 48,
+      "conf": 96.753952
+    },
+    {
+      "text": "文",
+      "line_num": 5,
+      "left": 1211,
+      "top": 703,
+      "width": 36,
+      "height": 48,
+      "conf": 96.355583
+    },
+    {
+      "text": "學",
+      "line_num": 5,
+      "left": 1247,
+      "top": 703,
+      "width": 21,
+      "height": 48,
+      "conf": 93.182846
+    },
+    {
+      "text": ",",
+      "line_num": 5,
+      "left": 1268,
+      "top": 703,
+      "width": 12,
+      "height": 48,
+      "conf": 91.767883
+    },
+    {
+      "text": "這",
+      "line_num": 5,
+      "left": 1304,
+      "top": 707,
+      "width": 36,
+      "height": 30,
+      "conf": 93.252289
+    },
+    {
+      "text": "些",
+      "line_num": 5,
+      "left": 1357,
+      "top": 707,
+      "width": 16,
+      "height": 30,
+      "conf": 91.640793
+    },
+    {
+      "text": "富有",
+      "line_num": 5,
+      "left": 1373,
+      "top": 703,
+      "width": 44,
+      "height": 48,
+      "conf": 87.657181
+    },
+    {
+      "text": "创意",
+      "line_num": 6,
+      "left": 1068,
+      "top": 755,
+      "width": 76,
+      "height": 30,
+      "conf": 96.90757
+    },
+    {
+      "text": "的",
+      "line_num": 6,
+      "left": 1145,
+      "top": 755,
+      "width": 15,
+      "height": 30,
+      "conf": 96.505196
+    },
+    {
+      "text": "艺术",
+      "line_num": 6,
+      "left": 1178,
+      "top": 751,
+      "width": 60,
+      "height": 48,
+      "conf": 96.620491
+    },
+    {
+      "text": "作品",
+      "line_num": 6,
+      "left": 1238,
+      "top": 755,
+      "width": 50,
+      "height": 30,
+      "conf": 95.671089
+    },
+    {
+      "text": "不",
+      "line_num": 6,
+      "left": 1304,
+      "top": 755,
+      "width": 29,
+      "height": 30,
+      "conf": 93.254295
+    },
+    {
+      "text": "仅",
+      "line_num": 6,
+      "left": 1334,
+      "top": 757,
+      "width": 20,
+      "height": 28,
+      "conf": 91.75589
+    },
+    {
+      "text": "能",
+      "line_num": 6,
+      "left": 1364,
+      "top": 756,
+      "width": 21,
+      "height": 29,
+      "conf": 96.843781
+    },
+    {
+      "text": "激发",
+      "line_num": 1,
+      "left": 1068,
+      "top": 803,
+      "width": 83,
+      "height": 30,
+      "conf": 95.518478
+    },
+    {
+      "text": "人",
+      "line_num": 1,
+      "left": 1164,
+      "top": 803,
+      "width": 8,
+      "height": 30,
+      "conf": 90.678589
+    },
+    {
+      "text": "们",
+      "line_num": 1,
+      "left": 1174,
+      "top": 804,
+      "width": 31,
+      "height": 29,
+      "conf": 91.291473
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 1209,
+      "top": 803,
+      "width": 32,
+      "height": 30,
+      "conf": 96.776222
+    },
+    {
+      "text": "想象",
+      "line_num": 1,
+      "left": 1241,
+      "top": 803,
+      "width": 72,
+      "height": 30,
+      "conf": 91.812653
+    },
+    {
+      "text": "力",
+      "line_num": 1,
+      "left": 1313,
+      "top": 799,
+      "width": 21,
+      "height": 48,
+      "conf": 93.171715
+    },
+    {
+      "text": "和",
+      "line_num": 1,
+      "left": 1334,
+      "top": 804,
+      "width": 18,
+      "height": 29,
+      "conf": 93.294189
+    },
+    {
+      "text": "创造",
+      "line_num": 1,
+      "left": 1364,
+      "top": 804,
+      "width": 53,
+      "height": 29,
+      "conf": 95.881569
+    },
+    {
+      "text": "力",
+      "line_num": 2,
+      "left": 1069,
+      "top": 852,
+      "width": 38,
+      "height": 31,
+      "conf": 91.683327
+    },
+    {
+      "text": ",",
+      "line_num": 2,
+      "left": 1107,
+      "top": 847,
+      "width": 12,
+      "height": 48,
+      "conf": 91.809563
+    },
+    {
+      "text": "還",
+      "line_num": 2,
+      "left": 1140,
+      "top": 852,
+      "width": 33,
+      "height": 29,
+      "conf": 95.042999
+    },
+    {
+      "text": "能",
+      "line_num": 2,
+      "left": 1181,
+      "top": 852,
+      "width": 28,
+      "height": 29,
+      "conf": 96.877663
+    },
+    {
+      "text": "挑戰",
+      "line_num": 2,
+      "left": 1216,
+      "top": 852,
+      "width": 41,
+      "height": 29,
+      "conf": 94.500908
+    },
+    {
+      "text": "我",
+      "line_num": 2,
+      "left": 1272,
+      "top": 851,
+      "width": 36,
+      "height": 30,
+      "conf": 82.47876
+    },
+    {
+      "text": "們",
+      "line_num": 2,
+      "left": 1310,
+      "top": 853,
+      "width": 31,
+      "height": 28,
+      "conf": 93.050903
+    },
+    {
+      "text": "既",
+      "line_num": 2,
+      "left": 1341,
+      "top": 847,
+      "width": 24,
+      "height": 48,
+      "conf": 92.185516
+    },
+    {
+      "text": "有",
+      "line_num": 2,
+      "left": 1365,
+      "top": 851,
+      "width": 20,
+      "height": 30,
+      "conf": 93.090065
+    },
+    {
+      "text": "的",
+      "line_num": 2,
+      "left": 1392,
+      "top": 851,
+      "width": 24,
+      "height": 30,
+      "conf": 96.262245
+    },
+    {
+      "text": "觀念",
+      "line_num": 3,
+      "left": 1068,
+      "top": 900,
+      "width": 71,
+      "height": 31,
+      "conf": 90.988037
+    },
+    {
+      "text": ",",
+      "line_num": 3,
+      "left": 1142,
+      "top": 895,
+      "width": 12,
+      "height": 48,
+      "conf": 91.376259
+    },
+    {
+      "text": "引導",
+      "line_num": 3,
+      "left": 1165,
+      "top": 899,
+      "width": 251,
+      "height": 30,
+      "conf": 92.925758
+    },
+    {
+      "text": "我",
+      "line_num": 3,
+      "left": 1238,
+      "top": 895,
+      "width": 36,
+      "height": 48,
+      "conf": 93.161476
+    },
+    {
+      "text": "們",
+      "line_num": 3,
+      "left": 1274,
+      "top": 895,
+      "width": 30,
+      "height": 48,
+      "conf": 92.890396
+    },
+    {
+      "text": "從",
+      "line_num": 3,
+      "left": 1304,
+      "top": 895,
+      "width": 30,
+      "height": 48,
+      "conf": 96.007866
+    },
+    {
+      "text": "全",
+      "line_num": 3,
+      "left": 1334,
+      "top": 895,
+      "width": 30,
+      "height": 48,
+      "conf": 96.960236
+    },
+    {
+      "text": "新",
+      "line_num": 3,
+      "left": 1364,
+      "top": 895,
+      "width": 33,
+      "height": 48,
+      "conf": 96.389565
+    },
+    {
+      "text": "的",
+      "line_num": 3,
+      "left": 1397,
+      "top": 895,
+      "width": 21,
+      "height": 48,
+      "conf": 97.007568
+    },
+    {
+      "text": "角度",
+      "line_num": 4,
+      "left": 1068,
+      "top": 947,
+      "width": 61,
+      "height": 30,
+      "conf": 95.627403
+    },
+    {
+      "text": "来",
+      "line_num": 4,
+      "left": 1146,
+      "top": 947,
+      "width": 36,
+      "height": 30,
+      "conf": 96.90081
+    },
+    {
+      "text": "审视",
+      "line_num": 4,
+      "left": 1196,
+      "top": 947,
+      "width": 30,
+      "height": 30,
+      "conf": 95.873772
+    },
+    {
+      "text": "和",
+      "line_num": 4,
+      "left": 1237,
+      "top": 948,
+      "width": 30,
+      "height": 29,
+      "conf": 97.007828
+    },
+    {
+      "text": "理解",
+      "line_num": 4,
+      "left": 1270,
+      "top": 947,
+      "width": 51,
+      "height": 30,
+      "conf": 96.275108
+    },
+    {
+      "text": "这",
+      "line_num": 4,
+      "left": 1337,
+      "top": 947,
+      "width": 16,
+      "height": 30,
+      "conf": 96.777512
+    },
+    {
+      "text": "个",
+      "line_num": 4,
+      "left": 1366,
+      "top": 948,
+      "width": 20,
+      "height": 29,
+      "conf": 93.272278
+    },
+    {
+      "text": "复",
+      "line_num": 4,
+      "left": 1395,
+      "top": 947,
+      "width": 22,
+      "height": 30,
+      "conf": 93.184311
+    },
+    {
+      "text": "杂",
+      "line_num": 1,
+      "left": 1068,
+      "top": 995,
+      "width": 29,
+      "height": 30,
+      "conf": 90.68866
+    },
+    {
+      "text": "多",
+      "line_num": 1,
+      "left": 1106,
+      "top": 996,
+      "width": 22,
+      "height": 29,
+      "conf": 92.55452
+    },
+    {
+      "text": "彩",
+      "line_num": 1,
+      "left": 1139,
+      "top": 995,
+      "width": 37,
+      "height": 30,
+      "conf": 85.235603
+    },
+    {
+      "text": "的",
+      "line_num": 1,
+      "left": 1178,
+      "top": 995,
+      "width": 14,
+      "height": 30,
+      "conf": 96.970924
+    },
+    {
+      "text": "世界",
+      "line_num": 1,
+      "left": 1196,
+      "top": 996,
+      "width": 75,
+      "height": 29,
+      "conf": 93.274071
+    },
+    {
+      "text": "。",
+      "line_num": 1,
+      "left": 1259,
+      "top": 991,
+      "width": 15,
+      "height": 48,
+      "conf": 93.078506
+    }
+  ]
+}
