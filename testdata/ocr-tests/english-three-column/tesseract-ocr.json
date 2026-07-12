@@ -1,0 +1,1498 @@
+{
+  "words": [
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 402,
+      "top": 218,
+      "width": 112,
+      "height": 47,
+      "conf": 96.657303
+    },
+    {
+      "text": "Fabric",
+      "line_num": 1,
+      "left": 537,
+      "top": 218,
+      "width": 187,
+      "height": 47,
+      "conf": 96.634392
+    },
+    {
+      "text": "of",
+      "line_num": 1,
+      "left": 745,
+      "top": 218,
+      "width": 59,
+      "height": 47,
+      "conf": 96.42115
+    },
+    {
+      "text": "Everyday",
+      "line_num": 1,
+      "left": 825,
+      "top": 218,
+      "width": 275,
+      "height": 58,
+      "conf": 96.286728
+    },
+    {
+      "text": "Life",
+      "line_num": 1,
+      "left": 1122,
+      "top": 218,
+      "width": 107,
+      "height": 47,
+      "conf": 96.513947
+    },
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 192,
+      "top": 349,
+      "width": 53,
+      "height": 23,
+      "conf": 96.113319
+    },
+    {
+      "text": "quick",
+      "line_num": 1,
+      "left": 255,
+      "top": 349,
+      "width": 77,
+      "height": 29,
+      "conf": 96.113319
+    },
+    {
+      "text": "brown",
+      "line_num": 1,
+      "left": 343,
+      "top": 349,
+      "width": 85,
+      "height": 23,
+      "conf": 96.820549
+    },
+    {
+      "text": "fox",
+      "line_num": 1,
+      "left": 439,
+      "top": 349,
+      "width": 44,
+      "height": 23,
+      "conf": 96.65509
+    },
+    {
+      "text": "jumps",
+      "line_num": 2,
+      "left": 191,
+      "top": 397,
+      "width": 87,
+      "height": 29,
+      "conf": 96.047432
+    },
+    {
+      "text": "over",
+      "line_num": 2,
+      "left": 289,
+      "top": 403,
+      "width": 61,
+      "height": 17,
+      "conf": 96.047432
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 359,
+      "top": 397,
+      "width": 45,
+      "height": 23,
+      "conf": 96.992523
+    },
+    {
+      "text": "lazy",
+      "line_num": 2,
+      "left": 415,
+      "top": 397,
+      "width": 53,
+      "height": 30,
+      "conf": 96.125839
+    },
+    {
+      "text": "dog.",
+      "line_num": 2,
+      "left": 479,
+      "top": 397,
+      "width": 61,
+      "height": 30,
+      "conf": 96.495712
+    },
+    {
+      "text": "This",
+      "line_num": 3,
+      "left": 192,
+      "top": 445,
+      "width": 58,
+      "height": 23,
+      "conf": 96.860085
+    },
+    {
+      "text": "sentence",
+      "line_num": 3,
+      "left": 261,
+      "top": 446,
+      "width": 129,
+      "height": 22,
+      "conf": 96.846771
+    },
+    {
+      "text": "contains",
+      "line_num": 3,
+      "left": 400,
+      "top": 445,
+      "width": 120,
+      "height": 23,
+      "conf": 96.216187
+    },
+    {
+      "text": "every",
+      "line_num": 4,
+      "left": 193,
+      "top": 499,
+      "width": 76,
+      "height": 24,
+      "conf": 96.863091
+    },
+    {
+      "text": "letter",
+      "line_num": 4,
+      "left": 280,
+      "top": 493,
+      "width": 70,
+      "height": 23,
+      "conf": 97.002625
+    },
+    {
+      "text": "of",
+      "line_num": 4,
+      "left": 360,
+      "top": 493,
+      "width": 27,
+      "height": 23,
+      "conf": 97.010849
+    },
+    {
+      "text": "the",
+      "line_num": 4,
+      "left": 396,
+      "top": 493,
+      "width": 44,
+      "height": 23,
+      "conf": 96.978722
+    },
+    {
+      "text": "alphabet",
+      "line_num": 5,
+      "left": 193,
+      "top": 541,
+      "width": 123,
+      "height": 29,
+      "conf": 96.165268
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 326,
+      "top": 541,
+      "width": 51,
+      "height": 23,
+      "conf": 96.575027
+    },
+    {
+      "text": "is",
+      "line_num": 5,
+      "left": 390,
+      "top": 541,
+      "width": 20,
+      "height": 23,
+      "conf": 96.133812
+    },
+    {
+      "text": "commonly",
+      "line_num": 6,
+      "left": 193,
+      "top": 589,
+      "width": 148,
+      "height": 30,
+      "conf": 92.305733
+    },
+    {
+      "text": "used",
+      "line_num": 6,
+      "left": 352,
+      "top": 589,
+      "width": 66,
+      "height": 23,
+      "conf": 96.476845
+    },
+    {
+      "text": "for",
+      "line_num": 6,
+      "left": 429,
+      "top": 589,
+      "width": 39,
+      "height": 23,
+      "conf": 96.873291
+    },
+    {
+      "text": "testing.",
+      "line_num": 7,
+      "left": 192,
+      "top": 637,
+      "width": 103,
+      "height": 30,
+      "conf": 94.995537
+    },
+    {
+      "text": "Technology",
+      "line_num": 1,
+      "left": 192,
+      "top": 711,
+      "width": 163,
+      "height": 30,
+      "conf": 96.040268
+    },
+    {
+      "text": "continues",
+      "line_num": 1,
+      "left": 365,
+      "top": 711,
+      "width": 137,
+      "height": 23,
+      "conf": 95.638283
+    },
+    {
+      "text": "to",
+      "line_num": 1,
+      "left": 512,
+      "top": 712,
+      "width": 28,
+      "height": 22,
+      "conf": 95.638283
+    },
+    {
+      "text": "advance",
+      "line_num": 2,
+      "left": 193,
+      "top": 759,
+      "width": 120,
+      "height": 23,
+      "conf": 96.67955
+    },
+    {
+      "text": "at",
+      "line_num": 2,
+      "left": 323,
+      "top": 760,
+      "width": 26,
+      "height": 22,
+      "conf": 96.579353
+    },
+    {
+      "text": "a",
+      "line_num": 2,
+      "left": 359,
+      "top": 765,
+      "width": 16,
+      "height": 17,
+      "conf": 96.474297
+    },
+    {
+      "text": "rapid",
+      "line_num": 2,
+      "left": 387,
+      "top": 759,
+      "width": 69,
+      "height": 29,
+      "conf": 96.272392
+    },
+    {
+      "text": "pace.",
+      "line_num": 2,
+      "left": 468,
+      "top": 765,
+      "width": 75,
+      "height": 23,
+      "conf": 96.775032
+    },
+    {
+      "text": "New",
+      "line_num": 3,
+      "left": 194,
+      "top": 807,
+      "width": 62,
+      "height": 23,
+      "conf": 95.192871
+    },
+    {
+      "text": "innovations",
+      "line_num": 3,
+      "left": 268,
+      "top": 807,
+      "width": 160,
+      "height": 23,
+      "conf": 95.192871
+    },
+    {
+      "text": "emerge",
+      "line_num": 3,
+      "left": 439,
+      "top": 813,
+      "width": 105,
+      "height": 24,
+      "conf": 96.698502
+    },
+    {
+      "text": "daily,",
+      "line_num": 4,
+      "left": 193,
+      "top": 855,
+      "width": 69,
+      "height": 30,
+      "conf": 96.686523
+    },
+    {
+      "text": "transforming",
+      "line_num": 4,
+      "left": 274,
+      "top": 855,
+      "width": 179,
+      "height": 30,
+      "conf": 95.910347
+    },
+    {
+      "text": "how",
+      "line_num": 4,
+      "left": 465,
+      "top": 855,
+      "width": 58,
+      "height": 23,
+      "conf": 96.783852
+    },
+    {
+      "text": "we",
+      "line_num": 5,
+      "left": 192,
+      "top": 909,
+      "width": 41,
+      "height": 17,
+      "conf": 96.887856
+    },
+    {
+      "text": "live",
+      "line_num": 5,
+      "left": 244,
+      "top": 903,
+      "width": 45,
+      "height": 23,
+      "conf": 96.954002
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 299,
+      "top": 903,
+      "width": 52,
+      "height": 23,
+      "conf": 96.779572
+    },
+    {
+      "text": "work",
+      "line_num": 5,
+      "left": 362,
+      "top": 903,
+      "width": 69,
+      "height": 23,
+      "conf": 96.565117
+    },
+    {
+      "text": "in",
+      "line_num": 5,
+      "left": 442,
+      "top": 903,
+      "width": 21,
+      "height": 23,
+      "conf": 96.382141
+    },
+    {
+      "text": "fundamental",
+      "line_num": 6,
+      "left": 192,
+      "top": 951,
+      "width": 176,
+      "height": 23,
+      "conf": 95.818245
+    },
+    {
+      "text": "ways.",
+      "line_num": 6,
+      "left": 379,
+      "top": 957,
+      "width": 80,
+      "height": 24,
+      "conf": 96.080139
+    },
+    {
+      "text": "Ancient",
+      "line_num": 1,
+      "left": 192,
+      "top": 1027,
+      "width": 107,
+      "height": 23,
+      "conf": 96.509979
+    },
+    {
+      "text": "civilizations",
+      "line_num": 1,
+      "left": 310,
+      "top": 1027,
+      "width": 161,
+      "height": 23,
+      "conf": 96.070938
+    },
+    {
+      "text": "built",
+      "line_num": 1,
+      "left": 483,
+      "top": 1027,
+      "width": 59,
+      "height": 23,
+      "conf": 96.922203
+    },
+    {
+      "text": "monuments",
+      "line_num": 2,
+      "left": 194,
+      "top": 1076,
+      "width": 167,
+      "height": 22,
+      "conf": 94.629044
+    },
+    {
+      "text": "that",
+      "line_num": 2,
+      "left": 371,
+      "top": 1075,
+      "width": 54,
+      "height": 23,
+      "conf": 96.54438
+    },
+    {
+      "text": "still",
+      "line_num": 2,
+      "left": 435,
+      "top": 1075,
+      "width": 45,
+      "height": 23,
+      "conf": 96.683517
+    },
+    {
+      "text": "stand",
+      "line_num": 3,
+      "left": 193,
+      "top": 1123,
+      "width": 77,
+      "height": 23,
+      "conf": 96.28521
+    },
+    {
+      "text": "today.",
+      "line_num": 3,
+      "left": 281,
+      "top": 1123,
+      "width": 85,
+      "height": 30,
+      "conf": 96.552139
+    },
+    {
+      "text": "These",
+      "line_num": 3,
+      "left": 377,
+      "top": 1123,
+      "width": 86,
+      "height": 23,
+      "conf": 96.473824
+    },
+    {
+      "text": "structures",
+      "line_num": 4,
+      "left": 193,
+      "top": 1172,
+      "width": 141,
+      "height": 22,
+      "conf": 96.347839
+    },
+    {
+      "text": "demonstrate",
+      "line_num": 4,
+      "left": 345,
+      "top": 1171,
+      "width": 179,
+      "height": 23,
+      "conf": 96.257195
+    },
+    {
+      "text": "the",
+      "line_num": 5,
+      "left": 192,
+      "top": 1219,
+      "width": 44,
+      "height": 23,
+      "conf": 96.699265
+    },
+    {
+      "text": "ingenuity",
+      "line_num": 5,
+      "left": 248,
+      "top": 1219,
+      "width": 127,
+      "height": 30,
+      "conf": 95.658218
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 385,
+      "top": 1219,
+      "width": 51,
+      "height": 23,
+      "conf": 96.087952
+    },
+    {
+      "text": "determination",
+      "line_num": 6,
+      "left": 193,
+      "top": 1267,
+      "width": 194,
+      "height": 23,
+      "conf": 96.452141
+    },
+    {
+      "text": "of",
+      "line_num": 6,
+      "left": 399,
+      "top": 1267,
+      "width": 27,
+      "height": 23,
+      "conf": 96.665665
+    },
+    {
+      "text": "our",
+      "line_num": 6,
+      "left": 436,
+      "top": 1273,
+      "width": 45,
+      "height": 17,
+      "conf": 96.953514
+    },
+    {
+      "text": "ancestors.",
+      "line_num": 7,
+      "left": 193,
+      "top": 1316,
+      "width": 146,
+      "height": 22,
+      "conf": 96.732704
+    },
+    {
+      "text": "Education",
+      "line_num": 1,
+      "left": 194,
+      "top": 1389,
+      "width": 140,
+      "height": 23,
+      "conf": 95.492973
+    },
+    {
+      "text": "is",
+      "line_num": 1,
+      "left": 347,
+      "top": 1389,
+      "width": 20,
+      "height": 23,
+      "conf": 96.574799
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 377,
+      "top": 1389,
+      "width": 44,
+      "height": 23,
+      "conf": 96.929199
+    },
+    {
+      "text": "foundation",
+      "line_num": 2,
+      "left": 192,
+      "top": 1437,
+      "width": 151,
+      "height": 23,
+      "conf": 95.954315
+    },
+    {
+      "text": "of",
+      "line_num": 2,
+      "left": 355,
+      "top": 1437,
+      "width": 27,
+      "height": 23,
+      "conf": 95.954315
+    },
+    {
+      "text": "progress",
+      "line_num": 2,
+      "left": 392,
+      "top": 1443,
+      "width": 123,
+      "height": 24,
+      "conf": 96.686951
+    },
+    {
+      "text": "and",
+      "line_num": 3,
+      "left": 193,
+      "top": 1485,
+      "width": 51,
+      "height": 23,
+      "conf": 96.379219
+    },
+    {
+      "text": "development.",
+      "line_num": 3,
+      "left": 256,
+      "top": 1485,
+      "width": 191,
+      "height": 29,
+      "conf": 96.306923
+    },
+    {
+      "text": "Through",
+      "line_num": 4,
+      "left": 192,
+      "top": 1533,
+      "width": 117,
+      "height": 30,
+      "conf": 96.460602
+    },
+    {
+      "text": "learning,",
+      "line_num": 4,
+      "left": 322,
+      "top": 1533,
+      "width": 118,
+      "height": 30,
+      "conf": 96.656693
+    },
+    {
+      "text": "individuals",
+      "line_num": 5,
+      "left": 194,
+      "top": 1581,
+      "width": 148,
+      "height": 23,
+      "conf": 96.20079
+    },
+    {
+      "text": "gain",
+      "line_num": 5,
+      "left": 353,
+      "top": 1581,
+      "width": 58,
+      "height": 30,
+      "conf": 96.768456
+    },
+    {
+      "text": "the",
+      "line_num": 5,
+      "left": 422,
+      "top": 1581,
+      "width": 44,
+      "height": 23,
+      "conf": 96.960899
+    },
+    {
+      "text": "tools",
+      "line_num": 5,
+      "left": 475,
+      "top": 1581,
+      "width": 69,
+      "height": 23,
+      "conf": 96.468506
+    },
+    {
+      "text": "needed",
+      "line_num": 6,
+      "left": 194,
+      "top": 1629,
+      "width": 103,
+      "height": 23,
+      "conf": 96.54821
+    },
+    {
+      "text": "to",
+      "line_num": 6,
+      "left": 308,
+      "top": 1630,
+      "width": 28,
+      "height": 22,
+      "conf": 96.938568
+    },
+    {
+      "text": "improve",
+      "line_num": 6,
+      "left": 348,
+      "top": 1629,
+      "width": 112,
+      "height": 29,
+      "conf": 95.934296
+    },
+    {
+      "text": "their",
+      "line_num": 6,
+      "left": 470,
+      "top": 1629,
+      "width": 62,
+      "height": 23,
+      "conf": 96.865654
+    },
+    {
+      "text": "communities.",
+      "line_num": 7,
+      "left": 193,
+      "top": 1677,
+      "width": 189,
+      "height": 23,
+      "conf": 95.454048
+    },
+    {
+      "text": "Nature",
+      "line_num": 1,
+      "left": 194,
+      "top": 1751,
+      "width": 93,
+      "height": 23,
+      "conf": 96.311768
+    },
+    {
+      "text": "provides",
+      "line_num": 1,
+      "left": 298,
+      "top": 1751,
+      "width": 120,
+      "height": 29,
+      "conf": 96.225288
+    },
+    {
+      "text": "beauty",
+      "line_num": 1,
+      "left": 430,
+      "top": 1751,
+      "width": 95,
+      "height": 30,
+      "conf": 96.619598
+    },
+    {
+      "text": "and",
+      "line_num": 2,
+      "left": 193,
+      "top": 1799,
+      "width": 51,
+      "height": 23,
+      "conf": 96.389832
+    },
+    {
+      "text": "resources",
+      "line_num": 2,
+      "left": 257,
+      "top": 1805,
+      "width": 137,
+      "height": 17,
+      "conf": 96.074783
+    },
+    {
+      "text": "essential",
+      "line_num": 2,
+      "left": 404,
+      "top": 1799,
+      "width": 123,
+      "height": 23,
+      "conf": 96.074783
+    },
+    {
+      "text": "for",
+      "line_num": 1,
+      "left": 629,
+      "top": 349,
+      "width": 39,
+      "height": 23,
+      "conf": 95.465851
+    },
+    {
+      "text": "life.",
+      "line_num": 1,
+      "left": 679,
+      "top": 349,
+      "width": 45,
+      "height": 23,
+      "conf": 95.465851
+    },
+    {
+      "text": "Protecting",
+      "line_num": 1,
+      "left": 738,
+      "top": 349,
+      "width": 143,
+      "height": 30,
+      "conf": 95.740929
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 891,
+      "top": 349,
+      "width": 45,
+      "height": 23,
+      "conf": 96.418213
+    },
+    {
+      "text": "environment",
+      "line_num": 2,
+      "left": 630,
+      "top": 397,
+      "width": 175,
+      "height": 23,
+      "conf": 96.143936
+    },
+    {
+      "text": "ensures",
+      "line_num": 2,
+      "left": 816,
+      "top": 403,
+      "width": 110,
+      "height": 17,
+      "conf": 96.526131
+    },
+    {
+      "text": "future",
+      "line_num": 3,
+      "left": 629,
+      "top": 445,
+      "width": 82,
+      "height": 23,
+      "conf": 96.678345
+    },
+    {
+      "text": "generations",
+      "line_num": 3,
+      "left": 722,
+      "top": 445,
+      "width": 165,
+      "height": 30,
+      "conf": 96.787003
+    },
+    {
+      "text": "can",
+      "line_num": 3,
+      "left": 898,
+      "top": 451,
+      "width": 49,
+      "height": 17,
+      "conf": 96.56144
+    },
+    {
+      "text": "enjoy",
+      "line_num": 4,
+      "left": 630,
+      "top": 493,
+      "width": 75,
+      "height": 30,
+      "conf": 96.819672
+    },
+    {
+      "text": "Earth's",
+      "line_num": 4,
+      "left": 717,
+      "top": 493,
+      "width": 97,
+      "height": 23,
+      "conf": 96.672081
+    },
+    {
+      "text": "wonders.",
+      "line_num": 4,
+      "left": 824,
+      "top": 493,
+      "width": 129,
+      "height": 23,
+      "conf": 96.35099
+    },
+    {
+      "text": "Communication",
+      "line_num": 1,
+      "left": 631,
+      "top": 566,
+      "width": 223,
+      "height": 24,
+      "conf": 96.456474
+    },
+    {
+      "text": "bridges",
+      "line_num": 1,
+      "left": 867,
+      "top": 567,
+      "width": 104,
+      "height": 30,
+      "conf": 96.510689
+    },
+    {
+      "text": "gaps",
+      "line_num": 2,
+      "left": 630,
+      "top": 621,
+      "width": 69,
+      "height": 24,
+      "conf": 96.972794
+    },
+    {
+      "text": "between",
+      "line_num": 2,
+      "left": 711,
+      "top": 615,
+      "width": 119,
+      "height": 23,
+      "conf": 96.474686
+    },
+    {
+      "text": "different",
+      "line_num": 2,
+      "left": 841,
+      "top": 615,
+      "width": 115,
+      "height": 23,
+      "conf": 95.802567
+    },
+    {
+      "text": "cultures",
+      "line_num": 3,
+      "left": 630,
+      "top": 663,
+      "width": 112,
+      "height": 23,
+      "conf": 96.229233
+    },
+    {
+      "text": "and",
+      "line_num": 3,
+      "left": 752,
+      "top": 663,
+      "width": 52,
+      "height": 23,
+      "conf": 95.829399
+    },
+    {
+      "text": "peoples.",
+      "line_num": 3,
+      "left": 816,
+      "top": 663,
+      "width": 118,
+      "height": 29,
+      "conf": 95.829399
+    },
+    {
+      "text": "Language",
+      "line_num": 4,
+      "left": 632,
+      "top": 711,
+      "width": 138,
+      "height": 30,
+      "conf": 96.488075
+    },
+    {
+      "text": "allows",
+      "line_num": 4,
+      "left": 781,
+      "top": 711,
+      "width": 88,
+      "height": 23,
+      "conf": 96.198601
+    },
+    {
+      "text": "us",
+      "line_num": 4,
+      "left": 881,
+      "top": 717,
+      "width": 31,
+      "height": 17,
+      "conf": 96.366264
+    },
+    {
+      "text": "to",
+      "line_num": 4,
+      "left": 922,
+      "top": 712,
+      "width": 27,
+      "height": 22,
+      "conf": 96.50267
+    },
+    {
+      "text": "share",
+      "line_num": 5,
+      "left": 630,
+      "top": 759,
+      "width": 77,
+      "height": 23,
+      "conf": 95.100517
+    },
+    {
+      "text": "ideas",
+      "line_num": 5,
+      "left": 719,
+      "top": 759,
+      "width": 73,
+      "height": 23,
+      "conf": 95.100517
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 803,
+      "top": 759,
+      "width": 51,
+      "height": 23,
+      "conf": 96.849106
+    },
+    {
+      "text": "build",
+      "line_num": 5,
+      "left": 867,
+      "top": 759,
+      "width": 66,
+      "height": 23,
+      "conf": 96.809731
+    },
+    {
+      "text": "understanding",
+      "line_num": 6,
+      "left": 631,
+      "top": 807,
+      "width": 202,
+      "height": 30,
+      "conf": 96.376396
+    },
+    {
+      "text": "across",
+      "line_num": 6,
+      "left": 845,
+      "top": 813,
+      "width": 93,
+      "height": 17,
+      "conf": 96.793427
+    },
+    {
+      "text": "borders.",
+      "line_num": 7,
+      "left": 631,
+      "top": 855,
+      "width": 115,
+      "height": 23,
+      "conf": 96.639755
+    },
+    {
+      "text": "Science",
+      "line_num": 1,
+      "left": 630,
+      "top": 930,
+      "width": 113,
+      "height": 24,
+      "conf": 96.195534
+    },
+    {
+      "text": "reveals",
+      "line_num": 1,
+      "left": 754,
+      "top": 931,
+      "width": 98,
+      "height": 23,
+      "conf": 96.306114
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 862,
+      "top": 931,
+      "width": 45,
+      "height": 23,
+      "conf": 96.967392
+    },
+    {
+      "text": "mysteries",
+      "line_num": 2,
+      "left": 631,
+      "top": 979,
+      "width": 135,
+      "height": 30,
+      "conf": 93.042282
+    },
+    {
+      "text": "of",
+      "line_num": 2,
+      "left": 777,
+      "top": 979,
+      "width": 27,
+      "height": 23,
+      "conf": 96.870811
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 813,
+      "top": 979,
+      "width": 44,
+      "height": 23,
+      "conf": 96.796616
+    },
+    {
+      "text": "universe",
+      "line_num": 2,
+      "left": 868,
+      "top": 979,
+      "width": 118,
+      "height": 23,
+      "conf": 96.857719
+    },
+    {
+      "text": "gradually.",
+      "line_num": 3,
+      "left": 630,
+      "top": 1027,
+      "width": 134,
+      "height": 30,
+      "conf": 96.483292
+    },
+    {
+      "text": "Each",
+      "line_num": 3,
+      "left": 778,
+      "top": 1027,
+      "width": 67,
+      "height": 23,
+      "conf": 96.833855
+    },
+    {
+      "text": "discovery",
+      "line_num": 3,
+      "left": 857,
+      "top": 1027,
+      "width": 136,
+      "height": 30,
+      "conf": 96.249634
+    },
+    {
+      "text": "opens",
+      "line_num": 4,
+      "left": 630,
+      "top": 1081,
+      "width": 87,
+      "height": 23,
+      "conf": 96.468582
+    },
+    {
+      "text": "new",
+      "line_num": 4,
+      "left": 728,
+      "top": 1081,
+      "width": 57,
+      "height": 17,
+      "conf": 96.67482
+    },
+    {
+      "text": "questions",
+      "line_num": 4,
+      "left": 796,
+      "top": 1075,
+      "width": 137,
+      "height": 29,
+      "conf": 96.67482
+    },
+    {
+      "text": "and",
+      "line_num": 4,
+      "left": 944,
+      "top": 1075,
+      "width": 51,
+      "height": 23,
+      "conf": 96.881836
+    },
+    {
+      "text": "paths",
+      "line_num": 5,
+      "left": 631,
+      "top": 1123,
+      "width": 78,
+      "height": 29,
+      "conf": 96.536591
+    },
+    {
+      "text": "for",
+      "line_num": 5,
+      "left": 718,
+      "top": 1123,
+      "width": 39,
+      "height": 23,
+      "conf": 96.476303
+    },
+    {
+      "text": "exploration",
+      "line_num": 5,
+      "left": 767,
+      "top": 1123,
+      "width": 156,
+      "height": 29,
+      "conf": 96.91349
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 935,
+      "top": 1123,
+      "width": 51,
+      "height": 23,
+      "conf": 96.643089
+    },
+    {
+      "text": "innovation.",
+      "line_num": 6,
+      "left": 631,
+      "top": 1171,
+      "width": 152,
+      "height": 23,
+      "conf": 96.681885
+    },
+    {
+      "text": "Art",
+      "line_num": 1,
+      "left": 629,
+      "top": 1245,
+      "width": 41,
+      "height": 23,
+      "conf": 96.553078
+    },
+    {
+      "text": "expresses",
+      "line_num": 1,
+      "left": 681,
+      "top": 1251,
+      "width": 143,
+      "height": 23,
+      "conf": 96.336372
+    },
+    {
+      "text": "emotions",
+      "line_num": 1,
+      "left": 835,
+      "top": 1245,
+      "width": 130,
+      "height": 23,
+      "conf": 96.787201
+    },
+    {
+      "text": "and",
+      "line_num": 2,
+      "left": 630,
+      "top": 1293,
+      "width": 51,
+      "height": 23,
+      "conf": 95.319847
+    },
+    {
+      "text": "ideas",
+      "line_num": 2,
+      "left": 694,
+      "top": 1293,
+      "width": 74,
+      "height": 23,
+      "conf": 95.319847
+    },
+    {
+      "text": "beyond",
+      "line_num": 2,
+      "left": 779,
+      "top": 1293,
+      "width": 104,
+      "height": 30,
+      "conf": 95.975967
+    },
+    {
+      "text": "words",
+      "line_num": 2,
+      "left": 894,
+      "top": 1293,
+      "width": 87,
+      "height": 23,
+      "conf": 96.768639
+    },
+    {
+      "text": "alone.",
+      "line_num": 3,
+      "left": 630,
+      "top": 1341,
+      "width": 83,
+      "height": 23,
+      "conf": 96.577438
+    },
+    {
+      "text": "Creative",
+      "line_num": 3,
+      "left": 726,
+      "top": 1340,
+      "width": 116,
+      "height": 25,
+      "conf": 96.872681
+    },
+    {
+      "text": "works",
+      "line_num": 3,
+      "left": 852,
+      "top": 1341,
+      "width": 85,
+      "height": 23,
+      "conf": 96.370461
+    },
+    {
+      "text": "inspire",
+      "line_num": 4,
+      "left": 631,
+      "top": 1389,
+      "width": 92,
+      "height": 29,
+      "conf": 96.764778
+    },
+    {
+      "text": "and",
+      "line_num": 4,
+      "left": 733,
+      "top": 1389,
+      "width": 52,
+      "height": 23,
+      "conf": 96.889618
+    },
+    {
+      "text": "challenge",
+      "line_num": 4,
+      "left": 796,
+      "top": 1389,
+      "width": 136,
+      "height": 30,
+      "conf": 96.007416
+    },
+    {
+      "text": "viewers",
+      "line_num": 5,
+      "left": 630,
+      "top": 1437,
+      "width": 107,
+      "height": 23,
+      "conf": 96.762947
+    },
+    {
+      "text": "to",
+      "line_num": 5,
+      "left": 747,
+      "top": 1438,
+      "width": 27,
+      "height": 22,
+      "conf": 95.747482
+    },
+    {
+      "text": "see",
+      "line_num": 5,
+      "left": 785,
+      "top": 1443,
+      "width": 49,
+      "height": 17,
+      "conf": 96.428467
+    },
+    {
+      "text": "the",
+      "line_num": 5,
+      "left": 843,
+      "top": 1437,
+      "width": 45,
+      "height": 23,
+      "conf": 96.100815
+    },
+    {
+      "text": "world",
+      "line_num": 5,
+      "left": 898,
+      "top": 1437,
+      "width": 77,
+      "height": 23,
+      "conf": 96.849579
+    },
+    {
+      "text": "differently.",
+      "line_num": 6,
+      "left": 630,
+      "top": 1485,
+      "width": 143,
+      "height": 30,
+      "conf": 96.336235
+    },
+    {
+      "text": "OCR",
+      "line_num": 1,
+      "left": 624,
+      "top": 1892,
+      "width": 50,
+      "height": 18,
+      "conf": 96.913155
+    },
+    {
+      "text": "Test:",
+      "line_num": 1,
+      "left": 683,
+      "top": 1893,
+      "width": 47,
+      "height": 17,
+      "conf": 96.542366
+    },
+    {
+      "text": "english",
+      "line_num": 1,
+      "left": 738,
+      "top": 1893,
+      "width": 74,
+      "height": 22,
+      "conf": 93.262871
+    },
+    {
+      "text": "(three-column,",
+      "line_num": 1,
+      "left": 821,
+      "top": 1892,
+      "width": 152,
+      "height": 23,
+      "conf": 92.423073
+    },
+    {
+      "text": "Itr)",
+      "line_num": 1,
+      "left": 982,
+      "top": 1892,
+      "width": 26,
+      "height": 23,
+      "conf": 91.185684
+    }
+  ]
+}

@@ -1,0 +1,4351 @@
+{
+  "words": [
+    {
+      "text": "दैनिक",
+      "line_num": 1,
+      "left": 489,
+      "top": 199,
+      "width": 145,
+      "height": 68,
+      "conf": 96.200264
+    },
+    {
+      "text": "जीवन",
+      "line_num": 1,
+      "left": 648,
+      "top": 200,
+      "width": 144,
+      "height": 62,
+      "conf": 96.416603
+    },
+    {
+      "text": "का",
+      "line_num": 1,
+      "left": 806,
+      "top": 218,
+      "width": 74,
+      "height": 44,
+      "conf": 93.022606
+    },
+    {
+      "text": "ताना-बाना",
+      "line_num": 1,
+      "left": 893,
+      "top": 218,
+      "width": 250,
+      "height": 45,
+      "conf": 92.213799
+    },
+    {
+      "text": "सुबह",
+      "line_num": 1,
+      "left": 191,
+      "top": 349,
+      "width": 58,
+      "height": 30,
+      "conf": 96.627769
+    },
+    {
+      "text": "की",
+      "line_num": 1,
+      "left": 256,
+      "top": 340,
+      "width": 36,
+      "height": 30,
+      "conf": 93.302216
+    },
+    {
+      "text": "YT",
+      "line_num": 1,
+      "left": 299,
+      "top": 349,
+      "width": 40,
+      "height": 30,
+      "conf": 52.993942
+    },
+    {
+      "text": "शांत",
+      "line_num": 1,
+      "left": 348,
+      "top": 342,
+      "width": 50,
+      "height": 28,
+      "conf": 96.677322
+    },
+    {
+      "text": "सड़कों",
+      "line_num": 1,
+      "left": 405,
+      "top": 341,
+      "width": 75,
+      "height": 34,
+      "conf": 96.815788
+    },
+    {
+      "text": "को",
+      "line_num": 1,
+      "left": 487,
+      "top": 341,
+      "width": 35,
+      "height": 29,
+      "conf": 93.201828
+    },
+    {
+      "text": "कोमलता",
+      "line_num": 1,
+      "left": 530,
+      "top": 341,
+      "width": 103,
+      "height": 29,
+      "conf": 92.319542
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 640,
+      "top": 341,
+      "width": 24,
+      "height": 29,
+      "conf": 96.636742
+    },
+    {
+      "text": "रोशन",
+      "line_num": 1,
+      "left": 671,
+      "top": 341,
+      "width": 63,
+      "height": 29,
+      "conf": 96.33416
+    },
+    {
+      "text": "करती",
+      "line_num": 2,
+      "left": 191,
+      "top": 388,
+      "width": 66,
+      "height": 30,
+      "conf": 96.396187
+    },
+    {
+      "text": "है,",
+      "line_num": 2,
+      "left": 264,
+      "top": 389,
+      "width": 24,
+      "height": 33,
+      "conf": 96.247208
+    },
+    {
+      "text": "गर्म",
+      "line_num": 2,
+      "left": 298,
+      "top": 389,
+      "width": 38,
+      "height": 29,
+      "conf": 96.289635
+    },
+    {
+      "text": "रोशनी",
+      "line_num": 2,
+      "left": 343,
+      "top": 388,
+      "width": 72,
+      "height": 30,
+      "conf": 96.95858
+    },
+    {
+      "text": "पेड़ों",
+      "line_num": 2,
+      "left": 422,
+      "top": 389,
+      "width": 46,
+      "height": 34,
+      "conf": 96.62735
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 489,
+      "top": 384,
+      "width": 25,
+      "height": 47,
+      "conf": 96.62735
+    },
+    {
+      "text": "बीच",
+      "line_num": 2,
+      "left": 509,
+      "top": 388,
+      "width": 50,
+      "height": 30,
+      "conf": 96.999046
+    },
+    {
+      "text": "से",
+      "line_num": 2,
+      "left": 566,
+      "top": 389,
+      "width": 23,
+      "height": 29,
+      "conf": 97.020248
+    },
+    {
+      "text": "गुजरती",
+      "line_num": 2,
+      "left": 597,
+      "top": 388,
+      "width": 83,
+      "height": 39,
+      "conf": 96.280281
+    },
+    {
+      "text": "है",
+      "line_num": 2,
+      "left": 687,
+      "top": 389,
+      "width": 18,
+      "height": 32,
+      "conf": 96.850342
+    },
+    {
+      "text": "और",
+      "line_num": 2,
+      "left": 715,
+      "top": 389,
+      "width": 44,
+      "height": 29,
+      "conf": 96.929771
+    },
+    {
+      "text": "जमीन",
+      "line_num": 3,
+      "left": 191,
+      "top": 436,
+      "width": 69,
+      "height": 30,
+      "conf": 96.44339
+    },
+    {
+      "text": "पर",
+      "line_num": 3,
+      "left": 268,
+      "top": 445,
+      "width": 32,
+      "height": 21,
+      "conf": 96.438446
+    },
+    {
+      "text": "सुंदर",
+      "line_num": 3,
+      "left": 308,
+      "top": 438,
+      "width": 53,
+      "height": 37,
+      "conf": 93.301994
+    },
+    {
+      "text": "छायाएं",
+      "line_num": 3,
+      "left": 368,
+      "top": 438,
+      "width": 78,
+      "height": 31,
+      "conf": 92.854622
+    },
+    {
+      "text": "बनाती",
+      "line_num": 3,
+      "left": 454,
+      "top": 436,
+      "width": 71,
+      "height": 30,
+      "conf": 93.302231
+    },
+    {
+      "text": "है।",
+      "line_num": 3,
+      "left": 533,
+      "top": 437,
+      "width": 26,
+      "height": 32,
+      "conf": 93.076866
+    },
+    {
+      "text": "पक्षी",
+      "line_num": 3,
+      "left": 574,
+      "top": 436,
+      "width": 52,
+      "height": 33,
+      "conf": 96.612038
+    },
+    {
+      "text": "पेड़ों",
+      "line_num": 3,
+      "left": 633,
+      "top": 437,
+      "width": 46,
+      "height": 34,
+      "conf": 96.520638
+    },
+    {
+      "text": "पर",
+      "line_num": 3,
+      "left": 687,
+      "top": 445,
+      "width": 33,
+      "height": 21,
+      "conf": 96.92849
+    },
+    {
+      "text": "मधुर",
+      "line_num": 3,
+      "left": 727,
+      "top": 445,
+      "width": 53,
+      "height": 30,
+      "conf": 96.431534
+    },
+    {
+      "text": "गीत",
+      "line_num": 4,
+      "left": 191,
+      "top": 484,
+      "width": 46,
+      "height": 30,
+      "conf": 96.712273
+    },
+    {
+      "text": "गाते",
+      "line_num": 4,
+      "left": 245,
+      "top": 485,
+      "width": 46,
+      "height": 29,
+      "conf": 96.371414
+    },
+    {
+      "text": "हैं,",
+      "line_num": 4,
+      "left": 298,
+      "top": 485,
+      "width": 24,
+      "height": 33,
+      "conf": 95.626396
+    },
+    {
+      "text": "उनका",
+      "line_num": 4,
+      "left": 331,
+      "top": 493,
+      "width": 67,
+      "height": 21,
+      "conf": 95.626396
+    },
+    {
+      "text": "मधुर",
+      "line_num": 4,
+      "left": 406,
+      "top": 493,
+      "width": 53,
+      "height": 30,
+      "conf": 96.276222
+    },
+    {
+      "text": "संगीत",
+      "line_num": 4,
+      "left": 466,
+      "top": 484,
+      "width": 68,
+      "height": 30,
+      "conf": 93.302956
+    },
+    {
+      "text": "सोए",
+      "line_num": 4,
+      "left": 542,
+      "top": 485,
+      "width": 50,
+      "height": 32,
+      "conf": 92.251198
+    },
+    {
+      "text": "हुए",
+      "line_num": 4,
+      "left": 599,
+      "top": 493,
+      "width": 36,
+      "height": 31,
+      "conf": 96.677292
+    },
+    {
+      "text": "शहर",
+      "line_num": 4,
+      "left": 644,
+      "top": 493,
+      "width": 52,
+      "height": 24,
+      "conf": 96.632492
+    },
+    {
+      "text": "को",
+      "line_num": 4,
+      "left": 703,
+      "top": 485,
+      "width": 35,
+      "height": 29,
+      "conf": 96.50396
+    },
+    {
+      "text": "जगाता",
+      "line_num": 5,
+      "left": 191,
+      "top": 541,
+      "width": 79,
+      "height": 21,
+      "conf": 91.945923
+    },
+    {
+      "text": "है",
+      "line_num": 5,
+      "left": 277,
+      "top": 533,
+      "width": 18,
+      "height": 32,
+      "conf": 96.50705
+    },
+    {
+      "text": "और",
+      "line_num": 5,
+      "left": 305,
+      "top": 533,
+      "width": 44,
+      "height": 29,
+      "conf": 96.228752
+    },
+    {
+      "text": "नया",
+      "line_num": 5,
+      "left": 357,
+      "top": 541,
+      "width": 46,
+      "height": 21,
+      "conf": 96.538147
+    },
+    {
+      "text": "दिन",
+      "line_num": 5,
+      "left": 410,
+      "top": 532,
+      "width": 44,
+      "height": 31,
+      "conf": 96.895134
+    },
+    {
+      "text": "आशा",
+      "line_num": 5,
+      "left": 464,
+      "top": 541,
+      "width": 63,
+      "height": 21,
+      "conf": 96.876511
+    },
+    {
+      "text": "और",
+      "line_num": 5,
+      "left": 537,
+      "top": 532,
+      "width": 44,
+      "height": 30,
+      "conf": 96.222023
+    },
+    {
+      "text": "संभावनाओं",
+      "line_num": 5,
+      "left": 588,
+      "top": 533,
+      "width": 126,
+      "height": 29,
+      "conf": 95.930389
+    },
+    {
+      "text": "से",
+      "line_num": 5,
+      "left": 721,
+      "top": 533,
+      "width": 24,
+      "height": 29,
+      "conf": 96.415947
+    },
+    {
+      "text": "भरपूर",
+      "line_num": 6,
+      "left": 191,
+      "top": 589,
+      "width": 64,
+      "height": 30,
+      "conf": 96.956894
+    },
+    {
+      "text": "शुरू",
+      "line_num": 6,
+      "left": 264,
+      "top": 589,
+      "width": 45,
+      "height": 30,
+      "conf": 96.852951
+    },
+    {
+      "text": "होता",
+      "line_num": 6,
+      "left": 317,
+      "top": 581,
+      "width": 53,
+      "height": 32,
+      "conf": 93.305847
+    },
+    {
+      "text": "है।",
+      "line_num": 6,
+      "left": 377,
+      "top": 581,
+      "width": 27,
+      "height": 32,
+      "conf": 93.120834
+    },
+    {
+      "text": "प्रौद्योगिकी",
+      "line_num": 1,
+      "left": 191,
+      "top": 654,
+      "width": 119,
+      "height": 30,
+      "conf": 96.496536
+    },
+    {
+      "text": "अभूतपूर्व",
+      "line_num": 1,
+      "left": 319,
+      "top": 655,
+      "width": 95,
+      "height": 38,
+      "conf": 96.649071
+    },
+    {
+      "text": "गति",
+      "line_num": 1,
+      "left": 422,
+      "top": 654,
+      "width": 46,
+      "height": 30,
+      "conf": 96.948669
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 475,
+      "top": 655,
+      "width": 24,
+      "height": 29,
+      "conf": 97.001442
+    },
+    {
+      "text": "हमारे",
+      "line_num": 1,
+      "left": 506,
+      "top": 655,
+      "width": 58,
+      "height": 32,
+      "conf": 96.955818
+    },
+    {
+      "text": "जीवन",
+      "line_num": 1,
+      "left": 572,
+      "top": 654,
+      "width": 68,
+      "height": 30,
+      "conf": 96.644653
+    },
+    {
+      "text": "शैली",
+      "line_num": 1,
+      "left": 649,
+      "top": 654,
+      "width": 55,
+      "height": 30,
+      "conf": 96.385109
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 713,
+      "top": 654,
+      "width": 45,
+      "height": 30,
+      "conf": 96.589821
+    },
+    {
+      "text": "काम",
+      "line_num": 2,
+      "left": 191,
+      "top": 711,
+      "width": 54,
+      "height": 21,
+      "conf": 96.387032
+    },
+    {
+      "text": "करने",
+      "line_num": 2,
+      "left": 252,
+      "top": 703,
+      "width": 56,
+      "height": 29,
+      "conf": 96.296013
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 315,
+      "top": 703,
+      "width": 27,
+      "height": 29,
+      "conf": 96.305824
+    },
+    {
+      "text": "तरीकों",
+      "line_num": 2,
+      "left": 349,
+      "top": 702,
+      "width": 75,
+      "height": 30,
+      "conf": 96.680038
+    },
+    {
+      "text": "को",
+      "line_num": 2,
+      "left": 431,
+      "top": 703,
+      "width": 35,
+      "height": 29,
+      "conf": 96.275291
+    },
+    {
+      "text": "मौलिक",
+      "line_num": 2,
+      "left": 474,
+      "top": 702,
+      "width": 85,
+      "height": 30,
+      "conf": 96.701546
+    },
+    {
+      "text": "रूप",
+      "line_num": 2,
+      "left": 566,
+      "top": 711,
+      "width": 42,
+      "height": 21,
+      "conf": 96.354057
+    },
+    {
+      "text": "से",
+      "line_num": 2,
+      "left": 615,
+      "top": 703,
+      "width": 24,
+      "height": 29,
+      "conf": 96.66169
+    },
+    {
+      "text": "बदल",
+      "line_num": 2,
+      "left": 646,
+      "top": 711,
+      "width": 60,
+      "height": 22,
+      "conf": 96.463127
+    },
+    {
+      "text": "रही",
+      "line_num": 2,
+      "left": 713,
+      "top": 702,
+      "width": 40,
+      "height": 33,
+      "conf": 96.657166
+    },
+    {
+      "text": "है।",
+      "line_num": 3,
+      "left": 191,
+      "top": 751,
+      "width": 26,
+      "height": 32,
+      "conf": 91.148186
+    },
+    {
+      "text": "कृत्रिम",
+      "line_num": 3,
+      "left": 232,
+      "top": 750,
+      "width": 71,
+      "height": 38,
+      "conf": 93.285812
+    },
+    {
+      "text": "बुद्धिमत्ता",
+      "line_num": 3,
+      "left": 311,
+      "top": 750,
+      "width": 96,
+      "height": 39,
+      "conf": 92.764503
+    },
+    {
+      "text": "से",
+      "line_num": 3,
+      "left": 436,
+      "top": 746,
+      "width": 22,
+      "height": 47,
+      "conf": 96.659744
+    },
+    {
+      "text": "लेकर",
+      "line_num": 3,
+      "left": 446,
+      "top": 751,
+      "width": 62,
+      "height": 29,
+      "conf": 93.283691
+    },
+    {
+      "text": "नवीकरणीय",
+      "line_num": 3,
+      "left": 515,
+      "top": 750,
+      "width": 135,
+      "height": 30,
+      "conf": 91.974899
+    },
+    {
+      "text": "ऊर्जा",
+      "line_num": 3,
+      "left": 657,
+      "top": 751,
+      "width": 56,
+      "height": 29,
+      "conf": 95.578659
+    },
+    {
+      "text": "तक,",
+      "line_num": 3,
+      "left": 721,
+      "top": 759,
+      "width": 49,
+      "height": 25,
+      "conf": 96.927635
+    },
+    {
+      "text": "हर",
+      "line_num": 4,
+      "left": 191,
+      "top": 807,
+      "width": 31,
+      "height": 24,
+      "conf": 96.768074
+    },
+    {
+      "text": "दिन",
+      "line_num": 4,
+      "left": 229,
+      "top": 798,
+      "width": 44,
+      "height": 31,
+      "conf": 95.999535
+    },
+    {
+      "text": "नए",
+      "line_num": 4,
+      "left": 281,
+      "top": 807,
+      "width": 35,
+      "height": 24,
+      "conf": 95.930786
+    },
+    {
+      "text": "नवाचार",
+      "line_num": 4,
+      "left": 324,
+      "top": 807,
+      "width": 86,
+      "height": 21,
+      "conf": 96.508644
+    },
+    {
+      "text": "और",
+      "line_num": 4,
+      "left": 420,
+      "top": 799,
+      "width": 44,
+      "height": 29,
+      "conf": 96.782677
+    },
+    {
+      "text": "आविष्कार",
+      "line_num": 4,
+      "left": 474,
+      "top": 798,
+      "width": 114,
+      "height": 30,
+      "conf": 94.334938
+    },
+    {
+      "text": "उभरते",
+      "line_num": 4,
+      "left": 596,
+      "top": 799,
+      "width": 66,
+      "height": 29,
+      "conf": 96.413467
+    },
+    {
+      "text": "हैं,",
+      "line_num": 4,
+      "left": 669,
+      "top": 799,
+      "width": 24,
+      "height": 33,
+      "conf": 96.863617
+    },
+    {
+      "text": "और",
+      "line_num": 4,
+      "left": 721,
+      "top": 793,
+      "width": 21,
+      "height": 48,
+      "conf": 96.938225
+    },
+    {
+      "text": "ये",
+      "line_num": 4,
+      "left": 756,
+      "top": 799,
+      "width": 22,
+      "height": 29,
+      "conf": 97.010376
+    },
+    {
+      "text": "तकनीकी",
+      "line_num": 5,
+      "left": 191,
+      "top": 846,
+      "width": 103,
+      "height": 30,
+      "conf": 95.907585
+    },
+    {
+      "text": "प्रगति",
+      "line_num": 5,
+      "left": 301,
+      "top": 846,
+      "width": 65,
+      "height": 30,
+      "conf": 95.987747
+    },
+    {
+      "text": "समाज",
+      "line_num": 5,
+      "left": 374,
+      "top": 855,
+      "width": 74,
+      "height": 21,
+      "conf": 96.568489
+    },
+    {
+      "text": "के",
+      "line_num": 5,
+      "left": 455,
+      "top": 847,
+      "width": 27,
+      "height": 29,
+      "conf": 96.356186
+    },
+    {
+      "text": "सभी",
+      "line_num": 5,
+      "left": 489,
+      "top": 846,
+      "width": 51,
+      "height": 30,
+      "conf": 96.910965
+    },
+    {
+      "text": "पहलुओं",
+      "line_num": 5,
+      "left": 548,
+      "top": 847,
+      "width": 90,
+      "height": 38,
+      "conf": 96.293007
+    },
+    {
+      "text": "को",
+      "line_num": 5,
+      "left": 646,
+      "top": 847,
+      "width": 35,
+      "height": 29,
+      "conf": 96.930168
+    },
+    {
+      "text": "गहराई",
+      "line_num": 5,
+      "left": 688,
+      "top": 847,
+      "width": 75,
+      "height": 33,
+      "conf": 96.684174
+    },
+    {
+      "text": "से",
+      "line_num": 6,
+      "left": 191,
+      "top": 895,
+      "width": 24,
+      "height": 29,
+      "conf": 96.991585
+    },
+    {
+      "text": "प्रभावित",
+      "line_num": 6,
+      "left": 222,
+      "top": 894,
+      "width": 92,
+      "height": 30,
+      "conf": 96.444351
+    },
+    {
+      "text": "कर",
+      "line_num": 6,
+      "left": 321,
+      "top": 903,
+      "width": 40,
+      "height": 21,
+      "conf": 96.855858
+    },
+    {
+      "text": "रही",
+      "line_num": 6,
+      "left": 368,
+      "top": 894,
+      "width": 40,
+      "height": 33,
+      "conf": 96.909195
+    },
+    {
+      "text": "है,",
+      "line_num": 6,
+      "left": 415,
+      "top": 895,
+      "width": 24,
+      "height": 33,
+      "conf": 96.427979
+    },
+    {
+      "text": "जिससे",
+      "line_num": 6,
+      "left": 448,
+      "top": 894,
+      "width": 78,
+      "height": 30,
+      "conf": 97.017166
+    },
+    {
+      "text": "हमारे",
+      "line_num": 6,
+      "left": 534,
+      "top": 895,
+      "width": 58,
+      "height": 32,
+      "conf": 96.884575
+    },
+    {
+      "text": "दुनिया",
+      "line_num": 6,
+      "left": 599,
+      "top": 894,
+      "width": 72,
+      "height": 39,
+      "conf": 93.70266
+    },
+    {
+      "text": "के",
+      "line_num": 6,
+      "left": 692,
+      "top": 889,
+      "width": 25,
+      "height": 49,
+      "conf": 97.013359
+    },
+    {
+      "text": "साथ",
+      "line_num": 6,
+      "left": 712,
+      "top": 903,
+      "width": 53,
+      "height": 21,
+      "conf": 96.428696
+    },
+    {
+      "text": "बातचीत",
+      "line_num": 7,
+      "left": 191,
+      "top": 942,
+      "width": 94,
+      "height": 30,
+      "conf": 95.951736
+    },
+    {
+      "text": "करने",
+      "line_num": 7,
+      "left": 292,
+      "top": 943,
+      "width": 56,
+      "height": 29,
+      "conf": 96.61264
+    },
+    {
+      "text": "का",
+      "line_num": 7,
+      "left": 355,
+      "top": 951,
+      "width": 35,
+      "height": 21,
+      "conf": 96.653984
+    },
+    {
+      "text": "तरीका",
+      "line_num": 7,
+      "left": 398,
+      "top": 942,
+      "width": 74,
+      "height": 30,
+      "conf": 96.870155
+    },
+    {
+      "text": "फिर",
+      "line_num": 7,
+      "left": 480,
+      "top": 942,
+      "width": 49,
+      "height": 30,
+      "conf": 96.885376
+    },
+    {
+      "text": "से",
+      "line_num": 7,
+      "left": 536,
+      "top": 943,
+      "width": 24,
+      "height": 29,
+      "conf": 96.208389
+    },
+    {
+      "text": "आकार",
+      "line_num": 7,
+      "left": 569,
+      "top": 951,
+      "width": 78,
+      "height": 21,
+      "conf": 96.859871
+    },
+    {
+      "text": "ले",
+      "line_num": 7,
+      "left": 639,
+      "top": 938,
+      "width": 24,
+      "height": 47,
+      "conf": 97.017197
+    },
+    {
+      "text": "रहा",
+      "line_num": 7,
+      "left": 686,
+      "top": 951,
+      "width": 40,
+      "height": 24,
+      "conf": 93.304749
+    },
+    {
+      "text": "है।",
+      "line_num": 7,
+      "left": 733,
+      "top": 943,
+      "width": 27,
+      "height": 32,
+      "conf": 93.158279
+    },
+    {
+      "text": "प्राचीन",
+      "line_num": 1,
+      "left": 191,
+      "top": 1018,
+      "width": 75,
+      "height": 30,
+      "conf": 93.305504
+    },
+    {
+      "text": "सभ्यताओं",
+      "line_num": 1,
+      "left": 273,
+      "top": 1019,
+      "width": 113,
+      "height": 29,
+      "conf": 91.210983
+    },
+    {
+      "text": "ने",
+      "line_num": 1,
+      "left": 393,
+      "top": 1019,
+      "width": 18,
+      "height": 29,
+      "conf": 97.022568
+    },
+    {
+      "text": "अद्भुत",
+      "line_num": 1,
+      "left": 421,
+      "top": 1027,
+      "width": 62,
+      "height": 33,
+      "conf": 95.848076
+    },
+    {
+      "text": "स्मारक",
+      "line_num": 1,
+      "left": 491,
+      "top": 1027,
+      "width": 79,
+      "height": 21,
+      "conf": 81.710251
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 580,
+      "top": 1019,
+      "width": 44,
+      "height": 29,
+      "conf": 96.894997
+    },
+    {
+      "text": "वास्तुकला",
+      "line_num": 1,
+      "left": 632,
+      "top": 1027,
+      "width": 115,
+      "height": 30,
+      "conf": 91.273193
+    },
+    {
+      "text": "के",
+      "line_num": 1,
+      "left": 755,
+      "top": 1019,
+      "width": 26,
+      "height": 29,
+      "conf": 96.938446
+    },
+    {
+      "text": "चमत्कार",
+      "line_num": 2,
+      "left": 191,
+      "top": 1075,
+      "width": 97,
+      "height": 21,
+      "conf": 95.713112
+    },
+    {
+      "text": "बनाए,",
+      "line_num": 2,
+      "left": 296,
+      "top": 1075,
+      "width": 68,
+      "height": 25,
+      "conf": 96.802383
+    },
+    {
+      "text": "जो",
+      "line_num": 2,
+      "left": 373,
+      "top": 1067,
+      "width": 35,
+      "height": 29,
+      "conf": 96.948944
+    },
+    {
+      "text": "हजारों",
+      "line_num": 2,
+      "left": 415,
+      "top": 1067,
+      "width": 72,
+      "height": 32,
+      "conf": 96.075645
+    },
+    {
+      "text": "वर्षों",
+      "line_num": 2,
+      "left": 494,
+      "top": 1066,
+      "width": 47,
+      "height": 30,
+      "conf": 96.236725
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 565,
+      "top": 1062,
+      "width": 22,
+      "height": 47,
+      "conf": 95.932007
+    },
+    {
+      "text": "बाद",
+      "line_num": 2,
+      "left": 582,
+      "top": 1075,
+      "width": 45,
+      "height": 22,
+      "conf": 96.764778
+    },
+    {
+      "text": "भी",
+      "line_num": 2,
+      "left": 635,
+      "top": 1066,
+      "width": 29,
+      "height": 30,
+      "conf": 96.764778
+    },
+    {
+      "text": "मजबूती",
+      "line_num": 2,
+      "left": 672,
+      "top": 1066,
+      "width": 88,
+      "height": 39,
+      "conf": 96.736481
+    },
+    {
+      "text": "से",
+      "line_num": 3,
+      "left": 191,
+      "top": 1115,
+      "width": 24,
+      "height": 29,
+      "conf": 96.992241
+    },
+    {
+      "text": "खड़े",
+      "line_num": 3,
+      "left": 222,
+      "top": 1115,
+      "width": 45,
+      "height": 34,
+      "conf": 93.303421
+    },
+    {
+      "text": "हैं।",
+      "line_num": 3,
+      "left": 274,
+      "top": 1115,
+      "width": 26,
+      "height": 32,
+      "conf": 92.808319
+    },
+    {
+      "text": "मित्र",
+      "line_num": 3,
+      "left": 315,
+      "top": 1114,
+      "width": 53,
+      "height": 30,
+      "conf": 96.537521
+    },
+    {
+      "text": "के",
+      "line_num": 3,
+      "left": 390,
+      "top": 1110,
+      "width": 23,
+      "height": 44,
+      "conf": 93.298141
+    },
+    {
+      "text": "पिरामिडों",
+      "line_num": 3,
+      "left": 410,
+      "top": 1114,
+      "width": 103,
+      "height": 30,
+      "conf": 92.544434
+    },
+    {
+      "text": "से",
+      "line_num": 3,
+      "left": 536,
+      "top": 1110,
+      "width": 25,
+      "height": 44,
+      "conf": 96.70668
+    },
+    {
+      "text": "लेकर",
+      "line_num": 3,
+      "left": 552,
+      "top": 1115,
+      "width": 62,
+      "height": 29,
+      "conf": 96.009705
+    },
+    {
+      "text": "चीन",
+      "line_num": 3,
+      "left": 621,
+      "top": 1114,
+      "width": 48,
+      "height": 30,
+      "conf": 96.685539
+    },
+    {
+      "text": "की",
+      "line_num": 3,
+      "left": 676,
+      "top": 1114,
+      "width": 35,
+      "height": 30,
+      "conf": 96.653824
+    },
+    {
+      "text": "महान",
+      "line_num": 3,
+      "left": 719,
+      "top": 1123,
+      "width": 61,
+      "height": 24,
+      "conf": 96.714806
+    },
+    {
+      "text": "दीवार",
+      "line_num": 4,
+      "left": 191,
+      "top": 1162,
+      "width": 67,
+      "height": 31,
+      "conf": 96.594872
+    },
+    {
+      "text": "तक,",
+      "line_num": 4,
+      "left": 265,
+      "top": 1171,
+      "width": 50,
+      "height": 25,
+      "conf": 96.594872
+    },
+    {
+      "text": "ये",
+      "line_num": 4,
+      "left": 324,
+      "top": 1163,
+      "width": 22,
+      "height": 29,
+      "conf": 93.273636
+    },
+    {
+      "text": "संरचनाएं",
+      "line_num": 4,
+      "left": 353,
+      "top": 1164,
+      "width": 100,
+      "height": 31,
+      "conf": 91.369835
+    },
+    {
+      "text": "न",
+      "line_num": 4,
+      "left": 460,
+      "top": 1171,
+      "width": 18,
+      "height": 21,
+      "conf": 95.954727
+    },
+    {
+      "text": "केवल",
+      "line_num": 4,
+      "left": 486,
+      "top": 1163,
+      "width": 66,
+      "height": 29,
+      "conf": 96.764183
+    },
+    {
+      "text": "हमारे",
+      "line_num": 4,
+      "left": 560,
+      "top": 1163,
+      "width": 58,
+      "height": 32,
+      "conf": 96.436172
+    },
+    {
+      "text": "पूर्वजों",
+      "line_num": 4,
+      "left": 626,
+      "top": 1163,
+      "width": 69,
+      "height": 38,
+      "conf": 96.436172
+    },
+    {
+      "text": "की",
+      "line_num": 4,
+      "left": 703,
+      "top": 1162,
+      "width": 35,
+      "height": 30,
+      "conf": 96.934792
+    },
+    {
+      "text": "असाधारण",
+      "line_num": 5,
+      "left": 193,
+      "top": 1219,
+      "width": 120,
+      "height": 21,
+      "conf": 96.467583
+    },
+    {
+      "text": "बुद्धि",
+      "line_num": 5,
+      "left": 320,
+      "top": 1210,
+      "width": 50,
+      "height": 39,
+      "conf": 96.640335
+    },
+    {
+      "text": "और",
+      "line_num": 5,
+      "left": 380,
+      "top": 1211,
+      "width": 44,
+      "height": 29,
+      "conf": 96.782181
+    },
+    {
+      "text": "आश्चर्यजनक",
+      "line_num": 5,
+      "left": 434,
+      "top": 1211,
+      "width": 151,
+      "height": 29,
+      "conf": 93.305145
+    },
+    {
+      "text": "रचनात्मकता",
+      "line_num": 5,
+      "left": 593,
+      "top": 1219,
+      "width": 140,
+      "height": 21,
+      "conf": 91.349365
+    },
+    {
+      "text": "को",
+      "line_num": 5,
+      "left": 740,
+      "top": 1211,
+      "width": 35,
+      "height": 29,
+      "conf": 96.417046
+    },
+    {
+      "text": "दर्शाती",
+      "line_num": 6,
+      "left": 191,
+      "top": 1258,
+      "width": 77,
+      "height": 31,
+      "conf": 92.840202
+    },
+    {
+      "text": "हैं,",
+      "line_num": 6,
+      "left": 275,
+      "top": 1259,
+      "width": 24,
+      "height": 33,
+      "conf": 96.929245
+    },
+    {
+      "text": "बल्कि",
+      "line_num": 6,
+      "left": 308,
+      "top": 1258,
+      "width": 68,
+      "height": 30,
+      "conf": 85.331818
+    },
+    {
+      "text": "मानव",
+      "line_num": 6,
+      "left": 384,
+      "top": 1267,
+      "width": 63,
+      "height": 21,
+      "conf": 96.471573
+    },
+    {
+      "text": "सभ्यता",
+      "line_num": 6,
+      "left": 454,
+      "top": 1267,
+      "width": 80,
+      "height": 21,
+      "conf": 95.610031
+    },
+    {
+      "text": "के",
+      "line_num": 6,
+      "left": 542,
+      "top": 1259,
+      "width": 26,
+      "height": 29,
+      "conf": 96.845993
+    },
+    {
+      "text": "शानदार",
+      "line_num": 6,
+      "left": 594,
+      "top": 1267,
+      "width": 70,
+      "height": 22,
+      "conf": 96.589035
+    },
+    {
+      "text": "इतिहास",
+      "line_num": 6,
+      "left": 671,
+      "top": 1258,
+      "width": 92,
+      "height": 34,
+      "conf": 96.869904
+    },
+    {
+      "text": "की",
+      "line_num": 7,
+      "left": 191,
+      "top": 1306,
+      "width": 35,
+      "height": 30,
+      "conf": 96.991776
+    },
+    {
+      "text": "गवाह",
+      "line_num": 7,
+      "left": 234,
+      "top": 1315,
+      "width": 62,
+      "height": 24,
+      "conf": 96.960533
+    },
+    {
+      "text": "भी",
+      "line_num": 7,
+      "left": 291,
+      "top": 1302,
+      "width": 22,
+      "height": 49,
+      "conf": 93.252296
+    },
+    {
+      "text": "हैं।",
+      "line_num": 7,
+      "left": 340,
+      "top": 1307,
+      "width": 26,
+      "height": 32,
+      "conf": 93.202591
+    },
+    {
+      "text": "शिक्षा",
+      "line_num": 1,
+      "left": 191,
+      "top": 1380,
+      "width": 66,
+      "height": 33,
+      "conf": 96.132088
+    },
+    {
+      "text": "समाज",
+      "line_num": 1,
+      "left": 265,
+      "top": 1389,
+      "width": 74,
+      "height": 21,
+      "conf": 96.559799
+    },
+    {
+      "text": "की",
+      "line_num": 1,
+      "left": 347,
+      "top": 1380,
+      "width": 35,
+      "height": 30,
+      "conf": 96.990143
+    },
+    {
+      "text": "प्रगति",
+      "line_num": 1,
+      "left": 389,
+      "top": 1380,
+      "width": 65,
+      "height": 30,
+      "conf": 96.081268
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 464,
+      "top": 1381,
+      "width": 44,
+      "height": 29,
+      "conf": 96.758514
+    },
+    {
+      "text": "व्यक्तिगत",
+      "line_num": 1,
+      "left": 516,
+      "top": 1380,
+      "width": 111,
+      "height": 30,
+      "conf": 94.949059
+    },
+    {
+      "text": "विकास",
+      "line_num": 1,
+      "left": 635,
+      "top": 1380,
+      "width": 83,
+      "height": 30,
+      "conf": 96.507515
+    },
+    {
+      "text": "को",
+      "line_num": 1,
+      "left": 725,
+      "top": 1381,
+      "width": 35,
+      "height": 29,
+      "conf": 96.922752
+    },
+    {
+      "text": "आगे",
+      "line_num": 2,
+      "left": 193,
+      "top": 1429,
+      "width": 50,
+      "height": 29,
+      "conf": 96.903778
+    },
+    {
+      "text": "बढ़ाने",
+      "line_num": 2,
+      "left": 250,
+      "top": 1429,
+      "width": 62,
+      "height": 33,
+      "conf": 96.819366
+    },
+    {
+      "text": "की",
+      "line_num": 2,
+      "left": 319,
+      "top": 1428,
+      "width": 36,
+      "height": 30,
+      "conf": 97.018364
+    },
+    {
+      "text": "मूलभूत",
+      "line_num": 2,
+      "left": 362,
+      "top": 1437,
+      "width": 80,
+      "height": 30,
+      "conf": 96.410431
+    },
+    {
+      "text": "नींव",
+      "line_num": 2,
+      "left": 449,
+      "top": 1428,
+      "width": 44,
+      "height": 30,
+      "conf": 93.302437
+    },
+    {
+      "text": "है।",
+      "line_num": 2,
+      "left": 501,
+      "top": 1429,
+      "width": 26,
+      "height": 32,
+      "conf": 93.230995
+    },
+    {
+      "text": "व्यवस्थित",
+      "line_num": 2,
+      "left": 542,
+      "top": 1428,
+      "width": 110,
+      "height": 30,
+      "conf": 96.749916
+    },
+    {
+      "text": "सीखने",
+      "line_num": 2,
+      "left": 660,
+      "top": 1428,
+      "width": 74,
+      "height": 30,
+      "conf": 96.399963
+    },
+    {
+      "text": "और",
+      "line_num": 3,
+      "left": 193,
+      "top": 1476,
+      "width": 45,
+      "height": 30,
+      "conf": 96.166916
+    },
+    {
+      "text": "निरंतर",
+      "line_num": 3,
+      "left": 245,
+      "top": 1476,
+      "width": 71,
+      "height": 30,
+      "conf": 96.480255
+    },
+    {
+      "text": "ज्ञान",
+      "line_num": 3,
+      "left": 323,
+      "top": 1485,
+      "width": 49,
+      "height": 23,
+      "conf": 93.303757
+    },
+    {
+      "text": "संचय",
+      "line_num": 3,
+      "left": 380,
+      "top": 1478,
+      "width": 63,
+      "height": 28,
+      "conf": 92.712845
+    },
+    {
+      "text": "के",
+      "line_num": 3,
+      "left": 451,
+      "top": 1477,
+      "width": 26,
+      "height": 29,
+      "conf": 96.182251
+    },
+    {
+      "text": "माध्यम",
+      "line_num": 3,
+      "left": 485,
+      "top": 1485,
+      "width": 79,
+      "height": 21,
+      "conf": 96.618851
+    },
+    {
+      "text": "से,",
+      "line_num": 3,
+      "left": 571,
+      "top": 1477,
+      "width": 29,
+      "height": 33,
+      "conf": 96.195877
+    },
+    {
+      "text": "लोग",
+      "line_num": 3,
+      "left": 610,
+      "top": 1477,
+      "width": 51,
+      "height": 29,
+      "conf": 96.678131
+    },
+    {
+      "text": "अपने",
+      "line_num": 3,
+      "left": 671,
+      "top": 1477,
+      "width": 57,
+      "height": 29,
+      "conf": 96.506912
+    },
+    {
+      "text": "जीवन",
+      "line_num": 4,
+      "left": 191,
+      "top": 1524,
+      "width": 68,
+      "height": 30,
+      "conf": 96.260025
+    },
+    {
+      "text": "और",
+      "line_num": 4,
+      "left": 269,
+      "top": 1525,
+      "width": 44,
+      "height": 29,
+      "conf": 96.828987
+    },
+    {
+      "text": "आसपास",
+      "line_num": 4,
+      "left": 323,
+      "top": 1533,
+      "width": 102,
+      "height": 21,
+      "conf": 96.616058
+    },
+    {
+      "text": "के",
+      "line_num": 4,
+      "left": 432,
+      "top": 1525,
+      "width": 27,
+      "height": 29,
+      "conf": 96.393837
+    },
+    {
+      "text": "समुदायों",
+      "line_num": 4,
+      "left": 466,
+      "top": 1525,
+      "width": 96,
+      "height": 38,
+      "conf": 96.393837
+    },
+    {
+      "text": "को",
+      "line_num": 4,
+      "left": 569,
+      "top": 1525,
+      "width": 35,
+      "height": 29,
+      "conf": 96.887512
+    },
+    {
+      "text": "बेहतर",
+      "line_num": 4,
+      "left": 612,
+      "top": 1525,
+      "width": 67,
+      "height": 32,
+      "conf": 96.378014
+    },
+    {
+      "text": "बनाने",
+      "line_num": 4,
+      "left": 686,
+      "top": 1525,
+      "width": 62,
+      "height": 29,
+      "conf": 97.018585
+    },
+    {
+      "text": "के",
+      "line_num": 4,
+      "left": 755,
+      "top": 1525,
+      "width": 26,
+      "height": 29,
+      "conf": 96.836205
+    },
+    {
+      "text": "लिए",
+      "line_num": 5,
+      "left": 191,
+      "top": 1572,
+      "width": 51,
+      "height": 33,
+      "conf": 95.508675
+    },
+    {
+      "text": "आवश्यक",
+      "line_num": 5,
+      "left": 252,
+      "top": 1581,
+      "width": 108,
+      "height": 21,
+      "conf": 96.533836
+    },
+    {
+      "text": "विभिन्‍न",
+      "line_num": 5,
+      "left": 368,
+      "top": 1572,
+      "width": 80,
+      "height": 30,
+      "conf": 82.871407
+    },
+    {
+      "text": "उपकरण,",
+      "line_num": 5,
+      "left": 456,
+      "top": 1581,
+      "width": 102,
+      "height": 25,
+      "conf": 96.544167
+    },
+    {
+      "text": "कौशल",
+      "line_num": 5,
+      "left": 567,
+      "top": 1573,
+      "width": 81,
+      "height": 29,
+      "conf": 95.869896
+    },
+    {
+      "text": "और",
+      "line_num": 5,
+      "left": 658,
+      "top": 1573,
+      "width": 44,
+      "height": 29,
+      "conf": 95.869896
+    },
+    {
+      "text": "गहरी",
+      "line_num": 5,
+      "left": 710,
+      "top": 1572,
+      "width": 57,
+      "height": 33,
+      "conf": 95.966141
+    },
+    {
+      "text": "अंतर्दृष्टि",
+      "line_num": 6,
+      "left": 193,
+      "top": 1620,
+      "width": 93,
+      "height": 39,
+      "conf": 88.826477
+    },
+    {
+      "text": "प्राप्त",
+      "line_num": 6,
+      "left": 293,
+      "top": 1629,
+      "width": 57,
+      "height": 21,
+      "conf": 96.922897
+    },
+    {
+      "text": "कर",
+      "line_num": 6,
+      "left": 381,
+      "top": 1616,
+      "width": 24,
+      "height": 48,
+      "conf": 96.699532
+    },
+    {
+      "text": "सकते",
+      "line_num": 6,
+      "left": 404,
+      "top": 1621,
+      "width": 66,
+      "height": 29,
+      "conf": 96.991425
+    },
+    {
+      "text": "हैं,",
+      "line_num": 6,
+      "left": 478,
+      "top": 1621,
+      "width": 23,
+      "height": 33,
+      "conf": 95.472298
+    },
+    {
+      "text": "जिससे",
+      "line_num": 6,
+      "left": 511,
+      "top": 1620,
+      "width": 78,
+      "height": 30,
+      "conf": 96.887115
+    },
+    {
+      "text": "एक",
+      "line_num": 6,
+      "left": 596,
+      "top": 1629,
+      "width": 44,
+      "height": 24,
+      "conf": 96.642532
+    },
+    {
+      "text": "बेहतर",
+      "line_num": 6,
+      "left": 648,
+      "top": 1621,
+      "width": 66,
+      "height": 32,
+      "conf": 96.491806
+    },
+    {
+      "text": "भविष्य",
+      "line_num": 7,
+      "left": 191,
+      "top": 1668,
+      "width": 77,
+      "height": 30,
+      "conf": 96.884041
+    },
+    {
+      "text": "के",
+      "line_num": 7,
+      "left": 275,
+      "top": 1669,
+      "width": 27,
+      "height": 29,
+      "conf": 97.019447
+    },
+    {
+      "text": "निर्माण",
+      "line_num": 7,
+      "left": 309,
+      "top": 1668,
+      "width": 78,
+      "height": 30,
+      "conf": 96.80661
+    },
+    {
+      "text": "में",
+      "line_num": 7,
+      "left": 395,
+      "top": 1669,
+      "width": 20,
+      "height": 29,
+      "conf": 97.002296
+    },
+    {
+      "text": "योगदान",
+      "line_num": 7,
+      "left": 423,
+      "top": 1669,
+      "width": 89,
+      "height": 30,
+      "conf": 96.572281
+    },
+    {
+      "text": "मिलता",
+      "line_num": 7,
+      "left": 520,
+      "top": 1668,
+      "width": 78,
+      "height": 30,
+      "conf": 93.305183
+    },
+    {
+      "text": "है।",
+      "line_num": 7,
+      "left": 606,
+      "top": 1669,
+      "width": 26,
+      "height": 32,
+      "conf": 91.660965
+    },
+    {
+      "text": "प्रकृति",
+      "line_num": 1,
+      "left": 191,
+      "top": 1742,
+      "width": 72,
+      "height": 38,
+      "conf": 93.305832
+    },
+    {
+      "text": "उदारता",
+      "line_num": 1,
+      "left": 270,
+      "top": 1751,
+      "width": 82,
+      "height": 22,
+      "conf": 92.840721
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 359,
+      "top": 1743,
+      "width": 24,
+      "height": 29,
+      "conf": 96.974365
+    },
+    {
+      "text": "अद्वितीय",
+      "line_num": 1,
+      "left": 393,
+      "top": 1742,
+      "width": 94,
+      "height": 33,
+      "conf": 96.414116
+    },
+    {
+      "text": "सुंदर",
+      "line_num": 1,
+      "left": 495,
+      "top": 1744,
+      "width": 53,
+      "height": 37,
+      "conf": 96.842072
+    },
+    {
+      "text": "दृश्य",
+      "line_num": 1,
+      "left": 555,
+      "top": 1751,
+      "width": 53,
+      "height": 30,
+      "conf": 92.193359
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 619,
+      "top": 1742,
+      "width": 44,
+      "height": 30,
+      "conf": 96.507805
+    },
+    {
+      "text": "जीवन",
+      "line_num": 1,
+      "left": 670,
+      "top": 1742,
+      "width": 69,
+      "height": 30,
+      "conf": 96.362511
+    },
+    {
+      "text": "को",
+      "line_num": 1,
+      "left": 746,
+      "top": 1743,
+      "width": 35,
+      "height": 29,
+      "conf": 96.709641
+    },
+    {
+      "text": "बनाए",
+      "line_num": 2,
+      "left": 191,
+      "top": 1799,
+      "width": 63,
+      "height": 24,
+      "conf": 96.731979
+    },
+    {
+      "text": "रखने",
+      "line_num": 2,
+      "left": 261,
+      "top": 1791,
+      "width": 57,
+      "height": 29,
+      "conf": 96.757332
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 325,
+      "top": 1791,
+      "width": 27,
+      "height": 29,
+      "conf": 96.89241
+    },
+    {
+      "text": "लिए",
+      "line_num": 2,
+      "left": 359,
+      "top": 1790,
+      "width": 51,
+      "height": 33,
+      "conf": 96.77211
+    },
+    {
+      "text": "आवश्यक",
+      "line_num": 2,
+      "left": 419,
+      "top": 1799,
+      "width": 109,
+      "height": 21,
+      "conf": 96.692612
+    },
+    {
+      "text": "बहुमूल्य",
+      "line_num": 2,
+      "left": 535,
+      "top": 1799,
+      "width": 90,
+      "height": 31,
+      "conf": 89.653946
+    },
+    {
+      "text": "संसाधन",
+      "line_num": 2,
+      "left": 632,
+      "top": 1792,
+      "width": 91,
+      "height": 28,
+      "conf": 95.951561
+    },
+    {
+      "text": "प्रदान",
+      "line_num": 1,
+      "left": 847,
+      "top": 349,
+      "width": 63,
+      "height": 22,
+      "conf": 96.84977
+    },
+    {
+      "text": "करती",
+      "line_num": 1,
+      "left": 917,
+      "top": 340,
+      "width": 66,
+      "height": 30,
+      "conf": 93.296593
+    },
+    {
+      "text": "है।",
+      "line_num": 1,
+      "left": 990,
+      "top": 341,
+      "width": 26,
+      "height": 32,
+      "conf": 93.268265
+    },
+    {
+      "text": "स्वच्छ",
+      "line_num": 1,
+      "left": 1031,
+      "top": 349,
+      "width": 67,
+      "height": 21,
+      "conf": 91.539551
+    },
+    {
+      "text": "हवा",
+      "line_num": 1,
+      "left": 1105,
+      "top": 349,
+      "width": 44,
+      "height": 24,
+      "conf": 96.942207
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 1157,
+      "top": 341,
+      "width": 23,
+      "height": 29,
+      "conf": 97.023598
+    },
+    {
+      "text": "लेकर",
+      "line_num": 1,
+      "left": 1188,
+      "top": 341,
+      "width": 62,
+      "height": 29,
+      "conf": 97.011497
+    },
+    {
+      "text": "शुद्ध",
+      "line_num": 1,
+      "left": 1259,
+      "top": 349,
+      "width": 45,
+      "height": 30,
+      "conf": 96.902245
+    },
+    {
+      "text": "पानी",
+      "line_num": 1,
+      "left": 1311,
+      "top": 340,
+      "width": 54,
+      "height": 30,
+      "conf": 96.211823
+    },
+    {
+      "text": "तक,",
+      "line_num": 1,
+      "left": 1372,
+      "top": 349,
+      "width": 50,
+      "height": 25,
+      "conf": 97.008972
+    },
+    {
+      "text": "उपजाऊ",
+      "line_num": 2,
+      "left": 847,
+      "top": 397,
+      "width": 89,
+      "height": 21,
+      "conf": 91.358421
+    },
+    {
+      "text": "मिट्टी",
+      "line_num": 2,
+      "left": 944,
+      "top": 388,
+      "width": 56,
+      "height": 34,
+      "conf": 96.343117
+    },
+    {
+      "text": "से",
+      "line_num": 2,
+      "left": 1021,
+      "top": 384,
+      "width": 24,
+      "height": 46,
+      "conf": 96.835251
+    },
+    {
+      "text": "लेकर",
+      "line_num": 2,
+      "left": 1038,
+      "top": 389,
+      "width": 62,
+      "height": 29,
+      "conf": 96.439804
+    },
+    {
+      "text": "विविध",
+      "line_num": 2,
+      "left": 1108,
+      "top": 388,
+      "width": 74,
+      "height": 30,
+      "conf": 96.298271
+    },
+    {
+      "text": "जीवन",
+      "line_num": 2,
+      "left": 1190,
+      "top": 388,
+      "width": 68,
+      "height": 30,
+      "conf": 96.686989
+    },
+    {
+      "text": "तक,",
+      "line_num": 2,
+      "left": 1265,
+      "top": 397,
+      "width": 50,
+      "height": 25,
+      "conf": 96.412285
+    },
+    {
+      "text": "पर्यावरण",
+      "line_num": 2,
+      "left": 1325,
+      "top": 389,
+      "width": 102,
+      "height": 29,
+      "conf": 95.857635
+    },
+    {
+      "text": "की",
+      "line_num": 3,
+      "left": 847,
+      "top": 436,
+      "width": 35,
+      "height": 30,
+      "conf": 96.965302
+    },
+    {
+      "text": "रक्षा",
+      "line_num": 3,
+      "left": 890,
+      "top": 445,
+      "width": 47,
+      "height": 24,
+      "conf": 94.465355
+    },
+    {
+      "text": "और",
+      "line_num": 3,
+      "left": 947,
+      "top": 437,
+      "width": 44,
+      "height": 29,
+      "conf": 96.319099
+    },
+    {
+      "text": "देखभाल",
+      "line_num": 3,
+      "left": 998,
+      "top": 437,
+      "width": 94,
+      "height": 30,
+      "conf": 96.63562
+    },
+    {
+      "text": "न",
+      "line_num": 3,
+      "left": 1100,
+      "top": 445,
+      "width": 18,
+      "height": 21,
+      "conf": 96.579597
+    },
+    {
+      "text": "केवल",
+      "line_num": 3,
+      "left": 1126,
+      "top": 437,
+      "width": 66,
+      "height": 29,
+      "conf": 96.892113
+    },
+    {
+      "text": "हमारी",
+      "line_num": 3,
+      "left": 1200,
+      "top": 436,
+      "width": 67,
+      "height": 33,
+      "conf": 96.229103
+    },
+    {
+      "text": "पीढ़ी",
+      "line_num": 3,
+      "left": 1274,
+      "top": 436,
+      "width": 54,
+      "height": 34,
+      "conf": 96.823601
+    },
+    {
+      "text": "की",
+      "line_num": 3,
+      "left": 1336,
+      "top": 436,
+      "width": 35,
+      "height": 30,
+      "conf": 96.829201
+    },
+    {
+      "text": "जिम्मेदारी",
+      "line_num": 4,
+      "left": 847,
+      "top": 484,
+      "width": 110,
+      "height": 31,
+      "conf": 96.343475
+    },
+    {
+      "text": "है,",
+      "line_num": 4,
+      "left": 965,
+      "top": 485,
+      "width": 23,
+      "height": 33,
+      "conf": 96.683083
+    },
+    {
+      "text": "बल्कि",
+      "line_num": 4,
+      "left": 998,
+      "top": 484,
+      "width": 68,
+      "height": 30,
+      "conf": 92.530319
+    },
+    {
+      "text": "यह",
+      "line_num": 4,
+      "left": 1073,
+      "top": 493,
+      "width": 38,
+      "height": 24,
+      "conf": 97.018478
+    },
+    {
+      "text": "सुनिश्चित",
+      "line_num": 4,
+      "left": 1118,
+      "top": 484,
+      "width": 111,
+      "height": 39,
+      "conf": 96.548706
+    },
+    {
+      "text": "करने",
+      "line_num": 4,
+      "left": 1236,
+      "top": 485,
+      "width": 56,
+      "height": 29,
+      "conf": 96.930832
+    },
+    {
+      "text": "की",
+      "line_num": 4,
+      "left": 1300,
+      "top": 484,
+      "width": 35,
+      "height": 30,
+      "conf": 97.017967
+    },
+    {
+      "text": "कुंजी",
+      "line_num": 4,
+      "left": 1342,
+      "top": 484,
+      "width": 59,
+      "height": 39,
+      "conf": 96.643532
+    },
+    {
+      "text": "भी",
+      "line_num": 4,
+      "left": 1408,
+      "top": 484,
+      "width": 30,
+      "height": 30,
+      "conf": 97.003906
+    },
+    {
+      "text": "है",
+      "line_num": 5,
+      "left": 847,
+      "top": 533,
+      "width": 18,
+      "height": 32,
+      "conf": 96.846832
+    },
+    {
+      "text": "कि",
+      "line_num": 5,
+      "left": 873,
+      "top": 532,
+      "width": 35,
+      "height": 30,
+      "conf": 96.846832
+    },
+    {
+      "text": "आने",
+      "line_num": 5,
+      "left": 917,
+      "top": 533,
+      "width": 48,
+      "height": 29,
+      "conf": 96.658592
+    },
+    {
+      "text": "वाली",
+      "line_num": 5,
+      "left": 973,
+      "top": 532,
+      "width": 59,
+      "height": 30,
+      "conf": 93.301193
+    },
+    {
+      "text": "पीढ़ियां",
+      "line_num": 5,
+      "left": 1040,
+      "top": 532,
+      "width": 82,
+      "height": 34,
+      "conf": 92.000687
+    },
+    {
+      "text": "पृथ्वी",
+      "line_num": 5,
+      "left": 1129,
+      "top": 532,
+      "width": 60,
+      "height": 38,
+      "conf": 96.949944
+    },
+    {
+      "text": "के",
+      "line_num": 5,
+      "left": 1197,
+      "top": 533,
+      "width": 26,
+      "height": 29,
+      "conf": 93.305618
+    },
+    {
+      "text": "चमत्कारों",
+      "line_num": 5,
+      "left": 1231,
+      "top": 533,
+      "width": 105,
+      "height": 29,
+      "conf": 92.060616
+    },
+    {
+      "text": "का",
+      "line_num": 5,
+      "left": 1344,
+      "top": 541,
+      "width": 35,
+      "height": 21,
+      "conf": 96.994713
+    },
+    {
+      "text": "आनंद",
+      "line_num": 6,
+      "left": 849,
+      "top": 582,
+      "width": 65,
+      "height": 29,
+      "conf": 95.538658
+    },
+    {
+      "text": "लेती",
+      "line_num": 6,
+      "left": 921,
+      "top": 580,
+      "width": 52,
+      "height": 30,
+      "conf": 93.278343
+    },
+    {
+      "text": "रहें।",
+      "line_num": 6,
+      "left": 980,
+      "top": 581,
+      "width": 39,
+      "height": 32,
+      "conf": 92.10601
+    },
+    {
+      "text": "प्रभावी",
+      "line_num": 1,
+      "left": 847,
+      "top": 654,
+      "width": 74,
+      "height": 30,
+      "conf": 96.73494
+    },
+    {
+      "text": "संचार",
+      "line_num": 1,
+      "left": 929,
+      "top": 656,
+      "width": 66,
+      "height": 28,
+      "conf": 97.011589
+    },
+    {
+      "text": "विभिन्‍न",
+      "line_num": 1,
+      "left": 1002,
+      "top": 654,
+      "width": 80,
+      "height": 30,
+      "conf": 89.973862
+    },
+    {
+      "text": "संस्कृतियों,",
+      "line_num": 1,
+      "left": 1090,
+      "top": 654,
+      "width": 122,
+      "height": 38,
+      "conf": 77.190277
+    },
+    {
+      "text": "जातीयताओं",
+      "line_num": 1,
+      "left": 1221,
+      "top": 654,
+      "width": 139,
+      "height": 30,
+      "conf": 91.827515
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 1370,
+      "top": 654,
+      "width": 44,
+      "height": 30,
+      "conf": 96.330948
+    },
+    {
+      "text": "राष्ट्रों",
+      "line_num": 2,
+      "left": 847,
+      "top": 703,
+      "width": 93,
+      "height": 33,
+      "conf": 96.296638
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 939,
+      "top": 698,
+      "width": 22,
+      "height": 47,
+      "conf": 92.830009
+    },
+    {
+      "text": "बीच",
+      "line_num": 2,
+      "left": 947,
+      "top": 702,
+      "width": 49,
+      "height": 30,
+      "conf": 95.569122
+    },
+    {
+      "text": "समझ",
+      "line_num": 2,
+      "left": 1004,
+      "top": 711,
+      "width": 66,
+      "height": 25,
+      "conf": 96.722954
+    },
+    {
+      "text": "और",
+      "line_num": 2,
+      "left": 1080,
+      "top": 703,
+      "width": 45,
+      "height": 29,
+      "conf": 96.24823
+    },
+    {
+      "text": "सहयोग",
+      "line_num": 2,
+      "left": 1132,
+      "top": 703,
+      "width": 86,
+      "height": 32,
+      "conf": 95.975754
+    },
+    {
+      "text": "का",
+      "line_num": 2,
+      "left": 1225,
+      "top": 711,
+      "width": 35,
+      "height": 21,
+      "conf": 96.027634
+    },
+    {
+      "text": "महत्वपूर्ण",
+      "line_num": 2,
+      "left": 1268,
+      "top": 703,
+      "width": 106,
+      "height": 38,
+      "conf": 95.600006
+    },
+    {
+      "text": "पुल",
+      "line_num": 2,
+      "left": 1381,
+      "top": 711,
+      "width": 43,
+      "height": 30,
+      "conf": 96.982941
+    },
+    {
+      "text": "बनाता",
+      "line_num": 3,
+      "left": 847,
+      "top": 759,
+      "width": 72,
+      "height": 21,
+      "conf": 93.304573
+    },
+    {
+      "text": "है।",
+      "line_num": 3,
+      "left": 926,
+      "top": 751,
+      "width": 26,
+      "height": 32,
+      "conf": 92.492439
+    },
+    {
+      "text": "भाषा",
+      "line_num": 3,
+      "left": 967,
+      "top": 759,
+      "width": 56,
+      "height": 21,
+      "conf": 96.565514
+    },
+    {
+      "text": "मानवता",
+      "line_num": 3,
+      "left": 1031,
+      "top": 759,
+      "width": 89,
+      "height": 21,
+      "conf": 96.211662
+    },
+    {
+      "text": "के",
+      "line_num": 3,
+      "left": 1127,
+      "top": 751,
+      "width": 27,
+      "height": 29,
+      "conf": 95.820572
+    },
+    {
+      "text": "सबसे",
+      "line_num": 3,
+      "left": 1161,
+      "top": 751,
+      "width": 64,
+      "height": 29,
+      "conf": 96.44342
+    },
+    {
+      "text": "महान",
+      "line_num": 3,
+      "left": 1232,
+      "top": 759,
+      "width": 62,
+      "height": 24,
+      "conf": 93.303047
+    },
+    {
+      "text": "आविष्कारों",
+      "line_num": 3,
+      "left": 1304,
+      "top": 750,
+      "width": 122,
+      "height": 30,
+      "conf": 79.728676
+    },
+    {
+      "text": "में",
+      "line_num": 4,
+      "left": 847,
+      "top": 799,
+      "width": 20,
+      "height": 29,
+      "conf": 96.990791
+    },
+    {
+      "text": "से",
+      "line_num": 4,
+      "left": 890,
+      "top": 794,
+      "width": 21,
+      "height": 47,
+      "conf": 96.369781
+    },
+    {
+      "text": "एक",
+      "line_num": 4,
+      "left": 906,
+      "top": 807,
+      "width": 44,
+      "height": 24,
+      "conf": 97.017387
+    },
+    {
+      "text": "के",
+      "line_num": 4,
+      "left": 957,
+      "top": 799,
+      "width": 27,
+      "height": 29,
+      "conf": 97.023384
+    },
+    {
+      "text": "रूप",
+      "line_num": 4,
+      "left": 991,
+      "top": 807,
+      "width": 42,
+      "height": 21,
+      "conf": 96.626732
+    },
+    {
+      "text": "में,",
+      "line_num": 4,
+      "left": 1040,
+      "top": 799,
+      "width": 26,
+      "height": 33,
+      "conf": 96.99437
+    },
+    {
+      "text": "हमें",
+      "line_num": 4,
+      "left": 1076,
+      "top": 799,
+      "width": 36,
+      "height": 32,
+      "conf": 96.61628
+    },
+    {
+      "text": "भौगोलिक",
+      "line_num": 4,
+      "left": 1119,
+      "top": 798,
+      "width": 112,
+      "height": 30,
+      "conf": 95.892357
+    },
+    {
+      "text": "और",
+      "line_num": 4,
+      "left": 1241,
+      "top": 799,
+      "width": 44,
+      "height": 29,
+      "conf": 96.914993
+    },
+    {
+      "text": "सांस्कृतिक",
+      "line_num": 4,
+      "left": 1293,
+      "top": 798,
+      "width": 121,
+      "height": 38,
+      "conf": 87.156303
+    },
+    {
+      "text": "सीमाओं",
+      "line_num": 5,
+      "left": 847,
+      "top": 846,
+      "width": 92,
+      "height": 30,
+      "conf": 96.392258
+    },
+    {
+      "text": "को",
+      "line_num": 5,
+      "left": 946,
+      "top": 847,
+      "width": 35,
+      "height": 29,
+      "conf": 96.653862
+    },
+    {
+      "text": "पार",
+      "line_num": 5,
+      "left": 989,
+      "top": 855,
+      "width": 41,
+      "height": 21,
+      "conf": 96.422028
+    },
+    {
+      "text": "करने,",
+      "line_num": 5,
+      "left": 1037,
+      "top": 847,
+      "width": 62,
+      "height": 33,
+      "conf": 96.630821
+    },
+    {
+      "text": "एक",
+      "line_num": 5,
+      "left": 1108,
+      "top": 855,
+      "width": 44,
+      "height": 24,
+      "conf": 96.275833
+    },
+    {
+      "text": "दूसरे",
+      "line_num": 5,
+      "left": 1160,
+      "top": 847,
+      "width": 53,
+      "height": 38,
+      "conf": 96.778183
+    },
+    {
+      "text": "के",
+      "line_num": 5,
+      "left": 1220,
+      "top": 847,
+      "width": 27,
+      "height": 29,
+      "conf": 97.018692
+    },
+    {
+      "text": "विचारों,",
+      "line_num": 5,
+      "left": 1254,
+      "top": 846,
+      "width": 85,
+      "height": 34,
+      "conf": 96.573074
+    },
+    {
+      "text": "अनुभवों",
+      "line_num": 5,
+      "left": 1350,
+      "top": 847,
+      "width": 85,
+      "height": 38,
+      "conf": 96.954788
+    },
+    {
+      "text": "और",
+      "line_num": 6,
+      "left": 849,
+      "top": 894,
+      "width": 45,
+      "height": 30,
+      "conf": 96.590416
+    },
+    {
+      "text": "ज्ञान",
+      "line_num": 6,
+      "left": 901,
+      "top": 903,
+      "width": 50,
+      "height": 23,
+      "conf": 96.700333
+    },
+    {
+      "text": "को",
+      "line_num": 6,
+      "left": 958,
+      "top": 895,
+      "width": 35,
+      "height": 29,
+      "conf": 96.858368
+    },
+    {
+      "text": "साझा",
+      "line_num": 6,
+      "left": 1001,
+      "top": 903,
+      "width": 65,
+      "height": 25,
+      "conf": 96.698044
+    },
+    {
+      "text": "करने",
+      "line_num": 6,
+      "left": 1074,
+      "top": 895,
+      "width": 55,
+      "height": 29,
+      "conf": 96.523918
+    },
+    {
+      "text": "और",
+      "line_num": 6,
+      "left": 1139,
+      "top": 895,
+      "width": 45,
+      "height": 29,
+      "conf": 96.574669
+    },
+    {
+      "text": "पारस्परिक",
+      "line_num": 6,
+      "left": 1191,
+      "top": 894,
+      "width": 119,
+      "height": 30,
+      "conf": 89.377617
+    },
+    {
+      "text": "समझ,",
+      "line_num": 6,
+      "left": 1317,
+      "top": 903,
+      "width": 73,
+      "height": 25,
+      "conf": 93.855461
+    },
+    {
+      "text": "सम्मान",
+      "line_num": 7,
+      "left": 847,
+      "top": 951,
+      "width": 78,
+      "height": 21,
+      "conf": 95.382851
+    },
+    {
+      "text": "और",
+      "line_num": 7,
+      "left": 934,
+      "top": 942,
+      "width": 45,
+      "height": 30,
+      "conf": 96.507103
+    },
+    {
+      "text": "विश्वास",
+      "line_num": 7,
+      "left": 986,
+      "top": 942,
+      "width": 91,
+      "height": 30,
+      "conf": 96.497833
+    },
+    {
+      "text": "के",
+      "line_num": 7,
+      "left": 1085,
+      "top": 943,
+      "width": 26,
+      "height": 29,
+      "conf": 95.996307
+    },
+    {
+      "text": "संबंध",
+      "line_num": 7,
+      "left": 1119,
+      "top": 944,
+      "width": 62,
+      "height": 28,
+      "conf": 96.720032
+    },
+    {
+      "text": "बनाने",
+      "line_num": 7,
+      "left": 1188,
+      "top": 943,
+      "width": 62,
+      "height": 29,
+      "conf": 96.599747
+    },
+    {
+      "text": "में",
+      "line_num": 7,
+      "left": 1257,
+      "top": 943,
+      "width": 20,
+      "height": 29,
+      "conf": 96.998238
+    },
+    {
+      "text": "सक्षम",
+      "line_num": 7,
+      "left": 1285,
+      "top": 951,
+      "width": 66,
+      "height": 24,
+      "conf": 96.778145
+    },
+    {
+      "text": "बनाती",
+      "line_num": 7,
+      "left": 1358,
+      "top": 942,
+      "width": 72,
+      "height": 30,
+      "conf": 96.546547
+    },
+    {
+      "text": "है।",
+      "line_num": 8,
+      "left": 847,
+      "top": 991,
+      "width": 26,
+      "height": 32,
+      "conf": 90.362801
+    },
+    {
+      "text": "वैज्ञानिक",
+      "line_num": 1,
+      "left": 847,
+      "top": 1066,
+      "width": 101,
+      "height": 32,
+      "conf": 96.963615
+    },
+    {
+      "text": "अनुसंधान",
+      "line_num": 1,
+      "left": 957,
+      "top": 1068,
+      "width": 106,
+      "height": 37,
+      "conf": 93.931587
+    },
+    {
+      "text": "कठोर",
+      "line_num": 1,
+      "left": 1071,
+      "top": 1067,
+      "width": 66,
+      "height": 29,
+      "conf": 96.099274
+    },
+    {
+      "text": "तरीकों",
+      "line_num": 1,
+      "left": 1145,
+      "top": 1066,
+      "width": 74,
+      "height": 30,
+      "conf": 96.262115
+    },
+    {
+      "text": "और",
+      "line_num": 1,
+      "left": 1229,
+      "top": 1067,
+      "width": 44,
+      "height": 29,
+      "conf": 97.011383
+    },
+    {
+      "text": "निरंतर",
+      "line_num": 1,
+      "left": 1281,
+      "top": 1066,
+      "width": 70,
+      "height": 30,
+      "conf": 96.829323
+    },
+    {
+      "text": "अन्वेषण",
+      "line_num": 2,
+      "left": 849,
+      "top": 1115,
+      "width": 92,
+      "height": 29,
+      "conf": 85.85112
+    },
+    {
+      "text": "के",
+      "line_num": 2,
+      "left": 948,
+      "top": 1115,
+      "width": 27,
+      "height": 29,
+      "conf": 96.403557
+    },
+    {
+      "text": "माध्यम",
+      "line_num": 2,
+      "left": 982,
+      "top": 1123,
+      "width": 79,
+      "height": 21,
+      "conf": 96.92672
+    },
+    {
+      "text": "से",
+      "line_num": 2,
+      "left": 1056,
+      "top": 1110,
+      "width": 22,
+      "height": 47,
+      "conf": 97.000526
+    },
+    {
+      "text": "ब्रह्मांड",
+      "line_num": 2,
+      "left": 1100,
+      "top": 1116,
+      "width": 71,
+      "height": 31,
+      "conf": 96.482857
+    },
+    {
+      "text": "में",
+      "line_num": 2,
+      "left": 1178,
+      "top": 1115,
+      "width": 20,
+      "height": 29,
+      "conf": 96.990143
+    },
+    {
+      "text": "छिपे",
+      "line_num": 2,
+      "left": 1206,
+      "top": 1114,
+      "width": 50,
+      "height": 30,
+      "conf": 96.067719
+    },
+    {
+      "text": "रहस्यों",
+      "line_num": 2,
+      "left": 1263,
+      "top": 1115,
+      "width": 73,
+      "height": 32,
+      "conf": 93.527664
+    },
+    {
+      "text": "और",
+      "line_num": 2,
+      "left": 1346,
+      "top": 1114,
+      "width": 44,
+      "height": 30,
+      "conf": 96.927681
+    },
+    {
+      "text": "नियमों",
+      "line_num": 3,
+      "left": 847,
+      "top": 1162,
+      "width": 74,
+      "height": 30,
+      "conf": 96.782669
+    },
+    {
+      "text": "को",
+      "line_num": 3,
+      "left": 928,
+      "top": 1163,
+      "width": 35,
+      "height": 29,
+      "conf": 93.302536
+    },
+    {
+      "text": "घीरे-घीरे",
+      "line_num": 3,
+      "left": 971,
+      "top": 1162,
+      "width": 96,
+      "height": 30,
+      "conf": 76.048218
+    },
+    {
+      "text": "प्रकट",
+      "line_num": 3,
+      "left": 1075,
+      "top": 1171,
+      "width": 61,
+      "height": 21,
+      "conf": 96.959801
+    },
+    {
+      "text": "कर",
+      "line_num": 3,
+      "left": 1143,
+      "top": 1171,
+      "width": 40,
+      "height": 21,
+      "conf": 97.001526
+    },
+    {
+      "text": "रहा",
+      "line_num": 3,
+      "left": 1190,
+      "top": 1171,
+      "width": 39,
+      "height": 24,
+      "conf": 93.306145
+    },
+    {
+      "text": "है।",
+      "line_num": 3,
+      "left": 1237,
+      "top": 1163,
+      "width": 18,
+      "height": 32,
+      "conf": 93.267242
+    },
+    {
+      "text": "प्रत्येक",
+      "line_num": 3,
+      "left": 1278,
+      "top": 1163,
+      "width": 74,
+      "height": 29,
+      "conf": 95.756554
+    },
+    {
+      "text": "नई",
+      "line_num": 3,
+      "left": 1359,
+      "top": 1163,
+      "width": 36,
+      "height": 33,
+      "conf": 96.969337
+    },
+    {
+      "text": "खोज",
+      "line_num": 4,
+      "left": 847,
+      "top": 1211,
+      "width": 60,
+      "height": 29,
+      "conf": 96.433464
+    },
+    {
+      "text": "अज्ञात",
+      "line_num": 4,
+      "left": 916,
+      "top": 1219,
+      "width": 72,
+      "height": 23,
+      "conf": 95.576668
+    },
+    {
+      "text": "दुनिया",
+      "line_num": 4,
+      "left": 996,
+      "top": 1210,
+      "width": 71,
+      "height": 39,
+      "conf": 96.922073
+    },
+    {
+      "text": "के",
+      "line_num": 4,
+      "left": 1075,
+      "top": 1211,
+      "width": 26,
+      "height": 29,
+      "conf": 96.947502
+    },
+    {
+      "text": "दरवाजे",
+      "line_num": 4,
+      "left": 1109,
+      "top": 1211,
+      "width": 81,
+      "height": 30,
+      "conf": 96.542374
+    },
+    {
+      "text": "खोलने",
+      "line_num": 4,
+      "left": 1198,
+      "top": 1211,
+      "width": 75,
+      "height": 29,
+      "conf": 96.837936
+    },
+    {
+      "text": "जैसी",
+      "line_num": 4,
+      "left": 1280,
+      "top": 1210,
+      "width": 56,
+      "height": 30,
+      "conf": 96.346237
+    },
+    {
+      "text": "है,",
+      "line_num": 4,
+      "left": 1343,
+      "top": 1211,
+      "width": 24,
+      "height": 33,
+      "conf": 96.18428
+    },
+    {
+      "text": "और",
+      "line_num": 4,
+      "left": 1379,
+      "top": 1211,
+      "width": 44,
+      "height": 29,
+      "conf": 96.848564
+    },
+    {
+      "text": "साथ",
+      "line_num": 5,
+      "left": 847,
+      "top": 1267,
+      "width": 53,
+      "height": 21,
+      "conf": 96.611916
+    },
+    {
+      "text": "ही",
+      "line_num": 5,
+      "left": 907,
+      "top": 1258,
+      "width": 27,
+      "height": 33,
+      "conf": 96.272194
+    },
+    {
+      "text": "अधिक",
+      "line_num": 5,
+      "left": 944,
+      "top": 1258,
+      "width": 76,
+      "height": 30,
+      "conf": 95.311913
+    },
+    {
+      "text": "आकर्षक",
+      "line_num": 5,
+      "left": 1030,
+      "top": 1259,
+      "width": 99,
+      "height": 29,
+      "conf": 95.089539
+    },
+    {
+      "text": "प्रश्न",
+      "line_num": 5,
+      "left": 1136,
+      "top": 1267,
+      "width": 52,
+      "height": 21,
+      "conf": 96.789299
+    },
+    {
+      "text": "लाती",
+      "line_num": 5,
+      "left": 1196,
+      "top": 1258,
+      "width": 59,
+      "height": 30,
+      "conf": 97.003654
+    },
+    {
+      "text": "है,",
+      "line_num": 5,
+      "left": 1263,
+      "top": 1259,
+      "width": 23,
+      "height": 33,
+      "conf": 95.967133
+    },
+    {
+      "text": "जो",
+      "line_num": 5,
+      "left": 1296,
+      "top": 1259,
+      "width": 34,
+      "height": 29,
+      "conf": 96.969063
+    },
+    {
+      "text": "वैज्ञानिकों",
+      "line_num": 6,
+      "left": 847,
+      "top": 1306,
+      "width": 109,
+      "height": 32,
+      "conf": 96.423203
+    },
+    {
+      "text": "को",
+      "line_num": 6,
+      "left": 964,
+      "top": 1307,
+      "width": 35,
+      "height": 29,
+      "conf": 97.020554
+    },
+    {
+      "text": "व्यापक",
+      "line_num": 6,
+      "left": 1006,
+      "top": 1315,
+      "width": 83,
+      "height": 21,
+      "conf": 95.751656
+    },
+    {
+      "text": "अज्ञात",
+      "line_num": 6,
+      "left": 1099,
+      "top": 1315,
+      "width": 71,
+      "height": 23,
+      "conf": 96.236534
+    },
+    {
+      "text": "क्षेत्रों",
+      "line_num": 6,
+      "left": 1180,
+      "top": 1307,
+      "width": 50,
+      "height": 32,
+      "conf": 96.299156
+    },
+    {
+      "text": "की",
+      "line_num": 6,
+      "left": 1265,
+      "top": 1302,
+      "width": 24,
+      "height": 46,
+      "conf": 95.71154
+    },
+    {
+      "text": "खोज",
+      "line_num": 6,
+      "left": 1280,
+      "top": 1307,
+      "width": 60,
+      "height": 29,
+      "conf": 96.82695
+    },
+    {
+      "text": "जारी",
+      "line_num": 6,
+      "left": 1347,
+      "top": 1306,
+      "width": 56,
+      "height": 30,
+      "conf": 96.46434
+    },
+    {
+      "text": "रखने",
+      "line_num": 7,
+      "left": 847,
+      "top": 1355,
+      "width": 57,
+      "height": 29,
+      "conf": 96.810349
+    },
+    {
+      "text": "के",
+      "line_num": 7,
+      "left": 911,
+      "top": 1355,
+      "width": 26,
+      "height": 29,
+      "conf": 96.469551
+    },
+    {
+      "text": "लिए",
+      "line_num": 7,
+      "left": 945,
+      "top": 1354,
+      "width": 51,
+      "height": 33,
+      "conf": 96.966408
+    },
+    {
+      "text": "प्रेरित",
+      "line_num": 7,
+      "left": 1003,
+      "top": 1354,
+      "width": 60,
+      "height": 30,
+      "conf": 96.836426
+    },
+    {
+      "text": "करती",
+      "line_num": 7,
+      "left": 1070,
+      "top": 1354,
+      "width": 66,
+      "height": 30,
+      "conf": 93.298752
+    },
+    {
+      "text": "है।",
+      "line_num": 7,
+      "left": 1144,
+      "top": 1355,
+      "width": 26,
+      "height": 32,
+      "conf": 93.031876
+    },
+    {
+      "text": "कला",
+      "line_num": 1,
+      "left": 847,
+      "top": 1437,
+      "width": 58,
+      "height": 21,
+      "conf": 96.362663
+    },
+    {
+      "text": "अपने",
+      "line_num": 1,
+      "left": 915,
+      "top": 1429,
+      "width": 57,
+      "height": 29,
+      "conf": 96.215118
+    },
+    {
+      "text": "अद्वितीय",
+      "line_num": 1,
+      "left": 982,
+      "top": 1428,
+      "width": 94,
+      "height": 33,
+      "conf": 96.274986
+    },
+    {
+      "text": "तरीके",
+      "line_num": 1,
+      "left": 1084,
+      "top": 1428,
+      "width": 66,
+      "height": 30,
+      "conf": 96.368057
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 1157,
+      "top": 1429,
+      "width": 24,
+      "height": 29,
+      "conf": 96.759491
+    },
+    {
+      "text": "भाषा",
+      "line_num": 1,
+      "left": 1188,
+      "top": 1437,
+      "width": 56,
+      "height": 21,
+      "conf": 96.703224
+    },
+    {
+      "text": "की",
+      "line_num": 1,
+      "left": 1252,
+      "top": 1428,
+      "width": 35,
+      "height": 30,
+      "conf": 97.022369
+    },
+    {
+      "text": "सीमाओं",
+      "line_num": 1,
+      "left": 1294,
+      "top": 1428,
+      "width": 92,
+      "height": 30,
+      "conf": 96.295746
+    },
+    {
+      "text": "से",
+      "line_num": 1,
+      "left": 1393,
+      "top": 1429,
+      "width": 24,
+      "height": 29,
+      "conf": 96.909935
+    },
+    {
+      "text": "परे",
+      "line_num": 2,
+      "left": 847,
+      "top": 1477,
+      "width": 33,
+      "height": 29,
+      "conf": 96.823479
+    },
+    {
+      "text": "गहन",
+      "line_num": 2,
+      "left": 887,
+      "top": 1485,
+      "width": 52,
+      "height": 24,
+      "conf": 96.913689
+    },
+    {
+      "text": "भावनाओं",
+      "line_num": 2,
+      "left": 947,
+      "top": 1477,
+      "width": 104,
+      "height": 29,
+      "conf": 96.22876
+    },
+    {
+      "text": "और",
+      "line_num": 2,
+      "left": 1060,
+      "top": 1476,
+      "width": 45,
+      "height": 30,
+      "conf": 93.298431
+    },
+    {
+      "text": "अमूर्त",
+      "line_num": 2,
+      "left": 1114,
+      "top": 1477,
+      "width": 59,
+      "height": 38,
+      "conf": 80.658623
+    },
+    {
+      "text": "विचारों",
+      "line_num": 2,
+      "left": 1181,
+      "top": 1476,
+      "width": 79,
+      "height": 30,
+      "conf": 96.376846
+    },
+    {
+      "text": "को",
+      "line_num": 2,
+      "left": 1267,
+      "top": 1477,
+      "width": 35,
+      "height": 29,
+      "conf": 96.524689
+    },
+    {
+      "text": "व्यक्त",
+      "line_num": 2,
+      "left": 1310,
+      "top": 1485,
+      "width": 67,
+      "height": 21,
+      "conf": 81.753372
+    },
+    {
+      "text": "और",
+      "line_num": 2,
+      "left": 1387,
+      "top": 1476,
+      "width": 44,
+      "height": 30,
+      "conf": 96.151756
+    },
+    {
+      "text": "संप्रेषित",
+      "line_num": 3,
+      "left": 847,
+      "top": 1524,
+      "width": 87,
+      "height": 30,
+      "conf": 90.934631
+    },
+    {
+      "text": "करती",
+      "line_num": 3,
+      "left": 942,
+      "top": 1524,
+      "width": 65,
+      "height": 30,
+      "conf": 93.30468
+    },
+    {
+      "text": "है।",
+      "line_num": 3,
+      "left": 1015,
+      "top": 1525,
+      "width": 26,
+      "height": 32,
+      "conf": 93.267647
+    },
+    {
+      "text": "चाहे",
+      "line_num": 3,
+      "left": 1056,
+      "top": 1525,
+      "width": 47,
+      "height": 32,
+      "conf": 96.80426
+    },
+    {
+      "text": "वह",
+      "line_num": 3,
+      "left": 1110,
+      "top": 1533,
+      "width": 36,
+      "height": 24,
+      "conf": 96.789909
+    },
+    {
+      "text": "पेंटिंग,",
+      "line_num": 3,
+      "left": 1153,
+      "top": 1524,
+      "width": 68,
+      "height": 34,
+      "conf": 96.443642
+    },
+    {
+      "text": "संगीत,",
+      "line_num": 3,
+      "left": 1231,
+      "top": 1524,
+      "width": 73,
+      "height": 34,
+      "conf": 93.304764
+    },
+    {
+      "text": "मूर्तिकला",
+      "line_num": 3,
+      "left": 1314,
+      "top": 1523,
+      "width": 103,
+      "height": 40,
+      "conf": 92.508392
+    },
+    {
+      "text": "या",
+      "line_num": 4,
+      "left": 847,
+      "top": 1581,
+      "width": 30,
+      "height": 21,
+      "conf": 96.905815
+    },
+    {
+      "text": "साहित्य",
+      "line_num": 4,
+      "left": 885,
+      "top": 1572,
+      "width": 86,
+      "height": 33,
+      "conf": 96.011192
+    },
+    {
+      "text": "हो,",
+      "line_num": 4,
+      "left": 979,
+      "top": 1573,
+      "width": 32,
+      "height": 33,
+      "conf": 96.813171
+    },
+    {
+      "text": "ये",
+      "line_num": 4,
+      "left": 1020,
+      "top": 1573,
+      "width": 22,
+      "height": 29,
+      "conf": 97.012283
+    },
+    {
+      "text": "रचनात्मक",
+      "line_num": 4,
+      "left": 1049,
+      "top": 1581,
+      "width": 114,
+      "height": 21,
+      "conf": 93.302605
+    },
+    {
+      "text": "कलाकृतियां",
+      "line_num": 4,
+      "left": 1170,
+      "top": 1572,
+      "width": 137,
+      "height": 38,
+      "conf": 91.597061
+    },
+    {
+      "text": "न",
+      "line_num": 4,
+      "left": 1327,
+      "top": 1581,
+      "width": 6,
+      "height": 21,
+      "conf": 96.764168
+    },
+    {
+      "text": "केवल",
+      "line_num": 4,
+      "left": 1340,
+      "top": 1573,
+      "width": 67,
+      "height": 29,
+      "conf": 96.902832
+    },
+    {
+      "text": "लोगों",
+      "line_num": 5,
+      "left": 847,
+      "top": 1621,
+      "width": 60,
+      "height": 29,
+      "conf": 96.343796
+    },
+    {
+      "text": "की",
+      "line_num": 5,
+      "left": 914,
+      "top": 1620,
+      "width": 36,
+      "height": 30,
+      "conf": 96.967308
+    },
+    {
+      "text": "कल्पना",
+      "line_num": 5,
+      "left": 957,
+      "top": 1629,
+      "width": 84,
+      "height": 21,
+      "conf": 74.693474
+    },
+    {
+      "text": "और",
+      "line_num": 5,
+      "left": 1051,
+      "top": 1621,
+      "width": 44,
+      "height": 29,
+      "conf": 93.304985
+    },
+    {
+      "text": "रचनात्मकता",
+      "line_num": 5,
+      "left": 1103,
+      "top": 1629,
+      "width": 139,
+      "height": 21,
+      "conf": 92.606125
+    },
+    {
+      "text": "को",
+      "line_num": 5,
+      "left": 1236,
+      "top": 1616,
+      "width": 28,
+      "height": 47,
+      "conf": 96.77565
+    },
+    {
+      "text": "प्रोत्साहित",
+      "line_num": 5,
+      "left": 1293,
+      "top": 1620,
+      "width": 112,
+      "height": 33,
+      "conf": 95.846283
+    },
+    {
+      "text": "करती",
+      "line_num": 6,
+      "left": 847,
+      "top": 1668,
+      "width": 66,
+      "height": 30,
+      "conf": 96.13298
+    },
+    {
+      "text": "हैं,",
+      "line_num": 6,
+      "left": 920,
+      "top": 1669,
+      "width": 24,
+      "height": 33,
+      "conf": 96.410294
+    },
+    {
+      "text": "बल्कि",
+      "line_num": 6,
+      "left": 954,
+      "top": 1668,
+      "width": 67,
+      "height": 30,
+      "conf": 85.57486
+    },
+    {
+      "text": "मौजूदा",
+      "line_num": 6,
+      "left": 1029,
+      "top": 1668,
+      "width": 78,
+      "height": 39,
+      "conf": 93.234535
+    },
+    {
+      "text": "अवधारणाओं",
+      "line_num": 6,
+      "left": 1117,
+      "top": 1669,
+      "width": 147,
+      "height": 29,
+      "conf": 90.953903
+    },
+    {
+      "text": "को",
+      "line_num": 6,
+      "left": 1271,
+      "top": 1669,
+      "width": 35,
+      "height": 29,
+      "conf": 96.828186
+    },
+    {
+      "text": "चुनौती",
+      "line_num": 6,
+      "left": 1314,
+      "top": 1668,
+      "width": 74,
+      "height": 39,
+      "conf": 96.905159
+    },
+    {
+      "text": "भी",
+      "line_num": 6,
+      "left": 1395,
+      "top": 1668,
+      "width": 29,
+      "height": 30,
+      "conf": 96.990044
+    },
+    {
+      "text": "देती",
+      "line_num": 7,
+      "left": 847,
+      "top": 1716,
+      "width": 45,
+      "height": 31,
+      "conf": 96.76049
+    },
+    {
+      "text": "हैं",
+      "line_num": 7,
+      "left": 900,
+      "top": 1717,
+      "width": 18,
+      "height": 32,
+      "conf": 96.829254
+    },
+    {
+      "text": "और",
+      "line_num": 7,
+      "left": 927,
+      "top": 1716,
+      "width": 45,
+      "height": 30,
+      "conf": 96.944847
+    },
+    {
+      "text": "हमें",
+      "line_num": 7,
+      "left": 979,
+      "top": 1717,
+      "width": 37,
+      "height": 32,
+      "conf": 96.887985
+    },
+    {
+      "text": "इस",
+      "line_num": 7,
+      "left": 1044,
+      "top": 1712,
+      "width": 27,
+      "height": 48,
+      "conf": 96.85527
+    },
+    {
+      "text": "जटिल",
+      "line_num": 7,
+      "left": 1071,
+      "top": 1716,
+      "width": 73,
+      "height": 30,
+      "conf": 96.83844
+    },
+    {
+      "text": "और",
+      "line_num": 7,
+      "left": 1154,
+      "top": 1717,
+      "width": 44,
+      "height": 29,
+      "conf": 96.880241
+    },
+    {
+      "text": "रंगीन",
+      "line_num": 7,
+      "left": 1206,
+      "top": 1716,
+      "width": 57,
+      "height": 30,
+      "conf": 96.571709
+    },
+    {
+      "text": "दुनिया",
+      "line_num": 7,
+      "left": 1271,
+      "top": 1716,
+      "width": 71,
+      "height": 39,
+      "conf": 95.759468
+    },
+    {
+      "text": "को",
+      "line_num": 7,
+      "left": 1350,
+      "top": 1717,
+      "width": 35,
+      "height": 29,
+      "conf": 96.510506
+    },
+    {
+      "text": "नए",
+      "line_num": 7,
+      "left": 1393,
+      "top": 1725,
+      "width": 35,
+      "height": 24,
+      "conf": 96.430008
+    },
+    {
+      "text": "दृष्टिकोण",
+      "line_num": 8,
+      "left": 847,
+      "top": 1764,
+      "width": 111,
+      "height": 39,
+      "conf": 95.899055
+    },
+    {
+      "text": "से",
+      "line_num": 8,
+      "left": 966,
+      "top": 1765,
+      "width": 23,
+      "height": 29,
+      "conf": 96.768524
+    },
+    {
+      "text": "समझने",
+      "line_num": 8,
+      "left": 997,
+      "top": 1765,
+      "width": 83,
+      "height": 33,
+      "conf": 96.798729
+    },
+    {
+      "text": "में",
+      "line_num": 8,
+      "left": 1087,
+      "top": 1765,
+      "width": 21,
+      "height": 29,
+      "conf": 96.922867
+    },
+    {
+      "text": "मदद",
+      "line_num": 8,
+      "left": 1115,
+      "top": 1773,
+      "width": 54,
+      "height": 22,
+      "conf": 96.992477
+    },
+    {
+      "text": "करती",
+      "line_num": 8,
+      "left": 1176,
+      "top": 1764,
+      "width": 66,
+      "height": 30,
+      "conf": 93.306252
+    },
+    {
+      "text": "हैं।",
+      "line_num": 8,
+      "left": 1250,
+      "top": 1765,
+      "width": 26,
+      "height": 32,
+      "conf": 92.492264
+    },
+    {
+      "text": "OCR",
+      "line_num": 1,
+      "left": 643,
+      "top": 1893,
+      "width": 42,
+      "height": 17,
+      "conf": 96.61911
+    },
+    {
+      "text": "Test:",
+      "line_num": 1,
+      "left": 695,
+      "top": 1893,
+      "width": 48,
+      "height": 17,
+      "conf": 96.280922
+    },
+    {
+      "text": "hindi",
+      "line_num": 1,
+      "left": 750,
+      "top": 1891,
+      "width": 55,
+      "height": 19,
+      "conf": 92.585335
+    },
+    {
+      "text": "(two-column,",
+      "line_num": 1,
+      "left": 813,
+      "top": 1890,
+      "width": 138,
+      "height": 25,
+      "conf": 91.207191
+    },
+    {
+      "text": "(00",
+      "line_num": 1,
+      "left": 962,
+      "top": 1890,
+      "width": 30,
+      "height": 25,
+      "conf": 79.971146
+    }
+  ]
+}

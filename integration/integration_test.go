@@ -1,0 +1,450 @@
+// Package integration runs the OCR sorting regression suite against the
+// committed fixtures in testdata/ocr-tests.
+//
+// For each test directory it sorts the pre-generated OCR JSON using only the
+// language as a hint (mapped to a sorter config), assembles the output text,
+// and scores order-sensitive accuracy against canonical.txt via longest
+// common subsequence. Units are words for space-delimited scripts and
+// individual characters for CJK.
+//
+// Each test/engine pair has a committed baseline in
+// testdata/ocr-tests/baselines.json. The test fails if accuracy drops below
+// its baseline. Run with UPDATE_BASELINES=1 to ratchet baselines upward
+// (never downward) and to add entries for new test cases.
+package integration
+
+import (
+	"encoding/json"
+	"fmt"
+	"image"
+	_ "image/jpeg"
+	_ "image/png"
+	"os"
+	"path/filepath"
+	"reflect"
+	"sort"
+	"strconv"
+	"strings"
+	"testing"
+	"unicode"
+
+	"github.com/goodblaster/gollate/pkg/api"
+	"github.com/goodblaster/gollate/pkg/logger"
+	"github.com/goodblaster/gollate/pkg/sorters"
+)
+
+const (
+	testDataDir   = "../testdata/ocr-tests"
+	baselinesFile = "../testdata/ocr-tests/baselines.json"
+
+	// baselineTolerance absorbs float rounding in stored baselines. Sorting
+	// is deterministic (see TestSortingDeterministic), so identical inputs
+	// score identically and this can stay tight.
+	baselineTolerance = 0.05
+)
+
+var engines = []string{"apple", "tesseract"}
+
+type testInfo struct {
+	Language  string `json:"language"`
+	Layout    string `json:"layout"`
+	Direction string `json:"direction"`
+	Width     int    `json:"width"`
+	Height    int    `json:"height"`
+}
+
+func TestOCRSorting(t *testing.T) {
+	dirs, err := discoverTestDirs()
+	if err != nil {
+		t.Fatalf("discovering test dirs: %v", err)
+	}
+	if len(dirs) == 0 {
+		t.Skip("no test data found; run scripts/generate-ocr-tests.sh")
+	}
+
+	baselines, err := loadBaselines()
+	if err != nil {
+		t.Fatalf("loading baselines: %v", err)
+	}
+	updateBaselines := os.Getenv("UPDATE_BASELINES") != ""
+	experimentFlags := os.Getenv("EXPERIMENT_FLAGS")
+	if experimentFlags != "" && updateBaselines {
+		t.Fatal("refusing to update baselines with EXPERIMENT_FLAGS set: baselines only ratchet from default config")
+	}
+	results := map[string]float64{}
+
+	for _, dir := range dirs {
+		testName := filepath.Base(dir)
+		for _, engine := range engines {
+			ocrFile := filepath.Join(dir, engine+"-ocr.json")
+			if _, err := os.Stat(ocrFile); err != nil {
+				continue
+			}
+			key := testName + "/" + engine
+			t.Run(key, func(t *testing.T) {
+				accuracy, detail, err := runCase(dir, engine)
+				if err != nil {
+					t.Fatalf("sorting failed: %v", err)
+				}
+				results[key] = accuracy
+				t.Logf("accuracy %.2f%% (%s)", accuracy, detail)
+
+				// Experiment runs report scores but are not gated by the
+				// ratchet; the matrix runner compares them to a default run.
+				if experimentFlags != "" {
+					return
+				}
+
+				baseline, ok := baselines[key]
+				switch {
+				case !ok && !updateBaselines:
+					t.Errorf("no baseline for %s (accuracy %.2f%%); run 'make baselines' to record one", key, accuracy)
+				case ok && accuracy < baseline-baselineTolerance:
+					t.Errorf("accuracy %.2f%% dropped below baseline %.2f%%", accuracy, baseline)
+				}
+			})
+		}
+	}
+
+	if path := os.Getenv("RESULTS_JSON"); path != "" {
+		if err := saveResults(path, experimentFlags, results); err != nil {
+			t.Fatalf("writing results: %v", err)
+		}
+		t.Logf("results written: %s", path)
+	}
+
+	if updateBaselines {
+		changed := false
+		for key, accuracy := range results {
+			rounded := roundDown2(accuracy)
+			if old, ok := baselines[key]; !ok || rounded > old {
+				baselines[key] = rounded
+				changed = true
+			}
+		}
+		if changed {
+			if err := saveBaselines(baselines); err != nil {
+				t.Fatalf("saving baselines: %v", err)
+			}
+			t.Logf("baselines updated: %s", baselinesFile)
+		} else {
+			t.Log("baselines unchanged")
+		}
+	}
+}
+
+// roundDown2 truncates to 2 decimals so a stored baseline is never above the
+// accuracy that produced it (which would immediately fail with tolerance 0).
+func roundDown2(v float64) float64 {
+	return float64(int(v*100)) / 100
+}
+
+func discoverTestDirs() ([]string, error) {
+	entries, err := os.ReadDir(testDataDir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, nil
+		}
+		return nil, err
+	}
+	var dirs []string
+	for _, e := range entries {
+		if !e.IsDir() || e.Name() == "content" {
+			continue
+		}
+		dir := filepath.Join(testDataDir, e.Name())
+		if _, err := os.Stat(filepath.Join(dir, "canonical.txt")); err == nil {
+			dirs = append(dirs, dir)
+		}
+	}
+	sort.Strings(dirs)
+	return dirs, nil
+}
+
+// sortCase sorts one fixture and returns the assembled output text
+// (one block per line, empty blocks skipped).
+func sortCase(dir, engine string) (sortedText string, canonicalText string, err error) {
+	canonicalData, err := os.ReadFile(filepath.Join(dir, "canonical.txt"))
+	if err != nil {
+		return "", "", err
+	}
+	ocrData, err := os.ReadFile(filepath.Join(dir, engine+"-ocr.json"))
+	if err != nil {
+		return "", "", err
+	}
+	info, err := loadTestInfo(dir)
+	if err != nil {
+		return "", "", err
+	}
+
+	request := api.SortRequest{
+		Engine:     engine,
+		InputJson:  string(ocrData),
+		Lines:      strings.Split(string(canonicalData), "\n"),
+		PageWidth:  info.Width,
+		PageHeight: info.Height,
+	}
+	request.WithLogger(logger.Noop{})
+	if err := request.Parse(); err != nil {
+		return "", "", fmt.Errorf("parsing OCR data: %w", err)
+	}
+
+	config := sorters.ConfigForLanguage(info.Language)
+	if spec := os.Getenv("EXPERIMENT_FLAGS"); spec != "" {
+		if err := applyExperimentFlags(&config, spec); err != nil {
+			return "", "", err
+		}
+		if err := config.Validate(); err != nil {
+			return "", "", fmt.Errorf("EXPERIMENT_FLAGS produced invalid config: %w", err)
+		}
+	}
+	sorter := sorters.NewOcrSorterWithConfig(request.Blocks(), request.Lines, logger.Noop{}, config)
+	blocks, err := sorter.Sort()
+	if err != nil {
+		return "", "", fmt.Errorf("sorting: %w", err)
+	}
+
+	var texts []string
+	for _, b := range blocks {
+		if strings.TrimSpace(b.Text) != "" {
+			texts = append(texts, b.Text)
+		}
+	}
+	return strings.Join(texts, "\n"), string(canonicalData), nil
+}
+
+func runCase(dir, engine string) (accuracy float64, detail string, err error) {
+	sortedText, canonicalText, err := sortCase(dir, engine)
+	if err != nil {
+		return 0, "", err
+	}
+
+	canonicalUnits := splitUnits(canonicalText)
+	sortedUnits := splitUnits(sortedText)
+	if len(canonicalUnits) == 0 {
+		return 0, "", fmt.Errorf("canonical text has no comparable units")
+	}
+	matches := lcsLength(canonicalUnits, sortedUnits)
+	accuracy = 100 * float64(matches) / float64(len(canonicalUnits))
+	detail = fmt.Sprintf("%d/%d canonical units in order, %d extra",
+		matches, len(canonicalUnits), len(sortedUnits)-matches)
+	return accuracy, detail, nil
+}
+
+// TestSortingDeterministic sorts the noisiest fixtures several times and
+// requires byte-identical output. The sorter historically varied run-to-run
+// via Go map iteration order; this guards against reintroducing that.
+func TestSortingDeterministic(t *testing.T) {
+	cases := []struct{ dir, engine string }{
+		{"japanese-single", "tesseract"},
+		{"chinese-two-column", "tesseract"},
+		{"hindi-three-column", "tesseract"},
+		{"arabic-two-column", "tesseract"},
+		{"english-three-column", "apple"},
+		{"english-single-noise10", "apple"},
+		{"chinese-single-noise10", "apple"},
+	}
+	const runs = 3
+
+	for _, tc := range cases {
+		dir := filepath.Join(testDataDir, tc.dir)
+		if _, err := os.Stat(filepath.Join(dir, tc.engine+"-ocr.json")); err != nil {
+			continue
+		}
+		t.Run(tc.dir+"/"+tc.engine, func(t *testing.T) {
+			first, _, err := sortCase(dir, tc.engine)
+			if err != nil {
+				t.Fatalf("sorting failed: %v", err)
+			}
+			for i := 1; i < runs; i++ {
+				next, _, err := sortCase(dir, tc.engine)
+				if err != nil {
+					t.Fatalf("sorting failed on run %d: %v", i+1, err)
+				}
+				if next != first {
+					t.Fatalf("run %d produced different output than run 1 (nondeterministic sort)", i+1)
+				}
+			}
+		})
+	}
+}
+
+func loadTestInfo(dir string) (testInfo, error) {
+	var info testInfo
+	data, err := os.ReadFile(filepath.Join(dir, "test-info.json"))
+	if err == nil {
+		if err := json.Unmarshal(data, &info); err != nil {
+			return info, fmt.Errorf("parsing test-info.json: %w", err)
+		}
+	} else {
+		// Fall back to conventions used before test-info.json existed.
+		info.Language = strings.SplitN(filepath.Base(dir), "-", 2)[0]
+	}
+	if info.Width == 0 || info.Height == 0 {
+		w, h, err := imageDims(dir)
+		if err != nil {
+			return info, fmt.Errorf("no test-info.json dimensions and no readable document image: %w", err)
+		}
+		info.Width, info.Height = w, h
+	}
+	return info, nil
+}
+
+func imageDims(dir string) (int, int, error) {
+	for _, name := range []string{"document.png", "document.jpg"} {
+		f, err := os.Open(filepath.Join(dir, name))
+		if err != nil {
+			continue
+		}
+		cfg, _, err := image.DecodeConfig(f)
+		f.Close()
+		if err == nil {
+			return cfg.Width, cfg.Height, nil
+		}
+	}
+	return 0, 0, fmt.Errorf("no document image in %s", dir)
+}
+
+// --- Unit splitting -------------------------------------------------------
+
+// splitUnits converts text into comparison units: individual alphanumeric
+// characters for predominantly-CJK text (no word boundaries), whole words
+// otherwise. Word splitting is Unicode-aware (Arabic, Devanagari, accents).
+func splitUnits(text string) []string {
+	runes := []rune(text)
+	cjk := 0
+	for _, r := range runes {
+		if isCJK(r) {
+			cjk++
+		}
+	}
+	if len(runes) > 0 && float64(cjk) > 0.3*float64(len(runes)) {
+		var units []string
+		for _, r := range runes {
+			if unicode.IsLetter(r) || unicode.IsDigit(r) {
+				units = append(units, string(unicode.ToLower(r)))
+			}
+		}
+		return units
+	}
+	return strings.FieldsFunc(strings.ToLower(text), func(r rune) bool {
+		return !unicode.IsLetter(r) && !unicode.IsDigit(r)
+	})
+}
+
+func isCJK(r rune) bool {
+	return (r >= 0x4E00 && r <= 0x9FFF) || // CJK Unified Ideographs
+		(r >= 0x3040 && r <= 0x309F) || // Hiragana
+		(r >= 0x30A0 && r <= 0x30FF) || // Katakana
+		(r >= 0xAC00 && r <= 0xD7AF) // Hangul
+}
+
+// lcsLength returns the length of the longest common subsequence, i.e. how
+// many canonical units appear in the output in the correct relative order.
+func lcsLength(a, b []string) int {
+	if len(a) == 0 || len(b) == 0 {
+		return 0
+	}
+	prev := make([]int, len(b)+1)
+	curr := make([]int, len(b)+1)
+	for i := 1; i <= len(a); i++ {
+		for j := 1; j <= len(b); j++ {
+			if a[i-1] == b[j-1] {
+				curr[j] = prev[j-1] + 1
+			} else if prev[j] >= curr[j-1] {
+				curr[j] = prev[j]
+			} else {
+				curr[j] = curr[j-1]
+			}
+		}
+		prev, curr = curr, prev
+	}
+	return prev[len(b)]
+}
+
+// --- Experiment overlay -----------------------------------------------------
+//
+// EXPERIMENT_FLAGS applies "Field=value,Field=value" overrides on top of the
+// language config so flag-gated mechanisms can be A/B tested without code
+// changes. RESULTS_JSON dumps per-case scores for
+// scripts/run-experiments.sh to diff against a default-config run.
+
+func applyExperimentFlags(config *sorters.SorterConfig, spec string) error {
+	v := reflect.ValueOf(config).Elem()
+	for _, kv := range strings.Split(spec, ",") {
+		kv = strings.TrimSpace(kv)
+		if kv == "" {
+			continue
+		}
+		name, value, ok := strings.Cut(kv, "=")
+		if !ok {
+			return fmt.Errorf("EXPERIMENT_FLAGS entry %q: want Field=value", kv)
+		}
+		field := v.FieldByName(strings.TrimSpace(name))
+		if !field.IsValid() {
+			return fmt.Errorf("EXPERIMENT_FLAGS: no SorterConfig field %q", name)
+		}
+		value = strings.TrimSpace(value)
+		switch field.Kind() {
+		case reflect.Bool:
+			b, err := strconv.ParseBool(value)
+			if err != nil {
+				return fmt.Errorf("EXPERIMENT_FLAGS %s: %w", name, err)
+			}
+			field.SetBool(b)
+		case reflect.Int:
+			n, err := strconv.ParseInt(value, 10, 64)
+			if err != nil {
+				return fmt.Errorf("EXPERIMENT_FLAGS %s: %w", name, err)
+			}
+			field.SetInt(n)
+		case reflect.Float64:
+			f, err := strconv.ParseFloat(value, 64)
+			if err != nil {
+				return fmt.Errorf("EXPERIMENT_FLAGS %s: %w", name, err)
+			}
+			field.SetFloat(f)
+		default:
+			return fmt.Errorf("EXPERIMENT_FLAGS: field %q has unsupported kind %s", name, field.Kind())
+		}
+	}
+	return nil
+}
+
+type resultsFile struct {
+	Flags   string             `json:"flags"`
+	Results map[string]float64 `json:"results"`
+}
+
+func saveResults(path, flags string, results map[string]float64) error {
+	data, err := json.MarshalIndent(resultsFile{Flags: flags, Results: results}, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(path, append(data, '\n'), 0644)
+}
+
+// --- Baselines ------------------------------------------------------------
+
+func loadBaselines() (map[string]float64, error) {
+	data, err := os.ReadFile(baselinesFile)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return map[string]float64{}, nil
+		}
+		return nil, err
+	}
+	var baselines map[string]float64
+	if err := json.Unmarshal(data, &baselines); err != nil {
+		return nil, err
+	}
+	return baselines, nil
+}
+
+func saveBaselines(baselines map[string]float64) error {
+	data, err := json.MarshalIndent(baselines, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(baselinesFile, append(data, '\n'), 0644)
+}

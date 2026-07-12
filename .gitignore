@@ -1,0 +1,59 @@
+# Binaries and build artifacts
+bin/
+cmd/gollate/gollate
+
+# Test coverage
+covprofile
+*.out
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Debug and test output files
+debug-out.txt
+actual-lines.txt
+contig_lines.txt
+post-contig.txt
+post-punct.txt
+pre-contig.txt
+pre-punct.txt
+so-far.txt
+sorted-text.txt
+response.json
+results.json
+testdata/*-sorted.txt
+testdata/*-highlighted.png
+
+# Temporary files
+*.log
+*.tmp
+tmp/
+temp/
+
+# Environment files (if they contain secrets)
+# Uncomment if needed:
+# .env
+# .env.local
+experiments/
+# Generated debug artifacts (scripts/run-ocr-tests.sh)
+testdata/ocr-tests/*/*-overlay.jpg
+testdata/ocr-tests/*/*-sorted.json
+testdata/ocr-tests/*/summary.txt
+problems.todo
+
+# CLI output (make sort / gollate -output)
+/sorted.json
+/out.json

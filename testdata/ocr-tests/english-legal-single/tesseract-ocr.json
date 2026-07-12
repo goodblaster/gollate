@@ -1,0 +1,1822 @@
+{
+  "words": [
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 402,
+      "top": 218,
+      "width": 112,
+      "height": 47,
+      "conf": 96.657303
+    },
+    {
+      "text": "Fabric",
+      "line_num": 1,
+      "left": 537,
+      "top": 218,
+      "width": 187,
+      "height": 47,
+      "conf": 96.634392
+    },
+    {
+      "text": "of",
+      "line_num": 1,
+      "left": 745,
+      "top": 218,
+      "width": 59,
+      "height": 47,
+      "conf": 96.42115
+    },
+    {
+      "text": "Everyday",
+      "line_num": 1,
+      "left": 825,
+      "top": 218,
+      "width": 275,
+      "height": 58,
+      "conf": 96.286728
+    },
+    {
+      "text": "Life",
+      "line_num": 1,
+      "left": 1122,
+      "top": 218,
+      "width": 107,
+      "height": 47,
+      "conf": 96.513947
+    },
+    {
+      "text": "A",
+      "line_num": 1,
+      "left": 192,
+      "top": 349,
+      "width": 21,
+      "height": 23,
+      "conf": 66.072113
+    },
+    {
+      "text": "contract",
+      "line_num": 1,
+      "left": 223,
+      "top": 350,
+      "width": 116,
+      "height": 22,
+      "conf": 47.990311
+    },
+    {
+      "text": "is",
+      "line_num": 1,
+      "left": 351,
+      "top": 349,
+      "width": 20,
+      "height": 23,
+      "conf": 91.522011
+    },
+    {
+      "text": "'concluded'",
+      "line_num": 1,
+      "left": 384,
+      "top": 349,
+      "width": 162,
+      "height": 23,
+      "conf": 91.522011
+    },
+    {
+      "text": "when",
+      "line_num": 1,
+      "left": 559,
+      "top": 349,
+      "width": 74,
+      "height": 23,
+      "conf": 95.399017
+    },
+    {
+      "text": "both",
+      "line_num": 1,
+      "left": 646,
+      "top": 349,
+      "width": 62,
+      "height": 23,
+      "conf": 96.410332
+    },
+    {
+      "text": "parties",
+      "line_num": 1,
+      "left": 720,
+      "top": 349,
+      "width": 95,
+      "height": 29,
+      "conf": 95.987846
+    },
+    {
+      "text": "assent",
+      "line_num": 1,
+      "left": 825,
+      "top": 350,
+      "width": 93,
+      "height": 22,
+      "conf": 96.491112
+    },
+    {
+      "text": "to",
+      "line_num": 1,
+      "left": 928,
+      "top": 350,
+      "width": 27,
+      "height": 22,
+      "conf": 96.662689
+    },
+    {
+      "text": "its",
+      "line_num": 1,
+      "left": 967,
+      "top": 349,
+      "width": 30,
+      "height": 23,
+      "conf": 96.364243
+    },
+    {
+      "text": "terms.",
+      "line_num": 1,
+      "left": 1007,
+      "top": 350,
+      "width": 88,
+      "height": 22,
+      "conf": 96.800491
+    },
+    {
+      "text": "Courts",
+      "line_num": 1,
+      "left": 1107,
+      "top": 348,
+      "width": 94,
+      "height": 24,
+      "conf": 96.126701
+    },
+    {
+      "text": "have",
+      "line_num": 1,
+      "left": 1213,
+      "top": 349,
+      "width": 65,
+      "height": 23,
+      "conf": 95.6745
+    },
+    {
+      "text": "held",
+      "line_num": 1,
+      "left": 1290,
+      "top": 349,
+      "width": 57,
+      "height": 23,
+      "conf": 95.6745
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 1358,
+      "top": 349,
+      "width": 54,
+      "height": 23,
+      "conf": 96.596367
+    },
+    {
+      "text": "silence",
+      "line_num": 2,
+      "left": 193,
+      "top": 397,
+      "width": 98,
+      "height": 23,
+      "conf": 96.054489
+    },
+    {
+      "text": "may",
+      "line_num": 2,
+      "left": 302,
+      "top": 403,
+      "width": 59,
+      "height": 24,
+      "conf": 96.248543
+    },
+    {
+      "text": "constitute",
+      "line_num": 2,
+      "left": 371,
+      "top": 397,
+      "width": 140,
+      "height": 23,
+      "conf": 93.051979
+    },
+    {
+      "text": "'acceptance.'",
+      "line_num": 2,
+      "left": 524,
+      "top": 397,
+      "width": 187,
+      "height": 29,
+      "conf": 86.80542
+    },
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 192,
+      "top": 471,
+      "width": 53,
+      "height": 23,
+      "conf": 96.302696
+    },
+    {
+      "text": "statute",
+      "line_num": 1,
+      "left": 255,
+      "top": 472,
+      "width": 97,
+      "height": 22,
+      "conf": 96.29895
+    },
+    {
+      "text": "defines",
+      "line_num": 1,
+      "left": 362,
+      "top": 471,
+      "width": 102,
+      "height": 23,
+      "conf": 96.931
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 475,
+      "top": 477,
+      "width": 16,
+      "height": 17,
+      "conf": 96.143295
+    },
+    {
+      "text": "‘business",
+      "line_num": 1,
+      "left": 503,
+      "top": 471,
+      "width": 132,
+      "height": 23,
+      "conf": 0
+    },
+    {
+      "text": "day'",
+      "line_num": 1,
+      "left": 646,
+      "top": 471,
+      "width": 57,
+      "height": 30,
+      "conf": 90.791679
+    },
+    {
+      "text": "as",
+      "line_num": 1,
+      "left": 716,
+      "top": 477,
+      "width": 31,
+      "height": 17,
+      "conf": 96.894325
+    },
+    {
+      "text": "any",
+      "line_num": 1,
+      "left": 758,
+      "top": 477,
+      "width": 49,
+      "height": 24,
+      "conf": 96.43586
+    },
+    {
+      "text": "day",
+      "line_num": 1,
+      "left": 818,
+      "top": 471,
+      "width": 51,
+      "height": 30,
+      "conf": 96.935249
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 878,
+      "top": 471,
+      "width": 54,
+      "height": 23,
+      "conf": 95.651215
+    },
+    {
+      "text": "is",
+      "line_num": 1,
+      "left": 944,
+      "top": 471,
+      "width": 20,
+      "height": 23,
+      "conf": 95.893143
+    },
+    {
+      "text": "not",
+      "line_num": 1,
+      "left": 976,
+      "top": 472,
+      "width": 43,
+      "height": 22,
+      "conf": 95.893143
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 1030,
+      "top": 477,
+      "width": 16,
+      "height": 17,
+      "conf": 92.804405
+    },
+    {
+      "text": "'holiday.'",
+      "line_num": 1,
+      "left": 1058,
+      "top": 471,
+      "width": 121,
+      "height": 30,
+      "conf": 83.600533
+    },
+    {
+      "text": "In",
+      "line_num": 1,
+      "left": 1193,
+      "top": 471,
+      "width": 22,
+      "height": 23,
+      "conf": 96.48761
+    },
+    {
+      "text": "practice,",
+      "line_num": 1,
+      "left": 1228,
+      "top": 471,
+      "width": 120,
+      "height": 29,
+      "conf": 96.925095
+    },
+    {
+      "text": "lawyers",
+      "line_num": 2,
+      "left": 194,
+      "top": 519,
+      "width": 106,
+      "height": 30,
+      "conf": 96.802643
+    },
+    {
+      "text": "treat",
+      "line_num": 2,
+      "left": 309,
+      "top": 520,
+      "width": 64,
+      "height": 22,
+      "conf": 96.610062
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 383,
+      "top": 519,
+      "width": 44,
+      "height": 23,
+      "conf": 96.568207
+    },
+    {
+      "text": "two",
+      "line_num": 2,
+      "left": 437,
+      "top": 520,
+      "width": 51,
+      "height": 22,
+      "conf": 96.568207
+    },
+    {
+      "text": "terms",
+      "line_num": 2,
+      "left": 498,
+      "top": 520,
+      "width": 81,
+      "height": 22,
+      "conf": 95.896698
+    },
+    {
+      "text": "as",
+      "line_num": 2,
+      "left": 589,
+      "top": 525,
+      "width": 32,
+      "height": 17,
+      "conf": 95.701439
+    },
+    {
+      "text": "‘interchangeable.’",
+      "line_num": 2,
+      "left": 634,
+      "top": 519,
+      "width": 248,
+      "height": 30,
+      "conf": 0
+    },
+    {
+      "text": "Consider",
+      "line_num": 1,
+      "left": 193,
+      "top": 594,
+      "width": 128,
+      "height": 24,
+      "conf": 96.639687
+    },
+    {
+      "text": "how",
+      "line_num": 1,
+      "left": 332,
+      "top": 595,
+      "width": 58,
+      "height": 23,
+      "conf": 96.639687
+    },
+    {
+      "text": "oddly",
+      "line_num": 1,
+      "left": 401,
+      "top": 595,
+      "width": 77,
+      "height": 30,
+      "conf": 96.507233
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 488,
+      "top": 595,
+      "width": 44,
+      "height": 23,
+      "conf": 96.808853
+    },
+    {
+      "text": "law",
+      "line_num": 1,
+      "left": 544,
+      "top": 595,
+      "width": 46,
+      "height": 23,
+      "conf": 96.786575
+    },
+    {
+      "text": "can",
+      "line_num": 1,
+      "left": 600,
+      "top": 601,
+      "width": 49,
+      "height": 17,
+      "conf": 96.649185
+    },
+    {
+      "text": "speak.",
+      "line_num": 1,
+      "left": 661,
+      "top": 595,
+      "width": 91,
+      "height": 29,
+      "conf": 96.649185
+    },
+    {
+      "text": "One",
+      "line_num": 1,
+      "left": 765,
+      "top": 594,
+      "width": 58,
+      "height": 24,
+      "conf": 96.97023
+    },
+    {
+      "text": "rule",
+      "line_num": 1,
+      "left": 834,
+      "top": 595,
+      "width": 50,
+      "height": 23,
+      "conf": 96.36132
+    },
+    {
+      "text": "declares",
+      "line_num": 1,
+      "left": 895,
+      "top": 595,
+      "width": 119,
+      "height": 23,
+      "conf": 96.358368
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 1024,
+      "top": 595,
+      "width": 54,
+      "height": 23,
+      "conf": 93.26796
+    },
+    {
+      "text": "'a",
+      "line_num": 1,
+      "left": 1091,
+      "top": 595,
+      "width": 22,
+      "height": 23,
+      "conf": 92.130119
+    },
+    {
+      "text": "person",
+      "line_num": 1,
+      "left": 1124,
+      "top": 601,
+      "width": 96,
+      "height": 23,
+      "conf": 96.504341
+    },
+    {
+      "text": "may",
+      "line_num": 1,
+      "left": 1232,
+      "top": 601,
+      "width": 59,
+      "height": 24,
+      "conf": 96.759613
+    },
+    {
+      "text": "be",
+      "line_num": 1,
+      "left": 1302,
+      "top": 595,
+      "width": 33,
+      "height": 23,
+      "conf": 96.57251
+    },
+    {
+      "text": "an",
+      "line_num": 1,
+      "left": 1346,
+      "top": 601,
+      "width": 32,
+      "height": 17,
+      "conf": 96.57251
+    },
+    {
+      "text": "infant",
+      "line_num": 2,
+      "left": 194,
+      "top": 643,
+      "width": 77,
+      "height": 23,
+      "conf": 96.93644
+    },
+    {
+      "text": "at",
+      "line_num": 2,
+      "left": 281,
+      "top": 644,
+      "width": 26,
+      "height": 22,
+      "conf": 93.236153
+    },
+    {
+      "text": "forty.'",
+      "line_num": 2,
+      "left": 317,
+      "top": 643,
+      "width": 76,
+      "height": 30,
+      "conf": 91.088409
+    },
+    {
+      "text": "Another",
+      "line_num": 2,
+      "left": 405,
+      "top": 643,
+      "width": 113,
+      "height": 23,
+      "conf": 96.395157
+    },
+    {
+      "text": "insists",
+      "line_num": 2,
+      "left": 529,
+      "top": 643,
+      "width": 87,
+      "height": 23,
+      "conf": 96.685448
+    },
+    {
+      "text": "that",
+      "line_num": 2,
+      "left": 626,
+      "top": 643,
+      "width": 54,
+      "height": 23,
+      "conf": 92.674606
+    },
+    {
+      "text": "'a",
+      "line_num": 2,
+      "left": 693,
+      "top": 643,
+      "width": 23,
+      "height": 23,
+      "conf": 92.1278
+    },
+    {
+      "text": "document",
+      "line_num": 2,
+      "left": 726,
+      "top": 643,
+      "width": 143,
+      "height": 23,
+      "conf": 96.12146
+    },
+    {
+      "text": "becomes",
+      "line_num": 2,
+      "left": 880,
+      "top": 643,
+      "width": 130,
+      "height": 23,
+      "conf": 96.519997
+    },
+    {
+      "text": "ancient",
+      "line_num": 2,
+      "left": 1020,
+      "top": 643,
+      "width": 103,
+      "height": 23,
+      "conf": 96.775375
+    },
+    {
+      "text": "after",
+      "line_num": 2,
+      "left": 1134,
+      "top": 643,
+      "width": 64,
+      "height": 23,
+      "conf": 95.993546
+    },
+    {
+      "text": "thirty",
+      "line_num": 2,
+      "left": 1206,
+      "top": 643,
+      "width": 72,
+      "height": 30,
+      "conf": 93.285652
+    },
+    {
+      "text": "years.'",
+      "line_num": 2,
+      "left": 1287,
+      "top": 643,
+      "width": 91,
+      "height": 30,
+      "conf": 71.205803
+    },
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 192,
+      "top": 717,
+      "width": 53,
+      "height": 23,
+      "conf": 95.325401
+    },
+    {
+      "text": "judge",
+      "line_num": 1,
+      "left": 254,
+      "top": 717,
+      "width": 79,
+      "height": 30,
+      "conf": 95.325401
+    },
+    {
+      "text": "wrote",
+      "line_num": 1,
+      "left": 343,
+      "top": 718,
+      "width": 79,
+      "height": 22,
+      "conf": 96.100395
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 432,
+      "top": 717,
+      "width": 54,
+      "height": 23,
+      "conf": 96.100395
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 496,
+      "top": 717,
+      "width": 44,
+      "height": 23,
+      "conf": 96.984634
+    },
+    {
+      "text": "clause",
+      "line_num": 1,
+      "left": 550,
+      "top": 717,
+      "width": 91,
+      "height": 23,
+      "conf": 96.272812
+    },
+    {
+      "text": "was",
+      "line_num": 1,
+      "left": 651,
+      "top": 723,
+      "width": 56,
+      "height": 17,
+      "conf": 93.257843
+    },
+    {
+      "text": "'void",
+      "line_num": 1,
+      "left": 720,
+      "top": 717,
+      "width": 65,
+      "height": 23,
+      "conf": 89.179047
+    },
+    {
+      "text": "for",
+      "line_num": 1,
+      "left": 795,
+      "top": 717,
+      "width": 39,
+      "height": 23,
+      "conf": 95.346893
+    },
+    {
+      "text": "vagueness.’",
+      "line_num": 1,
+      "left": 843,
+      "top": 717,
+      "width": 168,
+      "height": 30,
+      "conf": 0
+    },
+    {
+      "text": "She",
+      "line_num": 1,
+      "left": 1024,
+      "top": 716,
+      "width": 54,
+      "height": 25,
+      "conf": 96.760162
+    },
+    {
+      "text": "added",
+      "line_num": 1,
+      "left": 1088,
+      "top": 717,
+      "width": 89,
+      "height": 23,
+      "conf": 96.579399
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 1188,
+      "top": 717,
+      "width": 54,
+      "height": 23,
+      "conf": 96.49472
+    },
+    {
+      "text": "its",
+      "line_num": 1,
+      "left": 1254,
+      "top": 717,
+      "width": 30,
+      "height": 23,
+      "conf": 96.354141
+    },
+    {
+      "text": "meaning",
+      "line_num": 1,
+      "left": 1296,
+      "top": 717,
+      "width": 119,
+      "height": 30,
+      "conf": 96.216843
+    },
+    {
+      "text": "was",
+      "line_num": 2,
+      "left": 192,
+      "top": 771,
+      "width": 57,
+      "height": 17,
+      "conf": 96.568146
+    },
+    {
+      "text": "‘anyone's",
+      "line_num": 2,
+      "left": 261,
+      "top": 765,
+      "width": 135,
+      "height": 30,
+      "conf": 88.25589
+    },
+    {
+      "text": "guess.'",
+      "line_num": 2,
+      "left": 406,
+      "top": 765,
+      "width": 99,
+      "height": 30,
+      "conf": 91.656219
+    },
+    {
+      "text": "The",
+      "line_num": 2,
+      "left": 517,
+      "top": 765,
+      "width": 53,
+      "height": 23,
+      "conf": 96.523529
+    },
+    {
+      "text": "parties,",
+      "line_num": 2,
+      "left": 581,
+      "top": 765,
+      "width": 102,
+      "height": 29,
+      "conf": 96.523529
+    },
+    {
+      "text": "she",
+      "line_num": 2,
+      "left": 695,
+      "top": 765,
+      "width": 50,
+      "height": 23,
+      "conf": 96.552734
+    },
+    {
+      "text": "noted,",
+      "line_num": 2,
+      "left": 756,
+      "top": 765,
+      "width": 87,
+      "height": 27,
+      "conf": 96.434235
+    },
+    {
+      "text": "had",
+      "line_num": 2,
+      "left": 857,
+      "top": 765,
+      "width": 50,
+      "height": 23,
+      "conf": 96.660332
+    },
+    {
+      "text": "drafted",
+      "line_num": 2,
+      "left": 918,
+      "top": 765,
+      "width": 100,
+      "height": 23,
+      "conf": 93.124161
+    },
+    {
+      "text": "'a",
+      "line_num": 2,
+      "left": 1032,
+      "top": 765,
+      "width": 23,
+      "height": 23,
+      "conf": 92.211212
+    },
+    {
+      "text": "puzzle,",
+      "line_num": 2,
+      "left": 1066,
+      "top": 765,
+      "width": 96,
+      "height": 29,
+      "conf": 96.741325
+    },
+    {
+      "text": "not",
+      "line_num": 2,
+      "left": 1175,
+      "top": 766,
+      "width": 44,
+      "height": 22,
+      "conf": 96.577438
+    },
+    {
+      "text": "a",
+      "line_num": 2,
+      "left": 1229,
+      "top": 771,
+      "width": 16,
+      "height": 17,
+      "conf": 96.938011
+    },
+    {
+      "text": "promise.’",
+      "line_num": 2,
+      "left": 1257,
+      "top": 765,
+      "width": 127,
+      "height": 29,
+      "conf": 40.688011
+    },
+    {
+      "text": "Plain",
+      "line_num": 1,
+      "left": 194,
+      "top": 839,
+      "width": 66,
+      "height": 23,
+      "conf": 96.734695
+    },
+    {
+      "text": "language",
+      "line_num": 1,
+      "left": 273,
+      "top": 839,
+      "width": 128,
+      "height": 30,
+      "conf": 96.651756
+    },
+    {
+      "text": "advocates",
+      "line_num": 1,
+      "left": 412,
+      "top": 839,
+      "width": 146,
+      "height": 23,
+      "conf": 96.34642
+    },
+    {
+      "text": "argue",
+      "line_num": 1,
+      "left": 569,
+      "top": 845,
+      "width": 78,
+      "height": 24,
+      "conf": 96.799347
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 657,
+      "top": 839,
+      "width": 54,
+      "height": 23,
+      "conf": 93.277313
+    },
+    {
+      "text": "'clarity",
+      "line_num": 1,
+      "left": 724,
+      "top": 839,
+      "width": 91,
+      "height": 30,
+      "conf": 90.019234
+    },
+    {
+      "text": "is",
+      "line_num": 1,
+      "left": 826,
+      "top": 839,
+      "width": 20,
+      "height": 23,
+      "conf": 96.430573
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 857,
+      "top": 845,
+      "width": 16,
+      "height": 17,
+      "conf": 96.430573
+    },
+    {
+      "text": "duty,",
+      "line_num": 1,
+      "left": 883,
+      "top": 839,
+      "width": 66,
+      "height": 30,
+      "conf": 96.667778
+    },
+    {
+      "text": "not",
+      "line_num": 1,
+      "left": 962,
+      "top": 840,
+      "width": 44,
+      "height": 22,
+      "conf": 96.642441
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 1016,
+      "top": 845,
+      "width": 16,
+      "height": 17,
+      "conf": 96.642441
+    },
+    {
+      "text": "courtesy.’",
+      "line_num": 1,
+      "left": 1043,
+      "top": 839,
+      "width": 134,
+      "height": 30,
+      "conf": 5.365257
+    },
+    {
+      "text": "They",
+      "line_num": 1,
+      "left": 1189,
+      "top": 839,
+      "width": 69,
+      "height": 30,
+      "conf": 96.346054
+    },
+    {
+      "text": "warn",
+      "line_num": 1,
+      "left": 1268,
+      "top": 845,
+      "width": 68,
+      "height": 17,
+      "conf": 95.747734
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 1347,
+      "top": 839,
+      "width": 54,
+      "height": 23,
+      "conf": 96.948433
+    },
+    {
+      "text": "jargon",
+      "line_num": 2,
+      "left": 191,
+      "top": 887,
+      "width": 88,
+      "height": 30,
+      "conf": 96.154663
+    },
+    {
+      "text": "can",
+      "line_num": 2,
+      "left": 290,
+      "top": 893,
+      "width": 50,
+      "height": 17,
+      "conf": 93.261055
+    },
+    {
+      "text": "'demean",
+      "line_num": 2,
+      "left": 354,
+      "top": 887,
+      "width": 119,
+      "height": 23,
+      "conf": 86.340332
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 484,
+      "top": 887,
+      "width": 44,
+      "height": 23,
+      "conf": 93.29464
+    },
+    {
+      "text": "reader.'",
+      "line_num": 2,
+      "left": 540,
+      "top": 887,
+      "width": 101,
+      "height": 23,
+      "conf": 90.552162
+    },
+    {
+      "text": "Good",
+      "line_num": 2,
+      "left": 654,
+      "top": 886,
+      "width": 77,
+      "height": 24,
+      "conf": 96.94017
+    },
+    {
+      "text": "writing,",
+      "line_num": 2,
+      "left": 742,
+      "top": 887,
+      "width": 102,
+      "height": 30,
+      "conf": 96.640045
+    },
+    {
+      "text": "they",
+      "line_num": 2,
+      "left": 855,
+      "top": 887,
+      "width": 61,
+      "height": 30,
+      "conf": 97.015594
+    },
+    {
+      "text": "say,",
+      "line_num": 2,
+      "left": 926,
+      "top": 893,
+      "width": 52,
+      "height": 24,
+      "conf": 95.889397
+    },
+    {
+      "text": "is",
+      "line_num": 2,
+      "left": 992,
+      "top": 887,
+      "width": 20,
+      "height": 23,
+      "conf": 92.470047
+    },
+    {
+      "text": "'speech",
+      "line_num": 2,
+      "left": 1025,
+      "top": 887,
+      "width": 108,
+      "height": 29,
+      "conf": 91.320435
+    },
+    {
+      "text": "heightened",
+      "line_num": 2,
+      "left": 1145,
+      "top": 887,
+      "width": 156,
+      "height": 30,
+      "conf": 96.574982
+    },
+    {
+      "text": "and",
+      "line_num": 2,
+      "left": 1313,
+      "top": 887,
+      "width": 51,
+      "height": 23,
+      "conf": 96.698608
+    },
+    {
+      "text": "polished.’",
+      "line_num": 3,
+      "left": 194,
+      "top": 935,
+      "width": 134,
+      "height": 29,
+      "conf": 31.768421
+    },
+    {
+      "text": "An",
+      "line_num": 1,
+      "left": 192,
+      "top": 1011,
+      "width": 37,
+      "height": 23,
+      "conf": 95.195251
+    },
+    {
+      "text": "old",
+      "line_num": 1,
+      "left": 241,
+      "top": 1011,
+      "width": 41,
+      "height": 23,
+      "conf": 96.235466
+    },
+    {
+      "text": "maxim",
+      "line_num": 1,
+      "left": 295,
+      "top": 1011,
+      "width": 91,
+      "height": 23,
+      "conf": 96.235466
+    },
+    {
+      "text": "holds",
+      "line_num": 1,
+      "left": 399,
+      "top": 1011,
+      "width": 75,
+      "height": 23,
+      "conf": 96.81234
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 484,
+      "top": 1011,
+      "width": 55,
+      "height": 23,
+      "conf": 93.29335
+    },
+    {
+      "text": "'the",
+      "line_num": 1,
+      "left": 551,
+      "top": 1011,
+      "width": 51,
+      "height": 23,
+      "conf": 92.85836
+    },
+    {
+      "text": "greater",
+      "line_num": 1,
+      "left": 612,
+      "top": 1012,
+      "width": 100,
+      "height": 29,
+      "conf": 96.452461
+    },
+    {
+      "text": "includes",
+      "line_num": 1,
+      "left": 723,
+      "top": 1011,
+      "width": 116,
+      "height": 23,
+      "conf": 96.601349
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 849,
+      "top": 1011,
+      "width": 44,
+      "height": 23,
+      "conf": 93.218842
+    },
+    {
+      "text": "lesser.'",
+      "line_num": 1,
+      "left": 905,
+      "top": 1011,
+      "width": 93,
+      "height": 23,
+      "conf": 91.671356
+    },
+    {
+      "text": "Another",
+      "line_num": 1,
+      "left": 1010,
+      "top": 1011,
+      "width": 113,
+      "height": 23,
+      "conf": 96.609329
+    },
+    {
+      "text": "provides",
+      "line_num": 1,
+      "left": 1134,
+      "top": 1011,
+      "width": 120,
+      "height": 29,
+      "conf": 96.591713
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 1264,
+      "top": 1011,
+      "width": 54,
+      "height": 23,
+      "conf": 93.218277
+    },
+    {
+      "text": "'the",
+      "line_num": 1,
+      "left": 1331,
+      "top": 1011,
+      "width": 50,
+      "height": 23,
+      "conf": 87.218819
+    },
+    {
+      "text": "expression",
+      "line_num": 2,
+      "left": 193,
+      "top": 1059,
+      "width": 152,
+      "height": 29,
+      "conf": 95.803207
+    },
+    {
+      "text": "of",
+      "line_num": 2,
+      "left": 357,
+      "top": 1059,
+      "width": 27,
+      "height": 23,
+      "conf": 95.803207
+    },
+    {
+      "text": "one",
+      "line_num": 2,
+      "left": 394,
+      "top": 1065,
+      "width": 52,
+      "height": 17,
+      "conf": 96.918976
+    },
+    {
+      "text": "thing",
+      "line_num": 2,
+      "left": 455,
+      "top": 1059,
+      "width": 70,
+      "height": 30,
+      "conf": 95.827225
+    },
+    {
+      "text": "excludes",
+      "line_num": 2,
+      "left": 536,
+      "top": 1059,
+      "width": 126,
+      "height": 23,
+      "conf": 93.29261
+    },
+    {
+      "text": "another.'",
+      "line_num": 2,
+      "left": 673,
+      "top": 1059,
+      "width": 120,
+      "height": 23,
+      "conf": 89.93882
+    },
+    {
+      "text": "These",
+      "line_num": 2,
+      "left": 805,
+      "top": 1059,
+      "width": 86,
+      "height": 23,
+      "conf": 96.750069
+    },
+    {
+      "text": "canons",
+      "line_num": 2,
+      "left": 901,
+      "top": 1065,
+      "width": 103,
+      "height": 17,
+      "conf": 96.034065
+    },
+    {
+      "text": "guide",
+      "line_num": 2,
+      "left": 1014,
+      "top": 1059,
+      "width": 78,
+      "height": 30,
+      "conf": 95.936668
+    },
+    {
+      "text": "how",
+      "line_num": 2,
+      "left": 1104,
+      "top": 1059,
+      "width": 58,
+      "height": 23,
+      "conf": 95.936668
+    },
+    {
+      "text": "a",
+      "line_num": 2,
+      "left": 1172,
+      "top": 1065,
+      "width": 16,
+      "height": 17,
+      "conf": 96.663338
+    },
+    {
+      "text": "court",
+      "line_num": 2,
+      "left": 1198,
+      "top": 1060,
+      "width": 73,
+      "height": 22,
+      "conf": 96.371803
+    },
+    {
+      "text": "reads",
+      "line_num": 2,
+      "left": 1282,
+      "top": 1059,
+      "width": 77,
+      "height": 23,
+      "conf": 96.700516
+    },
+    {
+      "text": "a",
+      "line_num": 2,
+      "left": 1369,
+      "top": 1065,
+      "width": 16,
+      "height": 17,
+      "conf": 96.41777
+    },
+    {
+      "text": "‘silent’",
+      "line_num": 3,
+      "left": 195,
+      "top": 1107,
+      "width": 87,
+      "height": 23,
+      "conf": 38.995567
+    },
+    {
+      "text": "agreement.",
+      "line_num": 3,
+      "left": 295,
+      "top": 1108,
+      "width": 158,
+      "height": 29,
+      "conf": 96.376877
+    },
+    {
+      "text": "When",
+      "line_num": 1,
+      "left": 192,
+      "top": 1181,
+      "width": 80,
+      "height": 23,
+      "conf": 96.097946
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 273,
+      "top": 1177,
+      "width": 17,
+      "height": 38,
+      "conf": 96.509056
+    },
+    {
+      "text": "term",
+      "line_num": 1,
+      "left": 310,
+      "top": 1182,
+      "width": 63,
+      "height": 22,
+      "conf": 95.790184
+    },
+    {
+      "text": "is",
+      "line_num": 1,
+      "left": 386,
+      "top": 1181,
+      "width": 20,
+      "height": 23,
+      "conf": 93.208549
+    },
+    {
+      "text": "'undefined,'",
+      "line_num": 1,
+      "left": 419,
+      "top": 1181,
+      "width": 162,
+      "height": 27,
+      "conf": 90.909515
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 593,
+      "top": 1181,
+      "width": 45,
+      "height": 23,
+      "conf": 96.944305
+    },
+    {
+      "text": "court",
+      "line_num": 1,
+      "left": 648,
+      "top": 1182,
+      "width": 73,
+      "height": 22,
+      "conf": 96.568939
+    },
+    {
+      "text": "looks",
+      "line_num": 1,
+      "left": 732,
+      "top": 1181,
+      "width": 74,
+      "height": 23,
+      "conf": 96.69722
+    },
+    {
+      "text": "to",
+      "line_num": 1,
+      "left": 816,
+      "top": 1182,
+      "width": 27,
+      "height": 22,
+      "conf": 96.68647
+    },
+    {
+      "text": "‘ordinary",
+      "line_num": 1,
+      "left": 856,
+      "top": 1181,
+      "width": 122,
+      "height": 30,
+      "conf": 3.205891
+    },
+    {
+      "text": "usage.'",
+      "line_num": 1,
+      "left": 989,
+      "top": 1181,
+      "width": 99,
+      "height": 30,
+      "conf": 91.530754
+    },
+    {
+      "text": "Where",
+      "line_num": 1,
+      "left": 1101,
+      "top": 1181,
+      "width": 90,
+      "height": 23,
+      "conf": 95.792
+    },
+    {
+      "text": "usage",
+      "line_num": 1,
+      "left": 1203,
+      "top": 1187,
+      "width": 84,
+      "height": 24,
+      "conf": 96.463516
+    },
+    {
+      "text": "conflicts,",
+      "line_num": 1,
+      "left": 1297,
+      "top": 1181,
+      "width": 126,
+      "height": 28,
+      "conf": 95.924377
+    },
+    {
+      "text": "it",
+      "line_num": 2,
+      "left": 194,
+      "top": 1229,
+      "width": 14,
+      "height": 23,
+      "conf": 96.935707
+    },
+    {
+      "text": "prefers",
+      "line_num": 2,
+      "left": 220,
+      "top": 1229,
+      "width": 97,
+      "height": 29,
+      "conf": 96.147041
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 327,
+      "top": 1229,
+      "width": 44,
+      "height": 23,
+      "conf": 96.804405
+    },
+    {
+      "text": "reading",
+      "line_num": 2,
+      "left": 382,
+      "top": 1229,
+      "width": 103,
+      "height": 30,
+      "conf": 96.814262
+    },
+    {
+      "text": "that",
+      "line_num": 2,
+      "left": 496,
+      "top": 1229,
+      "width": 54,
+      "height": 23,
+      "conf": 96.933289
+    },
+    {
+      "text": "renders",
+      "line_num": 2,
+      "left": 562,
+      "top": 1229,
+      "width": 105,
+      "height": 23,
+      "conf": 96.494003
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 677,
+      "top": 1229,
+      "width": 44,
+      "height": 23,
+      "conf": 96.283997
+    },
+    {
+      "text": "whole",
+      "line_num": 2,
+      "left": 731,
+      "top": 1229,
+      "width": 84,
+      "height": 23,
+      "conf": 92.166557
+    },
+    {
+      "text": "'sensible.'",
+      "line_num": 2,
+      "left": 828,
+      "top": 1229,
+      "width": 137,
+      "height": 23,
+      "conf": 80.380722
+    },
+    {
+      "text": "The",
+      "line_num": 2,
+      "left": 977,
+      "top": 1229,
+      "width": 53,
+      "height": 23,
+      "conf": 96.627724
+    },
+    {
+      "text": "goal",
+      "line_num": 2,
+      "left": 1040,
+      "top": 1229,
+      "width": 59,
+      "height": 30,
+      "conf": 96.742561
+    },
+    {
+      "text": "is",
+      "line_num": 2,
+      "left": 1112,
+      "top": 1229,
+      "width": 20,
+      "height": 23,
+      "conf": 96.473572
+    },
+    {
+      "text": "always",
+      "line_num": 2,
+      "left": 1142,
+      "top": 1229,
+      "width": 96,
+      "height": 30,
+      "conf": 95.813217
+    },
+    {
+      "text": "to",
+      "line_num": 2,
+      "left": 1248,
+      "top": 1230,
+      "width": 28,
+      "height": 22,
+      "conf": 96.219543
+    },
+    {
+      "text": "honor",
+      "line_num": 2,
+      "left": 1287,
+      "top": 1229,
+      "width": 82,
+      "height": 23,
+      "conf": 96.580521
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 1377,
+      "top": 1229,
+      "width": 45,
+      "height": 23,
+      "conf": 96.731133
+    },
+    {
+      "text": "parties'",
+      "line_num": 3,
+      "left": 194,
+      "top": 1277,
+      "width": 101,
+      "height": 29,
+      "conf": 91.943451
+    },
+    {
+      "text": "'true",
+      "line_num": 3,
+      "left": 310,
+      "top": 1277,
+      "width": 61,
+      "height": 23,
+      "conf": 81.860023
+    },
+    {
+      "text": "intent.'",
+      "line_num": 3,
+      "left": 383,
+      "top": 1277,
+      "width": 92,
+      "height": 23,
+      "conf": 91.543533
+    },
+    {
+      "text": "OCR",
+      "line_num": 1,
+      "left": 634,
+      "top": 1892,
+      "width": 51,
+      "height": 18,
+      "conf": 96.53273
+    },
+    {
+      "text": "Test:",
+      "line_num": 1,
+      "left": 694,
+      "top": 1893,
+      "width": 47,
+      "height": 17,
+      "conf": 93.235405
+    },
+    {
+      "text": "english-legal",
+      "line_num": 1,
+      "left": 749,
+      "top": 1893,
+      "width": 134,
+      "height": 22,
+      "conf": 89.912979
+    },
+    {
+      "text": "(single,",
+      "line_num": 1,
+      "left": 890,
+      "top": 1892,
+      "width": 72,
+      "height": 23,
+      "conf": 92.978973
+    },
+    {
+      "text": "Itr)",
+      "line_num": 1,
+      "left": 971,
+      "top": 1892,
+      "width": 27,
+      "height": 23,
+      "conf": 82.048126
+    }
+  ]
+}
