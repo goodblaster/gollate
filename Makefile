@@ -24,6 +24,7 @@ utils:
 	$(GO_BIN) build -o bin/ocr-util ./cmd/ocr-util
 	$(GO_BIN) build -o bin/ocr-highlight ./cmd/ocr-highlight
 	$(GO_BIN) build -o bin/tesseract-util ./cmd/tesseract-util
+	$(GO_BIN) build -o bin/pdftext-util ./cmd/pdftext-util
 	$(GO_BIN) build -o bin/testdoc ./cmd/testdoc
 
 # Run the OCR integration suite (sorts committed OCR fixtures, checks

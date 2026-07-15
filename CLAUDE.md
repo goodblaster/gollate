@@ -263,6 +263,68 @@ The Apple Vision integration provides native macOS OCR capabilities through the 
   `internal/imageslicer` so the module has no unpublished dependencies and
   can be imported downstream.
 
+### PDF Text-Layer Extraction
+
+`pkg/pdftext` + `cmd/pdftext-util` extract positioned words from a PDF's
+embedded text layer, emitting the engine-neutral blocks format for
+`--engine blocks`. A text layer is effectively a perfect OCR engine —
+exact coordinates, no misreads — but content-stream order is not reading
+order, so the sorter is still needed.
+
+Extraction backends are pluggable (`pdftext.Backend` registry, selected
+via `pdftext.Select(name, lang)` / the util's `-backend` flag, default
+`auto`): **pdfkit** (Apple PDFKit via cgo, macOS only) and **poppler**
+(shells out to `pdftotext -tsv`, cross-platform, optional install —
+matching the tesseract-util precedent). Auto mode prefers pdfkit but
+flips to poppler for Indic language hints (`-lang hindi`), and falls back
+to whatever is installed. The poppler backend repairs `-tsv`'s
+visual-order RTL emission (reversed chars/words) heuristically and
+populates `LineId` from poppler's line grouping (feeds line repair).
+The package builds on non-macOS hosts with only the poppler backend.
+
+- **PDF text is never canonical text** (Dave's explicit rule): text layers
+  lack the sentence/paragraph structure canonical text exists to provide.
+  Input block source only.
+- Token text is NFKC-folded (ligatures like ﬀ/ﬁ, compatibility forms)
+  or exact matching against canonical fails.
+- Measured on the OCR fixtures (2026-07): Latin ~94–100%, CJK horizontal
+  ~97–100% (beats both OCR engines), vertical Japanese 63–76% (Apple
+  Vision scores ~0.9% there). Arabic 46–84% and Hindi ~43–46% score below
+  OCR, but for two very different reasons:
+  - **Hindi losses are a PDFKit extraction bug, not a generator bug.**
+    Chrome's PDFs round-trip Devanagari perfectly through poppler's
+    `pdftotext`; PDFKit drops/reorders matras (`दैनिक` → `द नक`). A
+    poppler `-tsv`-backed extraction prototype scored 97/94/74% on the
+    Hindi fixtures vs 43–46% via PDFKit. Caveat before productizing:
+    poppler's boxed outputs (`-tsv`, `-bbox`) emit RTL scripts in
+    visual order (chars and words reversed) — fine for Devanagari,
+    needs real bidi handling for Arabic, where PDFKit (codepoint-
+    perfect) remains the better extractor. Poppler is also much worse
+    for vertical Japanese (~20% vs 63–76%). No single extractor wins
+    everywhere, which is why backend auto-selection is per-script; with
+    it, Hindi scores 97.1/93.8/88.2% (vs 82.8–92.1% OCR baselines —
+    beats OCR on single and three-column). The remaining hindi
+    multi-column gap vs hindi-single is a sorter limitation, not an
+    extraction one: OCR input hits the same wall (tesseract 87.8 on
+    three-column), emit order is irrelevant (column-major reorder
+    measured no change), and permutation/column-penalty knobs measured
+    no change — it's wrap-chaining across narrow columns with Hindi's
+    duplicate-heavy words, adjacent to the known pass-loop/wrap issues
+    in TESTING.md.
+  - **Arabic and vertical-Japanese text layers extract perfectly** —
+    the raw emit order alone scores 100% on single-column fixtures. The
+    losses are sorter-side: (a) the sorter actively degrades perfect
+    input (arabic-single 84% vs 100% raw; vertical JA 63–76% vs 100%
+    raw), and (b) for RTL multi-column the sorted score exactly equals
+    the raw emit score (59.52/46.43%), because final line ordering
+    follows original block index, not geometry — Chrome emits RTL
+    columns in the wrong order and the sorter inherits it. Both are
+    algorithm issues, in principle fixable; until then OCR scores
+    higher for Arabic.
+- Scanned PDFs have no text layer: pdftext-util warns; rasterize
+  (`scripts/pdf-to-png.sh`) and OCR instead. Multi-page PDFs emit
+  `{base}-{page}-pdftext.json`, matching the rasterizer's naming.
+
 **Engine Adapter**: `pkg/engines/apple/`
 - Converts Apple Vision JSON to normalized `Block` format
 - Preserves line-level grouping through `LineNum` tracking
