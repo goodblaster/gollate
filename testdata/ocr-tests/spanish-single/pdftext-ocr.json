@@ -1,0 +1,1729 @@
+[
+  {
+    "text": "El",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.2299517428696574,
+      "width": 0.0355294004803926,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Tejido",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.27638309485658624,
+      "width": 0.11105877049510006,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "de",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.39834380497096816,
+      "width": 0.04647057036764774,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "la",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.45571632598730905,
+      "width": 0.03262744557679762,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Vida",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.4992457222127999,
+      "width": 0.08058819235294286,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Cotidiana",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.5907358468320838,
+      "width": 0.17929407782353074,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "El",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.11764705392156861,
+      "width": 0.016333315128268716,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "médico",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.13943133046487083,
+      "width": 0.06501956028104755,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "español",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.20990185681781437,
+      "width": 0.06899995790931536,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "trabaja",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.2843527761421632,
+      "width": 0.06027444528268228,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "en",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.35007819325654516,
+      "width": 0.021431365773693013,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "el",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.37696053196487894,
+      "width": 0.014882346438725717,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "hospital",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.3972938398186381,
+      "width": 0.06899992065441506,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "público",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.47174474063808575,
+      "width": 0.06464697304167015,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "todos",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.5418427171291014,
+      "width": 0.05011756543627775,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "los",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.5974112602794315,
+      "width": 0.025411754455882764,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "días.",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.6282739924493667,
+      "width": 0.04176469004902005,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Su",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.6754896577614588,
+      "width": 0.02360781886928214,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "dedicación",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.7045484495653818,
+      "width": 0.09623516400490705,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "al",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.8062345865049296,
+      "width": 0.014882402566174409,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "servicio",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.11764705392156861,
+      "width": 0.0671568005106234,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "de",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.19025482050408804,
+      "width": 0.02215685116013117,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "los",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.21786264349591886,
+      "width": 0.025411735705883495,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "pacientes",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.2487253569158548,
+      "width": 0.08498032513562348,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "es",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.3391566597655306,
+      "width": 0.020333326603758403,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "verdaderamente",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.36494096408334137,
+      "width": 0.14274498032680197,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "admirable.",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.5131369349918422,
+      "width": 0.0922548242197745,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "La",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.11764705392156861,
+      "width": 0.021431366876634207,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "tecnología",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.1445293926299025,
+      "width": 0.09113715882516712,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "avanza",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.24111752328676936,
+      "width": 0.06170585429166771,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "rápidamente",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.30827434941013676,
+      "width": 0.11005872948284666,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "en",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.4237840507246831,
+      "width": 0.021431347146242858,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nuestra",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.45066637080556676,
+      "width": 0.06537252619771326,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "época",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5214898875849789,
+      "width": 0.05447053339215906,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "moderna.",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5814113741813874,
+      "width": 0.08390190924918504,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Las",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.6707642586936446,
+      "width": 0.0312353009044113,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "innovaciones",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.7074505373121084,
+      "width": 0.11511753588971067,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "transforman",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.11764705392156861,
+      "width": 0.10568618812091847,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "la",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.22878421497712792,
+      "width": 0.01488233602205947,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "manera",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.2491175228308871,
+      "width": 0.06574505755474008,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "en",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.3203135522173268,
+      "width": 0.02143136577369306,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "que",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.34719589092566067,
+      "width": 0.03305880671078496,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "vivimos",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.3857056694681453,
+      "width": 0.06609800472140648,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.45725465190360426,
+      "width": 0.00980392116013058,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "trabajamos",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.4725095507777872,
+      "width": 0.09805873378186633,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "cada",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.5760192622737059,
+      "width": 0.04321564354248534,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "día.",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.6246858963978902,
+      "width": 0.031960731633989166,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Las",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.11764705392156861,
+      "width": 0.031235282154412215,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "civilizaciones",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.15433331379003326,
+      "width": 0.11505868834314252,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "antiguas",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.27484297984722816,
+      "width": 0.07445091981454482,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "construyeron",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.35474487737582533,
+      "width": 0.11476460624755298,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "monumentos",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.47496045655801905,
+      "width": 0.11517640181863005,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "impresionantes.",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.5955878360907015,
+      "width": 0.139117555477945,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Estas",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.7401563668317186,
+      "width": 0.04829410276715741,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "estructuras",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.11764705392156861,
+      "width": 0.09841168683088539,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "demuestran",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.2215097184665064,
+      "width": 0.10425483511683264,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "la",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.33121552651797986,
+      "width": 0.01488233602205947,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "creatividad",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.35154883437173895,
+      "width": 0.0962352256470614,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "de",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.4532350084436383,
+      "width": 0.02215683253268104,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nuestros",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.4808428315580182,
+      "width": 0.07554899158251734,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "antepasados.",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.5618428008545879,
+      "width": 0.11876461306618014,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "La",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.11764705392156861,
+      "width": 0.021431366876634207,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "educación",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.1445293926299025,
+      "width": 0.09115679203513345,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "es",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.24113715759967683,
+      "width": 0.020333326603758358,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "fundamental",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.2669214619174876,
+      "width": 0.10898032131699609,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "para",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.38135274464951713,
+      "width": 0.03921565302287702,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "el",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.42601936950409386,
+      "width": 0.014882346438725717,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "progreso",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.4463526961078523,
+      "width": 0.07807837199183247,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "social.",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.5298819967941313,
+      "width": 0.05627448907679812,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "A",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.5916074611340014,
+      "width": 0.012705881823529455,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "través",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.6097642973872704,
+      "width": 0.05337251174673339,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "del",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.6685877868480562,
+      "width": 0.026509786395425703,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "aprendizaje",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.7005485534085145,
+      "width": 0.100568530245919,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "adquirimos",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.11764705392156861,
+      "width": 0.0977057808553962,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "las",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.22080381249101722,
+      "width": 0.024686251299837553,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "herramientas",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.25094104150490715,
+      "width": 0.11403911706209534,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "para",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.3704311362810549,
+      "width": 0.03921565302287702,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "mejorar",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.4150977611356316,
+      "width": 0.06645089821160458,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nuestras",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.48699964061521,
+      "width": 0.075176422848041,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "comunidades.",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.5676270411773034,
+      "width": 0.1242352254607869,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "La",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.11764705392156861,
+      "width": 0.021431366876634207,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "naturaleza",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.1445293926299025,
+      "width": 0.09039207736111414,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "proporciona",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.24037244182271642,
+      "width": 0.10568617047386031,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "belleza",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.3515095841282764,
+      "width": 0.06133326680719206,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.41829382276716814,
+      "width": 0.009803921160130673,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "recursos",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.43354870301390097,
+      "width": 0.07552935726960994,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "esenciales.",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.5145290379975633,
+      "width": 0.09731367376389086,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Proteger",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.6172936870245262,
+      "width": 0.0751567849812123,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "el",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.6979014532737123,
+      "width": 0.014882327811275563,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "medio",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.7182347612500206,
+      "width": 0.05449015508251801,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ambiente",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.778175919781884,
+      "width": 0.08137245053104974,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "garantiza",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.11764705392156861,
+      "width": 0.08021560621650639,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "un",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.2033136319697747,
+      "width": 0.021803915880719164,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "futuro",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.23056852078513465,
+      "width": 0.05121564884640666,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "mejor",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.28723513570343734,
+      "width": 0.04939211485375982,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "para",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.3420782131977207,
+      "width": 0.03921565302287707,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "todos.",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.3867448380522974,
+      "width": 0.055568582978759815,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "La",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.11764705392156861,
+      "width": 0.021431366876634207,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "comunicación",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.1445293926299025,
+      "width": 0.12276460566912155,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "une",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.27274497123366487,
+      "width": 0.032333322427287994,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "diferentes",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.31052926549265253,
+      "width": 0.08643129382516639,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "culturas",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.4024115370318713,
+      "width": 0.06972544501143954,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.47758795975736335,
+      "width": 0.009803921160130673,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "pueblos.",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.4928428586315464,
+      "width": 0.07554895665604822,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "El",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.5738427905506668,
+      "width": 0.016333296500818516,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "lenguaje",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.5956270297165194,
+      "width": 0.0733529101789228,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nos",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.6744308930996917,
+      "width": 0.0319607665604582,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "permite",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.7118426373742025,
+      "width": 0.06647056071078525,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "compartir",
+    "bounds": {
+      "top": 0.4524469508450126,
+      "left": 0.7837641512892372,
+      "width": 0.08425476266585519,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ideas",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.11764705392156861,
+      "width": 0.04684309657761601,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.169941128213237,
+      "width": 0.00980392116013072,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "construir",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.18519602708742014,
+      "width": 0.07698032228268242,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "puentes",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.2676273120106262,
+      "width": 0.07047054510294277,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "de",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.34354883482762133,
+      "width": 0.022156851160131146,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "entendimiento.",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.3711566578194521,
+      "width": 0.13041164995833796,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "La",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.11764705392156861,
+      "width": 0.021431366876634207,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ciencia",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.1445293926299025,
+      "width": 0.06172543259967542,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "revela",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.2117057970612776,
+      "width": 0.051921530189543985,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "los",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.2690782990825213,
+      "width": 0.025411735705883495,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "misterios",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.2999410125024572,
+      "width": 0.07952932891666986,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "del",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.3849213191331794,
+      "width": 0.026509786272876448,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "universo",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.4168820668210893,
+      "width": 0.07407840022222338,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "gradualmente.",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.4964113957377592,
+      "width": 0.12603912832680084,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Cada",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.6279014993276323,
+      "width": 0.04684312120996778,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "descubrimiento",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.6801955737418495,
+      "width": 0.13584298392320898,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "abre",
+    "bounds": {
+      "top": 0.5102120999532828,
+      "left": 0.821489561114404,
+      "width": 0.038862737473856386,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nuevas",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.11764705392156861,
+      "width": 0.06247056430882443,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "preguntas",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.18556859594444547,
+      "width": 0.08790189707271484,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.2789214707312127,
+      "width": 0.00980392116013072,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "caminos",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.29417636960539584,
+      "width": 0.07409798551552488,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "para",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.37372533283497306,
+      "width": 0.03921565302287707,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "la",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.4183919576895498,
+      "width": 0.014882336022059517,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "exploración.",
+    "bounds": {
+      "top": 0.5329393717335859,
+      "left": 0.43872524691585874,
+      "width": 0.10747049172304309,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "El",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.11764705392156861,
+      "width": 0.016333315128268716,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "arte",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.13943133046487083,
+      "width": 0.033764675308824724,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "expresa",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.17864697760539525,
+      "width": 0.06935290078676629,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "emociones",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.25345085022386127,
+      "width": 0.09588228080882637,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "más",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.35478410874674,
+      "width": 0.037058809975490645,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "allá",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.397293896436283,
+      "width": 0.02976466616176621,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "de",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.43250953442974893,
+      "width": 0.022156832532680946,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "las",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.46011735754412875,
+      "width": 0.0246862512998376,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "palabras.",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.49025458655801873,
+      "width": 0.08098030005719312,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Las",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.576685861878284,
+      "width": 0.031235300904411394,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "obras",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.6133721404967478,
+      "width": 0.04974503407925094,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "creativas",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.6685681522900512,
+      "width": 0.07843133178104732,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "inspiran",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.7524504991626003,
+      "width": 0.06899987200245636,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "y",
+    "bounds": {
+      "top": 0.5679772490615531,
+      "left": 0.8269013440996974,
+      "width": 0.009803921160130766,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "desafían",
+    "bounds": {
+      "top": 0.5907045208418561,
+      "left": 0.11764705392156861,
+      "width": 0.07407837436438128,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "nuestra",
+    "bounds": {
+      "top": 0.5907045208418561,
+      "left": 0.1971764012205907,
+      "width": 0.06537250757026303,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "percepción",
+    "bounds": {
+      "top": 0.5907045208418561,
+      "left": 0.2679998806225534,
+      "width": 0.09805873843872877,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "del",
+    "bounds": {
+      "top": 0.5907045208418561,
+      "left": 0.3715095919959229,
+      "width": 0.026509786272876493,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "mundo.",
+    "bounds": {
+      "top": 0.5907045208418561,
+      "left": 0.40347033968383283,
+      "width": 0.06686270444444603,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "OCR",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.40427771599823176,
+      "width": 0.03185290639338369,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Test:",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.4402188385202928,
+      "width": 0.03049994505269823,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "spanish",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.47480701502029526,
+      "width": 0.050117587617649506,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "(single,",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.5290128323695626,
+      "width": 0.046014598695469984,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ltr)",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.5791156625123368,
+      "width": 0.01660290604840832,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  }
+]

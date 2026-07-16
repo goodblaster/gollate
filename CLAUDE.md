@@ -95,6 +95,10 @@ make build utils && ./scripts/generate-ocr-tests.sh
 # Regenerate the seeded noise fixtures (only if their base fixtures change)
 ./scripts/generate-noise-fixtures.sh
 
+# Regenerate the PDF text-layer fixtures (pdftext-ocr.json; needs macOS +
+# poppler at generation time only — the suite reads the committed JSON)
+./scripts/generate-pdftext-fixtures.sh
+
 # Optional: human-debugging artifacts (overlays, summary.txt, problems.todo)
 ./scripts/run-ocr-tests.sh
 ```
@@ -106,7 +110,11 @@ baselines in `testdata/ocr-tests/baselines.json` only ratchet upward; a
 failing case means a real regression. `*-noiseNN` fixtures measure
 error tolerance (seeded misreads in NN% of blocks); `english-grid` measures
 duplicate-short-line handling; the two Japanese vertical fixtures are
-expected ~0% until vertical auto-detection exists (TESTING.md issue #4).
+expected ~0% until vertical auto-detection exists (TESTING.md issue #4) —
+for Apple OCR input; the same layouts score 63–76% from `pdftext` input.
+Each case is scored per source: `apple` and `tesseract` OCR plus
+`pdftext` (PDF text-layer blocks from `pdftext-ocr.json`, parsed via the
+"blocks" engine — not OCR, but gated by the same ratchet).
 
 **Read TESTING.md first when working on tests or accuracy** — it holds the
 current per-language scores, the diagnosed-but-unfixed algorithm issues
