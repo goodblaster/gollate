@@ -168,9 +168,9 @@ bin/ocr-util document.png                   # Apple Vision OCR (macOS), auto-sli
 # Backends are pluggable with graceful fallback: pdfkit (macOS built-in)
 # and poppler (any OS, `brew install poppler`); -backend auto (default)
 # picks the best installed one for the script — pass -lang so Hindi gets
-# poppler (PDFKit mangles Devanagari). Beats OCR for Latin/CJK including
-# vertical Japanese; use OCR for Arabic for now (text extracts perfectly
-# but known sorter ordering issues lose accuracy — see CLAUDE.md). This is an input source only — canonical
+# poppler (PDFKit mangles Devanagari). Matches or beats OCR for Latin,
+# CJK (including vertical Japanese), Arabic, and Hindi — see the
+# per-case baselines in testdata/ocr-tests/baselines.json. This is an input source only — canonical
 # text must still come from a structured source (innerText, DOC text),
 # never the PDF.
 bin/pdftext-util -lang english document.pdf # -> document-pdftext.json

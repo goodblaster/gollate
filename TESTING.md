@@ -140,6 +140,22 @@ vs prior committed baselines the only net regression is english-three-column
 −0.59. Mechanism B (approx chain fallback) measured subsumed everywhere and
 was deleted. Only #4 (vertical detection) remains.
 
+Status update (2026-07-15): **wrap bridging promoted for Arabic** after
+fixing an RTL bug in the wrap classifier: `isWrappedToNextLine` only
+recognized the LTR wrap shape (`w1.Right() > w2.Left()`), so for RTL text
+a legitimate wrap — line ends at page left, next line starts at page
+right — was never classified as one. Every earlier "wrap bridging
+misfires on RTL (−9.5)" measurement was made under that bug and is void:
+bridging could only ever admit junk steps for Arabic. Do not relitigate
+wrap bridging for Arabic from pre-2026-07-15 numbers. With the
+RTL-aware classifier + `EnableWrapBridging` in the Arabic config,
+Arabic pathfinding matches lines for the first time (found went 0 →
+most; scores previously rode entirely on emit order + the leftover
+assembler): pdftext 84.2→100 / 59.3→97.9 / 46.3→89.3, Tesseract
+multi-column +19.9/+10.1, Apple unchanged. One baseline hand-lowered
+as the trade: arabic-single/tesseract 63.09→60.12 (noisy input; chain
+holes re-measured as no rescue: −2.7 to −12.2).
+
 Suggested order (historical): 5 → 1+2 together (+3 while in there) → 4.
 
 ## History worth knowing (so it isn't relitigated)
