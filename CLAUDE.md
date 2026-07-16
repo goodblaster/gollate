@@ -338,6 +338,22 @@ The package builds on non-macOS hosts with only the poppler backend.
   (`scripts/pdf-to-png.sh`) and OCR instead. Multi-page PDFs emit
   `{base}-{page}-pdftext.json`, matching the rasterizer's naming.
 
+### Windows OCR (scripts/winocr.ps1)
+
+The Windows counterpart of ocr-util: `scripts/winocr.ps1` runs the
+OS-built-in Windows.Media.Ocr engine (free, preinstalled, word-level
+boxes + line grouping) and emits the engine-neutral blocks format for
+`--engine blocks`, stamped `winocr`. Requirements and limits: Windows
+PowerShell 5.1 (not pwsh — PowerShell 7 can't project WinRT types),
+the OCR language pack for the target language (list with
+`-ListLanguages`; install via Settings > Language or
+`Add-WindowsCapability`), and images ≤ 2600px per side
+(`OcrEngine::MaxImageDimension`) — tall pages must be sliced/scaled
+first. Output is written UTF-8 **without BOM** (Go's JSON decoder
+rejects BOMs). Status: written and shape-verified against the blocks
+engine on macOS; not yet executed on a real Windows machine — no
+committed fixtures/baselines until it is.
+
 **Engine Adapter**: `pkg/engines/apple/`
 - Converts Apple Vision JSON to normalized `Block` format
 - Preserves line-level grouping through `LineNum` tracking

@@ -175,6 +175,13 @@ bin/ocr-util document.png                   # Apple Vision OCR (macOS), auto-sli
 # never the PDF.
 bin/pdftext-util -lang english document.pdf # -> document-pdftext.json
 
+# On Windows? The built-in Windows OCR engine (free, preinstalled,
+# word-level boxes) works via scripts/winocr.ps1 — the Windows
+# counterpart of ocr-util. Emits the blocks format; sort with
+# --engine blocks. Requires the matching Windows OCR language pack
+# (-ListLanguages shows installed ones) and Windows PowerShell 5.1.
+#   powershell -ExecutionPolicy Bypass -File scripts\winocr.ps1 page.png -Language ja
+
 # Basic usage - output sorted text to stdout
 gollate --engine apple \
          --language english \
