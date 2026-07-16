@@ -124,6 +124,21 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    VerticalTTB_RTL), the two vertical fixtures went 0.9→74.2 and 0.4→66.5
    on Tesseract. The Apple rows stay ~0% as a documented engine
    limitation — no sorter change can compensate for empty input.
+   Researched 2026-07-15: this is an API-surface gap, not a missing
+   download or language hint. Our invocation is already optimal
+   (revision 3 default on macOS 15, accurate mode, ja-JP listed and
+   supported). On the vertical fixture VNRecognizeTextRequest returns
+   only the two horizontal elements (title/footer) and silently skips
+   every vertical column; Apple's own forum confirms no tategaki
+   support and suggests rotate-and-reassemble preprocessing. Meanwhile
+   VisionKit's ImageAnalyzer (Live Text) reads the same fixture
+   perfectly (full transcript, correct reading order) on the same
+   machine — Apple's recognizer CAN do it — but its public API exposes
+   only `transcript`: no per-word geometry, so it cannot feed the
+   sorter. macOS 26's RecognizeDocumentsRequest doesn't document
+   vertical support and cannot do word-level segmentation for CJK at
+   all. Until Apple exposes vertical text with geometry, Tesseract
+   jpn_vert and the PDF text layer are the vertical sources.
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like
