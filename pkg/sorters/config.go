@@ -82,6 +82,20 @@ type SorterConfig struct {
 	// Default: false
 	EnableWrapBridging bool
 
+	// EnableVerticalWrapBridging turns wrap bridging on when vertical text
+	// is detected (vertical.go), even if EnableWrapBridging is off. The
+	// hypothesis was that a detected-vertical page is safe for bridging
+	// (canonical lines span many narrow columns and cannot match without
+	// it), unlike the horizontal noisy grids where bridging measures −16
+	// to −31 for CJK. Measured 2026-07-17 with corrected vertical wrap
+	// geometry: NET NEGATIVE — tesseract vertical fixtures drop 74.2→63.2
+	// and 66.5→62.4, because partially-matched per-character chains (every
+	// CJK character is a high-frequency duplicate) displace the stronger
+	// emit-order + leftover-assembly fallback. Kept as an experiment flag
+	// for when per-character chaining improves; enabled in no preset.
+	// Default: false
+	EnableVerticalWrapBridging bool
+
 	// EnableChainHoles keeps a line whole when a small fraction of its words
 	// are missing from OCR: missing words become wildcard slots that
 	// pathfinding bridges with HolePathPenalty, instead of splitting the line.

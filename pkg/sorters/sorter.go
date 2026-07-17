@@ -61,6 +61,10 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 	if !config.DisableVerticalDetection && config.ReadingOrder.IsHorizontal() && detectVerticalText(ocrBlocks) {
 		log.Debug("vertical text detected; switching reading order to VerticalTTB_RTL")
 		config.ReadingOrder = VerticalTTB_RTL
+		if config.EnableVerticalWrapBridging && !config.EnableWrapBridging {
+			log.Debug("vertical text: enabling wrap bridging (columns wrap like lines)")
+			config.EnableWrapBridging = true
+		}
 	}
 
 	// Preparation: repair unrecognizable tokens using the engine's own line

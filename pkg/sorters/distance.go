@@ -181,15 +181,21 @@ func isWrappedToNextLine(w1, w2 Block, order ReadingOrder) bool {
 			w1.Right() > w2.Left() &&
 			(w2.Top()-w1.Bottom()) <= MaxLineGap(w1, w2)
 	}
-	// Vertical text: next line is to the left (RTL) or right (LTR)
+	// Vertical text: next line is to the left (RTL) or right (LTR).
+	// Mirrors the horizontal cases: w2 must sit strictly on the
+	// next-column side (3px overlap allowed), start above w1's end along
+	// the reading axis, and the column gap must be plausible. The
+	// original conditions had the sides mirrored (like the RTL horizontal
+	// bug above), so they could only ever match backwards column jumps —
+	// where the gap check goes negative and passes trivially.
 	if order == VerticalTTB_RTL {
 		// Next column is to the left
-		return w1.PixelRight() < w2.PixelLeft()+3 &&
+		return w2.PixelRight() < w1.PixelLeft()+3 &&
 			w1.Bottom() > w2.Top() &&
 			(w1.Left()-w2.Right()) <= MaxLineGap(w1, w2)
 	}
 	// VerticalTTB_LTR: next column is to the right
-	return w1.PixelLeft() > w2.PixelRight()-3 &&
+	return w1.PixelRight() < w2.PixelLeft()+3 &&
 		w1.Bottom() > w2.Top() &&
 		(w2.Left()-w1.Right()) <= MaxLineGap(w1, w2)
 }

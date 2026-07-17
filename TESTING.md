@@ -139,6 +139,20 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    vertical support and cannot do word-level segmentation for CJK at
    all. Until Apple exposes vertical text with geometry, Tesseract
    jpn_vert and the PDF text layer are the vertical sources.
+   Update 2026-07-17: **vertical wrap-bridging measured and rejected.**
+   Both vertical branches of `isWrappedToNextLine` had mirrored sides
+   (same bug class as the RTL horizontal fix) and could only match
+   backwards column jumps; that geometry is now fixed (no score changes
+   with bridging off — ratchet-verified). But even with correct
+   geometry, `EnableVerticalWrapBridging` (bridge column wraps when
+   vertical is detected) measures net negative: tesseract vertical
+   74.2→63.2 / 66.5→62.4. Partially-matched per-character chains — every
+   CJK char is a high-frequency duplicate, so cross-column pathfinding
+   picks wrong instances — displace the emit-order + leftover-assembly
+   fallback that currently carries these fixtures. Vertical *matching*
+   needs better per-character chaining (e.g. n-gram units) before
+   bridging can pay; the flag stays available for that experiment. Do
+   not re-enable it in the CJK preset from these numbers.
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like
