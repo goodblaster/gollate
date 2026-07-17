@@ -153,6 +153,20 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    needs better per-character chaining (e.g. n-gram units) before
    bridging can pay; the flag stays available for that experiment. Do
    not re-enable it in the CJK preset from these numbers.
+   Update 2026-07-17 (later): **realistic vertical archetype added**
+   (`japanese-book-vertical`, testdoc layout "book"): a true tategaki
+   page — vertical title column, right-to-left body, vertical colophon,
+   no horizontal bands (the old vertical fixtures wrap a vertical body
+   in Western title/footer bands, which real vertical documents don't
+   have). Scores on it: pdftext 85.6, tesseract 77.1, apple ~0. Also
+   settles the OCR-side orientation-hint question on fair ground:
+   Tesseract `--psm 5` ("single uniform block of vertical text") loses
+   to default auto-segmentation even on this uniform vertical page
+   (71.4 vs 77.1; on the banded fixtures it was 44–47 vs 74) — the
+   effective vertical hint is the jpn_vert model, not the PSM.
+   `--psm 1` matched default on single-vertical and gained +1.8 on
+   two-column-vertical. Apple Vision has no orientation parameter at
+   all. (tesseract-util now has a `-psm` passthrough flag.)
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like
