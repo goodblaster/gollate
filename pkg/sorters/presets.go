@@ -13,8 +13,15 @@ package sorters
 //   - Latin/Hindi (default): the full structural combo - wrap bridging,
 //     chain holes, short-line anchoring, reconciliation incl. single-word
 //     rescue (grid 99.3/98.6, noise fixtures +8 to +26, hindi-3col +40.8).
-//   - Arabic: short-line anchoring only (+11.3/+5.0 on noisy Tesseract);
-//     wrap bridging measurably misfires on noisy RTL (-9.5).
+//   - Arabic: short-line anchoring (+11.3/+5.0 on noisy Tesseract) and
+//     wrap bridging. Bridging originally measured -9.5 on RTL, but that
+//     was an artifact: isWrappedToNextLine only recognized the LTR wrap
+//     shape, so bridging admitted junk steps and no legitimate ones.
+//     With the RTL-aware classifier it measures +15.8/+38.6/+43.0
+//     (pdftext single/two/three-column) and +19.9/+10.1 on noisy
+//     Tesseract multi-column, -3.0 single (2026-07). Chain holes
+//     re-measured with the fix: still net-negative on Tesseract Arabic
+//     (-2.7/-12.2/-3.0); stays off.
 //   - CJK: chain holes only (+7/+8.4 on noisy pages); wrap bridging and
 //     anchoring wreck dense noisy character grids (-16 to -31).
 //
@@ -37,6 +44,7 @@ func ConfigForLanguage(lang string) SorterConfig {
 	case "arabic":
 		config = RTLConfig()
 		config.EnableShortLineAnchoring = true
+		config.EnableWrapBridging = true
 		// Line repair measured net-negative on noisy Tesseract Arabic
 		// (-1.8/-2.1 multi-column vs +0.6 single); see PLAN log.
 		config.DisableLineRepair = true

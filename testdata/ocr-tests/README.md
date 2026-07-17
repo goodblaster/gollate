@@ -41,7 +41,13 @@ For each language/layout combination this produces:
   test-info.json   # language, layout, direction, image dimensions
   apple-ocr.json   # Apple Vision output (when supported)
   tesseract-ocr.json
+  pdftext-ocr.json # PDF text-layer blocks (scripts/generate-pdftext-fixtures.sh)
 ```
+
+`pdftext-ocr.json` is not OCR: it is the document's embedded text layer
+extracted by `pdftext-util` (auto backend) into the engine-neutral blocks
+format, scored under `<case>/pdftext` baselines via the "blocks" engine.
+Regenerating it needs macOS + poppler; running the suite does not.
 
 ### Phase 2 — validate sorting (fast; run constantly during development)
 

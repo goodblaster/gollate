@@ -124,6 +124,21 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    VerticalTTB_RTL), the two vertical fixtures went 0.9→74.2 and 0.4→66.5
    on Tesseract. The Apple rows stay ~0% as a documented engine
    limitation — no sorter change can compensate for empty input.
+   Researched 2026-07-15: this is an API-surface gap, not a missing
+   download or language hint. Our invocation is already optimal
+   (revision 3 default on macOS 15, accurate mode, ja-JP listed and
+   supported). On the vertical fixture VNRecognizeTextRequest returns
+   only the two horizontal elements (title/footer) and silently skips
+   every vertical column; Apple's own forum confirms no tategaki
+   support and suggests rotate-and-reassemble preprocessing. Meanwhile
+   VisionKit's ImageAnalyzer (Live Text) reads the same fixture
+   perfectly (full transcript, correct reading order) on the same
+   machine — Apple's recognizer CAN do it — but its public API exposes
+   only `transcript`: no per-word geometry, so it cannot feed the
+   sorter. macOS 26's RecognizeDocumentsRequest doesn't document
+   vertical support and cannot do word-level segmentation for CJK at
+   all. Until Apple exposes vertical text with geometry, Tesseract
+   jpn_vert and the PDF text layer are the vertical sources.
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like
@@ -139,6 +154,22 @@ hand-lowered as the trade (worst hindi-single −3.79 vs gains up to +40.8);
 vs prior committed baselines the only net regression is english-three-column
 −0.59. Mechanism B (approx chain fallback) measured subsumed everywhere and
 was deleted. Only #4 (vertical detection) remains.
+
+Status update (2026-07-15): **wrap bridging promoted for Arabic** after
+fixing an RTL bug in the wrap classifier: `isWrappedToNextLine` only
+recognized the LTR wrap shape (`w1.Right() > w2.Left()`), so for RTL text
+a legitimate wrap — line ends at page left, next line starts at page
+right — was never classified as one. Every earlier "wrap bridging
+misfires on RTL (−9.5)" measurement was made under that bug and is void:
+bridging could only ever admit junk steps for Arabic. Do not relitigate
+wrap bridging for Arabic from pre-2026-07-15 numbers. With the
+RTL-aware classifier + `EnableWrapBridging` in the Arabic config,
+Arabic pathfinding matches lines for the first time (found went 0 →
+most; scores previously rode entirely on emit order + the leftover
+assembler): pdftext 84.2→100 / 59.3→97.9 / 46.3→89.3, Tesseract
+multi-column +19.9/+10.1, Apple unchanged. One baseline hand-lowered
+as the trade: arabic-single/tesseract 63.09→60.12 (noisy input; chain
+holes re-measured as no rescue: −2.7 to −12.2).
 
 Suggested order (historical): 5 → 1+2 together (+3 while in there) → 4.
 

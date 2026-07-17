@@ -166,6 +166,14 @@ func maybeSequentialWithOrder(w1, w2 Block, order ReadingOrder) bool {
 
 // isWrappedToNextLine checks if w2 is on the next line after w1.
 func isWrappedToNextLine(w1, w2 Block, order ReadingOrder) bool {
+	if order == HorizontalRTL_TTB {
+		// RTL text: the line ends at the page's left side and wraps to the
+		// next line's start at the right side, so the horizontal overlap
+		// test is mirrored from the LTR case below.
+		return w1.PixelBottom() < w2.PixelTop()+3 &&
+			w1.Left() < w2.Right() &&
+			(w2.Top()-w1.Bottom()) <= MaxLineGap(w1, w2)
+	}
 	if order.IsHorizontal() {
 		// Horizontal text: next line is below, and starts before w1 ends
 		// Allow 3 pixel overlaps.

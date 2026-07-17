@@ -1,0 +1,2378 @@
+[
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.24617033288015727,
+      "width": 0.06972546890849746,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Fabric",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.32679775243734793,
+      "width": 0.11760780845751756,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "of",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.45530751154355864,
+      "width": 0.03701959036928185,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Everyday",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.5032290459438868,
+      "width": 0.17074501690523178,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Life",
+    "bounds": {
+      "top": 0.09545454147727261,
+      "left": 0.6848760207282037,
+      "width": 0.06894113720098219,
+      "height": 0.03609090758712126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "A",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.11764705392156861,
+      "width": 0.012705881823529408,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "contract",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.13580390880228785,
+      "width": 0.07262739060130954,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.21388226890686585,
+      "width": 0.014156845856209776,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'concluded'",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.23349009247712807,
+      "width": 0.10315677952533005,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "when",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.34209784726553016,
+      "width": 0.047196054406046656,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "both",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.3947448746062175,
+      "width": 0.03996075213398825,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "parties",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.44015658092484733,
+      "width": 0.05954899249428211,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "assent",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.5051565511331818,
+      "width": 0.057745041834152556,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "to",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.568352581098053,
+      "width": 0.0174313822393786,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "its",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.5912348920318782,
+      "width": 0.020333307976308158,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "terms.",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.6170191777222388,
+      "width": 0.05521564855719084,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Courts",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.6776858015425018,
+      "width": 0.05882348958333499,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "have",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.7419602688398893,
+      "width": 0.041764712230391715,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "held",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.7891759342745306,
+      "width": 0.037411736308824696,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.16172726598863624,
+      "left": 0.8320386190081931,
+      "width": 0.033784330822711775,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "silence",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.11764705392156861,
+      "width": 0.06099994831617852,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "may",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.18409797406944683,
+      "width": 0.03705880997549069,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "constitute",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.22660776175898992,
+      "width": 0.08680384993709422,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'acceptance.",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.31886258352778385,
+      "width": 0.1133136534893817,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.1844545377689394,
+      "left": 0.43217623456618526,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.11764705392156861,
+      "width": 0.03268625672630788,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "statute",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.15578428247957618,
+      "width": 0.06029407984068771,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "defines",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.22152933415196355,
+      "width": 0.06354898289134125,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.2905292947573572,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'business",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.3065096779150373,
+      "width": 0.08317642226960965,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "day'",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.3951370778986994,
+      "width": 0.037411746602941776,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "as",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.437999781137263,
+      "width": 0.02033334535375758,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "any",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.4637841042050731,
+      "width": 0.031235300904411394,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "day",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5004703828235368,
+      "width": 0.03196072918300869,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5378820897205979,
+      "width": 0.033784330822711685,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5771173712965787,
+      "width": 0.014156864606209138,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "not",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.5967252136168403,
+      "width": 0.028333278353760444,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.6305094801013194,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'holiday.",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.6464898820089987,
+      "width": 0.0722744506650351,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.7187642928456041,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "In",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.7296662482737089,
+      "width": 0.01598040680963989,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "practice,",
+    "bounds": {
+      "top": 0.21949241509690648,
+      "left": 0.7510976280179895,
+      "width": 0.07625482525408803,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "lawyers",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.11764705392156861,
+      "width": 0.06641170740441406,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "treat",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.18950973904003507,
+      "width": 0.03958820545833447,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.23454891400163796,
+      "width": 0.027607828996732517,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "two",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.26760771483007023,
+      "width": 0.03229409669362823,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "terms",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.30535277759559454,
+      "width": 0.04976466851470727,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "as",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.3605684238243542,
+      "width": 0.020333326603758403,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'interchangeable.",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.3863527281421649,
+      "width": 0.15072536087663913,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.2422196868772095,
+      "left": 0.5370780865678236,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Consider",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.11764705392156861,
+      "width": 0.0791567938831727,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "how",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.20225481044526497,
+      "width": 0.037019589879085615,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "oddly",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.24472536664134462,
+      "width": 0.04866661537418505,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.298842959729582,
+      "width": 0.02760782899673261,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "law",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.3319017605580143,
+      "width": 0.029745074618464963,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "can",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.36709780149347326,
+      "width": 0.031960771217320744,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "speak.",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.4045095456454348,
+      "width": 0.058117622946079285,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "One",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.46807814385458607,
+      "width": 0.03633329407434806,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "rule",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.5098623911331837,
+      "width": 0.03231372536928104,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "declares",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.547627069706714,
+      "width": 0.07407835108006863,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.627156398500835,
+      "width": 0.033784330822711775,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'a",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.666391680076816,
+      "width": 0.015980389040032718,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "person",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.6878230223210984,
+      "width": 0.06064703117402062,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "may",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.7539210264297599,
+      "width": 0.03705881009803962,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "be",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.7964308142418519,
+      "width": 0.022156832532680946,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "an",
+    "bounds": {
+      "top": 0.27820453386268934,
+      "left": 0.8240385999787825,
+      "width": 0.021431421901141706,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "infant",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.11764705392156861,
+      "width": 0.04866662358496905,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "at",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.17176464700980607,
+      "width": 0.01670587577451009,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "forty.",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.19392149228758457,
+      "width": 0.04356857441013288,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.2374900642467371,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Another",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.2483920196748419,
+      "width": 0.06899995717402121,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "insists",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.3228429394893867,
+      "width": 0.055196030543302514,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.38348994774674156,
+      "width": 0.03378429344526217,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'a",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.42272521069527214,
+      "width": 0.015980389040032808,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "document",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.4441565529395543,
+      "width": 0.08864700562010007,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "becomes",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.538254546690373,
+      "width": 0.08099996941911866,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ancient",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.624705493823544,
+      "width": 0.06392148532680098,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "after",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.6940779672810637,
+      "width": 0.03956861526307234,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "thirty",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.7390975264346604,
+      "width": 0.04394115932107895,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "years.'",
+    "bounds": {
+      "top": 0.3009318056429923,
+      "left": 0.7884896634697919,
+      "width": 0.05809798887826993,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.11764705392156861,
+      "width": 0.03268625672630788,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "judge",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.15578428247957618,
+      "width": 0.048666621256537736,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "wrote",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.20990187556781364,
+      "width": 0.048999958497550636,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.264352805897064,
+      "width": 0.033784293445262216,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.3035880688455947,
+      "width": 0.027607828996732517,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "clause",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.33664686967402685,
+      "width": 0.056647023620099324,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "was",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.39874486512582585,
+      "width": 0.03519605968545819,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'void",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.4393919212753357,
+      "width": 0.042490145288400664,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "for",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.4873330149885744,
+      "width": 0.02358821335539295,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "vagueness.'",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.5163722096119412,
+      "width": 0.10496072013644023,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "She",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.6267839050114534,
+      "width": 0.03413726279330032,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "added",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.6663721583864527,
+      "width": 0.05594114129656999,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.7277642481078604,
+      "width": 0.033784330822711775,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "its",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.7669995296838414,
+      "width": 0.020333307976308064,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "meaning",
+    "bounds": {
+      "top": 0.3359696829709596,
+      "left": 0.7927838153742018,
+      "width": 0.07519603167075366,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "was",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.11764705392156861,
+      "width": 0.035196059685458234,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'anyone's",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.15829409132107927,
+      "width": 0.08462740897385773,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "guess.'",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.24837247800898943,
+      "width": 0.0631960510433016,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.3170195043153632,
+      "width": 0.03268625672630785,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "parties,",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.3551567328733707,
+      "width": 0.06499993528186523,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "she",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.4256076434183079,
+      "width": 0.031235269286765725,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "noted,",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.46229390328677256,
+      "width": 0.055941151713236284,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "had",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.5236860302630809,
+      "width": 0.033058792862746225,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "drafted",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.5621957715506651,
+      "width": 0.0628234905196094,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'a",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.630470247872562,
+      "width": 0.015980389040032718,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "puzzle,",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.6519015901168442,
+      "width": 0.06168619791993767,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "not",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.719038763299854,
+      "width": 0.028333353108659382,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.7528230671617825,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "promise.",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.7688034316920125,
+      "width": 0.07592152551307366,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.3586969547512626,
+      "left": 0.8447249547541058,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Plain",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.11764705392156861,
+      "width": 0.04284309233251813,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "language",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.16594111918872761,
+      "width": 0.08025483770996976,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "advocates",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.25164692873039707,
+      "width": 0.09078425528594998,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "argue",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.34788216173039943,
+      "width": 0.049196041332517745,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.4025291748946168,
+      "width": 0.033784293445262216,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'clarity",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.4417644378431474,
+      "width": 0.057725417815362334,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.5049408333725621,
+      "width": 0.014156864606209045,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.5245486756928236,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "duty,",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.5405290402230534,
+      "width": 0.04250979014052338,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "not",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.5884898056266489,
+      "width": 0.02833327835376035,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.622274072111128,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "courtesy.",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.6382544740188072,
+      "width": 0.07952933124510142,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.7177838028129283,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "They",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.728685758241033,
+      "width": 0.04249019075408521,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "warn",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.7766269267091706,
+      "width": 0.043176392196081805,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.3937348320792298,
+      "left": 0.8252542918398932,
+      "width": 0.033784330822711595,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "jargon",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.11764705392156861,
+      "width": 0.05427444933170178,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "can",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.17737247618791124,
+      "width": 0.031960771217320744,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'demean",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.2147842203398728,
+      "width": 0.07629407758088394,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.29652927085539754,
+      "width": 0.02760782899673261,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "reader.",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.3295880716838298,
+      "width": 0.05956857313072106,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.3891566423635705,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Good",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.40005859779167524,
+      "width": 0.04901957908496838,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "writing,",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.45452916267893106,
+      "width": 0.06388226633333678,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "they",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.5238624042753398,
+      "width": 0.03741170689706118,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "say,",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.5667250888864535,
+      "width": 0.03413727798937808,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.6063133421389036,
+      "width": 0.014156827106210598,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'speech",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.6259211469591667,
+      "width": 0.06937251610457655,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "heightened",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.7007446359983841,
+      "width": 0.09770582889461013,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "and",
+    "bounds": {
+      "top": 0.41646210385953286,
+      "left": 0.8039014133178322,
+      "width": 0.03305879286274651,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "polished.",
+    "bounds": {
+      "top": 0.43918937563983584,
+      "left": 0.11764705392156861,
+      "width": 0.07990188110702938,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.43918937563983584,
+      "left": 0.1975489325776177,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "An",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.11764705392156861,
+      "width": 0.0236078374967322,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "old",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.14670586435294167,
+      "width": 0.0272352650416678,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "maxim",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.1793920964468976,
+      "width": 0.05849015846977268,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "holds",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.243333226503272,
+      "width": 0.04794113109068804,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.29672533530801243,
+      "width": 0.03378429344526217,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'the",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.335960598256543,
+      "width": 0.03305880671078496,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "greater",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.37447037679902756,
+      "width": 0.061725441913400514,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "includes",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.44164678135295166,
+      "width": 0.07299991399265045,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.5200976730596546,
+      "width": 0.027607847624182762,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "lesser.",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.5531565112655362,
+      "width": 0.0551960141217346,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.6083525229362905,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Another",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.6192544783643953,
+      "width": 0.06899997592402048,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "provides",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.6937053981789403,
+      "width": 0.07517642284804092,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.7743327987410337,
+      "width": 0.033784256067812934,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'the",
+    "bounds": {
+      "top": 0.4751742226253157,
+      "left": 0.8135680804395636,
+      "width": 0.033058787960785825,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "expression",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.11764705392156861,
+      "width": 0.09513718586438179,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "of",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.21823521272059124,
+      "width": 0.01705881117647105,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "one",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.24074499229738955,
+      "width": 0.0326862567263079,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "thing",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.2788822208553971,
+      "width": 0.04358819940931508,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "excludes",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.3279213863366083,
+      "width": 0.0784313130310479,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "another.",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.4118036770817086,
+      "width": 0.07047052880392389,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.4822742034346522,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "These",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.493176158862757,
+      "width": 0.05301960208006543,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "canons",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.5516467141470719,
+      "width": 0.06392153312091632,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "guide",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.6210192249820407,
+      "width": 0.048666621256537736,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "how",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.6751368368202773,
+      "width": 0.03701955250163624,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.7176073556389075,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "court",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.7335877575465869,
+      "width": 0.04539211759395579,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "reads",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.784430825893812,
+      "width": 0.04866663424673325,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.4979014944056187,
+      "left": 0.8385484378545974,
+      "width": 0.010529411325980322,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'silent'",
+    "bounds": {
+      "top": 0.5206287661859217,
+      "left": 0.11764705392156861,
+      "width": 0.05701955154575386,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "agreement.",
+    "bounds": {
+      "top": 0.5206287661859217,
+      "left": 0.1801175807303946,
+      "width": 0.09880385495179994,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "When",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.11764705392156861,
+      "width": 0.05049017632761511,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "a",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.17358820318382454,
+      "width": 0.010529411325980415,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "term",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.18956858634150464,
+      "width": 0.0399607534820274,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.23498031141013365,
+      "width": 0.014156845856209868,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'undefined,",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.2545881349803959,
+      "width": 0.09807837054575402,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.35266650307516956,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.3635684585032743,
+      "width": 0.027607828996732565,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "court",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.3966272593317065,
+      "width": 0.04539211759395579,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "looks",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.44747032767893147,
+      "width": 0.04684309682271397,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "to",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.4997644022156978,
+      "width": 0.017431382239378693,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'ordinary",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.522646713149523,
+      "width": 0.07662739153758397,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "usage.",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.6047250824011595,
+      "width": 0.05847055773529528,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.6631956376854745,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Where",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.6740975931135793,
+      "width": 0.056294108071078826,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "usage",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.7358426543889075,
+      "width": 0.05301960208006571,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "conflicts,",
+    "bounds": {
+      "top": 0.555666643513889,
+      "left": 0.7943132096732227,
+      "width": 0.07915683751062208,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "it",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.11764705392156861,
+      "width": 0.010529395026961486,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "prefers",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.1336274184517985,
+      "width": 0.06099994243382579,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.20007833859967672,
+      "width": 0.027607828996732586,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "reading",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.23313713942810899,
+      "width": 0.06537249458006751,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "that",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.3039606000800725,
+      "width": 0.03378429344526217,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "renders",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.34319586302860305,
+      "width": 0.06609798597140726,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.41474482671406265,
+      "width": 0.027607847746731834,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "whole",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.44780362766504395,
+      "width": 0.05190189575408752,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'sensible.",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.5051565140008304,
+      "width": 0.08280387461356395,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.5879603861634141,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.5988623415915189,
+      "width": 0.03268621934885843,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "goal",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.636999551522076,
+      "width": 0.037392144888072514,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "is",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.6798426390751827,
+      "width": 0.014156827106210506,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "always",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.6994504438954456,
+      "width": 0.05988236711274444,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "to",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.7647837887222423,
+      "width": 0.017431344861929363,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "honor",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.7876660622786184,
+      "width": 0.050843102293301995,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "the",
+    "bounds": {
+      "top": 0.5783939152941919,
+      "left": 0.843960145839894,
+      "width": 0.027607810246733526,
+      "height": 0.017621211386994913
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "parties'",
+    "bounds": {
+      "top": 0.6011211870744949,
+      "left": 0.11764705392156861,
+      "width": 0.06499993528186535,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'true",
+    "bounds": {
+      "top": 0.6011211870744949,
+      "left": 0.1880979644665061,
+      "width": 0.03958820312990322,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "intent.",
+    "bounds": {
+      "top": 0.6011211870744949,
+      "left": 0.23313713942810899,
+      "width": 0.05449014564624377,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "'",
+    "bounds": {
+      "top": 0.6011211870744949,
+      "left": 0.2876272826233725,
+      "width": 0.005450980165032687,
+      "height": 0.017621211386994986
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "OCR",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.38807826814379703,
+      "width": 0.031852906393383736,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Test:",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.424019390665858,
+      "width": 0.030499945052698325,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "english-legal",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.45860756716586043,
+      "width": 0.08251455195405048,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "(single,",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.5452103354936862,
+      "width": 0.046014598695469984,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "ltr)",
+    "bounds": {
+      "top": 0.8934810233776831,
+      "left": 0.5953131656364604,
+      "width": 0.01660290604840832,
+      "height": 0.013284090355587126
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  }
+]

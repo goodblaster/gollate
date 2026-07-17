@@ -163,6 +163,25 @@ scripts/pdf-to-png.sh document.pdf          # -> document.png at 2x
 bin/ocr-util document.png                   # Apple Vision OCR (macOS), auto-slices tall pages
 # or: bin/tesseract-util document.png       # Tesseract OCR
 
+# Born-digital PDF? Skip OCR and extract the embedded text layer with its
+# positions instead. Emits the blocks format; sort with --engine blocks.
+# Backends are pluggable with graceful fallback: pdfkit (macOS built-in)
+# and poppler (any OS, `brew install poppler`); -backend auto (default)
+# picks the best installed one for the script — pass -lang so Hindi gets
+# poppler (PDFKit mangles Devanagari). Matches or beats OCR for Latin,
+# CJK (including vertical Japanese), Arabic, and Hindi — see the
+# per-case baselines in testdata/ocr-tests/baselines.json. This is an input source only — canonical
+# text must still come from a structured source (innerText, DOC text),
+# never the PDF.
+bin/pdftext-util -lang english document.pdf # -> document-pdftext.json
+
+# On Windows? The built-in Windows OCR engine (free, preinstalled,
+# word-level boxes) works via scripts/winocr.ps1 — the Windows
+# counterpart of ocr-util. Emits the blocks format; sort with
+# --engine blocks. Requires the matching Windows OCR language pack
+# (-ListLanguages shows installed ones) and Windows PowerShell 5.1.
+#   powershell -ExecutionPolicy Bypass -File scripts\winocr.ps1 page.png -Language ja
+
 # Basic usage - output sorted text to stdout
 gollate --engine apple \
          --language english \
