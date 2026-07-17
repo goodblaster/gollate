@@ -21,7 +21,9 @@ func main() {
 
 	// Define flags
 	var langFlag string
+	var psmFlag string
 	flag.StringVar(&langFlag, "lang", "", "Language codes (comma-separated, e.g., 'jpn,eng' for Japanese+English)")
+	flag.StringVar(&psmFlag, "psm", "", "Tesseract page segmentation mode (e.g. 5 = single uniform block of vertical text)")
 	sliceEnabled := flag.Bool("slice", defaults.Enabled, "Slice tall images before OCR")
 	sliceThreshold := flag.Int("slice-threshold", defaults.HeightThreshold, "Only slice images taller than this many pixels")
 	sliceHeight := flag.Int("slice-height", defaults.TargetHeight, "Target slice height in pixels")
@@ -79,14 +81,14 @@ func main() {
 	var words []tesseract.TesseractWord
 	if len(slices) == 1 {
 		// Unsliced: run on the original file directly (no re-encode).
-		words, err = runTesseract(imagePath, langFlag)
+		words, err = runTesseract(imagePath, langFlag, psmFlag)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 			os.Exit(1)
 		}
 	} else {
 		fmt.Printf("  Sliced into %d strips for OCR\n", len(slices))
-		words, err = ocrSlices(slices, langFlag)
+		words, err = ocrSlices(slices, langFlag, psmFlag)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 			os.Exit(1)
@@ -120,7 +122,7 @@ func main() {
 
 // runTesseract runs the tesseract CLI on one image file and parses its
 // word-level TSV output.
-func runTesseract(imagePath, langFlag string) ([]tesseract.TesseractWord, error) {
+func runTesseract(imagePath, langFlag, psmFlag string) ([]tesseract.TesseractWord, error) {
 	tempTSV, err := os.CreateTemp("", "tesseract-*.tsv")
 	if err != nil {
 		return nil, fmt.Errorf("creating temp file: %w", err)
@@ -134,6 +136,9 @@ func runTesseract(imagePath, langFlag string) ([]tesseract.TesseractWord, error)
 	args := []string{imagePath, tempBase}
 	if langFlag != "" {
 		args = append(args, "-l", langFlag)
+	}
+	if psmFlag != "" {
+		args = append(args, "--psm", psmFlag)
 	}
 	args = append(args, "tsv")
 
@@ -157,7 +162,7 @@ func runTesseract(imagePath, langFlag string) ([]tesseract.TesseractWord, error)
 // ocrSlices runs tesseract on each slice and merges the words back into
 // full-page pixel coordinates. Line numbers are re-based per slice so lines
 // from different slices never collide.
-func ocrSlices(slices []slicing.Slice, langFlag string) ([]tesseract.TesseractWord, error) {
+func ocrSlices(slices []slicing.Slice, langFlag, psmFlag string) ([]tesseract.TesseractWord, error) {
 	tempDir, err := os.MkdirTemp("", "tesseract-slices-*")
 	if err != nil {
 		return nil, fmt.Errorf("creating temp dir: %w", err)
@@ -178,7 +183,7 @@ func ocrSlices(slices []slicing.Slice, langFlag string) ([]tesseract.TesseractWo
 			return nil, fmt.Errorf("encoding slice %d: %w", i, err)
 		}
 
-		words, err := runTesseract(slicePath, langFlag)
+		words, err := runTesseract(slicePath, langFlag, psmFlag)
 		if err != nil {
 			return nil, fmt.Errorf("OCR on slice %d: %w", i, err)
 		}
