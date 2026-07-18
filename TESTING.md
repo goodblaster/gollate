@@ -167,6 +167,24 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    `--psm 1` matched default on single-vertical and gained +1.8 on
    two-column-vertical. Apple Vision has no orientation parameter at
    all. (tesseract-util now has a `-psm` passthrough flag.)
+   Update 2026-07-17 (later still): **vertical leftover assembly fixed —
+   every vertical row improved, nothing else moved.** The leftover
+   pipeline ordered sentence fragments by top position and measured
+   paragraph gaps vertically — both wrong under a vertical reading
+   order, and vertical pages ride this pipeline entirely (lines_found=0).
+   Fixes (reading_axis.go): reading-order-aware sentence ordering
+   (column-first with top tiebreak) and paragraph-gap insertion. Plus a
+   line-id-less orientation fallback (detectVerticalFlow: emit-order
+   flow with an aspect guard) so PDF text layers — which carry no line
+   ids — get vertical detection at all. Gains: book-vertical/pdftext
+   85.6→98.1, single-vertical/pdftext 76.0→84.3, two-col-vertical/
+   tesseract 66.5→87.1, single-vertical/tesseract 74.2→78.5,
+   two-col-vertical/pdftext 63.3→67.0. One counter-measurement:
+   switching AssembleContiguousLines' paragraph check to the advance
+   axis (horizontal gaps for vertical text) measured −21 on
+   single-vertical/tesseract — tesseract's vertical line ids span
+   columns and splitting at column wraps shreds sentences — so that
+   check deliberately stays on the vertical axis (noted in code).
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like

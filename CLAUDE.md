@@ -113,8 +113,9 @@ duplicate-short-line handling; the three Japanese vertical fixtures
 (`*-vertical`, incl. `japanese-book-vertical` — a realistic all-vertical
 tategaki page with no horizontal title/footer bands, testdoc layout
 "book") are expected ~0% on Apple OCR until Apple exposes vertical text
-(TESTING.md issue #4); the same layouts score 63–86% from `pdftext` and
-66–77% from Tesseract jpn_vert.
+(TESTING.md issue #4); the same layouts score 67–98% from `pdftext` and
+77–87% from Tesseract jpn_vert (reading-order-aware leftover assembly +
+line-id-less vertical detection, 2026-07-17).
 Each case is scored per source: `apple` and `tesseract` OCR plus
 `pdftext` (PDF text-layer blocks from `pdftext-ocr.json`, parsed via the
 "blocks" engine — not OCR, but gated by the same ratchet).

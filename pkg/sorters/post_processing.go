@@ -68,7 +68,8 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 	type sentenceInfo struct {
 		blocks       []Block
 		originalLine int
-		topPosition  float64
+		topPosition  float64 // primary reading-order key (see sentencePos)
+		tiebreak     float64 // within-column order for vertical text
 		isBlank      bool
 	}
 
@@ -80,22 +81,25 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			allSentences = append(allSentences, sentenceInfo{
 				blocks:       []Block{},
 				originalLine: sentence.originalLine,
-				topPosition:  -1, // Blanks sort first within their group
+				topPosition:  blankSentencePos, // Blanks sort first within their group
 				isBlank:      true,
 			})
 			continue
 		}
 
-		// Get position from first block
-		topPos := 1.0
+		// Ordering key from the first block, along the reading order's
+		// axis (top for horizontal text, column position for vertical).
+		topPos, tie := 1.0, 0.0
 		if len(sentence.blocks) > 0 {
-			topPos = sentence.blocks[0].BoundingBox.Top
+			topPos = sentencePos(sentence.blocks[0], s.config.ReadingOrder)
+			tie = sentencePosTiebreak(sentence.blocks[0], s.config.ReadingOrder)
 		}
 
 		allSentences = append(allSentences, sentenceInfo{
 			blocks:       sentence.blocks,
 			originalLine: sentence.originalLine,
 			topPosition:  topPos,
+			tiebreak:     tie,
 			isBlank:      false,
 		})
 	}
@@ -119,8 +123,9 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			continue
 		}
 
-		// Get position from first block
-		topPos := sentence[0].BoundingBox.Top
+		// Ordering key from the first block (reading-order axis).
+		topPos := sentencePos(sentence[0], s.config.ReadingOrder)
+		tie := sentencePosTiebreak(sentence[0], s.config.ReadingOrder)
 
 		// Match this sentence to a canonical line by comparing text content
 		originalLine := -1
@@ -183,6 +188,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			blocks:       sentence,
 			originalLine: originalLine,
 			topPosition:  topPos,
+			tiebreak:     tie,
 			isBlank:      false,
 		})
 	}
@@ -229,7 +235,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 						groups[line.OriginalLine] = []sentenceInfo{{
 							blocks:       []Block{},
 							originalLine: line.OriginalLine,
-							topPosition:  -1,
+							topPosition:  blankSentencePos,
 							isBlank:      true,
 						}}
 					}
@@ -246,8 +252,13 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			if group[i].isBlank != group[j].isBlank {
 				return group[i].isBlank
 			}
-			// Then by position
-			return group[i].topPosition < group[j].topPosition
+			// Then by position, with the within-column tiebreak for
+			// vertical text (equal keys were previously left to the
+			// unstable sort, scrambling same-column sentences).
+			if group[i].topPosition != group[j].topPosition {
+				return group[i].topPosition < group[j].topPosition
+			}
+			return group[i].tiebreak < group[j].tiebreak
 		})
 		groups[originalLine] = group
 	}
@@ -273,43 +284,31 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		// Special handling for unmatched leftovers (originalLine == -1)
 		// Insert blank lines based on vertical spacing to preserve paragraph structure
 		if originalLine == -1 && len(groups[originalLine]) > 1 {
-			var lastBottomY float64
-			for i, sent := range groups[originalLine] {
+			var havePrev bool
+			var prevLast Block
+			for _, sent := range groups[originalLine] {
 				if len(sent.blocks) == 0 {
 					continue
 				}
 
-				// Calculate vertical gap from previous sentence
+				// If there's a significant gap from the last sentence along
+				// the reading order's advance axis, insert a blank line.
 				firstBlock := sent.blocks[0]
-				currentTopY := firstBlock.BoundingBox.Top
-
-				// If there's a significant gap from the last sentence, insert a blank line
-				if i > 0 && lastBottomY > 0 {
-					verticalGap := currentTopY - lastBottomY
-					// Use block height as reference for gap detection
-					refHeight := firstBlock.BoundingBox.Height
-
-					// Only apply gap detection if we have meaningful height data
-					// If height is 0 or very small, skip paragraph detection
-					const minHeight = 0.01 // 1% of page height minimum
-					if refHeight >= minHeight {
-						// If gap is more than 1.5x the block height, it's likely a paragraph break
-						const paragraphBreakThreshold = 1.5
-						if verticalGap > paragraphBreakThreshold*refHeight {
-							// Insert blank line
-							result = append(result, []Block{})
-						}
+				if havePrev {
+					ref := advanceRef(prevLast, firstBlock, s.config.ReadingOrder)
+					// Only apply gap detection with meaningful size data.
+					const minRef = 0.01 // 1% of the page minimum
+					const paragraphBreakThreshold = 1.5
+					if ref >= minRef && advanceGap(prevLast, firstBlock, s.config.ReadingOrder) > paragraphBreakThreshold*ref {
+						result = append(result, []Block{})
 					}
 				}
 
 				// Append this sentence's blocks
 				result = append(result, sent.blocks)
 
-				// Update lastBottomY to the bottom of the last block in this sentence
-				if len(sent.blocks) > 0 {
-					lastBlock := sent.blocks[len(sent.blocks)-1]
-					lastBottomY = lastBlock.BoundingBox.Top + lastBlock.BoundingBox.Height
-				}
+				prevLast = sent.blocks[len(sent.blocks)-1]
+				havePrev = true
 			}
 		} else {
 			// Normal handling for matched lines
@@ -404,6 +403,11 @@ func (s *Sorter) assembleLeftoverSentences(leftoverBlocks []Block) [][]Block {
 	}
 
 	// First, group spatially contiguous blocks
+	// Grouping deliberately keeps the vertical-gap paragraph check even
+	// under a vertical reading order: tesseract's vertical line ids span
+	// columns, and splitting them at column wraps (the "correct" advance
+	// axis) shreds sentences into fragments that fail canonical matching
+	// (measured -21 on japanese-single-vertical/tesseract; see TESTING.md).
 	contiguousLines := AssembleContiguousLines(leftoverBlocks)
 
 	// Then split on punctuation to form sentences

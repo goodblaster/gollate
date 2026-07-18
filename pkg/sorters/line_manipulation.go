@@ -132,7 +132,11 @@ func AssembleContiguousLines(blocks []Block) [][]Block {
 
 		// If gap is more than 1.5x the reference height, it's likely a paragraph break
 		// This threshold is chosen to detect paragraph breaks while allowing
-		// for normal line spacing within a paragraph
+		// for normal line spacing within a paragraph. NOTE: deliberately the
+		// vertical axis even for vertical reading orders — tesseract's
+		// vertical line ids span columns, and splitting at column wraps
+		// (the reading-advance axis) measured -21 on
+		// japanese-single-vertical/tesseract.
 		const paragraphBreakThreshold = 1.5
 		isLargeGap := verticalGap > paragraphBreakThreshold*refHeight
 
