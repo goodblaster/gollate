@@ -139,6 +139,52 @@ These were established by experiment on 2026-07-04/05; don't re-derive them.
    vertical support and cannot do word-level segmentation for CJK at
    all. Until Apple exposes vertical text with geometry, Tesseract
    jpn_vert and the PDF text layer are the vertical sources.
+   Update 2026-07-17: **vertical wrap-bridging measured and rejected.**
+   Both vertical branches of `isWrappedToNextLine` had mirrored sides
+   (same bug class as the RTL horizontal fix) and could only match
+   backwards column jumps; that geometry is now fixed (no score changes
+   with bridging off — ratchet-verified). But even with correct
+   geometry, `EnableVerticalWrapBridging` (bridge column wraps when
+   vertical is detected) measures net negative: tesseract vertical
+   74.2→63.2 / 66.5→62.4. Partially-matched per-character chains — every
+   CJK char is a high-frequency duplicate, so cross-column pathfinding
+   picks wrong instances — displace the emit-order + leftover-assembly
+   fallback that currently carries these fixtures. Vertical *matching*
+   needs better per-character chaining (e.g. n-gram units) before
+   bridging can pay; the flag stays available for that experiment. Do
+   not re-enable it in the CJK preset from these numbers.
+   Update 2026-07-17 (later): **realistic vertical archetype added**
+   (`japanese-book-vertical`, testdoc layout "book"): a true tategaki
+   page — vertical title column, right-to-left body, vertical colophon,
+   no horizontal bands (the old vertical fixtures wrap a vertical body
+   in Western title/footer bands, which real vertical documents don't
+   have). Scores on it: pdftext 85.6, tesseract 77.1, apple ~0. Also
+   settles the OCR-side orientation-hint question on fair ground:
+   Tesseract `--psm 5` ("single uniform block of vertical text") loses
+   to default auto-segmentation even on this uniform vertical page
+   (71.4 vs 77.1; on the banded fixtures it was 44–47 vs 74) — the
+   effective vertical hint is the jpn_vert model, not the PSM.
+   `--psm 1` matched default on single-vertical and gained +1.8 on
+   two-column-vertical. Apple Vision has no orientation parameter at
+   all. (tesseract-util now has a `-psm` passthrough flag.)
+   Update 2026-07-17 (later still): **vertical leftover assembly fixed —
+   every vertical row improved, nothing else moved.** The leftover
+   pipeline ordered sentence fragments by top position and measured
+   paragraph gaps vertically — both wrong under a vertical reading
+   order, and vertical pages ride this pipeline entirely (lines_found=0).
+   Fixes (reading_axis.go): reading-order-aware sentence ordering
+   (column-first with top tiebreak) and paragraph-gap insertion. Plus a
+   line-id-less orientation fallback (detectVerticalFlow: emit-order
+   flow with an aspect guard) so PDF text layers — which carry no line
+   ids — get vertical detection at all. Gains: book-vertical/pdftext
+   85.6→98.1, single-vertical/pdftext 76.0→84.3, two-col-vertical/
+   tesseract 66.5→87.1, single-vertical/tesseract 74.2→78.5,
+   two-col-vertical/pdftext 63.3→67.0. One counter-measurement:
+   switching AssembleContiguousLines' paragraph check to the advance
+   axis (horizontal gaps for vertical text) measured −21 on
+   single-vertical/tesseract — tesseract's vertical line ids span
+   columns and splitting at column wraps shreds sentences — so that
+   check deliberately stays on the vertical axis (noted in code).
 5. **Suite blind spot: no fixture exercises #1/#2.** Every generated
    document is long unique paragraphs. Before fixing the above, add a
    product-tile/grid archetype to `cmd/testdoc` (short repeated lines like

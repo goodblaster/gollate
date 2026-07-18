@@ -53,6 +53,7 @@ MATRIX=(
     "japanese three-column - -layout three-column -font-size 10"
     "japanese single-vertical - -direction vertical -layout single -font-size 10"
     "japanese two-column-vertical - -direction vertical -layout two-column -font-size 10"
+    "japanese book-vertical - -layout book -direction vertical -font-size 10"
     "arabic single -"
     "arabic two-column -"
     "arabic three-column -"

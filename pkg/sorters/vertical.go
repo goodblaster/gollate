@@ -30,6 +30,11 @@ func detectVerticalText(blocks []Block) bool {
 			groups[b.LineId] = append(groups[b.LineId], b)
 		}
 	}
+	if len(groups) == 0 {
+		// No engine line grouping at all (e.g. PDF text layers): fall
+		// back to emit-order flow.
+		return detectVerticalFlow(blocks)
+	}
 
 	vertical, horizontal := 0, 0
 	for _, group := range groups {
@@ -51,4 +56,43 @@ func detectVerticalText(blocks []Block) bool {
 	}
 
 	return vertical >= verticalMinLines && float64(vertical) >= verticalMajority*float64(horizontal)
+}
+
+// verticalMinFlowPairs is the minimum number of vertically-flowing
+// consecutive block pairs the fallback needs before switching; higher
+// than verticalMinLines because single pairs are weaker evidence than
+// whole engine lines.
+const verticalMinFlowPairs = 30
+
+// detectVerticalFlow infers orientation from consecutive emit-order pairs
+// when the engine provides no line grouping. Emit order is reading order
+// by the adapter contract, so in vertical text consecutive tokens are
+// squarish glyphs stacked downward with horizontal overlap, while in
+// horizontal text they step rightward with vertical overlap. The aspect
+// guard keeps wide tokens (whole horizontal phrases, as PDF text layers
+// emit for CJK) from counting as vertical flow: their downward steps are
+// line breaks, not column flow.
+func detectVerticalFlow(blocks []Block) bool {
+	const maxVerticalAspect = 1.6
+
+	vertical, horizontal := 0, 0
+	for i := 1; i < len(blocks); i++ {
+		a, b := blocks[i-1], blocks[i]
+
+		yOverlap := a.Top() < b.Bottom() && b.Top() < a.Bottom()
+		xOverlap := a.Left() < b.Right() && b.Left() < a.Right()
+
+		if yOverlap && !xOverlap && b.Left() >= a.Left() {
+			horizontal++
+			continue
+		}
+		squarish := a.Height() > 0 && b.Height() > 0 &&
+			a.Width()/a.Height() < maxVerticalAspect &&
+			b.Width()/b.Height() < maxVerticalAspect
+		if xOverlap && !yOverlap && b.Top() > a.Top() && squarish {
+			vertical++
+		}
+	}
+
+	return vertical >= verticalMinFlowPairs && float64(vertical) >= verticalMajority*float64(horizontal)
 }

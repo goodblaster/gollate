@@ -231,9 +231,15 @@ func buildDocument(s spec) (string, []string) {
 		canonical = append(canonical, text, "")
 	}
 
-	// Title
-	body.WriteString(fmt.Sprintf("<div class=\"title\">%s</div>\n", html.EscapeString(s.Title)))
-	canonical = append(canonical, s.Title, "")
+	// Title. The "book" layout is a realistic tategaki page: no horizontal
+	// title/footer bands — the title is itself the first (rightmost)
+	// vertical column and the attribution the last, so the whole page is
+	// one vertical flow (the layout OCR engines actually meet in novels
+	// and vertical letters).
+	if s.Layout != "book" {
+		body.WriteString(fmt.Sprintf("<div class=\"title\">%s</div>\n", html.EscapeString(s.Title)))
+		canonical = append(canonical, s.Title, "")
+	}
 
 	contentClass := "content"
 	if s.Layout == "two-column" || s.Layout == "three-column" {
@@ -242,9 +248,20 @@ func buildDocument(s spec) (string, []string) {
 	if s.Direction == "vertical" {
 		contentClass += " vertical"
 	}
+	if s.Layout == "book" {
+		contentClass += " book"
+	}
 	body.WriteString(fmt.Sprintf("<div class=%q>\n", contentClass))
 
 	switch s.Layout {
+	case "book":
+		body.WriteString(fmt.Sprintf("<h1>%s</h1>\n", html.EscapeString(s.Title)))
+		canonical = append(canonical, s.Title, "")
+		for _, p := range s.Paragraphs {
+			addPara(&body, p, "body")
+		}
+		body.WriteString(fmt.Sprintf("<p class=\"colophon\">%s</p>\n", html.EscapeString(s.Footer)))
+		canonical = append(canonical, s.Footer)
 	case "grid":
 		// Product-tile grid: reading order is tile-major (left to right,
 		// top to bottom). Content comes from gridTiles, not the input file.
@@ -297,8 +314,10 @@ func buildDocument(s spec) (string, []string) {
 	body.WriteString("</div>\n")
 
 	// Footer
-	body.WriteString(fmt.Sprintf("<div class=\"footer\">%s</div>\n", html.EscapeString(s.Footer)))
-	canonical = append(canonical, s.Footer)
+	if s.Layout != "book" {
+		body.WriteString(fmt.Sprintf("<div class=\"footer\">%s</div>\n", html.EscapeString(s.Footer)))
+		canonical = append(canonical, s.Footer)
+	}
 
 	dirAttr := "ltr"
 	if s.Direction == "rtl" {
@@ -329,7 +348,13 @@ func buildDocument(s spec) (string, []string) {
 	.content { flex: 1 1 auto; min-height: 0; }
 	.content.columns { column-count: %d; column-gap: %dpt; column-fill: auto; height: 100%%; }
 	.content.vertical { writing-mode: vertical-rl; }
+	/* book: whole flow is vertical; spacing goes between columns (to the
+	   left in vertical-rl), not below. Scoped to .book so the existing
+	   vertical fixtures keep their committed rendering. */
+	.content.book h1 { font-size: 1.6em; margin: 0 0 0 16pt; }
+	.content.book p.colophon { font-size: 0.75em; font-style: italic; margin: 0 12pt 0 0; }
 	p { margin: 0 0 10pt 0; }
+	.content.book p { margin: 0 0 0 12pt; }
 	p.small { font-size: 0.8em; }
 	h2 { font-size: 1.4em; margin: 6pt 0 8pt 0; }
 	.footer { flex: none; text-align: center; font-size: 0.75em; font-style: italic; margin-top: 8pt; }
