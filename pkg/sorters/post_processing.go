@@ -2,6 +2,7 @@ package sorters
 
 import (
 	"cmp"
+	"math"
 	"sort"
 	"strings"
 	"unicode"
@@ -79,6 +80,11 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		// cannot: a paragraph that wraps into the next column continues
 		// ABOVE where it left off.
 		offset int
+
+		// seq is the sentence's position among the leftover sentences in
+		// emit order, or -1 for sentences found by pathfinding. It orders
+		// leftovers that share an offset.
+		seq int
 	}
 
 	var allSentences []sentenceInfo
@@ -123,6 +129,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 				topPosition:  blankSentencePos, // Blanks sort first within their group
 				isBlank:      true,
 				offset:       -1,
+				seq:          -1,
 			})
 			continue
 		}
@@ -143,10 +150,14 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			isBlank:      false,
 			offset: strings.Index(noSpacesByLine[sentence.originalLine],
 				strings.ReplaceAll(sentence.normalized, " ", "")),
+			seq: -1,
 		})
 	}
 
 	// Add leftover sentences - match them to canonical lines by text content
+	firstLeftover := len(allSentences)
+	var leftoverText []string // normalized text per leftover sentence
+	var leftoverHomes [][]int // for ambiguous scraps: every line containing them
 	for _, sentence := range leftoverSentences {
 		if len(sentence) == 0 {
 			continue
@@ -175,6 +186,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		bestMatch := -1
 		bestOverlap := 0.0
 		bestOffset := -1
+		var containing []int // canonical lines that contain this sentence whole
 		for i, lineNum := range lineNumbers {
 			normalizedNoSpaces := canonicalNoSpaces[i]
 
@@ -183,6 +195,9 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			sentenceInLine := strings.Contains(normalizedNoSpaces, normalizedSentenceNoSpaces)
 			lineInSentence := strings.Contains(normalizedSentenceNoSpaces, normalizedNoSpaces)
 
+			if sentenceInLine {
+				containing = append(containing, lineNum)
+			}
 			if sentenceInLine || lineInSentence {
 				// Calculate overlap ratio
 				var overlap float64
@@ -205,6 +220,16 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		if bestMatch != -1 {
 			originalLine = bestMatch
 		}
+		// A scrap of a few characters that several canonical lines contain
+		// identifies none of them. Leave it unplaced here; it is placed
+		// beside its neighbors below, and must not anchor anything itself.
+		var homes []int
+		if len(containing) > 1 && len(s.handler.Tokenize(normalizedSentence)) < leftoverMinAnchorTokens {
+			originalLine, bestOffset = -1, -1
+			homes = containing
+		}
+		leftoverText = append(leftoverText, normalizedSentence)
+		leftoverHomes = append(leftoverHomes, homes)
 
 		allSentences = append(allSentences, sentenceInfo{
 			blocks:       sentence,
@@ -213,7 +238,83 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			tiebreak:     tie,
 			isBlank:      false,
 			offset:       bestOffset,
+			seq:          len(leftoverText) - 1,
 		})
+	}
+
+	// Place leftover sentences that matched no canonical line exactly -
+	// typically a visual line with one misread in it - beside their
+	// emit-order neighbors instead of banishing them to the end.
+	leftovers := allSentences[firstLeftover:]
+
+	// Ambiguous scraps first: of the lines that contain the scrap, take the
+	// one whose already-placed text lies nearest on the page.
+	for i := range leftovers {
+		if leftoverHomes[i] == nil || len(leftovers[i].blocks) == 0 {
+			continue
+		}
+		x, y := leftovers[i].blocks[0].Center()
+		home := make(map[int]bool, len(leftoverHomes[i]))
+		for _, line := range leftoverHomes[i] {
+			home[line] = true
+		}
+		best, bestDist := -1, math.MaxFloat64
+		for _, other := range allSentences {
+			if !home[other.originalLine] {
+				continue
+			}
+			for _, b := range other.blocks {
+				bx, by := b.Center()
+				if d := math.Hypot(bx-x, by-y); d < bestDist {
+					best, bestDist = other.originalLine, d
+				}
+			}
+		}
+		if best != -1 {
+			leftovers[i].originalLine = best
+			leftovers[i].offset = max(0, strings.Index(noSpacesByLine[best], strings.ReplaceAll(leftoverText[i], " ", "")))
+		}
+	}
+
+	firstLine, lastLine := 0, 0
+	if len(lineNumbers) > 0 {
+		firstLine, lastLine = lineNumbers[0], lineNumbers[len(lineNumbers)-1]
+	}
+	for i := range leftovers {
+		if leftovers[i].originalLine != -1 {
+			continue
+		}
+		prev, next := -1, -1
+		// Scraps never anchor anything: wherever they were put, it was a
+		// guess among several lines.
+		for j := i - 1; j >= 0; j-- {
+			if leftovers[j].originalLine != -1 && leftoverHomes[j] == nil {
+				prev = leftovers[j].originalLine
+				break
+			}
+		}
+		for j := i + 1; j < len(leftovers); j++ {
+			if leftovers[j].originalLine != -1 && leftoverHomes[j] == nil {
+				next = leftovers[j].originalLine
+				break
+			}
+		}
+		line, offset := s.placeByNeighbors(leftoverText[i], prev, next, firstLine, lastLine, canonicalByOriginalLine, noSpacesByLine)
+		if line != -1 && offset == -1 {
+			// Position within the line unknown: sit beside the nearest
+			// emit-order neighbor placed in the same line (seq then keeps
+			// emit order among equals). Every member of a matched group
+			// must have an offset, or the group's ordering is not a
+			// consistent order at all.
+			offset = 0
+			for j := i - 1; j >= 0; j-- {
+				if leftovers[j].originalLine == line {
+					offset = leftovers[j].offset
+					break
+				}
+			}
+		}
+		leftovers[i].originalLine, leftovers[i].offset = line, offset
 	}
 
 	// Group by OriginalLine
@@ -261,6 +362,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 							topPosition:  blankSentencePos,
 							isBlank:      true,
 							offset:       -1,
+							seq:          -1,
 						}}
 					}
 				}
@@ -280,6 +382,10 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			// both are known.
 			if group[i].offset >= 0 && group[j].offset >= 0 && group[i].offset != group[j].offset {
 				return group[i].offset < group[j].offset
+			}
+			// Leftovers sharing an offset keep emit order.
+			if group[i].offset == group[j].offset && group[i].seq >= 0 && group[j].seq >= 0 {
+				return group[i].seq < group[j].seq
 			}
 			// Then by position, with the within-column tiebreak for
 			// vertical text (equal keys were previously left to the
@@ -357,6 +463,105 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 	}
 
 	return result
+}
+
+// leftoverMinAnchorTokens is the length below which a leftover sentence
+// that several canonical lines contain is considered ambiguous.
+const leftoverMinAnchorTokens = 4
+
+// leftoverMinOverlap is the share of an unmatched leftover sentence's
+// tokens that must occur in a canonical line for the sentence to be placed
+// there. Below it the sentence is treated as foreign to the canonical text
+// (page furniture, captions) and stays with the unmatched leftovers.
+const leftoverMinOverlap = 0.6
+
+// placeByNeighbors finds a canonical line for a leftover sentence that no
+// line contains exactly. Exact containment fails on a single misread
+// character, and an unplaced sentence is emitted after everything else -
+// so lightly noisy pages, where most visual lines still match and get
+// placed, scored far worse than heavily noisy ones, where nothing matches
+// and plain emit order survives (measured: 2% noise 50, 10% noise 78).
+//
+// Candidates are the canonical lines between those of the sentence's
+// nearest matched neighbors in emit order (prev, next; -1 if none). The
+// one sharing the most tokens with the sentence wins, if the share reaches
+// leftoverMinOverlap. Returns the line and the sentence's estimated offset
+// within it, or (-1, -1).
+func (s *Sorter) placeByNeighbors(normalized string, prev, next, firstLine, lastLine int, canonical map[int]Line, noSpaces map[int]string) (line, offset int) {
+	if prev == -1 && next == -1 {
+		return -1, -1
+	}
+	// With a neighbor on only one side, the range runs to that end of the
+	// document: everything before the first placed sentence may belong to
+	// any earlier line.
+	lo, hi := prev, next
+	switch {
+	case prev == -1:
+		lo = firstLine
+	case next == -1:
+		hi = lastLine
+	case lo > hi:
+		lo, hi = hi, lo
+	}
+
+	tokens := s.handler.Tokenize(normalized)
+	if len(tokens) == 0 {
+		return -1, -1
+	}
+
+	share := func(candidate int) float64 {
+		canonicalLine, ok := canonical[candidate]
+		if !ok {
+			return 0
+		}
+		available := make(map[string]int)
+		for _, token := range s.handler.Tokenize(canonicalLine.Normalized) {
+			available[token]++
+		}
+		shared := 0
+		for _, token := range tokens {
+			if available[token] > 0 {
+				available[token]--
+				shared++
+			}
+		}
+		return float64(shared) / float64(len(tokens))
+	}
+
+	// The preceding neighbor's line is tried first and wins ties: a
+	// sentence most often continues the paragraph before it.
+	best, bestShare := -1, 0.0
+	if prev != -1 {
+		best, bestShare = prev, share(prev)
+	}
+	for candidate := lo; candidate <= hi; candidate++ {
+		if sh := share(candidate); sh > bestShare {
+			best, bestShare = candidate, sh
+		}
+	}
+	if best == -1 || bestShare < leftoverMinOverlap {
+		return -1, -1
+	}
+	return best, estimateOffset(noSpaces[best], strings.ReplaceAll(normalized, " ", ""))
+}
+
+// estimateOffset locates text inside line when it is not contained whole,
+// by finding its opening (or failing that, closing) run of characters.
+// Returns -1 if neither end can be found.
+func estimateOffset(line, text string) int {
+	runes := []rune(text)
+	for size := min(len(runes), 12); size >= 2; size-- {
+		if i := strings.Index(line, string(runes[:size])); i >= 0 {
+			return i
+		}
+	}
+	for size := min(len(runes), 12); size >= 2; size-- {
+		tail := string(runes[len(runes)-size:])
+		if i := strings.Index(line, tail); i >= 0 {
+			return max(0, i-(len(text)-len(tail)))
+		}
+	}
+	return -1
 }
 
 // assembledSentence is a found line's blocks paired with the canonical line

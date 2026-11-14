@@ -118,3 +118,42 @@ func TestAttachPunctuation(t *testing.T) {
 		t.Errorf("word box changed: %+v", out[1].BoundingBox)
 	}
 }
+
+// A visual line with a misread in it matches no canonical line exactly. It
+// must stay between its neighbors rather than being emitted after
+// everything else - the failure that made lightly noisy pages score below
+// heavily noisy ones.
+func TestMisreadLeftoverLineStaysInPlace(t *testing.T) {
+	canonical := []string{
+		"alpha bravo charlie delta echo",
+		"foxtrot golf hotel india juliet",
+		"kilo lima mike november oscar",
+	}
+	ocrLines := []string{
+		"alpha bravo charlie delta echo",
+		"foxtrot golf hotcl india juliet", // "hotel" misread
+		"kilo lima mike november oscar",
+	}
+	var blocks []Block
+	for row, line := range ocrLines {
+		left := 0.05
+		for _, text := range strings.Fields(line) {
+			b := word(text, left, 0.10+0.05*float64(row), 0.08)
+			b.Index = len(blocks)
+			b.LineId = string(rune('a' + row))
+			blocks = append(blocks, b)
+			left += 0.09
+		}
+	}
+
+	// DefaultConfig leaves these short lines to leftover assembly.
+	sorter := NewOcrSorterWithConfig(blocks, canonical, logger.Noop{}, DefaultConfig())
+	if _, err := sorter.Sort(); err != nil {
+		t.Fatal(err)
+	}
+	got := strings.Join(sorter.SortedLines(), "\n")
+	want := strings.Join(ocrLines, "\n")
+	if strings.TrimSpace(got) != want {
+		t.Errorf("got:\n%s\nwant:\n%s", got, want)
+	}
+}
