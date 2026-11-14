@@ -388,6 +388,10 @@ The package builds on non-macOS hosts with only the poppler backend.
     no change — it's wrap-chaining across narrow columns with Hindi's
     duplicate-heavy words, adjacent to the known pass-loop/wrap issues
     in TESTING.md.
+  - **Caveat to the next bullet (2026-11-13):** it describes the
+    single-page fixtures. A *paginated* vertical PDF's text layer lists
+    each page's columns left to right (raw emit order 31%); the sorter now
+    detects and reverses that (`reverseLeftToRightColumns`).
   - **Vertical-Japanese text layers extract perfectly** — raw emit
     order alone scores 100% — and the sorter's 63–76% output rides
     that emit order through the leftover assembler (`lines_found` is
