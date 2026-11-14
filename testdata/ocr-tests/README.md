@@ -7,8 +7,18 @@ Regression suite validating OCR sorting across languages and layouts.
 - **Documents are generated, not hand-made.** `bin/testdoc` renders each
   language's content through HTML/CSS layouts using headless Chrome, which
   handles bidi (Arabic), Devanagari, vertical Japanese, CSS columns, and font
-  fallback correctly. Generation **fails if content overflows the page**, so
-  broken/overlapping documents cannot silently enter the suite.
+  fallback correctly. Generation **fails if content overflows the page**
+  (checked on both the page and the content box), so broken/overlapping
+  documents cannot silently enter the suite.
+- **Content resembles real documents.** Each language has a feature
+  article written natively (`content/<language>.txt`) carrying what real
+  pages carry: times, years, grouped numbers and decimals in the
+  language's own conventions, currency, percentages, abbreviations,
+  hyphenated compounds, quoted speech in the language's own quote marks,
+  parentheticals, and Latin terms inside CJK. Vertical Japanese uses
+  `content/japanese-vertical.txt`, a literary passage with kanji numerals,
+  as tategaki really appears. Keep this property when editing content:
+  a page of plain digit-free prose hides most of what goes wrong.
 - **Ground truth cannot drift.** `canonical.txt` (title first, body in reading
   order, footer last) is emitted by `testdoc` from the same in-memory document
   that produced the PDF/PNG.
@@ -89,8 +99,9 @@ english (primary), spanish, chinese, japanese, arabic (RTL), hindi. Layouts:
 | mixed-sizes (english) | h2 section headings + small-print paragraphs |
 | sidebar (english) | asymmetric columns, smaller sidebar font |
 | grid (english) | product tiles: distinct headlines over heavily repeated short lines ("Learn more"/"Buy" ×12) — exercises duplicate-line anchoring and single-word reconciliation |
+| justified (english) | a printed-book page: serif, fully justified, automatically hyphenated — words break across line ends ("ven-" / "dors"), exercising line-break dehyphenation |
 | english-legal (single) | quote-heavy legal prose (sentences ending in `'quotes.'`) from `content/english-legal.txt` — a content archetype, not a layout. Note: on a *clean* render this sorts ~99% via the leftover assembler regardless, so it does not by itself isolate the sentence-splitter's quote handling — the unit tests in `pkg/sorters/line_manipulation_test.go` guard that directly, and the private corpus (below) exercises the real-world behavior. |
-| single-vertical / two-column-vertical (japanese) | vertical writing (tategaki), currently near-0% pending reading-order auto-detection |
+| single-vertical / two-column-vertical / book-vertical (japanese) | vertical writing (tategaki); "book" is an all-vertical page with no horizontal title/footer bands. ~0% from Apple Vision (it cannot read tategaki), 97–100% from Tesseract jpn_vert and the PDF text layer |
 
 ## Noise fixtures (`*-noise02/05/10`)
 
@@ -147,10 +158,15 @@ go test ./integration -run TestCorpus
 
 ## Adding a language or layout
 
-1. Add `content/<language>.txt` (~8 paragraphs, blank-line separated), plus
+1. Add `content/<language>.txt` (~8 paragraphs, blank-line separated,
+   written like a real document — see "Content resembles real documents"), plus
    entries in `titles`, `headings`, and `fontStacks` in `cmd/testdoc/main.go`
    and a language case in `sorters.ConfigForLanguage`.
 2. Add matrix entries in `scripts/generate-ocr-tests.sh` (and OCR language
    codes in `apple_lang`/`tesseract_lang`).
 3. New layouts are CSS work in `cmd/testdoc/main.go` (`buildDocument`).
-4. Run phase 1, inspect `document.png`, then `make baselines` and commit.
+4. Run phase 1, **look at `document.png`** (a full page? every column
+   used? nothing touching the footer?), then `make baselines` and commit.
+5. Before trusting a new case's score, check that the OCR actually read
+   the page: compare the number of words in `tesseract-ocr.json` /
+   `apple-ocr.json` with `canonical.txt`.
