@@ -21,7 +21,7 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 		line.WriteString(block.Text)
 
 		// Only add space if the next block exists and is not a line separator
-		if i < len(blocks)-1 && blocks[i+1].Engine() != "" {
+		if i < len(blocks)-1 && !blocks[i+1].IsSeparator() {
 			if sep, joined := compoundJoin(block, blocks[i+1]); joined {
 				// Pieces of one OCR word: restore what joined them.
 				line.WriteString(sep)
@@ -31,7 +31,7 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 			}
 		}
 
-		if block.Engine() == "" || i == len(blocks)-1 {
+		if block.IsSeparator() || i == len(blocks)-1 {
 			trimmed := strings.TrimSpace(line.String())
 			// Always append lines, including empty ones (blank canonical lines)
 			// This preserves paragraph structure from the canonical text

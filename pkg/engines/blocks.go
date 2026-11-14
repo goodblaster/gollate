@@ -48,8 +48,7 @@ func (blocksEngine) Read(r io.Reader, pageWidth, pageHeight int) ([]ocr.Block, e
 				i, block.Text, block.BoundingBox.Top, block.BoundingBox.Left)
 		}
 		if block.Extractor == "" {
-			// A non-empty engine name is load-bearing: distance calculation
-			// short-circuits for blocks without one.
+			// Provenance default for sources that don't name themselves.
 			block.Extractor = "blocks"
 		}
 		block.Index = i

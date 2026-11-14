@@ -112,7 +112,7 @@ func (s *Sorter) Document() *Document {
 	// The sorter's native output separates lines with empty blocks; the
 	// document format replaces that in-band convention with structure.
 	for _, blk := range s.output {
-		if blk.Engine() == "" {
+		if blk.IsSeparator() {
 			flush()
 			continue
 		}
@@ -153,7 +153,7 @@ func unionBounds(tokens []Token) ocr.BoundingBox {
 // that originally joined them. Pieces that were sorted apart are not
 // re-joined.
 func compoundJoin(blk, next Block) (separator string, joined bool) {
-	if blk.HyphenAfter == "" || next.Engine() == "" {
+	if blk.HyphenAfter == "" || next.IsSeparator() {
 		return "", false
 	}
 	if next.OriginalIndex != blk.OriginalIndex || next.Index != blk.Index+1 {

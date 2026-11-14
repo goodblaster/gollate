@@ -36,7 +36,7 @@ func (s *Sorter) stepDistance(previous, candidate Block, pendingHoles int) (floa
 	// A structurally legitimate wrap to the next visual line: admit the step
 	// and let its real cost (already BaseLineWrap + gap) compete in path
 	// length, so paths with fewer wraps still win.
-	if s.config.EnableWrapBridging && previous.Engine() != "" &&
+	if s.config.EnableWrapBridging && !previous.IsSeparator() &&
 		isWrappedToNextLine(previous, candidate, s.config.ReadingOrder) {
 		return distance, true
 	}

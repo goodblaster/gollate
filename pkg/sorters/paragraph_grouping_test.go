@@ -71,20 +71,13 @@ func TestParagraphGrouping_English(t *testing.T) {
 		sortedText = append(sortedText, strings.TrimSpace(currentSentence.String()))
 	}
 
-	// Verify sentences are in canonical order (first, second, third)
-	// even though spatially they were (third, first, second)
-	if len(sortedText) < 3 {
-		t.Fatalf("Expected at least 3 sentences, got %d", len(sortedText))
-	}
-
-	if !strings.Contains(sortedText[0], "first sentence") {
-		t.Errorf("First sentence should contain 'first sentence', got: %s", sortedText[0])
-	}
-	if !strings.Contains(sortedText[1], "second sentence") {
-		t.Errorf("Second sentence should contain 'second sentence', got: %s", sortedText[1])
-	}
-	if !strings.Contains(sortedText[2], "third sentence") {
-		t.Errorf("Third sentence should contain 'third sentence', got: %s", sortedText[2])
+	// The three sentences are one canonical paragraph, so they must come
+	// out in canonical order (first, second, third) even though they sit
+	// on the page as (third, first, second) - whether the sorter emits
+	// them as one line or several.
+	joined := strings.Join(sortedText, " ")
+	if joined != canonicalText[0] {
+		t.Errorf("got %q, want %q", joined, canonicalText[0])
 	}
 }
 

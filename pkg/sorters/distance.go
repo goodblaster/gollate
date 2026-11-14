@@ -40,7 +40,8 @@ func DistanceWithOrder(w1 Block, w2 Block, order ReadingOrder) float64 {
 // distanceWithPenalty calculates the spatial distance between two blocks
 // with a configurable column jump penalty.
 func distanceWithPenalty(w1 Block, w2 Block, order ReadingOrder, columnPenalty float64) float64 {
-	if w1.Engine() == "" {
+	// No previous block: the first step of a path costs nothing.
+	if w1.IsSeparator() {
 		return 0
 	}
 

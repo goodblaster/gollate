@@ -173,7 +173,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		var sentenceText strings.Builder
 		for i, block := range sentence {
 			sentenceText.WriteString(block.Text)
-			if i < len(sentence)-1 && sentence[i+1].Engine() != "" {
+			if i < len(sentence)-1 && !sentence[i+1].IsSeparator() {
 				if s.handler.NeedsSpaceBetween(block.Text, sentence[i+1].Text) {
 					sentenceText.WriteByte(' ')
 				}
@@ -680,7 +680,7 @@ func (s *Sorter) splitLeftoversByCanonicalLines(sentences [][]Block) [][]Block {
 		var fullText strings.Builder
 		for i, block := range sentence {
 			fullText.WriteString(block.Text)
-			if i < len(sentence)-1 && sentence[i+1].Engine() != "" {
+			if i < len(sentence)-1 && !sentence[i+1].IsSeparator() {
 				// Add space between blocks using language handler
 				if s.handler.NeedsSpaceBetween(block.Text, sentence[i+1].Text) {
 					fullText.WriteByte(' ')
