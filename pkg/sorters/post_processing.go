@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strings"
 	"unicode"
+	"unicode/utf8"
 
 	"slices"
 )
@@ -838,7 +839,8 @@ func splitLinesOnPunctuation(lines [][]Block) [][]Block {
 				// A header is a standalone short phrase, not a continuation of the previous sentence
 				// Count blocks with the same LineId as current block
 				upcomingBlockCount := 0
-				upcomingStartsUpper := len(block.Text) > 0 && unicode.IsUpper(rune(block.Text[0]))
+				firstRune, _ := utf8.DecodeRuneInString(block.Text)
+				upcomingStartsUpper := unicode.IsUpper(firstRune) // rune, not byte: "École"
 				for j := i; j < len(line) && line[j].LineId == block.LineId; j++ {
 					upcomingBlockCount++
 				}

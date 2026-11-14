@@ -3,6 +3,7 @@ package sorters
 import (
 	"regexp"
 	"strings"
+	"unicode/utf8"
 
 	"github.com/goodblaster/gollate/pkg/language"
 )
@@ -60,8 +61,10 @@ func endsWithSentencePunctuation(text string) bool {
 		return false
 	}
 
-	// Check last rune for sentence-ending punctuation
-	lastRune := rune(text[len(text)-1])
+	// Check last rune for sentence-ending punctuation. Decode it properly:
+	// taking the last byte never equals a multi-byte CJK mark, which made
+	// every CJK check below unreachable.
+	lastRune, _ := utf8.DecodeLastRuneInString(text)
 
 	// CJK sentence-ending punctuation (always sentence-ending, no abbreviations in CJK)
 	if lastRune == '\u3002' || // 。 Ideographic full stop

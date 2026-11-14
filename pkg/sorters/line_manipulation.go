@@ -12,6 +12,10 @@ import (
 // leaving the sentence welded to its neighbors and unmatchable.
 var westernSentenceBoundary = regexp.MustCompile(`[.!?]['"` + "‘’“”" + `)\]}\x{00BB}]*\s`)
 
+// detachedTerminalRe matches whitespace before terminal punctuation that
+// is itself followed by whitespace or the end of the text (" . ", " !").
+var detachedTerminalRe = regexp.MustCompile(`\s+([.!?])(\s|$)`)
+
 // abs returns the absolute value of an integer.
 func abs(n int) int {
 	if n < 0 {
@@ -40,10 +44,13 @@ func SplitParagraph(paragraph string) []string {
 	bestSplitPos := -1                         // where the second sentence begins
 	bestDistanceFromMidpoint := len(paragraph) // worst-case distance
 
-	consider := func(punctIndex, splitPos int) {
+	// punctIndex/punctEnd bound the terminal punctuation mark (one byte for
+	// Western marks, three for CJK); splitPos is where the next sentence
+	// begins.
+	consider := func(punctIndex, punctEnd, splitPos int) {
 		// Skip abbreviations (e.g. "U.S. ", "Dr. ", "Ph.D. "): the abbrev
 		// check looks at the text through the terminal punctuation.
-		if !endsWithSentencePunctuation(paragraph[:punctIndex+1]) {
+		if !endsWithSentencePunctuation(paragraph[:punctEnd]) {
 			return
 		}
 		if d := abs(punctIndex - midpoint); d < bestDistanceFromMidpoint {
@@ -54,7 +61,7 @@ func SplitParagraph(paragraph string) []string {
 
 	// Western boundaries: punctuation + closing quotes/brackets + whitespace.
 	for _, loc := range westernSentenceBoundary.FindAllStringIndex(paragraph, -1) {
-		consider(loc[0], loc[1]) // loc[0] = punctuation, loc[1] = past the whitespace
+		consider(loc[0], loc[0]+1, loc[1]) // loc[0] = punctuation, loc[1] = past the whitespace
 	}
 
 	// CJK boundaries stand on their own (no trailing space required).
@@ -66,7 +73,7 @@ func SplitParagraph(paragraph string) []string {
 				break
 			}
 			absoluteIndex := searchStart + idx
-			consider(absoluteIndex, absoluteIndex+len(token))
+			consider(absoluteIndex, absoluteIndex+len(token), absoluteIndex+len(token))
 			searchStart = absoluteIndex + len(token)
 		}
 	}
@@ -81,13 +88,12 @@ func SplitParagraph(paragraph string) []string {
 		paragraph[bestSplitPos:],
 	}
 
-	// OCR sometimes returns " . " instead of ". " at the end of a line.
-	// Make sure that's not an issue on the next pass, in case we need to
-	// split again on punctuation.
+	// Text sometimes carries " . " instead of ". " at the end of a
+	// sentence. Close that gap so a later pass can split on it - but only
+	// where the mark really is terminal: " .5 percent" must keep its space,
+	// or "rose .5" becomes the single token "rose.5".
 	for i := range sentences {
-		sentences[i] = strings.ReplaceAll(sentences[i], " .", ".")
-		sentences[i] = strings.ReplaceAll(sentences[i], " !", "!")
-		sentences[i] = strings.ReplaceAll(sentences[i], " ?", "?")
+		sentences[i] = detachedTerminalRe.ReplaceAllString(sentences[i], "$1$2")
 		sentences[i] = strings.TrimSpace(sentences[i])
 	}
 
