@@ -33,6 +33,11 @@ import (
 //     are canonical text in order. Accuracy ignores extra output, so page
 //     numbers and running heads leaking into the text cost it nothing;
 //     they cost this.
+//   - localized (key suffix "#localized"): the share of canonical units
+//     that some token points back at through its canonical span, where
+//     the span really does select that token's text. This is what passage
+//     highlighting depends on: order can be perfect while a token is tied
+//     to the wrong instance of a repeated word.
 const (
 	multipageDir       = "../testdata/multipage"
 	multipageBaselines = "../testdata/multipage/baselines.json"
@@ -140,6 +145,29 @@ func TestMultipage(t *testing.T) {
 				results[key+"#paragraphs"] = paragraphScore
 				results[key+"#precision"] = 100 * float64(matches) / float64(max(1, len(sortedUnits)))
 
+				localized, continuations := 0, 0
+				for _, para := range result.Document.Paragraphs {
+					for _, tok := range para.Tokens {
+						if tok.Continuation != nil {
+							continuations++
+						}
+						if para.CanonicalLine == nil || tok.Canonical == nil {
+							continue
+						}
+						line := canonical[*para.CanonicalLine]
+						if tok.Canonical.Start < 0 || tok.Canonical.End > len(line) || tok.Canonical.Start > tok.Canonical.End {
+							t.Errorf("canonical span %+v out of range for line %d", *tok.Canonical, *para.CanonicalLine)
+							continue
+						}
+						want := splitUnits(line[tok.Canonical.Start:tok.Canonical.End])
+						got := splitUnits(result.Document.Text[tok.Span.Start:tok.Span.End])
+						if strings.Join(want, " ") == strings.Join(got, " ") {
+							localized += len(want)
+						}
+					}
+				}
+				results[key+"#localized"] = 100 * float64(localized) / float64(len(canonicalUnits))
+
 				// Context for reading the score: what the pages hold at all,
 				// and what plain page-then-emit order would give.
 				var raw []string
@@ -167,11 +195,12 @@ func TestMultipage(t *testing.T) {
 				for _, page := range result.Document.Pages {
 					furniture += len(page.Furniture)
 				}
+				t.Logf("localized %.2f%%; %d tokens with a continuation box", results[key+"#localized"], continuations)
 				t.Logf("accuracy %.2f%% (%d/%d units, %d extra); paragraph score %.2f%%; emit order %.2f%%; paragraphs %d (canonical %d); %d straddles; %d furniture runs; %d unhandled",
 					accuracy, matches, len(canonicalUnits), len(sortedUnits)-matches, paragraphScore, emit,
 					len(result.Document.Paragraphs), canonicalParagraphs, straddles, furniture, len(result.Unhandled))
 
-				for _, k := range []string{key, key + "#paragraphs", key + "#precision"} {
+				for _, k := range []string{key, key + "#paragraphs", key + "#precision", key + "#localized"} {
 					baseline, ok := baselines[k]
 					switch {
 					case !ok && !update:

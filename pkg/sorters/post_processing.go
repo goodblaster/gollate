@@ -506,19 +506,20 @@ const leftoverMinOverlap = 0.6
 // and plain emit order survives (measured: 2% noise 50, 10% noise 78).
 //
 // Candidates are the canonical lines between those of the sentence's
-// nearest matched neighbors in emit order (prev, next; -1 if none). The
+// nearest matched neighbors in emit order (prev, next; -1 if none - with
+// no neighbor on a side the range runs to that end of the document). The
 // one sharing the most tokens with the sentence wins, if the share reaches
 // leftoverMinOverlap. Returns the line and the sentence's estimated offset
 // within it, or (-1, -1).
 func (s *Sorter) placeByNeighbors(normalized string, prev, next, firstLine, lastLine int, canonical map[int]Line, noSpaces map[int]string) (line, offset int) {
-	if prev == -1 && next == -1 {
-		return -1, -1
-	}
+
 	// With a neighbor on only one side, the range runs to that end of the
 	// document: everything before the first placed sentence may belong to
 	// any earlier line.
 	lo, hi := prev, next
 	switch {
+	case prev == -1 && next == -1:
+		lo, hi = firstLine, lastLine // no neighbor placed yet: any line
 	case prev == -1:
 		lo = firstLine
 	case next == -1:

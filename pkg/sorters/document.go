@@ -58,6 +58,15 @@ type Token struct {
 	Bounds     ocr.BoundingBox `json:"bounds"`
 	Confidence float64         `json:"confidence,omitempty"`
 
+	// Canonical is the byte range, within the canonical line named by the
+	// paragraph's CanonicalLine, that this token corresponds to; nil when
+	// the token could not be tied to canonical text.
+	Canonical *Span `json:"canonical,omitempty"`
+
+	// Continuation is where the rest of the word is when it was broken
+	// across a line or page (Bounds then covers only its first half).
+	Continuation *ocr.BlockPart `json:"continuation,omitempty"`
+
 	text *string // backref for String(); debugging only, never serialized
 }
 
@@ -98,13 +107,26 @@ func (s *Sorter) Document() *Document {
 			canonicalLine := s.outputCanonicalLines[line]
 			para.CanonicalLine = &canonicalLine
 		}
+		// Tie each token to its range of the canonical line.
+		canonicalSpans := make([]*Span, len(run))
+		if para.CanonicalLine != nil && *para.CanonicalLine < len(s.canonical) {
+			if tokens := canonicalTokenSpans(s.canonical[*para.CanonicalLine], s.handler); tokens != nil {
+				blockTokens := make([][]string, len(run))
+				for i, blk := range run {
+					blockTokens[i] = s.handler.Tokenize(blk.NormedText)
+				}
+				canonicalSpans = alignToCanonical(blockTokens, tokens)
+			}
+		}
 		for i, blk := range run {
 			start := text.Len()
 			text.WriteString(blk.Text)
 			para.Tokens = append(para.Tokens, Token{
-				Span:       Span{Start: start, End: text.Len()},
-				Bounds:     blk.BoundingBox,
-				Confidence: blk.Confidence,
+				Span:         Span{Start: start, End: text.Len()},
+				Bounds:       blk.BoundingBox,
+				Confidence:   blk.Confidence,
+				Canonical:    canonicalSpans[i],
+				Continuation: blk.Continuation,
 			})
 			if i < len(run)-1 {
 				if sep, joined := compoundJoin(blk, run[i+1]); joined {

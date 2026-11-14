@@ -20,6 +20,8 @@ type Sorter struct {
 	input  []Block     // input OCR blocks (normalized)
 	output []Block     // output OCR blocks (normalized)
 
+	canonical []string // canonical text as given, for canonical spans
+
 	// outputCanonicalLines[i] is the canonical line (index into the text
 	// passed to the constructor) that the i-th line of output was matched
 	// to, or -1 for unmatched leftovers and inserted blank lines. Output
@@ -84,12 +86,13 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 
 	// Start building the sorter.
 	sorter := &Sorter{
-		input:   ocrBlocks,
-		lines:   NewLineServer(lines),
-		mapped:  mapBlocks(ocrBlocks),
-		config:  config,
-		handler: handler,
-		logger:  log,
+		canonical: text,
+		input:     ocrBlocks,
+		lines:     NewLineServer(lines),
+		mapped:    mapBlocks(ocrBlocks),
+		config:    config,
+		handler:   handler,
+		logger:    log,
 	}
 	sorter.metrics.LineRepairs = repairs
 
@@ -153,11 +156,13 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 			sub.Text = part.text
 			sub.NormedText = part.normalized
 			sub.HyphenAfter = part.separator
+			sub.Continuation = nil // belongs to the last piece only, restored below
 			sub.BoundingBox.Left = left
 			sub.BoundingBox.Width = w.BoundingBox.Width * float64(part.runes) / float64(total)
 			left += sub.BoundingBox.Width
 			keep(sub)
 		}
+		processed[len(processed)-1].Continuation = w.Continuation
 	}
 
 	return processed
@@ -294,6 +299,7 @@ func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool) []Bloc
 				if canonicalWords[joined] && !bothWords {
 					b.OriginalOcrText = b.Text + " " + next.Text
 					b.CorrectionType = "dehyphenated"
+					b.Continuation = &ocr.BlockPart{Page: next.Page, Bounds: next.BoundingBox}
 					b.Text = stem + next.Text
 					b.NormedText = joined
 					out = append(out, b)
@@ -320,9 +326,13 @@ type compoundPart struct {
 // block then stays whole). Leading and trailing punctuation stays attached
 // to the first and last piece.
 func splitCompoundText(text string, tokens []string, canonicalWords map[string]bool) []compoundPart {
-	for _, token := range tokens {
-		if !canonicalWords[token] {
-			return nil
+	// A nil vocabulary means "no vocabulary check" (used when locating the
+	// parts of a canonical word itself).
+	if canonicalWords != nil {
+		for _, token := range tokens {
+			if !canonicalWords[token] {
+				return nil
+			}
 		}
 	}
 

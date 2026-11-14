@@ -44,6 +44,15 @@ type Token struct {
 	Page       int             `json:"page"`
 	Bounds     ocr.BoundingBox `json:"bounds"`
 	Confidence float64         `json:"confidence,omitempty"`
+
+	// Canonical is the byte range of the paragraph's canonical line that
+	// this token corresponds to; nil when it could not be established.
+	Canonical *sorters.Span `json:"canonical,omitempty"`
+
+	// Continuation is where the rest of the word is when it was broken
+	// across a line or a page: Bounds covers its first half, Continuation
+	// the second - possibly on the next page.
+	Continuation *ocr.BlockPart `json:"continuation,omitempty"`
 }
 
 // PageInfo describes one input page in the result.
@@ -141,25 +150,27 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 		// other. Blank lines between come along to keep paragraph
 		// structure.
 		var selected []int
-		part := make(map[int]string) // canonical index -> text offered to this page
+		part := make(map[int]string)    // canonical index -> text offered to this page
+		partOffset := make(map[int]int) // where that text starts in the canonical line
 		for i, a := range assignments {
 			if len(lineTokens[i]) == 0 {
 				continue
 			}
 			switch {
 			case a.Page == p && a.Straddle:
-				part[i], _ = splitAtToken(canonical[i], a.Cut, tokenize)
+				part[i], _, _ = splitAtToken(canonical[i], a.Cut, tokenize)
 			case a.Page == p:
 				part[i] = canonical[i]
 			case a.Straddle && a.Page == p-1:
-				_, part[i] = splitAtToken(canonical[i], a.Cut, tokenize)
+				_, part[i], partOffset[i] = splitAtToken(canonical[i], a.Cut, tokenize)
 			default:
 				continue
 			}
 			selected = append(selected, i)
 		}
 		var subset []string
-		var global []int // subset index -> canonical index
+		var global []int  // subset index -> canonical index
+		var offsets []int // subset index -> offset of the offered text in that line
 		if len(selected) > 0 {
 			chosen := make(map[int]bool, len(selected))
 			for _, i := range selected {
@@ -169,9 +180,11 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 				if chosen[i] {
 					subset = append(subset, part[i])
 					global = append(global, i)
+					offsets = append(offsets, partOffset[i])
 				} else if len(lineTokens[i]) == 0 {
 					subset = append(subset, "")
 					global = append(global, i)
+					offsets = append(offsets, 0)
 				}
 			}
 		}
@@ -205,7 +218,7 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 			LeftoverBlocks: metrics.LeftoverBlocks,
 		}
 		info.Furniture = furniture[p]
-		merged.addPage(p, sorter.Document(), global)
+		merged.addPage(p, sorter.Document(), global, offsets)
 		result.Document.Pages = append(result.Document.Pages, info)
 	}
 	if result.Unhandled == nil {
@@ -218,11 +231,13 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 
 // mergedToken is a token awaiting its final position in the text blob.
 type mergedToken struct {
-	text       string
-	separator  string // what follows it within its paragraph ("", " ", "-")
-	page       int
-	bounds     ocr.BoundingBox
-	confidence float64
+	text         string
+	separator    string // what follows it within its paragraph ("", " ", "-")
+	page         int
+	bounds       ocr.BoundingBox
+	confidence   float64
+	canonical    *sorters.Span
+	continuation *ocr.BlockPart
 }
 
 type mergedParagraph struct {
@@ -242,29 +257,36 @@ type merger struct {
 // whose canonical line already has a paragraph - the head of a line that
 // straddled in from the previous page - is joined onto it rather than
 // started anew, so the page break leaves no paragraph break.
-func (m *merger) addPage(page int, doc *sorters.Document, global []int) {
+func (m *merger) addPage(page int, doc *sorters.Document, global, offsets []int) {
 	for _, para := range doc.Paragraphs {
 		if len(para.Tokens) == 0 {
 			continue
 		}
 
+		// The page sorter saw only its part of a straddling line, so its
+		// canonical spans are relative to that part.
+		line, offset := -1, 0
+		if para.CanonicalLine != nil && *para.CanonicalLine < len(global) {
+			line, offset = global[*para.CanonicalLine], offsets[*para.CanonicalLine]
+		}
+
 		tokens := make([]mergedToken, len(para.Tokens))
 		for i, tok := range para.Tokens {
 			tokens[i] = mergedToken{
-				text:       doc.Text[tok.Span.Start:tok.Span.End],
-				page:       page,
-				bounds:     tok.Bounds,
-				confidence: tok.Confidence,
+				text:         doc.Text[tok.Span.Start:tok.Span.End],
+				page:         page,
+				bounds:       tok.Bounds,
+				confidence:   tok.Confidence,
+				continuation: tok.Continuation,
+			}
+			if tok.Canonical != nil {
+				tokens[i].canonical = &sorters.Span{Start: tok.Canonical.Start + offset, End: tok.Canonical.End + offset}
 			}
 			if i+1 < len(para.Tokens) {
 				tokens[i].separator = doc.Text[tok.Span.End:para.Tokens[i+1].Span.Start]
 			}
 		}
 
-		line := -1
-		if para.CanonicalLine != nil && *para.CanonicalLine < len(global) {
-			line = global[*para.CanonicalLine]
-		}
 		if earlier, ok := m.byLine[line]; ok && line >= 0 {
 			last := &earlier.tokens[len(earlier.tokens)-1]
 			if m.handler.NeedsSpaceBetween(last.text, tokens[0].text) {
@@ -283,10 +305,11 @@ func (m *merger) addPage(page int, doc *sorters.Document, global []int) {
 
 // splitAtToken divides text so that the head holds its first cut tokens
 // and the tail the rest. The split falls on a word boundary where the text
-// has them, otherwise between characters.
-func splitAtToken(text string, cut int, tokenize func(string) []string) (head, tail string) {
+// has them, otherwise between characters. tailOffset is the byte offset of
+// tail within text.
+func splitAtToken(text string, cut int, tokenize func(string) []string) (head, tail string, tailOffset int) {
 	if cut <= 0 {
-		return "", text
+		return "", text, 0
 	}
 	bySpace := strings.ContainsAny(strings.TrimSpace(text), " \t")
 	for i, r := range text {
@@ -297,10 +320,12 @@ func splitAtToken(text string, cut int, tokenize func(string) []string) (head, t
 			continue
 		}
 		if len(tokenize(text[:i])) >= cut {
-			return strings.TrimSpace(text[:i]), strings.TrimSpace(text[i:])
+			rest := text[i:]
+			tail = strings.TrimLeft(rest, " \t")
+			return strings.TrimSpace(text[:i]), strings.TrimSpace(tail), i + len(rest) - len(tail)
 		}
 	}
-	return text, ""
+	return text, "", len(text)
 }
 
 // lineBreakHyphens mirrors the sorter's set: the marks left at the end of
@@ -330,6 +355,7 @@ func joinSeamHyphens(pages []Page, vocabulary map[string]bool) {
 		}
 		last.OriginalOcrText = last.Text + " " + first.Text
 		last.CorrectionType = "dehyphenated"
+		last.Continuation = &ocr.BlockPart{Page: p + 1, Bounds: first.BoundingBox}
 		last.Text = stem + first.Text
 		pages[p+1].Blocks = pages[p+1].Blocks[1:]
 	}
@@ -351,10 +377,12 @@ func (m *merger) write(doc *Document) {
 			start := text.Len()
 			text.WriteString(tok.text)
 			para.Tokens = append(para.Tokens, Token{
-				Span:       sorters.Span{Start: start, End: text.Len()},
-				Page:       tok.page,
-				Bounds:     tok.bounds,
-				Confidence: tok.confidence,
+				Span:         sorters.Span{Start: start, End: text.Len()},
+				Page:         tok.page,
+				Bounds:       tok.bounds,
+				Confidence:   tok.confidence,
+				Canonical:    tok.canonical,
+				Continuation: tok.continuation,
 			})
 			if i+1 < len(mp.tokens) {
 				text.WriteString(tok.separator)

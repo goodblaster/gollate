@@ -110,6 +110,14 @@ func TestSortJoinsParagraphAcrossPageBreak(t *testing.T) {
 	if len(pagesSeen) != 2 || pagesSeen[0] != 0 || pagesSeen[1] != 1 {
 		t.Errorf("straddler token pages = %v, want [0 1]", pagesSeen)
 	}
+	// Canonical spans are relative to the whole line on both sides of
+	// the break, not to the part each page was offered.
+	for _, tok := range straddler.Tokens {
+		text := result.Document.Text[tok.Span.Start:tok.Span.End]
+		if tok.Canonical == nil || canonical[2][tok.Canonical.Start:tok.Canonical.End] != text {
+			t.Errorf("token %q (page %d): canonical span %v does not select it", text, tok.Page, tok.Canonical)
+		}
+	}
 	first, last := straddler.Tokens[0], straddler.Tokens[len(straddler.Tokens)-1]
 	if result.Document.Text[first.Span.Start:first.Span.End] != "Nora" || result.Document.Text[last.Span.Start:last.Span.End] != "it." {
 		t.Errorf("token spans do not index the merged text")
@@ -146,6 +154,23 @@ func TestSortJoinsWordHyphenatedAcrossPages(t *testing.T) {
 	}
 	if got := paragraphTexts(result.Document); len(got) != 1 || got[0] != canonical[0] {
 		t.Fatalf("got %q, want %q", got, canonical)
+	}
+
+	// The re-joined word sits on page 0 and points at its second half on
+	// page 1; every token maps to its own word of the canonical line.
+	doc := result.Document
+	for _, tok := range doc.Paragraphs[0].Tokens {
+		text := doc.Text[tok.Span.Start:tok.Span.End]
+		if tok.Canonical == nil || canonical[0][tok.Canonical.Start:tok.Canonical.End] != text {
+			t.Errorf("token %q: canonical span %v does not select it", text, tok.Canonical)
+		}
+		if text == "tower" {
+			if tok.Page != 0 || tok.Continuation == nil || tok.Continuation.Page != 1 {
+				t.Errorf("tower: page %d, continuation %+v; want page 0 continuing on page 1", tok.Page, tok.Continuation)
+			}
+		} else if tok.Continuation != nil {
+			t.Errorf("token %q should have no continuation", text)
+		}
 	}
 }
 
@@ -184,12 +209,12 @@ func TestStripFurnitureLeavesBodyAlone(t *testing.T) {
 
 func TestSplitAtToken(t *testing.T) {
 	words := func(s string) []string { return strings.Fields(sorters.NormalizeText(s)) }
-	head, tail := splitAtToken("It was the harbormaster who explained it, the following morning.", 7, words)
+	head, tail, _ := splitAtToken("It was the harbormaster who explained it, the following morning.", 7, words)
 	if head != "It was the harbormaster who explained it," || tail != "the following morning." {
 		t.Errorf("got %q | %q", head, tail)
 	}
 	// A hyphenated compound is two tokens but one word: never split inside it.
-	head, tail = splitAtToken("a four-block stretch of road", 2, words)
+	head, tail, _ = splitAtToken("a four-block stretch of road", 2, words)
 	if head != "a four-block" || tail != "stretch of road" {
 		t.Errorf("got %q | %q", head, tail)
 	}
@@ -202,7 +227,7 @@ func TestSplitAtToken(t *testing.T) {
 		}
 		return out
 	}
-	head, tail = splitAtToken("朝は五時に起こされた。", 3, chars)
+	head, tail, _ = splitAtToken("朝は五時に起こされた。", 3, chars)
 	if head != "朝は五" || tail != "時に起こされた。" {
 		t.Errorf("got %q | %q", head, tail)
 	}

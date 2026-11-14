@@ -1,11 +1,14 @@
 {
   "english-book/apple": 100,
+  "english-book/apple#localized": 100,
   "english-book/apple#paragraphs": 100,
   "english-book/apple#precision": 100,
   "english-book/pdftext": 100,
+  "english-book/pdftext#localized": 100,
   "english-book/pdftext#paragraphs": 100,
   "english-book/pdftext#precision": 100,
   "english-book/tesseract": 100,
+  "english-book/tesseract#localized": 100,
   "english-book/tesseract#paragraphs": 100,
   "english-book/tesseract#precision": 100
 }

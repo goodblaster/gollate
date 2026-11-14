@@ -39,6 +39,11 @@ type Block struct {
 	PageHeight    int         `json:"page_height"`
 	LineId        string      `json:"line_id,omitempty"`
 
+	// Continuation is where the rest of this word is, when the word was
+	// broken across a line or page and its two halves were re-joined into
+	// this block. BoundingBox covers only the first half.
+	Continuation *BlockPart `json:"continuation,omitempty"`
+
 	// Page is the 0-based page this block is on, for multi-page documents
 	// (set by pkg/multipage). Index, LineId and BoundingBox stay local to
 	// that page; blocks from different pages are never sorted together.
@@ -55,6 +60,12 @@ type Block struct {
 	CorrectionType  string  `json:"correction_type,omitempty"`   // How it was corrected: "suggested", etc.
 	EditDistance    int     `json:"edit_distance,omitempty"`     // Edit distance from original to suggested
 	Similarity      float64 `json:"similarity,omitempty"`        // Text similarity ratio (0-1)
+}
+
+// BlockPart locates a further piece of a block's text.
+type BlockPart struct {
+	Page   int         `json:"page"`
+	Bounds BoundingBox `json:"bounds"`
 }
 
 func (b Block) String() string {
