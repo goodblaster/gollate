@@ -73,6 +73,13 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 		if reordered, changed := reverseLeftToRightColumns(ocrBlocks); changed {
 			log.Debug("vertical text: columns were emitted left to right; restored right-to-left reading order")
 			ocrBlocks = reordered
+			// Emit order has just been shown unreliable for this page,
+			// so stop leaning on it: with a line id per column, leftover
+			// assembly places each column on its own evidence instead of
+			// treating the page as one run. (Not done when emit order is
+			// sound - there the single run is exactly right, and
+			// per-column placement measured 0.3-1.8 points worse.)
+			assignColumnLineIds(ocrBlocks)
 		}
 		if config.EnableVerticalWrapBridging && !config.EnableWrapBridging {
 			log.Debug("vertical text: enabling wrap bridging (columns wrap like lines)")

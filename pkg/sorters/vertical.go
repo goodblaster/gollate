@@ -1,6 +1,9 @@
 package sorters
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 // Vertical text detection (on by default, DisableVerticalDetection to turn
 // off). Orientation must be inferred from block geometry, never supplied by
@@ -173,4 +176,28 @@ func reverseLeftToRightColumns(blocks []Block) ([]Block, bool) {
 		out[i].Index = i
 	}
 	return out, true
+}
+
+// assignColumnLineIds gives vertical blocks that carry no engine line
+// grouping a line id per column, so that leftover assembly treats each
+// column as a visual line (as it does for engines that report lines)
+// instead of the whole page as one. No-op if any block has a line id.
+func assignColumnLineIds(blocks []Block) {
+	for _, b := range blocks {
+		if b.LineId != "" {
+			return
+		}
+	}
+	column := 0
+	for i := range blocks {
+		if i > 0 {
+			ax, _ := blocks[i-1].Center()
+			bx, _ := blocks[i].Center()
+			sameColumn := math.Abs(ax-bx) < 0.5*math.Max(blocks[i-1].Width(), blocks[i].Width()) && blocks[i].Top() > blocks[i-1].Top()
+			if !sameColumn {
+				column++
+			}
+		}
+		blocks[i].LineId = fmt.Sprintf("col%d", column)
+	}
 }
