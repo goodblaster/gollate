@@ -3,6 +3,7 @@ package sorters
 import (
 	"regexp"
 	"strings"
+	"unicode/utf8"
 )
 
 // westernSentenceBoundary matches the end of a Western sentence: terminal
@@ -10,7 +11,7 @@ import (
 // Legal, quoted, and dialogue text routinely ends a sentence with a quote -
 // "...an 'infant.' At one time..." - which a plain ". " search misses,
 // leaving the sentence welded to its neighbors and unmatchable.
-var westernSentenceBoundary = regexp.MustCompile(`[.!?]['"` + "‘’“”" + `)\]}\x{00BB}]*\s`)
+var westernSentenceBoundary = regexp.MustCompile(`[.!?\x{061F}\x{06D4}\x{0964}\x{0965}]['"` + "‘’“”" + `)\]}\x{00BB}]*\s`)
 
 // detachedTerminalRe matches whitespace before terminal punctuation that
 // is itself followed by whitespace or the end of the text (" . ", " !").
@@ -61,7 +62,8 @@ func SplitParagraph(paragraph string) []string {
 
 	// Western boundaries: punctuation + closing quotes/brackets + whitespace.
 	for _, loc := range westernSentenceBoundary.FindAllStringIndex(paragraph, -1) {
-		consider(loc[0], loc[0]+1, loc[1]) // loc[0] = punctuation, loc[1] = past the whitespace
+		_, size := utf8.DecodeRuneInString(paragraph[loc[0]:])
+		consider(loc[0], loc[0]+size, loc[1]) // loc[0] = punctuation, loc[1] = past the whitespace
 	}
 
 	// CJK boundaries stand on their own (no trailing space required).

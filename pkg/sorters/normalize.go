@@ -77,6 +77,18 @@ var replacements = map[rune]struct{}{
 	'~': {}, '^': {}, '`': {}, '\u00B0': {}, '\u00A9': {}, '\u00AE': {}, '\u2122': {},
 	'\u00BF': {}, '\u00A1': {},
 
+	// Arabic-script and Devanagari punctuation. Without these a word kept
+	// its comma or full stop glued on ("سبت،", "है।") and only matched an
+	// OCR token carrying the identical mark - one misread comma and the
+	// word was absent.
+	'\u060C': {}, // ، Arabic comma
+	'\u061B': {}, // ؛ Arabic semicolon
+	'\u061F': {}, // ؟ Arabic question mark
+	'\u06D4': {}, // ۔ Arabic full stop (Urdu)
+	'\u0964': {}, // । Devanagari danda
+	'\u0965': {}, // ॥ Devanagari double danda
+	'\u2010': {}, // ‐ Hyphen (what PDF text layers carry)
+
 	// CJK punctuation (Chinese/Japanese/Korean)
 	'\u3002': {}, // 。 Ideographic full stop
 	'\uFF0C': {}, // ， Fullwidth comma

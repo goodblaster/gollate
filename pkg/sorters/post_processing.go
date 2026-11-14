@@ -436,15 +436,29 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 	if unmatched := groups[-1]; len(unmatched) > 0 {
 		kept := unmatched[:0:0]
 		for _, sent := range unmatched {
-			if n := len(sent.blocks); n > 0 && n <= maxSpliceBlocks {
-				before, okBefore := lineOfBlock[sent.blocks[0].Index-1]
-				after, okAfter := lineOfBlock[sent.blocks[n-1].Index+1]
-				if okBefore && okAfter && before == after {
-					splices[before] = append(splices[before], sent.blocks)
-					continue
+			// A leftover sentence can hold blocks that are not adjacent
+			// (they share an engine line id); each run of consecutive
+			// blocks is its own gap and is judged on its own neighbors.
+			var rest []Block
+			for start := 0; start < len(sent.blocks); {
+				end := start + 1
+				for end < len(sent.blocks) && sent.blocks[end].Index == sent.blocks[end-1].Index+1 {
+					end++
 				}
+				run := sent.blocks[start:end]
+				before, okBefore := lineOfBlock[run[0].Index-1]
+				after, okAfter := lineOfBlock[run[len(run)-1].Index+1]
+				if len(run) <= maxSpliceBlocks && okBefore && okAfter && before == after {
+					splices[before] = append(splices[before], run)
+				} else {
+					rest = append(rest, run...)
+				}
+				start = end
 			}
-			kept = append(kept, sent)
+			if len(rest) > 0 {
+				sent.blocks = rest
+				kept = append(kept, sent)
+			}
 		}
 		groups[-1] = kept
 	}
