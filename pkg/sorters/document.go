@@ -39,6 +39,11 @@ type Span struct {
 
 // Paragraph is one sorted line/paragraph of output.
 type Paragraph struct {
+	// CanonicalLine is the index of the canonical text line this paragraph
+	// was matched to (an index into the lines given to the sorter), or nil
+	// for text that matched no canonical line.
+	CanonicalLine *int `json:"canonical_line,omitempty"`
+
 	Span   Span            `json:"span"`
 	Bounds ocr.BoundingBox `json:"bounds"`
 	Tokens []Token         `json:"tokens"`
@@ -79,7 +84,9 @@ func (s *Sorter) Document() *Document {
 	var text strings.Builder
 	var run []Block
 
+	line := 0 // index of the output line the current run belongs to
 	flush := func() {
+		defer func() { line++ }()
 		if len(run) == 0 {
 			return
 		}
@@ -87,6 +94,10 @@ func (s *Sorter) Document() *Document {
 			text.WriteByte('\n')
 		}
 		para := Paragraph{Span: Span{Start: text.Len()}}
+		if line < len(s.outputCanonicalLines) && s.outputCanonicalLines[line] >= 0 {
+			canonicalLine := s.outputCanonicalLines[line]
+			para.CanonicalLine = &canonicalLine
+		}
 		for i, blk := range run {
 			start := text.Len()
 			text.WriteString(blk.Text)

@@ -16,9 +16,16 @@ type Block = ocr.Block
 
 // Sorter performs pathfinding-based sorting of OCR blocks to match canonical text.
 type Sorter struct {
-	lines   *LineServer        // canonical lines of text
-	input   []Block            // input OCR blocks (normalized)
-	output  []Block            // output OCR blocks (normalized)
+	lines  *LineServer // canonical lines of text
+	input  []Block     // input OCR blocks (normalized)
+	output []Block     // output OCR blocks (normalized)
+
+	// outputCanonicalLines[i] is the canonical line (index into the text
+	// passed to the constructor) that the i-th line of output was matched
+	// to, or -1 for unmatched leftovers and inserted blank lines. Output
+	// lines are the separator-delimited runs of output.
+	outputCanonicalLines []int
+
 	mapped  map[string][]Block // map of words to all blocks that contain that word
 	config  SorterConfig       // algorithm configuration parameters
 	metrics SortMetrics        // performance metrics

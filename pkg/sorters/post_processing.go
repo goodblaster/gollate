@@ -54,6 +54,12 @@ func (s *Sorter) postSortBlocks() []Block {
 	// Special case: handle documents with no canonical text
 	if len(lines) <= 1 {
 		allSentences = s.handleNoCanonicalText(allSentences)
+		// Re-split by punctuation: the lines no longer correspond to
+		// canonical lines one for one.
+		s.outputCanonicalLines = make([]int, len(allSentences))
+		for i := range s.outputCanonicalLines {
+			s.outputCanonicalLines[i] = -1
+		}
 	}
 
 	// Serialize to final output format with line separators
@@ -401,6 +407,11 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 
 	// Reassemble in canonical order (original line order, with -1 at end)
 	var result [][]Block
+	var resultLines []int // canonical line of each result entry, -1 if none
+	emit := func(blocks []Block, canonicalLine int) {
+		result = append(result, blocks)
+		resultLines = append(resultLines, canonicalLine)
+	}
 
 	// Sort originalLineOrder by the actual line numbers to maintain canonical order
 	sort.Slice(originalLineOrder, func(i, j int) bool {
@@ -436,12 +447,12 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 					const minRef = 0.01 // 1% of the page minimum
 					const paragraphBreakThreshold = 1.5
 					if ref >= minRef && advanceGap(prevLast, firstBlock, s.config.ReadingOrder) > paragraphBreakThreshold*ref {
-						result = append(result, []Block{})
+						emit([]Block{}, -1)
 					}
 				}
 
 				// Append this sentence's blocks
-				result = append(result, sent.blocks)
+				emit(sent.blocks, -1)
 
 				prevLast = sent.blocks[len(sent.blocks)-1]
 				havePrev = true
@@ -458,11 +469,12 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			}
 			// Append if we have blocks OR if this is a blank line (paragraph separator)
 			if len(mergedBlocks) > 0 || isBlank {
-				result = append(result, mergedBlocks)
+				emit(mergedBlocks, originalLine)
 			}
 		}
 	}
 
+	s.outputCanonicalLines = resultLines
 	return result
 }
 
