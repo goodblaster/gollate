@@ -307,9 +307,49 @@ func Segment(lines, pages [][]string) []Assignment {
 			out[i] = Assignment{Page: head, Straddle: true, Cut: bestCut, Coverage: bestScore}
 		}
 	}
+	// Sequence evidence, for when the bags are not enough (a short tail of
+	// common words, or misreads on either side of the break): the head is
+	// the text the head page ENDS with and the tail is the text the tail
+	// page BEGINS with, in emit order. Each side must mostly line up -
+	// exactly, when it is only a few tokens.
+	trySequence := func(i, head int) {
+		line := lines[i]
+		n := len(line)
+		if head < 0 || head+1 >= len(pages) || n < 2*straddleMinTokens || out[i].Straddle {
+			return
+		}
+		prevPage, nextPage := pages[head], pages[head+1]
+		enough := func(matched, length int) bool {
+			if length < 4 {
+				return matched == length
+			}
+			return matched*4 >= length*3
+		}
+		bestCut, bestMatched := -1, 0
+		for k := straddleMinTokens; k <= n-straddleMinTokens; k++ {
+			headWindow := prevPage[max(0, len(prevPage)-k-2):]
+			tailWindow := nextPage[:min(len(nextPage), n-k+2)]
+			headMatched := lcsCount(line[:k], headWindow)
+			tailMatched := lcsCount(line[k:], tailWindow)
+			if !enough(headMatched, k) || !enough(tailMatched, n-k) {
+				continue
+			}
+			if headMatched+tailMatched > bestMatched {
+				bestCut, bestMatched = k, headMatched+tailMatched
+			}
+		}
+		if bestCut >= 0 {
+			out[i] = Assignment{Page: head, Straddle: true, Cut: bestCut, Coverage: float64(bestMatched) / float64(n)}
+		}
+	}
+
 	for p := 0; p+1 < len(pages); p++ {
 		if i, ok := lastOn[p]; ok {
 			trySplit(i, p)
+			trySequence(i, p)
+		}
+		if i, ok := firstOn[p+1]; ok {
+			trySequence(i, p)
 		}
 		if i, ok := firstOn[p+1]; ok {
 			trySplit(i, p)
@@ -326,4 +366,24 @@ func Segment(lines, pages [][]string) []Assignment {
 		}
 	}
 	return out
+}
+
+// lcsCount is the length of the longest common subsequence of a and b.
+func lcsCount(a, b []string) int {
+	if len(a) == 0 || len(b) == 0 {
+		return 0
+	}
+	prev := make([]int, len(b)+1)
+	cur := make([]int, len(b)+1)
+	for i := 1; i <= len(a); i++ {
+		for j := 1; j <= len(b); j++ {
+			if a[i-1] == b[j-1] {
+				cur[j] = prev[j-1] + 1
+			} else {
+				cur[j] = max(prev[j], cur[j-1])
+			}
+		}
+		prev, cur = cur, prev
+	}
+	return prev[len(b)]
 }

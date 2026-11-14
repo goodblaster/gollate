@@ -1,0 +1,46 @@
+[
+  {
+    "text": "The",
+    "bounds": {
+      "top": 0.17380657587080425,
+      "left": 0.2700639092018821,
+      "width": 0.08064778288967558,
+      "height": 0.03063366335595024
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Keeper's",
+    "bounds": {
+      "top": 0.17380657587080425,
+      "left": 0.3612911187340816,
+      "width": 0.18715412553524446,
+      "height": 0.03063366335595024
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "Ledgers",
+    "bounds": {
+      "top": 0.17380657587080425,
+      "left": 0.5590246709118498,
+      "width": 0.1708984303792318,
+      "height": 0.03063366335595024
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  },
+  {
+    "text": "1",
+    "bounds": {
+      "top": 0.946353959879856,
+      "left": 0.8644057404982443,
+      "width": 0.008675129684109228,
+      "height": 0.014843402056713502
+    },
+    "normalized_conf": 1,
+    "engine": "pdftext"
+  }
+]

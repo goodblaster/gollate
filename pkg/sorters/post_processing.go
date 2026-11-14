@@ -415,6 +415,40 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		groups[originalLine] = group
 	}
 
+	// A short unmatched run whose emit-order neighbors on both sides were
+	// matched into the same canonical line is a misread sitting inside that
+	// line - the hole pathfinding bridged over. Put it back in the hole
+	// rather than after everything else, where it reads as a stray scrap
+	// ("solieitor shc") and leaves the paragraph with a word missing.
+	const maxSpliceBlocks = 4
+	lineOfBlock := make(map[int]int)
+	for line, group := range groups {
+		if line < 0 {
+			continue
+		}
+		for _, sent := range group {
+			for _, b := range sent.blocks {
+				lineOfBlock[b.Index] = line
+			}
+		}
+	}
+	splices := make(map[int][][]Block)
+	if unmatched := groups[-1]; len(unmatched) > 0 {
+		kept := unmatched[:0:0]
+		for _, sent := range unmatched {
+			if n := len(sent.blocks); n > 0 && n <= maxSpliceBlocks {
+				before, okBefore := lineOfBlock[sent.blocks[0].Index-1]
+				after, okAfter := lineOfBlock[sent.blocks[n-1].Index+1]
+				if okBefore && okAfter && before == after {
+					splices[before] = append(splices[before], sent.blocks)
+					continue
+				}
+			}
+			kept = append(kept, sent)
+		}
+		groups[-1] = kept
+	}
+
 	// Reassemble in canonical order (original line order, with -1 at end)
 	var result [][]Block
 	var resultLines []int // canonical line of each result entry, -1 if none
@@ -475,6 +509,14 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 				mergedBlocks = append(mergedBlocks, sent.blocks...)
 				if sent.isBlank {
 					isBlank = true
+				}
+			}
+			for _, run := range splices[originalLine] {
+				at := slices.IndexFunc(mergedBlocks, func(b Block) bool { return b.Index == run[0].Index-1 })
+				if at >= 0 {
+					mergedBlocks = slices.Insert(mergedBlocks, at+1, run...)
+				} else {
+					mergedBlocks = append(mergedBlocks, run...)
 				}
 			}
 			// Append if we have blocks OR if this is a blank line (paragraph separator)

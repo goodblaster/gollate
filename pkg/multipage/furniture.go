@@ -31,6 +31,37 @@ const furnitureBand = 0.012
 // numerals, optionally after "page"/"p".
 var pageLabelRe = regexp.MustCompile(`^(?:page|p)?\s*(?:[0-9]{1,4}|[ivxlcdm]{1,7})$`)
 
+// similarText reports whether two edge lines read as the same running
+// head, allowing for OCR misreads ("Tbe Keeper's Ledgers"): identical, or
+// within a quarter of their length in edits.
+func similarText(a, b string) bool {
+	if a == b {
+		return true
+	}
+	ra, rb := []rune(a), []rune(b)
+	longest := max(len(ra), len(rb))
+	if longest < 4 || min(len(ra), len(rb))*4 < longest*3 {
+		return false
+	}
+	prev := make([]int, len(rb)+1)
+	cur := make([]int, len(rb)+1)
+	for j := range prev {
+		prev[j] = j
+	}
+	for i := 1; i <= len(ra); i++ {
+		cur[0] = i
+		for j := 1; j <= len(rb); j++ {
+			cost := 1
+			if ra[i-1] == rb[j-1] {
+				cost = 0
+			}
+			cur[j] = min(prev[j]+1, cur[j-1]+1, prev[j-1]+cost)
+		}
+		prev, cur = cur, prev
+	}
+	return prev[len(rb)]*4 <= longest
+}
+
 // edgeLine is the top or bottom visual line of a page.
 type edgeLine struct {
 	blocks []int   // indices into the page's blocks
@@ -104,7 +135,7 @@ func stripFurniture(pages []Page) [][]Furniture {
 				if q == p || !ok[q] || math.Abs(lines[p].y-lines[q].y) > furnitureBand {
 					continue
 				}
-				if lines[p].text == lines[q].text || (label && pageLabelRe.MatchString(lines[q].text)) {
+				if similarText(lines[p].text, lines[q].text) || (label && pageLabelRe.MatchString(lines[q].text)) {
 					isFurniture[p] = true
 					break
 				}

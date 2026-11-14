@@ -96,3 +96,81 @@ func detectVerticalFlow(blocks []Block) bool {
 
 	return vertical >= verticalMinFlowPairs && float64(vertical) >= verticalMajority*float64(horizontal)
 }
+
+// reverseLeftToRightColumns puts vertical text emitted column by column
+// from left to right back into reading order (right to left).
+//
+// Vertical pages are assembled largely from emit order, on the adapter
+// contract that emit order is reading order. A PDF text layer does not
+// promise that: its content stream is in whatever order the producer wrote
+// it, and paginated vertical text has been seen with every page's columns
+// running left to right - the exact reverse - which halves accuracy.
+// Whether the columns run the wrong way is visible in the geometry: within
+// a column blocks step downward, and from one column to the next they
+// should step left.
+//
+// Blocks are grouped into columns (three or more consecutive blocks
+// stacked downward); anything else between columns (a horizontal title)
+// stays together as a group. If column-to-column steps go rightward at
+// least twice as often as leftward, the group order is reversed. Returns
+// the blocks renumbered in the new order, and whether anything changed.
+func reverseLeftToRightColumns(blocks []Block) ([]Block, bool) {
+	const minColumn = 3
+
+	// stacked: b continues a's column (same x, further down).
+	stacked := func(a, b Block) bool {
+		ax, _ := a.Center()
+		bx, _ := b.Center()
+		return math.Abs(ax-bx) < 0.5*math.Max(a.Width(), b.Width()) && b.Top() > a.Top()
+	}
+
+	type group struct {
+		start, end int // blocks[start:end]
+		column     bool
+	}
+	var groups []group
+	for i := 0; i < len(blocks); {
+		j := i + 1
+		for j < len(blocks) && stacked(blocks[j-1], blocks[j]) {
+			j++
+		}
+		if j-i >= minColumn {
+			groups = append(groups, group{i, j, true})
+		} else if n := len(groups); n > 0 && !groups[n-1].column {
+			groups[n-1].end = j
+		} else {
+			groups = append(groups, group{i, j, false})
+		}
+		i = j
+	}
+
+	leftward, rightward := 0, 0
+	last := -1
+	for g, grp := range groups {
+		if !grp.column {
+			continue
+		}
+		if last >= 0 {
+			prevX, _ := blocks[groups[last].start].Center()
+			x, _ := blocks[grp.start].Center()
+			if x < prevX {
+				leftward++
+			} else if x > prevX {
+				rightward++
+			}
+		}
+		last = g
+	}
+	if rightward < 3 || rightward < 2*leftward {
+		return blocks, false
+	}
+
+	out := make([]Block, 0, len(blocks))
+	for g := len(groups) - 1; g >= 0; g-- {
+		out = append(out, blocks[groups[g].start:groups[g].end]...)
+	}
+	for i := range out {
+		out[i].Index = i
+	}
+	return out, true
+}

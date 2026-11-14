@@ -1,0 +1,31 @@
+{
+  "words": [
+    {
+      "text": "The",
+      "line_num": 0,
+      "left": 213,
+      "top": 218,
+      "width": 64,
+      "height": 26,
+      "conf": 96.595421
+    },
+    {
+      "text": "Keeper's",
+      "line_num": 0,
+      "left": 287,
+      "top": 218,
+      "width": 146,
+      "height": 32,
+      "conf": 96.069412
+    },
+    {
+      "text": "Ledgers",
+      "line_num": 0,
+      "left": 443,
+      "top": 218,
+      "width": 134,
+      "height": 32,
+      "conf": 96.365913
+    }
+  ]
+}

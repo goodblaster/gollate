@@ -219,15 +219,40 @@ func main() {
 	fmt.Printf("Generated %s: %d paragraphs, layout=%s direction=%s\n", *outDir, len(paragraphs), s.Layout, s.Direction)
 }
 
-// generatePages renders the "pages" layout: a multi-page book. Content
-// flows across as many pages as it needs (a 5.5x8.5in trim, serif,
-// justified and hyphenated), with a running head and a page number in the
-// margins of every page.
+// pageOptions are the knobs of the "pages" (multi-page) layout.
+var pageOptions struct {
+	columns  *int
+	paper    *string
+	heads    *string
+	recto    *string
+	chapters *bool
+}
+
+func init() {
+	pageOptions.columns = flag.Int("columns", 1, "pages layout: text columns per page")
+	pageOptions.paper = flag.String("paper", "5.5x8.5", "pages layout: trim size in inches, WxH")
+	pageOptions.heads = flag.String("heads", "same", "pages layout: running heads - same (title on every page), alternate (title on left pages, -recto text on right pages, none on the first), none")
+	pageOptions.recto = flag.String("recto", "", "pages layout: right-page running head for -heads alternate")
+	pageOptions.chapters = flag.Bool("chapters", false, "pages layout: start each '# Heading' paragraph of the content on a new page")
+}
+
+// cssString quotes text for use as a CSS content string.
+func cssString(text string) string {
+	return `"` + strings.NewReplacer(`\`, `\\`, `"`, `\"`).Replace(text) + `"`
+}
+
+// generatePages renders the "pages" layout: a multi-page document. Content
+// flows across as many pages as it needs, with running heads and page
+// numbers in the page margins.
 //
-// The running head and page numbers are deliberately NOT in canonical.txt.
+// Running heads and page numbers are deliberately NOT in canonical.txt.
 // That is how real books relate to their canonical text - a transcription
-// carries the prose, never the page furniture - so the fixture exercises
+// carries the prose, never the page furniture - so these fixtures exercise
 // the furniture path instead of hiding it.
+//
+// Content paragraphs beginning "# " are headings: canonical lines of their
+// own, rendered as chapter titles (and with -chapters, each starting a new
+// page).
 //
 // Only document.pdf, document.html and canonical.txt are written; pages
 // are rasterized and extracted from the PDF by the generation script.
@@ -236,7 +261,12 @@ func generatePages(s spec, outDir string, timeout time.Duration) {
 	canonical := []string{s.Title, ""}
 	fmt.Fprintf(&body, "<h1>%s</h1>\n", html.EscapeString(s.Title))
 	for i, p := range s.Paragraphs {
-		fmt.Fprintf(&body, "<p>%s</p>\n", html.EscapeString(p))
+		if heading, ok := strings.CutPrefix(p, "# "); ok {
+			fmt.Fprintf(&body, "<h2>%s</h2>\n", html.EscapeString(heading))
+			p = heading
+		} else {
+			fmt.Fprintf(&body, "<p>%s</p>\n", html.EscapeString(p))
+		}
 		canonical = append(canonical, p)
 		if i < len(s.Paragraphs)-1 {
 			canonical = append(canonical, "")
@@ -247,20 +277,63 @@ func generatePages(s spec, outDir string, timeout time.Duration) {
 	if serif, ok := serifStacks[baseLang(s.Language)]; ok {
 		font = serif
 	}
+	width, height, ok := strings.Cut(*pageOptions.paper, "x")
+	if !ok {
+		fatal("bad -paper %q, want WxH in inches", *pageOptions.paper)
+	}
+
+	// Page furniture lives in CSS page-margin boxes.
+	marginFont := "font-family: " + font + "; font-size: 8pt;"
+	number := "content: counter(page); " + marginFont
+	var furniture string
+	switch *pageOptions.heads {
+	case "same":
+		furniture = fmt.Sprintf(`
+	@page { @top-center { content: %s; font-style: italic; %s } @bottom-center { %s } }`, cssString(s.Title), marginFont, number)
+	case "alternate":
+		// Title on left-hand pages, a second text on right-hand pages, page
+		// numbers at the outer corners, and a bare first page - how most
+		// printed books are actually set.
+		furniture = fmt.Sprintf(`
+	@page :left { @top-left { content: %s; font-style: italic; %s } @bottom-left { %s } }
+	@page :right { @top-right { content: %s; font-style: italic; %s } @bottom-right { %s } }
+	@page :first { @top-left { content: none } @top-right { content: none } }`,
+			cssString(s.Title), marginFont, number, cssString(*pageOptions.recto), marginFont, number)
+	case "none":
+	default:
+		fatal("bad -heads %q", *pageOptions.heads)
+	}
+
+	flow := ""
+	if *pageOptions.columns > 1 {
+		flow += fmt.Sprintf("\tbody { column-count: %d; column-gap: %dpt; }\n\th1 { column-span: all; }\n", *pageOptions.columns, s.ColumnGapPt)
+	}
+	if *pageOptions.chapters {
+		flow += "\th2 { break-before: page; }\n"
+	}
+	if s.Direction == "vertical" {
+		flow += "\tbody { writing-mode: vertical-rl; }\n\tp { text-indent: 1em; }\n"
+	}
+	dirAttr := "ltr"
+	if s.Direction == "rtl" {
+		dirAttr = "rtl"
+	}
+
 	doc := fmt.Sprintf(`<!DOCTYPE html>
-<html lang=%q>
+<html dir=%q lang=%q>
 <head><meta charset="UTF-8"><style>
-	@page { size: 5.5in 8.5in; margin: 0.85in 0.7in 0.8in 0.7in; }
+	@page { size: %sin %sin; margin: 0.85in 0.7in 0.8in 0.7in; }%s
 	html, body { margin: 0; padding: 0; }
 	body { font-family: %s; font-size: %dpt; line-height: %.2f; }
 	h1 { font-size: 1.5em; text-align: center; margin: 0.6in 0 0.35in 0; }
+	h2 { font-size: 1.15em; text-align: center; margin: 0.5in 0 0.25in 0; break-after: avoid; }
 	p { margin: 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-indent: 1.4em; orphans: 1; widows: 1; }
-	h1 + p { text-indent: 0; }
-</style></head>
+	h1 + p, h2 + p { text-indent: 0; }
+%s</style></head>
 <body>
 %s</body>
 </html>
-`, htmlLang[baseLang(s.Language)], font, s.FontSizePt, s.LineSpacing, body.String())
+`, dirAttr, htmlLang[baseLang(s.Language)], width, height, furniture, font, s.FontSizePt, s.LineSpacing, flow, body.String())
 
 	if err := os.MkdirAll(outDir, 0755); err != nil {
 		fatal("creating output dir: %v", err)
@@ -282,7 +355,6 @@ func generatePages(s spec, outDir string, timeout time.Duration) {
 	ctx, cancelT := context.WithTimeout(ctx, timeout)
 	defer cancelT()
 
-	marginText := `font-family: Georgia, serif; font-size: 8pt; width: 100%; text-align: center;`
 	var pdf []byte
 	err = chromedp.Run(ctx,
 		chromedp.Navigate("file://"+absPath),
@@ -294,9 +366,6 @@ func generatePages(s spec, outDir string, timeout time.Duration) {
 			pdf, _, err = page.PrintToPDF().
 				WithPreferCSSPageSize(true).
 				WithPrintBackground(true).
-				WithDisplayHeaderFooter(true).
-				WithHeaderTemplate(fmt.Sprintf(`<div style="%s font-style: italic;">%s</div>`, marginText, html.EscapeString(s.Title))).
-				WithFooterTemplate(fmt.Sprintf(`<div style="%s"><span class="pageNumber"></span></div>`, marginText)).
 				Do(ctx)
 			return err
 		}),

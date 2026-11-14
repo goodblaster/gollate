@@ -1,0 +1,265 @@
+{
+  "words": [
+    {
+      "text": "Carrow",
+      "line_num": 0,
+      "left": 594,
+      "top": 56,
+      "width": 55,
+      "height": 12,
+      "conf": 91.840286
+    },
+    {
+      "text": "Light",
+      "line_num": 0,
+      "left": 653,
+      "top": 56,
+      "width": 39,
+      "height": 16,
+      "conf": 96.714302
+    },
+    {
+      "text": "was",
+      "line_num": 1,
+      "left": 101,
+      "top": 135,
+      "width": 35,
+      "height": 11,
+      "conf": 96.380112
+    },
+    {
+      "text": "mostly",
+      "line_num": 1,
+      "left": 147,
+      "top": 129,
+      "width": 65,
+      "height": 22,
+      "conf": 96.770676
+    },
+    {
+      "text": "mortar.",
+      "line_num": 1,
+      "left": 221,
+      "top": 132,
+      "width": 72,
+      "height": 14,
+      "conf": 96.69812
+    },
+    {
+      "text": "The",
+      "line_num": 1,
+      "left": 303,
+      "top": 129,
+      "width": 37,
+      "height": 17,
+      "conf": 96.380211
+    },
+    {
+      "text": "key",
+      "line_num": 1,
+      "left": 350,
+      "top": 129,
+      "width": 33,
+      "height": 22,
+      "conf": 96.350555
+    },
+    {
+      "text": "was",
+      "line_num": 1,
+      "left": 392,
+      "top": 135,
+      "width": 36,
+      "height": 11,
+      "conf": 97.000641
+    },
+    {
+      "text": "under",
+      "line_num": 1,
+      "left": 438,
+      "top": 129,
+      "width": 58,
+      "height": 17,
+      "conf": 96.73333
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 505,
+      "top": 135,
+      "width": 10,
+      "height": 11,
+      "conf": 95.813133
+    },
+    {
+      "text": "flowerpot,",
+      "line_num": 1,
+      "left": 525,
+      "top": 129,
+      "width": 98,
+      "height": 22,
+      "conf": 96.675278
+    },
+    {
+      "text": "which",
+      "line_num": 1,
+      "left": 633,
+      "top": 129,
+      "width": 58,
+      "height": 17,
+      "conf": 96.179558
+    },
+    {
+      "text": "the",
+      "line_num": 2,
+      "left": 101,
+      "top": 160,
+      "width": 30,
+      "height": 17,
+      "conf": 93.290413
+    },
+    {
+      "text": "solicitor's",
+      "line_num": 2,
+      "left": 138,
+      "top": 160,
+      "width": 92,
+      "height": 17,
+      "conf": 91.553322
+    },
+    {
+      "text": "letter",
+      "line_num": 2,
+      "left": 237,
+      "top": 160,
+      "width": 52,
+      "height": 17,
+      "conf": 96.684959
+    },
+    {
+      "text": "had",
+      "line_num": 2,
+      "left": 295,
+      "top": 160,
+      "width": 36,
+      "height": 17,
+      "conf": 96.684959
+    },
+    {
+      "text": "described,",
+      "line_num": 2,
+      "left": 339,
+      "top": 160,
+      "width": 97,
+      "height": 21,
+      "conf": 96.535286
+    },
+    {
+      "text": "with",
+      "line_num": 2,
+      "left": 444,
+      "top": 160,
+      "width": 42,
+      "height": 17,
+      "conf": 96.908234
+    },
+    {
+      "text": "evident",
+      "line_num": 2,
+      "left": 494,
+      "top": 160,
+      "width": 71,
+      "height": 17,
+      "conf": 96.667969
+    },
+    {
+      "text": "disapproval,",
+      "line_num": 2,
+      "left": 572,
+      "top": 160,
+      "width": 118,
+      "height": 22,
+      "conf": 96.665169
+    },
+    {
+      "text": "as",
+      "line_num": 3,
+      "left": 101,
+      "top": 196,
+      "width": 19,
+      "height": 11,
+      "conf": 96.012535
+    },
+    {
+      "text": "\"the",
+      "line_num": 3,
+      "left": 127,
+      "top": 190,
+      "width": 39,
+      "height": 17,
+      "conf": 95.98616
+    },
+    {
+      "text": "customary",
+      "line_num": 3,
+      "left": 172,
+      "top": 193,
+      "width": 102,
+      "height": 19,
+      "conf": 96.577263
+    },
+    {
+      "text": "arrangement.\"",
+      "line_num": 3,
+      "left": 279,
+      "top": 190,
+      "width": 139,
+      "height": 22,
+      "conf": 91.471489
+    },
+    {
+      "text": "Nobody",
+      "line_num": 4,
+      "left": 131,
+      "top": 222,
+      "width": 77,
+      "height": 22,
+      "conf": 96.570168
+    },
+    {
+      "text": "had",
+      "line_num": 4,
+      "left": 213,
+      "top": 222,
+      "width": 36,
+      "height": 17,
+      "conf": 95.377342
+    },
+    {
+      "text": "asked",
+      "line_num": 4,
+      "left": 255,
+      "top": 222,
+      "width": 55,
+      "height": 17,
+      "conf": 95.377342
+    },
+    {
+      "text": "her",
+      "line_num": 4,
+      "left": 316,
+      "top": 222,
+      "width": 32,
+      "height": 17,
+      "conf": 96.621071
+    },
+    {
+      "text": "to.",
+      "line_num": 4,
+      "left": 353,
+      "top": 225,
+      "width": 24,
+      "height": 14,
+      "conf": 96.986366
+    }
+  ]
+}

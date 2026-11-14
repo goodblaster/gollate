@@ -70,6 +70,10 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 	if !config.DisableVerticalDetection && config.ReadingOrder.IsHorizontal() && detectVerticalText(ocrBlocks) {
 		log.Debug("vertical text detected; switching reading order to VerticalTTB_RTL")
 		config.ReadingOrder = VerticalTTB_RTL
+		if reordered, changed := reverseLeftToRightColumns(ocrBlocks); changed {
+			log.Debug("vertical text: columns were emitted left to right; restored right-to-left reading order")
+			ocrBlocks = reordered
+		}
 		if config.EnableVerticalWrapBridging && !config.EnableWrapBridging {
 			log.Debug("vertical text: enabling wrap bridging (columns wrap like lines)")
 			config.EnableWrapBridging = true

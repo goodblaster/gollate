@@ -49,6 +49,13 @@ type multipageInfo struct {
 		Width  int `json:"width"`
 		Height int `json:"height"`
 	} `json:"pages"`
+
+	// AbsentLines are canonical lines known to be on no page (the
+	// canonical text is from a different edition than the scan). They are
+	// given to the sorter like any other line but left out of scoring:
+	// nothing can find them, and what is measured is whether their
+	// presence disturbs the lines that are there.
+	AbsentLines []int `json:"absent_lines"`
 }
 
 // loadMultipage reads one fixture's pages for one block source.
@@ -98,6 +105,7 @@ func TestMultipage(t *testing.T) {
 	}
 	update := os.Getenv("UPDATE_BASELINES") != ""
 	results := map[string]float64{}
+	context := map[string]float64{} // ungated reference numbers (recall, emit order)
 
 	for _, entry := range entries {
 		if !entry.IsDir() {
@@ -119,7 +127,17 @@ func TestMultipage(t *testing.T) {
 					t.Fatalf("sorting: %v", err)
 				}
 
-				canonicalUnits := splitUnits(strings.Join(canonical, "\n"))
+				absent := make(map[int]bool)
+				for _, i := range info.AbsentLines {
+					absent[i] = true
+				}
+				var scored []string
+				for i, line := range canonical {
+					if !absent[i] {
+						scored = append(scored, line)
+					}
+				}
+				canonicalUnits := splitUnits(strings.Join(scored, "\n"))
 				sortedUnits := splitUnits(result.Document.Text)
 				matches := lcsLength(canonicalUnits, sortedUnits)
 				accuracy := 100 * float64(matches) / float64(len(canonicalUnits))
@@ -135,7 +153,7 @@ func TestMultipage(t *testing.T) {
 				recovered, paragraphCount := 0.0, 0
 				for i, line := range canonical {
 					units := splitUnits(line)
-					if len(units) == 0 {
+					if len(units) == 0 || absent[i] {
 						continue
 					}
 					paragraphCount++
@@ -178,6 +196,19 @@ func TestMultipage(t *testing.T) {
 				}
 				rawUnits := splitUnits(strings.Join(raw, "\n"))
 				emit := 100 * float64(lcsLength(canonicalUnits, rawUnits)) / float64(len(canonicalUnits))
+				bag := make(map[string]int)
+				for _, u := range rawUnits {
+					bag[u]++
+				}
+				present := 0
+				for _, u := range canonicalUnits {
+					if bag[u] > 0 {
+						bag[u]--
+						present++
+					}
+				}
+				context[key+"#emit"] = emit
+				context[key+"#recall"] = 100 * float64(present) / float64(len(canonicalUnits))
 
 				// Structure: a canonical paragraph should come out as one
 				// paragraph, page break or not.
@@ -210,6 +241,22 @@ func TestMultipage(t *testing.T) {
 					}
 				}
 			})
+		}
+	}
+
+	// MULTIPAGE_RESULTS=<path> writes every score, gated and reference, for
+	// reporting.
+	if path := os.Getenv("MULTIPAGE_RESULTS"); path != "" {
+		all := map[string]float64{}
+		for k, v := range results {
+			all[k] = v
+		}
+		for k, v := range context {
+			all[k] = v
+		}
+		data, _ := json.MarshalIndent(all, "", "  ")
+		if err := os.WriteFile(path, data, 0644); err != nil {
+			t.Fatalf("writing results: %v", err)
 		}
 	}
 
