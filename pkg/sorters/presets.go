@@ -56,6 +56,7 @@ func ConfigForLanguage(lang string) SorterConfig {
 		config.EnableReconciliationPass = true
 		config.ReconMinExactAnchors = 1
 	}
+	config.Language = lang
 	return config
 }
 

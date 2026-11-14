@@ -2,6 +2,20 @@ package language
 
 import "strings"
 
+// ForLanguage returns the handler for a caller-supplied language name
+// (the same names sorters.ConfigForLanguage accepts), falling back to
+// script detection on the text for names it has no fixed handler for.
+// A stated language is stronger evidence than a character count: Chinese
+// or Japanese text stays per-character tokenized however many numerals
+// and Latin terms it contains.
+func ForLanguage(name string, texts ...string) Handler {
+	switch strings.ToLower(strings.TrimSpace(name)) {
+	case "chinese", "japanese":
+		return &CJK{}
+	}
+	return Detect(texts...)
+}
+
 // Detect analyzes text and returns the most appropriate language handler.
 // Returns a MixedContent handler if no single script dominates (>80% confidence).
 func Detect(texts ...string) Handler {

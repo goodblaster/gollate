@@ -1,5 +1,7 @@
 package language
 
+import "unicode"
+
 // English implements Handler for English and other Latin-script languages.
 type English struct{}
 
@@ -12,24 +14,27 @@ func (h *English) DetectScript(text string) float64 {
 		return 0.0
 	}
 
-	// Count ASCII letters and common punctuation
+	// Share of the text's letters that are Latin script (accented letters
+	// included). Digits, punctuation and whitespace are ignored - see
+	// CJK.DetectScript.
 	latinCount := 0
-	totalRunes := 0
+	letters := 0
 
 	for _, r := range text {
-		totalRunes++
-		// ASCII letters, numbers, and common punctuation
-		if (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') ||
-			(r >= '0' && r <= '9') || r == ' ' || r == '.' || r == ',' {
+		if !unicode.IsLetter(r) {
+			continue
+		}
+		letters++
+		if unicode.Is(unicode.Latin, r) {
 			latinCount++
 		}
 	}
 
-	if totalRunes == 0 {
+	if letters == 0 {
 		return 0.0
 	}
 
-	return float64(latinCount) / float64(totalRunes)
+	return float64(latinCount) / float64(letters)
 }
 
 func (h *English) ReadingOrder() ReadingOrder {

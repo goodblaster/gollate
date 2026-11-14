@@ -50,8 +50,9 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 	// Normalize all the text we received from OCR.
 	ocrBlocks = normalizeOcrBlocks(ocrBlocks, config.SplitHyphenatedWords, lines)
 
-	// Detect language from canonical text
-	handler := language.Detect(text...)
+	// Tokenization and spacing rules: from the language hint when one was
+	// given, otherwise detected from the canonical text's script.
+	handler := language.ForLanguage(config.Language, text...)
 
 	// Preparation: infer text orientation from block geometry (see
 	// vertical.go). Only ever switches horizontal -> vertical; needs line

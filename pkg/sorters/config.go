@@ -7,6 +7,13 @@ import (
 
 // SorterConfig contains configurable parameters for the sorting algorithm.
 type SorterConfig struct {
+	// Language is the document language the config was built for (set by
+	// ConfigForLanguage; empty means unspecified). It selects the
+	// tokenizer: "chinese" and "japanese" match per character regardless
+	// of how much Latin text or how many numerals the document contains.
+	// When empty, the script is detected from the canonical text.
+	Language string
+
 	// MaxPermutations limits recursion depth to prevent exponential blowup.
 	// Higher values allow exploring more complex paths but increase computation time.
 	// Default: 500000
