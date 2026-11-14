@@ -39,10 +39,17 @@ func TestExtractFile_Fixture(t *testing.T) {
 		joined.WriteByte(' ')
 	}
 
-	// The fixture stores "diﬀerent" with the U+FB00 ligature; NFKC
-	// folding must yield the plain form or exact matching fails.
-	if !strings.Contains(joined.String(), "different") {
-		t.Fatal("ligature folding failed: 'different' not in extracted text")
+	// Text layers store ligature glyphs ("traﬃc", "oﬃce", "ﬁrst" carry
+	// U+FB00-FB06); NFKC folding must yield the plain letters or exact
+	// matching against canonical text fails.
+	text := joined.String()
+	for _, want := range []string{"traffic", "office", "first"} {
+		if !strings.Contains(text, want) {
+			t.Fatalf("ligature folding failed: %q not in extracted text", want)
+		}
+	}
+	if i := strings.IndexFunc(text, func(r rune) bool { return r >= 0xFB00 && r <= 0xFB06 }); i >= 0 {
+		t.Fatalf("unfolded ligature remains in extracted text near %q", text[max(0, i-10):i+3])
 	}
 
 	blocks := page.Blocks()

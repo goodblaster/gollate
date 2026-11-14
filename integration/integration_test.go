@@ -28,6 +28,8 @@ import (
 	"testing"
 	"unicode"
 
+	"golang.org/x/text/unicode/norm"
+
 	"github.com/goodblaster/gollate/pkg/api"
 	"github.com/goodblaster/gollate/pkg/logger"
 	"github.com/goodblaster/gollate/pkg/sorters"
@@ -341,8 +343,21 @@ func splitUnits(text string) []string {
 		}
 		return units
 	}
-	return strings.FieldsFunc(strings.ToLower(text), func(r rune) bool {
-		return !unicode.IsLetter(r) && !unicode.IsDigit(r)
+	// Combining marks belong to their word. Without this, Devanagari was
+	// scored in fragments: vowel signs and the virama are marks, not
+	// letters, so every Hindi word shattered at each one. Nonspacing marks
+	// (Mn: Arabic harakat, Latin accents in decomposed form, nukta) are
+	// dropped - the sorter's own normalization ignores them and OCR engines
+	// are inconsistent about emitting them - while spacing marks (Mc: most
+	// Devanagari vowel signs) are kept as part of the word.
+	stripped := strings.Map(func(r rune) rune {
+		if unicode.Is(unicode.Mn, r) {
+			return -1
+		}
+		return r
+	}, norm.NFD.String(strings.ToLower(text)))
+	return strings.FieldsFunc(stripped, func(r rune) bool {
+		return !unicode.IsLetter(r) && !unicode.IsDigit(r) && !unicode.Is(unicode.Mc, r)
 	})
 }
 
