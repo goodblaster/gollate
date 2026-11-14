@@ -1,0 +1,27 @@
+# Runs the unit tests and the OCR accuracy gate (integration/, which sorts
+# the committed fixtures and fails any case that drops below its baseline
+# in testdata/ocr-tests/baselines.json).
+#
+# macOS runner: the Apple Vision and PDFKit packages are cgo + darwin-only,
+# and the suite was developed and verified there. No OCR engine, Chrome or
+# poppler is needed - the suite reads committed JSON, and the poppler tests
+# skip when pdftotext is absent.
+name: test
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go vet ./...
+      - run: go test ./...
+      - name: Cross-compile check (linux, no cgo)
+        run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go vet ./...
