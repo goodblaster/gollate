@@ -20,7 +20,6 @@ import (
 
 var (
 	engine    = flag.String("engine", "", "OCR engine: apple, tesseract, easyocr, blocks (default: apple on macOS, tesseract elsewhere)")
-	ocrFile   = flag.String("ocr-file", "", "Path to OCR JSON file [required]")
 	textFile  = flag.String("text-file", "", "Path to canonical text file [required]")
 	width     = flag.Int("width", 0, "Page width in pixels [required]")
 	height    = flag.Int("height", 0, "Page height in pixels [required]")
@@ -40,6 +39,19 @@ var (
 	// Layout flags
 	columnJumpPenalty = flag.Float64("column-jump-penalty", 0, "Override penalty for jumping between columns (default: from language config)")
 )
+
+// ocrFiles collects --ocr-file, which may be repeated: one file per page,
+// in page order, for a multi-page document.
+type fileList []string
+
+func (f *fileList) String() string     { return strings.Join(*f, ",") }
+func (f *fileList) Set(v string) error { *f = append(*f, v); return nil }
+
+var ocrFiles fileList
+
+func init() {
+	flag.Var(&ocrFiles, "ocr-file", "Path to OCR JSON file [required]. Repeat once per page, in page order, to sort a multi-page document")
+}
 
 // defaultEngine picks the OCR engine matching the platform's OCR tooling:
 // Apple Vision on macOS, Tesseract everywhere else.
@@ -63,7 +75,7 @@ func main() {
 	}
 
 	// Validate required flags
-	if *ocrFile == "" || *textFile == "" || *width == 0 || *height == 0 {
+	if len(ocrFiles) == 0 || *textFile == "" || *width == 0 || *height == 0 {
 		fmt.Fprintln(os.Stderr, "Error: Missing required flags")
 		fmt.Fprintln(os.Stderr, "")
 		flag.Usage()
@@ -75,6 +87,14 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error: Invalid format %q, must be 'text' or 'json'\n", *format)
 		os.Exit(1)
 	}
+
+	if len(ocrFiles) > 1 {
+		if err := runMultipage(log); err != nil {
+			log.WithError(err).Fatal("failed to sort multi-page document")
+		}
+		return
+	}
+	ocrFile := &ocrFiles[0]
 
 	// Create and parse request
 	request := api.SortRequest{
