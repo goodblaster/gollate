@@ -21,8 +21,11 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 
 		// Only add space if the next block exists and is not a line separator
 		if i < len(blocks)-1 && blocks[i+1].Engine() != "" {
-			// Delegate spacing decision to language handler
-			if handler.NeedsSpaceBetween(block.Text, blocks[i+1].Text) {
+			if sep, joined := compoundJoin(block, blocks[i+1]); joined {
+				// Pieces of one OCR word: restore what joined them.
+				line.WriteString(sep)
+			} else if handler.NeedsSpaceBetween(block.Text, blocks[i+1].Text) {
+				// Delegate spacing decision to language handler
 				line.WriteByte(' ')
 			}
 		}

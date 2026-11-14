@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"strings"
 	"time"
+	"unicode"
+	"unicode/utf8"
 
 	"github.com/goodblaster/gollate/pkg/language"
 	"github.com/goodblaster/gollate/pkg/logger"
@@ -85,181 +87,242 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 	return sorter
 }
 
-func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines []Line) []Block {
+// normalizeOcrBlocks computes each block's matching key (NormedText),
+// drops blocks with no matchable text, and renumbers Index in emit order
+// (OriginalIndex keeps the engine's index).
+//
+// With splitCompound, a block whose text normalizes to several canonical
+// tokens is split into one block per token. OCR engines emit "four-block",
+// "$4.2", "6:30" and "12,000" as single words, but canonical text
+// tokenizes them as two ("four block", "$4 2", "6 30", "12 000"), so
+// unsplit they can never match. The separator each part was followed by is
+// kept in HyphenAfter so output can restore the original text. A block is
+// only split when every part is a word of the canonical text; anything
+// else (and anything NormalizeText keeps whole: initialisms, phone
+// numbers, emails, URLs) stays one block.
+func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []Line) []Block {
 	var processed []Block
 	nextIndex := 0
-	next := func() int {
-		i := nextIndex
+	keep := func(w Block) {
+		w.OriginalIndex = w.Index
+		w.Index = nextIndex
 		nextIndex++
-		return i
+		processed = append(processed, w)
 	}
 
-	// Build a map of all words in canonical text for quick lookup
+	// Canonical vocabulary: parts must exist here to be worth splitting.
 	canonicalWords := make(map[string]bool)
-	if splitHyphenated {
+	if splitCompound {
 		for _, line := range canonicalLines {
-			words := strings.Fields(line.Normalized)
-			for _, word := range words {
+			for _, word := range strings.Fields(line.Normalized) {
 				canonicalWords[word] = true
 			}
 		}
 	}
 
-	for _, w := range ocrBlocks {
-		if splitHyphenated {
-			// Skip hyphen splitting for numeric content (phone numbers, dates, etc.)
-			// Only split actual hyphenated words like "company-wide"
-			isNumeric := true
-			for _, c := range w.Text {
-				if c != ' ' && c != '-' && c != '\u2011' && (c < '0' || c > '9') {
-					isNumeric = false
-					break
-				}
-			}
-
-			// Don't split phone numbers and other numeric hyphenated content
-			if isNumeric {
-				// Process as a single block without splitting
-				w.NormedText = NormalizeText(w.Text)
-				if strings.TrimSpace(w.NormedText) != "" {
-					w.OriginalIndex = w.Index
-					w.Index = next()
-					processed = append(processed, w)
-				}
-				continue
-			}
-
-			// Check if this word contains hyphens - track them before splitting
-			// We need to preserve hyphen info for reconstruction
-			type partInfo struct {
-				text        string
-				hyphenAfter string // hyphen character that came after this part
-			}
-			var partsWithHyphens []partInfo
-
-			// Manual parsing to preserve hyphen characters
-			currentPart := strings.Builder{}
-			for _, c := range w.Text {
-				if c == '-' || c == '\u2011' {
-					// Found a hyphen - save current part and the hyphen
-					if currentPart.Len() > 0 {
-						partsWithHyphens = append(partsWithHyphens, partInfo{
-							text:        currentPart.String(),
-							hyphenAfter: string(c),
-						})
-						currentPart.Reset()
-					}
-				} else if c == ' ' {
-					// Space separates parts but isn't preserved
-					if currentPart.Len() > 0 {
-						partsWithHyphens = append(partsWithHyphens, partInfo{
-							text:        currentPart.String(),
-							hyphenAfter: "",
-						})
-						currentPart.Reset()
-					}
-				} else {
-					currentPart.WriteRune(c)
-				}
-			}
-			// Don't forget the last part
-			if currentPart.Len() > 0 {
-				partsWithHyphens = append(partsWithHyphens, partInfo{
-					text:        currentPart.String(),
-					hyphenAfter: "",
-				})
-			}
-
-			// Check if we should split: all parts must exist in canonical text
-			shouldSplit := len(partsWithHyphens) > 1
-			if shouldSplit {
-				for _, part := range partsWithHyphens {
-					normalized := NormalizeText(part.text)
-					if normalized != "" && !canonicalWords[normalized] {
-						// This part doesn't exist in canonical - don't split
-						shouldSplit = false
-						break
-					}
-				}
-			}
-
-			// If we shouldn't split, keep as single block
-			if !shouldSplit {
-				w.NormedText = NormalizeText(w.Text)
-				if strings.TrimSpace(w.NormedText) != "" {
-					w.OriginalIndex = w.Index
-					w.Index = next()
-					processed = append(processed, w)
-				}
-				continue
-			}
-
-			// Split into parts - filter and normalize
-			var validParts []partInfo
-			for _, part := range partsWithHyphens {
-				normalized := NormalizeText(part.text)
-				if strings.TrimSpace(normalized) != "" {
-					validParts = append(validParts, partInfo{
-						text:        part.text, // Keep original for display
-						hyphenAfter: part.hyphenAfter,
-					})
-				}
-			}
-
-			size := len(validParts)
-			if size == 0 {
-				continue
-			}
-
-			// Preserve the original index before we overwrite it
-			originalIndex := w.Index
-
-			if size == 1 {
-				w.NormedText = NormalizeText(validParts[0].text)
-				w.OriginalIndex = originalIndex
-				w.Index = next()
-				w.HyphenAfter = validParts[0].hyphenAfter
-				processed = append(processed, w)
-				continue
-			}
-
-			// Split into multiple blocks
-			for j, part := range validParts {
-				newBlock := w
-				newBlock.Text = part.text
-				newBlock.NormedText = NormalizeText(part.text)
-				newBlock.OriginalIndex = originalIndex // Preserve original index for all split blocks
-				newBlock.Index = next()
-				newBlock.HyphenAfter = part.hyphenAfter // Preserve hyphen for reconstruction
-
-				// Can't use the full dimensions of the original block.
-				// Break up evenly according to the number of parts.
-				// Future improvement: Measure actual text width for more accurate bounding boxes.
-				newBlock.BoundingBox.Width = w.BoundingBox.Width / float64(size)
-				newBlock.BoundingBox.Left = w.BoundingBox.Left + (float64(j) * newBlock.BoundingBox.Width)
-				if j > 0 {
-					newBlock.BoundingBox.Left = processed[len(processed)-1].Right()
-				}
-				//newBlock.BoundingBox.Height = w.BoundingBox.Height
-
-				processed = append(processed, newBlock)
-			}
-
+	for _, w := range attachPunctuation(ocrBlocks) {
+		if strings.TrimSpace(w.NormedText) == "" {
 			continue
 		}
 
-		// Only normalize if not already set (e.g., by Apple normalizer)
-		if w.NormedText == "" {
-			w.NormedText = NormalizeText(w.Text)
+		var parts []compoundPart
+		if splitCompound && strings.Contains(w.NormedText, " ") {
+			parts = splitCompoundText(w.Text, strings.Fields(w.NormedText), canonicalWords)
 		}
-		if strings.TrimSpace(w.NormedText) != "" {
-			w.OriginalIndex = w.Index // Preserve original index
-			w.Index = next()
-			processed = append(processed, w)
+		if len(parts) < 2 {
+			keep(w)
+			continue
+		}
+
+		// Divide the box along its width in proportion to each part's
+		// share of the text (separators included).
+		total := 0
+		for _, part := range parts {
+			total += part.runes
+		}
+		left := w.BoundingBox.Left
+		for _, part := range parts {
+			sub := w
+			sub.Text = part.text
+			sub.NormedText = part.normalized
+			sub.HyphenAfter = part.separator
+			sub.BoundingBox.Left = left
+			sub.BoundingBox.Width = w.BoundingBox.Width * float64(part.runes) / float64(total)
+			left += sub.BoundingBox.Width
+			keep(sub)
 		}
 	}
 
 	return processed
+}
+
+// attachPunctuation computes NormedText for every block and folds blocks
+// that are pure punctuation into a neighboring word.
+//
+// Engines often emit punctuation as its own token: PDF text layers split
+// the closing quote off `downtown."`, and per-character CJK output makes
+// every 。 and 、 a block. Such blocks have no matching key, so they used to
+// be discarded - and with them the punctuation in the sorted text, plus
+// the sentence boundaries leftover assembly looks for. Attaching them to
+// the adjacent word keeps the text intact without giving the matcher
+// anything new to match.
+//
+// Opening punctuation joins the following word, closing punctuation the
+// preceding one, and anything else whichever is nearer. A mark with no
+// word on its own line is dropped, as before.
+func attachPunctuation(blocks []Block) []Block {
+	out := make([]Block, len(blocks))
+	copy(out, blocks)
+	for i := range out {
+		out[i].NormedText = NormalizeText(out[i].Text)
+	}
+	isWord := func(i int) bool { return strings.TrimSpace(out[i].NormedText) != "" }
+
+	// gap is the empty space between two boxes, or -1 if they are not
+	// neighbors on one line (different engine lines, or too far apart).
+	gap := func(a, b Block) float64 {
+		if a.LineId != "" && b.LineId != "" && a.LineId != b.LineId {
+			return -1
+		}
+		dx := max(a.Left(), b.Left()) - min(a.Right(), b.Right())
+		dy := max(a.Top(), b.Top()) - min(a.Bottom(), b.Bottom())
+		d := max(dx, 0) + max(dy, 0)
+		if d > 1.5*max(a.Height(), b.Height(), min(a.Width(), b.Width())) {
+			return -1
+		}
+		return d
+	}
+
+	// Each mark is merged into a word; pending prefixes wait for theirs.
+	prefix := make(map[int]string)
+	lastWord := -1
+	for i := range out {
+		if isWord(i) {
+			lastWord = i
+			continue
+		}
+		text := strings.TrimSpace(out[i].Text)
+		if text == "" {
+			continue
+		}
+		next := -1
+		for j := i + 1; j < len(out); j++ {
+			if isWord(j) {
+				next = j
+				break
+			}
+		}
+		prevGap, nextGap := -1.0, -1.0
+		if lastWord >= 0 {
+			prevGap = gap(out[lastWord], out[i])
+		}
+		if next >= 0 {
+			nextGap = gap(out[i], out[next])
+		}
+
+		first, _ := utf8.DecodeRuneInString(text)
+		opening := unicode.In(first, unicode.Ps, unicode.Pi) || first == '¿' || first == '¡'
+		closing := unicode.In(first, unicode.Pe, unicode.Pf)
+
+		toPrev := prevGap >= 0 && (nextGap < 0 || prevGap <= nextGap)
+		if opening && nextGap >= 0 {
+			toPrev = false
+		} else if closing && prevGap >= 0 {
+			toPrev = true
+		}
+
+		// Only the text moves. The word keeps its own box: geometry is what
+		// pathfinding and reading-order assembly measure, and a box grown
+		// to cover a neighboring mark shifts column and line edges (measured:
+		// -35 on vertical Japanese, where same-column sentences are told
+		// apart by an exactly shared edge).
+		switch {
+		case toPrev:
+			out[lastWord].Text += text
+		case nextGap >= 0:
+			prefix[next] += text
+		}
+	}
+	for i, p := range prefix {
+		out[i].Text = p + out[i].Text
+	}
+	return out
+}
+
+// compoundPart is one token-sized piece of a compound OCR word.
+type compoundPart struct {
+	text       string // original text of this piece (display)
+	normalized string // its matching key
+	separator  string // what followed it in the original ("-", ".", ":"); "" for the last piece
+	runes      int    // rune length of text+separator, for box apportioning
+}
+
+// splitCompoundText cuts text at its interior separators into pieces that
+// normalize to exactly the given tokens, or returns nil if it cannot (the
+// block then stays whole). Leading and trailing punctuation stays attached
+// to the first and last piece.
+func splitCompoundText(text string, tokens []string, canonicalWords map[string]bool) []compoundPart {
+	for _, token := range tokens {
+		if !canonicalWords[token] {
+			return nil
+		}
+	}
+
+	isSeparator := func(r rune) bool {
+		if unicode.IsSpace(r) {
+			return true
+		}
+		_, ok := replacements[r]
+		return ok
+	}
+
+	runes := []rune(text)
+	// Trim the search to the span between the first and last word runes.
+	first, last := 0, len(runes)-1
+	for first < len(runes) && isSeparator(runes[first]) {
+		first++
+	}
+	for last >= 0 && isSeparator(runes[last]) {
+		last--
+	}
+	if first >= last {
+		return nil
+	}
+
+	var parts []compoundPart
+	start := 0 // start of the current piece (includes leading punctuation)
+	for i := first; i <= last; {
+		if !isSeparator(runes[i]) {
+			i++
+			continue
+		}
+		j := i
+		for j <= last && isSeparator(runes[j]) {
+			j++
+		}
+		separator := string(runes[i:j])
+		if strings.ContainsFunc(separator, unicode.IsSpace) {
+			separator = "" // whitespace inside a block: output re-spaces it
+		}
+		parts = append(parts, compoundPart{
+			text:      string(runes[start:i]),
+			separator: separator,
+			runes:     j - start,
+		})
+		start, i = j, j
+	}
+	parts = append(parts, compoundPart{text: string(runes[start:]), runes: len(runes) - start})
+
+	if len(parts) != len(tokens) {
+		return nil
+	}
+	for i := range parts {
+		parts[i].normalized = NormalizeText(parts[i].text)
+		if parts[i].normalized != tokens[i] {
+			return nil
+		}
+	}
+	return parts
 }
 
 func (s *Sorter) InputBlock(i int) Block {

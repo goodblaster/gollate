@@ -36,7 +36,10 @@ type Block struct {
 	PageWidth     int         `json:"page_width"`
 	PageHeight    int         `json:"page_height"`
 	LineId        string      `json:"line_id,omitempty"`
-	HyphenAfter   string      `json:"hyphen_after,omitempty"` // Hyphen that came after this word (for reconstruction)
+	// HyphenAfter is the separator that followed this block in the OCR
+	// word it was split from ("-" in "four-block", "." in "$4.2", ":" in
+	// "6:30"). Output re-joins the pieces with it instead of a space.
+	HyphenAfter string `json:"hyphen_after,omitempty"`
 
 	// Spelling correction fields (populated when corrections are detected)
 	OriginalOcrText string  `json:"original_ocr_text,omitempty"` // Original OCR text before correction (if corrected)

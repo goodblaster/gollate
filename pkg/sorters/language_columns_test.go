@@ -295,7 +295,9 @@ func TestChineseTwoColumns(t *testing.T) {
 		}
 	}
 
-	expected := strings.Join(canonicalText, "\n")
+	// OCR emits each line's 。 as its own block. It carries no matchable
+	// text, so it rides along attached to the preceding character.
+	expected := strings.Join(canonicalText, "。\n") + "。"
 	actual := strings.TrimSpace(result.String())
 
 	if actual != expected {
@@ -418,7 +420,9 @@ func TestJapaneseTwoColumns(t *testing.T) {
 		}
 	}
 
-	expected := strings.Join(canonicalText, "\n")
+	// OCR emits each line's 。 as its own block. It carries no matchable
+	// text, so it rides along attached to the preceding character.
+	expected := strings.Join(canonicalText, "。\n") + "。"
 	actual := strings.TrimSpace(result.String())
 
 	if actual != expected {
