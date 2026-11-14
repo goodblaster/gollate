@@ -188,8 +188,7 @@ func (s *Sorter) Sort() ([]Block, error) {
 // Known limitation: if an absent word is at the beginning of a line, so
 // splitting yields a single changed line, SplitAndReset ignores the change.
 func (s *Sorter) splitLine(missingWords map[string]bool) {
-	s.metrics.LinesSplit++
-	s.lines.SplitAndReset(func(line Line) []Line {
+	split := s.lines.SplitAndReset(func(line Line) []Line {
 		segments := SplitParagraph(line.OriginalText)
 		if len(segments) <= 1 && len(missingWords) > 0 {
 			segments = s.splitByAbsentWords(line.OriginalText, missingWords)
@@ -205,6 +204,11 @@ func (s *Sorter) splitLine(missingWords map[string]bool) {
 		}
 		return lines
 	})
+	// Count only real splits: an unsplittable line is retried every pass,
+	// and counting each attempt inflated the metric.
+	if split {
+		s.metrics.LinesSplit++
+	}
 }
 
 // markIntermediateBlankLines marks blank lines as found if they appear between found content lines.

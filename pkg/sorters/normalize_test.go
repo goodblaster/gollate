@@ -2,6 +2,7 @@ package sorters
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -123,5 +124,34 @@ func TestNormalizeText(t *testing.T) {
 				t.Errorf("expected %q, got %q", test.expected, actual)
 			}
 		})
+	}
+}
+
+// Ten or more URLs, emails or phone numbers in one string must each come
+// back intact (placeholder 1 used to be a prefix of placeholder 10).
+func TestNormalizeTextManyPlaceholders(t *testing.T) {
+	var urls, emails, phones, wantPhones []string
+	for i := 0; i < 12; i++ {
+		urls = append(urls, fmt.Sprintf("https://example.com/page/%c", 'a'+i))
+		emails = append(emails, fmt.Sprintf("user%c@example.com", 'a'+i))
+		phones = append(phones, fmt.Sprintf("555-01%02d", i))
+		wantPhones = append(wantPhones, fmt.Sprintf("555_01%02d", i))
+	}
+	for run := 0; run < 20; run++ { // map-order randomness made this flaky, not just wrong
+		if got, want := NormalizeText(strings.Join(urls, " ")), strings.Join(urls, " "); got != want {
+			t.Fatalf("urls:\n got %q\nwant %q", got, want)
+		}
+		if got, want := NormalizeText(strings.Join(emails, " ")), strings.Join(emails, " "); got != want {
+			t.Fatalf("emails:\n got %q\nwant %q", got, want)
+		}
+		if got, want := NormalizeText(strings.Join(phones, " ")), strings.Join(wantPhones, " "); got != want {
+			t.Fatalf("phones:\n got %q\nwant %q", got, want)
+		}
+	}
+
+	// A URL that is a prefix of another must not clobber it.
+	in := "https://example.com and https://example.com/more"
+	if got := NormalizeText(in); got != in {
+		t.Errorf("got %q, want %q", got, in)
 	}
 }

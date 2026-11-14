@@ -1,5 +1,10 @@
 package sorters
 
+import (
+	"slices"
+	"strings"
+)
+
 // ConfigForLanguage maps a language name to a sorter configuration.
 //
 // Language is the only external hint the sorter accepts: layout information
@@ -30,6 +35,7 @@ package sorters
 // Recognized languages: english, spanish, chinese, japanese, arabic, hindi.
 // Unrecognized values fall back to the default (horizontal LTR) config.
 func ConfigForLanguage(lang string) SorterConfig {
+	lang = strings.ToLower(strings.TrimSpace(lang))
 	var config SorterConfig
 	switch lang {
 	case "chinese", "japanese":
@@ -68,6 +74,22 @@ func ConfigForLanguage(lang string) SorterConfig {
 //   - Real-time processing requirements
 //   - Large batch processing
 //   - Preview/draft mode
+//
+// TunedLanguages lists the languages ConfigForLanguage has a measured
+// configuration for. Any other name gets the default configuration, which
+// is tuned on Latin script.
+func TunedLanguages() []string {
+	return []string{"arabic", "chinese", "english", "hindi", "japanese", "spanish"}
+}
+
+// IsTunedLanguage reports whether ConfigForLanguage has a specific,
+// measured configuration for lang (case-insensitive). The empty string -
+// no hint - counts as tuned.
+func IsTunedLanguage(lang string) bool {
+	lang = strings.ToLower(strings.TrimSpace(lang))
+	return lang == "" || slices.Contains(TunedLanguages(), lang)
+}
+
 func FastConfig() SorterConfig {
 	config := DefaultConfig()
 	config.MaxPermutations = 100000     // Reduced for speed

@@ -103,6 +103,12 @@ func main() {
 		log.WithError(err).Fatal("failed to parse request")
 	}
 
+	// A mistyped language ("japanse") would otherwise silently sort with
+	// the Latin-script defaults.
+	if !sorters.IsTunedLanguage(*langName) {
+		fmt.Fprintf(os.Stderr, "Warning: no tuned configuration for language %q; using defaults (tuned: %s)\n",
+			*langName, strings.Join(sorters.TunedLanguages(), ", "))
+	}
 	config := sorters.ConfigForLanguage(*langName)
 
 	if *columnJumpPenalty > 0 {

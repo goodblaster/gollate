@@ -107,39 +107,27 @@ func NormalizeText(s string) string {
 	// Decode Unicode escape sequences.
 	s = decodeUnicodeEscapes(s)
 
-	// Extract URLs before processing.
-	urls := urlRe.FindAllString(s, -1)
-	urlPlaceholders := make(map[string]string)
-	for i, url := range urls {
-		// Use lower-case placeholder keys.
-		placeholder := fmt.Sprintf("urlplaceholder%d", i)
-		urlPlaceholders[placeholder] = url
-		s = strings.Replace(s, url, placeholder, -1)
-	}
-
-	// Extract email addresses before processing.
-	emails := emailRe.FindAllString(s, -1)
-	emailPlaceholders := make(map[string]string)
-	for i, email := range emails {
-		placeholder := fmt.Sprintf("emailplaceholder%d", i)
+	// Protect URLs, email addresses and phone numbers from the punctuation
+	// handling below by swapping each for a placeholder, restored later.
+	// Each match gets its own numbered placeholder in a single pass; the
+	// trailing "z" keeps "…1z" from being a prefix of "…10z", which used to
+	// corrupt strings with ten or more of one kind (restoration ran in map
+	// order, so the damage was also random).
+	var urls, emails, phones []string
+	s = urlRe.ReplaceAllStringFunc(s, func(url string) string {
+		urls = append(urls, url)
+		return fmt.Sprintf("urlplaceholder%dz", len(urls)-1)
+	})
+	s = emailRe.ReplaceAllStringFunc(s, func(email string) string {
 		// Wrap with markers to protect underscores.
-		emailPlaceholders[placeholder] = "qzemailinitqz" + strings.ToLower(email) + "qzemailendqz"
-		s = strings.Replace(s, email, placeholder, -1)
-	}
-
-	// Extract phone numbers before processing.
-	phones := phoneRe.FindAllString(s, -1)
-	phonePlaceholders := make(map[string]string)
-	for i, phone := range phones {
-		placeholder := fmt.Sprintf("phoneplaceholder%d", i)
-		transformed := phone
-		if strings.HasPrefix(transformed, "+") {
-			transformed = transformed[1:]
-		}
-		transformed = strings.ReplaceAll(transformed, "-", "_")
-		phonePlaceholders[placeholder] = "qzphoneinitqz" + transformed + "qzphoneendqz"
-		s = strings.Replace(s, phone, placeholder, -1)
-	}
+		emails = append(emails, "qzemailinitqz"+strings.ToLower(email)+"qzemailendqz")
+		return fmt.Sprintf("emailplaceholder%dz", len(emails)-1)
+	})
+	s = phoneRe.ReplaceAllStringFunc(s, func(phone string) string {
+		transformed := strings.ReplaceAll(strings.TrimPrefix(phone, "+"), "-", "_")
+		phones = append(phones, "qzphoneinitqz"+transformed+"qzphoneendqz")
+		return fmt.Sprintf("phoneplaceholder%dz", len(phones)-1)
+	})
 
 	// Normalize Unicode to ASCII.
 	s = normalizeToASCII(s)
@@ -188,11 +176,11 @@ func NormalizeText(s string) string {
 	result = whitespaceRunRe.ReplaceAllString(result, " ")
 
 	// Restore phone and email placeholders BEFORE token post-processing.
-	for placeholder, val := range phonePlaceholders {
-		result = strings.Replace(result, placeholder, val, -1)
+	for i, val := range phones {
+		result = strings.Replace(result, fmt.Sprintf("phoneplaceholder%dz", i), val, -1)
 	}
-	for placeholder, val := range emailPlaceholders {
-		result = strings.Replace(result, placeholder, val, -1)
+	for i, val := range emails {
+		result = strings.Replace(result, fmt.Sprintf("emailplaceholder%dz", i), val, -1)
 	}
 
 	// Post-process tokens:
@@ -222,8 +210,8 @@ func NormalizeText(s string) string {
 	result = whitespaceRunRe.ReplaceAllString(result, " ")
 
 	// Restore URL placeholders AFTER token post-processing.
-	for placeholder, url := range urlPlaceholders {
-		result = strings.Replace(result, placeholder, url, -1)
+	for i, url := range urls {
+		result = strings.Replace(result, fmt.Sprintf("urlplaceholder%dz", i), url, -1)
 	}
 
 	return result
