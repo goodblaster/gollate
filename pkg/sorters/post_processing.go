@@ -59,7 +59,8 @@ func (s *Sorter) postSortBlocks() []Block {
 }
 
 // groupAndSortByCanonicalLine groups all sentences by their canonical line
-// and sorts sentences within each group spatially (top to bottom).
+// and orders the sentences within each group by where their text falls in
+// that line, falling back to page position (top to bottom) when unknown.
 // This ensures that sentences from the same canonical paragraph stay together
 // in their natural reading order, even when some are found via pathfinding
 // and others are assembled from leftovers.
@@ -71,38 +72,16 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		topPosition  float64 // primary reading-order key (see sentencePos)
 		tiebreak     float64 // within-column order for vertical text
 		isBlank      bool
+
+		// offset is where this sentence's text starts within its canonical
+		// line (in space-stripped normalized characters), or -1 if unknown.
+		// It orders the pieces of one canonical paragraph. Page position
+		// cannot: a paragraph that wraps into the next column continues
+		// ABOVE where it left off.
+		offset int
 	}
 
 	var allSentences []sentenceInfo
-
-	// Found sentences carry their canonical line identity from assembly time.
-	for _, sentence := range foundSentences {
-		if sentence.isBlank {
-			allSentences = append(allSentences, sentenceInfo{
-				blocks:       []Block{},
-				originalLine: sentence.originalLine,
-				topPosition:  blankSentencePos, // Blanks sort first within their group
-				isBlank:      true,
-			})
-			continue
-		}
-
-		// Ordering key from the first block, along the reading order's
-		// axis (top for horizontal text, column position for vertical).
-		topPos, tie := 1.0, 0.0
-		if len(sentence.blocks) > 0 {
-			topPos = sentencePos(sentence.blocks[0], s.config.ReadingOrder)
-			tie = sentencePosTiebreak(sentence.blocks[0], s.config.ReadingOrder)
-		}
-
-		allSentences = append(allSentences, sentenceInfo{
-			blocks:       sentence.blocks,
-			originalLine: sentence.originalLine,
-			topPosition:  topPos,
-			tiebreak:     tie,
-			isBlank:      false,
-		})
-	}
 
 	// Create a deduplicated map of canonical lines by OriginalLine
 	// For split canonical lines, keep only the longest version for matching
@@ -129,8 +108,42 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 	}
 	sort.Ints(lineNumbers)
 	canonicalNoSpaces := make([]string, len(lineNumbers))
+	noSpacesByLine := make(map[int]string, len(lineNumbers))
 	for i, lineNum := range lineNumbers {
 		canonicalNoSpaces[i] = strings.ReplaceAll(canonicalByOriginalLine[lineNum].Normalized, " ", "")
+		noSpacesByLine[lineNum] = canonicalNoSpaces[i]
+	}
+
+	// Found sentences carry their canonical line identity from assembly time.
+	for _, sentence := range foundSentences {
+		if sentence.isBlank {
+			allSentences = append(allSentences, sentenceInfo{
+				blocks:       []Block{},
+				originalLine: sentence.originalLine,
+				topPosition:  blankSentencePos, // Blanks sort first within their group
+				isBlank:      true,
+				offset:       -1,
+			})
+			continue
+		}
+
+		// Ordering key from the first block, along the reading order's
+		// axis (top for horizontal text, column position for vertical).
+		topPos, tie := 1.0, 0.0
+		if len(sentence.blocks) > 0 {
+			topPos = sentencePos(sentence.blocks[0], s.config.ReadingOrder)
+			tie = sentencePosTiebreak(sentence.blocks[0], s.config.ReadingOrder)
+		}
+
+		allSentences = append(allSentences, sentenceInfo{
+			blocks:       sentence.blocks,
+			originalLine: sentence.originalLine,
+			topPosition:  topPos,
+			tiebreak:     tie,
+			isBlank:      false,
+			offset: strings.Index(noSpacesByLine[sentence.originalLine],
+				strings.ReplaceAll(sentence.normalized, " ", "")),
+		})
 	}
 
 	// Add leftover sentences - match them to canonical lines by text content
@@ -161,6 +174,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		// Match against the deduplicated canonical lines (longest version of each OriginalLine)
 		bestMatch := -1
 		bestOverlap := 0.0
+		bestOffset := -1
 		for i, lineNum := range lineNumbers {
 			normalizedNoSpaces := canonicalNoSpaces[i]
 
@@ -181,6 +195,9 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 				if overlap > bestOverlap {
 					bestOverlap = overlap
 					bestMatch = lineNum
+					// Where the sentence sits inside the line (0 when the
+					// sentence swallows the whole line).
+					bestOffset = max(0, strings.Index(normalizedNoSpaces, normalizedSentenceNoSpaces))
 				}
 			}
 		}
@@ -195,6 +212,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			topPosition:  topPos,
 			tiebreak:     tie,
 			isBlank:      false,
+			offset:       bestOffset,
 		})
 	}
 
@@ -242,6 +260,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 							originalLine: line.OriginalLine,
 							topPosition:  blankSentencePos,
 							isBlank:      true,
+							offset:       -1,
 						}}
 					}
 				}
@@ -256,6 +275,11 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 			// Blank lines first
 			if group[i].isBlank != group[j].isBlank {
 				return group[i].isBlank
+			}
+			// Then by where the text falls in the canonical line, when
+			// both are known.
+			if group[i].offset >= 0 && group[j].offset >= 0 && group[i].offset != group[j].offset {
+				return group[i].offset < group[j].offset
 			}
 			// Then by position, with the within-column tiebreak for
 			// vertical text (equal keys were previously left to the
@@ -342,6 +366,7 @@ type assembledSentence struct {
 	originalLine int
 	isBlank      bool
 	blocks       []Block
+	normalized   string // the matched fragment's canonical text
 }
 
 // assembleFoundPaths converts found paths into block lines.
@@ -375,6 +400,7 @@ func (s *Sorter) assembleFoundPaths(lines []Line) []assembledSentence {
 		assembledLines = append(assembledLines, assembledSentence{
 			originalLine: line.OriginalLine,
 			blocks:       blockLine,
+			normalized:   line.Normalized,
 		})
 	}
 

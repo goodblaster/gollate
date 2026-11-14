@@ -1,8 +1,10 @@
 package sorters
 
 import (
+	"strings"
 	"testing"
 
+	"github.com/goodblaster/gollate/pkg/logger"
 	"github.com/goodblaster/gollate/pkg/ocr"
 )
 
@@ -371,4 +373,48 @@ func TestNewspaperColumnDetection(t *testing.T) {
 			t.Error("Small gap should not trigger HorizontalRTL_TTB column detection")
 		}
 	})
+}
+
+// A paragraph that wraps into the next column continues ABOVE where it left
+// off, so the pieces of a split canonical line must be ordered by where
+// their text falls in the line, not by page position.
+func TestSplitParagraphAcrossColumnsKeepsCanonicalOrder(t *testing.T) {
+	word := func(text string, left, top float64) Block {
+		return Block{
+			Text:        text,
+			Extractor:   "test",
+			PageWidth:   1000,
+			PageHeight:  1000,
+			BoundingBox: ocr.BoundingBox{Left: left, Top: top, Width: 0.04, Height: 0.02},
+		}
+	}
+	// Column 1 ends at the bottom of the page with the first sentence;
+	// column 2 starts at the top with the second. Three words are absent
+	// from OCR (more than the hole budget), forcing the paragraph to be
+	// split around them and matched in two pieces.
+	var blocks []Block
+	for i, w := range []string{"alpha", "bravo", "charlie", "delta"} {
+		blocks = append(blocks, word(w, 0.10+0.05*float64(i), 0.90))
+	}
+	for i, w := range []string{"echo", "foxtrot", "golf", "hotel"} {
+		blocks = append(blocks, word(w, 0.60+0.05*float64(i), 0.10))
+	}
+	for i := range blocks {
+		blocks[i].Index = i
+	}
+
+	canonical := []string{"alpha bravo charlie delta xray yankee zulu echo foxtrot golf hotel"}
+	sorter := NewOcrSorterWithConfig(blocks, canonical, logger.Noop{}, ConfigForLanguage("english"))
+	if _, err := sorter.Sort(); err != nil {
+		t.Fatal(err)
+	}
+	got := strings.Join(sorter.SortedLines(), " ")
+	got = strings.Join(strings.Fields(got), " ")
+	want := "alpha bravo charlie delta echo foxtrot golf hotel"
+	if got != want {
+		t.Errorf("got %q, want %q", got, want)
+	}
+	if found := sorter.Metrics().LinesFound; found != 2 {
+		t.Errorf("expected both pieces to be matched by pathfinding, got LinesFound=%d", found)
+	}
 }
