@@ -14,6 +14,8 @@
 #   *-noiseNN   seeded misreads injected into the Apple pages of a base fixture
 #   *-drift     the base fixture's pages against a canonical text from a
 #               "different edition" (see make_drift below)
+#   *-wrapped   the base fixture's pages against a hard-wrapped canonical text
+#   *-lowres    the base PDF rasterized at 72 dpi and OCR'd again
 #
 # The suite (go test ./integration -run TestMultipage) reads only the
 # committed JSON and canonical.txt.
@@ -166,3 +168,45 @@ PY
   echo "== $1-drift (derived)"
 }
 make_drift english-book
+
+# --- Derived: hard-wrapped canonical --------------------------------------
+# The same pages against a canonical text wrapped at 70 columns with blank
+# lines between paragraphs - the shape of a plain-text transcription. Every
+# canonical "line" is then a visual line of the transcription, not a
+# paragraph, and its breaks fall nowhere near the page's own line breaks.
+make_wrapped() {
+  local base="$1" dir="$OUT/$1-wrapped"
+  rm -rf "$dir"; mkdir -p "$dir"
+  cp "$OUT/$base"/*-[0-9]*.json "$OUT/$base/info.json" "$dir/"
+  python3 - "$OUT/$base/canonical.txt" "$dir/canonical.txt" <<'PY'
+import sys, textwrap
+out = []
+for line in open(sys.argv[1]).read().rstrip("\n").split("\n"):
+    out.extend(textwrap.wrap(line, 70) if line.strip() else [""])
+open(sys.argv[2], "w").write("\n".join(out) + "\n")
+PY
+  echo "== $1-wrapped (derived)"
+}
+make_wrapped english-book
+
+# --- Derived: low-resolution scan ----------------------------------------
+# The same PDF rasterized at 1x (72 dpi) instead of 2x and OCR'd again:
+# real recognition errors on small type, rather than injected ones.
+make_lowres() {
+  local base="$1" dir="$OUT/$1-lowres"
+  rm -rf "$dir"; mkdir -p "$dir"
+  cp "$OUT/$base/canonical.txt" "$dir/"
+  scripts/pdf-to-png.sh "$OUT/$base/document.pdf" "$dir/page.png" 1.0 >/dev/null
+  local sizes=() n=1
+  while [ -f "$dir/page-$n.png" ]; do
+    bin/ocr-util "$dir/page-$n.png" >/dev/null && mv "$dir/page-$n-ocr.json" "$dir/apple-$n.json"
+    bin/tesseract-util "$dir/page-$n.png" >/dev/null && mv "$dir/page-$n-ocr.json" "$dir/tesseract-$n.json"
+    w=$(sips -g pixelWidth "$dir/page-$n.png" | awk '/pixelWidth/{print $2}')
+    h=$(sips -g pixelHeight "$dir/page-$n.png" | awk '/pixelHeight/{print $2}')
+    sizes+=("{\"width\": $w, \"height\": $h}")
+    n=$((n + 1))
+  done
+  (IFS=,; printf '{\n  "language": "english",\n  "pages": [%s]\n}\n' "${sizes[*]}") > "$dir/info.json"
+  echo "== $1-lowres (derived)"
+}
+make_lowres english-book

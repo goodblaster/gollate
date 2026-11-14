@@ -158,3 +158,51 @@ func TestSegmentDegenerate(t *testing.T) {
 		t.Errorf("got page %d, want 1", got[0].Page)
 	}
 }
+
+// A short tail of common words, with a misread beside the break, defeats
+// bag coverage; the sequence of tokens at the page edges still shows it.
+func TestSegmentStraddleBySequence(t *testing.T) {
+	lines := tokLists(
+		"alpha bravo charlie delta echo",
+		"she did not know the way so she pulled a chair to the window and waited for the ship",
+		"",
+	)
+	pages := tokLists(
+		// "chair" misread on the head page; every tail word also occurs on it.
+		"alpha bravo charlie delta echo the window and for ship waited she did not know the way so she pulled a chalr to",
+		"the window and waited for the ship",
+	)
+	got := Segment(lines, pages)
+	if !got[1].Straddle || got[1].Page != 0 || got[1].Cut != 12 {
+		t.Fatalf("line 1 = %+v, want straddle from page 0 with cut 12", got[1])
+	}
+}
+
+// One word alone at the top of the next page.
+func TestSegmentSingleWordCarriedOver(t *testing.T) {
+	lines := tokLists(
+		"alpha bravo charlie delta echo foxtrot",
+		"golf hotel india juliet kilo",
+	)
+	pages := tokLists(
+		"alpha bravo charlie delta echo",
+		"foxtrot golf hotel india juliet kilo",
+	)
+	got := Segment(lines, pages)
+	if !got[0].Straddle || got[0].Cut != 5 {
+		t.Fatalf("line 0 = %+v, want straddle with cut 5", got[0])
+	}
+	if got[1].Straddle || got[1].Page != 1 {
+		t.Errorf("line 1 = %+v", got[1])
+	}
+
+	// Not a straddle: the line is complete on its page and the next page
+	// merely begins with the same word it ends with.
+	lines = tokLists("alpha bravo charlie delta echo", "echo foxtrot golf hotel india")
+	pages = tokLists("alpha bravo charlie delta echo", "echo foxtrot golf hotel india")
+	for i, a := range Segment(lines, pages) {
+		if a.Straddle {
+			t.Errorf("line %d wrongly marked as straddling: %+v", i, a)
+		}
+	}
+}

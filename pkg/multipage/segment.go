@@ -54,10 +54,13 @@ const (
 	// the tokens just before the cut should be consecutive on the head
 	// page and the tokens just after it consecutive on the tail page.
 	seamGram = 3
+)
 
-	// bandThreshold and bandWidth bound the work on long documents: past
-	// this many line-page pairs, each line is only scored against pages
-	// within bandWidth of its expected position.
+// bandThreshold and bandWidth bound the work on long documents: past this
+// many line-page pairs, each line is only scored against pages within
+// bandWidth of its expected position. (Variables so tests can force the
+// banded path on a small document.)
+var (
 	bandThreshold = 4_000_000
 	bandWidth     = 8
 )
@@ -315,10 +318,13 @@ func Segment(lines, pages [][]string) []Assignment {
 	trySequence := func(i, head int) {
 		line := lines[i]
 		n := len(line)
-		if head < 0 || head+1 >= len(pages) || n < 2*straddleMinTokens || out[i].Straddle {
+		if head < 0 || head+1 >= len(pages) || n < 3 || out[i].Straddle {
 			return
 		}
 		prevPage, nextPage := pages[head], pages[head+1]
+		if len(prevPage) == 0 || len(nextPage) == 0 {
+			return
+		}
 		enough := func(matched, length int) bool {
 			if length < 4 {
 				return matched == length
@@ -326,7 +332,16 @@ func Segment(lines, pages [][]string) []Assignment {
 			return matched*4 >= length*3
 		}
 		bestCut, bestMatched := -1, 0
-		for k := straddleMinTokens; k <= n-straddleMinTokens; k++ {
+		for k := 1; k <= n-1; k++ {
+			// A single word carried over the break (the last word of a
+			// paragraph alone at the top of the next page, or the first
+			// alone at the foot of this one) is too little to match by
+			// itself. Accept it only when the pages break exactly there.
+			if k < straddleMinTokens || n-k < straddleMinTokens {
+				if prevPage[len(prevPage)-1] != line[k-1] || nextPage[0] != line[k] {
+					continue
+				}
+			}
 			headWindow := prevPage[max(0, len(prevPage)-k-2):]
 			tailWindow := nextPage[:min(len(nextPage), n-k+2)]
 			headMatched := lcsCount(line[:k], headWindow)
