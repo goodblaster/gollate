@@ -336,6 +336,7 @@ func (s *Sorter) recurse(chain [][]Block, previousBlock Block, path Path, chainP
 	s.metrics.TotalPermutationsExplored++
 	if s.perm > maxPermutations {
 		s.logger.Debug("Permutation limit reached")
+		s.limitHit = true
 		return false
 	}
 

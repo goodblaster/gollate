@@ -29,6 +29,7 @@ type Sorter struct {
 	shortest       float64       // shortest path found so far
 	elapsed        time.Duration // time it took to sort
 	perm           int           // current permutation count
+	limitHit       bool          // current search exhausted its permutation budget
 	logger         logger.Logger // logger instance
 }
 

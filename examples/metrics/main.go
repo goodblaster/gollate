@@ -102,9 +102,9 @@ func main() {
 	fmt.Printf("  Passes completed:       %d / %d (%.1f%%)\n",
 		metrics.PassesCompleted, config.MaxPasses,
 		float64(metrics.PassesCompleted)/float64(config.MaxPasses)*100)
-	fmt.Printf("  Permutations explored:  %d / %d (%.1f%%)\n",
-		metrics.TotalPermutationsExplored, config.MaxPermutations,
-		float64(metrics.TotalPermutationsExplored)/float64(config.MaxPermutations)*100)
+	fmt.Printf("  Permutations explored:  %d (budget %d per line)\n",
+		metrics.TotalPermutationsExplored, config.PermutationLimit())
+	fmt.Printf("  Searches cut short:     %d\n", metrics.PermutationLimitHits)
 	fmt.Printf("  Time per pass:          %v\n",
 		metrics.ElapsedTime/time.Duration(metrics.PassesCompleted))
 	fmt.Println()
@@ -130,8 +130,8 @@ func main() {
 
 	// Recommendations based on metrics
 	fmt.Println("Analysis:")
-	if float64(metrics.TotalPermutationsExplored)/float64(config.MaxPermutations) > 0.8 {
-		fmt.Println("  ⚠ High permutation usage - consider increasing MaxPermutations")
+	if metrics.PermutationLimitHits > 0 {
+		fmt.Printf("  ⚠ %d line search(es) hit the budget - consider increasing PermutationsPerPass\n", metrics.PermutationLimitHits)
 	} else {
 		fmt.Println("  ✓ Permutation limit is adequate")
 	}
