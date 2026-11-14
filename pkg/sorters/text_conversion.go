@@ -38,6 +38,10 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 	return lines
 }
 
+// trailingInitialismRe matches text ending in an initialism: one or more
+// capital letters each followed by a period (e.g. "U.S.", "A.M.").
+var trailingInitialismRe = regexp.MustCompile(`\b[A-Z]\.([A-Z]\.)*$`)
+
 // endsWithSentencePunctuation checks if text ends with sentence-ending punctuation.
 //
 // Supports both Western and CJK (Chinese/Japanese/Korean) punctuation.
@@ -75,8 +79,7 @@ func endsWithSentencePunctuation(text string) bool {
 
 	// Exclude common initialisms/abbreviations
 	// Pattern: One or more capital letters followed by periods (e.g., "U.S.", "Ph.D.", "A.M.")
-	initialismPattern := regexp.MustCompile(`\b[A-Z]\.([A-Z]\.)*$`)
-	if initialismPattern.MatchString(text) {
+	if trailingInitialismRe.MatchString(text) {
 		return false
 	}
 

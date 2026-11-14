@@ -117,6 +117,22 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		}
 	}
 
+	// Candidate canonical lines in ascending OriginalLine order, so overlap
+	// ties resolve to the earliest line in the document (deterministic, and
+	// consistent with human reading order when placement is ambiguous).
+	// Built once: the space-stripped text is reused for every leftover
+	// sentence. (Line.Normalized is NormalizeText(OriginalText) by
+	// construction - see ParseLines and splitLine.)
+	lineNumbers := make([]int, 0, len(canonicalByOriginalLine))
+	for lineNum := range canonicalByOriginalLine {
+		lineNumbers = append(lineNumbers, lineNum)
+	}
+	sort.Ints(lineNumbers)
+	canonicalNoSpaces := make([]string, len(lineNumbers))
+	for i, lineNum := range lineNumbers {
+		canonicalNoSpaces[i] = strings.ReplaceAll(canonicalByOriginalLine[lineNum].Normalized, " ", "")
+	}
+
 	// Add leftover sentences - match them to canonical lines by text content
 	for _, sentence := range leftoverSentences {
 		if len(sentence) == 0 {
@@ -143,21 +159,10 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 
 		// Find the canonical line with the best match (highest overlap)
 		// Match against the deduplicated canonical lines (longest version of each OriginalLine)
-		// Iterate in ascending OriginalLine order so that overlap ties resolve
-		// to the earliest line in the document (deterministic, and consistent
-		// with human reading order when placement is ambiguous).
-		lineNumbers := make([]int, 0, len(canonicalByOriginalLine))
-		for lineNum := range canonicalByOriginalLine {
-			lineNumbers = append(lineNumbers, lineNum)
-		}
-		sort.Ints(lineNumbers)
-
 		bestMatch := -1
 		bestOverlap := 0.0
-		for _, lineNum := range lineNumbers {
-			line := canonicalByOriginalLine[lineNum]
-			normalized := NormalizeText(line.OriginalText)
-			normalizedNoSpaces := strings.ReplaceAll(normalized, " ", "")
+		for i, lineNum := range lineNumbers {
+			normalizedNoSpaces := canonicalNoSpaces[i]
 
 			// Calculate overlap: how much of the sentence is in this canonical line
 			// and how much of the canonical line is in this sentence
@@ -175,7 +180,7 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 
 				if overlap > bestOverlap {
 					bestOverlap = overlap
-					bestMatch = line.OriginalLine
+					bestMatch = lineNum
 				}
 			}
 		}
@@ -429,6 +434,14 @@ func (s *Sorter) splitLeftoversByCanonicalLines(sentences [][]Block) [][]Block {
 		return sentences // No unfound lines to match
 	}
 
+	// Space-stripped canonical text, computed once and reused for every
+	// sentence (Line.Normalized is NormalizeText(OriginalText) by
+	// construction).
+	unfoundNoSpaces := make([]string, len(unfoundLines))
+	for i, line := range unfoundLines {
+		unfoundNoSpaces[i] = strings.ReplaceAll(line.Normalized, " ", "")
+	}
+
 	var result [][]Block
 	for _, sentence := range sentences {
 		// Extract full text from this sentence
@@ -455,9 +468,9 @@ func (s *Sorter) splitLeftoversByCanonicalLines(sentences [][]Block) [][]Block {
 		// Remove all spaces for matching (handles cases like "1857 年" vs "1857年")
 		normalizedSentenceNoSpaces := strings.ReplaceAll(normalizedSentence, " ", "")
 
-		for _, canLine := range unfoundLines {
-			normalized := NormalizeText(canLine.OriginalText)
-			normalizedNoSpaces := strings.ReplaceAll(normalized, " ", "")
+		for i, canLine := range unfoundLines {
+			normalized := canLine.Normalized
+			normalizedNoSpaces := unfoundNoSpaces[i]
 
 			// Check if this canonical line is contained in the sentence
 			if startIdx := strings.Index(normalizedSentenceNoSpaces, normalizedNoSpaces); startIdx != -1 {
@@ -512,7 +525,7 @@ func (s *Sorter) splitLeftoversByCanonicalLines(sentences [][]Block) [][]Block {
 			// Calculate coverage (what % of sentence is matched canonical text)
 			totalMatchedLength := 0
 			for _, m := range matchedLines {
-				totalMatchedLength += len(strings.ReplaceAll(NormalizeText(m.line.OriginalText), " ", ""))
+				totalMatchedLength += len(strings.ReplaceAll(m.line.Normalized, " ", ""))
 			}
 			sentenceLength := len(normalizedSentenceNoSpaces)
 			coverage := float64(totalMatchedLength) / float64(sentenceLength)

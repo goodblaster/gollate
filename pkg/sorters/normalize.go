@@ -7,15 +7,27 @@ import (
 	"strings"
 	"unicode"
 
-	"golang.org/x/text/runes"
-	"golang.org/x/text/transform"
 	"golang.org/x/text/unicode/norm"
+)
+
+// Patterns and tables used by NormalizeText. Compiled once: NormalizeText
+// runs for every OCR block and canonical line (and repeatedly during
+// post-processing), and per-call compilation used to account for ~94% of
+// all allocation in the integration suite.
+var (
+	unicodeEscapeRe = regexp.MustCompile(`\\u([0-9a-fA-F]{4})`)
+	urlRe           = regexp.MustCompile(`https?://[^\s]+`)
+	emailRe         = regexp.MustCompile(`\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b`)
+	phoneRe         = regexp.MustCompile(`\+?[0-9]+(?:-[0-9]+)+`)
+	whitespaceRunRe = regexp.MustCompile(`\s+`)
 )
 
 // decodeUnicodeEscapes converts escaped Unicode sequences (e.g., \u2019) to actual characters.
 func decodeUnicodeEscapes(s string) string {
-	re := regexp.MustCompile(`\\u([0-9a-fA-F]{4})`)
-	return re.ReplaceAllStringFunc(s, func(match string) string {
+	if !strings.Contains(s, `\u`) {
+		return s
+	}
+	return unicodeEscapeRe.ReplaceAllStringFunc(s, func(match string) string {
 		hex := match[2:]
 		code, err := strconv.ParseInt(hex, 16, 32)
 		if err != nil {
@@ -32,8 +44,15 @@ func normalizeToASCII(s string) string {
 	s = strings.ReplaceAll(s, "ß", "ss")
 	s = strings.ReplaceAll(s, "ẞ", "SS")
 
-	t := transform.Chain(norm.NFD, runes.Remove(runes.In(unicode.Mn)), norm.NFC)
-	result, _, _ := transform.String(t, s)
+	// Strip combining marks: decompose, drop Mn, recompose. Stateless
+	// (safe for concurrent sorters) and equivalent to the transform.Chain
+	// this replaced.
+	result := norm.NFC.String(strings.Map(func(r rune) rune {
+		if unicode.Is(unicode.Mn, r) {
+			return -1
+		}
+		return r
+	}, norm.NFD.String(s)))
 	// Typographic apostrophe (U+2019) -> ASCII, so "Apple's" normalizes the
 	// same way regardless of which apostrophe the source used. (This line
 	// historically replaced ' with itself - a no-op - which made curly-quote
@@ -45,6 +64,41 @@ func normalizeToASCII(s string) string {
 // initialismRe matches any occurrence of two or more letter+period groups.
 var initialismRe = regexp.MustCompile(`((?:[A-Za-z]\.){2,})`)
 
+// replacements are the characters NormalizeText turns into spaces.
+// '_' is handled specially in NormalizeText to protect initialisms/emails/phones.
+// Includes Western and CJK (Chinese/Japanese/Korean) punctuation for language-agnostic processing
+var replacements = map[rune]struct{}{
+	// Western punctuation
+	'-': {}, '.': {}, ',': {}, ':': {}, ';': {}, '!': {}, '?': {},
+	'\u201C': {}, '\u201D': {}, '\u2018': {}, '\u2019': {}, '"': {}, '\u2014': {}, '\u2013': {},
+	'\u2026': {}, '\u00B7': {}, '\u2022': {}, '\u00AB': {}, '\u00BB': {}, '\u2012': {},
+	'\u2015': {}, '\u2011': {}, '(': {}, ')': {}, '[': {}, ']': {}, '{': {}, '}': {},
+	'|': {}, '@': {}, '#': {}, '*': {}, '&': {}, '+': {}, '=': {},
+	'~': {}, '^': {}, '`': {}, '\u00B0': {}, '\u00A9': {}, '\u00AE': {}, '\u2122': {},
+	'\u00BF': {}, '\u00A1': {},
+
+	// CJK punctuation (Chinese/Japanese/Korean)
+	'\u3002': {}, // 。 Ideographic full stop
+	'\uFF0C': {}, // ， Fullwidth comma
+	'\uFF01': {}, // ！ Fullwidth exclamation mark
+	'\uFF1F': {}, // ？ Fullwidth question mark
+	'\uFF1B': {}, // ； Fullwidth semicolon
+	'\uFF1A': {}, // ： Fullwidth colon
+	'\u3001': {}, // 、 Ideographic comma
+	'\uFF08': {}, // （ Fullwidth left parenthesis
+	'\uFF09': {}, // ） Fullwidth right parenthesis
+	'\u300A': {}, // 《 Left double angle bracket
+	'\u300B': {}, // 》 Right double angle bracket
+	'\u300C': {}, // 「 Left corner bracket
+	'\u300D': {}, // 」 Right corner bracket
+	'\u300E': {}, // 『 Left white corner bracket
+	'\u300F': {}, // 』 Right white corner bracket
+	'\u3010': {}, // 【 Left black lenticular bracket
+	'\u3011': {}, // 】 Right black lenticular bracket
+	'\uFF5B': {}, // ｛ Fullwidth left curly bracket
+	'\uFF5D': {}, // ｝ Fullwidth right curly bracket
+}
+
 // NormalizeText performs text normalization but preserves URLs, email addresses,
 // and phone numbers. It converts initialisms so that their periods become underscores,
 // phone numbers like "+1-800-425-1267" become "1_800_425_1267", and email addresses are
@@ -54,8 +108,7 @@ func NormalizeText(s string) string {
 	s = decodeUnicodeEscapes(s)
 
 	// Extract URLs before processing.
-	urlPattern := regexp.MustCompile(`https?://[^\s]+`)
-	urls := urlPattern.FindAllString(s, -1)
+	urls := urlRe.FindAllString(s, -1)
 	urlPlaceholders := make(map[string]string)
 	for i, url := range urls {
 		// Use lower-case placeholder keys.
@@ -65,8 +118,7 @@ func NormalizeText(s string) string {
 	}
 
 	// Extract email addresses before processing.
-	emailPattern := regexp.MustCompile(`\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b`)
-	emails := emailPattern.FindAllString(s, -1)
+	emails := emailRe.FindAllString(s, -1)
 	emailPlaceholders := make(map[string]string)
 	for i, email := range emails {
 		placeholder := fmt.Sprintf("emailplaceholder%d", i)
@@ -76,8 +128,7 @@ func NormalizeText(s string) string {
 	}
 
 	// Extract phone numbers before processing.
-	phonePattern := regexp.MustCompile(`\+?[0-9]+(?:-[0-9]+)+`)
-	phones := phonePattern.FindAllString(s, -1)
+	phones := phoneRe.FindAllString(s, -1)
 	phonePlaceholders := make(map[string]string)
 	for i, phone := range phones {
 		placeholder := fmt.Sprintf("phoneplaceholder%d", i)
@@ -107,41 +158,6 @@ func NormalizeText(s string) string {
 		return "qzinitqz" + converted + "qzendqz"
 	})
 
-	// Define characters to be replaced with spaces.
-	// Notice that '_' is handled specially below to protect initialisms/emails/phones.
-	// Includes Western and CJK (Chinese/Japanese/Korean) punctuation for language-agnostic processing
-	replacements := map[rune]struct{}{
-		// Western punctuation
-		'-': {}, '.': {}, ',': {}, ':': {}, ';': {}, '!': {}, '?': {},
-		'\u201C': {}, '\u201D': {}, '\u2018': {}, '\u2019': {}, '"': {}, '\u2014': {}, '\u2013': {},
-		'\u2026': {}, '\u00B7': {}, '\u2022': {}, '\u00AB': {}, '\u00BB': {}, '\u2012': {},
-		'\u2015': {}, '\u2011': {}, '(': {}, ')': {}, '[': {}, ']': {}, '{': {}, '}': {},
-		'|': {}, '@': {}, '#': {}, '*': {}, '&': {}, '+': {}, '=': {},
-		'~': {}, '^': {}, '`': {}, '\u00B0': {}, '\u00A9': {}, '\u00AE': {}, '\u2122': {},
-		'\u00BF': {}, '\u00A1': {},
-
-		// CJK punctuation (Chinese/Japanese/Korean)
-		'\u3002': {}, // 。 Ideographic full stop
-		'\uFF0C': {}, // ， Fullwidth comma
-		'\uFF01': {}, // ！ Fullwidth exclamation mark
-		'\uFF1F': {}, // ？ Fullwidth question mark
-		'\uFF1B': {}, // ； Fullwidth semicolon
-		'\uFF1A': {}, // ： Fullwidth colon
-		'\u3001': {}, // 、 Ideographic comma
-		'\uFF08': {}, // （ Fullwidth left parenthesis
-		'\uFF09': {}, // ） Fullwidth right parenthesis
-		'\u300A': {}, // 《 Left double angle bracket
-		'\u300B': {}, // 》 Right double angle bracket
-		'\u300C': {}, // 「 Left corner bracket
-		'\u300D': {}, // 」 Right corner bracket
-		'\u300E': {}, // 『 Left white corner bracket
-		'\u300F': {}, // 』 Right white corner bracket
-		'\u3010': {}, // 【 Left black lenticular bracket
-		'\u3011': {}, // 】 Right black lenticular bracket
-		'\uFF5B': {}, // ｛ Fullwidth left curly bracket
-		'\uFF5D': {}, // ｝ Fullwidth right curly bracket
-	}
-
 	var builder strings.Builder
 	inWord := false
 	for _, r := range s {
@@ -169,7 +185,7 @@ func NormalizeText(s string) string {
 
 	// Trim and collapse spaces.
 	result := strings.TrimSpace(builder.String())
-	result = regexp.MustCompile(`\s+`).ReplaceAllString(result, " ")
+	result = whitespaceRunRe.ReplaceAllString(result, " ")
 
 	// Restore phone and email placeholders BEFORE token post-processing.
 	for placeholder, val := range phonePlaceholders {
@@ -203,7 +219,7 @@ func NormalizeText(s string) string {
 	result = strings.Join(tokens, " ")
 
 	// Collapse any multiple spaces created by underscore conversion
-	result = regexp.MustCompile(`\s+`).ReplaceAllString(result, " ")
+	result = whitespaceRunRe.ReplaceAllString(result, " ")
 
 	// Restore URL placeholders AFTER token post-processing.
 	for placeholder, url := range urlPlaceholders {
