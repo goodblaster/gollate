@@ -126,7 +126,7 @@ func main() {
 	content := flag.String("content", "", "Input text file: paragraphs separated by blank lines (required)")
 	outDir := flag.String("out", "", "Output directory (required)")
 	lang := flag.String("lang", "english", "Language: english, spanish, chinese, japanese, arabic, hindi")
-	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book")
+	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book, pages (multi-page)")
 	direction := flag.String("direction", "", "Text direction: ltr, rtl, vertical (default: by language)")
 	title := flag.String("title", "", "Document title (default: by language)")
 	footer := flag.String("footer", "", "Footer text (default: derived from lang/layout)")
@@ -175,6 +175,11 @@ func main() {
 		s.Footer = fmt.Sprintf("OCR Test: %s (%s, %s)", s.Language, s.Layout, s.Direction)
 	}
 
+	if s.Layout == "pages" {
+		generatePages(s, *outDir, *timeout)
+		return
+	}
+
 	doc, canonical := buildDocument(s)
 
 	if err := os.MkdirAll(*outDir, 0755); err != nil {
@@ -212,6 +217,166 @@ func main() {
 	}
 
 	fmt.Printf("Generated %s: %d paragraphs, layout=%s direction=%s\n", *outDir, len(paragraphs), s.Layout, s.Direction)
+}
+
+// pageOptions are the knobs of the "pages" (multi-page) layout.
+var pageOptions struct {
+	columns  *int
+	paper    *string
+	heads    *string
+	recto    *string
+	chapters *bool
+}
+
+func init() {
+	pageOptions.columns = flag.Int("columns", 1, "pages layout: text columns per page")
+	pageOptions.paper = flag.String("paper", "5.5x8.5", "pages layout: trim size in inches, WxH")
+	pageOptions.heads = flag.String("heads", "same", "pages layout: running heads - same (title on every page), alternate (title on left pages, -recto text on right pages, none on the first), none")
+	pageOptions.recto = flag.String("recto", "", "pages layout: right-page running head for -heads alternate")
+	pageOptions.chapters = flag.Bool("chapters", false, "pages layout: start each '# Heading' paragraph of the content on a new page")
+}
+
+// cssString quotes text for use as a CSS content string.
+func cssString(text string) string {
+	return `"` + strings.NewReplacer(`\`, `\\`, `"`, `\"`).Replace(text) + `"`
+}
+
+// generatePages renders the "pages" layout: a multi-page document. Content
+// flows across as many pages as it needs, with running heads and page
+// numbers in the page margins.
+//
+// Running heads and page numbers are deliberately NOT in canonical.txt.
+// That is how real books relate to their canonical text - a transcription
+// carries the prose, never the page furniture - so these fixtures exercise
+// the furniture path instead of hiding it.
+//
+// Content paragraphs beginning "# " are headings: canonical lines of their
+// own, rendered as chapter titles (and with -chapters, each starting a new
+// page).
+//
+// Only document.pdf, document.html and canonical.txt are written; pages
+// are rasterized and extracted from the PDF by the generation script.
+func generatePages(s spec, outDir string, timeout time.Duration) {
+	var body strings.Builder
+	canonical := []string{s.Title, ""}
+	fmt.Fprintf(&body, "<h1>%s</h1>\n", html.EscapeString(s.Title))
+	for i, p := range s.Paragraphs {
+		if heading, ok := strings.CutPrefix(p, "# "); ok {
+			fmt.Fprintf(&body, "<h2>%s</h2>\n", html.EscapeString(heading))
+			p = heading
+		} else {
+			fmt.Fprintf(&body, "<p>%s</p>\n", html.EscapeString(p))
+		}
+		canonical = append(canonical, p)
+		if i < len(s.Paragraphs)-1 {
+			canonical = append(canonical, "")
+		}
+	}
+
+	font := fontStacks[baseLang(s.Language)]
+	if serif, ok := serifStacks[baseLang(s.Language)]; ok {
+		font = serif
+	}
+	width, height, ok := strings.Cut(*pageOptions.paper, "x")
+	if !ok {
+		fatal("bad -paper %q, want WxH in inches", *pageOptions.paper)
+	}
+
+	// Page furniture lives in CSS page-margin boxes.
+	marginFont := "font-family: " + font + "; font-size: 8pt;"
+	number := "content: counter(page); " + marginFont
+	var furniture string
+	switch *pageOptions.heads {
+	case "same":
+		furniture = fmt.Sprintf(`
+	@page { @top-center { content: %s; font-style: italic; %s } @bottom-center { %s } }`, cssString(s.Title), marginFont, number)
+	case "alternate":
+		// Title on left-hand pages, a second text on right-hand pages, page
+		// numbers at the outer corners, and a bare first page - how most
+		// printed books are actually set.
+		furniture = fmt.Sprintf(`
+	@page :left { @top-left { content: %s; font-style: italic; %s } @bottom-left { %s } }
+	@page :right { @top-right { content: %s; font-style: italic; %s } @bottom-right { %s } }
+	@page :first { @top-left { content: none } @top-right { content: none } }`,
+			cssString(s.Title), marginFont, number, cssString(*pageOptions.recto), marginFont, number)
+	case "none":
+	default:
+		fatal("bad -heads %q", *pageOptions.heads)
+	}
+
+	flow := ""
+	if *pageOptions.columns > 1 {
+		flow += fmt.Sprintf("\tbody { column-count: %d; column-gap: %dpt; }\n\th1 { column-span: all; }\n", *pageOptions.columns, s.ColumnGapPt)
+	}
+	if *pageOptions.chapters {
+		flow += "\th2 { break-before: page; }\n"
+	}
+	if s.Direction == "vertical" {
+		flow += "\tbody { writing-mode: vertical-rl; }\n\tp { text-indent: 1em; }\n"
+	}
+	dirAttr := "ltr"
+	if s.Direction == "rtl" {
+		dirAttr = "rtl"
+	}
+
+	doc := fmt.Sprintf(`<!DOCTYPE html>
+<html dir=%q lang=%q>
+<head><meta charset="UTF-8"><style>
+	@page { size: %sin %sin; margin: 0.85in 0.7in 0.8in 0.7in; }%s
+	html, body { margin: 0; padding: 0; }
+	body { font-family: %s; font-size: %dpt; line-height: %.2f; }
+	h1 { font-size: 1.5em; text-align: center; margin: 0.6in 0 0.35in 0; }
+	h2 { font-size: 1.15em; text-align: center; margin: 0.5in 0 0.25in 0; break-after: avoid; }
+	p { margin: 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-indent: 1.4em; orphans: 1; widows: 1; }
+	h1 + p, h2 + p { text-indent: 0; }
+%s</style></head>
+<body>
+%s</body>
+</html>
+`, dirAttr, htmlLang[baseLang(s.Language)], width, height, furniture, font, s.FontSizePt, s.LineSpacing, flow, body.String())
+
+	if err := os.MkdirAll(outDir, 0755); err != nil {
+		fatal("creating output dir: %v", err)
+	}
+	htmlPath := filepath.Join(outDir, "document.html")
+	if err := os.WriteFile(htmlPath, []byte(doc), 0644); err != nil {
+		fatal("writing HTML: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(outDir, "canonical.txt"), []byte(strings.Join(canonical, "\n")+"\n"), 0644); err != nil {
+		fatal("writing canonical: %v", err)
+	}
+
+	absPath, err := filepath.Abs(htmlPath)
+	if err != nil {
+		fatal("resolving path: %v", err)
+	}
+	ctx, cancel := chromedp.NewContext(context.Background())
+	defer cancel()
+	ctx, cancelT := context.WithTimeout(ctx, timeout)
+	defer cancelT()
+
+	var pdf []byte
+	err = chromedp.Run(ctx,
+		chromedp.Navigate("file://"+absPath),
+		chromedp.Evaluate(`document.fonts.ready.then(() => true)`, nil, func(p *runtime.EvaluateParams) *runtime.EvaluateParams {
+			return p.WithAwaitPromise(true)
+		}),
+		chromedp.ActionFunc(func(ctx context.Context) error {
+			var err error
+			pdf, _, err = page.PrintToPDF().
+				WithPreferCSSPageSize(true).
+				WithPrintBackground(true).
+				Do(ctx)
+			return err
+		}),
+	)
+	if err != nil {
+		fatal("rendering: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(outDir, "document.pdf"), pdf, 0644); err != nil {
+		fatal("writing PDF: %v", err)
+	}
+	fmt.Printf("Generated %s: %d paragraphs, layout=pages\n", outDir, len(s.Paragraphs))
 }
 
 func fatal(format string, args ...any) {

@@ -1,0 +1,3001 @@
+{
+  "words": [
+    {
+      "text": "AR",
+      "line_num": 0,
+      "left": 434,
+      "top": 53,
+      "width": 28,
+      "height": 14,
+      "conf": 0
+    },
+    {
+      "text": "OBS",
+      "line_num": 0,
+      "left": 470,
+      "top": 52,
+      "width": 40,
+      "height": 15,
+      "conf": 0
+    },
+    {
+      "text": "LORY",
+      "line_num": 0,
+      "left": 516,
+      "top": 53,
+      "width": 61,
+      "height": 14,
+      "conf": 74.671234
+    },
+    {
+      "text": "花",
+      "line_num": 1,
+      "left": 592,
+      "top": 124,
+      "width": 20,
+      "height": 20,
+      "conf": 93.099396
+    },
+    {
+      "text": "を",
+      "line_num": 1,
+      "left": 594,
+      "top": 155,
+      "width": 16,
+      "height": 10,
+      "conf": 93.305534
+    },
+    {
+      "text": "一",
+      "line_num": 1,
+      "left": 592,
+      "top": 177,
+      "width": 20,
+      "height": 29,
+      "conf": 93.100166
+    },
+    {
+      "text": "束",
+      "line_num": 1,
+      "left": 593,
+      "top": 213,
+      "width": 19,
+      "height": 19,
+      "conf": 84.651779
+    },
+    {
+      "text": "買",
+      "line_num": 1,
+      "left": 597,
+      "top": 238,
+      "width": 15,
+      "height": 12,
+      "conf": 91.466286
+    },
+    {
+      "text": "っ",
+      "line_num": 1,
+      "left": 593,
+      "top": 262,
+      "width": 18,
+      "height": 13,
+      "conf": 97.018776
+    },
+    {
+      "text": "て",
+      "line_num": 1,
+      "left": 594,
+      "top": 281,
+      "width": 18,
+      "height": 10,
+      "conf": 96.738914
+    },
+    {
+      "text": "いく",
+      "line_num": 1,
+      "left": 582,
+      "top": 290,
+      "width": 35,
+      "height": 29,
+      "conf": 93.16304
+    },
+    {
+      "text": "。",
+      "line_num": 1,
+      "left": 605,
+      "top": 322,
+      "width": 7,
+      "height": 7,
+      "conf": 93.194901
+    },
+    {
+      "text": "祖",
+      "line_num": 1,
+      "left": 592,
+      "top": 345,
+      "width": 20,
+      "height": 38,
+      "conf": 89.592873
+    },
+    {
+      "text": "母",
+      "line_num": 1,
+      "left": 594,
+      "top": 389,
+      "width": 18,
+      "height": 16,
+      "conf": 92.316833
+    },
+    {
+      "text": "は",
+      "line_num": 1,
+      "left": 592,
+      "top": 410,
+      "width": 20,
+      "height": 15,
+      "conf": 93.302933
+    },
+    {
+      "text": "釣り",
+      "line_num": 1,
+      "left": 592,
+      "top": 433,
+      "width": 21,
+      "height": 33,
+      "conf": 93.238525
+    },
+    {
+      "text": "銭",
+      "line_num": 1,
+      "left": 594,
+      "top": 477,
+      "width": 17,
+      "height": 11,
+      "conf": 85.453308
+    },
+    {
+      "text": "を",
+      "line_num": 1,
+      "left": 582,
+      "top": 487,
+      "width": 35,
+      "height": 16,
+      "conf": 93.290047
+    },
+    {
+      "text": "渡",
+      "line_num": 1,
+      "left": 592,
+      "top": 502,
+      "width": 20,
+      "height": 16,
+      "conf": 86.785263
+    },
+    {
+      "text": "けた",
+      "line_num": 2,
+      "left": 558,
+      "top": 125,
+      "width": 19,
+      "height": 50,
+      "conf": 93.184471
+    },
+    {
+      "text": "。",
+      "line_num": 2,
+      "left": 547,
+      "top": 161,
+      "width": 34,
+      "height": 18,
+      "conf": 90.146843
+    },
+    {
+      "text": "店",
+      "line_num": 3,
+      "left": 522,
+      "top": 146,
+      "width": 20,
+      "height": 38,
+      "conf": 96.836555
+    },
+    {
+      "text": "の",
+      "line_num": 3,
+      "left": 523,
+      "top": 191,
+      "width": 19,
+      "height": 20,
+      "conf": 91.95034
+    },
+    {
+      "text": "隣",
+      "line_num": 3,
+      "left": 524,
+      "top": 214,
+      "width": 17,
+      "height": 17,
+      "conf": 80.612694
+    },
+    {
+      "text": "に",
+      "line_num": 3,
+      "left": 524,
+      "top": 240,
+      "width": 17,
+      "height": 14,
+      "conf": 93.300011
+    },
+    {
+      "text": "は",
+      "line_num": 3,
+      "left": 536,
+      "top": 257,
+      "width": 6,
+      "height": 6,
+      "conf": 93.303604
+    },
+    {
+      "text": "、",
+      "line_num": 3,
+      "left": 512,
+      "top": 273,
+      "width": 35,
+      "height": 16,
+      "conf": 93.07666
+    },
+    {
+      "text": "い",
+      "line_num": 3,
+      "left": 524,
+      "top": 288,
+      "width": 17,
+      "height": 9,
+      "conf": 93.280823
+    },
+    {
+      "text": "つも",
+      "line_num": 3,
+      "left": 523,
+      "top": 304,
+      "width": 18,
+      "height": 38,
+      "conf": 96.104973
+    },
+    {
+      "text": "豆腐",
+      "line_num": 3,
+      "left": 522,
+      "top": 346,
+      "width": 20,
+      "height": 62,
+      "conf": 87.729477
+    },
+    {
+      "text": "屋",
+      "line_num": 3,
+      "left": 523,
+      "top": 413,
+      "width": 18,
+      "height": 16,
+      "conf": 93.257614
+    },
+    {
+      "text": "の",
+      "line_num": 3,
+      "left": 522,
+      "top": 433,
+      "width": 20,
+      "height": 18,
+      "conf": 96.601173
+    },
+    {
+      "text": "老人",
+      "line_num": 3,
+      "left": 512,
+      "top": 455,
+      "width": 35,
+      "height": 27,
+      "conf": 96.750664
+    },
+    {
+      "text": "が",
+      "line_num": 3,
+      "left": 522,
+      "top": 481,
+      "width": 21,
+      "height": 15,
+      "conf": 93.257362
+    },
+    {
+      "text": "座",
+      "line_num": 3,
+      "left": 524,
+      "top": 501,
+      "width": 18,
+      "height": 13,
+      "conf": 92.461899
+    },
+    {
+      "text": "っ",
+      "line_num": 4,
+      "left": 492,
+      "top": 128,
+      "width": 14,
+      "height": 12,
+      "conf": 96.297722
+    },
+    {
+      "text": "て",
+      "line_num": 4,
+      "left": 488,
+      "top": 150,
+      "width": 17,
+      "height": 15,
+      "conf": 96.515961
+    },
+    {
+      "text": "も",
+      "line_num": 4,
+      "left": 488,
+      "top": 174,
+      "width": 17,
+      "height": 13,
+      "conf": 93.194641
+    },
+    {
+      "text": "「",
+      "line_num": 4,
+      "left": 495,
+      "top": 204,
+      "width": 12,
+      "height": 6,
+      "conf": 92.64119
+    },
+    {
+      "text": "あ",
+      "line_num": 4,
+      "left": 488,
+      "top": 215,
+      "width": 17,
+      "height": 16,
+      "conf": 91.415627
+    },
+    {
+      "text": "あ",
+      "line_num": 4,
+      "left": 488,
+      "top": 237,
+      "width": 18,
+      "height": 23,
+      "conf": 92.917313
+    },
+    {
+      "text": "、",
+      "line_num": 4,
+      "left": 476,
+      "top": 259,
+      "width": 35,
+      "height": 23,
+      "conf": 91.886833
+    },
+    {
+      "text": "そ",
+      "line_num": 4,
+      "left": 487,
+      "top": 281,
+      "width": 19,
+      "height": 16,
+      "conf": 93.279991
+    },
+    {
+      "text": "うか",
+      "line_num": 4,
+      "left": 487,
+      "top": 303,
+      "width": 20,
+      "height": 38,
+      "conf": 93.301941
+    },
+    {
+      "text": "い",
+      "line_num": 4,
+      "left": 488,
+      "top": 347,
+      "width": 18,
+      "height": 15,
+      "conf": 91.959839
+    },
+    {
+      "text": "」",
+      "line_num": 4,
+      "left": 486,
+      "top": 366,
+      "width": 12,
+      "height": 6,
+      "conf": 92.931595
+    },
+    {
+      "text": "と",
+      "line_num": 4,
+      "left": 489,
+      "top": 389,
+      "width": 15,
+      "height": 18,
+      "conf": 92.995491
+    },
+    {
+      "text": "し",
+      "line_num": 4,
+      "left": 490,
+      "top": 411,
+      "width": 15,
+      "height": 15,
+      "conf": 96.942963
+    },
+    {
+      "text": "か",
+      "line_num": 4,
+      "left": 487,
+      "top": 433,
+      "width": 20,
+      "height": 18,
+      "conf": 96.860901
+    },
+    {
+      "text": "答え",
+      "line_num": 4,
+      "left": 476,
+      "top": 458,
+      "width": 35,
+      "height": 47,
+      "conf": 96.694214
+    },
+    {
+      "text": "な",
+      "line_num": 4,
+      "left": 487,
+      "top": 504,
+      "width": 19,
+      "height": 14,
+      "conf": 96.836594
+    },
+    {
+      "text": "うら",
+      "line_num": 5,
+      "left": 454,
+      "top": 125,
+      "width": 15,
+      "height": 40,
+      "conf": 96.521751
+    },
+    {
+      "text": "し",
+      "line_num": 5,
+      "left": 455,
+      "top": 169,
+      "width": 15,
+      "height": 18,
+      "conf": 92.777199
+    },
+    {
+      "text": "く",
+      "line_num": 5,
+      "left": 455,
+      "top": 191,
+      "width": 11,
+      "height": 18,
+      "conf": 93.234245
+    },
+    {
+      "text": "、",
+      "line_num": 5,
+      "left": 466,
+      "top": 212,
+      "width": 5,
+      "height": 6,
+      "conf": 88.618515
+    },
+    {
+      "text": "二",
+      "line_num": 5,
+      "left": 452,
+      "top": 236,
+      "width": 19,
+      "height": 15,
+      "conf": 92.621376
+    },
+    {
+      "text": "人",
+      "line_num": 5,
+      "left": 452,
+      "top": 256,
+      "width": 19,
+      "height": 19,
+      "conf": 96.481308
+    },
+    {
+      "text": "は",
+      "line_num": 5,
+      "left": 453,
+      "top": 279,
+      "width": 18,
+      "height": 18,
+      "conf": 93.24337
+    },
+    {
+      "text": "客",
+      "line_num": 5,
+      "left": 452,
+      "top": 302,
+      "width": 19,
+      "height": 18,
+      "conf": 87.228882
+    },
+    {
+      "text": "の",
+      "line_num": 5,
+      "left": 452,
+      "top": 326,
+      "width": 18,
+      "height": 15,
+      "conf": 93.203438
+    },
+    {
+      "text": "途切れ",
+      "line_num": 5,
+      "left": 441,
+      "top": 350,
+      "width": 35,
+      "height": 67,
+      "conf": 96.566139
+    },
+    {
+      "text": "た",
+      "line_num": 5,
+      "left": 453,
+      "top": 416,
+      "width": 17,
+      "height": 13,
+      "conf": 96.967392
+    },
+    {
+      "text": "合間",
+      "line_num": 5,
+      "left": 451,
+      "top": 438,
+      "width": 21,
+      "height": 36,
+      "conf": 96.231552
+    },
+    {
+      "text": "に",
+      "line_num": 5,
+      "left": 453,
+      "top": 481,
+      "width": 18,
+      "height": 12,
+      "conf": 93.256416
+    },
+    {
+      "text": "、",
+      "line_num": 5,
+      "left": 441,
+      "top": 492,
+      "width": 35,
+      "height": 17,
+      "conf": 92.899712
+    },
+    {
+      "text": "昼前",
+      "line_num": 6,
+      "left": 416,
+      "top": 147,
+      "width": 20,
+      "height": 62,
+      "conf": 96.554207
+    },
+    {
+      "text": "に",
+      "line_num": 6,
+      "left": 418,
+      "top": 215,
+      "width": 18,
+      "height": 13,
+      "conf": 97.012192
+    },
+    {
+      "text": "は",
+      "line_num": 6,
+      "left": 416,
+      "top": 235,
+      "width": 20,
+      "height": 19,
+      "conf": 91.610275
+    },
+    {
+      "text": "花",
+      "line_num": 6,
+      "left": 418,
+      "top": 258,
+      "width": 18,
+      "height": 18,
+      "conf": 93.021599
+    },
+    {
+      "text": "は",
+      "line_num": 6,
+      "left": 417,
+      "top": 281,
+      "width": 19,
+      "height": 17,
+      "conf": 93.192955
+    },
+    {
+      "text": "すっ",
+      "line_num": 6,
+      "left": 406,
+      "top": 305,
+      "width": 34,
+      "height": 23,
+      "conf": 96.710754
+    },
+    {
+      "text": "か",
+      "line_num": 6,
+      "left": 417,
+      "top": 327,
+      "width": 19,
+      "height": 15,
+      "conf": 92.879028
+    },
+    {
+      "text": "り",
+      "line_num": 6,
+      "left": 420,
+      "top": 345,
+      "width": 13,
+      "height": 19,
+      "conf": 92.845428
+    },
+    {
+      "text": "売",
+      "line_num": 6,
+      "left": 417,
+      "top": 374,
+      "width": 19,
+      "height": 29,
+      "conf": 92.09185
+    },
+    {
+      "text": "り",
+      "line_num": 6,
+      "left": 416,
+      "top": 411,
+      "width": 20,
+      "height": 15,
+      "conf": 93.08551
+    },
+    {
+      "text": "切",
+      "line_num": 6,
+      "left": 417,
+      "top": 433,
+      "width": 19,
+      "height": 19,
+      "conf": 92.820236
+    },
+    {
+      "text": "れ",
+      "line_num": 6,
+      "left": 406,
+      "top": 451,
+      "width": 34,
+      "height": 13,
+      "conf": 92.843483
+    },
+    {
+      "text": "た",
+      "line_num": 6,
+      "left": 417,
+      "top": 463,
+      "width": 18,
+      "height": 11,
+      "conf": 92.678551
+    },
+    {
+      "text": "。",
+      "line_num": 6,
+      "left": 429,
+      "top": 477,
+      "width": 7,
+      "height": 7,
+      "conf": 92.433502
+    },
+    {
+      "text": "か",
+      "line_num": 6,
+      "left": 406,
+      "top": 493,
+      "width": 34,
+      "height": 12,
+      "conf": 0
+    },
+    {
+      "text": "ーー",
+      "line_num": 6,
+      "left": 406,
+      "top": 504,
+      "width": 34,
+      "height": 9,
+      "conf": 61.148499
+    },
+    {
+      "text": "し",
+      "line_num": 7,
+      "left": 596,
+      "top": 522,
+      "width": 14,
+      "height": 17,
+      "conf": 96.670959
+    },
+    {
+      "text": "な",
+      "line_num": 7,
+      "left": 593,
+      "top": 544,
+      "width": 18,
+      "height": 18,
+      "conf": 96.919159
+    },
+    {
+      "text": "が",
+      "line_num": 7,
+      "left": 593,
+      "top": 566,
+      "width": 20,
+      "height": 17,
+      "conf": 92.787529
+    },
+    {
+      "text": "ら",
+      "line_num": 7,
+      "left": 595,
+      "top": 588,
+      "width": 15,
+      "height": 17,
+      "conf": 93.194427
+    },
+    {
+      "text": "、",
+      "line_num": 7,
+      "left": 606,
+      "top": 609,
+      "width": 6,
+      "height": 5,
+      "conf": 92.982651
+    },
+    {
+      "text": "必",
+      "line_num": 7,
+      "left": 592,
+      "top": 636,
+      "width": 21,
+      "height": 27,
+      "conf": 92.210533
+    },
+    {
+      "text": "ず",
+      "line_num": 7,
+      "left": 582,
+      "top": 662,
+      "width": 35,
+      "height": 21,
+      "conf": 93.098534
+    },
+    {
+      "text": "「",
+      "line_num": 7,
+      "left": 601,
+      "top": 689,
+      "width": 12,
+      "height": 6,
+      "conf": 88.866676
+    },
+    {
+      "text": "ま",
+      "line_num": 7,
+      "left": 594,
+      "top": 697,
+      "width": 17,
+      "height": 18,
+      "conf": 93.277237
+    },
+    {
+      "text": "た",
+      "line_num": 7,
+      "left": 593,
+      "top": 719,
+      "width": 18,
+      "height": 19,
+      "conf": 96.54184
+    },
+    {
+      "text": "来週",
+      "line_num": 7,
+      "left": 592,
+      "top": 747,
+      "width": 20,
+      "height": 44,
+      "conf": 92.852203
+    },
+    {
+      "text": "」",
+      "line_num": 7,
+      "left": 595,
+      "top": 808,
+      "width": 15,
+      "height": 10,
+      "conf": 60.212196
+    },
+    {
+      "text": "と",
+      "line_num": 7,
+      "left": 592,
+      "top": 829,
+      "width": 20,
+      "height": 13,
+      "conf": 92.663582
+    },
+    {
+      "text": "声",
+      "line_num": 7,
+      "left": 594,
+      "top": 851,
+      "width": 16,
+      "height": 15,
+      "conf": 92.195839
+    },
+    {
+      "text": "を",
+      "line_num": 7,
+      "left": 582,
+      "top": 865,
+      "width": 35,
+      "height": 14,
+      "conf": 93.298401
+    },
+    {
+      "text": "か",
+      "line_num": 7,
+      "left": 593,
+      "top": 878,
+      "width": 19,
+      "height": 14,
+      "conf": 96.712616
+    },
+    {
+      "text": "っ",
+      "line_num": 8,
+      "left": 527,
+      "top": 525,
+      "width": 14,
+      "height": 12,
+      "conf": 96.98362
+    },
+    {
+      "text": "て",
+      "line_num": 8,
+      "left": 523,
+      "top": 546,
+      "width": 17,
+      "height": 16,
+      "conf": 96.732834
+    },
+    {
+      "text": "いた",
+      "line_num": 8,
+      "left": 523,
+      "top": 568,
+      "width": 19,
+      "height": 48,
+      "conf": 93.282677
+    },
+    {
+      "text": "。",
+      "line_num": 8,
+      "left": 512,
+      "top": 601,
+      "width": 35,
+      "height": 34,
+      "conf": 92.170868
+    },
+    {
+      "text": "耳",
+      "line_num": 8,
+      "left": 522,
+      "top": 634,
+      "width": 21,
+      "height": 30,
+      "conf": 79.330063
+    },
+    {
+      "text": "が",
+      "line_num": 8,
+      "left": 522,
+      "top": 675,
+      "width": 20,
+      "height": 20,
+      "conf": 96.860733
+    },
+    {
+      "text": "遠く",
+      "line_num": 8,
+      "left": 512,
+      "top": 698,
+      "width": 35,
+      "height": 47,
+      "conf": 83.571198
+    },
+    {
+      "text": "、",
+      "line_num": 8,
+      "left": 525,
+      "top": 744,
+      "width": 14,
+      "height": 16,
+      "conf": 93.106606
+    },
+    {
+      "text": "こ",
+      "line_num": 8,
+      "left": 523,
+      "top": 764,
+      "width": 17,
+      "height": 11,
+      "conf": 93.299255
+    },
+    {
+      "text": "ちら",
+      "line_num": 8,
+      "left": 525,
+      "top": 786,
+      "width": 15,
+      "height": 18,
+      "conf": 96.952049
+    },
+    {
+      "text": "が",
+      "line_num": 8,
+      "left": 522,
+      "top": 807,
+      "width": 21,
+      "height": 19,
+      "conf": 93.281075
+    },
+    {
+      "text": "何",
+      "line_num": 8,
+      "left": 522,
+      "top": 831,
+      "width": 20,
+      "height": 19,
+      "conf": 92.084824
+    },
+    {
+      "text": "を",
+      "line_num": 8,
+      "left": 523,
+      "top": 855,
+      "width": 17,
+      "height": 21,
+      "conf": 93.007523
+    },
+    {
+      "text": "言",
+      "line_num": 8,
+      "left": 522,
+      "top": 877,
+      "width": 20,
+      "height": 16,
+      "conf": 92.43502
+    },
+    {
+      "text": "い",
+      "line_num": 9,
+      "left": 488,
+      "top": 523,
+      "width": 18,
+      "height": 15,
+      "conf": 92.901543
+    },
+    {
+      "text": "。",
+      "line_num": 9,
+      "left": 500,
+      "top": 543,
+      "width": 7,
+      "height": 7,
+      "conf": 91.280006
+    },
+    {
+      "text": "そ",
+      "line_num": 9,
+      "left": 487,
+      "top": 566,
+      "width": 19,
+      "height": 18,
+      "conf": 92.626266
+    },
+    {
+      "text": "れ",
+      "line_num": 9,
+      "left": 487,
+      "top": 587,
+      "width": 20,
+      "height": 18,
+      "conf": 93.29641
+    },
+    {
+      "text": "で",
+      "line_num": 9,
+      "left": 487,
+      "top": 611,
+      "width": 20,
+      "height": 16,
+      "conf": 93.298225
+    },
+    {
+      "text": "も",
+      "line_num": 9,
+      "left": 488,
+      "top": 631,
+      "width": 17,
+      "height": 19,
+      "conf": 96.938774
+    },
+    {
+      "text": "祖母",
+      "line_num": 9,
+      "left": 486,
+      "top": 654,
+      "width": 21,
+      "height": 61,
+      "conf": 96.276649
+    },
+    {
+      "text": "と",
+      "line_num": 9,
+      "left": 477,
+      "top": 718,
+      "width": 35,
+      "height": 9,
+      "conf": 97.007507
+    },
+    {
+      "text": "は",
+      "line_num": 9,
+      "left": 488,
+      "top": 726,
+      "width": 18,
+      "height": 12,
+      "conf": 97.009407
+    },
+    {
+      "text": "不思議",
+      "line_num": 9,
+      "left": 487,
+      "top": 746,
+      "width": 20,
+      "height": 73,
+      "conf": 96.48156
+    },
+    {
+      "text": "に",
+      "line_num": 9,
+      "left": 487,
+      "top": 829,
+      "width": 19,
+      "height": 12,
+      "conf": 92.516006
+    },
+    {
+      "text": "話",
+      "line_num": 9,
+      "left": 487,
+      "top": 850,
+      "width": 20,
+      "height": 13,
+      "conf": 93.168419
+    },
+    {
+      "text": "が",
+      "line_num": 9,
+      "left": 477,
+      "top": 862,
+      "width": 35,
+      "height": 21,
+      "conf": 96.061905
+    },
+    {
+      "text": "合っ",
+      "line_num": 9,
+      "left": 487,
+      "top": 882,
+      "width": 21,
+      "height": 29,
+      "conf": 58.187378
+    },
+    {
+      "text": "長い",
+      "line_num": 10,
+      "left": 451,
+      "top": 521,
+      "width": 20,
+      "height": 56,
+      "conf": 96.824371
+    },
+    {
+      "text": "こと",
+      "line_num": 10,
+      "left": 441,
+      "top": 576,
+      "width": 35,
+      "height": 46,
+      "conf": 96.820724
+    },
+    {
+      "text": "並ん",
+      "line_num": 10,
+      "left": 452,
+      "top": 631,
+      "width": 20,
+      "height": 33,
+      "conf": 96.916527
+    },
+    {
+      "text": "で",
+      "line_num": 10,
+      "left": 452,
+      "top": 674,
+      "width": 19,
+      "height": 16,
+      "conf": 96.756325
+    },
+    {
+      "text": "笑っ",
+      "line_num": 10,
+      "left": 452,
+      "top": 700,
+      "width": 19,
+      "height": 34,
+      "conf": 96.847015
+    },
+    {
+      "text": "て",
+      "line_num": 10,
+      "left": 441,
+      "top": 733,
+      "width": 35,
+      "height": 16,
+      "conf": 96.918396
+    },
+    {
+      "text": "いた",
+      "line_num": 10,
+      "left": 453,
+      "top": 748,
+      "width": 18,
+      "height": 30,
+      "conf": 93.256866
+    },
+    {
+      "text": "。",
+      "line_num": 10,
+      "left": 464,
+      "top": 784,
+      "width": 7,
+      "height": 7,
+      "conf": 91.784935
+    },
+    {
+      "text": "に",
+      "line_num": 11,
+      "left": 418,
+      "top": 522,
+      "width": 17,
+      "height": 18,
+      "conf": 96.426842
+    },
+    {
+      "text": "な",
+      "line_num": 11,
+      "left": 422,
+      "top": 547,
+      "width": 14,
+      "height": 15,
+      "conf": 96.83786
+    },
+    {
+      "text": "っ",
+      "line_num": 11,
+      "left": 421,
+      "top": 569,
+      "width": 15,
+      "height": 12,
+      "conf": 96.939209
+    },
+    {
+      "text": "た",
+      "line_num": 11,
+      "left": 417,
+      "top": 588,
+      "width": 18,
+      "height": 18,
+      "conf": 93.294655
+    },
+    {
+      "text": "桶",
+      "line_num": 11,
+      "left": 416,
+      "top": 612,
+      "width": 19,
+      "height": 17,
+      "conf": 72.105804
+    },
+    {
+      "text": "を",
+      "line_num": 11,
+      "left": 418,
+      "top": 640,
+      "width": 16,
+      "height": 10,
+      "conf": 87.1064
+    },
+    {
+      "text": "重ね",
+      "line_num": 11,
+      "left": 416,
+      "top": 671,
+      "width": 20,
+      "height": 32,
+      "conf": 92.986298
+    },
+    {
+      "text": "、",
+      "line_num": 11,
+      "left": 416,
+      "top": 719,
+      "width": 20,
+      "height": 12,
+      "conf": 93.176041
+    },
+    {
+      "text": "荷",
+      "line_num": 11,
+      "left": 416,
+      "top": 743,
+      "width": 20,
+      "height": 15,
+      "conf": 88.957451
+    },
+    {
+      "text": "車",
+      "line_num": 11,
+      "left": 418,
+      "top": 771,
+      "width": 16,
+      "height": 11,
+      "conf": 92.863617
+    },
+    {
+      "text": "を",
+      "line_num": 11,
+      "left": 417,
+      "top": 793,
+      "width": 17,
+      "height": 12,
+      "conf": 93.305962
+    },
+    {
+      "text": "3",
+      "line_num": 11,
+      "left": 405,
+      "top": 806,
+      "width": 35,
+      "height": 8,
+      "conf": 43.330513
+    },
+    {
+      "text": "らい",
+      "line_num": 11,
+      "left": 405,
+      "top": 813,
+      "width": 35,
+      "height": 12,
+      "conf": 71.553772
+    },
+    {
+      "text": "て",
+      "line_num": 11,
+      "left": 417,
+      "top": 833,
+      "width": 18,
+      "height": 15,
+      "conf": 96.986977
+    },
+    {
+      "text": "帰る",
+      "line_num": 11,
+      "left": 417,
+      "top": 859,
+      "width": 19,
+      "height": 34,
+      "conf": 95.71003
+    },
+    {
+      "text": "屋",
+      "line_num": 12,
+      "left": 383,
+      "top": 518,
+      "width": 18,
+      "height": 29,
+      "conf": 0
+    },
+    {
+      "text": "に",
+      "line_num": 12,
+      "left": 381,
+      "top": 555,
+      "width": 20,
+      "height": 16,
+      "conf": 85.77462
+    },
+    {
+      "text": "寄り",
+      "line_num": 12,
+      "left": 385,
+      "top": 578,
+      "width": 16,
+      "height": 29,
+      "conf": 93.22776
+    },
+    {
+      "text": "、",
+      "line_num": 12,
+      "left": 371,
+      "top": 608,
+      "width": 35,
+      "height": 25,
+      "conf": 92.929817
+    },
+    {
+      "text": "私",
+      "line_num": 12,
+      "left": 381,
+      "top": 632,
+      "width": 21,
+      "height": 27,
+      "conf": 92.827675
+    },
+    {
+      "text": "に",
+      "line_num": 12,
+      "left": 381,
+      "top": 669,
+      "width": 20,
+      "height": 12,
+      "conf": 93.03096
+    },
+    {
+      "text": "氷",
+      "line_num": 12,
+      "left": 382,
+      "top": 692,
+      "width": 17,
+      "height": 13,
+      "conf": 89.218895
+    },
+    {
+      "text": "を",
+      "line_num": 12,
+      "left": 381,
+      "top": 723,
+      "width": 20,
+      "height": 2,
+      "conf": 92.904358
+    },
+    {
+      "text": "一",
+      "line_num": 12,
+      "left": 381,
+      "top": 737,
+      "width": 20,
+      "height": 20,
+      "conf": 90.21035
+    },
+    {
+      "text": "杯",
+      "line_num": 12,
+      "left": 382,
+      "top": 760,
+      "width": 18,
+      "height": 18,
+      "conf": 91.204361
+    },
+    {
+      "text": "お",
+      "line_num": 12,
+      "left": 383,
+      "top": 785,
+      "width": 18,
+      "height": 15,
+      "conf": 96.814941
+    },
+    {
+      "text": "ご",
+      "line_num": 12,
+      "left": 386,
+      "top": 809,
+      "width": 14,
+      "height": 10,
+      "conf": 96.529251
+    },
+    {
+      "text": "っ",
+      "line_num": 12,
+      "left": 371,
+      "top": 818,
+      "width": 35,
+      "height": 18,
+      "conf": 96.856064
+    },
+    {
+      "text": "て",
+      "line_num": 12,
+      "left": 382,
+      "top": 835,
+      "width": 18,
+      "height": 11,
+      "conf": 96.786659
+    },
+    {
+      "text": "くれ",
+      "line_num": 12,
+      "left": 382,
+      "top": 853,
+      "width": 19,
+      "height": 39,
+      "conf": 96.722031
+    },
+    {
+      "text": "道すがら",
+      "line_num": 13,
+      "left": 371,
+      "top": 124,
+      "width": 35,
+      "height": 87,
+      "conf": 92.303116
+    },
+    {
+      "text": "、",
+      "line_num": 13,
+      "left": 395,
+      "top": 215,
+      "width": 6,
+      "height": 6,
+      "conf": 93.198967
+    },
+    {
+      "text": "祖",
+      "line_num": 13,
+      "left": 381,
+      "top": 240,
+      "width": 20,
+      "height": 40,
+      "conf": 86.152542
+    },
+    {
+      "text": "母",
+      "line_num": 13,
+      "left": 383,
+      "top": 284,
+      "width": 18,
+      "height": 18,
+      "conf": 92.605644
+    },
+    {
+      "text": "は",
+      "line_num": 13,
+      "left": 381,
+      "top": 305,
+      "width": 20,
+      "height": 21,
+      "conf": 93.304512
+    },
+    {
+      "text": "決ま",
+      "line_num": 13,
+      "left": 383,
+      "top": 329,
+      "width": 17,
+      "height": 38,
+      "conf": 96.616302
+    },
+    {
+      "text": "っ",
+      "line_num": 13,
+      "left": 382,
+      "top": 376,
+      "width": 18,
+      "height": 9,
+      "conf": 96.849228
+    },
+    {
+      "text": "て",
+      "line_num": 13,
+      "left": 381,
+      "top": 397,
+      "width": 19,
+      "height": 17,
+      "conf": 96.890121
+    },
+    {
+      "text": "川べり",
+      "line_num": 13,
+      "left": 371,
+      "top": 421,
+      "width": 35,
+      "height": 45,
+      "conf": 79.561203
+    },
+    {
+      "text": "の",
+      "line_num": 13,
+      "left": 382,
+      "top": 467,
+      "width": 18,
+      "height": 16,
+      "conf": 93.098091
+    },
+    {
+      "text": "茶",
+      "line_num": 13,
+      "left": 381,
+      "top": 487,
+      "width": 20,
+      "height": 20,
+      "conf": 26.531406
+    },
+    {
+      "text": "た",
+      "line_num": 14,
+      "left": 347,
+      "top": 124,
+      "width": 18,
+      "height": 19,
+      "conf": 92.149872
+    },
+    {
+      "text": "。",
+      "line_num": 14,
+      "left": 359,
+      "top": 146,
+      "width": 7,
+      "height": 7,
+      "conf": 91.835762
+    },
+    {
+      "text": "そ",
+      "line_num": 14,
+      "left": 346,
+      "top": 169,
+      "width": 19,
+      "height": 18,
+      "conf": 92.731003
+    },
+    {
+      "text": "れ",
+      "line_num": 14,
+      "left": 346,
+      "top": 191,
+      "width": 20,
+      "height": 18,
+      "conf": 92.901825
+    },
+    {
+      "text": "が",
+      "line_num": 14,
+      "left": 346,
+      "top": 211,
+      "width": 21,
+      "height": 35,
+      "conf": 93.214584
+    },
+    {
+      "text": "私",
+      "line_num": 14,
+      "left": 348,
+      "top": 257,
+      "width": 17,
+      "height": 18,
+      "conf": 96.741081
+    },
+    {
+      "text": "に",
+      "line_num": 14,
+      "left": 349,
+      "top": 279,
+      "width": 14,
+      "height": 14,
+      "conf": 97.00489
+    },
+    {
+      "text": "と",
+      "line_num": 14,
+      "left": 337,
+      "top": 292,
+      "width": 34,
+      "height": 15,
+      "conf": 96.948608
+    },
+    {
+      "text": "っ",
+      "line_num": 14,
+      "left": 351,
+      "top": 307,
+      "width": 14,
+      "height": 9,
+      "conf": 96.819565
+    },
+    {
+      "text": "て",
+      "line_num": 14,
+      "left": 347,
+      "top": 325,
+      "width": 17,
+      "height": 14,
+      "conf": 96.95224
+    },
+    {
+      "text": "の",
+      "line_num": 14,
+      "left": 347,
+      "top": 346,
+      "width": 18,
+      "height": 17,
+      "conf": 93.144844
+    },
+    {
+      "text": "夏",
+      "line_num": 14,
+      "left": 346,
+      "top": 370,
+      "width": 20,
+      "height": 29,
+      "conf": 92.09256
+    },
+    {
+      "text": "の",
+      "line_num": 14,
+      "left": 346,
+      "top": 410,
+      "width": 20,
+      "height": 16,
+      "conf": 93.139717
+    },
+    {
+      "text": "味",
+      "line_num": 14,
+      "left": 347,
+      "top": 432,
+      "width": 18,
+      "height": 19,
+      "conf": 92.948891
+    },
+    {
+      "text": "だ",
+      "line_num": 14,
+      "left": 351,
+      "top": 458,
+      "width": 14,
+      "height": 9,
+      "conf": 93.276627
+    },
+    {
+      "text": "っ",
+      "line_num": 14,
+      "left": 337,
+      "top": 466,
+      "width": 34,
+      "height": 14,
+      "conf": 96.876724
+    },
+    {
+      "text": "た",
+      "line_num": 14,
+      "left": 347,
+      "top": 479,
+      "width": 18,
+      "height": 15,
+      "conf": 93.143852
+    },
+    {
+      "text": "。",
+      "line_num": 14,
+      "left": 359,
+      "top": 498,
+      "width": 7,
+      "height": 7,
+      "conf": 90.817123
+    },
+    {
+      "text": "祖母",
+      "line_num": 15,
+      "left": 310,
+      "top": 146,
+      "width": 21,
+      "height": 64,
+      "conf": 95.951485
+    },
+    {
+      "text": "が",
+      "line_num": 15,
+      "left": 311,
+      "top": 220,
+      "width": 20,
+      "height": 12,
+      "conf": 93.037727
+    },
+    {
+      "text": "匠",
+      "line_num": 15,
+      "left": 314,
+      "top": 239,
+      "width": 12,
+      "height": 15,
+      "conf": 0
+    },
+    {
+      "text": "く",
+      "line_num": 15,
+      "left": 311,
+      "top": 258,
+      "width": 19,
+      "height": 18,
+      "conf": 0
+    },
+    {
+      "text": "な",
+      "line_num": 15,
+      "left": 316,
+      "top": 283,
+      "width": 14,
+      "height": 12,
+      "conf": 96.961906
+    },
+    {
+      "text": "っ",
+      "line_num": 15,
+      "left": 312,
+      "top": 303,
+      "width": 17,
+      "height": 14,
+      "conf": 96.976265
+    },
+    {
+      "text": "て",
+      "line_num": 15,
+      "left": 325,
+      "top": 323,
+      "width": 5,
+      "height": 5,
+      "conf": 93.262169
+    },
+    {
+      "text": "、",
+      "line_num": 15,
+      "left": 301,
+      "top": 333,
+      "width": 34,
+      "height": 18,
+      "conf": 92.402054
+    },
+    {
+      "text": "も",
+      "line_num": 15,
+      "left": 312,
+      "top": 350,
+      "width": 17,
+      "height": 14,
+      "conf": 93.223389
+    },
+    {
+      "text": "う",
+      "line_num": 15,
+      "left": 313,
+      "top": 368,
+      "width": 15,
+      "height": 18,
+      "conf": 93.202423
+    },
+    {
+      "text": "十",
+      "line_num": 15,
+      "left": 311,
+      "top": 394,
+      "width": 20,
+      "height": 29,
+      "conf": 90.663422
+    },
+    {
+      "text": "二",
+      "line_num": 15,
+      "left": 311,
+      "top": 433,
+      "width": 19,
+      "height": 20,
+      "conf": 92.417404
+    },
+    {
+      "text": "年",
+      "line_num": 15,
+      "left": 312,
+      "top": 456,
+      "width": 17,
+      "height": 18,
+      "conf": 89.761307
+    },
+    {
+      "text": "に",
+      "line_num": 15,
+      "left": 312,
+      "top": 482,
+      "width": 18,
+      "height": 14,
+      "conf": 93.305862
+    },
+    {
+      "text": "な",
+      "line_num": 15,
+      "left": 301,
+      "top": 496,
+      "width": 34,
+      "height": 12,
+      "conf": 96.926956
+    },
+    {
+      "text": "る",
+      "line_num": 15,
+      "left": 312,
+      "top": 507,
+      "width": 17,
+      "height": 11,
+      "conf": 93.044998
+    },
+    {
+      "text": "。",
+      "line_num": 15,
+      "left": 324,
+      "top": 521,
+      "width": 7,
+      "height": 7,
+      "conf": 93.259872
+    },
+    {
+      "text": "朝",
+      "line_num": 15,
+      "left": 311,
+      "top": 543,
+      "width": 20,
+      "height": 39,
+      "conf": 92.022568
+    },
+    {
+      "text": "市",
+      "line_num": 15,
+      "left": 312,
+      "top": 588,
+      "width": 18,
+      "height": 18,
+      "conf": 96.906532
+    },
+    {
+      "text": "は",
+      "line_num": 15,
+      "left": 310,
+      "top": 609,
+      "width": 21,
+      "height": 20,
+      "conf": 93.28968
+    },
+    {
+      "text": "今",
+      "line_num": 15,
+      "left": 312,
+      "top": 632,
+      "width": 17,
+      "height": 18,
+      "conf": 92.846542
+    },
+    {
+      "text": "も",
+      "line_num": 15,
+      "left": 311,
+      "top": 653,
+      "width": 20,
+      "height": 20,
+      "conf": 80.113869
+    },
+    {
+      "text": "続い",
+      "line_num": 15,
+      "left": 301,
+      "top": 679,
+      "width": 34,
+      "height": 44,
+      "conf": 96.068321
+    },
+    {
+      "text": "て",
+      "line_num": 15,
+      "left": 312,
+      "top": 722,
+      "width": 18,
+      "height": 15,
+      "conf": 96.996857
+    },
+    {
+      "text": "いる",
+      "line_num": 15,
+      "left": 301,
+      "top": 743,
+      "width": 34,
+      "height": 26,
+      "conf": 96.799934
+    },
+    {
+      "text": "が",
+      "line_num": 15,
+      "left": 311,
+      "top": 768,
+      "width": 20,
+      "height": 14,
+      "conf": 93.226425
+    },
+    {
+      "text": "、",
+      "line_num": 15,
+      "left": 325,
+      "top": 786,
+      "width": 5,
+      "height": 5,
+      "conf": 92.706718
+    },
+    {
+      "text": "橋",
+      "line_num": 15,
+      "left": 310,
+      "top": 813,
+      "width": 20,
+      "height": 33,
+      "conf": 92.523926
+    },
+    {
+      "text": "の",
+      "line_num": 15,
+      "left": 301,
+      "top": 845,
+      "width": 34,
+      "height": 16,
+      "conf": 95.605515
+    },
+    {
+      "text": "た",
+      "line_num": 15,
+      "left": 312,
+      "top": 860,
+      "width": 18,
+      "height": 10,
+      "conf": 96.729561
+    },
+    {
+      "text": "も",
+      "line_num": 15,
+      "left": 312,
+      "top": 875,
+      "width": 17,
+      "height": 18,
+      "conf": 96.893822
+    },
+    {
+      "text": "と",
+      "line_num": 16,
+      "left": 278,
+      "top": 125,
+      "width": 15,
+      "height": 18,
+      "conf": 96.622414
+    },
+    {
+      "text": "の",
+      "line_num": 16,
+      "left": 276,
+      "top": 148,
+      "width": 18,
+      "height": 17,
+      "conf": 97.007736
+    },
+    {
+      "text": "あの",
+      "line_num": 16,
+      "left": 276,
+      "top": 168,
+      "width": 18,
+      "height": 41,
+      "conf": 96.391205
+    },
+    {
+      "text": "場所",
+      "line_num": 16,
+      "left": 275,
+      "top": 217,
+      "width": 21,
+      "height": 58,
+      "conf": 96.734711
+    },
+    {
+      "text": "に",
+      "line_num": 16,
+      "left": 277,
+      "top": 279,
+      "width": 18,
+      "height": 11,
+      "conf": 96.995392
+    },
+    {
+      "text": "は",
+      "line_num": 16,
+      "left": 265,
+      "top": 289,
+      "width": 35,
+      "height": 14,
+      "conf": 93.303589
+    },
+    {
+      "text": "、",
+      "line_num": 16,
+      "left": 290,
+      "top": 302,
+      "width": 5,
+      "height": 4,
+      "conf": 92.714569
+    },
+    {
+      "text": "別",
+      "line_num": 16,
+      "left": 275,
+      "top": 328,
+      "width": 20,
+      "height": 28,
+      "conf": 92.546425
+    },
+    {
+      "text": "の",
+      "line_num": 16,
+      "left": 276,
+      "top": 366,
+      "width": 19,
+      "height": 11,
+      "conf": 96.784912
+    },
+    {
+      "text": "誰か",
+      "line_num": 16,
+      "left": 265,
+      "top": 389,
+      "width": 35,
+      "height": 26,
+      "conf": 96.869087
+    },
+    {
+      "text": "が",
+      "line_num": 16,
+      "left": 276,
+      "top": 414,
+      "width": 20,
+      "height": 15,
+      "conf": 96.91713
+    },
+    {
+      "text": "野菜",
+      "line_num": 16,
+      "left": 265,
+      "top": 436,
+      "width": 35,
+      "height": 46,
+      "conf": 94.856941
+    },
+    {
+      "text": "を",
+      "line_num": 16,
+      "left": 277,
+      "top": 481,
+      "width": 17,
+      "height": 14,
+      "conf": 93.238998
+    },
+    {
+      "text": "並",
+      "line_num": 16,
+      "left": 276,
+      "top": 501,
+      "width": 19,
+      "height": 14,
+      "conf": 90.904457
+    },
+    {
+      "text": "去年",
+      "line_num": 17,
+      "left": 240,
+      "top": 147,
+      "width": 20,
+      "height": 62,
+      "conf": 96.068787
+    },
+    {
+      "text": "の",
+      "line_num": 17,
+      "left": 230,
+      "top": 208,
+      "width": 35,
+      "height": 14,
+      "conf": 92.176445
+    },
+    {
+      "text": "秋",
+      "line_num": 17,
+      "left": 240,
+      "top": 221,
+      "width": 20,
+      "height": 19,
+      "conf": 85.264023
+    },
+    {
+      "text": "、",
+      "line_num": 17,
+      "left": 240,
+      "top": 257,
+      "width": 21,
+      "height": 16,
+      "conf": 92.463402
+    },
+    {
+      "text": "私",
+      "line_num": 17,
+      "left": 242,
+      "top": 280,
+      "width": 18,
+      "height": 18,
+      "conf": 93.208115
+    },
+    {
+      "text": "は",
+      "line_num": 17,
+      "left": 241,
+      "top": 301,
+      "width": 19,
+      "height": 19,
+      "conf": 96.97876
+    },
+    {
+      "text": "久しぶり",
+      "line_num": 17,
+      "left": 230,
+      "top": 324,
+      "width": 35,
+      "height": 62,
+      "conf": 84.936729
+    },
+    {
+      "text": "に",
+      "line_num": 17,
+      "left": 242,
+      "top": 394,
+      "width": 17,
+      "height": 14,
+      "conf": 96.898361
+    },
+    {
+      "text": "その",
+      "line_num": 17,
+      "left": 241,
+      "top": 412,
+      "width": 18,
+      "height": 39,
+      "conf": 96.461678
+    },
+    {
+      "text": "町",
+      "line_num": 17,
+      "left": 241,
+      "top": 460,
+      "width": 19,
+      "height": 15,
+      "conf": 94.782211
+    },
+    {
+      "text": "を",
+      "line_num": 17,
+      "left": 240,
+      "top": 486,
+      "width": 20,
+      "height": 32,
+      "conf": 96.810097
+    },
+    {
+      "text": "訪ね",
+      "line_num": 17,
+      "left": 240,
+      "top": 521,
+      "width": 20,
+      "height": 41,
+      "conf": 95.236214
+    },
+    {
+      "text": "た",
+      "line_num": 17,
+      "left": 253,
+      "top": 565,
+      "width": 7,
+      "height": 7,
+      "conf": 93.300667
+    },
+    {
+      "text": "。",
+      "line_num": 17,
+      "left": 241,
+      "top": 587,
+      "width": 19,
+      "height": 14,
+      "conf": 92.769279
+    },
+    {
+      "text": "家",
+      "line_num": 17,
+      "left": 242,
+      "top": 610,
+      "width": 18,
+      "height": 15,
+      "conf": 92.941711
+    },
+    {
+      "text": "は",
+      "line_num": 17,
+      "left": 230,
+      "top": 624,
+      "width": 35,
+      "height": 18,
+      "conf": 96.963669
+    },
+    {
+      "text": "すでに",
+      "line_num": 17,
+      "left": 241,
+      "top": 641,
+      "width": 20,
+      "height": 53,
+      "conf": 96.408714
+    },
+    {
+      "text": "人",
+      "line_num": 17,
+      "left": 241,
+      "top": 697,
+      "width": 19,
+      "height": 20,
+      "conf": 92.599579
+    },
+    {
+      "text": "手",
+      "line_num": 17,
+      "left": 240,
+      "top": 722,
+      "width": 20,
+      "height": 17,
+      "conf": 92.179413
+    },
+    {
+      "text": "に",
+      "line_num": 17,
+      "left": 242,
+      "top": 748,
+      "width": 17,
+      "height": 12,
+      "conf": 92.921333
+    },
+    {
+      "text": "渡り",
+      "line_num": 17,
+      "left": 240,
+      "top": 770,
+      "width": 20,
+      "height": 43,
+      "conf": 90.265091
+    },
+    {
+      "text": "、",
+      "line_num": 17,
+      "left": 230,
+      "top": 812,
+      "width": 35,
+      "height": 27,
+      "conf": 93.033791
+    },
+    {
+      "text": "庭",
+      "line_num": 17,
+      "left": 240,
+      "top": 838,
+      "width": 20,
+      "height": 25,
+      "conf": 91.816849
+    },
+    {
+      "text": "の",
+      "line_num": 17,
+      "left": 230,
+      "top": 862,
+      "width": 35,
+      "height": 16,
+      "conf": 93.185982
+    },
+    {
+      "text": "井",
+      "line_num": 17,
+      "left": 240,
+      "top": 878,
+      "width": 20,
+      "height": 15,
+      "conf": 92.492767
+    },
+    {
+      "text": "戸",
+      "line_num": 18,
+      "left": 205,
+      "top": 125,
+      "width": 20,
+      "height": 37,
+      "conf": 92.284683
+    },
+    {
+      "text": "に",
+      "line_num": 18,
+      "left": 196,
+      "top": 161,
+      "width": 34,
+      "height": 16,
+      "conf": 93.302231
+    },
+    {
+      "text": "は",
+      "line_num": 18,
+      "left": 205,
+      "top": 176,
+      "width": 20,
+      "height": 34,
+      "conf": 93.224564
+    },
+    {
+      "text": "蓋",
+      "line_num": 18,
+      "left": 206,
+      "top": 211,
+      "width": 20,
+      "height": 20,
+      "conf": 31.046438
+    },
+    {
+      "text": "が",
+      "line_num": 18,
+      "left": 207,
+      "top": 240,
+      "width": 16,
+      "height": 13,
+      "conf": 93.236504
+    },
+    {
+      "text": "され",
+      "line_num": 18,
+      "left": 205,
+      "top": 257,
+      "width": 20,
+      "height": 37,
+      "conf": 96.519547
+    },
+    {
+      "text": "て",
+      "line_num": 18,
+      "left": 207,
+      "top": 303,
+      "width": 17,
+      "height": 10,
+      "conf": 96.805229
+    },
+    {
+      "text": "いた",
+      "line_num": 18,
+      "left": 206,
+      "top": 323,
+      "width": 19,
+      "height": 28,
+      "conf": 93.152321
+    },
+    {
+      "text": "。",
+      "line_num": 18,
+      "left": 196,
+      "top": 350,
+      "width": 34,
+      "height": 22,
+      "conf": 92.983635
+    },
+    {
+      "text": "け",
+      "line_num": 18,
+      "left": 207,
+      "top": 371,
+      "width": 17,
+      "height": 15,
+      "conf": 92.892067
+    },
+    {
+      "text": "れ",
+      "line_num": 18,
+      "left": 205,
+      "top": 390,
+      "width": 20,
+      "height": 18,
+      "conf": 93.074081
+    },
+    {
+      "text": "ど",
+      "line_num": 18,
+      "left": 208,
+      "top": 410,
+      "width": 17,
+      "height": 19,
+      "conf": 93.163666
+    },
+    {
+      "text": "も",
+      "line_num": 18,
+      "left": 207,
+      "top": 433,
+      "width": 16,
+      "height": 18,
+      "conf": 93.305611
+    },
+    {
+      "text": "菊",
+      "line_num": 18,
+      "left": 205,
+      "top": 461,
+      "width": 20,
+      "height": 30,
+      "conf": 76.726768
+    },
+    {
+      "text": "だ",
+      "line_num": 18,
+      "left": 196,
+      "top": 490,
+      "width": 34,
+      "height": 16,
+      "conf": 93.210373
+    },
+    {
+      "text": "け",
+      "line_num": 18,
+      "left": 207,
+      "top": 505,
+      "width": 17,
+      "height": 13,
+      "conf": 93.234215
+    },
+    {
+      "text": "は",
+      "line_num": 18,
+      "left": 207,
+      "top": 521,
+      "width": 18,
+      "height": 15,
+      "conf": 92.616463
+    },
+    {
+      "text": "、",
+      "line_num": 18,
+      "left": 196,
+      "top": 535,
+      "width": 34,
+      "height": 16,
+      "conf": 93.148705
+    },
+    {
+      "text": "同じ",
+      "line_num": 19,
+      "left": 170,
+      "top": 125,
+      "width": 20,
+      "height": 226,
+      "conf": 96.757713
+    },
+    {
+      "text": "よう",
+      "line_num": 19,
+      "left": 161,
+      "top": 184,
+      "width": 33,
+      "height": 32,
+      "conf": 96.822754
+    },
+    {
+      "text": "に",
+      "line_num": 19,
+      "left": 161,
+      "top": 215,
+      "width": 33,
+      "height": 38,
+      "conf": 96.937027
+    },
+    {
+      "text": "咲い",
+      "line_num": 19,
+      "left": 161,
+      "top": 253,
+      "width": 33,
+      "height": 48,
+      "conf": 95.755585
+    },
+    {
+      "text": "て",
+      "line_num": 19,
+      "left": 161,
+      "top": 300,
+      "width": 33,
+      "height": 13,
+      "conf": 97.021217
+    },
+    {
+      "text": "いた",
+      "line_num": 19,
+      "left": 161,
+      "top": 312,
+      "width": 33,
+      "height": 28,
+      "conf": 93.219536
+    },
+    {
+      "text": "。",
+      "line_num": 19,
+      "left": 161,
+      "top": 339,
+      "width": 33,
+      "height": 16,
+      "conf": 92.944191
+    },
+    {
+      "text": "それ",
+      "line_num": 20,
+      "left": 135,
+      "top": 148,
+      "width": 20,
+      "height": 40,
+      "conf": 96.946098
+    },
+    {
+      "text": "で",
+      "line_num": 20,
+      "left": 135,
+      "top": 193,
+      "width": 20,
+      "height": 15,
+      "conf": 97.010284
+    },
+    {
+      "text": "も",
+      "line_num": 20,
+      "left": 136,
+      "top": 213,
+      "width": 17,
+      "height": 19,
+      "conf": 96.903305
+    },
+    {
+      "text": "土曜",
+      "line_num": 20,
+      "left": 135,
+      "top": 237,
+      "width": 20,
+      "height": 62,
+      "conf": 94.82988
+    },
+    {
+      "text": "日",
+      "line_num": 20,
+      "left": 136,
+      "top": 303,
+      "width": 18,
+      "height": 16,
+      "conf": 96.294441
+    },
+    {
+      "text": "の",
+      "line_num": 20,
+      "left": 135,
+      "top": 326,
+      "width": 19,
+      "height": 17,
+      "conf": 85.417091
+    },
+    {
+      "text": "朝",
+      "line_num": 20,
+      "left": 136,
+      "top": 346,
+      "width": 17,
+      "height": 18,
+      "conf": 78.865051
+    },
+    {
+      "text": "に",
+      "line_num": 20,
+      "left": 135,
+      "top": 369,
+      "width": 19,
+      "height": 13,
+      "conf": 92.925789
+    },
+    {
+      "text": "な",
+      "line_num": 20,
+      "left": 125,
+      "top": 382,
+      "width": 34,
+      "height": 17,
+      "conf": 96.632324
+    },
+    {
+      "text": "る",
+      "line_num": 20,
+      "left": 136,
+      "top": 399,
+      "width": 17,
+      "height": 9,
+      "conf": 97.016655
+    },
+    {
+      "text": "と",
+      "line_num": 20,
+      "left": 137,
+      "top": 412,
+      "width": 15,
+      "height": 17,
+      "conf": 96.720894
+    },
+    {
+      "text": "べ",
+      "line_num": 21,
+      "left": 276,
+      "top": 522,
+      "width": 19,
+      "height": 15,
+      "conf": 90.064049
+    },
+    {
+      "text": "て",
+      "line_num": 21,
+      "left": 276,
+      "top": 544,
+      "width": 18,
+      "height": 17,
+      "conf": 93.303879
+    },
+    {
+      "text": "いる",
+      "line_num": 21,
+      "left": 277,
+      "top": 566,
+      "width": 18,
+      "height": 35,
+      "conf": 92.420486
+    },
+    {
+      "text": "。",
+      "line_num": 21,
+      "left": 288,
+      "top": 608,
+      "width": 7,
+      "height": 7,
+      "conf": 93.045357
+    },
+    {
+      "text": "場",
+      "line_num": 22,
+      "left": 205,
+      "top": 565,
+      "width": 20,
+      "height": 40,
+      "conf": 76.763847
+    },
+    {
+      "text": "の",
+      "line_num": 22,
+      "left": 205,
+      "top": 609,
+      "width": 20,
+      "height": 18,
+      "conf": 92.98645
+    },
+    {
+      "text": "外",
+      "line_num": 22,
+      "left": 207,
+      "top": 632,
+      "width": 17,
+      "height": 15,
+      "conf": 93.164909
+    },
+    {
+      "text": "に",
+      "line_num": 22,
+      "left": 195,
+      "top": 646,
+      "width": 35,
+      "height": 16,
+      "conf": 93.245453
+    },
+    {
+      "text": "まで",
+      "line_num": 22,
+      "left": 206,
+      "top": 661,
+      "width": 19,
+      "height": 32,
+      "conf": 92.955681
+    },
+    {
+      "text": "枝",
+      "line_num": 22,
+      "left": 205,
+      "top": 703,
+      "width": 20,
+      "height": 27,
+      "conf": 92.687935
+    },
+    {
+      "text": "を",
+      "line_num": 22,
+      "left": 205,
+      "top": 741,
+      "width": 19,
+      "height": 15,
+      "conf": 92.332108
+    },
+    {
+      "text": "伸ばし",
+      "line_num": 22,
+      "left": 195,
+      "top": 762,
+      "width": 35,
+      "height": 51,
+      "conf": 91.023827
+    },
+    {
+      "text": "て",
+      "line_num": 22,
+      "left": 206,
+      "top": 812,
+      "width": 18,
+      "height": 14,
+      "conf": 93.151131
+    },
+    {
+      "text": "、",
+      "line_num": 22,
+      "left": 219,
+      "top": 829,
+      "width": 6,
+      "height": 6,
+      "conf": 91.624077
+    },
+    {
+      "text": "昔",
+      "line_num": 22,
+      "left": 205,
+      "top": 854,
+      "width": 20,
+      "height": 17,
+      "conf": 0
+    },
+    {
+      "text": "と",
+      "line_num": 22,
+      "left": 208,
+      "top": 878,
+      "width": 14,
+      "height": 14,
+      "conf": 96.812889
+    },
+    {
+      "text": "、",
+      "line_num": 23,
+      "left": 149,
+      "top": 433,
+      "width": 5,
+      "height": 6,
+      "conf": 92.856255
+    },
+    {
+      "text": "私",
+      "line_num": 23,
+      "left": 134,
+      "top": 467,
+      "width": 21,
+      "height": 29,
+      "conf": 92.364708
+    },
+    {
+      "text": "は",
+      "line_num": 23,
+      "left": 137,
+      "top": 500,
+      "width": 15,
+      "height": 17,
+      "conf": 96.621468
+    },
+    {
+      "text": "と",
+      "line_num": 23,
+      "left": 137,
+      "top": 522,
+      "width": 15,
+      "height": 12,
+      "conf": 96.811058
+    },
+    {
+      "text": "きど",
+      "line_num": 23,
+      "left": 126,
+      "top": 533,
+      "width": 34,
+      "height": 29,
+      "conf": 93.273506
+    },
+    {
+      "text": "き",
+      "line_num": 23,
+      "left": 137,
+      "top": 566,
+      "width": 15,
+      "height": 18,
+      "conf": 93.26416
+    },
+    {
+      "text": "早",
+      "line_num": 23,
+      "left": 135,
+      "top": 592,
+      "width": 19,
+      "height": 15,
+      "conf": 93.164848
+    },
+    {
+      "text": "く",
+      "line_num": 23,
+      "left": 138,
+      "top": 616,
+      "width": 12,
+      "height": 13,
+      "conf": 93.102997
+    },
+    {
+      "text": "目",
+      "line_num": 23,
+      "left": 135,
+      "top": 641,
+      "width": 20,
+      "height": 26,
+      "conf": 92.23774
+    },
+    {
+      "text": "が",
+      "line_num": 23,
+      "left": 135,
+      "top": 675,
+      "width": 19,
+      "height": 20,
+      "conf": 93.26693
+    },
+    {
+      "text": "覚め",
+      "line_num": 23,
+      "left": 136,
+      "top": 698,
+      "width": 18,
+      "height": 40,
+      "conf": 95.565506
+    },
+    {
+      "text": "る",
+      "line_num": 23,
+      "left": 148,
+      "top": 743,
+      "width": 7,
+      "height": 5,
+      "conf": 92.922989
+    },
+    {
+      "text": "。",
+      "line_num": 23,
+      "left": 135,
+      "top": 765,
+      "width": 19,
+      "height": 11,
+      "conf": 92.609467
+    },
+    {
+      "text": "そ",
+      "line_num": 23,
+      "left": 126,
+      "top": 775,
+      "width": 34,
+      "height": 18,
+      "conf": 92.928444
+    },
+    {
+      "text": "し",
+      "line_num": 23,
+      "left": 138,
+      "top": 792,
+      "width": 15,
+      "height": 12,
+      "conf": 96.950493
+    },
+    {
+      "text": "て",
+      "line_num": 23,
+      "left": 136,
+      "top": 810,
+      "width": 17,
+      "height": 16,
+      "conf": 91.061073
+    },
+    {
+      "text": "、",
+      "line_num": 23,
+      "left": 135,
+      "top": 830,
+      "width": 19,
+      "height": 27,
+      "conf": 92.95652
+    },
+    {
+      "text": "遠",
+      "line_num": 23,
+      "left": 134,
+      "top": 858,
+      "width": 21,
+      "height": 35,
+      "conf": 63.701813
+    },
+    {
+      "text": "く",
+      "line_num": 23,
+      "left": 126,
+      "top": 883,
+      "width": 34,
+      "height": 14,
+      "conf": 93.236511
+    }
+  ]
+}

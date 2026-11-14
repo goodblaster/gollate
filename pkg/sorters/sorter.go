@@ -16,9 +16,18 @@ type Block = ocr.Block
 
 // Sorter performs pathfinding-based sorting of OCR blocks to match canonical text.
 type Sorter struct {
-	lines   *LineServer        // canonical lines of text
-	input   []Block            // input OCR blocks (normalized)
-	output  []Block            // output OCR blocks (normalized)
+	lines  *LineServer // canonical lines of text
+	input  []Block     // input OCR blocks (normalized)
+	output []Block     // output OCR blocks (normalized)
+
+	canonical []string // canonical text as given, for canonical spans
+
+	// outputCanonicalLines[i] is the canonical line (index into the text
+	// passed to the constructor) that the i-th line of output was matched
+	// to, or -1 for unmatched leftovers and inserted blank lines. Output
+	// lines are the separator-delimited runs of output.
+	outputCanonicalLines []int
+
 	mapped  map[string][]Block // map of words to all blocks that contain that word
 	config  SorterConfig       // algorithm configuration parameters
 	metrics SortMetrics        // performance metrics
@@ -61,6 +70,17 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 	if !config.DisableVerticalDetection && config.ReadingOrder.IsHorizontal() && detectVerticalText(ocrBlocks) {
 		log.Debug("vertical text detected; switching reading order to VerticalTTB_RTL")
 		config.ReadingOrder = VerticalTTB_RTL
+		if reordered, changed := reverseLeftToRightColumns(ocrBlocks); changed {
+			log.Debug("vertical text: columns were emitted left to right; restored right-to-left reading order")
+			ocrBlocks = reordered
+			// Emit order has just been shown unreliable for this page,
+			// so stop leaning on it: with a line id per column, leftover
+			// assembly places each column on its own evidence instead of
+			// treating the page as one run. (Not done when emit order is
+			// sound - there the single run is exactly right, and
+			// per-column placement measured 0.3-1.8 points worse.)
+			assignColumnLineIds(ocrBlocks)
+		}
 		if config.EnableVerticalWrapBridging && !config.EnableWrapBridging {
 			log.Debug("vertical text: enabling wrap bridging (columns wrap like lines)")
 			config.EnableWrapBridging = true
@@ -77,12 +97,13 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 
 	// Start building the sorter.
 	sorter := &Sorter{
-		input:   ocrBlocks,
-		lines:   NewLineServer(lines),
-		mapped:  mapBlocks(ocrBlocks),
-		config:  config,
-		handler: handler,
-		logger:  log,
+		canonical: text,
+		input:     ocrBlocks,
+		lines:     NewLineServer(lines),
+		mapped:    mapBlocks(ocrBlocks),
+		config:    config,
+		handler:   handler,
+		logger:    log,
 	}
 	sorter.metrics.LineRepairs = repairs
 
@@ -146,11 +167,13 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 			sub.Text = part.text
 			sub.NormedText = part.normalized
 			sub.HyphenAfter = part.separator
+			sub.Continuation = nil // belongs to the last piece only, restored below
 			sub.BoundingBox.Left = left
 			sub.BoundingBox.Width = w.BoundingBox.Width * float64(part.runes) / float64(total)
 			left += sub.BoundingBox.Width
 			keep(sub)
 		}
+		processed[len(processed)-1].Continuation = w.Continuation
 	}
 
 	return processed
@@ -287,6 +310,7 @@ func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool) []Bloc
 				if canonicalWords[joined] && !bothWords {
 					b.OriginalOcrText = b.Text + " " + next.Text
 					b.CorrectionType = "dehyphenated"
+					b.Continuation = &ocr.BlockPart{Page: next.Page, Bounds: next.BoundingBox}
 					b.Text = stem + next.Text
 					b.NormedText = joined
 					out = append(out, b)
@@ -313,9 +337,13 @@ type compoundPart struct {
 // block then stays whole). Leading and trailing punctuation stays attached
 // to the first and last piece.
 func splitCompoundText(text string, tokens []string, canonicalWords map[string]bool) []compoundPart {
-	for _, token := range tokens {
-		if !canonicalWords[token] {
-			return nil
+	// A nil vocabulary means "no vocabulary check" (used when locating the
+	// parts of a canonical word itself).
+	if canonicalWords != nil {
+		for _, token := range tokens {
+			if !canonicalWords[token] {
+				return nil
+			}
 		}
 	}
 

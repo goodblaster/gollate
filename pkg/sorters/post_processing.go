@@ -51,9 +51,25 @@ func (s *Sorter) postSortBlocks() []Block {
 	// This ensures sentences from the same canonical line stay together in spatial order
 	allSentences := s.groupAndSortByCanonicalLine(assembledLines, leftoverSentences, lines)
 
-	// Special case: handle documents with no canonical text
-	if len(lines) <= 1 {
+	// Special case: handle documents with no canonical text. (This used to
+	// fire for any single unsplit canonical line, re-splitting its output
+	// by punctuation and discarding which line it was - a one-line page,
+	// such as the last few words of a book, lost its identity.)
+	hasCanonicalText := false
+	for _, line := range lines {
+		if !line.IsBlank {
+			hasCanonicalText = true
+			break
+		}
+	}
+	if !hasCanonicalText {
 		allSentences = s.handleNoCanonicalText(allSentences)
+		// Re-split by punctuation: the lines no longer correspond to
+		// canonical lines one for one.
+		s.outputCanonicalLines = make([]int, len(allSentences))
+		for i := range s.outputCanonicalLines {
+			s.outputCanonicalLines[i] = -1
+		}
 	}
 
 	// Serialize to final output format with line separators
@@ -399,8 +415,61 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 		groups[originalLine] = group
 	}
 
+	// A short unmatched run whose emit-order neighbors on both sides were
+	// matched into the same canonical line is a misread sitting inside that
+	// line - the hole pathfinding bridged over. Put it back in the hole
+	// rather than after everything else, where it reads as a stray scrap
+	// ("solieitor shc") and leaves the paragraph with a word missing.
+	const maxSpliceBlocks = 4
+	lineOfBlock := make(map[int]int)
+	for line, group := range groups {
+		if line < 0 {
+			continue
+		}
+		for _, sent := range group {
+			for _, b := range sent.blocks {
+				lineOfBlock[b.Index] = line
+			}
+		}
+	}
+	splices := make(map[int][][]Block)
+	if unmatched := groups[-1]; len(unmatched) > 0 {
+		kept := unmatched[:0:0]
+		for _, sent := range unmatched {
+			// A leftover sentence can hold blocks that are not adjacent
+			// (they share an engine line id); each run of consecutive
+			// blocks is its own gap and is judged on its own neighbors.
+			var rest []Block
+			for start := 0; start < len(sent.blocks); {
+				end := start + 1
+				for end < len(sent.blocks) && sent.blocks[end].Index == sent.blocks[end-1].Index+1 {
+					end++
+				}
+				run := sent.blocks[start:end]
+				before, okBefore := lineOfBlock[run[0].Index-1]
+				after, okAfter := lineOfBlock[run[len(run)-1].Index+1]
+				if len(run) <= maxSpliceBlocks && okBefore && okAfter && before == after {
+					splices[before] = append(splices[before], run)
+				} else {
+					rest = append(rest, run...)
+				}
+				start = end
+			}
+			if len(rest) > 0 {
+				sent.blocks = rest
+				kept = append(kept, sent)
+			}
+		}
+		groups[-1] = kept
+	}
+
 	// Reassemble in canonical order (original line order, with -1 at end)
 	var result [][]Block
+	var resultLines []int // canonical line of each result entry, -1 if none
+	emit := func(blocks []Block, canonicalLine int) {
+		result = append(result, blocks)
+		resultLines = append(resultLines, canonicalLine)
+	}
 
 	// Sort originalLineOrder by the actual line numbers to maintain canonical order
 	sort.Slice(originalLineOrder, func(i, j int) bool {
@@ -436,12 +505,12 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 					const minRef = 0.01 // 1% of the page minimum
 					const paragraphBreakThreshold = 1.5
 					if ref >= minRef && advanceGap(prevLast, firstBlock, s.config.ReadingOrder) > paragraphBreakThreshold*ref {
-						result = append(result, []Block{})
+						emit([]Block{}, -1)
 					}
 				}
 
 				// Append this sentence's blocks
-				result = append(result, sent.blocks)
+				emit(sent.blocks, -1)
 
 				prevLast = sent.blocks[len(sent.blocks)-1]
 				havePrev = true
@@ -456,13 +525,22 @@ func (s *Sorter) groupAndSortByCanonicalLine(foundSentences []assembledSentence,
 					isBlank = true
 				}
 			}
+			for _, run := range splices[originalLine] {
+				at := slices.IndexFunc(mergedBlocks, func(b Block) bool { return b.Index == run[0].Index-1 })
+				if at >= 0 {
+					mergedBlocks = slices.Insert(mergedBlocks, at+1, run...)
+				} else {
+					mergedBlocks = append(mergedBlocks, run...)
+				}
+			}
 			// Append if we have blocks OR if this is a blank line (paragraph separator)
 			if len(mergedBlocks) > 0 || isBlank {
-				result = append(result, mergedBlocks)
+				emit(mergedBlocks, originalLine)
 			}
 		}
 	}
 
+	s.outputCanonicalLines = resultLines
 	return result
 }
 
@@ -484,19 +562,20 @@ const leftoverMinOverlap = 0.6
 // and plain emit order survives (measured: 2% noise 50, 10% noise 78).
 //
 // Candidates are the canonical lines between those of the sentence's
-// nearest matched neighbors in emit order (prev, next; -1 if none). The
+// nearest matched neighbors in emit order (prev, next; -1 if none - with
+// no neighbor on a side the range runs to that end of the document). The
 // one sharing the most tokens with the sentence wins, if the share reaches
 // leftoverMinOverlap. Returns the line and the sentence's estimated offset
 // within it, or (-1, -1).
 func (s *Sorter) placeByNeighbors(normalized string, prev, next, firstLine, lastLine int, canonical map[int]Line, noSpaces map[int]string) (line, offset int) {
-	if prev == -1 && next == -1 {
-		return -1, -1
-	}
+
 	// With a neighbor on only one side, the range runs to that end of the
 	// document: everything before the first placed sentence may belong to
 	// any earlier line.
 	lo, hi := prev, next
 	switch {
+	case prev == -1 && next == -1:
+		lo, hi = firstLine, lastLine // no neighbor placed yet: any line
 	case prev == -1:
 		lo = firstLine
 	case next == -1:

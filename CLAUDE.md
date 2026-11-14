@@ -46,6 +46,11 @@ bin/gollate --engine tesseract \
              --format json \
              --output result.json
 
+# Multi-page: repeat --ocr-file once per page, in page order
+bin/gollate --engine blocks \
+             --ocr-file book-1-pdftext.json --ocr-file book-2-pdftext.json \
+             --text-file book.txt --width 396 --height 612 --language english
+
 # Generate debug output with visualization images
 bin/gollate --engine apple \
              --ocr-file data.json \
@@ -88,6 +93,11 @@ UPDATE_BASELINES=1 go test ./integration   # or: make baselines
 
 # A/B test config changes: per-case accuracy delta table vs default config
 ./scripts/run-experiments.sh "Flag=value[,Flag=value...]" [...]
+
+# Multi-page gate (part of go test ./integration): per fixture and source,
+# ratchets accuracy, per-paragraph recovery, precision and token localization
+go test ./integration -run TestMultipage -v
+./scripts/generate-multipage-fixtures.sh   # regenerate testdata/multipage (slow)
 
 # Slow (minutes): regenerate documents + OCR data (when content/layouts change)
 make build utils && ./scripts/generate-ocr-tests.sh
@@ -236,6 +246,24 @@ Key optimizations:
 - `line_server.go` - Manages canonical text lines and handles splitting
 - `normalize.go` - Text normalization (lowercase, punctuation removal, Unicode handling)
 
+**`pkg/multipage`** - Multi-page documents (sits above `pkg/sorters`)
+- `Sort(pages, canonical, config, log)` takes an ordered list of single-page
+  inputs and the whole canonical text; returns one `Document` in canonical
+  order whose tokens each carry their page
+- `furniture.go` - strips page numbers and running heads before anything else:
+  a page's top/bottom line is furniture when another page has a line at the
+  same height that reads the same or is also a page label
+- `segment.go` - `Segment` assigns canonical lines to pages before any
+  pathfinding (rarity-weighted token coverage + a weak positional prior,
+  monotone dynamic program), then detects lines that straddle a page break
+  and pins the cut by consecutive-token runs on each side. No sorter dependency
+- `sort.go` - runs the single-page sorter per page with only that page's lines
+  (a straddling line is offered in two parts, head and tail, so neither page
+  can claim the other's words), joins the halves in the merge, and re-joins a
+  word hyphenated across the break
+- **Pages are never pooled.** `Index`, `LineId` and coordinates are page-local;
+  the one-page-per-sort contract of `pkg/sorters` still holds literally
+
 **`pkg/engines`** - OCR engine registry and readers
 - `engines.Engine` interface (Name + Read) maps an engine name to parsing
   code; `engines.Register` adds custom engines (Textract, Document AI, …)
@@ -360,6 +388,10 @@ The package builds on non-macOS hosts with only the poppler backend.
     no change — it's wrap-chaining across narrow columns with Hindi's
     duplicate-heavy words, adjacent to the known pass-loop/wrap issues
     in TESTING.md.
+  - **Caveat to the next bullet (2026-11-13):** it describes the
+    single-page fixtures. A *paginated* vertical PDF's text layer lists
+    each page's columns left to right (raw emit order 31%); the sorter now
+    detects and reverses that (`reverseLeftToRightColumns`).
   - **Vertical-Japanese text layers extract perfectly** — raw emit
     order alone scores 100% — and the sorter's 63–76% output rides
     that emit order through the leftover assembler (`lines_found` is
@@ -441,6 +473,15 @@ block per token with boxes apportioned by text length; output re-joins
 adjacent pieces with the original separator. Separately (always on), a word
 broken across a line end by justified typesetting ("ven-" / "dors") is
 re-joined into one block when the result is a canonical word.
+
+### Tokens and the canonical text
+Each output paragraph carries `CanonicalLine` (which canonical line it was
+matched to) and each token `Canonical`, the byte range of that line it
+corresponds to - recovered at output time by aligning the paragraph's
+matching keys to the line's tokens (`canonical_spans.go`), so it covers
+every way a block can end up in a paragraph. This is the link passage
+highlighting uses. A word re-joined from two halves (line-end or page-break
+hyphenation) has `Continuation`: the page and box of its second half.
 
 ### Output Formats
 `sorter.Document()` is the primary output (pkg/sorters/document.go),

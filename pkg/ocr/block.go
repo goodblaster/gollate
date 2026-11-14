@@ -19,9 +19,11 @@ package ocr
 //   - Index must reflect OCR emit order (0..n-1). Emit order is an
 //     algorithmic signal - candidate rotation and leftover assembly rely on
 //     it - not an arbitrary ID.
-//   - One page per sort. Multi-page documents are sorted page by page;
-//     tall single pages should be sliced for OCR (see pkg/slicing) and
-//     merged back into one coordinate space beforehand.
+//   - One page per sort. Multi-page documents go through pkg/multipage,
+//     which runs one sort per page and merges the results; Index, LineId
+//     and coordinates remain page-local throughout. Tall single pages
+//     should be sliced for OCR (see pkg/slicing) and merged back into one
+//     coordinate space beforehand.
 //   - Confidence normalized to 0-1 when available; LineId optionally
 //     preserves the engine's own line grouping for downstream consumers.
 type Block struct {
@@ -36,6 +38,17 @@ type Block struct {
 	PageWidth     int         `json:"page_width"`
 	PageHeight    int         `json:"page_height"`
 	LineId        string      `json:"line_id,omitempty"`
+
+	// Continuation is where the rest of this word is, when the word was
+	// broken across a line or page and its two halves were re-joined into
+	// this block. BoundingBox covers only the first half.
+	Continuation *BlockPart `json:"continuation,omitempty"`
+
+	// Page is the 0-based page this block is on, for multi-page documents
+	// (set by pkg/multipage). Index, LineId and BoundingBox stay local to
+	// that page; blocks from different pages are never sorted together.
+	Page int `json:"page,omitempty"`
+
 	// HyphenAfter is the separator that followed this block in the OCR
 	// word it was split from ("-" in "four-block", "." in "$4.2", ":" in
 	// "6:30"). Output re-joins the pieces with it instead of a space.
@@ -47,6 +60,12 @@ type Block struct {
 	CorrectionType  string  `json:"correction_type,omitempty"`   // How it was corrected: "suggested", etc.
 	EditDistance    int     `json:"edit_distance,omitempty"`     // Edit distance from original to suggested
 	Similarity      float64 `json:"similarity,omitempty"`        // Text similarity ratio (0-1)
+}
+
+// BlockPart locates a further piece of a block's text.
+type BlockPart struct {
+	Page   int         `json:"page"`
+	Bounds BoundingBox `json:"bounds"`
 }
 
 func (b Block) String() string {

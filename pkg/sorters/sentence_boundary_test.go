@@ -83,3 +83,30 @@ func TestSplitLeftoversCutsAtCanonicalBoundary(t *testing.T) {
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
+
+// Arabic-script and Devanagari punctuation is punctuation: it must not
+// stay glued to the word, and it ends sentences.
+func TestArabicAndDevanagariPunctuation(t *testing.T) {
+	for in, want := range map[string]string{
+		"سبت،":    "سبت",
+		"سبت؛":    "سبت",
+		"لماذا؟":  "لماذا",
+		"है।":     "ह",     // the vowel sign is a combining mark, stripped like an accent
+		"समाप्त॥": "समापत", // nukta/virama are combining marks, stripped like accents
+		"tow‐er":  "tow er",
+	} {
+		if got := NormalizeText(in); got != want {
+			t.Errorf("NormalizeText(%q) = %q, want %q", in, got, want)
+		}
+	}
+	for _, text := range []string{"यह एक वाक्य है।", "هل هذا سؤال؟"} {
+		if !endsWithSentencePunctuation(text) {
+			t.Errorf("endsWithSentencePunctuation(%q) = false", text)
+		}
+	}
+	got := SplitParagraph("यह पहला वाक्य है। यह दूसरा वाक्य है।")
+	want := []string{"यह पहला वाक्य है।", "यह दूसरा वाक्य है।"}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %q, want %q", got, want)
+	}
+}

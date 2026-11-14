@@ -1,0 +1,103 @@
+{
+  "words": [
+    {
+      "text": "The",
+      "line_num": 0,
+      "left": 321,
+      "top": 56,
+      "width": 25,
+      "height": 12,
+      "conf": 96.930176
+    },
+    {
+      "text": "Keeper's",
+      "line_num": 0,
+      "left": 350,
+      "top": 56,
+      "width": 60,
+      "height": 16,
+      "conf": 58.635197
+    },
+    {
+      "text": "Ledgers",
+      "line_num": 0,
+      "left": 415,
+      "top": 56,
+      "width": 57,
+      "height": 16,
+      "conf": 96.193184
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 101,
+      "top": 129,
+      "width": 30,
+      "height": 17,
+      "conf": 96.464951
+    },
+    {
+      "text": "window,",
+      "line_num": 1,
+      "left": 136,
+      "top": 129,
+      "width": 82,
+      "height": 21,
+      "conf": 96.718048
+    },
+    {
+      "text": "and",
+      "line_num": 1,
+      "left": 225,
+      "top": 129,
+      "width": 35,
+      "height": 17,
+      "conf": 97.005363
+    },
+    {
+      "text": "waited",
+      "line_num": 1,
+      "left": 266,
+      "top": 129,
+      "width": 64,
+      "height": 17,
+      "conf": 96.989525
+    },
+    {
+      "text": "for",
+      "line_num": 1,
+      "left": 336,
+      "top": 129,
+      "width": 28,
+      "height": 17,
+      "conf": 97.015739
+    },
+    {
+      "text": "the",
+      "line_num": 1,
+      "left": 370,
+      "top": 129,
+      "width": 30,
+      "height": 17,
+      "conf": 97.014824
+    },
+    {
+      "text": "first",
+      "line_num": 1,
+      "left": 406,
+      "top": 129,
+      "width": 39,
+      "height": 17,
+      "conf": 96.529892
+    },
+    {
+      "text": "ship.",
+      "line_num": 1,
+      "left": 451,
+      "top": 129,
+      "width": 46,
+      "height": 22,
+      "conf": 96.529892
+    }
+  ]
+}

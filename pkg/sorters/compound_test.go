@@ -191,3 +191,64 @@ func TestJoinLineBreakHyphens(t *testing.T) {
 		t.Errorf("joined block should keep the first part's position: %+v", joined.BoundingBox)
 	}
 }
+
+// Vertical text whose columns arrive left to right is put back in reading
+// order (right to left), and each column becomes its own line.
+func TestReverseLeftToRightColumns(t *testing.T) {
+	column := func(text string, left float64) []Block {
+		var out []Block
+		for i, r := range []rune(text) {
+			out = append(out, Block{
+				Text: string(r), NormedText: string(r), Extractor: "test",
+				BoundingBox: ocr.BoundingBox{Left: left, Top: 0.10 + 0.03*float64(i), Width: 0.03, Height: 0.025},
+			})
+		}
+		return out
+	}
+	text := func(blocks []Block) string {
+		var sb strings.Builder
+		for _, b := range blocks {
+			sb.WriteString(b.Text)
+		}
+		return sb.String()
+	}
+	number := func(blocks []Block) []Block {
+		for i := range blocks {
+			blocks[i].Index = i
+		}
+		return blocks
+	}
+
+	// Reading order is あいうえ / かきくけ / さしすせ / たちつて, rightmost first.
+	cols := [][]Block{column("あいうえ", 0.70), column("かきくけ", 0.60), column("さしすせ", 0.50), column("たちつて", 0.40)}
+
+	var reversed []Block // as a paginated PDF text layer emitted them
+	for i := len(cols) - 1; i >= 0; i-- {
+		reversed = append(reversed, cols[i]...)
+	}
+	got, changed := reverseLeftToRightColumns(number(reversed))
+	if !changed || text(got) != "あいうえかきくけさしすせたちつて" {
+		t.Errorf("changed=%v, text=%q", changed, text(got))
+	}
+	for i, b := range got {
+		if b.Index != i {
+			t.Fatalf("blocks not renumbered: %d has Index %d", i, b.Index)
+		}
+	}
+	assignColumnLineIds(got)
+	if got[0].LineId != got[3].LineId || got[3].LineId == got[4].LineId {
+		t.Errorf("column line ids wrong: %q %q %q", got[0].LineId, got[3].LineId, got[4].LineId)
+	}
+
+	// Already right to left: left alone.
+	var correct []Block
+	for _, c := range cols {
+		correct = append(correct, c...)
+	}
+	for i := range correct {
+		correct[i].LineId = ""
+	}
+	if _, changed := reverseLeftToRightColumns(number(correct)); changed {
+		t.Errorf("right-to-left columns were reversed")
+	}
+}

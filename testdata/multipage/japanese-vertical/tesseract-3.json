@@ -1,0 +1,256 @@
+{
+  "words": [
+    {
+      "text": "AR",
+      "line_num": 0,
+      "left": 434,
+      "top": 53,
+      "width": 28,
+      "height": 14,
+      "conf": 0
+    },
+    {
+      "text": "OBS",
+      "line_num": 0,
+      "left": 470,
+      "top": 52,
+      "width": 41,
+      "height": 15,
+      "conf": 0
+    },
+    {
+      "text": "LORY",
+      "line_num": 0,
+      "left": 522,
+      "top": 53,
+      "width": 55,
+      "height": 14,
+      "conf": 74.671234
+    },
+    {
+      "text": "で",
+      "line_num": 1,
+      "left": 593,
+      "top": 127,
+      "width": 20,
+      "height": 16,
+      "conf": 96.394997
+    },
+    {
+      "text": "包丁",
+      "line_num": 1,
+      "left": 592,
+      "top": 146,
+      "width": 21,
+      "height": 172,
+      "conf": 96.542595
+    },
+    {
+      "text": "の",
+      "line_num": 1,
+      "left": 582,
+      "top": 203,
+      "width": 35,
+      "height": 25,
+      "conf": 93.270882
+    },
+    {
+      "text": "音",
+      "line_num": 1,
+      "left": 582,
+      "top": 228,
+      "width": 35,
+      "height": 29,
+      "conf": 92.959412
+    },
+    {
+      "text": "が",
+      "line_num": 1,
+      "left": 582,
+      "top": 256,
+      "width": 35,
+      "height": 16,
+      "conf": 93.305878
+    },
+    {
+      "text": "し",
+      "line_num": 1,
+      "left": 582,
+      "top": 271,
+      "width": 35,
+      "height": 17,
+      "conf": 96.883751
+    },
+    {
+      "text": "な",
+      "line_num": 1,
+      "left": 582,
+      "top": 287,
+      "width": 35,
+      "height": 16,
+      "conf": 92.260132
+    },
+    {
+      "text": "い",
+      "line_num": 1,
+      "left": 582,
+      "top": 302,
+      "width": 35,
+      "height": 21,
+      "conf": 92.751762
+    },
+    {
+      "text": "か",
+      "line_num": 2,
+      "left": 593,
+      "top": 323,
+      "width": 19,
+      "height": 18,
+      "conf": 96.719521
+    },
+    {
+      "text": "と",
+      "line_num": 2,
+      "left": 595,
+      "top": 346,
+      "width": 15,
+      "height": 16,
+      "conf": 92.759766
+    },
+    {
+      "text": "、",
+      "line_num": 2,
+      "left": 607,
+      "top": 367,
+      "width": 5,
+      "height": 5,
+      "conf": 93.067596
+    },
+    {
+      "text": "し",
+      "line_num": 2,
+      "left": 596,
+      "top": 389,
+      "width": 14,
+      "height": 18,
+      "conf": 92.700363
+    },
+    {
+      "text": "ば",
+      "line_num": 2,
+      "left": 594,
+      "top": 410,
+      "width": 19,
+      "height": 19,
+      "conf": 96.681198
+    },
+    {
+      "text": "らく",
+      "line_num": 2,
+      "left": 595,
+      "top": 433,
+      "width": 15,
+      "height": 40,
+      "conf": 93.273872
+    },
+    {
+      "text": "耳",
+      "line_num": 2,
+      "left": 592,
+      "top": 480,
+      "width": 20,
+      "height": 13,
+      "conf": 84.112152
+    },
+    {
+      "text": "を",
+      "line_num": 2,
+      "left": 592,
+      "top": 506,
+      "width": 20,
+      "height": 33,
+      "conf": 92.819809
+    },
+    {
+      "text": "澄",
+      "line_num": 2,
+      "left": 594,
+      "top": 542,
+      "width": 17,
+      "height": 19,
+      "conf": 86.723457
+    },
+    {
+      "text": "ま",
+      "line_num": 2,
+      "left": 592,
+      "top": 571,
+      "width": 20,
+      "height": 11,
+      "conf": 93.006889
+    },
+    {
+      "text": "せ",
+      "line_num": 2,
+      "left": 593,
+      "top": 588,
+      "width": 18,
+      "height": 16,
+      "conf": 93.304008
+    },
+    {
+      "text": "て",
+      "line_num": 2,
+      "left": 593,
+      "top": 609,
+      "width": 19,
+      "height": 14,
+      "conf": 96.871292
+    },
+    {
+      "text": "みる",
+      "line_num": 2,
+      "left": 583,
+      "top": 622,
+      "width": 34,
+      "height": 27,
+      "conf": 96.625748
+    },
+    {
+      "text": "の",
+      "line_num": 2,
+      "left": 593,
+      "top": 659,
+      "width": 18,
+      "height": 11,
+      "conf": 95.978119
+    },
+    {
+      "text": "で",
+      "line_num": 2,
+      "left": 593,
+      "top": 678,
+      "width": 20,
+      "height": 14,
+      "conf": 97.007614
+    },
+    {
+      "text": "ある",
+      "line_num": 2,
+      "left": 593,
+      "top": 696,
+      "width": 18,
+      "height": 36,
+      "conf": 93.273369
+    },
+    {
+      "text": "。",
+      "line_num": 2,
+      "left": 605,
+      "top": 740,
+      "width": 7,
+      "height": 7,
+      "conf": 92.339798
+    }
+  ]
+}

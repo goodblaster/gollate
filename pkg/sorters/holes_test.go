@@ -97,8 +97,10 @@ func TestChainHoleGapFillRequiresExactText(t *testing.T) {
 	if m.HolesBridged != 1 || m.HolesFilled != 0 || m.HolesLeftEmpty != 1 {
 		t.Errorf("holes bridged/filled/empty = %d/%d/%d, want 1/0/1", m.HolesBridged, m.HolesFilled, m.HolesLeftEmpty)
 	}
-	// The unclaimed near-miss surfaces as a leftover, not silently dropped.
-	want := "the quick fox jumps over seventeen lazy dogs hrown"
+	// The near-miss is not claimed by the matcher (the metrics above), and
+	// is not dropped either: post-processing puts it back in the gap it
+	// sits in, between the matched words either side of it.
+	want := "the quick hrown fox jumps over seventeen lazy dogs"
 	if got := joinTexts(sorted); got != want {
 		t.Errorf("sorted output = %q, want %q", got, want)
 	}

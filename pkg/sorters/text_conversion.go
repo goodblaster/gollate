@@ -73,6 +73,12 @@ func endsWithSentencePunctuation(text string) bool {
 		return true
 	}
 
+	// Arabic-script and Devanagari sentence endings.
+	if lastRune == '\u061F' || lastRune == '\u06D4' || // ؟ ۔
+		lastRune == '\u0964' || lastRune == '\u0965' { // । ॥
+		return true
+	}
+
 	// Western exclamation mark or question mark (always sentence-ending)
 	if strings.HasSuffix(text, "!") || strings.HasSuffix(text, "?") {
 		return true

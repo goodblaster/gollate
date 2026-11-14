@@ -39,6 +39,11 @@ type Span struct {
 
 // Paragraph is one sorted line/paragraph of output.
 type Paragraph struct {
+	// CanonicalLine is the index of the canonical text line this paragraph
+	// was matched to (an index into the lines given to the sorter), or nil
+	// for text that matched no canonical line.
+	CanonicalLine *int `json:"canonical_line,omitempty"`
+
 	Span   Span            `json:"span"`
 	Bounds ocr.BoundingBox `json:"bounds"`
 	Tokens []Token         `json:"tokens"`
@@ -52,6 +57,15 @@ type Token struct {
 	Span       Span            `json:"span"`
 	Bounds     ocr.BoundingBox `json:"bounds"`
 	Confidence float64         `json:"confidence,omitempty"`
+
+	// Canonical is the byte range, within the canonical line named by the
+	// paragraph's CanonicalLine, that this token corresponds to; nil when
+	// the token could not be tied to canonical text.
+	Canonical *Span `json:"canonical,omitempty"`
+
+	// Continuation is where the rest of the word is when it was broken
+	// across a line or page (Bounds then covers only its first half).
+	Continuation *ocr.BlockPart `json:"continuation,omitempty"`
 
 	text *string // backref for String(); debugging only, never serialized
 }
@@ -79,7 +93,9 @@ func (s *Sorter) Document() *Document {
 	var text strings.Builder
 	var run []Block
 
+	line := 0 // index of the output line the current run belongs to
 	flush := func() {
+		defer func() { line++ }()
 		if len(run) == 0 {
 			return
 		}
@@ -87,13 +103,30 @@ func (s *Sorter) Document() *Document {
 			text.WriteByte('\n')
 		}
 		para := Paragraph{Span: Span{Start: text.Len()}}
+		if line < len(s.outputCanonicalLines) && s.outputCanonicalLines[line] >= 0 {
+			canonicalLine := s.outputCanonicalLines[line]
+			para.CanonicalLine = &canonicalLine
+		}
+		// Tie each token to its range of the canonical line.
+		canonicalSpans := make([]*Span, len(run))
+		if para.CanonicalLine != nil && *para.CanonicalLine < len(s.canonical) {
+			if tokens := canonicalTokenSpans(s.canonical[*para.CanonicalLine], s.handler); tokens != nil {
+				blockTokens := make([][]string, len(run))
+				for i, blk := range run {
+					blockTokens[i] = s.handler.Tokenize(blk.NormedText)
+				}
+				canonicalSpans = alignToCanonical(blockTokens, tokens)
+			}
+		}
 		for i, blk := range run {
 			start := text.Len()
 			text.WriteString(blk.Text)
 			para.Tokens = append(para.Tokens, Token{
-				Span:       Span{Start: start, End: text.Len()},
-				Bounds:     blk.BoundingBox,
-				Confidence: blk.Confidence,
+				Span:         Span{Start: start, End: text.Len()},
+				Bounds:       blk.BoundingBox,
+				Confidence:   blk.Confidence,
+				Canonical:    canonicalSpans[i],
+				Continuation: blk.Continuation,
 			})
 			if i < len(run)-1 {
 				if sep, joined := compoundJoin(blk, run[i+1]); joined {
