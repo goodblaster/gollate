@@ -40,13 +40,20 @@ const (
 	// wrong one are an order of magnitude larger.
 	positionWeight = 0.02
 
-	// straddleGain is how much better a two-page split must cover a line
-	// than its best single page before the line is called a straddle.
-	straddleGain = 0.15
+	// straddleGainTokens is how many more of a line's tokens a two-page
+	// split must account for than its best single page before the line is
+	// called a straddle. A count, not a share: the part of a long
+	// paragraph that spills onto the next page is often one short line.
+	straddleGainTokens = 3
 
 	// straddleMinTokens is the fewest tokens either side of a straddle
 	// must hold; shorter than this and the "other half" is noise.
 	straddleMinTokens = 2
+
+	// seamGram is the length of the token run used to pin a straddle's cut:
+	// the tokens just before the cut should be consecutive on the head
+	// page and the tokens just after it consecutive on the tail page.
+	seamGram = 3
 
 	// bandThreshold and bandWidth bound the work on long documents: past
 	// this many line-page pairs, each line is only scored against pages
@@ -208,48 +215,95 @@ func Segment(lines, pages [][]string) []Assignment {
 		}
 		lastOn[p] = i
 	}
+	// hasRun reports whether run occurs as consecutive tokens on page.
+	hasRun := func(page int, run []string) bool {
+		tokens := pages[page]
+	scan:
+		for i := 0; i+len(run) <= len(tokens); i++ {
+			for j, t := range run {
+				if tokens[i+j] != t {
+					continue scan
+				}
+			}
+			return true
+		}
+		return false
+	}
 	trySplit := func(i, head int) {
 		line := lines[i]
 		if head < 0 || head+1 >= len(pages) || len(line) < 2*straddleMinTokens || out[i].Straddle {
 			return
 		}
-		// prefix[k]: weight of tokens [0,k) found on the head page;
-		// suffix[k]: weight of tokens [k,n) found on the tail page.
-		// Each page's supply of a repeated token is consumed in order.
+		// prefix[k]: tokens [0,k) found on the head page; suffix[k]: tokens
+		// [k,n) found on the tail page - as rarity weight (W) and as a
+		// plain count (N). Each page's supply of a repeated token is
+		// consumed in order.
 		n := len(line)
-		prefix := make([]float64, n+1)
-		suffix := make([]float64, n+1)
+		prefixW, suffixW := make([]float64, n+1), make([]float64, n+1)
+		prefixN, suffixN := make([]int, n+1), make([]int, n+1)
 		used := make(map[string]int)
 		total := 0.0
 		for k, t := range line {
 			w := weight(t)
 			total += w
-			prefix[k+1] = prefix[k]
+			prefixW[k+1], prefixN[k+1] = prefixW[k], prefixN[k]
 			if used[t] < counts[head][t] {
 				used[t]++
-				prefix[k+1] += w
+				prefixW[k+1] += w
+				prefixN[k+1]++
 			}
 		}
 		clear(used)
 		for k := n - 1; k >= 0; k-- {
 			t := line[k]
-			suffix[k] = suffix[k+1]
+			suffixW[k], suffixN[k] = suffixW[k+1], suffixN[k+1]
 			if used[t] < counts[head+1][t] {
 				used[t]++
-				suffix[k] += weight(t)
+				suffixW[k] += weight(t)
+				suffixN[k]++
 			}
 		}
 		if total == 0 {
 			return
 		}
-		bestCut, bestScore := -1, 0.0
+		bestScore := 0.0
 		for k := straddleMinTokens; k <= n-straddleMinTokens; k++ {
-			if score := (prefix[k] + suffix[k]) / total; score > bestScore {
-				bestCut, bestScore = k, score
+			bestScore = math.Max(bestScore, (prefixW[k]+suffixW[k])/total)
+		}
+
+		// Words near the break that both pages happen to contain leave a
+		// range of equally good cuts. The true one is where the text
+		// actually runs off the head page and resumes on the tail page:
+		// the tokens before it are consecutive on one, those after it
+		// consecutive on the other.
+		bestCut, bestSeam := -1, -1
+		for k := straddleMinTokens; k <= n-straddleMinTokens; k++ {
+			if (prefixW[k]+suffixW[k])/total < bestScore-1e-9 {
+				continue
+			}
+			seam := 0
+			if hasRun(head, line[max(0, k-seamGram):k]) {
+				seam++
+			}
+			if hasRun(head+1, line[k:min(n, k+seamGram)]) {
+				seam++
+			}
+			if seam > bestSeam {
+				bestCut, bestSeam = k, seam
 			}
 		}
-		single := math.Max(coverage(line, head), coverage(line, head+1))
-		if bestCut >= 0 && bestScore >= single+straddleGain {
+		if bestCut < 0 {
+			return
+		}
+		// With the break pinned on both sides, less extra coverage is
+		// needed: a short tail of mostly common words ("the window, and
+		// waited for the first ship") adds few tokens its page alone has.
+		need := straddleGainTokens
+		if bestSeam == 2 {
+			need = straddleGainTokens - 1
+		}
+		single := max(prefixN[n], suffixN[0])
+		if prefixN[bestCut]+suffixN[bestCut]-single >= need {
 			out[i] = Assignment{Page: head, Straddle: true, Cut: bestCut, Coverage: bestScore}
 		}
 	}

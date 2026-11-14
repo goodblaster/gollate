@@ -135,8 +135,10 @@ func TestParagraphGrouping_Spanish(t *testing.T) {
 		sortedText = append(sortedText, strings.TrimSpace(currentSentence.String()))
 	}
 
-	if len(sortedText) < 3 {
-		t.Fatalf("Expected at least 3 sentences, got %d", len(sortedText))
+	// One canonical paragraph may come out as one line or as several;
+	// what matters is that all of it is there.
+	if len(sortedText) == 0 {
+		t.Fatalf("no output")
 	}
 
 	// Verify all three sentences are present (order may vary based on whether
@@ -270,8 +272,10 @@ func TestParagraphGrouping_Arabic(t *testing.T) {
 		sortedText = append(sortedText, strings.TrimSpace(currentSentence.String()))
 	}
 
-	if len(sortedText) < 3 {
-		t.Fatalf("Expected at least 3 sentences, got %d", len(sortedText))
+	// One canonical paragraph may come out as one line or as several;
+	// what matters is that all of it is there.
+	if len(sortedText) == 0 {
+		t.Fatalf("no output")
 	}
 
 	// Verify all three sentences are present

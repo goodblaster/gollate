@@ -51,8 +51,18 @@ func (s *Sorter) postSortBlocks() []Block {
 	// This ensures sentences from the same canonical line stay together in spatial order
 	allSentences := s.groupAndSortByCanonicalLine(assembledLines, leftoverSentences, lines)
 
-	// Special case: handle documents with no canonical text
-	if len(lines) <= 1 {
+	// Special case: handle documents with no canonical text. (This used to
+	// fire for any single unsplit canonical line, re-splitting its output
+	// by punctuation and discarding which line it was - a one-line page,
+	// such as the last few words of a book, lost its identity.)
+	hasCanonicalText := false
+	for _, line := range lines {
+		if !line.IsBlank {
+			hasCanonicalText = true
+			break
+		}
+	}
+	if !hasCanonicalText {
 		allSentences = s.handleNoCanonicalText(allSentences)
 		// Re-split by punctuation: the lines no longer correspond to
 		// canonical lines one for one.

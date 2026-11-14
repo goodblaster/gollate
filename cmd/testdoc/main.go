@@ -126,7 +126,7 @@ func main() {
 	content := flag.String("content", "", "Input text file: paragraphs separated by blank lines (required)")
 	outDir := flag.String("out", "", "Output directory (required)")
 	lang := flag.String("lang", "english", "Language: english, spanish, chinese, japanese, arabic, hindi")
-	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book")
+	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book, pages (multi-page)")
 	direction := flag.String("direction", "", "Text direction: ltr, rtl, vertical (default: by language)")
 	title := flag.String("title", "", "Document title (default: by language)")
 	footer := flag.String("footer", "", "Footer text (default: derived from lang/layout)")
@@ -175,6 +175,11 @@ func main() {
 		s.Footer = fmt.Sprintf("OCR Test: %s (%s, %s)", s.Language, s.Layout, s.Direction)
 	}
 
+	if s.Layout == "pages" {
+		generatePages(s, *outDir, *timeout)
+		return
+	}
+
 	doc, canonical := buildDocument(s)
 
 	if err := os.MkdirAll(*outDir, 0755); err != nil {
@@ -212,6 +217,97 @@ func main() {
 	}
 
 	fmt.Printf("Generated %s: %d paragraphs, layout=%s direction=%s\n", *outDir, len(paragraphs), s.Layout, s.Direction)
+}
+
+// generatePages renders the "pages" layout: a multi-page book. Content
+// flows across as many pages as it needs (a 5.5x8.5in trim, serif,
+// justified and hyphenated), with a running head and a page number in the
+// margins of every page.
+//
+// The running head and page numbers are deliberately NOT in canonical.txt.
+// That is how real books relate to their canonical text - a transcription
+// carries the prose, never the page furniture - so the fixture exercises
+// the furniture path instead of hiding it.
+//
+// Only document.pdf, document.html and canonical.txt are written; pages
+// are rasterized and extracted from the PDF by the generation script.
+func generatePages(s spec, outDir string, timeout time.Duration) {
+	var body strings.Builder
+	canonical := []string{s.Title, ""}
+	fmt.Fprintf(&body, "<h1>%s</h1>\n", html.EscapeString(s.Title))
+	for i, p := range s.Paragraphs {
+		fmt.Fprintf(&body, "<p>%s</p>\n", html.EscapeString(p))
+		canonical = append(canonical, p)
+		if i < len(s.Paragraphs)-1 {
+			canonical = append(canonical, "")
+		}
+	}
+
+	font := fontStacks[baseLang(s.Language)]
+	if serif, ok := serifStacks[baseLang(s.Language)]; ok {
+		font = serif
+	}
+	doc := fmt.Sprintf(`<!DOCTYPE html>
+<html lang=%q>
+<head><meta charset="UTF-8"><style>
+	@page { size: 5.5in 8.5in; margin: 0.85in 0.7in 0.8in 0.7in; }
+	html, body { margin: 0; padding: 0; }
+	body { font-family: %s; font-size: %dpt; line-height: %.2f; }
+	h1 { font-size: 1.5em; text-align: center; margin: 0.6in 0 0.35in 0; }
+	p { margin: 0; text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-indent: 1.4em; orphans: 1; widows: 1; }
+	h1 + p { text-indent: 0; }
+</style></head>
+<body>
+%s</body>
+</html>
+`, htmlLang[baseLang(s.Language)], font, s.FontSizePt, s.LineSpacing, body.String())
+
+	if err := os.MkdirAll(outDir, 0755); err != nil {
+		fatal("creating output dir: %v", err)
+	}
+	htmlPath := filepath.Join(outDir, "document.html")
+	if err := os.WriteFile(htmlPath, []byte(doc), 0644); err != nil {
+		fatal("writing HTML: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(outDir, "canonical.txt"), []byte(strings.Join(canonical, "\n")+"\n"), 0644); err != nil {
+		fatal("writing canonical: %v", err)
+	}
+
+	absPath, err := filepath.Abs(htmlPath)
+	if err != nil {
+		fatal("resolving path: %v", err)
+	}
+	ctx, cancel := chromedp.NewContext(context.Background())
+	defer cancel()
+	ctx, cancelT := context.WithTimeout(ctx, timeout)
+	defer cancelT()
+
+	marginText := `font-family: Georgia, serif; font-size: 8pt; width: 100%; text-align: center;`
+	var pdf []byte
+	err = chromedp.Run(ctx,
+		chromedp.Navigate("file://"+absPath),
+		chromedp.Evaluate(`document.fonts.ready.then(() => true)`, nil, func(p *runtime.EvaluateParams) *runtime.EvaluateParams {
+			return p.WithAwaitPromise(true)
+		}),
+		chromedp.ActionFunc(func(ctx context.Context) error {
+			var err error
+			pdf, _, err = page.PrintToPDF().
+				WithPreferCSSPageSize(true).
+				WithPrintBackground(true).
+				WithDisplayHeaderFooter(true).
+				WithHeaderTemplate(fmt.Sprintf(`<div style="%s font-style: italic;">%s</div>`, marginText, html.EscapeString(s.Title))).
+				WithFooterTemplate(fmt.Sprintf(`<div style="%s"><span class="pageNumber"></span></div>`, marginText)).
+				Do(ctx)
+			return err
+		}),
+	)
+	if err != nil {
+		fatal("rendering: %v", err)
+	}
+	if err := os.WriteFile(filepath.Join(outDir, "document.pdf"), pdf, 0644); err != nil {
+		fatal("writing PDF: %v", err)
+	}
+	fmt.Printf("Generated %s: %d paragraphs, layout=pages\n", outDir, len(s.Paragraphs))
 }
 
 func fatal(format string, args ...any) {

@@ -1,0 +1,3055 @@
+{
+  "words": [
+    {
+      "text": "The",
+      "line_num": 0,
+      "left": 321,
+      "top": 33,
+      "width": 25,
+      "height": 12,
+      "conf": 96.930176
+    },
+    {
+      "text": "Keeper's",
+      "line_num": 0,
+      "left": 350,
+      "top": 33,
+      "width": 60,
+      "height": 16,
+      "conf": 58.635197
+    },
+    {
+      "text": "Ledgers",
+      "line_num": 0,
+      "left": 415,
+      "top": 33,
+      "width": 57,
+      "height": 15,
+      "conf": 96.193184
+    },
+    {
+      "text": "er,",
+      "line_num": 1,
+      "left": 101,
+      "top": 135,
+      "width": 24,
+      "height": 15,
+      "conf": 96.971466
+    },
+    {
+      "text": "behind",
+      "line_num": 1,
+      "left": 135,
+      "top": 129,
+      "width": 67,
+      "height": 17,
+      "conf": 96.884766
+    },
+    {
+      "text": "a",
+      "line_num": 1,
+      "left": 212,
+      "top": 135,
+      "width": 10,
+      "height": 11,
+      "conf": 96.981041
+    },
+    {
+      "text": "wall",
+      "line_num": 1,
+      "left": 232,
+      "top": 129,
+      "width": 39,
+      "height": 17,
+      "conf": 96.306061
+    },
+    {
+      "text": "that",
+      "line_num": 1,
+      "left": 281,
+      "top": 129,
+      "width": 38,
+      "height": 17,
+      "conf": 96.839066
+    },
+    {
+      "text": "had",
+      "line_num": 1,
+      "left": 329,
+      "top": 129,
+      "width": 36,
+      "height": 17,
+      "conf": 96.498848
+    },
+    {
+      "text": "been",
+      "line_num": 1,
+      "left": 374,
+      "top": 129,
+      "width": 47,
+      "height": 18,
+      "conf": 96.647743
+    },
+    {
+      "text": "repaired",
+      "line_num": 1,
+      "left": 431,
+      "top": 129,
+      "width": 81,
+      "height": 22,
+      "conf": 96.567886
+    },
+    {
+      "text": "so",
+      "line_num": 1,
+      "left": 522,
+      "top": 135,
+      "width": 20,
+      "height": 11,
+      "conf": 96.993362
+    },
+    {
+      "text": "many",
+      "line_num": 1,
+      "left": 552,
+      "top": 135,
+      "width": 54,
+      "height": 16,
+      "conf": 96.809303
+    },
+    {
+      "text": "times",
+      "line_num": 1,
+      "left": 615,
+      "top": 130,
+      "width": 52,
+      "height": 16,
+      "conf": 96.963799
+    },
+    {
+      "text": "it",
+      "line_num": 1,
+      "left": 677,
+      "top": 130,
+      "width": 14,
+      "height": 16,
+      "conf": 96.794243
+    },
+    {
+      "text": "was",
+      "line_num": 2,
+      "left": 101,
+      "top": 166,
+      "width": 35,
+      "height": 11,
+      "conf": 96.380112
+    },
+    {
+      "text": "mostly",
+      "line_num": 2,
+      "left": 147,
+      "top": 160,
+      "width": 65,
+      "height": 22,
+      "conf": 96.770676
+    },
+    {
+      "text": "mortar.",
+      "line_num": 2,
+      "left": 221,
+      "top": 163,
+      "width": 72,
+      "height": 14,
+      "conf": 96.69812
+    },
+    {
+      "text": "The",
+      "line_num": 2,
+      "left": 303,
+      "top": 160,
+      "width": 37,
+      "height": 17,
+      "conf": 96.380211
+    },
+    {
+      "text": "key",
+      "line_num": 2,
+      "left": 350,
+      "top": 160,
+      "width": 33,
+      "height": 22,
+      "conf": 96.350555
+    },
+    {
+      "text": "was",
+      "line_num": 2,
+      "left": 392,
+      "top": 166,
+      "width": 36,
+      "height": 11,
+      "conf": 97.000641
+    },
+    {
+      "text": "under",
+      "line_num": 2,
+      "left": 438,
+      "top": 160,
+      "width": 58,
+      "height": 17,
+      "conf": 96.73333
+    },
+    {
+      "text": "a",
+      "line_num": 2,
+      "left": 505,
+      "top": 166,
+      "width": 10,
+      "height": 11,
+      "conf": 95.813133
+    },
+    {
+      "text": "flowerpot,",
+      "line_num": 2,
+      "left": 525,
+      "top": 160,
+      "width": 98,
+      "height": 22,
+      "conf": 96.675278
+    },
+    {
+      "text": "which",
+      "line_num": 2,
+      "left": 633,
+      "top": 160,
+      "width": 58,
+      "height": 17,
+      "conf": 96.179558
+    },
+    {
+      "text": "the",
+      "line_num": 3,
+      "left": 101,
+      "top": 190,
+      "width": 30,
+      "height": 17,
+      "conf": 93.290413
+    },
+    {
+      "text": "solicitor's",
+      "line_num": 3,
+      "left": 138,
+      "top": 190,
+      "width": 92,
+      "height": 17,
+      "conf": 91.553322
+    },
+    {
+      "text": "letter",
+      "line_num": 3,
+      "left": 237,
+      "top": 190,
+      "width": 52,
+      "height": 17,
+      "conf": 96.684959
+    },
+    {
+      "text": "had",
+      "line_num": 3,
+      "left": 295,
+      "top": 190,
+      "width": 36,
+      "height": 17,
+      "conf": 96.684959
+    },
+    {
+      "text": "described,",
+      "line_num": 3,
+      "left": 339,
+      "top": 190,
+      "width": 97,
+      "height": 21,
+      "conf": 96.535286
+    },
+    {
+      "text": "with",
+      "line_num": 3,
+      "left": 444,
+      "top": 190,
+      "width": 42,
+      "height": 17,
+      "conf": 96.908234
+    },
+    {
+      "text": "evident",
+      "line_num": 3,
+      "left": 494,
+      "top": 190,
+      "width": 71,
+      "height": 17,
+      "conf": 96.667969
+    },
+    {
+      "text": "disapproval,",
+      "line_num": 3,
+      "left": 572,
+      "top": 190,
+      "width": 118,
+      "height": 22,
+      "conf": 96.665169
+    },
+    {
+      "text": "as",
+      "line_num": 4,
+      "left": 101,
+      "top": 228,
+      "width": 19,
+      "height": 11,
+      "conf": 96.012535
+    },
+    {
+      "text": "\"the",
+      "line_num": 4,
+      "left": 127,
+      "top": 222,
+      "width": 39,
+      "height": 17,
+      "conf": 95.98616
+    },
+    {
+      "text": "customary",
+      "line_num": 4,
+      "left": 172,
+      "top": 225,
+      "width": 102,
+      "height": 19,
+      "conf": 96.577263
+    },
+    {
+      "text": "arrangement.\"",
+      "line_num": 4,
+      "left": 279,
+      "top": 222,
+      "width": 139,
+      "height": 22,
+      "conf": 91.471489
+    },
+    {
+      "text": "Inside,",
+      "line_num": 5,
+      "left": 132,
+      "top": 252,
+      "width": 65,
+      "height": 21,
+      "conf": 96.962296
+    },
+    {
+      "text": "it",
+      "line_num": 5,
+      "left": 206,
+      "top": 253,
+      "width": 14,
+      "height": 16,
+      "conf": 96.760078
+    },
+    {
+      "text": "smelled",
+      "line_num": 5,
+      "left": 229,
+      "top": 252,
+      "width": 74,
+      "height": 17,
+      "conf": 96.616913
+    },
+    {
+      "text": "of",
+      "line_num": 5,
+      "left": 313,
+      "top": 252,
+      "width": 20,
+      "height": 17,
+      "conf": 97.002296
+    },
+    {
+      "text": "paraffin",
+      "line_num": 5,
+      "left": 340,
+      "top": 252,
+      "width": 77,
+      "height": 22,
+      "conf": 96.811462
+    },
+    {
+      "text": "and",
+      "line_num": 5,
+      "left": 426,
+      "top": 252,
+      "width": 36,
+      "height": 17,
+      "conf": 97.011124
+    },
+    {
+      "text": "old",
+      "line_num": 5,
+      "left": 471,
+      "top": 252,
+      "width": 30,
+      "height": 17,
+      "conf": 96.631401
+    },
+    {
+      "text": "paper.",
+      "line_num": 5,
+      "left": 510,
+      "top": 258,
+      "width": 60,
+      "height": 16,
+      "conf": 96.640945
+    },
+    {
+      "text": "There",
+      "line_num": 5,
+      "left": 579,
+      "top": 252,
+      "width": 57,
+      "height": 17,
+      "conf": 96.512199
+    },
+    {
+      "text": "were",
+      "line_num": 5,
+      "left": 645,
+      "top": 258,
+      "width": 46,
+      "height": 11,
+      "conf": 96.853767
+    },
+    {
+      "text": "two",
+      "line_num": 6,
+      "left": 101,
+      "top": 286,
+      "width": 34,
+      "height": 14,
+      "conf": 96.395432
+    },
+    {
+      "text": "rooms",
+      "line_num": 6,
+      "left": 142,
+      "top": 289,
+      "width": 60,
+      "height": 11,
+      "conf": 96.395432
+    },
+    {
+      "text": "downstairs",
+      "line_num": 6,
+      "left": 209,
+      "top": 283,
+      "width": 105,
+      "height": 17,
+      "conf": 96.43734
+    },
+    {
+      "text": "and",
+      "line_num": 6,
+      "left": 321,
+      "top": 283,
+      "width": 36,
+      "height": 17,
+      "conf": 96.176567
+    },
+    {
+      "text": "one",
+      "line_num": 6,
+      "left": 363,
+      "top": 289,
+      "width": 34,
+      "height": 11,
+      "conf": 96.176567
+    },
+    {
+      "text": "above.",
+      "line_num": 6,
+      "left": 404,
+      "top": 283,
+      "width": 61,
+      "height": 17,
+      "conf": 97.002098
+    },
+    {
+      "text": "Every",
+      "line_num": 6,
+      "left": 472,
+      "top": 284,
+      "width": 55,
+      "height": 21,
+      "conf": 96.929214
+    },
+    {
+      "text": "wall",
+      "line_num": 6,
+      "left": 532,
+      "top": 283,
+      "width": 40,
+      "height": 17,
+      "conf": 95.54969
+    },
+    {
+      "text": "that",
+      "line_num": 6,
+      "left": 578,
+      "top": 283,
+      "width": 38,
+      "height": 17,
+      "conf": 95.54969
+    },
+    {
+      "text": "did",
+      "line_num": 6,
+      "left": 623,
+      "top": 283,
+      "width": 30,
+      "height": 17,
+      "conf": 96.3237
+    },
+    {
+      "text": "not",
+      "line_num": 6,
+      "left": 660,
+      "top": 286,
+      "width": 31,
+      "height": 14,
+      "conf": 96.791794
+    },
+    {
+      "text": "hold",
+      "line_num": 7,
+      "left": 101,
+      "top": 313,
+      "width": 42,
+      "height": 17,
+      "conf": 96.974144
+    },
+    {
+      "text": "a",
+      "line_num": 7,
+      "left": 150,
+      "top": 319,
+      "width": 10,
+      "height": 11,
+      "conf": 96.974144
+    },
+    {
+      "text": "window",
+      "line_num": 7,
+      "left": 166,
+      "top": 313,
+      "width": 77,
+      "height": 17,
+      "conf": 96.818687
+    },
+    {
+      "text": "held",
+      "line_num": 7,
+      "left": 249,
+      "top": 313,
+      "width": 41,
+      "height": 17,
+      "conf": 96.934219
+    },
+    {
+      "text": "a",
+      "line_num": 7,
+      "left": 292,
+      "top": 309,
+      "width": 10,
+      "height": 30,
+      "conf": 96.181976
+    },
+    {
+      "text": "shelf,",
+      "line_num": 7,
+      "left": 314,
+      "top": 313,
+      "width": 50,
+      "height": 21,
+      "conf": 96.181976
+    },
+    {
+      "text": "and",
+      "line_num": 7,
+      "left": 372,
+      "top": 313,
+      "width": 36,
+      "height": 17,
+      "conf": 96.811356
+    },
+    {
+      "text": "every",
+      "line_num": 7,
+      "left": 414,
+      "top": 319,
+      "width": 52,
+      "height": 16,
+      "conf": 96.953278
+    },
+    {
+      "text": "shelf",
+      "line_num": 7,
+      "left": 472,
+      "top": 313,
+      "width": 47,
+      "height": 17,
+      "conf": 96.719131
+    },
+    {
+      "text": "held",
+      "line_num": 7,
+      "left": 524,
+      "top": 313,
+      "width": 41,
+      "height": 17,
+      "conf": 96.805557
+    },
+    {
+      "text": "ledgers:",
+      "line_num": 7,
+      "left": 572,
+      "top": 313,
+      "width": 75,
+      "height": 22,
+      "conf": 96.739983
+    },
+    {
+      "text": "tall,",
+      "line_num": 7,
+      "left": 654,
+      "top": 313,
+      "width": 36,
+      "height": 21,
+      "conf": 93.61512
+    },
+    {
+      "text": "narrow,",
+      "line_num": 8,
+      "left": 101,
+      "top": 351,
+      "width": 74,
+      "height": 15,
+      "conf": 96.162117
+    },
+    {
+      "text": "bound",
+      "line_num": 8,
+      "left": 188,
+      "top": 345,
+      "width": 62,
+      "height": 18,
+      "conf": 96.963531
+    },
+    {
+      "text": "in",
+      "line_num": 8,
+      "left": 263,
+      "top": 346,
+      "width": 19,
+      "height": 16,
+      "conf": 96.688171
+    },
+    {
+      "text": "green",
+      "line_num": 8,
+      "left": 295,
+      "top": 351,
+      "width": 54,
+      "height": 16,
+      "conf": 96.558998
+    },
+    {
+      "text": "cloth,",
+      "line_num": 8,
+      "left": 362,
+      "top": 345,
+      "width": 52,
+      "height": 21,
+      "conf": 96.731194
+    },
+    {
+      "text": "their",
+      "line_num": 8,
+      "left": 428,
+      "top": 345,
+      "width": 46,
+      "height": 17,
+      "conf": 96.916275
+    },
+    {
+      "text": "spines",
+      "line_num": 8,
+      "left": 487,
+      "top": 346,
+      "width": 60,
+      "height": 21,
+      "conf": 96.713745
+    },
+    {
+      "text": "numbered",
+      "line_num": 8,
+      "left": 560,
+      "top": 345,
+      "width": 99,
+      "height": 18,
+      "conf": 96.492065
+    },
+    {
+      "text": "in",
+      "line_num": 8,
+      "left": 672,
+      "top": 346,
+      "width": 19,
+      "height": 16,
+      "conf": 96.641754
+    },
+    {
+      "text": "white",
+      "line_num": 9,
+      "left": 101,
+      "top": 375,
+      "width": 53,
+      "height": 17,
+      "conf": 96.934807
+    },
+    {
+      "text": "ink.",
+      "line_num": 9,
+      "left": 159,
+      "top": 375,
+      "width": 36,
+      "height": 17,
+      "conf": 96.532349
+    },
+    {
+      "text": "She",
+      "line_num": 9,
+      "left": 202,
+      "top": 375,
+      "width": 35,
+      "height": 17,
+      "conf": 96.811432
+    },
+    {
+      "text": "counted",
+      "line_num": 9,
+      "left": 243,
+      "top": 375,
+      "width": 78,
+      "height": 17,
+      "conf": 97.012444
+    },
+    {
+      "text": "112",
+      "line_num": 9,
+      "left": 328,
+      "top": 380,
+      "width": 29,
+      "height": 12,
+      "conf": 97.006187
+    },
+    {
+      "text": "of",
+      "line_num": 9,
+      "left": 364,
+      "top": 375,
+      "width": 19,
+      "height": 17,
+      "conf": 96.782509
+    },
+    {
+      "text": "them",
+      "line_num": 9,
+      "left": 387,
+      "top": 375,
+      "width": 50,
+      "height": 17,
+      "conf": 96.52887
+    },
+    {
+      "text": "before",
+      "line_num": 9,
+      "left": 443,
+      "top": 375,
+      "width": 61,
+      "height": 17,
+      "conf": 96.523773
+    },
+    {
+      "text": "she",
+      "line_num": 9,
+      "left": 511,
+      "top": 375,
+      "width": 31,
+      "height": 17,
+      "conf": 96.872742
+    },
+    {
+      "text": "gave",
+      "line_num": 9,
+      "left": 548,
+      "top": 381,
+      "width": 43,
+      "height": 16,
+      "conf": 96.872742
+    },
+    {
+      "text": "up.",
+      "line_num": 9,
+      "left": 597,
+      "top": 381,
+      "width": 30,
+      "height": 16,
+      "conf": 96.844406
+    },
+    {
+      "text": "She",
+      "line_num": 10,
+      "left": 132,
+      "top": 406,
+      "width": 34,
+      "height": 17,
+      "conf": 96.295654
+    },
+    {
+      "text": "took",
+      "line_num": 10,
+      "left": 174,
+      "top": 406,
+      "width": 43,
+      "height": 17,
+      "conf": 96.72673
+    },
+    {
+      "text": "down",
+      "line_num": 10,
+      "left": 225,
+      "top": 406,
+      "width": 52,
+      "height": 17,
+      "conf": 96.749817
+    },
+    {
+      "text": "the",
+      "line_num": 10,
+      "left": 285,
+      "top": 406,
+      "width": 30,
+      "height": 17,
+      "conf": 97.008217
+    },
+    {
+      "text": "nearest",
+      "line_num": 10,
+      "left": 323,
+      "top": 409,
+      "width": 71,
+      "height": 14,
+      "conf": 96.635437
+    },
+    {
+      "text": "one.",
+      "line_num": 10,
+      "left": 402,
+      "top": 412,
+      "width": 39,
+      "height": 11,
+      "conf": 96.635437
+    },
+    {
+      "text": "The",
+      "line_num": 10,
+      "left": 449,
+      "top": 406,
+      "width": 37,
+      "height": 17,
+      "conf": 97.005348
+    },
+    {
+      "text": "first",
+      "line_num": 10,
+      "left": 494,
+      "top": 406,
+      "width": 39,
+      "height": 17,
+      "conf": 96.976997
+    },
+    {
+      "text": "page",
+      "line_num": 10,
+      "left": 541,
+      "top": 412,
+      "width": 44,
+      "height": 16,
+      "conf": 96.745956
+    },
+    {
+      "text": "was",
+      "line_num": 10,
+      "left": 593,
+      "top": 412,
+      "width": 36,
+      "height": 11,
+      "conf": 96.157768
+    },
+    {
+      "text": "dated",
+      "line_num": 10,
+      "left": 637,
+      "top": 406,
+      "width": 54,
+      "height": 17,
+      "conf": 96.992989
+    },
+    {
+      "text": "3",
+      "line_num": 11,
+      "left": 101,
+      "top": 441,
+      "width": 11,
+      "height": 16,
+      "conf": 96.85704
+    },
+    {
+      "text": "January",
+      "line_num": 11,
+      "left": 118,
+      "top": 437,
+      "width": 80,
+      "height": 21,
+      "conf": 96.403015
+    },
+    {
+      "text": "1961.",
+      "line_num": 11,
+      "left": 205,
+      "top": 437,
+      "width": 47,
+      "height": 20,
+      "conf": 96.826035
+    },
+    {
+      "text": "Below",
+      "line_num": 11,
+      "left": 261,
+      "top": 436,
+      "width": 59,
+      "height": 17,
+      "conf": 96.3508
+    },
+    {
+      "text": "the",
+      "line_num": 11,
+      "left": 326,
+      "top": 436,
+      "width": 30,
+      "height": 17,
+      "conf": 97.008705
+    },
+    {
+      "text": "date,",
+      "line_num": 11,
+      "left": 363,
+      "top": 436,
+      "width": 46,
+      "height": 21,
+      "conf": 96.956802
+    },
+    {
+      "text": "in",
+      "line_num": 11,
+      "left": 417,
+      "top": 437,
+      "width": 19,
+      "height": 16,
+      "conf": 96.872238
+    },
+    {
+      "text": "a",
+      "line_num": 11,
+      "left": 443,
+      "top": 442,
+      "width": 10,
+      "height": 11,
+      "conf": 96.643661
+    },
+    {
+      "text": "small",
+      "line_num": 11,
+      "left": 461,
+      "top": 436,
+      "width": 51,
+      "height": 17,
+      "conf": 96.34288
+    },
+    {
+      "text": "upright",
+      "line_num": 11,
+      "left": 519,
+      "top": 436,
+      "width": 72,
+      "height": 22,
+      "conf": 97.013748
+    },
+    {
+      "text": "hand,",
+      "line_num": 11,
+      "left": 597,
+      "top": 436,
+      "width": 54,
+      "height": 21,
+      "conf": 96.941559
+    },
+    {
+      "text": "her",
+      "line_num": 11,
+      "left": 659,
+      "top": 436,
+      "width": 32,
+      "height": 17,
+      "conf": 96.433258
+    },
+    {
+      "text": "great-uncle",
+      "line_num": 12,
+      "left": 101,
+      "top": 468,
+      "width": 109,
+      "height": 22,
+      "conf": 96.643127
+    },
+    {
+      "text": "had",
+      "line_num": 12,
+      "left": 219,
+      "top": 468,
+      "width": 36,
+      "height": 17,
+      "conf": 96.550415
+    },
+    {
+      "text": "written",
+      "line_num": 12,
+      "left": 263,
+      "top": 468,
+      "width": 70,
+      "height": 17,
+      "conf": 95.893234
+    },
+    {
+      "text": "the",
+      "line_num": 12,
+      "left": 342,
+      "top": 468,
+      "width": 30,
+      "height": 17,
+      "conf": 96.948158
+    },
+    {
+      "text": "time,",
+      "line_num": 12,
+      "left": 381,
+      "top": 469,
+      "width": 48,
+      "height": 20,
+      "conf": 96.879402
+    },
+    {
+      "text": "the",
+      "line_num": 12,
+      "left": 439,
+      "top": 468,
+      "width": 30,
+      "height": 17,
+      "conf": 97.012115
+    },
+    {
+      "text": "wind,",
+      "line_num": 12,
+      "left": 477,
+      "top": 468,
+      "width": 54,
+      "height": 21,
+      "conf": 96.979248
+    },
+    {
+      "text": "the",
+      "line_num": 12,
+      "left": 540,
+      "top": 468,
+      "width": 30,
+      "height": 17,
+      "conf": 97.015274
+    },
+    {
+      "text": "state",
+      "line_num": 12,
+      "left": 580,
+      "top": 471,
+      "width": 45,
+      "height": 14,
+      "conf": 96.9916
+    },
+    {
+      "text": "of",
+      "line_num": 12,
+      "left": 634,
+      "top": 468,
+      "width": 20,
+      "height": 17,
+      "conf": 96.994125
+    },
+    {
+      "text": "the",
+      "line_num": 12,
+      "left": 660,
+      "top": 468,
+      "width": 31,
+      "height": 17,
+      "conf": 96.994987
+    },
+    {
+      "text": "sea,",
+      "line_num": 13,
+      "left": 101,
+      "top": 504,
+      "width": 35,
+      "height": 15,
+      "conf": 96.026756
+    },
+    {
+      "text": "and",
+      "line_num": 13,
+      "left": 145,
+      "top": 498,
+      "width": 36,
+      "height": 17,
+      "conf": 96.877007
+    },
+    {
+      "text": "then",
+      "line_num": 13,
+      "left": 189,
+      "top": 498,
+      "width": 43,
+      "height": 17,
+      "conf": 95.475479
+    },
+    {
+      "text": "a",
+      "line_num": 13,
+      "left": 234,
+      "top": 494,
+      "width": 8,
+      "height": 30,
+      "conf": 95.475479
+    },
+    {
+      "text": "list",
+      "line_num": 13,
+      "left": 258,
+      "top": 498,
+      "width": 30,
+      "height": 17,
+      "conf": 96.738197
+    },
+    {
+      "text": "of",
+      "line_num": 13,
+      "left": 296,
+      "top": 498,
+      "width": 20,
+      "height": 17,
+      "conf": 96.953201
+    },
+    {
+      "text": "every",
+      "line_num": 13,
+      "left": 322,
+      "top": 504,
+      "width": 52,
+      "height": 16,
+      "conf": 96.968903
+    },
+    {
+      "text": "vessel",
+      "line_num": 13,
+      "left": 380,
+      "top": 498,
+      "width": 58,
+      "height": 17,
+      "conf": 96.952057
+    },
+    {
+      "text": "that",
+      "line_num": 13,
+      "left": 446,
+      "top": 498,
+      "width": 38,
+      "height": 17,
+      "conf": 96.96666
+    },
+    {
+      "text": "had",
+      "line_num": 13,
+      "left": 492,
+      "top": 498,
+      "width": 36,
+      "height": 17,
+      "conf": 96.591652
+    },
+    {
+      "text": "passed",
+      "line_num": 13,
+      "left": 536,
+      "top": 498,
+      "width": 65,
+      "height": 22,
+      "conf": 96.531189
+    },
+    {
+      "text": "the",
+      "line_num": 13,
+      "left": 609,
+      "top": 498,
+      "width": 30,
+      "height": 17,
+      "conf": 96.94664
+    },
+    {
+      "text": "light",
+      "line_num": 13,
+      "left": 647,
+      "top": 498,
+      "width": 44,
+      "height": 22,
+      "conf": 96.202347
+    },
+    {
+      "text": "between",
+      "line_num": 14,
+      "left": 101,
+      "top": 529,
+      "width": 80,
+      "height": 18,
+      "conf": 96.6866
+    },
+    {
+      "text": "dusk",
+      "line_num": 14,
+      "left": 191,
+      "top": 529,
+      "width": 46,
+      "height": 17,
+      "conf": 96.670845
+    },
+    {
+      "text": "and",
+      "line_num": 14,
+      "left": 246,
+      "top": 529,
+      "width": 35,
+      "height": 17,
+      "conf": 96.465065
+    },
+    {
+      "text": "dawn.",
+      "line_num": 14,
+      "left": 291,
+      "top": 529,
+      "width": 57,
+      "height": 17,
+      "conf": 96.272552
+    },
+    {
+      "text": "There",
+      "line_num": 14,
+      "left": 358,
+      "top": 529,
+      "width": 56,
+      "height": 17,
+      "conf": 96.92247
+    },
+    {
+      "text": "were",
+      "line_num": 14,
+      "left": 423,
+      "top": 535,
+      "width": 47,
+      "height": 11,
+      "conf": 96.715714
+    },
+    {
+      "text": "eleven",
+      "line_num": 14,
+      "left": 479,
+      "top": 529,
+      "width": 61,
+      "height": 17,
+      "conf": 96.997131
+    },
+    {
+      "text": "that",
+      "line_num": 14,
+      "left": 550,
+      "top": 529,
+      "width": 38,
+      "height": 17,
+      "conf": 96.682045
+    },
+    {
+      "text": "night.",
+      "line_num": 14,
+      "left": 598,
+      "top": 529,
+      "width": 55,
+      "height": 22,
+      "conf": 96.428375
+    },
+    {
+      "text": "He",
+      "line_num": 14,
+      "left": 663,
+      "top": 530,
+      "width": 28,
+      "height": 16,
+      "conf": 97.012375
+    },
+    {
+      "text": "had",
+      "line_num": 15,
+      "left": 101,
+      "top": 559,
+      "width": 35,
+      "height": 17,
+      "conf": 96.648819
+    },
+    {
+      "text": "noted",
+      "line_num": 15,
+      "left": 144,
+      "top": 559,
+      "width": 55,
+      "height": 17,
+      "conf": 96.775902
+    },
+    {
+      "text": "the",
+      "line_num": 15,
+      "left": 206,
+      "top": 559,
+      "width": 30,
+      "height": 17,
+      "conf": 96.754097
+    },
+    {
+      "text": "name",
+      "line_num": 15,
+      "left": 244,
+      "top": 565,
+      "width": 53,
+      "height": 11,
+      "conf": 96.496513
+    },
+    {
+      "text": "of",
+      "line_num": 15,
+      "left": 304,
+      "top": 559,
+      "width": 20,
+      "height": 17,
+      "conf": 96.759003
+    },
+    {
+      "text": "each",
+      "line_num": 15,
+      "left": 330,
+      "top": 559,
+      "width": 43,
+      "height": 17,
+      "conf": 96.77594
+    },
+    {
+      "text": "one",
+      "line_num": 15,
+      "left": 381,
+      "top": 565,
+      "width": 34,
+      "height": 11,
+      "conf": 96.533516
+    },
+    {
+      "text": "where",
+      "line_num": 15,
+      "left": 422,
+      "top": 559,
+      "width": 59,
+      "height": 17,
+      "conf": 96.831635
+    },
+    {
+      "text": "he",
+      "line_num": 15,
+      "left": 488,
+      "top": 559,
+      "width": 23,
+      "height": 17,
+      "conf": 96.450432
+    },
+    {
+      "text": "could",
+      "line_num": 15,
+      "left": 519,
+      "top": 559,
+      "width": 52,
+      "height": 17,
+      "conf": 96.450432
+    },
+    {
+      "text": "read",
+      "line_num": 15,
+      "left": 579,
+      "top": 559,
+      "width": 42,
+      "height": 17,
+      "conf": 96.911133
+    },
+    {
+      "text": "it,",
+      "line_num": 15,
+      "left": 628,
+      "top": 560,
+      "width": 19,
+      "height": 20,
+      "conf": 96.833023
+    },
+    {
+      "text": "and",
+      "line_num": 15,
+      "left": 655,
+      "top": 559,
+      "width": 36,
+      "height": 17,
+      "conf": 96.574089
+    },
+    {
+      "text": "where",
+      "line_num": 16,
+      "left": 101,
+      "top": 591,
+      "width": 58,
+      "height": 17,
+      "conf": 96.934074
+    },
+    {
+      "text": "he",
+      "line_num": 16,
+      "left": 166,
+      "top": 591,
+      "width": 23,
+      "height": 17,
+      "conf": 96.946297
+    },
+    {
+      "text": "could",
+      "line_num": 16,
+      "left": 196,
+      "top": 591,
+      "width": 53,
+      "height": 17,
+      "conf": 95.882027
+    },
+    {
+      "text": "not",
+      "line_num": 16,
+      "left": 256,
+      "top": 594,
+      "width": 31,
+      "height": 14,
+      "conf": 96.826332
+    },
+    {
+      "text": "he",
+      "line_num": 16,
+      "left": 294,
+      "top": 591,
+      "width": 23,
+      "height": 17,
+      "conf": 96.826332
+    },
+    {
+      "text": "had",
+      "line_num": 16,
+      "left": 324,
+      "top": 591,
+      "width": 36,
+      "height": 17,
+      "conf": 96.272995
+    },
+    {
+      "text": "written",
+      "line_num": 16,
+      "left": 366,
+      "top": 591,
+      "width": 71,
+      "height": 17,
+      "conf": 96.769196
+    },
+    {
+      "text": "\"unknown,",
+      "line_num": 16,
+      "left": 445,
+      "top": 591,
+      "width": 104,
+      "height": 21,
+      "conf": 96.651985
+    },
+    {
+      "text": "two",
+      "line_num": 16,
+      "left": 556,
+      "top": 594,
+      "width": 35,
+      "height": 14,
+      "conf": 96.824387
+    },
+    {
+      "text": "masts\"",
+      "line_num": 16,
+      "left": 599,
+      "top": 591,
+      "width": 64,
+      "height": 17,
+      "conf": 93.378128
+    },
+    {
+      "text": "or",
+      "line_num": 16,
+      "left": 671,
+      "top": 597,
+      "width": 20,
+      "height": 11,
+      "conf": 96.673088
+    },
+    {
+      "text": "“unknown,",
+      "line_num": 17,
+      "left": 102,
+      "top": 622,
+      "width": 104,
+      "height": 21,
+      "conf": 82.042908
+    },
+    {
+      "text": "coaster,",
+      "line_num": 17,
+      "left": 213,
+      "top": 625,
+      "width": 73,
+      "height": 18,
+      "conf": 96.30262
+    },
+    {
+      "text": "heading",
+      "line_num": 17,
+      "left": 293,
+      "top": 622,
+      "width": 77,
+      "height": 22,
+      "conf": 96.793541
+    },
+    {
+      "text": "north.\"",
+      "line_num": 17,
+      "left": 377,
+      "top": 622,
+      "width": 67,
+      "height": 17,
+      "conf": 93.93631
+    },
+    {
+      "text": "The",
+      "line_num": 18,
+      "left": 131,
+      "top": 652,
+      "width": 37,
+      "height": 17,
+      "conf": 96.980545
+    },
+    {
+      "text": "next",
+      "line_num": 18,
+      "left": 175,
+      "top": 655,
+      "width": 41,
+      "height": 14,
+      "conf": 96.702637
+    },
+    {
+      "text": "page",
+      "line_num": 18,
+      "left": 223,
+      "top": 658,
+      "width": 45,
+      "height": 16,
+      "conf": 96.984764
+    },
+    {
+      "text": "was",
+      "line_num": 18,
+      "left": 274,
+      "top": 658,
+      "width": 36,
+      "height": 11,
+      "conf": 96.768799
+    },
+    {
+      "text": "4",
+      "line_num": 18,
+      "left": 317,
+      "top": 657,
+      "width": 12,
+      "height": 16,
+      "conf": 96.979401
+    },
+    {
+      "text": "January,",
+      "line_num": 18,
+      "left": 335,
+      "top": 653,
+      "width": 84,
+      "height": 21,
+      "conf": 96.934616
+    },
+    {
+      "text": "and",
+      "line_num": 18,
+      "left": 427,
+      "top": 652,
+      "width": 36,
+      "height": 17,
+      "conf": 96.542419
+    },
+    {
+      "text": "the",
+      "line_num": 18,
+      "left": 469,
+      "top": 652,
+      "width": 31,
+      "height": 17,
+      "conf": 97.010612
+    },
+    {
+      "text": "page",
+      "line_num": 18,
+      "left": 507,
+      "top": 658,
+      "width": 44,
+      "height": 16,
+      "conf": 96.868179
+    },
+    {
+      "text": "after",
+      "line_num": 18,
+      "left": 559,
+      "top": 652,
+      "width": 44,
+      "height": 17,
+      "conf": 96.880905
+    },
+    {
+      "text": "that",
+      "line_num": 18,
+      "left": 610,
+      "top": 652,
+      "width": 38,
+      "height": 17,
+      "conf": 96.957954
+    },
+    {
+      "text": "was",
+      "line_num": 18,
+      "left": 654,
+      "top": 658,
+      "width": 36,
+      "height": 11,
+      "conf": 96.776733
+    },
+    {
+      "text": "the",
+      "line_num": 19,
+      "left": 101,
+      "top": 684,
+      "width": 30,
+      "height": 17,
+      "conf": 96.877602
+    },
+    {
+      "text": "5th.",
+      "line_num": 19,
+      "left": 138,
+      "top": 684,
+      "width": 36,
+      "height": 21,
+      "conf": 96.80471
+    },
+    {
+      "text": "She",
+      "line_num": 19,
+      "left": 181,
+      "top": 684,
+      "width": 35,
+      "height": 17,
+      "conf": 96.858696
+    },
+    {
+      "text": "turned",
+      "line_num": 19,
+      "left": 222,
+      "top": 684,
+      "width": 65,
+      "height": 17,
+      "conf": 96.992462
+    },
+    {
+      "text": "to",
+      "line_num": 19,
+      "left": 293,
+      "top": 687,
+      "width": 19,
+      "height": 14,
+      "conf": 97.002258
+    },
+    {
+      "text": "the",
+      "line_num": 19,
+      "left": 318,
+      "top": 684,
+      "width": 31,
+      "height": 17,
+      "conf": 96.184723
+    },
+    {
+      "text": "middle",
+      "line_num": 19,
+      "left": 356,
+      "top": 684,
+      "width": 66,
+      "height": 17,
+      "conf": 96.301559
+    },
+    {
+      "text": "of",
+      "line_num": 19,
+      "left": 429,
+      "top": 684,
+      "width": 20,
+      "height": 17,
+      "conf": 96.986603
+    },
+    {
+      "text": "the",
+      "line_num": 19,
+      "left": 453,
+      "top": 684,
+      "width": 31,
+      "height": 17,
+      "conf": 96.700493
+    },
+    {
+      "text": "book",
+      "line_num": 19,
+      "left": 489,
+      "top": 684,
+      "width": 49,
+      "height": 18,
+      "conf": 96.768738
+    },
+    {
+      "text": "and",
+      "line_num": 19,
+      "left": 544,
+      "top": 684,
+      "width": 35,
+      "height": 17,
+      "conf": 97.015335
+    },
+    {
+      "text": "then",
+      "line_num": 19,
+      "left": 586,
+      "top": 684,
+      "width": 43,
+      "height": 17,
+      "conf": 96.975601
+    },
+    {
+      "text": "to",
+      "line_num": 19,
+      "left": 635,
+      "top": 687,
+      "width": 19,
+      "height": 14,
+      "conf": 96.479286
+    },
+    {
+      "text": "the",
+      "line_num": 19,
+      "left": 660,
+      "top": 684,
+      "width": 31,
+      "height": 17,
+      "conf": 96.185768
+    },
+    {
+      "text": "end.",
+      "line_num": 20,
+      "left": 101,
+      "top": 714,
+      "width": 40,
+      "height": 17,
+      "conf": 96.826012
+    },
+    {
+      "text": "He",
+      "line_num": 20,
+      "left": 148,
+      "top": 715,
+      "width": 28,
+      "height": 16,
+      "conf": 96.970795
+    },
+    {
+      "text": "had",
+      "line_num": 20,
+      "left": 182,
+      "top": 714,
+      "width": 36,
+      "height": 17,
+      "conf": 96.905495
+    },
+    {
+      "text": "not",
+      "line_num": 20,
+      "left": 224,
+      "top": 717,
+      "width": 31,
+      "height": 14,
+      "conf": 96.306648
+    },
+    {
+      "text": "missed",
+      "line_num": 20,
+      "left": 262,
+      "top": 714,
+      "width": 67,
+      "height": 17,
+      "conf": 96.717323
+    },
+    {
+      "text": "a",
+      "line_num": 20,
+      "left": 332,
+      "top": 710,
+      "width": 8,
+      "height": 30,
+      "conf": 96.717323
+    },
+    {
+      "text": "night.",
+      "line_num": 20,
+      "left": 352,
+      "top": 714,
+      "width": 55,
+      "height": 22,
+      "conf": 96.923264
+    },
+    {
+      "text": "It",
+      "line_num": 21,
+      "left": 132,
+      "top": 746,
+      "width": 15,
+      "height": 16,
+      "conf": 90.371445
+    },
+    {
+      "text": "was",
+      "line_num": 21,
+      "left": 152,
+      "top": 751,
+      "width": 37,
+      "height": 11,
+      "conf": 96.853874
+    },
+    {
+      "text": "the",
+      "line_num": 21,
+      "left": 195,
+      "top": 745,
+      "width": 30,
+      "height": 17,
+      "conf": 96.867195
+    },
+    {
+      "text": "same",
+      "line_num": 21,
+      "left": 232,
+      "top": 751,
+      "width": 49,
+      "height": 11,
+      "conf": 95.99659
+    },
+    {
+      "text": "in",
+      "line_num": 21,
+      "left": 287,
+      "top": 746,
+      "width": 19,
+      "height": 16,
+      "conf": 96.643188
+    },
+    {
+      "text": "the",
+      "line_num": 21,
+      "left": 312,
+      "top": 745,
+      "width": 31,
+      "height": 17,
+      "conf": 97.011856
+    },
+    {
+      "text": "next",
+      "line_num": 21,
+      "left": 349,
+      "top": 748,
+      "width": 41,
+      "height": 14,
+      "conf": 96.484535
+    },
+    {
+      "text": "volume,",
+      "line_num": 21,
+      "left": 396,
+      "top": 745,
+      "width": 77,
+      "height": 21,
+      "conf": 96.484535
+    },
+    {
+      "text": "and",
+      "line_num": 21,
+      "left": 480,
+      "top": 745,
+      "width": 36,
+      "height": 17,
+      "conf": 96.998741
+    },
+    {
+      "text": "the",
+      "line_num": 21,
+      "left": 522,
+      "top": 745,
+      "width": 30,
+      "height": 17,
+      "conf": 97.011765
+    },
+    {
+      "text": "one",
+      "line_num": 21,
+      "left": 559,
+      "top": 751,
+      "width": 34,
+      "height": 11,
+      "conf": 97.003876
+    },
+    {
+      "text": "after.",
+      "line_num": 21,
+      "left": 599,
+      "top": 745,
+      "width": 50,
+      "height": 17,
+      "conf": 96.974251
+    },
+    {
+      "text": "She",
+      "line_num": 21,
+      "left": 656,
+      "top": 745,
+      "width": 35,
+      "height": 17,
+      "conf": 96.937088
+    },
+    {
+      "text": "pulled",
+      "line_num": 22,
+      "left": 101,
+      "top": 775,
+      "width": 60,
+      "height": 22,
+      "conf": 96.620712
+    },
+    {
+      "text": "out",
+      "line_num": 22,
+      "left": 169,
+      "top": 778,
+      "width": 31,
+      "height": 14,
+      "conf": 96.465202
+    },
+    {
+      "text": "a",
+      "line_num": 22,
+      "left": 208,
+      "top": 781,
+      "width": 10,
+      "height": 11,
+      "conf": 96.465202
+    },
+    {
+      "text": "ledger",
+      "line_num": 22,
+      "left": 225,
+      "top": 775,
+      "width": 60,
+      "height": 22,
+      "conf": 96.861908
+    },
+    {
+      "text": "from",
+      "line_num": 22,
+      "left": 292,
+      "top": 775,
+      "width": 47,
+      "height": 17,
+      "conf": 96.461418
+    },
+    {
+      "text": "the",
+      "line_num": 22,
+      "left": 346,
+      "top": 775,
+      "width": 30,
+      "height": 17,
+      "conf": 96.887077
+    },
+    {
+      "text": "far",
+      "line_num": 22,
+      "left": 384,
+      "top": 775,
+      "width": 27,
+      "height": 17,
+      "conf": 96.990746
+    },
+    {
+      "text": "end",
+      "line_num": 22,
+      "left": 418,
+      "top": 775,
+      "width": 35,
+      "height": 17,
+      "conf": 96.887367
+    },
+    {
+      "text": "of",
+      "line_num": 22,
+      "left": 461,
+      "top": 775,
+      "width": 20,
+      "height": 17,
+      "conf": 96.725479
+    },
+    {
+      "text": "the",
+      "line_num": 22,
+      "left": 486,
+      "top": 775,
+      "width": 31,
+      "height": 17,
+      "conf": 97.009872
+    },
+    {
+      "text": "highest",
+      "line_num": 22,
+      "left": 524,
+      "top": 775,
+      "width": 70,
+      "height": 22,
+      "conf": 96.516205
+    },
+    {
+      "text": "shelf",
+      "line_num": 22,
+      "left": 602,
+      "top": 775,
+      "width": 47,
+      "height": 17,
+      "conf": 96.996407
+    },
+    {
+      "text": "and",
+      "line_num": 22,
+      "left": 655,
+      "top": 775,
+      "width": 36,
+      "height": 17,
+      "conf": 96.957626
+    },
+    {
+      "text": "found",
+      "line_num": 23,
+      "left": 101,
+      "top": 807,
+      "width": 56,
+      "height": 17,
+      "conf": 96.165337
+    },
+    {
+      "text": "it",
+      "line_num": 23,
+      "left": 166,
+      "top": 807,
+      "width": 13,
+      "height": 17,
+      "conf": 96.165337
+    },
+    {
+      "text": "only",
+      "line_num": 23,
+      "left": 188,
+      "top": 807,
+      "width": 42,
+      "height": 22,
+      "conf": 96.972008
+    },
+    {
+      "text": "half",
+      "line_num": 23,
+      "left": 237,
+      "top": 807,
+      "width": 39,
+      "height": 17,
+      "conf": 96.932663
+    },
+    {
+      "text": "full.",
+      "line_num": 23,
+      "left": 282,
+      "top": 807,
+      "width": 37,
+      "height": 17,
+      "conf": 95.695335
+    },
+    {
+      "text": "The",
+      "line_num": 23,
+      "left": 328,
+      "top": 807,
+      "width": 37,
+      "height": 17,
+      "conf": 95.695335
+    },
+    {
+      "text": "last",
+      "line_num": 23,
+      "left": 373,
+      "top": 807,
+      "width": 34,
+      "height": 17,
+      "conf": 97.010979
+    },
+    {
+      "text": "entry",
+      "line_num": 23,
+      "left": 416,
+      "top": 810,
+      "width": 51,
+      "height": 19,
+      "conf": 96.562134
+    },
+    {
+      "text": "was",
+      "line_num": 23,
+      "left": 474,
+      "top": 813,
+      "width": 36,
+      "height": 11,
+      "conf": 96.945396
+    },
+    {
+      "text": "dated",
+      "line_num": 23,
+      "left": 519,
+      "top": 807,
+      "width": 54,
+      "height": 17,
+      "conf": 96.138489
+    },
+    {
+      "text": "9",
+      "line_num": 23,
+      "left": 582,
+      "top": 812,
+      "width": 10,
+      "height": 16,
+      "conf": 96.91021
+    },
+    {
+      "text": "March",
+      "line_num": 23,
+      "left": 601,
+      "top": 807,
+      "width": 63,
+      "height": 17,
+      "conf": 96.492546
+    },
+    {
+      "text": "of",
+      "line_num": 23,
+      "left": 673,
+      "top": 807,
+      "width": 18,
+      "height": 17,
+      "conf": 96.375114
+    },
+    {
+      "text": "the",
+      "line_num": 24,
+      "left": 101,
+      "top": 837,
+      "width": 30,
+      "height": 17,
+      "conf": 96.357994
+    },
+    {
+      "text": "present",
+      "line_num": 24,
+      "left": 141,
+      "top": 840,
+      "width": 72,
+      "height": 19,
+      "conf": 96.689026
+    },
+    {
+      "text": "year,",
+      "line_num": 24,
+      "left": 223,
+      "top": 843,
+      "width": 46,
+      "height": 16,
+      "conf": 96.88324
+    },
+    {
+      "text": "eleven",
+      "line_num": 24,
+      "left": 280,
+      "top": 837,
+      "width": 62,
+      "height": 17,
+      "conf": 96.785561
+    },
+    {
+      "text": "days",
+      "line_num": 24,
+      "left": 352,
+      "top": 837,
+      "width": 42,
+      "height": 22,
+      "conf": 96.472862
+    },
+    {
+      "text": "before",
+      "line_num": 24,
+      "left": 404,
+      "top": 837,
+      "width": 62,
+      "height": 18,
+      "conf": 96.972054
+    },
+    {
+      "text": "he",
+      "line_num": 24,
+      "left": 476,
+      "top": 837,
+      "width": 22,
+      "height": 17,
+      "conf": 96.956917
+    },
+    {
+      "text": "died.",
+      "line_num": 24,
+      "left": 509,
+      "top": 837,
+      "width": 46,
+      "height": 17,
+      "conf": 96.932701
+    },
+    {
+      "text": "Wind",
+      "line_num": 24,
+      "left": 566,
+      "top": 837,
+      "width": 53,
+      "height": 17,
+      "conf": 93.287262
+    },
+    {
+      "text": "south-",
+      "line_num": 24,
+      "left": 629,
+      "top": 837,
+      "width": 61,
+      "height": 17,
+      "conf": 92.878311
+    },
+    {
+      "text": "west,",
+      "line_num": 25,
+      "left": 101,
+      "top": 871,
+      "width": 48,
+      "height": 18,
+      "conf": 96.837608
+    },
+    {
+      "text": "force",
+      "line_num": 25,
+      "left": 159,
+      "top": 868,
+      "width": 48,
+      "height": 17,
+      "conf": 95.724274
+    },
+    {
+      "text": "5.",
+      "line_num": 25,
+      "left": 216,
+      "top": 873,
+      "width": 16,
+      "height": 16,
+      "conf": 95.724274
+    },
+    {
+      "text": "Sea",
+      "line_num": 25,
+      "left": 242,
+      "top": 869,
+      "width": 33,
+      "height": 16,
+      "conf": 96.820862
+    },
+    {
+      "text": "moderate.",
+      "line_num": 25,
+      "left": 284,
+      "top": 868,
+      "width": 97,
+      "height": 17,
+      "conf": 96.084358
+    },
+    {
+      "text": "Four",
+      "line_num": 25,
+      "left": 391,
+      "top": 869,
+      "width": 46,
+      "height": 16,
+      "conf": 97.007401
+    },
+    {
+      "text": "vessels.",
+      "line_num": 25,
+      "left": 445,
+      "top": 868,
+      "width": 72,
+      "height": 17,
+      "conf": 96.691475
+    },
+    {
+      "text": "The",
+      "line_num": 25,
+      "left": 526,
+      "top": 868,
+      "width": 37,
+      "height": 17,
+      "conf": 96.84893
+    },
+    {
+      "text": "handwriting",
+      "line_num": 25,
+      "left": 572,
+      "top": 868,
+      "width": 119,
+      "height": 22,
+      "conf": 96.842148
+    },
+    {
+      "text": "had",
+      "line_num": 26,
+      "left": 101,
+      "top": 898,
+      "width": 35,
+      "height": 17,
+      "conf": 96.909538
+    },
+    {
+      "text": "grown",
+      "line_num": 26,
+      "left": 145,
+      "top": 904,
+      "width": 61,
+      "height": 16,
+      "conf": 96.950394
+    },
+    {
+      "text": "larger",
+      "line_num": 26,
+      "left": 215,
+      "top": 898,
+      "width": 57,
+      "height": 22,
+      "conf": 97.000313
+    },
+    {
+      "text": "and",
+      "line_num": 26,
+      "left": 281,
+      "top": 898,
+      "width": 35,
+      "height": 17,
+      "conf": 96.948662
+    },
+    {
+      "text": "less",
+      "line_num": 26,
+      "left": 325,
+      "top": 898,
+      "width": 35,
+      "height": 17,
+      "conf": 96.17572
+    },
+    {
+      "text": "steady,",
+      "line_num": 26,
+      "left": 370,
+      "top": 898,
+      "width": 66,
+      "height": 22,
+      "conf": 96.487297
+    },
+    {
+      "text": "but",
+      "line_num": 26,
+      "left": 445,
+      "top": 898,
+      "width": 32,
+      "height": 17,
+      "conf": 96.633492
+    },
+    {
+      "text": "the",
+      "line_num": 26,
+      "left": 486,
+      "top": 898,
+      "width": 31,
+      "height": 17,
+      "conf": 96.461365
+    },
+    {
+      "text": "columns",
+      "line_num": 26,
+      "left": 526,
+      "top": 898,
+      "width": 81,
+      "height": 17,
+      "conf": 96.120552
+    },
+    {
+      "text": "were",
+      "line_num": 26,
+      "left": 616,
+      "top": 904,
+      "width": 46,
+      "height": 11,
+      "conf": 96.761131
+    },
+    {
+      "text": "as",
+      "line_num": 26,
+      "left": 671,
+      "top": 904,
+      "width": 19,
+      "height": 11,
+      "conf": 96.830757
+    },
+    {
+      "text": "straight",
+      "line_num": 27,
+      "left": 101,
+      "top": 930,
+      "width": 74,
+      "height": 22,
+      "conf": 96.650337
+    },
+    {
+      "text": "as",
+      "line_num": 27,
+      "left": 182,
+      "top": 936,
+      "width": 19,
+      "height": 11,
+      "conf": 96.650337
+    },
+    {
+      "text": "ever.",
+      "line_num": 27,
+      "left": 207,
+      "top": 936,
+      "width": 46,
+      "height": 11,
+      "conf": 96.446983
+    },
+    {
+      "text": "Nora",
+      "line_num": 28,
+      "left": 131,
+      "top": 961,
+      "width": 49,
+      "height": 16,
+      "conf": 96.669739
+    },
+    {
+      "text": "sat",
+      "line_num": 28,
+      "left": 186,
+      "top": 963,
+      "width": 27,
+      "height": 14,
+      "conf": 96.882912
+    },
+    {
+      "text": "down",
+      "line_num": 28,
+      "left": 220,
+      "top": 960,
+      "width": 53,
+      "height": 17,
+      "conf": 96.478058
+    },
+    {
+      "text": "on",
+      "line_num": 28,
+      "left": 280,
+      "top": 966,
+      "width": 24,
+      "height": 11,
+      "conf": 96.984695
+    },
+    {
+      "text": "the",
+      "line_num": 28,
+      "left": 310,
+      "top": 960,
+      "width": 30,
+      "height": 17,
+      "conf": 96.997284
+    },
+    {
+      "text": "bottom",
+      "line_num": 28,
+      "left": 346,
+      "top": 960,
+      "width": 71,
+      "height": 18,
+      "conf": 96.871109
+    },
+    {
+      "text": "stair.",
+      "line_num": 28,
+      "left": 424,
+      "top": 961,
+      "width": 47,
+      "height": 16,
+      "conf": 96.831146
+    },
+    {
+      "text": "She",
+      "line_num": 28,
+      "left": 479,
+      "top": 960,
+      "width": 35,
+      "height": 17,
+      "conf": 96.904755
+    },
+    {
+      "text": "had",
+      "line_num": 28,
+      "left": 520,
+      "top": 960,
+      "width": 36,
+      "height": 17,
+      "conf": 96.911514
+    },
+    {
+      "text": "come",
+      "line_num": 28,
+      "left": 563,
+      "top": 966,
+      "width": 51,
+      "height": 11,
+      "conf": 93.257843
+    },
+    {
+      "text": "intend-",
+      "line_num": 28,
+      "left": 620,
+      "top": 960,
+      "width": 70,
+      "height": 17,
+      "conf": 93.065804
+    },
+    {
+      "text": "ing",
+      "line_num": 29,
+      "left": 101,
+      "top": 991,
+      "width": 29,
+      "height": 22,
+      "conf": 96.991325
+    },
+    {
+      "text": "to",
+      "line_num": 29,
+      "left": 137,
+      "top": 994,
+      "width": 18,
+      "height": 14,
+      "conf": 96.062729
+    },
+    {
+      "text": "stay",
+      "line_num": 29,
+      "left": 162,
+      "top": 994,
+      "width": 39,
+      "height": 19,
+      "conf": 96.062729
+    },
+    {
+      "text": "two",
+      "line_num": 29,
+      "left": 206,
+      "top": 994,
+      "width": 35,
+      "height": 14,
+      "conf": 96.990517
+    },
+    {
+      "text": "nights,",
+      "line_num": 29,
+      "left": 248,
+      "top": 991,
+      "width": 64,
+      "height": 22,
+      "conf": 96.985962
+    },
+    {
+      "text": "sign",
+      "line_num": 29,
+      "left": 319,
+      "top": 992,
+      "width": 40,
+      "height": 21,
+      "conf": 96.108078
+    },
+    {
+      "text": "whatever",
+      "line_num": 29,
+      "left": 364,
+      "top": 991,
+      "width": 89,
+      "height": 17,
+      "conf": 96.606079
+    },
+    {
+      "text": "needed",
+      "line_num": 29,
+      "left": 459,
+      "top": 991,
+      "width": 69,
+      "height": 17,
+      "conf": 96.606079
+    },
+    {
+      "text": "signing,",
+      "line_num": 29,
+      "left": 535,
+      "top": 991,
+      "width": 75,
+      "height": 22,
+      "conf": 97.006302
+    },
+    {
+      "text": "and",
+      "line_num": 29,
+      "left": 617,
+      "top": 991,
+      "width": 36,
+      "height": 17,
+      "conf": 97.015747
+    },
+    {
+      "text": "put",
+      "line_num": 29,
+      "left": 659,
+      "top": 994,
+      "width": 32,
+      "height": 19,
+      "conf": 96.440392
+    },
+    {
+      "text": "the",
+      "line_num": 30,
+      "left": 101,
+      "top": 1021,
+      "width": 30,
+      "height": 17,
+      "conf": 97.015701
+    },
+    {
+      "text": "place",
+      "line_num": 30,
+      "left": 137,
+      "top": 1021,
+      "width": 50,
+      "height": 22,
+      "conf": 96.745285
+    },
+    {
+      "text": "up",
+      "line_num": 30,
+      "left": 193,
+      "top": 1027,
+      "width": 24,
+      "height": 16,
+      "conf": 96.815636
+    },
+    {
+      "text": "for",
+      "line_num": 30,
+      "left": 224,
+      "top": 1021,
+      "width": 28,
+      "height": 17,
+      "conf": 96.815636
+    },
+    {
+      "text": "sale.",
+      "line_num": 30,
+      "left": 258,
+      "top": 1021,
+      "width": 41,
+      "height": 17,
+      "conf": 96.244797
+    },
+    {
+      "text": "She",
+      "line_num": 30,
+      "left": 307,
+      "top": 1021,
+      "width": 35,
+      "height": 17,
+      "conf": 96.866768
+    },
+    {
+      "text": "had",
+      "line_num": 30,
+      "left": 348,
+      "top": 1021,
+      "width": 36,
+      "height": 17,
+      "conf": 95.413353
+    },
+    {
+      "text": "a",
+      "line_num": 30,
+      "left": 390,
+      "top": 1027,
+      "width": 10,
+      "height": 11,
+      "conf": 96.693176
+    },
+    {
+      "text": "job",
+      "line_num": 30,
+      "left": 404,
+      "top": 1021,
+      "width": 32,
+      "height": 22,
+      "conf": 96.693176
+    },
+    {
+      "text": "to",
+      "line_num": 30,
+      "left": 442,
+      "top": 1024,
+      "width": 19,
+      "height": 14,
+      "conf": 96.993362
+    },
+    {
+      "text": "go",
+      "line_num": 30,
+      "left": 467,
+      "top": 1027,
+      "width": 23,
+      "height": 16,
+      "conf": 96.964905
+    },
+    {
+      "text": "back",
+      "line_num": 30,
+      "left": 495,
+      "top": 1021,
+      "width": 46,
+      "height": 18,
+      "conf": 96.837013
+    },
+    {
+      "text": "to,",
+      "line_num": 30,
+      "left": 547,
+      "top": 1024,
+      "width": 24,
+      "height": 18,
+      "conf": 96.162483
+    },
+    {
+      "text": "a",
+      "line_num": 30,
+      "left": 574,
+      "top": 1017,
+      "width": 9,
+      "height": 31,
+      "conf": 96.162483
+    },
+    {
+      "text": "flat",
+      "line_num": 30,
+      "left": 594,
+      "top": 1021,
+      "width": 32,
+      "height": 17,
+      "conf": 96.20742
+    },
+    {
+      "text": "with",
+      "line_num": 30,
+      "left": 631,
+      "top": 1021,
+      "width": 43,
+      "height": 17,
+      "conf": 95.669167
+    },
+    {
+      "text": "a",
+      "line_num": 30,
+      "left": 681,
+      "top": 1027,
+      "width": 10,
+      "height": 11,
+      "conf": 95.669167
+    },
+    {
+      "text": "leaking",
+      "line_num": 31,
+      "left": 101,
+      "top": 1053,
+      "width": 69,
+      "height": 22,
+      "conf": 96.99984
+    },
+    {
+      "text": "tap,",
+      "line_num": 31,
+      "left": 176,
+      "top": 1056,
+      "width": 36,
+      "height": 19,
+      "conf": 96.877609
+    },
+    {
+      "text": "and",
+      "line_num": 31,
+      "left": 219,
+      "top": 1053,
+      "width": 36,
+      "height": 17,
+      "conf": 96.94561
+    },
+    {
+      "text": "a",
+      "line_num": 31,
+      "left": 261,
+      "top": 1059,
+      "width": 10,
+      "height": 11,
+      "conf": 96.89167
+    },
+    {
+      "text": "train",
+      "line_num": 31,
+      "left": 277,
+      "top": 1053,
+      "width": 47,
+      "height": 17,
+      "conf": 96.878914
+    },
+    {
+      "text": "booked",
+      "line_num": 31,
+      "left": 329,
+      "top": 1053,
+      "width": 71,
+      "height": 17,
+      "conf": 96.691681
+    },
+    {
+      "text": "for",
+      "line_num": 31,
+      "left": 406,
+      "top": 1053,
+      "width": 28,
+      "height": 17,
+      "conf": 96.350327
+    },
+    {
+      "text": "Thursday",
+      "line_num": 31,
+      "left": 439,
+      "top": 1053,
+      "width": 92,
+      "height": 22,
+      "conf": 96.335716
+    },
+    {
+      "text": "at",
+      "line_num": 31,
+      "left": 537,
+      "top": 1056,
+      "width": 18,
+      "height": 14,
+      "conf": 96.993042
+    },
+    {
+      "text": "2:15",
+      "line_num": 31,
+      "left": 561,
+      "top": 1058,
+      "width": 39,
+      "height": 16,
+      "conf": 96.168289
+    },
+    {
+      "text": "p.m.",
+      "line_num": 31,
+      "left": 606,
+      "top": 1059,
+      "width": 42,
+      "height": 16,
+      "conf": 96.168289
+    },
+    {
+      "text": "It",
+      "line_num": 32,
+      "left": 132,
+      "top": 1084,
+      "width": 15,
+      "height": 16,
+      "conf": 96.946671
+    },
+    {
+      "text": "was",
+      "line_num": 32,
+      "left": 155,
+      "top": 1089,
+      "width": 37,
+      "height": 11,
+      "conf": 96.234642
+    },
+    {
+      "text": "the",
+      "line_num": 32,
+      "left": 201,
+      "top": 1083,
+      "width": 30,
+      "height": 17,
+      "conf": 93.290359
+    },
+    {
+      "text": "harbormaster",
+      "line_num": 32,
+      "left": 240,
+      "top": 1083,
+      "width": 133,
+      "height": 17,
+      "conf": 92.222504
+    },
+    {
+      "text": "who",
+      "line_num": 32,
+      "left": 381,
+      "top": 1083,
+      "width": 41,
+      "height": 17,
+      "conf": 95.961624
+    },
+    {
+      "text": "explained",
+      "line_num": 32,
+      "left": 431,
+      "top": 1083,
+      "width": 94,
+      "height": 22,
+      "conf": 96.290009
+    },
+    {
+      "text": "it,",
+      "line_num": 32,
+      "left": 534,
+      "top": 1083,
+      "width": 18,
+      "height": 21,
+      "conf": 96.987198
+    },
+    {
+      "text": "the",
+      "line_num": 32,
+      "left": 562,
+      "top": 1083,
+      "width": 30,
+      "height": 17,
+      "conf": 96.98513
+    },
+    {
+      "text": "following",
+      "line_num": 32,
+      "left": 601,
+      "top": 1083,
+      "width": 90,
+      "height": 22,
+      "conf": 96.982094
+    }
+  ]
+}
