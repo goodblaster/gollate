@@ -112,17 +112,15 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 		processed = append(processed, w)
 	}
 
-	// Canonical vocabulary: parts must exist here to be worth splitting.
+	// Canonical vocabulary: what a split or a re-joined word must produce.
 	canonicalWords := make(map[string]bool)
-	if splitCompound {
-		for _, line := range canonicalLines {
-			for _, word := range strings.Fields(line.Normalized) {
-				canonicalWords[word] = true
-			}
+	for _, line := range canonicalLines {
+		for _, word := range strings.Fields(line.Normalized) {
+			canonicalWords[word] = true
 		}
 	}
 
-	for _, w := range attachPunctuation(ocrBlocks) {
+	for _, w := range joinLineBreakHyphens(attachPunctuation(ocrBlocks), canonicalWords) {
 		if strings.TrimSpace(w.NormedText) == "" {
 			continue
 		}
@@ -247,6 +245,57 @@ func attachPunctuation(blocks []Block) []Block {
 	}
 	for i, p := range prefix {
 		out[i].Text = p + out[i].Text
+	}
+	return out
+}
+
+// lineBreakHyphens are the marks a typesetter leaves at the end of a line
+// when a word is broken across it: hyphen-minus, U+2010 HYPHEN (what PDF
+// text layers carry), U+00AD SOFT HYPHEN and the not sign some OCR engines
+// read it as.
+const lineBreakHyphens = "-\u2010\u00AD\u00AC"
+
+// joinLineBreakHyphens re-joins words that justified typesetting broke
+// across lines. "ven-" at the end of one line and "dors" at the start of
+// the next are two blocks to an OCR engine and neither is a canonical
+// word, so both went unmatched - on a printed book page, a word or two in
+// most paragraphs.
+//
+// Two consecutive blocks are joined when the first ends in a hyphen, the
+// second starts a new line, their concatenation is a canonical word and
+// at least one of them is not (so "long-" / "time" from a genuine
+// compound is left for compound splitting). The joined block takes the
+// first part's position; what OCR actually read is kept in
+// OriginalOcrText.
+func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool) []Block {
+	if len(canonicalWords) == 0 {
+		return blocks
+	}
+	out := blocks[:0:0]
+	for i := 0; i < len(blocks); i++ {
+		b := blocks[i]
+		if i+1 < len(blocks) {
+			next := blocks[i+1]
+			stem := strings.TrimRight(strings.TrimSpace(b.Text), lineBreakHyphens)
+			onNextLine := next.Top() >= b.Bottom()-b.Height()/2 || next.Left() < b.Left()
+			if b.LineId != "" && next.LineId != "" {
+				onNextLine = b.LineId != next.LineId
+			}
+			if stem != strings.TrimSpace(b.Text) && stem != "" && onNextLine {
+				joined := NormalizeText(stem + next.Text)
+				bothWords := canonicalWords[NormalizeText(stem)] && canonicalWords[next.NormedText]
+				if canonicalWords[joined] && !bothWords {
+					b.OriginalOcrText = b.Text + " " + next.Text
+					b.CorrectionType = "dehyphenated"
+					b.Text = stem + next.Text
+					b.NormedText = joined
+					out = append(out, b)
+					i++ // next is consumed
+					continue
+				}
+			}
+		}
+		out = append(out, b)
 	}
 	return out
 }

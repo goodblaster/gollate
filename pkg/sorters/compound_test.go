@@ -157,3 +157,37 @@ func TestMisreadLeftoverLineStaysInPlace(t *testing.T) {
 		t.Errorf("got:\n%s\nwant:\n%s", got, want)
 	}
 }
+
+func TestJoinLineBreakHyphens(t *testing.T) {
+	lines := ParseLines([]string{"the vendors sell long-time favorites near the old well"})
+
+	// "ven-" ends line a, "dors" starts line b.
+	a1 := word("the", 0.70, 0.10, 0.04)
+	a2 := word("ven‐", 0.75, 0.10, 0.05)
+	b1 := word("dors", 0.10, 0.13, 0.05)
+	b2 := word("sell", 0.16, 0.13, 0.04)
+	// A real compound broken at its own hyphen: both halves are canonical
+	// words, so it is left for compound handling.
+	b3 := word("long-", 0.75, 0.13, 0.06)
+	c1 := word("time", 0.10, 0.16, 0.05)
+	// A hyphen in the middle of a line joins nothing.
+	c2 := word("old-", 0.20, 0.16, 0.05)
+	c3 := word("well", 0.26, 0.16, 0.05)
+
+	out := normalizeOcrBlocks([]Block{a1, a2, b1, b2, b3, c1, c2, c3}, true, lines)
+	var got []string
+	for _, b := range out {
+		got = append(got, b.Text+"="+b.NormedText)
+	}
+	want := []string{"the=the", "vendors=vendors", "sell=sell", "long-=long", "time=time", "old-=old", "well=well"}
+	if strings.Join(got, " ") != strings.Join(want, " ") {
+		t.Fatalf("got  %q\nwant %q", got, want)
+	}
+	joined := out[1]
+	if joined.OriginalOcrText != "ven‐ dors" || joined.CorrectionType != "dehyphenated" {
+		t.Errorf("provenance not recorded: %+v", joined)
+	}
+	if joined.BoundingBox.Left != 0.75 || joined.BoundingBox.Top != 0.10 {
+		t.Errorf("joined block should keep the first part's position: %+v", joined.BoundingBox)
+	}
+}
