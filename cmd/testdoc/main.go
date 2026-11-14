@@ -40,7 +40,7 @@ const (
 
 type spec struct {
 	Language    string
-	Layout      string // single, two-column, three-column, mixed-sizes, sidebar
+	Layout      string // single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book
 	Direction   string // ltr, rtl, vertical
 	Title       string
 	Footer      string
@@ -104,11 +104,29 @@ var fontStacks = map[string]string{
 	"hindi":    `"Kohinoor Devanagari", "Devanagari MT", sans-serif`,
 }
 
+// htmlLang is the document language tag. It selects language-appropriate
+// glyph variants (Han unification: the same code point renders differently
+// for zh and ja) and enables CSS hyphenation for the "justified" layout.
+var htmlLang = map[string]string{
+	"english":  "en",
+	"spanish":  "es",
+	"chinese":  "zh-Hans",
+	"japanese": "ja",
+	"arabic":   "ar",
+	"hindi":    "hi",
+}
+
+// serifStacks are the body fonts for the "justified" (printed book) layout.
+var serifStacks = map[string]string{
+	"english": `Georgia, "Times New Roman", serif`,
+	"spanish": `Georgia, "Times New Roman", serif`,
+}
+
 func main() {
 	content := flag.String("content", "", "Input text file: paragraphs separated by blank lines (required)")
 	outDir := flag.String("out", "", "Output directory (required)")
 	lang := flag.String("lang", "english", "Language: english, spanish, chinese, japanese, arabic, hindi")
-	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid")
+	layout := flag.String("layout", "single", "Layout: single, two-column, three-column, mixed-sizes, sidebar, grid, justified, book")
 	direction := flag.String("direction", "", "Text direction: ltr, rtl, vertical (default: by language)")
 	title := flag.String("title", "", "Document title (default: by language)")
 	footer := flag.String("footer", "", "Footer text (default: derived from lang/layout)")
@@ -370,6 +388,21 @@ func buildDocument(s spec) (string, []string) {
 `
 	}
 
+	// justified: a printed-book page - serif face, fully justified, with
+	// automatic hyphenation, so words break across lines ("neighbor-" /
+	// "hood") the way they do in real typeset documents. Canonical text
+	// keeps the unbroken words.
+	if s.Layout == "justified" {
+		if serif, ok := serifStacks[baseLang(s.Language)]; ok {
+			css += fmt.Sprintf("\t.page { font-family: %s; }\n", serif)
+		}
+		css += `
+	.page { padding-left: 1.6in; padding-right: 1.6in; }
+	.content p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-indent: 1.5em; margin: 0; }
+	.content p:first-child { text-indent: 0; }
+`
+	}
+
 	if s.Layout == "sidebar" {
 		css += fmt.Sprintf(`
 	.content { display: flex; gap: %dpt; }
@@ -379,12 +412,12 @@ func buildDocument(s spec) (string, []string) {
 	}
 
 	doc := fmt.Sprintf(`<!DOCTYPE html>
-<html dir=%q>
+<html dir=%q lang=%q>
 <head><meta charset="UTF-8"><style>%s</style></head>
 <body><div class="page">
 %s</div></body>
 </html>
-`, dirAttr, css, body.String())
+`, dirAttr, htmlLang[baseLang(s.Language)], css, body.String())
 
 	return doc, canonical
 }
@@ -433,9 +466,18 @@ func render(htmlPath string, timeout time.Duration) (pdf []byte, png []byte, err
 		chromedp.Evaluate(`document.fonts.ready.then(() => true)`, nil, func(p *runtime.EvaluateParams) *runtime.EvaluateParams {
 			return p.WithAwaitPromise(true)
 		}),
+		// Measure overflow on the page AND on the content box. The page
+		// alone is not enough: its scroll area includes its own 1in
+		// padding, so body text could spill up to an inch past the content
+		// box - straight through the footer - without registering.
 		chromedp.Evaluate(`(() => {
-			const el = document.querySelector('.page');
-			return { x: el.scrollWidth - el.clientWidth, y: el.scrollHeight - el.clientHeight };
+			let x = 0, y = 0;
+			for (const sel of ['.page', '.content']) {
+				const el = document.querySelector(sel);
+				x = Math.max(x, el.scrollWidth - el.clientWidth);
+				y = Math.max(y, el.scrollHeight - el.clientHeight);
+			}
+			return { x, y };
 		})()`, &overflow),
 		chromedp.FullScreenshot(&png, 100),
 		chromedp.ActionFunc(func(ctx context.Context) error {
