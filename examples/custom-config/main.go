@@ -94,6 +94,7 @@ func main() {
 	fmt.Printf("├─ Lines found: %d\n", metrics.LinesFound)
 	fmt.Printf("├─ Lines split: %d\n", metrics.LinesSplit)
 	fmt.Printf("├─ Leftover blocks: %d\n", metrics.LeftoverBlocks)
-	fmt.Printf("├─ Permutations: %d / %d max\n", metrics.TotalPermutationsExplored, config.MaxPermutations)
+	fmt.Printf("├─ Permutations: %d (budget %d per line, %d searches cut short)\n",
+		metrics.TotalPermutationsExplored, config.PermutationLimit(), metrics.PermutationLimitHits)
 	fmt.Printf("└─ Time: %v\n", metrics.ElapsedTime)
 }

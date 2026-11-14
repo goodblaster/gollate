@@ -1,2929 +1,2911 @@
 {
   "words": [
     {
-      "text": "أشعة",
-      "line_num": 1,
-      "left": 1383,
-      "top": 343,
-      "width": 56,
-      "height": 24,
-      "conf": 90.746605
-    },
-    {
-      "text": "الشمس",
-      "line_num": 1,
-      "left": 1290,
-      "top": 345,
-      "width": 81,
-      "height": 29,
-      "conf": 92.592163
-    },
-    {
-      "text": "الصباحية",
-      "line_num": 1,
-      "left": 1175,
-      "top": 345,
-      "width": 103,
-      "height": 29,
-      "conf": 91.997231
-    },
-    {
-      "text": "تضوء",
-      "line_num": 1,
-      "left": 1095,
-      "top": 348,
-      "width": 70,
-      "height": 30,
-      "conf": 72.117218
-    },
-    {
-      "text": "الشوارع",
-      "line_num": 1,
-      "left": 995,
-      "top": 345,
-      "width": 87,
-      "height": 29,
-      "conf": 92.347321
-    },
-    {
-      "text": "الهادئة",
-      "line_num": 1,
-      "left": 913,
-      "top": 345,
-      "width": 70,
-      "height": 29,
-      "conf": 88.45079
-    },
-    {
-      "text": "بلطف",
-      "line_num": 1,
-      "left": 833,
-      "top": 345,
-      "width": 69,
-      "height": 29,
-      "conf": 0
-    },
-    {
-      "text": "والضوء",
-      "line_num": 1,
-      "left": 746,
-      "top": 345,
-      "width": 76,
-      "height": 29,
-      "conf": 92.214752
-    },
-    {
-      "text": "الدافئ",
-      "line_num": 1,
-      "left": 663,
-      "top": 345,
-      "width": 70,
-      "height": 29,
-      "conf": 91.023842
-    },
-    {
-      "text": "يمر",
-      "line_num": 1,
-      "left": 616,
-      "top": 357,
-      "width": 37,
-      "height": 17,
-      "conf": 91.023842
-    },
-    {
-      "text": "بين",
-      "line_num": 1,
-      "left": 573,
-      "top": 352,
-      "width": 33,
-      "height": 23,
-      "conf": 96.888107
-    },
-    {
-      "text": "الأشجار",
-      "line_num": 1,
-      "left": 471,
-      "top": 343,
-      "width": 91,
-      "height": 31,
-      "conf": 92.678955
-    },
-    {
-      "text": "ويلقي",
-      "line_num": 1,
-      "left": 398,
-      "top": 345,
-      "width": 64,
-      "height": 33,
-      "conf": 93.109131
-    },
-    {
-      "text": "ظلالاً",
-      "line_num": 1,
-      "left": 334,
-      "top": 337,
-      "width": 55,
-      "height": 32,
-      "conf": 77.507523
-    },
-    {
-      "text": "جميلة",
-      "line_num": 1,
-      "left": 263,
-      "top": 345,
-      "width": 61,
-      "height": 29,
-      "conf": 93.229362
-    },
-    {
-      "text": "على",
-      "line_num": 1,
-      "left": 209,
-      "top": 345,
-      "width": 44,
-      "height": 29,
-      "conf": 93.236725
-    },
-    {
-      "text": "لأرض.",
-      "line_num": 2,
-      "left": 1360,
-      "top": 391,
-      "width": 70,
-      "height": 31,
-      "conf": 88.138741
-    },
-    {
-      "text": "تغني",
-      "line_num": 2,
-      "left": 1294,
-      "top": 396,
-      "width": 55,
-      "height": 30,
-      "conf": 93.200577
-    },
-    {
-      "text": "الطيور",
-      "line_num": 2,
-      "left": 1213,
-      "top": 393,
-      "width": 69,
-      "height": 29,
-      "conf": 92.834091
-    },
-    {
-      "text": "بلطف",
-      "line_num": 2,
-      "left": 1142,
-      "top": 393,
-      "width": 61,
-      "height": 29,
-      "conf": 93.305244
-    },
-    {
-      "text": "على",
-      "line_num": 2,
-      "left": 1088,
-      "top": 393,
-      "width": 44,
-      "height": 29,
-      "conf": 96.943314
-    },
-    {
-      "text": "الأشجارء",
-      "line_num": 2,
-      "left": 979,
-      "top": 391,
-      "width": 98,
-      "height": 31,
-      "conf": 86.937546
-    },
-    {
-      "text": "وأغانيها",
-      "line_num": 2,
-      "left": 885,
-      "top": 391,
-      "width": 82,
-      "height": 31,
-      "conf": 90.752403
-    },
-    {
-      "text": "السارة",
-      "line_num": 2,
-      "left": 800,
-      "top": 393,
-      "width": 70,
-      "height": 29,
-      "conf": 88.923889
-    },
-    {
-      "text": "توقظ",
-      "line_num": 2,
-      "left": 740,
-      "top": 393,
-      "width": 50,
-      "height": 29,
-      "conf": 91.449249
-    },
-    {
-      "text": "المدينة",
-      "line_num": 2,
-      "left": 667,
-      "top": 393,
-      "width": 61,
-      "height": 29,
-      "conf": 87.582153
-    },
-    {
-      "text": "LiL!‏",
-      "line_num": 2,
-      "left": 579,
-      "top": 393,
-      "width": 76,
-      "height": 22,
-      "conf": 40.314907
-    },
-    {
-      "text": "وتبدأ",
-      "line_num": 2,
-      "left": 518,
-      "top": 391,
-      "width": 50,
-      "height": 31,
-      "conf": 87.102615
-    },
-    {
-      "text": "Logs‏",
-      "line_num": 2,
-      "left": 462,
-      "top": 382,
-      "width": 44,
-      "height": 40,
-      "conf": 76.469559
-    },
-    {
-      "text": "جديداً",
-      "line_num": 2,
-      "left": 387,
-      "top": 382,
-      "width": 66,
-      "height": 40,
-      "conf": 74.751488
-    },
-    {
-      "text": "مليئاً",
-      "line_num": 2,
-      "left": 328,
-      "top": 382,
-      "width": 50,
-      "height": 40,
-      "conf": 90.754051
-    },
-    {
-      "text": "بالأمل",
-      "line_num": 2,
-      "left": 253,
-      "top": 391,
-      "width": 66,
-      "height": 31,
-      "conf": 92.456619
-    },
-    {
-      "text": "والإمكانيات.",
-      "line_num": 3,
-      "left": 1309,
-      "top": 441,
-      "width": 131,
-      "height": 32,
-      "conf": 91.459953
-    },
-    {
-      "text": "لتكنولوجيا",
-      "line_num": 1,
-      "left": 1328,
-      "top": 515,
-      "width": 103,
-      "height": 29,
-      "conf": 93.197731
-    },
-    {
-      "text": "تتقدم",
-      "line_num": 1,
-      "left": 1257,
-      "top": 517,
-      "width": 57,
-      "height": 33,
-      "conf": 92.014847
-    },
-    {
-      "text": "بسرعة",
-      "line_num": 1,
-      "left": 1179,
-      "top": 515,
-      "width": 68,
-      "height": 29,
-      "conf": 92.463158
-    },
-    {
-      "text": "غير",
-      "line_num": 1,
-      "left": 1132,
-      "top": 499,
-      "width": 36,
-      "height": 55,
-      "conf": 93.294609
-    },
-    {
-      "text": "مسبوقة",
-      "line_num": 1,
-      "left": 1043,
-      "top": 499,
-      "width": 76,
-      "height": 55,
-      "conf": 92.9002
-    },
-    {
-      "text": "وتغير",
-      "line_num": 1,
-      "left": 976,
-      "top": 518,
-      "width": 56,
-      "height": 26,
-      "conf": 92.72065
-    },
-    {
-      "text": "طريقة",
-      "line_num": 1,
-      "left": 903,
-      "top": 515,
-      "width": 64,
-      "height": 29,
-      "conf": 93.148216
-    },
-    {
-      "text": "حياتنا",
-      "line_num": 1,
-      "left": 830,
-      "top": 515,
-      "width": 63,
-      "height": 29,
-      "conf": 91.58107
-    },
-    {
-      "text": "وعملنا",
-      "line_num": 1,
-      "left": 755,
-      "top": 515,
-      "width": 61,
-      "height": 29,
-      "conf": 92.944069
-    },
-    {
-      "text": "بشكل",
-      "line_num": 1,
-      "left": 678,
-      "top": 499,
-      "width": 56,
-      "height": 55,
-      "conf": 93.013443
-    },
-    {
-      "text": "جذري.",
-      "line_num": 1,
-      "left": 596,
-      "top": 499,
-      "width": 70,
-      "height": 55,
-      "conf": 93.117432
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 551,
-      "top": 523,
-      "width": 31,
-      "height": 21,
-      "conf": 93.285751
-    },
-    {
-      "text": "الذكاء",
-      "line_num": 1,
-      "left": 479,
-      "top": 515,
-      "width": 60,
-      "height": 23,
-      "conf": 93.129448
-    },
-    {
-      "text": "الاصطناعي",
-      "line_num": 1,
-      "left": 337,
-      "top": 515,
-      "width": 129,
-      "height": 33,
-      "conf": 92.915245
-    },
-    {
-      "text": "إلى",
-      "line_num": 1,
-      "left": 289,
-      "top": 515,
-      "width": 36,
-      "height": 30,
-      "conf": 93.29351
-    },
-    {
-      "text": "الطاقة",
-      "line_num": 1,
-      "left": 212,
-      "top": 515,
-      "width": 65,
-      "height": 22,
-      "conf": 90.194046
-    },
-    {
-      "text": "Bosal‏",
-      "line_num": 2,
-      "left": 1344,
-      "top": 563,
-      "width": 87,
-      "height": 29,
-      "conf": 9.175358
-    },
-    {
       "text": "كل",
-      "line_num": 2,
-      "left": 1310,
-      "top": 545,
-      "width": 22,
-      "height": 58,
-      "conf": 93.240547
+      "line_num": 0,
+      "left": 1410,
+      "top": 345,
+      "width": 30,
+      "height": 27,
+      "conf": 96.030022
     },
     {
       "text": "يوم",
-      "line_num": 2,
-      "left": 1262,
-      "top": 545,
-      "width": 34,
-      "height": 58,
-      "conf": 96.49321
-    },
-    {
-      "text": "تظهر",
-      "line_num": 2,
-      "left": 1195,
-      "top": 563,
-      "width": 138,
-      "height": 35,
-      "conf": 93.141617
-    },
-    {
-      "text": "ابتكارات",
-      "line_num": 2,
-      "left": 1096,
-      "top": 545,
-      "width": 88,
-      "height": 58,
-      "conf": 89.484222
-    },
-    {
-      "text": "واختراعات",
-      "line_num": 2,
-      "left": 972,
-      "top": 545,
-      "width": 112,
-      "height": 58,
-      "conf": 92.913818
-    },
-    {
-      "text": "Buse‏",
-      "line_num": 2,
-      "left": 886,
-      "top": 566,
-      "width": 75,
-      "height": 26,
-      "conf": 16.630735
-    },
-    {
-      "text": "وهذه",
-      "line_num": 2,
-      "left": 824,
-      "top": 564,
-      "width": 51,
-      "height": 28,
-      "conf": 90.609146
-    },
-    {
-      "text": "التطورات",
-      "line_num": 2,
-      "left": 717,
-      "top": 563,
-      "width": 95,
-      "height": 29,
-      "conf": 93.25148
-    },
-    {
-      "text": "التكنولوجية",
-      "line_num": 2,
-      "left": 589,
-      "top": 563,
-      "width": 115,
-      "height": 29,
-      "conf": 92.320091
-    },
-    {
-      "text": "تؤثر",
-      "line_num": 2,
-      "left": 534,
-      "top": 545,
-      "width": 44,
-      "height": 58,
-      "conf": 89.941299
-    },
-    {
-      "text": "بعمق",
-      "line_num": 2,
-      "left": 472,
-      "top": 545,
-      "width": 48,
-      "height": 58,
-      "conf": 93.127861
-    },
-    {
-      "text": "على",
-      "line_num": 2,
-      "left": 418,
-      "top": 545,
-      "width": 41,
-      "height": 58,
-      "conf": 93.230202
-    },
-    {
-      "text": "جميع",
-      "line_num": 2,
-      "left": 349,
-      "top": 545,
-      "width": 55,
-      "height": 58,
-      "conf": 93.143036
-    },
-    {
-      "text": "جوانب",
-      "line_num": 2,
-      "left": 266,
-      "top": 545,
-      "width": 73,
-      "height": 58,
-      "conf": 89.626671
-    },
-    {
-      "text": "لمجتمع,",
-      "line_num": 3,
-      "left": 1353,
-      "top": 611,
-      "width": 78,
-      "height": 29,
-      "conf": 21.06646
-    },
-    {
-      "text": "وتعيد",
-      "line_num": 3,
-      "left": 1288,
-      "top": 614,
-      "width": 53,
-      "height": 26,
-      "conf": 92.80378
-    },
-    {
-      "text": "تشكيل",
-      "line_num": 3,
-      "left": 1207,
-      "top": 607,
-      "width": 64,
-      "height": 44,
-      "conf": 91.908447
-    },
-    {
-      "text": "طريقة",
-      "line_num": 3,
-      "left": 1136,
-      "top": 607,
-      "width": 58,
-      "height": 44,
-      "conf": 91.908447
-    },
-    {
-      "text": "تفاعلنا",
-      "line_num": 3,
-      "left": 1052,
-      "top": 611,
-      "width": 68,
-      "height": 22,
-      "conf": 92.648186
-    },
-    {
-      "text": "مع",
-      "line_num": 3,
-      "left": 1009,
-      "top": 620,
-      "width": 29,
-      "height": 20,
-      "conf": 93.279671
-    },
-    {
-      "text": "العالم.",
-      "line_num": 3,
-      "left": 931,
-      "top": 611,
-      "width": 66,
-      "height": 35,
-      "conf": 93.192368
-    },
-    {
-      "text": "لحضارات",
-      "line_num": 1,
-      "left": 1325,
-      "top": 687,
-      "width": 106,
-      "height": 29,
-      "conf": 92.801208
-    },
-    {
-      "text": "القديمة",
-      "line_num": 1,
-      "left": 1240,
-      "top": 687,
-      "width": 73,
-      "height": 29,
-      "conf": 93.236855
-    },
-    {
-      "text": "بنت",
-      "line_num": 1,
-      "left": 1190,
-      "top": 691,
-      "width": 39,
-      "height": 25,
-      "conf": 92.464745
-    },
-    {
-      "text": "نصباً",
-      "line_num": 1,
-      "left": 1121,
-      "top": 676,
-      "width": 59,
-      "height": 40,
-      "conf": 83.214478
-    },
-    {
-      "text": "تذكارية",
-      "line_num": 1,
-      "left": 1033,
-      "top": 687,
-      "width": 79,
-      "height": 29,
-      "conf": 93.23774
-    },
-    {
-      "text": "وعجائب",
-      "line_num": 1,
-      "left": 939,
-      "top": 687,
-      "width": 84,
-      "height": 29,
-      "conf": 92.231682
-    },
-    {
-      "text": "معمارية",
-      "line_num": 1,
-      "left": 845,
-      "top": 687,
-      "width": 84,
-      "height": 29,
-      "conf": 93.245163
-    },
-    {
-      "text": "مذهلة,",
-      "line_num": 1,
-      "left": 766,
-      "top": 687,
-      "width": 69,
+      "line_num": 0,
+      "left": 1368,
+      "top": 357,
+      "width": 33,
       "height": 23,
-      "conf": 46.054516
+      "conf": 96.839172
     },
     {
-      "text": "وهذه",
-      "line_num": 1,
-      "left": 703,
-      "top": 688,
-      "width": 51,
-      "height": 28,
-      "conf": 91.338821
+      "text": "cose‏",
+      "line_num": 0,
+      "left": 1297,
+      "top": 354,
+      "width": 61,
+      "height": 20,
+      "conf": 6.685724
     },
     {
-      "text": "الهياكل",
-      "line_num": 1,
-      "left": 614,
-      "top": 687,
-      "width": 77,
+      "text": "في",
+      "line_num": 0,
+      "left": 1251,
+      "top": 347,
+      "width": 34,
+      "height": 31,
+      "conf": 92.397209
+    },
+    {
+      "text": "de",
+      "line_num": 0,
+      "left": 1164,
+      "top": 330,
+      "width": 27,
+      "height": 54,
+      "conf": 71.569489
+    },
+    {
+      "text": "Lull‏",
+      "line_num": 0,
+      "left": 1196,
+      "top": 330,
+      "width": 43,
+      "height": 54,
+      "conf": 71.569489
+    },
+    {
+      "text": "6:30",
+      "line_num": 0,
+      "left": 1095,
+      "top": 345,
+      "width": 60,
+      "height": 23,
+      "conf": 95.877113
+    },
+    {
+      "text": "صباحاً»",
+      "line_num": 0,
+      "left": 999,
+      "top": 334,
+      "width": 85,
+      "height": 40,
+      "conf": 11.589546
+    },
+    {
+      "text": "وقبل",
+      "line_num": 0,
+      "left": 940,
+      "top": 345,
+      "width": 47,
       "height": 29,
-      "conf": 91.338821
+      "conf": 92.706604
     },
     {
-      "text": "العظيمة",
-      "line_num": 1,
-      "left": 521,
-      "top": 687,
-      "width": 82,
+      "text": "وصول",
+      "line_num": 0,
+      "left": 863,
+      "top": 345,
+      "width": 68,
       "height": 29,
-      "conf": 92.73317
+      "conf": 92.857658
     },
     {
-      "text": "لا",
-      "line_num": 1,
-      "left": 496,
-      "top": 687,
-      "width": 14,
-      "height": 22,
-      "conf": 93.305992
+      "text": "أول",
+      "line_num": 0,
+      "left": 815,
+      "top": 343,
+      "width": 37,
+      "height": 31,
+      "conf": 93.026749
     },
     {
-      "text": "تزال",
-      "line_num": 1,
-      "left": 438,
-      "top": 687,
-      "width": 46,
+      "text": "الزبائن",
+      "line_num": 0,
+      "left": 731,
+      "top": 345,
+      "width": 73,
       "height": 29,
-      "conf": 91.475731
+      "conf": 92.809158
     },
     {
-      "text": "قائمة",
-      "line_num": 1,
-      "left": 375,
-      "top": 687,
+      "text": "بوقت",
+      "line_num": 0,
+      "left": 669,
+      "top": 347,
+      "width": 52,
+      "height": 27,
+      "conf": 93.0504
+    },
+    {
+      "text": "طويلء",
+      "line_num": 0,
+      "left": 595,
+      "top": 345,
+      "width": 64,
+      "height": 29,
+      "conf": 56.793861
+    },
+    {
+      "text": "يبدأ",
+      "line_num": 0,
+      "left": 544,
+      "top": 343,
+      "width": 40,
+      "height": 31,
+      "conf": 89.011627
+    },
+    {
+      "text": "باعة",
+      "line_num": 0,
+      "left": 488,
+      "top": 345,
+      "width": 44,
+      "height": 29,
+      "conf": 92.865021
+    },
+    {
+      "text": "سوق",
+      "line_num": 0,
+      "left": 424,
+      "top": 348,
       "width": 54,
+      "height": 26,
+      "conf": 92.865021
+    },
+    {
+      "text": "الضفة",
+      "line_num": 0,
+      "left": 346,
+      "top": 345,
+      "width": 67,
       "height": 22,
-      "conf": 91.690964
+      "conf": 92.727348
+    },
+    {
+      "text": "في",
+      "line_num": 0,
+      "left": 302,
+      "top": 347,
+      "width": 34,
+      "height": 31,
+      "conf": 93.289886
+    },
+    {
+      "text": "إنزال",
+      "line_num": 0,
+      "left": 237,
+      "top": 345,
+      "width": 54,
+      "height": 30,
+      "conf": 91.864799
+    },
+    {
+      "text": "بضائعهم",
+      "line_num": 1,
+      "left": 1342,
+      "top": 393,
+      "width": 98,
+      "height": 35,
+      "conf": 92.264397
+    },
+    {
+      "text": "من",
+      "line_num": 1,
+      "left": 1301,
+      "top": 402,
+      "width": 31,
+      "height": 20,
+      "conf": 93.30558
+    },
+    {
+      "text": "الشاحنات.",
+      "line_num": 1,
+      "left": 1174,
+      "top": 393,
+      "width": 115,
+      "height": 23,
+      "conf": 92.064209
+    },
+    {
+      "text": "يقام",
+      "line_num": 1,
+      "left": 1120,
+      "top": 393,
+      "width": 43,
+      "height": 34,
+      "conf": 93.265678
+    },
+    {
+      "text": "السوق",
+      "line_num": 1,
+      "left": 1039,
+      "top": 393,
+      "width": 69,
+      "height": 29,
+      "conf": 93.285362
+    },
+    {
+      "text": "في",
+      "line_num": 1,
+      "left": 995,
+      "top": 395,
+      "width": 34,
+      "height": 31,
+      "conf": 93.285362
+    },
+    {
+      "text": "الشارع",
+      "line_num": 1,
+      "left": 907,
+      "top": 393,
+      "width": 76,
+      "height": 29,
+      "conf": 92.847572
+    },
+    {
+      "text": "نفسه",
+      "line_num": 1,
+      "left": 842,
+      "top": 395,
+      "width": 55,
+      "height": 20,
+      "conf": 92.43029
+    },
+    {
+      "text": "منذ",
+      "line_num": 1,
+      "left": 797,
+      "top": 394,
+      "width": 34,
+      "height": 22,
+      "conf": 92.321007
+    },
+    {
+      "text": "عام",
+      "line_num": 1,
+      "left": 748,
+      "top": 393,
+      "width": 37,
+      "height": 35,
+      "conf": 93.305527
+    },
+    {
+      "text": "1948",
+      "line_num": 1,
+      "left": 659,
+      "top": 393,
+      "width": 78,
+      "height": 23,
+      "conf": 67.146683
+    },
+    {
+      "text": "ويقول",
+      "line_num": 1,
+      "left": 585,
+      "top": 393,
+      "width": 62,
+      "height": 29,
+      "conf": 92.483368
+    },
+    {
+      "text": "أهل",
+      "line_num": 1,
+      "left": 534,
+      "top": 391,
+      "width": 41,
+      "height": 29,
+      "conf": 91.417343
+    },
+    {
+      "text": "الحي",
+      "line_num": 1,
+      "left": 466,
+      "top": 393,
+      "width": 57,
+      "height": 33,
+      "conf": 91.576447
+    },
+    {
+      "text": "إنه",
+      "line_num": 1,
+      "left": 427,
+      "top": 393,
+      "width": 27,
+      "height": 30,
+      "conf": 92.948082
+    },
+    {
+      "text": "لم",
+      "line_num": 1,
+      "left": 397,
+      "top": 393,
+      "width": 20,
+      "height": 34,
+      "conf": 93.291618
+    },
+    {
+      "text": "يتوقف",
+      "line_num": 1,
+      "left": 321,
+      "top": 395,
+      "width": 65,
+      "height": 27,
+      "conf": 91.999138
+    },
+    {
+      "text": "أسبوعاً",
+      "line_num": 1,
+      "left": 233,
+      "top": 386,
+      "width": 76,
+      "height": 36,
+      "conf": 74.129295
+    },
+    {
+      "text": "واحدا",
+      "line_num": 2,
+      "left": 1379,
+      "top": 430,
+      "width": 61,
+      "height": 45,
+      "conf": 82.654808
+    },
+    {
+      "text": "طوال",
+      "line_num": 2,
+      "left": 1318,
+      "top": 430,
+      "width": 48,
+      "height": 45,
+      "conf": 92.364983
+    },
+    {
+      "text": "هذه",
+      "line_num": 2,
+      "left": 1264,
+      "top": 442,
+      "width": 40,
+      "height": 22,
+      "conf": 93.094879
+    },
+    {
+      "text": "السنين.",
+      "line_num": 2,
+      "left": 1173,
+      "top": 441,
+      "width": 79,
+      "height": 30,
+      "conf": 90.934555
+    },
+    {
+      "text": "يضم",
+      "line_num": 3,
+      "left": 1388,
+      "top": 520,
+      "width": 52,
+      "height": 30,
+      "conf": 96.973877
+    },
+    {
+      "text": "السوق",
+      "line_num": 3,
+      "left": 1308,
+      "top": 515,
+      "width": 68,
+      "height": 29,
+      "conf": 92.671257
+    },
+    {
+      "text": "اليوم",
+      "line_num": 3,
+      "left": 1248,
+      "top": 515,
+      "width": 48,
+      "height": 35,
+      "conf": 93.019073
+    },
+    {
+      "text": "نحو",
+      "line_num": 3,
+      "left": 1197,
+      "top": 504,
+      "width": 35,
+      "height": 50,
+      "conf": 41.636044
+    },
+    {
+      "text": "140",
+      "line_num": 3,
+      "left": 1137,
+      "top": 515,
+      "width": 45,
+      "height": 23,
+      "conf": 96.757973
+    },
+    {
+      "text": "بسطة:؛",
+      "line_num": 3,
+      "left": 1053,
+      "top": 515,
+      "width": 70,
+      "height": 29,
+      "conf": 34.869621
     },
     {
       "text": "بعد",
-      "line_num": 1,
-      "left": 330,
-      "top": 696,
+      "line_num": 3,
+      "left": 1007,
+      "top": 524,
       "width": 34,
       "height": 20,
-      "conf": 93.30555
+      "conf": 92.560326
     },
     {
-      "text": "آلاف",
-      "line_num": 1,
-      "left": 267,
-      "top": 687,
-      "width": 50,
-      "height": 23,
-      "conf": 91.028496
-    },
-    {
-      "text": "لسنين.",
-      "line_num": 2,
-      "left": 1359,
-      "top": 735,
-      "width": 72,
-      "height": 30,
-      "conf": 90.936501
-    },
-    {
-      "text": "من",
-      "line_num": 2,
-      "left": 1317,
-      "top": 744,
-      "width": 30,
-      "height": 20,
-      "conf": 93.305313
-    },
-    {
-      "text": "أهرامات",
-      "line_num": 2,
-      "left": 1217,
-      "top": 733,
-      "width": 88,
-      "height": 31,
-      "conf": 93.131599
-    },
-    {
-      "text": "مصر",
-      "line_num": 2,
-      "left": 1150,
-      "top": 747,
-      "width": 57,
-      "height": 17,
-      "conf": 93.132401
-    },
-    {
-      "text": "إلى",
-      "line_num": 2,
-      "left": 1102,
-      "top": 735,
-      "width": 37,
-      "height": 29,
-      "conf": 93.132401
-    },
-    {
-      "text": "سور",
-      "line_num": 2,
-      "left": 1043,
-      "top": 747,
-      "width": 49,
-      "height": 17,
-      "conf": 97.003113
-    },
-    {
-      "text": "الصين",
-      "line_num": 2,
-      "left": 964,
-      "top": 735,
-      "width": 68,
-      "height": 30,
-      "conf": 92.492523
-    },
-    {
-      "text": "العظيم:",
-      "line_num": 2,
-      "left": 874,
-      "top": 735,
-      "width": 78,
-      "height": 35,
-      "conf": 7.022734
-    },
-    {
-      "text": "هذه",
-      "line_num": 2,
-      "left": 822,
-      "top": 736,
-      "width": 40,
-      "height": 22,
-      "conf": 93.303421
-    },
-    {
-      "text": "المباني",
-      "line_num": 2,
-      "left": 740,
-      "top": 735,
-      "width": 70,
-      "height": 33,
-      "conf": 92.985893
-    },
-    {
-      "text": "لا",
-      "line_num": 2,
-      "left": 715,
-      "top": 735,
-      "width": 14,
-      "height": 22,
-      "conf": 93.305367
-    },
-    {
-      "text": "تظهر",
-      "line_num": 2,
-      "left": 650,
-      "top": 719,
-      "width": 46,
-      "height": 55,
-      "conf": 91.500526
-    },
-    {
-      "text": "فقط",
-      "line_num": 2,
-      "left": 599,
-      "top": 719,
-      "width": 38,
-      "height": 55,
-      "conf": 92.705299
-    },
-    {
-      "text": "حكمة",
-      "line_num": 2,
-      "left": 527,
-      "top": 735,
-      "width": 58,
-      "height": 22,
-      "conf": 93.266655
-    },
-    {
-      "text": "أسلافنا",
-      "line_num": 2,
-      "left": 439,
-      "top": 733,
-      "width": 77,
-      "height": 26,
-      "conf": 92.896782
-    },
-    {
-      "text": "الاستثنائية",
-      "line_num": 2,
-      "left": 308,
-      "top": 735,
-      "width": 115,
-      "height": 29,
-      "conf": 90.1576
-    },
-    {
-      "text": "وإيداعهم",
-      "line_num": 2,
-      "left": 201,
-      "top": 735,
-      "width": 97,
-      "height": 34,
-      "conf": 47.954353
-    },
-    {
-      "text": "لمذهلء",
+      "text": "أن",
       "line_num": 3,
-      "left": 1366,
-      "top": 783,
-      "width": 65,
-      "height": 27,
-      "conf": 67.114929
-    },
-    {
-      "text": "بل",
-      "line_num": 3,
-      "left": 1329,
-      "top": 783,
-      "width": 26,
-      "height": 29,
-      "conf": 93.244316
-    },
-    {
-      "text": "هي",
-      "line_num": 3,
-      "left": 1281,
-      "top": 791,
-      "width": 38,
-      "height": 25,
-      "conf": 96.804039
-    },
-    {
-      "text": "أيضاً",
-      "line_num": 3,
-      "left": 1212,
-      "top": 768,
-      "width": 58,
-      "height": 52,
-      "conf": 85.348473
-    },
-    {
-      "text": "شاهد",
-      "line_num": 3,
-      "left": 1148,
-      "top": 768,
-      "width": 49,
-      "height": 52,
-      "conf": 92.822044
-    },
-    {
-      "text": "على",
-      "line_num": 3,
-      "left": 1087,
-      "top": 783,
-      "width": 43,
-      "height": 29,
-      "conf": 93.2882
-    },
-    {
-      "text": "التاريخ",
-      "line_num": 3,
-      "left": 1002,
-      "top": 783,
-      "width": 73,
-      "height": 29,
-      "conf": 93.012779
-    },
-    {
-      "text": "المجيد",
-      "line_num": 3,
-      "left": 931,
-      "top": 783,
-      "width": 59,
-      "height": 29,
-      "conf": 92.019936
-    },
-    {
-      "text": "للحضارة",
-      "line_num": 3,
-      "left": 823,
-      "top": 783,
-      "width": 95,
-      "height": 29,
-      "conf": 93.099243
-    },
-    {
-      "text": "الإنسانية.",
-      "line_num": 3,
-      "left": 707,
-      "top": 783,
-      "width": 105,
-      "height": 31,
-      "conf": 87.283577
-    },
-    {
-      "text": "لتعليم",
-      "line_num": 1,
-      "left": 1371,
-      "top": 857,
-      "width": 60,
-      "height": 34,
-      "conf": 93.240501
-    },
-    {
-      "text": "هو",
-      "line_num": 1,
-      "left": 1329,
-      "top": 865,
-      "width": 31,
-      "height": 21,
-      "conf": 64.434479
-    },
-    {
-      "text": "الأساس",
-      "line_num": 1,
-      "left": 1233,
-      "top": 855,
-      "width": 86,
-      "height": 31,
-      "conf": 92.159912
-    },
-    {
-      "text": "الجذري",
-      "line_num": 1,
-      "left": 1140,
-      "top": 857,
-      "width": 81,
-      "height": 29,
-      "conf": 92.930458
-    },
-    {
-      "text": "لدفع",
-      "line_num": 1,
-      "left": 1083,
-      "top": 857,
-      "width": 47,
-      "height": 29,
-      "conf": 92.822121
-    },
-    {
-      "text": "التقدم",
-      "line_num": 1,
-      "left": 1009,
-      "top": 857,
-      "width": 62,
-      "height": 35,
-      "conf": 89.817421
-    },
-    {
-      "text": "الاجتماعي",
-      "line_num": 1,
-      "left": 883,
-      "top": 857,
-      "width": 114,
-      "height": 33,
-      "conf": 89.817421
-    },
-    {
-      "text": "والتنمية",
-      "line_num": 1,
-      "left": 793,
-      "top": 857,
-      "width": 80,
-      "height": 29,
-      "conf": 92.781418
-    },
-    {
-      "text": "الشخصية.",
-      "line_num": 1,
-      "left": 665,
-      "top": 857,
-      "width": 116,
-      "height": 29,
-      "conf": 92.201714
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 623,
-      "top": 865,
-      "width": 31,
-      "height": 21,
-      "conf": 93.279427
-    },
-    {
-      "text": "خلال",
-      "line_num": 1,
-      "left": 559,
-      "top": 857,
-      "width": 54,
-      "height": 27,
-      "conf": 96.842232
-    },
-    {
-      "text": "alll‏",
-      "line_num": 1,
-      "left": 489,
-      "top": 857,
-      "width": 59,
-      "height": 35,
-      "conf": 64.308731
-    },
-    {
-      "text": "المنهجي",
-      "line_num": 1,
-      "left": 393,
-      "top": 857,
-      "width": 84,
-      "height": 33,
-      "conf": 92.483887
-    },
-    {
-      "text": "والتراكم",
-      "line_num": 1,
-      "left": 300,
-      "top": 857,
-      "width": 83,
-      "height": 35,
-      "conf": 93.123062
-    },
-    {
-      "text": "المستمر",
-      "line_num": 1,
-      "left": 207,
-      "top": 857,
-      "width": 81,
-      "height": 29,
-      "conf": 90.783821
-    },
-    {
-      "text": "للمعرفة»",
-      "line_num": 2,
-      "left": 1358,
-      "top": 905,
-      "width": 82,
-      "height": 29,
-      "conf": 3.267307
-    },
-    {
-      "text": "Say‏",
-      "line_num": 2,
-      "left": 1291,
-      "top": 905,
-      "width": 55,
-      "height": 29,
-      "conf": 71.360909
-    },
-    {
-      "text": "للناس",
-      "line_num": 2,
-      "left": 1218,
-      "top": 905,
-      "width": 63,
-      "height": 29,
-      "conf": 87.847855
-    },
-    {
-      "text": "الحصول",
-      "line_num": 2,
-      "left": 1114,
-      "top": 905,
-      "width": 93,
-      "height": 29,
-      "conf": 91.282288
-    },
-    {
-      "text": "على",
-      "line_num": 2,
-      "left": 1061,
-      "top": 905,
-      "width": 43,
-      "height": 29,
-      "conf": 93.306068
-    },
-    {
-      "text": "مختلف",
-      "line_num": 2,
-      "left": 975,
-      "top": 905,
-      "width": 76,
-      "height": 22,
-      "conf": 91.67659
-    },
-    {
-      "text": "الأدوات",
-      "line_num": 2,
-      "left": 886,
-      "top": 903,
-      "width": 77,
-      "height": 31,
-      "conf": 84.485641
-    },
-    {
-      "text": "والمهارات",
-      "line_num": 2,
-      "left": 782,
-      "top": 905,
-      "width": 94,
-      "height": 29,
-      "conf": 92.218765
-    },
-    {
-      "text": "والرؤى",
-      "line_num": 2,
-      "left": 700,
-      "top": 905,
-      "width": 72,
-      "height": 30,
-      "conf": 88.381668
-    },
-    {
-      "text": "العميقة",
-      "line_num": 2,
-      "left": 614,
-      "top": 905,
-      "width": 74,
-      "height": 29,
-      "conf": 89.140656
-    },
-    {
-      "text": "اللازمة",
-      "line_num": 2,
-      "left": 533,
-      "top": 905,
-      "width": 69,
-      "height": 29,
-      "conf": 93.127411
-    },
-    {
-      "text": "لتحسين",
-      "line_num": 2,
-      "left": 439,
-      "top": 905,
-      "width": 84,
-      "height": 31,
-      "conf": 92.930725
-    },
-    {
-      "text": "حياتهم",
-      "line_num": 2,
-      "left": 355,
-      "top": 905,
-      "width": 74,
-      "height": 35,
-      "conf": 91.481247
-    },
-    {
-      "text": "والمجتمعات",
-      "line_num": 2,
-      "left": 227,
-      "top": 905,
-      "width": 118,
-      "height": 29,
-      "conf": 92.178612
-    },
-    {
-      "text": "لطبيعة",
-      "line_num": 1,
-      "left": 1361,
-      "top": 1009,
-      "width": 74,
-      "height": 58,
-      "conf": 92.187714
-    },
-    {
-      "text": "توفر",
-      "line_num": 1,
-      "left": 1303,
-      "top": 1009,
-      "width": 48,
-      "height": 58,
-      "conf": 91.786835
-    },
-    {
-      "text": "بسخاء",
-      "line_num": 1,
-      "left": 1227,
-      "top": 1009,
-      "width": 66,
-      "height": 58,
-      "conf": 89.04538
-    },
-    {
-      "text": "مناظر",
-      "line_num": 1,
-      "left": 1155,
-      "top": 1009,
-      "width": 62,
-      "height": 58,
-      "conf": 93.247612
-    },
-    {
-      "text": "طبيعية",
-      "line_num": 1,
-      "left": 1068,
-      "top": 1009,
-      "width": 73,
-      "height": 58,
-      "conf": 91.657112
-    },
-    {
-      "text": "جميلة",
-      "line_num": 1,
-      "left": 999,
-      "top": 1009,
-      "width": 59,
-      "height": 58,
-      "conf": 93.248688
-    },
-    {
-      "text": "لا",
-      "line_num": 1,
-      "left": 970,
-      "top": 1009,
-      "width": 17,
-      "height": 58,
-      "conf": 93.304947
-    },
-    {
-      "text": "مثيل",
-      "line_num": 1,
-      "left": 915,
-      "top": 1009,
-      "width": 45,
-      "height": 58,
-      "conf": 93.225311
-    },
-    {
-      "text": "لها",
-      "line_num": 1,
-      "left": 872,
-      "top": 1009,
-      "width": 33,
-      "height": 58,
-      "conf": 93.29583
-    },
-    {
-      "text": "وموارد",
-      "line_num": 1,
-      "left": 797,
-      "top": 1009,
-      "width": 65,
-      "height": 58,
-      "conf": 93.205956
-    },
-    {
-      "text": "ثمينة",
-      "line_num": 1,
-      "left": 727,
-      "top": 1009,
-      "width": 59,
-      "height": 58,
-      "conf": 92.541214
-    },
-    {
-      "text": "ضرورية",
-      "line_num": 1,
-      "left": 640,
-      "top": 1009,
-      "width": 77,
-      "height": 58,
-      "conf": 93.2351
-    },
-    {
-      "text": "للحفاظ",
-      "line_num": 1,
-      "left": 556,
-      "top": 1009,
-      "width": 74,
-      "height": 58,
-      "conf": 92.924767
-    },
-    {
-      "text": "على",
-      "line_num": 1,
-      "left": 506,
-      "top": 1009,
-      "width": 40,
-      "height": 58,
-      "conf": 93.297127
-    },
-    {
-      "text": "الحياة.",
-      "line_num": 1,
-      "left": 413,
-      "top": 1009,
-      "width": 73,
-      "height": 58,
-      "conf": 93.229027
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 379,
-      "top": 1009,
-      "width": 22,
-      "height": 58,
-      "conf": 93.292831
-    },
-    {
-      "text": "الهواء",
-      "line_num": 1,
-      "left": 302,
-      "top": 1009,
-      "width": 57,
-      "height": 58,
-      "conf": 92.193245
-    },
-    {
-      "text": "النقي",
-      "line_num": 1,
-      "left": 231,
-      "top": 1027,
-      "width": 58,
-      "height": 33,
-      "conf": 86.84288
-    },
-    {
-      "text": "إلى",
-      "line_num": 2,
-      "left": 1402,
-      "top": 1075,
-      "width": 36,
-      "height": 30,
-      "conf": 96.959999
-    },
-    {
-      "text": "الماء",
-      "line_num": 2,
-      "left": 1353,
-      "top": 1075,
-      "width": 37,
-      "height": 22,
-      "conf": 93.085556
-    },
-    {
-      "text": "النظيفء",
-      "line_num": 2,
-      "left": 1253,
-      "top": 1075,
-      "width": 86,
-      "height": 29,
-      "conf": 46.326439
-    },
-    {
-      "text": "ومن",
-      "line_num": 2,
-      "left": 1201,
-      "top": 1084,
-      "width": 41,
-      "height": 20,
-      "conf": 92.343338
-    },
-    {
-      "text": "التربة",
-      "line_num": 2,
-      "left": 1132,
-      "top": 1075,
-      "width": 57,
-      "height": 29,
-      "conf": 93.258751
-    },
-    {
-      "text": "الخصبة",
-      "line_num": 2,
-      "left": 1036,
-      "top": 1075,
-      "width": 84,
-      "height": 29,
-      "conf": 93.222168
-    },
-    {
-      "text": "إلى",
-      "line_num": 2,
-      "left": 987,
-      "top": 1075,
-      "width": 37,
-      "height": 29,
-      "conf": 93.248596
-    },
-    {
-      "text": "الحياة",
-      "line_num": 2,
-      "left": 911,
-      "top": 1075,
-      "width": 65,
-      "height": 29,
-      "conf": 93.101158
-    },
-    {
-      "text": "المتنوعة,",
-      "line_num": 2,
-      "left": 817,
-      "top": 1075,
-      "width": 82,
-      "height": 29,
-      "conf": 81.310036
-    },
-    {
-      "text": "فإن",
-      "line_num": 2,
-      "left": 768,
-      "top": 1075,
-      "width": 38,
-      "height": 30,
-      "conf": 93.009041
-    },
-    {
-      "text": "حماية",
-      "line_num": 2,
-      "left": 695,
-      "top": 1075,
-      "width": 63,
-      "height": 29,
-      "conf": 90.971199
-    },
-    {
-      "text": "البيئة",
-      "line_num": 2,
-      "left": 630,
-      "top": 1075,
-      "width": 53,
-      "height": 29,
-      "conf": 92.607765
-    },
-    {
-      "text": "والعناية",
-      "line_num": 2,
-      "left": 541,
-      "top": 1075,
-      "width": 78,
-      "height": 29,
-      "conf": 89.474388
-    },
-    {
-      "text": "بها",
-      "line_num": 2,
-      "left": 502,
-      "top": 1075,
-      "width": 28,
-      "height": 29,
-      "conf": 93.253662
-    },
-    {
-      "text": "ليست",
-      "line_num": 2,
-      "left": 427,
-      "top": 1075,
-      "width": 61,
-      "height": 29,
-      "conf": 94.960838
-    },
-    {
-      "text": "مسؤولية",
-      "line_num": 2,
-      "left": 330,
-      "top": 1075,
-      "width": 87,
-      "height": 29,
-      "conf": 93.138786
-    },
-    {
-      "text": "جيلنا",
-      "line_num": 2,
-      "left": 268,
-      "top": 1075,
-      "width": 51,
-      "height": 29,
-      "conf": 92.96833
-    },
-    {
-      "text": "فحسب,",
-      "line_num": 3,
-      "left": 1357,
-      "top": 1125,
-      "width": 83,
-      "height": 27,
-      "conf": 29.613123
-    },
-    {
-      "text": "بل",
-      "line_num": 3,
-      "left": 1320,
-      "top": 1123,
-      "width": 25,
-      "height": 29,
-      "conf": 93.17054
-    },
-    {
-      "text": "هي",
-      "line_num": 3,
-      "left": 1272,
-      "top": 1131,
-      "width": 38,
-      "height": 25,
-      "conf": 96.651772
-    },
-    {
-      "text": "أيضاً",
-      "line_num": 3,
-      "left": 1203,
-      "top": 1108,
-      "width": 57,
-      "height": 52,
-      "conf": 89.49749
-    },
-    {
-      "text": "مفتاح",
-      "line_num": 3,
-      "left": 1131,
-      "top": 1108,
-      "width": 59,
-      "height": 52,
-      "conf": 90.595284
-    },
-    {
-      "text": "ضمان",
-      "line_num": 3,
-      "left": 1051,
-      "top": 1123,
-      "width": 70,
-      "height": 29,
-      "conf": 92.967079
-    },
-    {
-      "text": "استمرار",
-      "line_num": 3,
-      "left": 951,
-      "top": 1123,
-      "width": 88,
-      "height": 29,
-      "conf": 92.712479
-    },
-    {
-      "text": "الأجيال",
-      "line_num": 3,
-      "left": 861,
-      "top": 1121,
-      "width": 79,
-      "height": 31,
-      "conf": 92.929352
-    },
-    {
-      "text": "القادمة",
-      "line_num": 3,
-      "left": 777,
-      "top": 1123,
-      "width": 73,
-      "height": 23,
-      "conf": 93.134514
-    },
-    {
-      "text": "في",
-      "line_num": 3,
-      "left": 733,
-      "top": 1125,
-      "width": 34,
-      "height": 31,
-      "conf": 93.284851
-    },
-    {
-      "text": "الاستمتاع",
-      "line_num": 3,
-      "left": 612,
-      "top": 1123,
-      "width": 109,
-      "height": 29,
-      "conf": 92.56749
-    },
-    {
-      "text": "بعجائب",
-      "line_num": 3,
-      "left": 520,
-      "top": 1123,
-      "width": 82,
-      "height": 29,
-      "conf": 93.11673
-    },
-    {
-      "text": "الأرض.",
-      "line_num": 3,
-      "left": 430,
-      "top": 1121,
-      "width": 78,
-      "height": 31,
-      "conf": 91.470154
-    },
-    {
-      "text": "لتواصل",
-      "line_num": 1,
-      "left": 1349,
-      "top": 1199,
-      "width": 82,
-      "height": 29,
-      "conf": 91.922035
-    },
-    {
-      "text": "الفعال",
-      "line_num": 1,
-      "left": 1272,
-      "top": 1199,
-      "width": 66,
-      "height": 27,
-      "conf": 89.605843
-    },
-    {
-      "text": "يبني",
-      "line_num": 1,
-      "left": 1212,
-      "top": 1203,
-      "width": 51,
-      "height": 29,
-      "conf": 89.636894
-    },
-    {
-      "text": "جسوراً",
-      "line_num": 1,
-      "left": 1126,
-      "top": 1188,
-      "width": 76,
-      "height": 40,
-      "conf": 59.209991
-    },
-    {
-      "text": "Lage‏",
-      "line_num": 1,
-      "left": 1066,
-      "top": 1199,
-      "width": 51,
-      "height": 29,
-      "conf": 69.154114
-    },
-    {
-      "text": "للفهم",
-      "line_num": 1,
-      "left": 1003,
-      "top": 1199,
-      "width": 52,
-      "height": 34,
-      "conf": 91.905373
-    },
-    {
-      "text": "والتعاون",
-      "line_num": 1,
-      "left": 903,
-      "top": 1199,
-      "width": 89,
-      "height": 29,
-      "conf": 88.910774
-    },
-    {
-      "text": "بين",
-      "line_num": 1,
-      "left": 860,
-      "top": 1206,
-      "width": 33,
-      "height": 23,
-      "conf": 93.288025
-    },
-    {
-      "text": "الثقافات",
-      "line_num": 1,
-      "left": 762,
-      "top": 1199,
-      "width": 87,
-      "height": 23,
-      "conf": 92.023506
-    },
-    {
-      "text": "والأعراق",
-      "line_num": 1,
-      "left": 664,
-      "top": 1197,
-      "width": 88,
-      "height": 31,
-      "conf": 92.631828
-    },
-    {
-      "text": "والدول",
-      "line_num": 1,
-      "left": 585,
-      "top": 1199,
-      "width": 69,
-      "height": 29,
-      "conf": 90.462265
-    },
-    {
-      "text": "المختلفة.",
-      "line_num": 1,
-      "left": 488,
-      "top": 1199,
-      "width": 86,
-      "height": 23,
-      "conf": 86.879539
-    },
-    {
-      "text": "Gall‏",
-      "line_num": 1,
-      "left": 421,
-      "top": 1199,
-      "width": 54,
-      "height": 22,
-      "conf": 23.903046
-    },
-    {
-      "text": "كواحدة",
-      "line_num": 1,
-      "left": 332,
-      "top": 1199,
-      "width": 77,
-      "height": 29,
-      "conf": 91.933899
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 291,
-      "top": 1208,
-      "width": 30,
-      "height": 20,
-      "conf": 93.254463
-    },
-    {
-      "text": "أعظم",
-      "line_num": 1,
-      "left": 224,
-      "top": 1197,
-      "width": 55,
-      "height": 37,
-      "conf": 92.60714
-    },
-    {
-      "text": "ختراعات",
-      "line_num": 1,
-      "left": 1338,
-      "top": 1247,
-      "width": 93,
-      "height": 29,
-      "conf": 92.328323
-    },
-    {
-      "text": "البشرية؛",
-      "line_num": 1,
-      "left": 1237,
-      "top": 1247,
-      "width": 88,
-      "height": 29,
-      "conf": 11.522198
-    },
-    {
-      "text": "WSS‏",
-      "line_num": 1,
-      "left": 1163,
-      "top": 1247,
-      "width": 62,
-      "height": 22,
-      "conf": 66.474274
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 1118,
-      "top": 1256,
-      "width": 31,
-      "height": 20,
-      "conf": 93.252319
-    },
-    {
-      "text": "تجاوز",
-      "line_num": 1,
-      "left": 1044,
-      "top": 1247,
-      "width": 64,
-      "height": 29,
-      "conf": 91.360855
-    },
-    {
-      "text": "الحدود",
-      "line_num": 1,
-      "left": 964,
-      "top": 1247,
-      "width": 68,
-      "height": 29,
-      "conf": 74.129684
-    },
-    {
-      "text": "الجغرافية",
-      "line_num": 1,
-      "left": 851,
-      "top": 1247,
-      "width": 99,
-      "height": 29,
-      "conf": 91.741714
-    },
-    {
-      "text": "والثقافية»",
-      "line_num": 1,
-      "left": 744,
-      "top": 1247,
-      "width": 97,
-      "height": 29,
-      "conf": 7.796154
-    },
-    {
-      "text": "ومشاركة",
-      "line_num": 1,
-      "left": 642,
-      "top": 1247,
-      "width": 90,
-      "height": 29,
-      "conf": 91.338562
-    },
-    {
-      "text": "أفكارنا",
-      "line_num": 1,
-      "left": 562,
-      "top": 1245,
-      "width": 69,
-      "height": 31,
-      "conf": 91.338562
-    },
-    {
-      "text": "وخبراتنا",
-      "line_num": 1,
-      "left": 465,
-      "top": 1247,
-      "width": 83,
-      "height": 29,
-      "conf": 92.30204
-    },
-    {
-      "text": "وحكمتناء",
-      "line_num": 1,
-      "left": 357,
-      "top": 1247,
-      "width": 94,
-      "height": 29,
-      "conf": 92.229164
-    },
-    {
-      "text": "وبالتالي",
-      "line_num": 1,
-      "left": 258,
-      "top": 1247,
-      "width": 87,
-      "height": 33,
-      "conf": 84.18676
-    },
-    {
-      "text": "بناء",
-      "line_num": 1,
-      "left": 211,
-      "top": 1247,
-      "width": 37,
-      "height": 29,
-      "conf": 91.966362
-    },
-    {
-      "text": "علاقات",
-      "line_num": 2,
-      "left": 1365,
-      "top": 1295,
-      "width": 75,
-      "height": 24,
-      "conf": 93.181152
-    },
-    {
-      "text": "من",
-      "line_num": 2,
-      "left": 1324,
-      "top": 1304,
-      "width": 31,
-      "height": 20,
-      "conf": 93.305397
-    },
-    {
-      "text": "الفهم",
-      "line_num": 2,
-      "left": 1259,
-      "top": 1295,
-      "width": 53,
-      "height": 35,
-      "conf": 87.202751
-    },
-    {
-      "text": "المتبادل",
-      "line_num": 2,
-      "left": 1170,
-      "top": 1295,
-      "width": 77,
-      "height": 29,
-      "conf": 89.712036
-    },
-    {
-      "text": "والاحترام",
-      "line_num": 2,
-      "left": 1063,
-      "top": 1295,
-      "width": 98,
-      "height": 35,
-      "conf": 89.712036
-    },
-    {
-      "text": "والثقة.",
-      "line_num": 2,
-      "left": 987,
-      "top": 1295,
-      "width": 66,
-      "height": 29,
-      "conf": 92.970047
-    },
-    {
-      "text": "لبحث",
-      "line_num": 1,
-      "left": 1374,
-      "top": 1369,
-      "width": 57,
-      "height": 29,
-      "conf": 92.543152
-    },
-    {
-      "text": "العلمي؛",
-      "line_num": 1,
-      "left": 1282,
-      "top": 1369,
-      "width": 80,
-      "height": 33,
-      "conf": 0
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 1239,
-      "top": 1378,
-      "width": 31,
-      "height": 20,
-      "conf": 93.279503
-    },
-    {
-      "text": "خلال",
-      "line_num": 1,
-      "left": 1175,
-      "top": 1369,
-      "width": 54,
-      "height": 27,
-      "conf": 96.901543
-    },
-    {
-      "text": "الأساليب",
-      "line_num": 1,
-      "left": 1069,
-      "top": 1367,
-      "width": 95,
-      "height": 31,
-      "conf": 90.34996
-    },
-    {
-      "text": "الصارمة",
-      "line_num": 1,
       "left": 969,
-      "top": 1369,
-      "width": 88,
-      "height": 29,
-      "conf": 91.766472
-    },
-    {
-      "text": "والاستكشاف",
-      "line_num": 1,
-      "left": 817,
-      "top": 1369,
-      "width": 142,
-      "height": 29,
-      "conf": 93.212273
-    },
-    {
-      "text": "المستمرء",
-      "line_num": 1,
-      "left": 717,
-      "top": 1369,
-      "width": 88,
-      "height": 29,
-      "conf": 85.214226
-    },
-    {
-      "text": "يكشف",
-      "line_num": 1,
-      "left": 634,
-      "top": 1369,
-      "width": 72,
-      "height": 29,
-      "conf": 92.834747
-    },
-    {
-      "text": "تدريجياً",
-      "line_num": 1,
-      "left": 539,
-      "top": 1358,
-      "width": 85,
-      "height": 40,
-      "conf": 88.25119
-    },
-    {
-      "text": "الأسرار",
-      "line_num": 1,
-      "left": 447,
-      "top": 1367,
-      "width": 81,
+      "top": 513,
+      "width": 25,
       "height": 31,
-      "conf": 92.225601
-    },
-    {
-      "text": "والقوانين",
-      "line_num": 1,
-      "left": 347,
-      "top": 1369,
-      "width": 91,
-      "height": 30,
-      "conf": 92.225601
-    },
-    {
-      "text": "المخفية",
-      "line_num": 1,
-      "left": 265,
-      "top": 1369,
-      "width": 70,
-      "height": 29,
-      "conf": 91.27066
-    },
-    {
-      "text": "في",
-      "line_num": 1,
-      "left": 221,
-      "top": 1371,
-      "width": 34,
-      "height": 31,
-      "conf": 93.212128
-    },
-    {
-      "text": "لكون.",
-      "line_num": 1,
-      "left": 1369,
-      "top": 1417,
-      "width": 62,
-      "height": 29,
-      "conf": 93.276588
-    },
-    {
-      "text": "كل",
-      "line_num": 1,
-      "left": 1332,
-      "top": 1399,
-      "width": 27,
-      "height": 59,
-      "conf": 93.276588
-    },
-    {
-      "text": "اكتشاف",
-      "line_num": 1,
-      "left": 1230,
-      "top": 1417,
-      "width": 201,
-      "height": 29,
-      "conf": 91.893387
-    },
-    {
-      "text": "جديد",
-      "line_num": 1,
-      "left": 1167,
-      "top": 1426,
-      "width": 53,
-      "height": 20,
-      "conf": 92.691597
-    },
-    {
-      "text": "يشبه",
-      "line_num": 1,
-      "left": 1104,
-      "top": 1399,
-      "width": 52,
-      "height": 59,
-      "conf": 92.691597
-    },
-    {
-      "text": "فتح",
-      "line_num": 1,
-      "left": 1056,
-      "top": 1399,
-      "width": 38,
-      "height": 59,
-      "conf": 93.227844
-    },
-    {
-      "text": "باب",
-      "line_num": 1,
-      "left": 1008,
-      "top": 1399,
-      "width": 36,
-      "height": 59,
-      "conf": 93.294945
-    },
-    {
-      "text": "إلى",
-      "line_num": 1,
-      "left": 956,
-      "top": 1417,
-      "width": 37,
-      "height": 29,
-      "conf": 96.844254
-    },
-    {
-      "text": "عالم",
-      "line_num": 1,
-      "left": 897,
-      "top": 1417,
-      "width": 49,
-      "height": 35,
-      "conf": 92.206711
-    },
-    {
-      "text": "غير",
-      "line_num": 1,
-      "left": 849,
-      "top": 1399,
-      "width": 38,
-      "height": 59,
-      "conf": 93.301285
-    },
-    {
-      "text": "معروف,",
-      "line_num": 1,
-      "left": 762,
-      "top": 1417,
-      "width": 184,
-      "height": 35,
-      "conf": 23.471928
-    },
-    {
-      "text": "وفي",
-      "line_num": 1,
-      "left": 713,
-      "top": 1399,
-      "width": 37,
-      "height": 59,
-      "conf": 93.177704
-    },
-    {
-      "text": "نفس",
-      "line_num": 1,
-      "left": 661,
-      "top": 1399,
-      "width": 38,
-      "height": 59,
-      "conf": 93.177704
-    },
-    {
-      "text": "الوقت",
-      "line_num": 1,
-      "left": 584,
-      "top": 1399,
-      "width": 50,
-      "height": 59,
-      "conf": 93.011169
-    },
-    {
-      "text": "يجلب",
-      "line_num": 1,
-      "left": 521,
-      "top": 1399,
-      "width": 49,
-      "height": 59,
-      "conf": 85.848557
-    },
-    {
-      "text": "المزيد",
-      "line_num": 1,
-      "left": 445,
-      "top": 1417,
-      "width": 53,
-      "height": 29,
-      "conf": 92.747993
-    },
-    {
-      "text": "من",
-      "line_num": 1,
-      "left": 402,
-      "top": 1426,
-      "width": 31,
-      "height": 20,
-      "conf": 93.290443
-    },
-    {
-      "text": "الأسئلة",
-      "line_num": 1,
-      "left": 315,
-      "top": 1415,
-      "width": 75,
-      "height": 24,
-      "conf": 91.822426
-    },
-    {
-      "text": "الرائعة,",
-      "line_num": 1,
-      "left": 227,
-      "top": 1417,
-      "width": 76,
-      "height": 29,
-      "conf": 79.884399
-    },
-    {
-      "text": "مما",
-      "line_num": 2,
-      "left": 1407,
-      "top": 1465,
-      "width": 33,
-      "height": 22,
-      "conf": 96.940842
-    },
-    {
-      "text": "يحفز",
-      "line_num": 2,
-      "left": 1338,
-      "top": 1467,
-      "width": 55,
-      "height": 27,
-      "conf": 93.069458
-    },
-    {
-      "text": "العلماء",
-      "line_num": 2,
-      "left": 1259,
-      "top": 1465,
-      "width": 68,
-      "height": 22,
-      "conf": 93.070038
-    },
-    {
-      "text": "على",
-      "line_num": 2,
-      "left": 1204,
-      "top": 1465,
-      "width": 43,
-      "height": 29,
-      "conf": 93.275749
-    },
-    {
-      "text": "مواصلة",
-      "line_num": 2,
-      "left": 1113,
-      "top": 1465,
-      "width": 81,
-      "height": 29,
-      "conf": 92.668556
-    },
-    {
-      "text": "استكشاف",
-      "line_num": 2,
-      "left": 988,
-      "top": 1465,
-      "width": 113,
-      "height": 22,
-      "conf": 91.678253
-    },
-    {
-      "text": "مجالات",
-      "line_num": 2,
-      "left": 898,
-      "top": 1465,
-      "width": 80,
-      "height": 29,
-      "conf": 92.854332
-    },
-    {
-      "text": "أوسع",
-      "line_num": 2,
-      "left": 830,
-      "top": 1463,
-      "width": 57,
-      "height": 31,
-      "conf": 93.079399
-    },
-    {
-      "text": "من",
-      "line_num": 2,
-      "left": 789,
-      "top": 1474,
-      "width": 30,
-      "height": 20,
-      "conf": 93.261818
-    },
-    {
-      "text": "المجهول.",
-      "line_num": 2,
-      "left": 688,
-      "top": 1465,
-      "width": 89,
-      "height": 29,
-      "conf": 91.353699
-    },
-    {
-      "text": "لفن",
-      "line_num": 1,
-      "left": 1397,
-      "top": 1523,
-      "width": 38,
-      "height": 53,
-      "conf": 96.673958
-    },
-    {
-      "text": "يعبر",
-      "line_num": 1,
-      "left": 1341,
-      "top": 1523,
-      "width": 47,
-      "height": 53,
-      "conf": 96.945808
-    },
-    {
-      "text": "وينقل",
-      "line_num": 1,
-      "left": 1271,
-      "top": 1523,
-      "width": 58,
-      "height": 53,
-      "conf": 93.271248
-    },
-    {
-      "text": "بطريقته",
-      "line_num": 1,
-      "left": 1179,
-      "top": 1539,
-      "width": 252,
-      "height": 29,
-      "conf": 93.196251
-    },
-    {
-      "text": "الفريدة",
-      "line_num": 1,
-      "left": 1096,
-      "top": 1523,
-      "width": 70,
-      "height": 53,
-      "conf": 89.973259
-    },
-    {
-      "text": "المشاعر",
-      "line_num": 1,
-      "left": 1010,
-      "top": 1523,
-      "width": 71,
-      "height": 53,
-      "conf": 89.080009
-    },
-    {
-      "text": "العميقة",
-      "line_num": 1,
-      "left": 920,
-      "top": 1523,
-      "width": 69,
-      "height": 53,
-      "conf": 90.100067
-    },
-    {
-      "text": "والأفكار",
-      "line_num": 1,
-      "left": 824,
-      "top": 1523,
-      "width": 81,
-      "height": 53,
-      "conf": 92.944954
-    },
-    {
-      "text": "المجردة",
-      "line_num": 1,
-      "left": 738,
-      "top": 1523,
-      "width": 71,
-      "height": 53,
-      "conf": 92.80835
-    },
-    {
-      "text": "التي",
-      "line_num": 1,
-      "left": 678,
-      "top": 1523,
-      "width": 45,
-      "height": 53,
-      "conf": 93.126427
-    },
-    {
-      "text": "تتجاوز",
-      "line_num": 1,
-      "left": 593,
-      "top": 1539,
-      "width": 74,
-      "height": 29,
-      "conf": 92.692146
-    },
-    {
-      "text": "حدود",
-      "line_num": 1,
-      "left": 530,
-      "top": 1548,
-      "width": 53,
-      "height": 20,
-      "conf": 92.692146
-    },
-    {
-      "text": "اللغة",
-      "line_num": 1,
-      "left": 469,
-      "top": 1539,
-      "width": 47,
-      "height": 22,
-      "conf": 90.539474
-    },
-    {
-      "text": "والكلمات.",
-      "line_num": 1,
-      "left": 358,
-      "top": 1539,
-      "width": 101,
-      "height": 29,
-      "conf": 93.010323
-    },
-    {
-      "text": "سواء",
-      "line_num": 1,
-      "left": 295,
-      "top": 1523,
-      "width": 50,
-      "height": 53,
-      "conf": 92.676323
+      "conf": 96.806816
     },
     {
       "text": "كان",
-      "line_num": 1,
-      "left": 245,
-      "top": 1523,
-      "width": 37,
-      "height": 53,
-      "conf": 93.198143
-    },
-    {
-      "text": "ذلك",
-      "line_num": 1,
-      "left": 196,
-      "top": 1539,
-      "width": 37,
-      "height": 23,
-      "conf": 96.89978
-    },
-    {
-      "text": "رسماً",
-      "line_num": 2,
-      "left": 1382,
-      "top": 1576,
-      "width": 58,
-      "height": 40,
-      "conf": 91.119263
-    },
-    {
-      "text": "أى",
-      "line_num": 2,
-      "left": 1350,
-      "top": 1585,
-      "width": 22,
-      "height": 31,
-      "conf": 76.357903
-    },
-    {
-      "text": "موسيقى",
-      "line_num": 2,
-      "left": 1251,
-      "top": 1589,
-      "width": 90,
-      "height": 27,
-      "conf": 90.281639
-    },
-    {
-      "text": "أو",
-      "line_num": 2,
-      "left": 1217,
-      "top": 1585,
-      "width": 23,
-      "height": 31,
-      "conf": 93.217018
-    },
-    {
-      "text": "نحتاً",
-      "line_num": 2,
-      "left": 1160,
-      "top": 1576,
-      "width": 49,
-      "height": 33,
-      "conf": 86.520767
-    },
-    {
-      "text": "أو",
-      "line_num": 2,
-      "left": 1128,
-      "top": 1585,
-      "width": 22,
-      "height": 31,
-      "conf": 93.139458
-    },
-    {
-      "text": "Lisl‏",
-      "line_num": 2,
-      "left": 1070,
-      "top": 1580,
-      "width": 48,
-      "height": 36,
-      "conf": 53.673687
-    },
-    {
-      "text": "فإن",
-      "line_num": 2,
-      "left": 1021,
-      "top": 1587,
-      "width": 37,
-      "height": 29,
-      "conf": 92.742126
-    },
-    {
-      "text": "هذه",
-      "line_num": 2,
-      "left": 970,
-      "top": 1588,
+      "line_num": 3,
+      "left": 918,
+      "top": 515,
       "width": 40,
-      "height": 22,
-      "conf": 93.290939
-    },
-    {
-      "text": "الأعمال",
-      "line_num": 2,
-      "left": 879,
-      "top": 1585,
-      "width": 79,
       "height": 29,
-      "conf": 92.968857
+      "conf": 97.005295
     },
     {
-      "text": "الفنية",
-      "line_num": 2,
-      "left": 813,
-      "top": 1587,
-      "width": 55,
-      "height": 29,
-      "conf": 93.23761
-    },
-    {
-      "text": "الإبداعية",
-      "line_num": 2,
-      "left": 710,
-      "top": 1587,
-      "width": 90,
-      "height": 31,
-      "conf": 93.14164
-    },
-    {
-      "text": "لا",
-      "line_num": 2,
-      "left": 684,
-      "top": 1587,
-      "width": 15,
-      "height": 22,
-      "conf": 93.297783
-    },
-    {
-      "text": "تحفز",
-      "line_num": 2,
-      "left": 618,
-      "top": 1572,
-      "width": 47,
-      "height": 54,
-      "conf": 92.45015
-    },
-    {
-      "text": "خيال",
-      "line_num": 2,
-      "left": 559,
-      "top": 1572,
-      "width": 48,
-      "height": 54,
-      "conf": 93.082237
-    },
-    {
-      "text": "الناس",
-      "line_num": 2,
-      "left": 480,
-      "top": 1587,
+      "text": "عددها",
+      "line_num": 3,
+      "left": 845,
+      "top": 515,
       "width": 63,
-      "height": 29,
-      "conf": 93.114449
+      "height": 23,
+      "conf": 93.014587
     },
     {
-      "text": "وإبداعهم",
-      "line_num": 2,
-      "left": 373,
-      "top": 1587,
-      "width": 97,
-      "height": 35,
-      "conf": 92.75679
-    },
-    {
-      "text": "فحسبء",
-      "line_num": 2,
-      "left": 280,
-      "top": 1589,
-      "width": 83,
-      "height": 27,
-      "conf": 87.740387
-    },
-    {
-      "text": "بل",
-      "line_num": 2,
-      "left": 243,
-      "top": 1587,
-      "width": 25,
-      "height": 29,
-      "conf": 92.464516
-    },
-    {
-      "text": "تتحدى",
+      "text": "85",
       "line_num": 3,
-      "left": 1368,
-      "top": 1638,
-      "width": 72,
-      "height": 27,
-      "conf": 92.789932
+      "left": 796,
+      "top": 515,
+      "width": 34,
+      "height": 23,
+      "conf": 93.267288
     },
     {
-      "text": "أيضاً",
+      "text": "قبل",
       "line_num": 3,
-      "left": 1299,
-      "top": 1624,
+      "left": 747,
+      "top": 504,
+      "width": 41,
+      "height": 50,
+      "conf": 96.718292
+    },
+    {
+      "text": "عشر",
+      "line_num": 3,
+      "left": 690,
+      "top": 504,
+      "width": 42,
+      "height": 50,
+      "conf": 91.809395
+    },
+    {
+      "text": "سنوات.",
+      "line_num": 3,
+      "left": 596,
+      "top": 515,
+      "width": 189,
+      "height": 29,
+      "conf": 92.434624
+    },
+    {
+      "text": "وبحسب",
+      "line_num": 3,
+      "left": 499,
+      "top": 527,
+      "width": 86,
+      "height": 17,
+      "conf": 92.99884
+    },
+    {
+      "text": "استطلاع",
+      "line_num": 3,
+      "left": 394,
+      "top": 515,
+      "width": 94,
+      "height": 29,
+      "conf": 92.986664
+    },
+    {
+      "text": "أجرته",
+      "line_num": 3,
+      "left": 325,
+      "top": 513,
       "width": 58,
-      "height": 40,
-      "conf": 86.557266
+      "height": 31,
+      "conf": 93.00103
     },
     {
-      "text": "المفاهيم",
+      "text": "البلدية",
       "line_num": 3,
-      "left": 1209,
-      "top": 1635,
-      "width": 79,
+      "left": 249,
+      "top": 515,
+      "width": 64,
+      "height": 29,
+      "conf": 93.084656
+    },
+    {
+      "text": "عام",
+      "line_num": 3,
+      "left": 201,
+      "top": 515,
+      "width": 37,
       "height": 35,
-      "conf": 73.416954
+      "conf": 93.303772
     },
     {
-      "text": "الموجودة",
-      "line_num": 3,
-      "left": 1113,
-      "top": 1635,
-      "width": 84,
-      "height": 29,
-      "conf": 92.923874
+      "text": "3,",
+      "line_num": 4,
+      "left": 1361,
+      "top": 563,
+      "width": 78,
+      "height": 23,
+      "conf": 61.528076
     },
     {
-      "text": "وتساعدنا",
-      "line_num": 3,
-      "left": 1008,
-      "top": 1635,
-      "width": 95,
+      "text": "يستقبل",
+      "line_num": 4,
+      "left": 1270,
+      "top": 563,
+      "width": 80,
       "height": 29,
-      "conf": 68.801086
+      "conf": 91.931168
+    },
+    {
+      "text": "السوق",
+      "line_num": 4,
+      "left": 1190,
+      "top": 563,
+      "width": 69,
+      "height": 29,
+      "conf": 92.694298
+    },
+    {
+      "text": "قرابة",
+      "line_num": 4,
+      "left": 1130,
+      "top": 563,
+      "width": 50,
+      "height": 29,
+      "conf": 92.558159
+    },
+    {
+      "text": "12",
+      "line_num": 4,
+      "left": 1087,
+      "top": 563,
+      "width": 31,
+      "height": 23,
+      "conf": 93.058365
+    },
+    {
+      "text": "ألف",
+      "line_num": 4,
+      "left": 1032,
+      "top": 561,
+      "width": 41,
+      "height": 25,
+      "conf": 88.190094
+    },
+    {
+      "text": "زائر",
+      "line_num": 4,
+      "left": 978,
+      "top": 563,
+      "width": 44,
+      "height": 29,
+      "conf": 92.541298
+    },
+    {
+      "text": "في",
+      "line_num": 4,
+      "left": 935,
+      "top": 565,
+      "width": 34,
+      "height": 31,
+      "conf": 92.951759
+    },
+    {
+      "text": "Ube‏",
+      "line_num": 4,
+      "left": 873,
+      "top": 563,
+      "width": 52,
+      "height": 22,
+      "conf": 69.638687
+    },
+    {
+      "text": "نهاية",
+      "line_num": 4,
+      "left": 811,
+      "top": 563,
+      "width": 52,
+      "height": 29,
+      "conf": 93.290833
+    },
+    {
+      "text": "Sarg",
+      "line_num": 4,
+      "left": 645,
+      "top": 565,
+      "width": 48,
+      "height": 27,
+      "conf": 48.016319
+    },
+    {
+      "text": "Esau!‏",
+      "line_num": 4,
+      "left": 705,
+      "top": 561,
+      "width": 94,
+      "height": 31,
+      "conf": 39.27618
     },
     {
       "text": "على",
-      "line_num": 3,
-      "left": 950,
-      "top": 1635,
+      "line_num": 4,
+      "left": 592,
+      "top": 563,
       "width": 43,
       "height": 29,
-      "conf": 93.305702
+      "conf": 93.244644
     },
     {
-      "text": "فهم",
-      "line_num": 3,
-      "left": 902,
-      "top": 1637,
-      "width": 38,
+      "text": "الاقتصاد",
+      "line_num": 4,
+      "left": 485,
+      "top": 563,
+      "width": 95,
+      "height": 23,
+      "conf": 93.027313
+    },
+    {
+      "text": "المحلي",
+      "line_num": 4,
+      "left": 402,
+      "top": 563,
+      "width": 69,
       "height": 33,
-      "conf": 93.03981
+      "conf": 93.170792
     },
     {
-      "text": "هذا",
-      "line_num": 3,
-      "left": 858,
-      "top": 1635,
-      "width": 33,
+      "text": "نحو",
+      "line_num": 4,
+      "left": 348,
+      "top": 567,
+      "width": 44,
+      "height": 25,
+      "conf": 93.294334
+    },
+    {
+      "text": "4.2",
+      "line_num": 4,
+      "left": 295,
+      "top": 563,
+      "width": 44,
       "height": 23,
-      "conf": 93.243736
+      "conf": 96.806015
     },
     {
-      "text": "العالم",
-      "line_num": 3,
-      "left": 783,
-      "top": 1635,
-      "width": 58,
-      "height": 35,
-      "conf": 90.461235
+      "text": "مليون",
+      "line_num": 4,
+      "left": 225,
+      "top": 563,
+      "width": 60,
+      "height": 29,
+      "conf": 93.211731
     },
     {
-      "text": "المعقد",
-      "line_num": 3,
-      "left": 716,
-      "top": 1635,
+      "text": "دينار",
+      "line_num": 5,
+      "left": 1385,
+      "top": 611,
       "width": 55,
-      "height": 23,
-      "conf": 93.023399
+      "height": 29,
+      "conf": 93.172134
     },
     {
-      "text": "والملون",
-      "line_num": 3,
-      "left": 635,
-      "top": 1635,
+      "text": "سنوياً",
+      "line_num": 5,
+      "left": 1311,
+      "top": 600,
+      "width": 65,
+      "height": 40,
+      "conf": 86.808449
+    },
+    {
+      "text": "(من",
+      "line_num": 5,
+      "left": 1259,
+      "top": 610,
+      "width": 40,
+      "height": 31,
+      "conf": 89.112259
+    },
+    {
+      "text": "دون",
+      "line_num": 5,
+      "left": 1207,
+      "top": 617,
+      "width": 42,
+      "height": 23,
+      "conf": 93.221794
+    },
+    {
+      "text": "احتساب",
+      "line_num": 5,
+      "left": 1105,
+      "top": 611,
+      "width": 90,
+      "height": 29,
+      "conf": 92.395622
+    },
+    {
+      "text": "المقاهي",
+      "line_num": 5,
+      "left": 1014,
+      "top": 611,
+      "width": 79,
+      "height": 33,
+      "conf": 92.531448
+    },
+    {
+      "text": "والمحال",
+      "line_num": 5,
+      "left": 927,
+      "top": 611,
+      "width": 77,
+      "height": 29,
+      "conf": 68.20211
+    },
+    {
+      "text": "المجاورة).",
+      "line_num": 5,
+      "left": 815,
+      "top": 610,
+      "width": 101,
+      "height": 31,
+      "conf": 84.96701
+    },
+    {
+      "text": "تقول",
+      "line_num": 6,
+      "left": 1393,
+      "top": 672,
+      "width": 51,
+      "height": 54,
+      "conf": 96.811729
+    },
+    {
+      "text": "مريم",
+      "line_num": 6,
+      "left": 1336,
+      "top": 672,
+      "width": 48,
+      "height": 54,
+      "conf": 93.220284
+    },
+    {
+      "text": "العلي,",
+      "line_num": 6,
+      "left": 1255,
+      "top": 672,
+      "width": 65,
+      "height": 54,
+      "conf": 33.568832
+    },
+    {
+      "text": "التي",
+      "line_num": 6,
+      "left": 1197,
+      "top": 672,
+      "width": 48,
+      "height": 54,
+      "conf": 93.289246
+    },
+    {
+      "text": "تبيع",
+      "line_num": 6,
+      "left": 1136,
+      "top": 672,
+      "width": 49,
+      "height": 54,
+      "conf": 93.217674
+    },
+    {
+      "text": "الخضار",
+      "line_num": 6,
+      "left": 1041,
+      "top": 687,
+      "width": 199,
+      "height": 33,
+      "conf": 92.915421
+    },
+    {
+      "text": "هنا",
+      "line_num": 6,
+      "left": 998,
+      "top": 672,
+      "width": 38,
+      "height": 54,
+      "conf": 93.135757
+    },
+    {
+      "text": "منذ",
+      "line_num": 6,
+      "left": 952,
+      "top": 688,
+      "width": 34,
+      "height": 22,
+      "conf": 92.950058
+    },
+    {
+      "text": "27",
+      "line_num": 6,
+      "left": 914,
+      "top": 672,
+      "width": 24,
+      "height": 54,
+      "conf": 93.305412
+    },
+    {
+      "text": "عاماً:",
+      "line_num": 6,
+      "left": 840,
+      "top": 676,
+      "width": 98,
+      "height": 34,
+      "conf": 68.674301
+    },
+    {
+      "text": "«يظن",
+      "line_num": 6,
+      "left": 772,
+      "top": 672,
+      "width": 47,
+      "height": 54,
+      "conf": 92.94857
+    },
+    {
+      "text": "الناس",
+      "line_num": 6,
+      "left": 701,
+      "top": 672,
+      "width": 51,
+      "height": 54,
+      "conf": 89.976921
+    },
+    {
+      "text": "أننا",
+      "line_num": 6,
+      "left": 644,
+      "top": 672,
+      "width": 34,
+      "height": 54,
+      "conf": 92.693481
+    },
+    {
+      "text": "نبيع",
+      "line_num": 6,
+      "left": 586,
+      "top": 672,
+      "width": 45,
+      "height": 54,
+      "conf": 93.161026
+    },
+    {
+      "text": "الخضارء",
+      "line_num": 6,
+      "left": 485,
+      "top": 672,
+      "width": 89,
+      "height": 54,
+      "conf": 84.827179
+    },
+    {
+      "text": "لكننا",
+      "line_num": 6,
+      "left": 418,
+      "top": 672,
+      "width": 58,
+      "height": 54,
+      "conf": 86.307869
+    },
+    {
+      "text": "في",
+      "line_num": 6,
+      "left": 380,
+      "top": 689,
+      "width": 28,
+      "height": 31,
+      "conf": 93.293274
+    },
+    {
+      "text": "الحقيقة",
+      "line_num": 6,
+      "left": 289,
+      "top": 672,
+      "width": 75,
+      "height": 54,
+      "conf": 92.75808
+    },
+    {
+      "text": "نبيع",
+      "line_num": 6,
+      "left": 229,
+      "top": 672,
+      "width": 48,
+      "height": 54,
+      "conf": 92.874153
+    },
+    {
+      "text": "سبباً",
+      "line_num": 7,
+      "left": 1387,
+      "top": 724,
+      "width": 53,
+      "height": 40,
+      "conf": 86.457703
+    },
+    {
+      "text": "للمجيء",
+      "line_num": 7,
+      "left": 1298,
+      "top": 735,
+      "width": 80,
+      "height": 33,
+      "conf": 88.675583
+    },
+    {
+      "text": "إلى",
+      "line_num": 7,
+      "left": 1249,
+      "top": 735,
+      "width": 37,
+      "height": 30,
+      "conf": 93.305946
+    },
+    {
+      "text": "وسط",
+      "line_num": 7,
+      "left": 1186,
+      "top": 735,
+      "width": 53,
+      "height": 29,
+      "conf": 92.783852
+    },
+    {
+      "text": "المدينة».",
+      "line_num": 7,
+      "left": 1087,
+      "top": 735,
+      "width": 87,
+      "height": 29,
+      "conf": 91.904068
+    },
+    {
+      "text": "وتضيف",
+      "line_num": 7,
+      "left": 991,
+      "top": 737,
+      "width": 84,
+      "height": 27,
+      "conf": 92.884415
+    },
+    {
+      "text": "أن",
+      "line_num": 7,
+      "left": 955,
+      "top": 733,
+      "width": 25,
+      "height": 31,
+      "conf": 93.261642
+    },
+    {
+      "text": "AST‏",
+      "line_num": 7,
+      "left": 898,
+      "top": 733,
+      "width": 46,
+      "height": 31,
+      "conf": 80.677414
+    },
+    {
+      "text": "ما",
+      "line_num": 7,
+      "left": 870,
+      "top": 720,
+      "width": 25,
+      "height": 52,
+      "conf": 93.250145
+    },
+    {
+      "text": "يباع",
+      "line_num": 7,
+      "left": 809,
+      "top": 735,
+      "width": 47,
+      "height": 29,
+      "conf": 93.217773
+    },
+    {
+      "text": "عندها",
+      "line_num": 7,
+      "left": 739,
+      "top": 735,
+      "width": 59,
+      "height": 23,
+      "conf": 92.398788
+    },
+    {
+      "text": "ما",
+      "line_num": 7,
+      "left": 706,
+      "top": 735,
+      "width": 19,
+      "height": 22,
+      "conf": 93.295921
+    },
+    {
+      "text": "زال",
+      "line_num": 7,
+      "left": 655,
+      "top": 720,
+      "width": 35,
+      "height": 52,
+      "conf": 93.105583
+    },
+    {
+      "text": "كيس",
+      "line_num": 7,
+      "left": 601,
+      "top": 720,
+      "width": 40,
+      "height": 52,
+      "conf": 93.127739
+    },
+    {
+      "text": "الأعشاب",
+      "line_num": 7,
+      "left": 489,
+      "top": 733,
+      "width": 92,
+      "height": 31,
+      "conf": 92.640823
+    },
+    {
+      "text": "الطازجة",
+      "line_num": 7,
+      "left": 392,
+      "top": 735,
+      "width": 85,
+      "height": 29,
+      "conf": 93.15155
+    },
+    {
+      "text": "بدينارين.",
+      "line_num": 7,
+      "left": 284,
+      "top": 735,
+      "width": 98,
+      "height": 29,
+      "conf": 93.122658
+    },
+    {
+      "text": "والأرقام",
+      "line_num": 8,
+      "left": 1360,
+      "top": 807,
+      "width": 80,
+      "height": 37,
+      "conf": 93.0728
+    },
+    {
+      "text": "تؤيد",
+      "line_num": 8,
+      "left": 1307,
+      "top": 812,
+      "width": 43,
+      "height": 26,
+      "conf": 92.998459
+    },
+    {
+      "text": "كلامها.",
+      "line_num": 8,
+      "left": 1217,
+      "top": 809,
+      "width": 78,
+      "height": 29,
+      "conf": 92.694977
+    },
+    {
+      "text": "فحركة",
+      "line_num": 8,
+      "left": 1142,
+      "top": 809,
+      "width": 64,
+      "height": 29,
+      "conf": 93.163628
+    },
+    {
+      "text": "المشاة",
+      "line_num": 8,
+      "left": 1066,
+      "top": 809,
+      "width": 64,
+      "height": 22,
+      "conf": 89.835571
+    },
+    {
+      "text": "في",
+      "line_num": 8,
+      "left": 1022,
+      "top": 811,
+      "width": 34,
+      "height": 31,
+      "conf": 93.290268
+    },
+    {
+      "text": "abil‏",
+      "line_num": 8,
+      "left": 971,
+      "top": 807,
+      "width": 40,
+      "height": 37,
+      "conf": 63.771931
+    },
+    {
+      "text": "السوق",
+      "line_num": 8,
+      "left": 891,
+      "top": 809,
       "width": 68,
       "height": 29,
-      "conf": 92.492752
+      "conf": 93.092377
+    },
+    {
+      "text": "أعلى",
+      "line_num": 8,
+      "left": 827,
+      "top": 807,
+      "width": 52,
+      "height": 31,
+      "conf": 92.358482
+    },
+    {
+      "text": "بنسبة",
+      "line_num": 8,
+      "left": 755,
+      "top": 809,
+      "width": 62,
+      "height": 29,
+      "conf": 92.78672
+    },
+    {
+      "text": "9038",
+      "line_num": 8,
+      "left": 683,
+      "top": 808,
+      "width": 61,
+      "height": 25,
+      "conf": 88.821938
+    },
+    {
+      "text": "منها",
+      "line_num": 8,
+      "left": 629,
+      "top": 809,
+      "width": 42,
+      "height": 29,
+      "conf": 93.085159
+    },
+    {
+      "text": "في",
+      "line_num": 8,
+      "left": 581,
+      "top": 811,
+      "width": 34,
+      "height": 31,
+      "conf": 93.294373
+    },
+    {
+      "text": "أيام",
+      "line_num": 8,
+      "left": 530,
+      "top": 807,
+      "width": 39,
+      "height": 37,
+      "conf": 89.702332
+    },
+    {
+      "text": "السبت",
+      "line_num": 8,
+      "left": 449,
+      "top": 809,
+      "width": 69,
+      "height": 29,
+      "conf": 93.232697
+    },
+    {
+      "text": "«ce",
+      "line_num": 8,
+      "left": 354,
+      "top": 793,
+      "width": 26,
+      "height": 55,
+      "conf": 26.875381
+    },
+    {
+      "text": "AY!‏",
+      "line_num": 8,
+      "left": 380,
+      "top": 807,
+      "width": 57,
+      "height": 31,
+      "conf": 26.875381
+    },
+    {
+      "text": "وثلاثة",
+      "line_num": 8,
+      "left": 283,
+      "top": 809,
+      "width": 57,
+      "height": 29,
+      "conf": 92.986771
+    },
+    {
+      "text": "أرباع",
+      "line_num": 8,
+      "left": 212,
+      "top": 807,
+      "width": 59,
+      "height": 31,
+      "conf": 90.478981
+    },
+    {
+      "text": "الزوار",
+      "line_num": 9,
+      "left": 1377,
+      "top": 841,
+      "width": 61,
+      "height": 54,
+      "conf": 93.026733
+    },
+    {
+      "text": "قالوا",
+      "line_num": 9,
+      "left": 1320,
+      "top": 841,
+      "width": 48,
+      "height": 54,
+      "conf": 93.026733
+    },
+    {
+      "text": "إنهم",
+      "line_num": 9,
+      "left": 1265,
+      "top": 857,
+      "width": 43,
+      "height": 34,
+      "conf": 93.083885
+    },
+    {
+      "text": "توقفوا",
+      "line_num": 9,
+      "left": 1197,
+      "top": 857,
+      "width": 57,
+      "height": 29,
+      "conf": 93.136513
+    },
+    {
+      "text": "أيضاً",
+      "line_num": 9,
+      "left": 1128,
+      "top": 855,
+      "width": 53,
+      "height": 31,
+      "conf": 89.857239
+    },
+    {
+      "text": "عند",
+      "line_num": 9,
+      "left": 1079,
+      "top": 861,
+      "width": 35,
+      "height": 19,
+      "conf": 93.304482
+    },
+    {
+      "text": "محل",
+      "line_num": 9,
+      "left": 1019,
+      "top": 841,
+      "width": 38,
+      "height": 54,
+      "conf": 96.984192
+    },
+    {
+      "text": "آخر",
+      "line_num": 9,
+      "left": 969,
+      "top": 841,
+      "width": 38,
+      "height": 54,
+      "conf": 92.948898
+    },
+    {
+      "text": "في",
+      "line_num": 9,
+      "left": 925,
+      "top": 841,
+      "width": 31,
+      "height": 54,
+      "conf": 93.179405
+    },
+    {
+      "text": "الحي.",
+      "line_num": 9,
+      "left": 845,
+      "top": 857,
+      "width": 65,
+      "height": 33,
+      "conf": 92.700539
+    },
+    {
+      "text": "ويسمي",
+      "line_num": 9,
+      "left": 752,
+      "top": 869,
+      "width": 82,
+      "height": 21,
+      "conf": 93.035927
+    },
+    {
+      "text": "الدكتور",
+      "line_num": 9,
+      "left": 663,
+      "top": 857,
+      "width": 77,
+      "height": 29,
+      "conf": 93.266266
+    },
+    {
+      "text": "سامي",
+      "line_num": 9,
+      "left": 584,
+      "top": 857,
+      "width": 69,
+      "height": 33,
+      "conf": 93.172966
+    },
+    {
+      "text": "الخطيبء",
+      "line_num": 9,
+      "left": 480,
+      "top": 857,
+      "width": 92,
+      "height": 29,
+      "conf": 82.684464
+    },
+    {
+      "text": "أستاذ",
+      "line_num": 9,
+      "left": 406,
+      "top": 855,
+      "width": 61,
+      "height": 25,
+      "conf": 79.414101
+    },
+    {
+      "text": "الاقتصاد",
+      "line_num": 9,
+      "left": 297,
+      "top": 857,
+      "width": 95,
+      "height": 23,
+      "conf": 91.721397
+    },
+    {
+      "text": "في",
+      "line_num": 9,
+      "left": 251,
+      "top": 859,
+      "width": 34,
+      "height": 31,
+      "conf": 93.261719
+    },
+    {
+      "text": "الجامعة.",
+      "line_num": 10,
+      "left": 1348,
+      "top": 905,
+      "width": 90,
+      "height": 29,
+      "conf": 16.498165
+    },
+    {
+      "text": "هذه",
+      "line_num": 10,
+      "left": 1296,
+      "top": 906,
+      "width": 40,
+      "height": 22,
+      "conf": 93.262329
+    },
+    {
+      "text": "الظاهرة",
+      "line_num": 10,
+      "left": 1203,
+      "top": 905,
+      "width": 81,
+      "height": 29,
+      "conf": 92.97464
+    },
+    {
+      "text": "«أثر",
+      "line_num": 10,
+      "left": 1142,
+      "top": 903,
+      "width": 49,
+      "height": 31,
+      "conf": 91.411896
+    },
+    {
+      "text": "الانتشار».",
+      "line_num": 10,
+      "left": 1018,
+      "top": 905,
+      "width": 113,
+      "height": 29,
+      "conf": 92.380653
+    },
+    {
+      "text": "لكن",
+      "line_num": 11,
+      "left": 1402,
+      "top": 964,
+      "width": 41,
+      "height": 54,
+      "conf": 93.214767
+    },
+    {
+      "text": "الصورة",
+      "line_num": 11,
+      "left": 1314,
+      "top": 964,
+      "width": 75,
+      "height": 54,
+      "conf": 92.83329
+    },
+    {
+      "text": "ليست",
+      "line_num": 11,
+      "left": 1250,
+      "top": 964,
+      "width": 52,
+      "height": 54,
+      "conf": 93.198547
+    },
+    {
+      "text": "وردية",
+      "line_num": 11,
+      "left": 1179,
+      "top": 964,
+      "width": 58,
+      "height": 54,
+      "conf": 91.639641
+    },
+    {
+      "text": "تماماً.",
+      "line_num": 11,
+      "left": 1101,
+      "top": 964,
+      "width": 69,
+      "height": 54,
+      "conf": 92.198448
+    },
+    {
+      "text": "فقد",
+      "line_num": 11,
+      "left": 1051,
+      "top": 964,
+      "width": 35,
+      "height": 54,
+      "conf": 92.145493
+    },
+    {
+      "text": "ارتفعت",
+      "line_num": 11,
+      "left": 969,
+      "top": 979,
+      "width": 73,
+      "height": 29,
+      "conf": 92.145493
+    },
+    {
+      "text": "أجرة",
+      "line_num": 11,
+      "left": 909,
+      "top": 964,
+      "width": 48,
+      "height": 54,
+      "conf": 91.030983
+    },
+    {
+      "text": "البسطة",
+      "line_num": 11,
+      "left": 819,
+      "top": 977,
+      "width": 138,
+      "height": 31,
+      "conf": 93.165451
     },
     {
       "text": "من",
-      "line_num": 3,
-      "left": 594,
-      "top": 1644,
-      "width": 30,
-      "height": 20,
-      "conf": 93.306122
+      "line_num": 11,
+      "left": 781,
+      "top": 964,
+      "width": 28,
+      "height": 54,
+      "conf": 93.245949
     },
     {
-      "text": "منظور",
-      "line_num": 3,
-      "left": 519,
-      "top": 1620,
-      "width": 65,
+      "text": "35",
+      "line_num": 11,
+      "left": 740,
+      "top": 979,
+      "width": 27,
+      "height": 23,
+      "conf": 96.937576
+    },
+    {
+      "text": "إلى",
+      "line_num": 11,
+      "left": 684,
+      "top": 979,
+      "width": 37,
+      "height": 29,
+      "conf": 96.966568
+    },
+    {
+      "text": "50",
+      "line_num": 11,
+      "left": 640,
+      "top": 979,
+      "width": 33,
+      "height": 23,
+      "conf": 96.980087
+    },
+    {
+      "text": "ديناراً",
+      "line_num": 11,
+      "left": 567,
+      "top": 964,
+      "width": 62,
       "height": 54,
-      "conf": 93.194168
+      "conf": 87.697433
+    },
+    {
+      "text": "في",
+      "line_num": 11,
+      "left": 528,
+      "top": 964,
+      "width": 24,
+      "height": 54,
+      "conf": 93.279274
+    },
+    {
+      "text": "اليوم",
+      "line_num": 11,
+      "left": 465,
+      "top": 964,
+      "width": 47,
+      "height": 54,
+      "conf": 91.02919
+    },
+    {
+      "text": "منذ",
+      "line_num": 11,
+      "left": 416,
+      "top": 964,
+      "width": 35,
+      "height": 54,
+      "conf": 92.426971
+    },
+    {
+      "text": "شهر",
+      "line_num": 11,
+      "left": 366,
+      "top": 964,
+      "width": 38,
+      "height": 54,
+      "conf": 93.094429
+    },
+    {
+      "text": "يناير»",
+      "line_num": 11,
+      "left": 289,
+      "top": 964,
+      "width": 68,
+      "height": 54,
+      "conf": 76.659805
+    },
+    {
+      "text": "ويقول",
+      "line_num": 11,
+      "left": 215,
+      "top": 979,
+      "width": 62,
+      "height": 29,
+      "conf": 92.437782
+    },
+    {
+      "text": "عدد",
+      "line_num": 12,
+      "left": 1401,
+      "top": 1036,
+      "width": 39,
+      "height": 14,
+      "conf": 93.153999
+    },
+    {
+      "text": "من",
+      "line_num": 12,
+      "left": 1358,
+      "top": 1036,
+      "width": 31,
+      "height": 20,
+      "conf": 93.2967
+    },
+    {
+      "text": "الباعة",
+      "line_num": 12,
+      "left": 1287,
+      "top": 1027,
+      "width": 59,
+      "height": 29,
+      "conf": 92.495117
+    },
+    {
+      "text": "القدامى",
+      "line_num": 12,
+      "left": 1191,
+      "top": 1027,
+      "width": 84,
+      "height": 29,
+      "conf": 93.165512
+    },
+    {
+      "text": "إن",
+      "line_num": 12,
+      "left": 1155,
+      "top": 1027,
+      "width": 24,
+      "height": 30,
+      "conf": 93.255478
+    },
+    {
+      "text": "تحمل",
+      "line_num": 12,
+      "left": 1085,
+      "top": 1027,
+      "width": 60,
+      "height": 27,
+      "conf": 96.804413
+    },
+    {
+      "text": "هذه",
+      "line_num": 12,
+      "left": 1035,
+      "top": 1028,
+      "width": 40,
+      "height": 22,
+      "conf": 96.804413
+    },
+    {
+      "text": "الزيادة",
+      "line_num": 12,
+      "left": 952,
+      "top": 1027,
+      "width": 71,
+      "height": 29,
+      "conf": 92.589737
+    },
+    {
+      "text": "صعب.",
+      "line_num": 12,
+      "left": 871,
+      "top": 1038,
+      "width": 71,
+      "height": 18,
+      "conf": 91.795746
+    },
+    {
+      "text": "وتبقى",
+      "line_num": 12,
+      "left": 797,
+      "top": 1029,
+      "width": 62,
+      "height": 27,
+      "conf": 92.615051
+    },
+    {
+      "text": "مواقف",
+      "line_num": 12,
+      "left": 717,
+      "top": 1027,
+      "width": 70,
+      "height": 29,
+      "conf": 93.249748
+    },
+    {
+      "text": "السيارات",
+      "line_num": 12,
+      "left": 608,
+      "top": 1027,
+      "width": 97,
+      "height": 29,
+      "conf": 92.211075
+    },
+    {
+      "text": "الشكوى",
+      "line_num": 12,
+      "left": 510,
+      "top": 1027,
+      "width": 86,
+      "height": 30,
+      "conf": 91.148064
+    },
+    {
+      "text": "الأكثر",
+      "line_num": 12,
+      "left": 438,
+      "top": 1025,
+      "width": 60,
+      "height": 31,
+      "conf": 92.813354
+    },
+    {
+      "text": "تكراراً:",
+      "line_num": 12,
+      "left": 360,
+      "top": 1016,
+      "width": 69,
+      "height": 40,
+      "conf": 59.27681
+    },
+    {
+      "text": "فأقرب",
+      "line_num": 12,
+      "left": 285,
+      "top": 1026,
+      "width": 62,
+      "height": 30,
+      "conf": 92.046387
+    },
+    {
+      "text": "موقف",
+      "line_num": 12,
+      "left": 214,
+      "top": 1029,
+      "width": 60,
+      "height": 27,
+      "conf": 91.6101
+    },
+    {
+      "text": "عام",
+      "line_num": 13,
+      "left": 1403,
+      "top": 1075,
+      "width": 37,
+      "height": 35,
+      "conf": 96.9226
+    },
+    {
+      "text": "لا",
+      "line_num": 13,
+      "left": 1378,
+      "top": 1075,
+      "width": 14,
+      "height": 22,
+      "conf": 95.875793
+    },
+    {
+      "text": "يتسع",
+      "line_num": 13,
+      "left": 1309,
+      "top": 1078,
+      "width": 57,
+      "height": 26,
+      "conf": 92.656807
+    },
+    {
+      "text": "إلا",
+      "line_num": 13,
+      "left": 1274,
+      "top": 1075,
+      "width": 23,
+      "height": 29,
+      "conf": 93.297623
+    },
+    {
+      "text": "لنحى",
+      "line_num": 13,
+      "left": 1212,
+      "top": 1059,
+      "width": 45,
+      "height": 55,
+      "conf": 72.399544
+    },
+    {
+      "text": "220",
+      "line_num": 13,
+      "left": 1157,
+      "top": 1075,
+      "width": 45,
+      "height": 23,
+      "conf": 93.479477
+    },
+    {
+      "text": "سيارة»",
+      "line_num": 13,
+      "left": 1068,
+      "top": 1075,
+      "width": 72,
+      "height": 29,
+      "conf": 89.123825
+    },
+    {
+      "text": "ويمتلئ",
+      "line_num": 13,
+      "left": 982,
+      "top": 1075,
+      "width": 75,
+      "height": 29,
+      "conf": 92.384598
+    },
+    {
+      "text": "عادة",
+      "line_num": 13,
+      "left": 924,
+      "top": 1075,
+      "width": 48,
+      "height": 23,
+      "conf": 92.338196
+    },
+    {
+      "text": "قبل",
+      "line_num": 13,
+      "left": 877,
+      "top": 1075,
+      "width": 37,
+      "height": 29,
+      "conf": 93.281868
+    },
+    {
+      "text": "الساعة",
+      "line_num": 13,
+      "left": 793,
+      "top": 1075,
+      "width": 73,
+      "height": 22,
+      "conf": 92.352028
+    },
+    {
+      "text": "9:15",
+      "line_num": 13,
+      "left": 721,
+      "top": 1075,
+      "width": 60,
+      "height": 23,
+      "conf": 92.352028
+    },
+    {
+      "text": "صباحاً.",
+      "line_num": 13,
+      "left": 625,
+      "top": 1064,
+      "width": 85,
+      "height": 40,
+      "conf": 87.149574
+    },
+    {
+      "text": "يدرس",
+      "line_num": 14,
+      "left": 1378,
+      "top": 1160,
+      "width": 62,
+      "height": 20,
+      "conf": 95.119598
+    },
+    {
+      "text": "المجلس",
+      "line_num": 14,
+      "left": 1291,
+      "top": 1151,
+      "width": 75,
+      "height": 29,
+      "conf": 90.62056
+    },
+    {
+      "text": "البلدي",
+      "line_num": 14,
+      "left": 1214,
+      "top": 1151,
+      "width": 65,
+      "height": 29,
+      "conf": 90.62056
+    },
+    {
+      "text": "اقتراحاً",
+      "line_num": 14,
+      "left": 1124,
+      "top": 1140,
+      "width": 78,
+      "height": 40,
+      "conf": 92.759346
+    },
+    {
+      "text": "بإغلاق",
+      "line_num": 14,
+      "left": 1045,
+      "top": 1151,
+      "width": 70,
+      "height": 30,
+      "conf": 92.718239
+    },
+    {
+      "text": "شارعين",
+      "line_num": 14,
+      "left": 953,
+      "top": 1151,
+      "width": 82,
+      "height": 31,
+      "conf": 88.180519
+    },
+    {
+      "text": "إضافيين",
+      "line_num": 14,
+      "left": 851,
+      "top": 1151,
+      "width": 91,
+      "height": 30,
+      "conf": 80.192772
+    },
+    {
+      "text": "أمام",
+      "line_num": 14,
+      "left": 795,
+      "top": 1149,
+      "width": 45,
+      "height": 37,
+      "conf": 93.268524
+    },
+    {
+      "text": "السيارات",
+      "line_num": 14,
+      "left": 686,
+      "top": 1151,
+      "width": 97,
+      "height": 29,
+      "conf": 90.898819
+    },
+    {
+      "text": "بين",
+      "line_num": 14,
+      "left": 643,
+      "top": 1158,
+      "width": 33,
+      "height": 24,
+      "conf": 93.30162
+    },
+    {
+      "text": "1",
+      "line_num": 14,
+      "left": 619,
+      "top": 1151,
+      "width": 9,
+      "height": 23,
+      "conf": 90.744102
+    },
+    {
+      "text": "مايو",
+      "line_num": 14,
+      "left": 560,
+      "top": 1132,
+      "width": 45,
+      "height": 61,
+      "conf": 88.090912
+    },
+    {
+      "text": "و31",
+      "line_num": 14,
+      "left": 510,
+      "top": 1151,
+      "width": 40,
+      "height": 29,
+      "conf": 93.301689
+    },
+    {
+      "text": "أكتوير.",
+      "line_num": 14,
+      "left": 416,
+      "top": 1149,
+      "width": 75,
+      "height": 31,
+      "conf": 44.578396
+    },
+    {
+      "text": "يرى",
+      "line_num": 14,
+      "left": 362,
+      "top": 1163,
+      "width": 43,
+      "height": 18,
+      "conf": 93.25885
+    },
+    {
+      "text": "المؤيدون",
+      "line_num": 14,
+      "left": 266,
+      "top": 1151,
+      "width": 84,
+      "height": 29,
+      "conf": 82.829796
+    },
+    {
+      "text": "أن",
+      "line_num": 14,
+      "left": 229,
+      "top": 1149,
+      "width": 25,
+      "height": 31,
+      "conf": 93.295029
+    },
+    {
+      "text": "ذلك",
+      "line_num": 15,
+      "left": 1403,
+      "top": 1199,
+      "width": 37,
+      "height": 23,
+      "conf": 96.568634
+    },
+    {
+      "text": "سيتيح",
+      "line_num": 15,
+      "left": 1324,
+      "top": 1202,
+      "width": 68,
+      "height": 26,
+      "conf": 91.204758
+    },
+    {
+      "text": "sail",
+      "line_num": 15,
+      "left": 1197,
+      "top": 1184,
+      "width": 52,
+      "height": 48,
+      "conf": 64.446144
+    },
+    {
+      "text": "Like‏",
+      "line_num": 15,
+      "left": 1261,
+      "top": 1184,
+      "width": 56,
+      "height": 48,
+      "conf": 68.306282
+    },
+    {
+      "text": "40",
+      "line_num": 15,
+      "left": 1153,
+      "top": 1199,
+      "width": 32,
+      "height": 23,
+      "conf": 95.111359
+    },
+    {
+      "text": "بسطة",
+      "line_num": 15,
+      "left": 1080,
+      "top": 1199,
+      "width": 63,
+      "height": 29,
+      "conf": 92.01915
+    },
+    {
+      "text": "Buse‏",
+      "line_num": 15,
+      "left": 996,
+      "top": 1202,
+      "width": 74,
+      "height": 26,
+      "conf": 46.897579
+    },
+    {
+      "text": "بينما",
+      "line_num": 15,
+      "left": 936,
+      "top": 1199,
+      "width": 48,
+      "height": 29,
+      "conf": 91.286385
+    },
+    {
+      "text": "يخشى",
+      "line_num": 15,
+      "left": 848,
+      "top": 1203,
+      "width": 74,
+      "height": 25,
+      "conf": 91.65509
+    },
+    {
+      "text": "المعارضون",
+      "line_num": 15,
+      "left": 725,
+      "top": 1199,
+      "width": 111,
+      "height": 29,
+      "conf": 91.873909
+    },
+    {
+      "text": "صعوية",
+      "line_num": 15,
+      "left": 640,
+      "top": 1199,
+      "width": 75,
+      "height": 29,
+      "conf": 91.676262
+    },
+    {
+      "text": "إيصال",
+      "line_num": 15,
+      "left": 556,
+      "top": 1199,
+      "width": 72,
+      "height": 29,
+      "conf": 90.170555
+    },
+    {
+      "text": "البضائع",
+      "line_num": 15,
+      "left": 457,
+      "top": 1199,
+      "width": 87,
+      "height": 29,
+      "conf": 91.819305
+    },
+    {
+      "text": "وتنقل",
+      "line_num": 15,
+      "left": 390,
+      "top": 1199,
+      "width": 56,
+      "height": 29,
+      "conf": 90.894211
+    },
+    {
+      "text": "كبار",
+      "line_num": 15,
+      "left": 334,
+      "top": 1199,
+      "width": 46,
+      "height": 29,
+      "conf": 91.777664
+    },
+    {
+      "text": "السن.",
+      "line_num": 15,
+      "left": 259,
+      "top": 1199,
+      "width": 64,
+      "height": 29,
+      "conf": 91.226799
+    },
+    {
+      "text": "وإلى",
+      "line_num": 16,
+      "left": 1391,
+      "top": 1265,
+      "width": 49,
+      "height": 47,
+      "conf": 92.848671
+    },
+    {
+      "text": "أن",
+      "line_num": 16,
+      "left": 1356,
+      "top": 1271,
+      "width": 20,
+      "height": 31,
+      "conf": 93.043747
+    },
+    {
+      "text": "يُحسم",
+      "line_num": 16,
+      "left": 1282,
+      "top": 1265,
+      "width": 63,
+      "height": 47,
+      "conf": 81.265007
+    },
+    {
+      "text": "pel‏",
+      "line_num": 16,
+      "left": 1214,
+      "top": 1265,
+      "width": 49,
+      "height": 47,
+      "conf": 36.82103
+    },
+    {
+      "text": "تستمر",
+      "line_num": 16,
+      "left": 1127,
+      "top": 1265,
+      "width": 59,
+      "height": 47,
+      "conf": 93.263397
+    },
+    {
+      "text": "الحياة",
+      "line_num": 16,
+      "left": 1046,
+      "top": 1265,
+      "width": 65,
+      "height": 47,
+      "conf": 93.195183
+    },
+    {
+      "text": "على",
+      "line_num": 16,
+      "left": 997,
+      "top": 1265,
+      "width": 37,
+      "height": 47,
+      "conf": 93.261856
+    },
+    {
+      "text": "عادتها.",
+      "line_num": 16,
+      "left": 905,
+      "top": 1265,
+      "width": 82,
+      "height": 47,
+      "conf": 92.483482
+    },
+    {
+      "text": "عند",
+      "line_num": 16,
+      "left": 854,
+      "top": 1265,
+      "width": 36,
+      "height": 47,
+      "conf": 93.295341
+    },
+    {
+      "text": "الظهر",
+      "line_num": 16,
+      "left": 786,
+      "top": 1273,
+      "width": 58,
+      "height": 29,
+      "conf": 92.160805
+    },
+    {
+      "text": "يكون",
+      "line_num": 16,
+      "left": 725,
+      "top": 1268,
+      "width": 50,
+      "height": 39,
+      "conf": 91.916283
+    },
+    {
+      "text": "الخبز",
+      "line_num": 16,
+      "left": 650,
+      "top": 1273,
+      "width": 194,
+      "height": 29,
+      "conf": 90.38105
+    },
+    {
+      "text": "قد",
+      "line_num": 16,
+      "left": 618,
+      "top": 1268,
+      "width": 23,
+      "height": 39,
+      "conf": 93.21553
+    },
+    {
+      "text": "sai‏",
+      "line_num": 16,
+      "left": 571,
+      "top": 1268,
+      "width": 36,
+      "height": 39,
+      "conf": 49.437542
+    },
+    {
+      "text": "وسلال",
+      "line_num": 16,
+      "left": 489,
+      "top": 1268,
+      "width": 62,
+      "height": 39,
+      "conf": 91.686371
+    },
+    {
+      "text": "الورد",
+      "line_num": 16,
+      "left": 425,
+      "top": 1268,
+      "width": 48,
+      "height": 39,
+      "conf": 91.398178
+    },
+    {
+      "text": "قد",
+      "line_num": 16,
+      "left": 389,
+      "top": 1268,
+      "width": 24,
+      "height": 39,
+      "conf": 93.290009
+    },
+    {
+      "text": "فرغ",
+      "line_num": 16,
+      "left": 338,
+      "top": 1268,
+      "width": 37,
+      "height": 39,
+      "conf": 96.21994
+    },
+    {
+      "text": "نصفهاء",
+      "line_num": 16,
+      "left": 247,
+      "top": 1268,
+      "width": 77,
+      "height": 39,
+      "conf": 72.22065
+    },
+    {
+      "text": "وقرب",
+      "line_num": 17,
+      "left": 1388,
+      "top": 1323,
+      "width": 52,
+      "height": 27,
+      "conf": 92.993156
+    },
+    {
+      "text": "النافورة",
+      "line_num": 17,
+      "left": 1297,
+      "top": 1321,
+      "width": 79,
+      "height": 29,
+      "conf": 92.49144
+    },
+    {
+      "text": "تعزف",
+      "line_num": 17,
+      "left": 1228,
+      "top": 1323,
+      "width": 59,
+      "height": 27,
+      "conf": 91.415863
+    },
+    {
+      "text": "فرقة",
+      "line_num": 17,
+      "left": 1174,
+      "top": 1321,
+      "width": 44,
+      "height": 29,
+      "conf": 92.513603
+    },
+    {
+      "text": "موسيقية",
+      "line_num": 17,
+      "left": 1076,
+      "top": 1321,
+      "width": 88,
+      "height": 29,
+      "conf": 92.531876
+    },
+    {
+      "text": "صغيرة",
+      "line_num": 17,
+      "left": 992,
+      "top": 1324,
+      "width": 73,
+      "height": 26,
+      "conf": 92.26075
+    },
+    {
+      "text": "(خمسة",
+      "line_num": 17,
+      "left": 904,
+      "top": 1320,
+      "width": 76,
+      "height": 31,
+      "conf": 92.943787
+    },
+    {
+      "text": "معلمين",
+      "line_num": 17,
+      "left": 821,
+      "top": 1321,
+      "width": 72,
+      "height": 30,
+      "conf": 92.038147
+    },
+    {
+      "text": "متقاعدين).",
+      "line_num": 17,
+      "left": 693,
+      "top": 1320,
+      "width": 118,
+      "height": 31,
+      "conf": 91.12822
+    },
+    {
+      "text": "وفي",
+      "line_num": 17,
+      "left": 638,
+      "top": 1323,
+      "width": 44,
+      "height": 31,
+      "conf": 92.825478
+    },
+    {
+      "text": "الساعة",
+      "line_num": 17,
+      "left": 553,
+      "top": 1321,
+      "width": 73,
+      "height": 22,
+      "conf": 92.485573
+    },
+    {
+      "text": "الثانية",
+      "line_num": 17,
+      "left": 478,
+      "top": 1321,
+      "width": 63,
+      "height": 29,
+      "conf": 93.1436
+    },
+    {
+      "text": "بعد",
+      "line_num": 17,
+      "left": 434,
+      "top": 1330,
+      "width": 34,
+      "height": 20,
+      "conf": 93.299736
+    },
+    {
+      "text": "الظهرء",
+      "line_num": 17,
+      "left": 351,
+      "top": 1321,
+      "width": 69,
+      "height": 29,
+      "conf": 63.313187
+    },
+    {
+      "text": "تكون",
+      "line_num": 17,
+      "left": 287,
+      "top": 1321,
+      "width": 53,
+      "height": 29,
+      "conf": 91.930969
+    },
+    {
+      "text": "الشاحنات",
+      "line_num": 18,
+      "left": 1332,
+      "top": 1364,
+      "width": 106,
+      "height": 34,
+      "conf": 91.891785
+    },
+    {
+      "text": "قد",
+      "line_num": 18,
+      "left": 1301,
+      "top": 1360,
+      "width": 24,
+      "height": 42,
+      "conf": 93.288338
+    },
+    {
+      "text": "GLA‏",
+      "line_num": 18,
+      "left": 1233,
+      "top": 1360,
+      "width": 53,
+      "height": 42,
+      "conf": 58.336754
+    },
+    {
+      "text": "من",
+      "line_num": 18,
+      "left": 1185,
+      "top": 1360,
+      "width": 27,
+      "height": 42,
+      "conf": 93.273674
     },
     {
       "text": "جديد.",
-      "line_num": 3,
-      "left": 442,
-      "top": 1620,
+      "line_num": 18,
+      "left": 1111,
+      "top": 1360,
+      "width": 62,
+      "height": 42,
+      "conf": 91.894157
+    },
+    {
+      "text": "ومن",
+      "line_num": 19,
+      "left": 1399,
+      "top": 1452,
+      "width": 41,
+      "height": 20,
+      "conf": 96.833984
+    },
+    {
+      "text": "المقرر",
+      "line_num": 19,
+      "left": 1328,
+      "top": 1427,
+      "width": 59,
+      "height": 55,
+      "conf": 93.059593
+    },
+    {
+      "text": "عقد",
+      "line_num": 19,
+      "left": 1277,
+      "top": 1427,
+      "width": 39,
+      "height": 55,
+      "conf": 93.087906
+    },
+    {
+      "text": "جلسة",
+      "line_num": 19,
+      "left": 1211,
+      "top": 1443,
+      "width": 61,
+      "height": 29,
+      "conf": 92.160049
+    },
+    {
+      "text": "استماع",
+      "line_num": 19,
+      "left": 1116,
+      "top": 1443,
+      "width": 83,
+      "height": 29,
+      "conf": 92.160049
+    },
+    {
+      "text": "عامة",
+      "line_num": 19,
+      "left": 1058,
+      "top": 1443,
+      "width": 48,
+      "height": 22,
+      "conf": 92.951805
+    },
+    {
+      "text": "حول",
+      "line_num": 19,
+      "left": 1002,
+      "top": 1427,
+      "width": 39,
+      "height": 55,
+      "conf": 93.221054
+    },
+    {
+      "text": "خطة",
+      "line_num": 19,
+      "left": 947,
+      "top": 1427,
+      "width": 42,
+      "height": 55,
+      "conf": 92.990181
+    },
+    {
+      "text": "إغلاق",
+      "line_num": 19,
+      "left": 870,
+      "top": 1443,
+      "width": 59,
+      "height": 30,
+      "conf": 92.107101
+    },
+    {
+      "text": "الشوارع",
+      "line_num": 19,
+      "left": 772,
+      "top": 1443,
+      "width": 86,
+      "height": 29,
+      "conf": 91.696014
+    },
+    {
+      "text": "يوم",
+      "line_num": 19,
+      "left": 729,
+      "top": 1455,
+      "width": 33,
+      "height": 23,
+      "conf": 93.266991
+    },
+    {
+      "text": "الخميس",
+      "line_num": 19,
+      "left": 630,
+      "top": 1443,
+      "width": 87,
+      "height": 29,
+      "conf": 92.93177
+    },
+    {
+      "text": "14",
+      "line_num": 19,
+      "left": 588,
+      "top": 1443,
+      "width": 31,
+      "height": 23,
+      "conf": 93.26387
+    },
+    {
+      "text": "مارسء",
+      "line_num": 19,
+      "left": 504,
+      "top": 1443,
+      "width": 70,
+      "height": 29,
+      "conf": 79.242722
+    },
+    {
+      "text": "في",
+      "line_num": 19,
+      "left": 459,
+      "top": 1445,
+      "width": 33,
+      "height": 31,
+      "conf": 93.305878
+    },
+    {
+      "text": "الساعة",
+      "line_num": 19,
+      "left": 374,
+      "top": 1443,
+      "width": 73,
+      "height": 22,
+      "conf": 93.055206
+    },
+    {
+      "text": "7",
+      "line_num": 19,
+      "left": 347,
+      "top": 1443,
+      "width": 15,
+      "height": 23,
+      "conf": 93.120354
+    },
+    {
+      "text": "مساءًء",
+      "line_num": 19,
+      "left": 271,
+      "top": 1441,
       "width": 64,
-      "height": 54,
-      "conf": 93.067001
+      "height": 24,
+      "conf": 63.386398
+    },
+    {
+      "text": "في",
+      "line_num": 19,
+      "left": 226,
+      "top": 1445,
+      "width": 33,
+      "height": 31,
+      "conf": 93.297455
+    },
+    {
+      "text": "القاعة",
+      "line_num": 20,
+      "left": 1377,
+      "top": 1491,
+      "width": 61,
+      "height": 22,
+      "conf": 92.728119
+    },
+    {
+      "text": "204",
+      "line_num": 20,
+      "left": 1314,
+      "top": 1491,
+      "width": 52,
+      "height": 23,
+      "conf": 95.992912
+    },
+    {
+      "text": "بمبنى",
+      "line_num": 20,
+      "left": 1240,
+      "top": 1495,
+      "width": 64,
+      "height": 25,
+      "conf": 93.016922
+    },
+    {
+      "text": "البلدية.",
+      "line_num": 20,
+      "left": 1155,
+      "top": 1491,
+      "width": 73,
+      "height": 29,
+      "conf": 92.745682
+    },
+    {
+      "text": "Laity‏",
+      "line_num": 20,
+      "left": 1087,
+      "top": 1482,
+      "width": 57,
+      "height": 38,
+      "conf": 10.4949
+    },
+    {
+      "text": "الملاحظات",
+      "line_num": 20,
+      "left": 970,
+      "top": 1491,
+      "width": 106,
+      "height": 24,
+      "conf": 92.158768
+    },
+    {
+      "text": "المكتوبة",
+      "line_num": 20,
+      "left": 882,
+      "top": 1491,
+      "width": 76,
+      "height": 29,
+      "conf": 92.028893
+    },
+    {
+      "text": "لدى",
+      "line_num": 20,
+      "left": 831,
+      "top": 1491,
+      "width": 41,
+      "height": 30,
+      "conf": 92.879417
+    },
+    {
+      "text": "مكتب",
+      "line_num": 20,
+      "left": 763,
+      "top": 1491,
+      "width": 58,
+      "height": 29,
+      "conf": 92.861977
+    },
+    {
+      "text": "السكرتارية",
+      "line_num": 20,
+      "left": 636,
+      "top": 1491,
+      "width": 115,
+      "height": 29,
+      "conf": 90.909615
+    },
+    {
+      "text": "حتى",
+      "line_num": 20,
+      "left": 576,
+      "top": 1494,
+      "width": 50,
+      "height": 26,
+      "conf": 93.105103
+    },
+    {
+      "text": "نهاية",
+      "line_num": 20,
+      "left": 514,
+      "top": 1491,
+      "width": 52,
+      "height": 29,
+      "conf": 92.938179
+    },
+    {
+      "text": "الشهر.",
+      "line_num": 20,
+      "left": 428,
+      "top": 1491,
+      "width": 74,
+      "height": 29,
+      "conf": 92.28054
     },
     {
       "text": "OCR",
-      "line_num": 1,
+      "line_num": 21,
       "left": 665,
       "top": 1890,
       "width": 52,
       "height": 18,
-      "conf": 96.556862
+      "conf": 96.598625
     },
     {
       "text": "Test:",
-      "line_num": 1,
+      "line_num": 21,
       "left": 728,
       "top": 1891,
       "width": 49,
       "height": 17,
-      "conf": 96.556862
+      "conf": 96.598625
     },
     {
       "text": "arabic",
-      "line_num": 1,
+      "line_num": 21,
       "left": 785,
       "top": 1891,
       "width": 66,
       "height": 17,
-      "conf": 96.940727
+      "conf": 96.896446
     },
     {
       "text": "(single,",
-      "line_num": 1,
+      "line_num": 21,
       "left": 859,
       "top": 1890,
       "width": 74,
       "height": 23,
-      "conf": 92.832672
+      "conf": 92.836288
     },
     {
       "text": "rtl)",
-      "line_num": 1,
+      "line_num": 21,
       "left": 943,
       "top": 1890,
       "width": 27,
       "height": 23,
-      "conf": 89.595711
+      "conf": 90.155022
     }
   ]
 }

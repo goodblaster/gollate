@@ -3,6 +3,7 @@ package sorters
 import (
 	"regexp"
 	"strings"
+	"unicode/utf8"
 
 	"github.com/goodblaster/gollate/pkg/language"
 )
@@ -20,14 +21,17 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 		line.WriteString(block.Text)
 
 		// Only add space if the next block exists and is not a line separator
-		if i < len(blocks)-1 && blocks[i+1].Engine() != "" {
-			// Delegate spacing decision to language handler
-			if handler.NeedsSpaceBetween(block.Text, blocks[i+1].Text) {
+		if i < len(blocks)-1 && !blocks[i+1].IsSeparator() {
+			if sep, joined := compoundJoin(block, blocks[i+1]); joined {
+				// Pieces of one OCR word: restore what joined them.
+				line.WriteString(sep)
+			} else if handler.NeedsSpaceBetween(block.Text, blocks[i+1].Text) {
+				// Delegate spacing decision to language handler
 				line.WriteByte(' ')
 			}
 		}
 
-		if block.Engine() == "" || i == len(blocks)-1 {
+		if block.IsSeparator() || i == len(blocks)-1 {
 			trimmed := strings.TrimSpace(line.String())
 			// Always append lines, including empty ones (blank canonical lines)
 			// This preserves paragraph structure from the canonical text
@@ -37,6 +41,10 @@ func convertBlocksToLines(blocks []Block, handler language.Handler) []string {
 	}
 	return lines
 }
+
+// trailingInitialismRe matches text ending in an initialism: one or more
+// capital letters each followed by a period (e.g. "U.S.", "A.M.").
+var trailingInitialismRe = regexp.MustCompile(`\b[A-Z]\.([A-Z]\.)*$`)
 
 // endsWithSentencePunctuation checks if text ends with sentence-ending punctuation.
 //
@@ -53,8 +61,10 @@ func endsWithSentencePunctuation(text string) bool {
 		return false
 	}
 
-	// Check last rune for sentence-ending punctuation
-	lastRune := rune(text[len(text)-1])
+	// Check last rune for sentence-ending punctuation. Decode it properly:
+	// taking the last byte never equals a multi-byte CJK mark, which made
+	// every CJK check below unreachable.
+	lastRune, _ := utf8.DecodeLastRuneInString(text)
 
 	// CJK sentence-ending punctuation (always sentence-ending, no abbreviations in CJK)
 	if lastRune == '\u3002' || // 。 Ideographic full stop
@@ -75,8 +85,7 @@ func endsWithSentencePunctuation(text string) bool {
 
 	// Exclude common initialisms/abbreviations
 	// Pattern: One or more capital letters followed by periods (e.g., "U.S.", "Ph.D.", "A.M.")
-	initialismPattern := regexp.MustCompile(`\b[A-Z]\.([A-Z]\.)*$`)
-	if initialismPattern.MatchString(text) {
+	if trailingInitialismRe.MatchString(text) {
 		return false
 	}
 

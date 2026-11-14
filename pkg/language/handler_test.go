@@ -229,3 +229,41 @@ func TestTokenize(t *testing.T) {
 		})
 	}
 }
+
+// Ordinary CJK prose is full of Arabic numerals, fullwidth punctuation and
+// the odd Latin term. None of that may tip it out of per-character
+// tokenization.
+func TestDetectIgnoresDigitsAndPunctuation(t *testing.T) {
+	tests := []struct {
+		name, text, want string
+	}{
+		{"japanese with numbers", "2023年の調査によると、通常の週末には約12,000人が訪れ、38%多い（午前9時15分）。", "CJK"},
+		{"chinese with numbers", "根据市政府2023年的调查，市场在普通周末能吸引约12000名顾客，高出38%。", "CJK"},
+		{"spanish with accents", "El médico español trabaja en el hospital público todos los días.", "English"},
+		{"english with numbers", "Fees rose from $35 to $50 on 03/14/2024 (a 42.8% jump).", "English"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Detect(tt.text).Name(); got != tt.want {
+				t.Errorf("Detect = %s, want %s", got, tt.want)
+			}
+		})
+	}
+}
+
+// A stated language outranks script statistics.
+func TestForLanguage(t *testing.T) {
+	mostlyLatin := "iPhone 15 Pro Max の新しい USB-C ポート"
+	if got := Detect(mostlyLatin).Name(); got == "CJK" {
+		t.Fatalf("test premise broken: detection alone picked CJK")
+	}
+	if got := ForLanguage("japanese", mostlyLatin).Name(); got != "CJK" {
+		t.Errorf("ForLanguage(japanese) = %s, want CJK", got)
+	}
+	if got := ForLanguage("", "Hello world").Name(); got != "English" {
+		t.Errorf("ForLanguage(\"\") = %s, want English (detected)", got)
+	}
+	if got := ForLanguage("english", "維基百科是一個多語言").Name(); got != "CJK" {
+		t.Errorf("ForLanguage(english) on Chinese text = %s, want CJK (detected)", got)
+	}
+}

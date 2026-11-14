@@ -5,7 +5,7 @@ import (
 	"math"
 	"sort"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 // chainBuildResult contains the result of building a candidate block chain.
@@ -73,14 +73,12 @@ func (s *Sorter) initializePathfinding() {
 	s.candidatePaths = nil
 	s.shortest = math.MaxFloat64
 	s.perm = 0
+	s.limitHit = false
 }
 
 // getPassPermutationLimit returns the permutation limit for the current pass.
 func (s *Sorter) getPassPermutationLimit() int {
-	if s.config.PermutationsPerPass == 0 {
-		return s.config.MaxPermutations
-	}
-	return s.config.PermutationsPerPass
+	return s.config.PermutationLimit()
 }
 
 // shouldExitPassLoop determines if we should exit the multi-pass loop.
@@ -121,10 +119,12 @@ func (s *Sorter) applyPrecurseOptimization(chain [][]Block, passPermutations int
 
 	// If we found a viable starting point, rotate the first word options to start there
 	if bestStartIndex > -1 {
-		rotatePos, _ := slices.BinarySearchFunc(chain[0], Block{Index: bestStartIndex}, func(a, b Block) int {
-			return cmp.Compare(a.Index, b.Index)
+		rotatePos, _ := slices.BinarySearchFunc(chain[0], bestStartIndex, func(b Block, index int) int {
+			return cmp.Compare(b.Index, index)
 		})
-		chain[0] = append(chain[0][rotatePos:], chain[0][:rotatePos]...)
+		// Fresh slice: chain[0] aliases s.mapped's backing array, which an
+		// in-place append could scribble past.
+		chain[0] = slices.Concat(chain[0][rotatePos:], chain[0][:rotatePos])
 	}
 
 	// Reset pathfinding state after precurse
@@ -138,6 +138,9 @@ func (s *Sorter) applyPrecurseOptimization(chain [][]Block, passPermutations int
 func (s *Sorter) findBestPathsForLine(chain [][]Block, passPermutations int) []Path {
 	// Recurse through the chain and find all valid paths
 	s.recurse(chain, Block{}, Path{}, 0, passPermutations, 0)
+	if s.limitHit {
+		s.metrics.PermutationLimitHits++
+	}
 
 	// Sort the found paths by length. Shortest is first and best.
 	sort.Slice(s.candidatePaths, func(i, j int) bool {

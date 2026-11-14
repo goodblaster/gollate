@@ -5,7 +5,7 @@ what the known algorithm issues are. Suite mechanics live in
 [testdata/ocr-tests/README.md](testdata/ocr-tests/README.md); this file is
 the context you'd otherwise have to rediscover.
 
-Last updated: 2026-07-05.
+Last updated: 2026-11-13.
 
 ## Quick reference
 
@@ -44,20 +44,102 @@ Ground rules (details in CLAUDE.md):
   baseline tolerance is a tight 0.05. If it flakes, someone reintroduced
   map-iteration-order dependence.
 
-## Where accuracy stands (suite, 2026-07-06, error-tolerance config promoted)
+## Where accuracy stands (suite, 2026-11-13, regenerated fixtures)
 
-| Language | Apple Vision | Tesseract | Notes |
-|---|---|---|---|
-| English (6 layouts incl. grid, sidebar) | 95–100% | 95–99% | grid (repeated short lines) 99.3/98.6 |
-| English/Spanish + synthetic noise (2–10%) | 78–98% | n/a | seeded misreads; measures error tolerance |
-| Spanish | 99–100% | 99–100% | accents handled by normalization alone |
-| Arabic (RTL) | 90–99.7% | 52–65% | short-line anchoring lifted Tesseract 5–11pts |
-| Chinese | 88–93% | 71–85% | holes enabled; noise fixtures 62–86% |
-| Japanese horizontal | 90–92% | 51–85% | |
-| Hindi | n/a (Vision unsupported) | 83–92% | hindi-three-column 47→88 (wrap bridging) |
-| Japanese vertical (2 fixtures) | ~0% (Vision can't read tategaki) | 66-74% | auto-detected via vertical.go + jpn_vert |
+| Language | Apple Vision | Tesseract | PDF text layer | Notes |
+|---|---|---|---|---|
+| English (8 layouts incl. grid, sidebar, justified, legal) | 99.5–100 | 98.0–100 | 99.3–100 | justified = hyphenated book page |
+| English/Spanish + synthetic noise (2–10%) | 89.8–97.8 | n/a | n/a | tracks OCR recall (90–98) |
+| Spanish | 99.2–99.5 | 99.2–99.8 | 99.5 | |
+| Arabic (RTL) | 99.7–100 | 79.6–87.8 | 93.0–100 | Tesseract recall is only 82–90 |
+| Chinese | 99.5–99.8 | 87.2–91.9 | 99.5–100 | Tesseract recall 90–92 |
+| Chinese + synthetic noise | 90.3–97.5 | n/a | n/a | monotone in noise now |
+| Japanese horizontal | 99.0–99.9 | 98.0–99.5 | 94.5–99.9 | |
+| Hindi | n/a (Vision unsupported) | 96.5–97.2 | 97.2–97.5 | |
+| Japanese vertical (3 fixtures) | ~0 (Vision can't read tategaki) | 97.7–98.5 | 99.9–100 | |
 
-Exact per-case numbers: `testdata/ocr-tests/baselines.json`.
+Exact per-case numbers: `testdata/ocr-tests/baselines.json`. Suite mean
+94.2 over 84 fixture/engine pairs (97.7 without the three Apple-vertical
+rows), against a mean OCR recall of 94.6 and a raw emit-order mean of 90.6.
+
+**These numbers are not comparable with anything dated before
+2026-11-13.** The fixtures were regenerated that day; see the next section.
+
+## 2026-11-13: fixture regeneration, and what it exposed
+
+The previous content was eight generic two-sentence paragraphs per
+language with no digits, dates, currency, percentages, abbreviations,
+quoted speech, parentheses or mixed script, and ~160 words in English and
+Spanish (english-three-column filled two of three columns). It is now a
+market feature article written per language with all of those, plus a
+literary passage with kanji numerals for vertical Japanese
+(`content/japanese-vertical.txt`) and a hyphenated, justified book page
+(`english-justified`).
+
+Two tooling bugs surfaced immediately, both of which had been corrupting
+or could corrupt fixtures:
+
+- **`tesseract-util` dropped the rest of a page at a word starting with
+  `"`.** It parsed Tesseract's TSV with `encoding/csv`. 103 of 359 words
+  survived on an English page with dialogue. Also, Tesseract's `line_num`
+  restarts per paragraph, so line ids collided across the page; they are
+  now a page-unique counter.
+- **`testdoc`'s overflow check missed text running into the bottom
+  margin**, i.e. through the footer. The committed hindi-single fixture
+  had been overflowing by 26px.
+
+Scored on the new fixtures before any sorter change, the suite averaged
+88.0 and many cases scored *below raw OCR emit order* — the sorter was
+making them worse. The fixes, in the order they landed, with suite-mean
+effect:
+
+1. **Pieces of a split paragraph were ordered by page position** (+2.0).
+   A paragraph that wraps into the next column continues above where it
+   left off, so its second half came out first. Now ordered by text
+   offset within the canonical line.
+2. **Compound tokens could not match** (`$4.2`, `6:30`, `12,000` are one
+   OCR word but two canonical tokens); split hyphenated words were never
+   re-joined in output; punctuation-only blocks were discarded.
+3. **The language hint did not select the tokenizer.** Detection counted
+   CJK characters over all runes; digits and punctuation pushed ordinary
+   Chinese/Japanese below the 80% threshold and onto whitespace
+   tokenization, silently disabling pathfinding.
+4. **Near-miss leftover lines were emitted after everything else** (+3.9).
+   Leftovers match canonical lines by exact containment, which one misread
+   defeats; the unmatched went last. Lightly noisy pages therefore scored
+   far below heavily noisy ones (Chinese 2% noise 52, 10% noise 78), and
+   Tesseract CJK and vertical Japanese sat 15–25 points under their emit
+   order. They are now placed by token overlap among the lines spanned by
+   their emit-order neighbors (`placeByNeighbors`).
+5. **CJK sentence endings were never detected** (last byte compared with
+   three-byte marks), so CJK paragraphs were never split.
+6. **Leftover split boundaries** were measured with a with-spaces length
+   in a space-stripped string.
+7. **Line-break hyphenation** (`ven-` / `dors`) is re-joined when the
+   result is a canonical word.
+
+Diagnostic habit worth keeping: for any low score, compare **OCR recall**
+(canonical units present anywhere in the blocks), **emit-order LCS**, and
+the **sorted score**. Sorted ≈ recall means the OCR is the limit. Sorted <
+emit order means the sorter is doing damage, which is how items 1 and 4
+were found.
+
+### What is still open after this pass
+
+- **Tesseract Arabic** sorts 1–2.5 points below its emit order (79.6–87.8
+  vs 80.8–90.2) and Tesseract recall there is only 82–90.
+- **chinese-two-column/tesseract** 90.8 vs emit 92.4, and the Chinese
+  noise fixtures 0.4–0.7 under emit: per-character CJK chaining picks
+  wrong instances of duplicate characters (issue 4 below). Five baselines
+  were hand-lowered by 0.1–0.7 when sentence splitting started feeding
+  it again.
+- **japanese-single/pdftext** 94.5 and **arabic-three-column/pdftext**
+  93.0 are the only text-layer cases under 97.
+- Per-character CJK pathfinding still finds few lines on clean pages
+  (chinese-single/apple: 1 line found); the high scores there come from
+  leftover assembly and placement.
+- A re-joined hyphenated word keeps only its first half's box, so a
+  highlight drawn from it misses the piece on the next line.
 
 ## Real-world case study: apple.com homepage
 
@@ -83,9 +165,10 @@ score. Findings:
   is the untried idea there — plus OCR misreads in the fine print
   (e.g. "1-800-MY-APPLE" mangled) that exceed the hole budget.
 
-## Known algorithm issues (diagnosed, unfixed) — the next targets
+## Known algorithm issues (history, 2026-07)
 
-These were established by experiment on 2026-07-04/05; don't re-derive them.
+These were established by experiment on 2026-07-04/05 on the old
+fixtures; don't re-derive them, but don't quote their numbers either.
 
 1. **Pass-loop early exit starves short lines.** Pass 0 skips lines shorter
    than `MinWordsForEarlyPasses` (16), but `shouldExitPassLoop`
@@ -237,6 +320,11 @@ Suggested order (historical): 5 → 1+2 together (+3 while in there) → 4.
   the old harness rendered a title/footer absent from canonical, hardcoded
   612x792 page dims, and passed no language config.
 - The tall-image slicer was originally the sibling `image-slicer` project
-  via a go.mod `replace`; it was inlined into `internal/imageslicer`
-  (2026-07-06) because that repo is unpublished and the replace made this
-  module unimportable downstream.
+  via a go.mod `replace`, then inlined, and now comes from the published
+  `github.com/goodblaster/vertigo/slicer` module.
+- **Hand-built unit tests can pass for the wrong reason.** Until
+  2026-11-13 a block with an empty `Extractor` made every pathfinding step
+  cost zero, and seven tests built their blocks without one — they
+  asserted on emit order, not sorting. If a geometry test passes
+  surprisingly easily, check that its blocks have page dimensions and
+  that the Arabic ones are actually laid out right to left.

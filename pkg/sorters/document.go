@@ -95,8 +95,12 @@ func (s *Sorter) Document() *Document {
 				Bounds:     blk.BoundingBox,
 				Confidence: blk.Confidence,
 			})
-			if i < len(run)-1 && s.handler.NeedsSpaceBetween(blk.Text, run[i+1].Text) {
-				text.WriteByte(' ')
+			if i < len(run)-1 {
+				if sep, joined := compoundJoin(blk, run[i+1]); joined {
+					text.WriteString(sep)
+				} else if s.handler.NeedsSpaceBetween(blk.Text, run[i+1].Text) {
+					text.WriteByte(' ')
+				}
 			}
 		}
 		para.Span.End = text.Len()
@@ -108,7 +112,7 @@ func (s *Sorter) Document() *Document {
 	// The sorter's native output separates lines with empty blocks; the
 	// document format replaces that in-band convention with structure.
 	for _, blk := range s.output {
-		if blk.Engine() == "" {
+		if blk.IsSeparator() {
 			flush()
 			continue
 		}
@@ -142,4 +146,18 @@ func unionBounds(tokens []Token) ocr.BoundingBox {
 		right = max(right, b.Left+b.Width)
 	}
 	return ocr.BoundingBox{Top: top, Left: left, Width: right - left, Height: bottom - top}
+}
+
+// compoundJoin reports whether next is the piece that directly followed blk
+// in the same OCR word (see normalizeOcrBlocks), and if so the separator
+// that originally joined them. Pieces that were sorted apart are not
+// re-joined.
+func compoundJoin(blk, next Block) (separator string, joined bool) {
+	if blk.HyphenAfter == "" || next.IsSeparator() {
+		return "", false
+	}
+	if next.OriginalIndex != blk.OriginalIndex || next.Index != blk.Index+1 {
+		return "", false
+	}
+	return blk.HyphenAfter, true
 }

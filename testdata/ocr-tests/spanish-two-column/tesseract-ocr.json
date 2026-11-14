@@ -2,1416 +2,3567 @@
   "words": [
     {
       "text": "El",
-      "line_num": 1,
+      "line_num": 0,
       "left": 379,
       "top": 218,
       "width": 51,
       "height": 46,
-      "conf": 96.943321
+      "conf": 96.96257
     },
     {
       "text": "Tejido",
-      "line_num": 1,
+      "line_num": 0,
       "left": 452,
       "top": 218,
       "width": 178,
       "height": 58,
-      "conf": 96.872948
+      "conf": 96.907478
     },
     {
       "text": "de",
-      "line_num": 1,
+      "line_num": 0,
       "left": 652,
       "top": 218,
       "width": 72,
       "height": 47,
-      "conf": 96.927017
+      "conf": 96.946114
     },
     {
       "text": "la",
-      "line_num": 1,
+      "line_num": 0,
       "left": 747,
       "top": 218,
       "width": 48,
       "height": 47,
-      "conf": 96.029442
+      "conf": 95.944763
     },
     {
       "text": "Vida",
-      "line_num": 1,
+      "line_num": 0,
       "left": 814,
       "top": 218,
       "width": 130,
       "height": 47,
-      "conf": 96.578247
+      "conf": 96.593513
     },
     {
       "text": "Cotidiana",
-      "line_num": 1,
+      "line_num": 0,
       "left": 966,
       "top": 217,
       "width": 288,
       "height": 48,
-      "conf": 96.729706
-    },
-    {
-      "text": "El",
-      "line_num": 1,
-      "left": 194,
-      "top": 349,
-      "width": 23,
-      "height": 23,
-      "conf": 96.59507
-    },
-    {
-      "text": "médico",
-      "line_num": 1,
-      "left": 229,
-      "top": 347,
-      "width": 104,
-      "height": 25,
-      "conf": 96.128273
-    },
-    {
-      "text": "español",
-      "line_num": 1,
-      "left": 343,
-      "top": 349,
-      "width": 110,
-      "height": 29,
-      "conf": 96.568771
-    },
-    {
-      "text": "trabaja",
-      "line_num": 1,
-      "left": 464,
-      "top": 349,
-      "width": 98,
-      "height": 29,
-      "conf": 96.598053
-    },
-    {
-      "text": "en",
-      "line_num": 1,
-      "left": 572,
-      "top": 355,
-      "width": 32,
-      "height": 17,
-      "conf": 96.997597
-    },
-    {
-      "text": "el",
-      "line_num": 1,
-      "left": 616,
-      "top": 349,
-      "width": 22,
-      "height": 23,
-      "conf": 96.385651
-    },
-    {
-      "text": "hospital",
-      "line_num": 1,
-      "left": 650,
-      "top": 349,
-      "width": 109,
-      "height": 29,
-      "conf": 96.904823
-    },
-    {
-      "text": "público",
-      "line_num": 2,
-      "left": 194,
-      "top": 395,
-      "width": 103,
-      "height": 31,
-      "conf": 96.782776
-    },
-    {
-      "text": "todos",
-      "line_num": 2,
-      "left": 307,
-      "top": 397,
-      "width": 80,
-      "height": 23,
-      "conf": 96.197868
-    },
-    {
-      "text": "los",
-      "line_num": 2,
-      "left": 399,
-      "top": 397,
-      "width": 39,
-      "height": 23,
-      "conf": 96.685547
-    },
-    {
-      "text": "días.",
-      "line_num": 2,
-      "left": 448,
-      "top": 395,
-      "width": 65,
-      "height": 25,
-      "conf": 96.733223
-    },
-    {
-      "text": "Su",
-      "line_num": 2,
-      "left": 526,
-      "top": 396,
-      "width": 35,
-      "height": 24,
-      "conf": 96.971703
-    },
-    {
-      "text": "dedicación",
-      "line_num": 2,
-      "left": 573,
-      "top": 395,
-      "width": 154,
-      "height": 25,
-      "conf": 96.525597
-    },
-    {
-      "text": "al",
-      "line_num": 2,
-      "left": 739,
-      "top": 397,
-      "width": 21,
-      "height": 23,
-      "conf": 96.723709
-    },
-    {
-      "text": "servicio",
-      "line_num": 3,
-      "left": 193,
-      "top": 445,
-      "width": 108,
-      "height": 23,
-      "conf": 96.673851
-    },
-    {
-      "text": "de",
-      "line_num": 3,
-      "left": 311,
-      "top": 445,
-      "width": 35,
-      "height": 23,
-      "conf": 96.992409
-    },
-    {
-      "text": "los",
-      "line_num": 3,
-      "left": 358,
-      "top": 445,
-      "width": 38,
-      "height": 23,
-      "conf": 96.982971
-    },
-    {
-      "text": "pacientes",
-      "line_num": 3,
-      "left": 408,
-      "top": 445,
-      "width": 136,
-      "height": 29,
-      "conf": 96.207962
-    },
-    {
-      "text": "es",
-      "line_num": 3,
-      "left": 554,
-      "top": 451,
-      "width": 32,
-      "height": 17,
-      "conf": 96.886002
-    },
-    {
-      "text": "verdaderamente",
-      "line_num": 4,
-      "left": 192,
-      "top": 493,
-      "width": 232,
-      "height": 23,
-      "conf": 96.381287
-    },
-    {
-      "text": "admirable.",
-      "line_num": 4,
-      "left": 435,
-      "top": 493,
-      "width": 147,
-      "height": 23,
-      "conf": 96.655342
-    },
-    {
-      "text": "La",
-      "line_num": 1,
-      "left": 194,
-      "top": 567,
-      "width": 33,
-      "height": 23,
-      "conf": 96.62043
-    },
-    {
-      "text": "tecnología",
-      "line_num": 1,
-      "left": 236,
-      "top": 565,
-      "width": 148,
-      "height": 32,
-      "conf": 96.318451
-    },
-    {
-      "text": "avanza",
-      "line_num": 1,
-      "left": 394,
-      "top": 573,
-      "width": 100,
-      "height": 17,
-      "conf": 96.617172
-    },
-    {
-      "text": "rápidamente",
-      "line_num": 1,
-      "left": 505,
-      "top": 565,
-      "width": 177,
-      "height": 31,
-      "conf": 96.745033
-    },
-    {
-      "text": "en",
-      "line_num": 1,
-      "left": 692,
-      "top": 573,
-      "width": 33,
-      "height": 17,
-      "conf": 97.001892
-    },
-    {
-      "text": "nuestra",
-      "line_num": 2,
-      "left": 194,
-      "top": 616,
-      "width": 104,
-      "height": 22,
-      "conf": 96.304459
-    },
-    {
-      "text": "época",
-      "line_num": 2,
-      "left": 308,
-      "top": 613,
-      "width": 88,
-      "height": 31,
-      "conf": 96.372253
-    },
-    {
-      "text": "moderna.",
-      "line_num": 2,
-      "left": 407,
-      "top": 615,
-      "width": 133,
-      "height": 23,
-      "conf": 95.517151
-    },
-    {
-      "text": "Las",
-      "line_num": 2,
-      "left": 554,
-      "top": 615,
-      "width": 47,
-      "height": 23,
-      "conf": 96.73587
-    },
-    {
-      "text": "innovaciones",
-      "line_num": 3,
-      "left": 194,
-      "top": 663,
-      "width": 185,
-      "height": 23,
-      "conf": 96.734283
-    },
-    {
-      "text": "transforman",
-      "line_num": 3,
-      "left": 389,
-      "top": 663,
-      "width": 170,
-      "height": 23,
-      "conf": 92.467628
-    },
-    {
-      "text": "la",
-      "line_num": 3,
-      "left": 572,
-      "top": 663,
-      "width": 22,
-      "height": 23,
-      "conf": 96.745689
-    },
-    {
-      "text": "manera",
-      "line_num": 3,
-      "left": 605,
-      "top": 669,
-      "width": 105,
-      "height": 17,
-      "conf": 96.398941
-    },
-    {
-      "text": "en",
-      "line_num": 3,
-      "left": 720,
-      "top": 669,
-      "width": 33,
-      "height": 17,
-      "conf": 96.746742
-    },
-    {
-      "text": "que",
-      "line_num": 4,
-      "left": 193,
-      "top": 717,
-      "width": 52,
-      "height": 23,
-      "conf": 96.813606
-    },
-    {
-      "text": "vivimos",
-      "line_num": 4,
-      "left": 255,
-      "top": 711,
-      "width": 107,
-      "height": 23,
-      "conf": 96.411156
-    },
-    {
-      "text": "y",
-      "line_num": 4,
-      "left": 372,
-      "top": 717,
-      "width": 15,
-      "height": 24,
-      "conf": 96.411156
-    },
-    {
-      "text": "trabajamos",
-      "line_num": 4,
-      "left": 397,
-      "top": 711,
-      "width": 159,
-      "height": 29,
-      "conf": 96.743973
-    },
-    {
-      "text": "cada",
-      "line_num": 4,
-      "left": 566,
-      "top": 711,
-      "width": 70,
-      "height": 23,
-      "conf": 96.533356
-    },
-    {
-      "text": "día.",
-      "line_num": 4,
-      "left": 646,
-      "top": 709,
-      "width": 49,
-      "height": 25,
-      "conf": 96.533356
-    },
-    {
-      "text": "Las",
-      "line_num": 1,
-      "left": 194,
-      "top": 787,
-      "width": 48,
-      "height": 23,
-      "conf": 96.987633
-    },
-    {
-      "text": "civilizaciones",
-      "line_num": 1,
-      "left": 253,
-      "top": 787,
-      "width": 186,
-      "height": 23,
-      "conf": 96.15947
-    },
-    {
-      "text": "antiguas",
-      "line_num": 1,
-      "left": 449,
-      "top": 787,
-      "width": 120,
-      "height": 30,
-      "conf": 96.732201
-    },
-    {
-      "text": "construyeron",
-      "line_num": 1,
-      "left": 580,
-      "top": 788,
-      "width": 184,
-      "height": 29,
-      "conf": 96.501183
-    },
-    {
-      "text": "monumentos",
-      "line_num": 2,
-      "left": 194,
-      "top": 836,
-      "width": 185,
-      "height": 22,
-      "conf": 96.654701
-    },
-    {
-      "text": "impresionantes.",
-      "line_num": 2,
-      "left": 391,
-      "top": 835,
-      "width": 222,
-      "height": 29,
-      "conf": 95.895073
-    },
-    {
-      "text": "Estas",
-      "line_num": 2,
-      "left": 627,
-      "top": 835,
-      "width": 76,
-      "height": 23,
-      "conf": 96.549934
-    },
-    {
-      "text": "estructuras",
-      "line_num": 3,
-      "left": 193,
-      "top": 884,
-      "width": 159,
-      "height": 22,
-      "conf": 96.575081
-    },
-    {
-      "text": "demuestran",
-      "line_num": 3,
-      "left": 362,
-      "top": 883,
-      "width": 168,
-      "height": 23,
-      "conf": 96.23835
-    },
-    {
-      "text": "la",
-      "line_num": 3,
-      "left": 543,
-      "top": 883,
-      "width": 22,
-      "height": 23,
-      "conf": 96.589577
-    },
-    {
-      "text": "creatividad",
-      "line_num": 3,
-      "left": 575,
-      "top": 883,
-      "width": 154,
-      "height": 23,
-      "conf": 96.449547
-    },
-    {
-      "text": "de",
-      "line_num": 3,
-      "left": 741,
-      "top": 883,
-      "width": 34,
-      "height": 23,
-      "conf": 96.714325
-    },
-    {
-      "text": "nuestros",
-      "line_num": 4,
-      "left": 194,
-      "top": 932,
-      "width": 120,
-      "height": 22,
-      "conf": 96.521843
-    },
-    {
-      "text": "antepasados.",
-      "line_num": 4,
-      "left": 325,
-      "top": 931,
-      "width": 190,
-      "height": 29,
-      "conf": 95.794205
-    },
-    {
-      "text": "La",
-      "line_num": 1,
-      "left": 194,
-      "top": 1005,
-      "width": 33,
-      "height": 23,
-      "conf": 96.603188
-    },
-    {
-      "text": "educación",
-      "line_num": 1,
-      "left": 237,
-      "top": 1003,
-      "width": 146,
-      "height": 25,
-      "conf": 96.781746
-    },
-    {
-      "text": "es",
-      "line_num": 1,
-      "left": 394,
-      "top": 1011,
-      "width": 32,
-      "height": 17,
-      "conf": 96.734421
-    },
-    {
-      "text": "fundamental",
-      "line_num": 1,
-      "left": 436,
-      "top": 1005,
-      "width": 175,
-      "height": 23,
-      "conf": 95.384918
-    },
-    {
-      "text": "para",
-      "line_num": 1,
-      "left": 624,
-      "top": 1011,
-      "width": 62,
-      "height": 23,
-      "conf": 96.903809
-    },
-    {
-      "text": "el",
-      "line_num": 1,
-      "left": 696,
-      "top": 1005,
-      "width": 22,
-      "height": 23,
-      "conf": 96.410141
-    },
-    {
-      "text": "progreso",
-      "line_num": 2,
-      "left": 194,
-      "top": 1059,
-      "width": 124,
-      "height": 24,
-      "conf": 96.716339
-    },
-    {
-      "text": "social.",
-      "line_num": 2,
-      "left": 329,
-      "top": 1053,
-      "width": 89,
-      "height": 23,
-      "conf": 96.810799
-    },
-    {
-      "text": "A",
-      "line_num": 2,
-      "left": 429,
-      "top": 1053,
-      "width": 21,
-      "height": 23,
-      "conf": 95.118942
-    },
-    {
-      "text": "través",
-      "line_num": 2,
-      "left": 459,
-      "top": 1051,
-      "width": 86,
-      "height": 25,
-      "conf": 95.118942
-    },
-    {
-      "text": "del",
-      "line_num": 2,
-      "left": 556,
-      "top": 1053,
-      "width": 40,
-      "height": 23,
-      "conf": 96.927086
-    },
-    {
-      "text": "aprendizaje",
-      "line_num": 2,
-      "left": 608,
-      "top": 1053,
-      "width": 162,
-      "height": 29,
-      "conf": 96.863762
-    },
-    {
-      "text": "adquirimos",
-      "line_num": 3,
-      "left": 193,
-      "top": 1101,
-      "width": 158,
-      "height": 29,
-      "conf": 96.111992
-    },
-    {
-      "text": "las",
-      "line_num": 3,
-      "left": 362,
-      "top": 1101,
-      "width": 38,
-      "height": 23,
-      "conf": 96.336761
-    },
-    {
-      "text": "herramientas",
-      "line_num": 3,
-      "left": 411,
-      "top": 1101,
-      "width": 184,
-      "height": 23,
-      "conf": 96.28479
-    },
-    {
-      "text": "para",
-      "line_num": 3,
-      "left": 606,
-      "top": 1107,
-      "width": 62,
-      "height": 23,
-      "conf": 96.920212
-    },
-    {
-      "text": "mejorar",
-      "line_num": 4,
-      "left": 194,
-      "top": 1149,
-      "width": 107,
-      "height": 29,
-      "conf": 96.54702
-    },
-    {
-      "text": "nuestras",
-      "line_num": 4,
-      "left": 311,
-      "top": 1150,
-      "width": 120,
-      "height": 22,
-      "conf": 96.743301
-    },
-    {
-      "text": "comunidades.",
-      "line_num": 4,
-      "left": 442,
-      "top": 1149,
-      "width": 199,
-      "height": 23,
-      "conf": 96.481659
-    },
-    {
-      "text": "La",
-      "line_num": 1,
-      "left": 194,
-      "top": 1223,
-      "width": 33,
-      "height": 23,
-      "conf": 96.906929
-    },
-    {
-      "text": "naturaleza",
-      "line_num": 1,
-      "left": 238,
-      "top": 1223,
-      "width": 145,
-      "height": 23,
-      "conf": 96.661499
-    },
-    {
-      "text": "proporciona",
-      "line_num": 1,
-      "left": 394,
-      "top": 1223,
-      "width": 170,
-      "height": 29,
-      "conf": 96.596603
-    },
-    {
-      "text": "belleza",
-      "line_num": 1,
-      "left": 576,
-      "top": 1223,
-      "width": 97,
-      "height": 23,
-      "conf": 96.858459
-    },
-    {
-      "text": "y",
-      "line_num": 1,
-      "left": 683,
-      "top": 1229,
-      "width": 15,
-      "height": 24,
-      "conf": 97.015427
-    },
-    {
-      "text": "recursos",
-      "line_num": 2,
-      "left": 194,
-      "top": 1277,
-      "width": 120,
-      "height": 17,
-      "conf": 96.190704
-    },
-    {
-      "text": "esenciales.",
-      "line_num": 2,
-      "left": 325,
-      "top": 1271,
-      "width": 155,
-      "height": 23,
-      "conf": 96.190704
-    },
-    {
-      "text": "Proteger",
-      "line_num": 2,
-      "left": 494,
-      "top": 1271,
-      "width": 121,
-      "height": 30,
-      "conf": 95.997505
-    },
-    {
-      "text": "el",
-      "line_num": 2,
-      "left": 624,
-      "top": 1271,
-      "width": 22,
-      "height": 23,
-      "conf": 96.560455
-    },
-    {
-      "text": "medio",
-      "line_num": 2,
-      "left": 658,
-      "top": 1271,
-      "width": 87,
-      "height": 23,
-      "conf": 96.78334
-    },
-    {
-      "text": "ambiente",
-      "line_num": 3,
-      "left": 193,
-      "top": 1319,
-      "width": 131,
-      "height": 23,
-      "conf": 95.819885
-    },
-    {
-      "text": "garantiza",
-      "line_num": 3,
-      "left": 335,
-      "top": 1319,
-      "width": 129,
-      "height": 30,
-      "conf": 96.878731
-    },
-    {
-      "text": "un",
-      "line_num": 3,
-      "left": 475,
-      "top": 1325,
-      "width": 32,
-      "height": 17,
-      "conf": 96.70784
-    },
-    {
-      "text": "futuro",
-      "line_num": 3,
-      "left": 518,
-      "top": 1319,
-      "width": 83,
-      "height": 23,
-      "conf": 96.817993
-    },
-    {
-      "text": "mejor",
-      "line_num": 3,
-      "left": 612,
-      "top": 1319,
-      "width": 79,
-      "height": 29,
-      "conf": 96.903038
-    },
-    {
-      "text": "para",
-      "line_num": 3,
-      "left": 702,
-      "top": 1325,
-      "width": 62,
-      "height": 23,
-      "conf": 96.662506
-    },
-    {
-      "text": "todos.",
-      "line_num": 4,
-      "left": 192,
-      "top": 1367,
-      "width": 88,
-      "height": 23,
-      "conf": 96.530571
-    },
-    {
-      "text": "La",
-      "line_num": 1,
-      "left": 194,
-      "top": 1443,
-      "width": 33,
-      "height": 23,
-      "conf": 96.487831
-    },
-    {
-      "text": "comunicación",
-      "line_num": 1,
-      "left": 237,
-      "top": 1441,
-      "width": 197,
-      "height": 25,
-      "conf": 96.631187
-    },
-    {
-      "text": "une",
-      "line_num": 1,
-      "left": 447,
-      "top": 1449,
-      "width": 50,
-      "height": 17,
-      "conf": 96.950233
-    },
-    {
-      "text": "diferentes",
-      "line_num": 1,
-      "left": 508,
-      "top": 1443,
-      "width": 139,
-      "height": 23,
-      "conf": 96.299255
-    },
-    {
-      "text": "culturas",
-      "line_num": 1,
-      "left": 658,
-      "top": 1443,
-      "width": 112,
-      "height": 23,
-      "conf": 96.946907
-    },
-    {
-      "text": "y",
-      "line_num": 2,
-      "left": 192,
-      "top": 1497,
-      "width": 16,
-      "height": 24,
-      "conf": 96.988754
-    },
-    {
-      "text": "pueblos.",
-      "line_num": 2,
-      "left": 219,
-      "top": 1491,
-      "width": 119,
-      "height": 29,
-      "conf": 96.787209
-    },
-    {
-      "text": "El",
-      "line_num": 2,
-      "left": 351,
-      "top": 1491,
-      "width": 23,
-      "height": 23,
-      "conf": 96.817368
-    },
-    {
-      "text": "lenguaje",
-      "line_num": 2,
-      "left": 387,
-      "top": 1491,
-      "width": 117,
-      "height": 30,
-      "conf": 96.537048
-    },
-    {
-      "text": "nos",
-      "line_num": 2,
-      "left": 515,
-      "top": 1497,
-      "width": 50,
-      "height": 17,
-      "conf": 96.494896
-    },
-    {
-      "text": "permite",
-      "line_num": 2,
-      "left": 576,
-      "top": 1491,
-      "width": 106,
-      "height": 29,
-      "conf": 96.951637
-    },
-    {
-      "text": "compartir",
-      "line_num": 3,
-      "left": 193,
-      "top": 1539,
-      "width": 137,
-      "height": 29,
-      "conf": 96.365646
-    },
-    {
-      "text": "ideas",
-      "line_num": 3,
-      "left": 341,
-      "top": 1539,
-      "width": 73,
-      "height": 23,
-      "conf": 96.815392
-    },
-    {
-      "text": "y",
-      "line_num": 3,
-      "left": 424,
-      "top": 1545,
-      "width": 15,
-      "height": 24,
-      "conf": 96.966576
-    },
-    {
-      "text": "construir",
-      "line_num": 3,
-      "left": 450,
-      "top": 1539,
-      "width": 124,
-      "height": 23,
-      "conf": 96.627319
-    },
-    {
-      "text": "puentes",
-      "line_num": 3,
-      "left": 585,
-      "top": 1540,
-      "width": 112,
-      "height": 28,
-      "conf": 96.698578
-    },
-    {
-      "text": "de",
-      "line_num": 3,
-      "left": 708,
-      "top": 1539,
-      "width": 35,
-      "height": 23,
-      "conf": 96.966003
-    },
-    {
-      "text": "entendimiento.",
-      "line_num": 4,
-      "left": 193,
-      "top": 1587,
-      "width": 209,
-      "height": 23,
-      "conf": 96.592316
-    },
-    {
-      "text": "La",
-      "line_num": 1,
-      "left": 194,
-      "top": 1661,
-      "width": 33,
-      "height": 23,
-      "conf": 96.784966
-    },
-    {
-      "text": "ciencia",
-      "line_num": 1,
-      "left": 237,
-      "top": 1661,
-      "width": 99,
-      "height": 23,
-      "conf": 96.784966
-    },
-    {
-      "text": "revela",
-      "line_num": 1,
-      "left": 347,
-      "top": 1661,
-      "width": 83,
-      "height": 23,
-      "conf": 96.342468
-    },
-    {
-      "text": "los",
-      "line_num": 1,
-      "left": 441,
-      "top": 1661,
-      "width": 39,
-      "height": 23,
-      "conf": 96.936317
-    },
-    {
-      "text": "misterios",
-      "line_num": 1,
-      "left": 491,
-      "top": 1661,
-      "width": 127,
-      "height": 23,
-      "conf": 96.746216
-    },
-    {
-      "text": "del",
-      "line_num": 1,
-      "left": 629,
-      "top": 1661,
-      "width": 40,
-      "height": 23,
-      "conf": 96.901863
-    },
-    {
-      "text": "universo",
-      "line_num": 2,
-      "left": 194,
-      "top": 1709,
-      "width": 118,
-      "height": 23,
-      "conf": 96.500366
-    },
-    {
-      "text": "gradualmente.",
-      "line_num": 2,
-      "left": 323,
-      "top": 1709,
-      "width": 202,
-      "height": 30,
-      "conf": 96.554939
+      "conf": 96.663841
     },
     {
       "text": "Cada",
-      "line_num": 2,
-      "left": 538,
-      "top": 1708,
+      "line_num": 1,
+      "left": 193,
+      "top": 348,
       "width": 75,
-      "height": 25,
-      "conf": 96.15493
-    },
-    {
-      "text": "descubrimiento",
-      "line_num": 3,
-      "left": 193,
-      "top": 1757,
-      "width": 220,
-      "height": 23,
-      "conf": 96.683212
-    },
-    {
-      "text": "abre",
-      "line_num": 3,
-      "left": 423,
-      "top": 1757,
-      "width": 62,
-      "height": 23,
-      "conf": 96.778107
-    },
-    {
-      "text": "nuevas",
-      "line_num": 3,
-      "left": 497,
-      "top": 1763,
-      "width": 99,
-      "height": 17,
-      "conf": 96.846008
-    },
-    {
-      "text": "preguntas",
-      "line_num": 3,
-      "left": 608,
-      "top": 1758,
-      "width": 140,
-      "height": 29,
-      "conf": 96.456345
-    },
-    {
-      "text": "y",
-      "line_num": 3,
-      "left": 758,
-      "top": 1763,
-      "width": 16,
       "height": 24,
-      "conf": 96.831505
+      "conf": 96.749756
     },
     {
-      "text": "caminos",
-      "line_num": 4,
-      "left": 193,
-      "top": 1805,
-      "width": 119,
-      "height": 23,
-      "conf": 96.828865
-    },
-    {
-      "text": "para",
-      "line_num": 4,
-      "left": 324,
-      "top": 1811,
-      "width": 62,
-      "height": 23,
-      "conf": 96.785431
-    },
-    {
-      "text": "la",
-      "line_num": 4,
-      "left": 397,
-      "top": 1805,
-      "width": 22,
-      "height": 23,
-      "conf": 96.750519
-    },
-    {
-      "text": "exploración.",
-      "line_num": 4,
-      "left": 429,
-      "top": 1803,
-      "width": 172,
-      "height": 31,
-      "conf": 96.825035
-    },
-    {
-      "text": "El",
+      "text": "sábado",
       "line_num": 1,
-      "left": 850,
-      "top": 349,
-      "width": 23,
-      "height": 23,
-      "conf": 96.998909
-    },
-    {
-      "text": "arte",
-      "line_num": 1,
-      "left": 884,
-      "top": 350,
-      "width": 54,
-      "height": 22,
-      "conf": 96.775177
-    },
-    {
-      "text": "expresa",
-      "line_num": 1,
-      "left": 948,
-      "top": 355,
-      "width": 112,
-      "height": 23,
-      "conf": 96.602646
-    },
-    {
-      "text": "emociones",
-      "line_num": 1,
-      "left": 1071,
-      "top": 349,
-      "width": 154,
-      "height": 23,
-      "conf": 96.584145
-    },
-    {
-      "text": "más",
-      "line_num": 1,
-      "left": 1237,
+      "left": 278,
       "top": 347,
-      "width": 58,
+      "width": 105,
       "height": 25,
-      "conf": 96.96978
+      "conf": 96.318626
     },
     {
-      "text": "allá",
+      "text": "a",
       "line_num": 1,
-      "left": 1305,
-      "top": 347,
-      "width": 48,
-      "height": 25,
-      "conf": 96.731239
+      "left": 386,
+      "top": 343,
+      "width": 13,
+      "height": 37,
+      "conf": 96.137749
+    },
+    {
+      "text": "las",
+      "line_num": 1,
+      "left": 421,
+      "top": 349,
+      "width": 37,
+      "height": 23,
+      "conf": 96.137749
+    },
+    {
+      "text": "6:30",
+      "line_num": 1,
+      "left": 469,
+      "top": 349,
+      "width": 60,
+      "height": 23,
+      "conf": 96.849754
     },
     {
       "text": "de",
       "line_num": 1,
-      "left": 1363,
+      "left": 540,
       "top": 349,
-      "width": 34,
+      "width": 35,
       "height": 23,
-      "conf": 97.015511
+      "conf": 96.58931
     },
     {
-      "text": "las",
-      "line_num": 2,
-      "left": 850,
-      "top": 397,
-      "width": 37,
+      "text": "la",
+      "line_num": 1,
+      "left": 587,
+      "top": 349,
+      "width": 21,
       "height": 23,
-      "conf": 96.851967
+      "conf": 96.873604
     },
     {
-      "text": "palabras.",
-      "line_num": 2,
-      "left": 899,
-      "top": 397,
-      "width": 128,
-      "height": 29,
-      "conf": 96.636093
+      "text": "mañana,",
+      "line_num": 1,
+      "left": 619,
+      "top": 349,
+      "width": 119,
+      "height": 27,
+      "conf": 96.238792
     },
     {
-      "text": "Las",
+      "text": "mucho",
       "line_num": 2,
-      "left": 1041,
+      "left": 194,
       "top": 397,
-      "width": 47,
+      "width": 95,
       "height": 23,
-      "conf": 96.891167
+      "conf": 95.041763
     },
     {
-      "text": "obras",
+      "text": "antes",
       "line_num": 2,
-      "left": 1099,
-      "top": 397,
-      "width": 79,
-      "height": 23,
-      "conf": 96.727989
-    },
-    {
-      "text": "creativas",
-      "line_num": 2,
-      "left": 1189,
-      "top": 397,
-      "width": 126,
-      "height": 23,
-      "conf": 96.445358
-    },
-    {
-      "text": "inspiran",
-      "line_num": 2,
-      "left": 1327,
-      "top": 397,
-      "width": 109,
-      "height": 29,
-      "conf": 96.758308
-    },
-    {
-      "text": "y",
-      "line_num": 3,
-      "left": 848,
-      "top": 451,
-      "width": 16,
-      "height": 24,
-      "conf": 96.977478
-    },
-    {
-      "text": "desafían",
-      "line_num": 3,
-      "left": 874,
-      "top": 443,
-      "width": 118,
-      "height": 25,
-      "conf": 96.463684
-    },
-    {
-      "text": "nuestra",
-      "line_num": 3,
-      "left": 1005,
-      "top": 446,
-      "width": 104,
+      "left": 300,
+      "top": 398,
+      "width": 77,
       "height": 22,
-      "conf": 96.922318
+      "conf": 96.758018
     },
     {
-      "text": "percepción",
+      "text": "de",
+      "line_num": 2,
+      "left": 387,
+      "top": 397,
+      "width": 35,
+      "height": 23,
+      "conf": 96.467941
+    },
+    {
+      "text": "que",
+      "line_num": 2,
+      "left": 432,
+      "top": 403,
+      "width": 53,
+      "height": 23,
+      "conf": 96.309769
+    },
+    {
+      "text": "lleguen",
+      "line_num": 2,
+      "left": 496,
+      "top": 397,
+      "width": 99,
+      "height": 30,
+      "conf": 96.62957
+    },
+    {
+      "text": "los",
+      "line_num": 2,
+      "left": 608,
+      "top": 397,
+      "width": 38,
+      "height": 23,
+      "conf": 96.471581
+    },
+    {
+      "text": "primeros",
+      "line_num": 2,
+      "left": 658,
+      "top": 397,
+      "width": 123,
+      "height": 29,
+      "conf": 96.351646
+    },
+    {
+      "text": "clientes,",
       "line_num": 3,
-      "left": 1120,
-      "top": 443,
-      "width": 156,
-      "height": 31,
-      "conf": 96.92765
+      "left": 193,
+      "top": 445,
+      "width": 115,
+      "height": 27,
+      "conf": 96.736679
+    },
+    {
+      "text": "los",
+      "line_num": 3,
+      "left": 322,
+      "top": 445,
+      "width": 38,
+      "height": 23,
+      "conf": 95.762726
+    },
+    {
+      "text": "vendedores",
+      "line_num": 3,
+      "left": 370,
+      "top": 445,
+      "width": 167,
+      "height": 23,
+      "conf": 95.762726
     },
     {
       "text": "del",
       "line_num": 3,
-      "left": 1288,
+      "left": 547,
       "top": 445,
-      "width": 40,
+      "width": 41,
       "height": 23,
-      "conf": 96.687691
+      "conf": 96.731598
     },
     {
-      "text": "mundo.",
-      "line_num": 4,
-      "left": 850,
-      "top": 493,
-      "width": 105,
+      "text": "Mercado",
+      "line_num": 3,
+      "left": 601,
+      "top": 445,
+      "width": 123,
       "height": 23,
-      "conf": 96.590714
+      "conf": 96.532608
+    },
+    {
+      "text": "de",
+      "line_num": 3,
+      "left": 735,
+      "top": 445,
+      "width": 35,
+      "height": 23,
+      "conf": 96.714653
+    },
+    {
+      "text": "la",
+      "line_num": 4,
+      "left": 194,
+      "top": 493,
+      "width": 22,
+      "height": 23,
+      "conf": 96.996796
+    },
+    {
+      "text": "Ribera",
+      "line_num": 4,
+      "left": 228,
+      "top": 493,
+      "width": 90,
+      "height": 23,
+      "conf": 96.631287
+    },
+    {
+      "text": "empiezan",
+      "line_num": 4,
+      "left": 328,
+      "top": 493,
+      "width": 135,
+      "height": 29,
+      "conf": 96.620712
+    },
+    {
+      "text": "a",
+      "line_num": 4,
+      "left": 475,
+      "top": 499,
+      "width": 16,
+      "height": 17,
+      "conf": 96.873459
+    },
+    {
+      "text": "descargar",
+      "line_num": 4,
+      "left": 501,
+      "top": 493,
+      "width": 142,
+      "height": 30,
+      "conf": 96.244675
+    },
+    {
+      "text": "sus",
+      "line_num": 4,
+      "left": 652,
+      "top": 499,
+      "width": 48,
+      "height": 17,
+      "conf": 96.244675
+    },
+    {
+      "text": "camionetas.",
+      "line_num": 5,
+      "left": 193,
+      "top": 541,
+      "width": 171,
+      "height": 23,
+      "conf": 96.3433
+    },
+    {
+      "text": "El",
+      "line_num": 5,
+      "left": 378,
+      "top": 541,
+      "width": 22,
+      "height": 23,
+      "conf": 96.872849
+    },
+    {
+      "text": "mercado",
+      "line_num": 5,
+      "left": 413,
+      "top": 541,
+      "width": 123,
+      "height": 23,
+      "conf": 96.259491
+    },
+    {
+      "text": "ocupa",
+      "line_num": 5,
+      "left": 547,
+      "top": 547,
+      "width": 88,
+      "height": 23,
+      "conf": 96.677864
+    },
+    {
+      "text": "las",
+      "line_num": 5,
+      "left": 646,
+      "top": 541,
+      "width": 38,
+      "height": 23,
+      "conf": 96.83551
+    },
+    {
+      "text": "mismas",
+      "line_num": 6,
+      "left": 194,
+      "top": 589,
+      "width": 108,
+      "height": 23,
+      "conf": 96.028893
+    },
+    {
+      "text": "cuatro",
+      "line_num": 6,
+      "left": 313,
+      "top": 590,
+      "width": 88,
+      "height": 22,
+      "conf": 96.649612
+    },
+    {
+      "text": "cuadras",
+      "line_num": 6,
+      "left": 412,
+      "top": 589,
+      "width": 113,
+      "height": 23,
+      "conf": 96.428268
+    },
+    {
+      "text": "de",
+      "line_num": 6,
+      "left": 536,
+      "top": 589,
+      "width": 35,
+      "height": 23,
+      "conf": 96.517853
+    },
+    {
+      "text": "la",
+      "line_num": 6,
+      "left": 582,
+      "top": 589,
+      "width": 22,
+      "height": 23,
+      "conf": 97.00351
+    },
+    {
+      "text": "calle",
+      "line_num": 6,
+      "left": 614,
+      "top": 589,
+      "width": 65,
+      "height": 23,
+      "conf": 96.935997
+    },
+    {
+      "text": "Álamos",
+      "line_num": 7,
+      "left": 192,
+      "top": 630,
+      "width": 106,
+      "height": 30,
+      "conf": 96.531807
+    },
+    {
+      "text": "desde",
+      "line_num": 7,
+      "left": 308,
+      "top": 637,
+      "width": 87,
+      "height": 23,
+      "conf": 96.531807
+    },
+    {
+      "text": "1948",
+      "line_num": 7,
+      "left": 407,
+      "top": 637,
+      "width": 68,
+      "height": 23,
+      "conf": 96.954788
+    },
+    {
+      "text": "y,",
+      "line_num": 7,
+      "left": 485,
+      "top": 643,
+      "width": 20,
+      "height": 24,
+      "conf": 96.964172
+    },
+    {
+      "text": "según",
+      "line_num": 7,
+      "left": 517,
+      "top": 635,
+      "width": 85,
+      "height": 32,
+      "conf": 96.807373
+    },
+    {
+      "text": "cuentan",
+      "line_num": 7,
+      "left": 613,
+      "top": 638,
+      "width": 112,
+      "height": 22,
+      "conf": 96.822884
+    },
+    {
+      "text": "los",
+      "line_num": 7,
+      "left": 738,
+      "top": 637,
+      "width": 39,
+      "height": 23,
+      "conf": 96.935493
+    },
+    {
+      "text": "vecinos,",
+      "line_num": 8,
+      "left": 192,
+      "top": 685,
+      "width": 116,
+      "height": 27,
+      "conf": 96.213219
+    },
+    {
+      "text": "jamás",
+      "line_num": 8,
+      "left": 319,
+      "top": 683,
+      "width": 84,
+      "height": 31,
+      "conf": 96.360718
+    },
+    {
+      "text": "ha",
+      "line_num": 8,
+      "left": 415,
+      "top": 685,
+      "width": 33,
+      "height": 23,
+      "conf": 96.928909
+    },
+    {
+      "text": "faltado",
+      "line_num": 8,
+      "left": 457,
+      "top": 685,
+      "width": 97,
+      "height": 23,
+      "conf": 96.852821
+    },
+    {
+      "text": "una",
+      "line_num": 8,
+      "left": 566,
+      "top": 691,
+      "width": 51,
+      "height": 17,
+      "conf": 96.869537
+    },
+    {
+      "text": "semana.",
+      "line_num": 8,
+      "left": 627,
+      "top": 691,
+      "width": 118,
+      "height": 17,
+      "conf": 96.821884
+    },
+    {
+      "text": "Hoy",
+      "line_num": 9,
+      "left": 194,
+      "top": 759,
+      "width": 55,
+      "height": 30,
+      "conf": 96.940582
+    },
+    {
+      "text": "son",
+      "line_num": 9,
+      "left": 259,
+      "top": 765,
+      "width": 50,
+      "height": 17,
+      "conf": 96.723579
+    },
+    {
+      "text": "cerca",
+      "line_num": 9,
+      "left": 320,
+      "top": 765,
+      "width": 78,
+      "height": 17,
+      "conf": 96.224762
+    },
+    {
+      "text": "de",
+      "line_num": 9,
+      "left": 408,
+      "top": 759,
+      "width": 35,
+      "height": 23,
+      "conf": 96.224762
+    },
+    {
+      "text": "140",
+      "line_num": 9,
+      "left": 455,
+      "top": 759,
+      "width": 49,
+      "height": 23,
+      "conf": 96.344116
+    },
+    {
+      "text": "puestos,",
+      "line_num": 9,
+      "left": 516,
+      "top": 760,
+      "width": 119,
+      "height": 28,
+      "conf": 96.605049
+    },
+    {
+      "text": "frente",
+      "line_num": 9,
+      "left": 647,
+      "top": 759,
+      "width": 81,
+      "height": 23,
+      "conf": 96.805305
+    },
+    {
+      "text": "a",
+      "line_num": 9,
+      "left": 738,
+      "top": 765,
+      "width": 16,
+      "height": 17,
+      "conf": 96.824196
+    },
+    {
+      "text": "los",
+      "line_num": 10,
+      "left": 194,
+      "top": 807,
+      "width": 39,
+      "height": 23,
+      "conf": 96.845482
+    },
+    {
+      "text": "85",
+      "line_num": 10,
+      "left": 243,
+      "top": 807,
+      "width": 34,
+      "height": 23,
+      "conf": 97.014923
+    },
+    {
+      "text": "de",
+      "line_num": 10,
+      "left": 288,
+      "top": 807,
+      "width": 34,
+      "height": 23,
+      "conf": 96.999741
+    },
+    {
+      "text": "hace",
+      "line_num": 10,
+      "left": 334,
+      "top": 807,
+      "width": 67,
+      "height": 23,
+      "conf": 96.695679
+    },
+    {
+      "text": "una",
+      "line_num": 10,
+      "left": 412,
+      "top": 813,
+      "width": 51,
+      "height": 17,
+      "conf": 95.906631
+    },
+    {
+      "text": "década.",
+      "line_num": 10,
+      "left": 473,
+      "top": 805,
+      "width": 112,
+      "height": 25,
+      "conf": 96.333611
+    },
+    {
+      "text": "Según",
+      "line_num": 10,
+      "left": 597,
+      "top": 805,
+      "width": 89,
+      "height": 32,
+      "conf": 96.528923
+    },
+    {
+      "text": "la",
+      "line_num": 10,
+      "left": 699,
+      "top": 807,
+      "width": 22,
+      "height": 23,
+      "conf": 96.996208
+    },
+    {
+      "text": "encuesta",
+      "line_num": 11,
+      "left": 193,
+      "top": 856,
+      "width": 129,
+      "height": 22,
+      "conf": 96.100449
+    },
+    {
+      "text": "municipal",
+      "line_num": 11,
+      "left": 333,
+      "top": 855,
+      "width": 134,
+      "height": 29,
+      "conf": 96.480286
+    },
+    {
+      "text": "de",
+      "line_num": 11,
+      "left": 479,
+      "top": 855,
+      "width": 34,
+      "height": 23,
+      "conf": 96.691635
+    },
+    {
+      "text": "2023,",
+      "line_num": 11,
+      "left": 523,
+      "top": 855,
+      "width": 77,
+      "height": 27,
+      "conf": 96.691635
+    },
+    {
+      "text": "el",
+      "line_num": 11,
+      "left": 613,
+      "top": 855,
+      "width": 21,
+      "height": 23,
+      "conf": 96.292252
+    },
+    {
+      "text": "mercado",
+      "line_num": 11,
+      "left": 647,
+      "top": 855,
+      "width": 123,
+      "height": 23,
+      "conf": 96.292252
+    },
+    {
+      "text": "recibe",
+      "line_num": 12,
+      "left": 194,
+      "top": 903,
+      "width": 85,
+      "height": 23,
+      "conf": 96.267426
+    },
+    {
+      "text": "unos",
+      "line_num": 12,
+      "left": 290,
+      "top": 909,
+      "width": 68,
+      "height": 17,
+      "conf": 96.934273
+    },
+    {
+      "text": "12.000",
+      "line_num": 12,
+      "left": 370,
+      "top": 903,
+      "width": 94,
+      "height": 23,
+      "conf": 96.716164
+    },
+    {
+      "text": "visitantes",
+      "line_num": 12,
+      "left": 475,
+      "top": 903,
+      "width": 133,
+      "height": 23,
+      "conf": 96.892029
+    },
+    {
+      "text": "en",
+      "line_num": 12,
+      "left": 619,
+      "top": 909,
+      "width": 32,
+      "height": 17,
+      "conf": 96.737015
+    },
+    {
+      "text": "un",
+      "line_num": 12,
+      "left": 663,
+      "top": 909,
+      "width": 32,
+      "height": 17,
+      "conf": 96.406563
+    },
+    {
+      "text": "fin",
+      "line_num": 12,
+      "left": 706,
+      "top": 903,
+      "width": 32,
+      "height": 23,
+      "conf": 96.756004
+    },
+    {
+      "text": "de",
+      "line_num": 13,
+      "left": 193,
+      "top": 951,
+      "width": 35,
+      "height": 23,
+      "conf": 96.451561
+    },
+    {
+      "text": "semana",
+      "line_num": 13,
+      "left": 238,
+      "top": 957,
+      "width": 111,
+      "height": 17,
+      "conf": 96.208786
+    },
+    {
+      "text": "normal",
+      "line_num": 13,
+      "left": 360,
+      "top": 951,
+      "width": 95,
+      "height": 23,
+      "conf": 96.12204
+    },
+    {
+      "text": "y",
+      "line_num": 13,
+      "left": 466,
+      "top": 957,
+      "width": 16,
+      "height": 24,
+      "conf": 96.982101
+    },
+    {
+      "text": "genera",
+      "line_num": 13,
+      "left": 492,
+      "top": 957,
+      "width": 97,
+      "height": 24,
+      "conf": 96.351006
+    },
+    {
+      "text": "alrededor",
+      "line_num": 13,
+      "left": 599,
+      "top": 951,
+      "width": 135,
+      "height": 23,
+      "conf": 96.799393
+    },
+    {
+      "text": "de",
+      "line_num": 13,
+      "left": 744,
+      "top": 951,
+      "width": 34,
+      "height": 23,
+      "conf": 96.904434
+    },
+    {
+      "text": "4,2",
+      "line_num": 14,
+      "left": 193,
+      "top": 999,
+      "width": 42,
+      "height": 27,
+      "conf": 96.391144
+    },
+    {
+      "text": "millones",
+      "line_num": 14,
+      "left": 247,
+      "top": 999,
+      "width": 115,
+      "height": 23,
+      "conf": 96.649673
+    },
+    {
+      "text": "de",
+      "line_num": 14,
+      "left": 373,
+      "top": 999,
+      "width": 35,
+      "height": 23,
+      "conf": 96.766464
+    },
+    {
+      "text": "euros",
+      "line_num": 14,
+      "left": 418,
+      "top": 1005,
+      "width": 78,
+      "height": 17,
+      "conf": 96.870743
+    },
+    {
+      "text": "al",
+      "line_num": 14,
+      "left": 506,
+      "top": 999,
+      "width": 22,
+      "height": 23,
+      "conf": 96.553673
+    },
+    {
+      "text": "año",
+      "line_num": 14,
+      "left": 540,
+      "top": 999,
+      "width": 51,
+      "height": 23,
+      "conf": 96.774063
+    },
+    {
+      "text": "para",
+      "line_num": 14,
+      "left": 603,
+      "top": 1005,
+      "width": 62,
+      "height": 23,
+      "conf": 96.572929
+    },
+    {
+      "text": "la",
+      "line_num": 14,
+      "left": 676,
+      "top": 999,
+      "width": 22,
+      "height": 23,
+      "conf": 96.958206
+    },
+    {
+      "text": "economía",
+      "line_num": 15,
+      "left": 193,
+      "top": 1045,
+      "width": 139,
+      "height": 25,
+      "conf": 96.597221
+    },
+    {
+      "text": "local",
+      "line_num": 15,
+      "left": 344,
+      "top": 1047,
+      "width": 62,
+      "height": 23,
+      "conf": 96.048698
+    },
+    {
+      "text": "(sin",
+      "line_num": 15,
+      "left": 419,
+      "top": 1046,
+      "width": 45,
+      "height": 30,
+      "conf": 96.048698
+    },
+    {
+      "text": "contar",
+      "line_num": 15,
+      "left": 476,
+      "top": 1048,
+      "width": 91,
+      "height": 22,
+      "conf": 96.55262
+    },
+    {
+      "text": "los",
+      "line_num": 15,
+      "left": 578,
+      "top": 1047,
+      "width": 38,
+      "height": 23,
+      "conf": 96.55262
+    },
+    {
+      "text": "cafés",
+      "line_num": 15,
+      "left": 627,
+      "top": 1045,
+      "width": 75,
+      "height": 25,
+      "conf": 96.419365
+    },
+    {
+      "text": "y",
+      "line_num": 15,
+      "left": 712,
+      "top": 1053,
+      "width": 15,
+      "height": 24,
+      "conf": 96.914169
+    },
+    {
+      "text": "las",
+      "line_num": 15,
+      "left": 739,
+      "top": 1047,
+      "width": 37,
+      "height": 23,
+      "conf": 96.914169
+    },
+    {
+      "text": "tiendas",
+      "line_num": 16,
+      "left": 192,
+      "top": 1095,
+      "width": 103,
+      "height": 23,
+      "conf": 96.357948
+    },
+    {
+      "text": "cercanas).",
+      "line_num": 16,
+      "left": 306,
+      "top": 1094,
+      "width": 144,
+      "height": 30,
+      "conf": 96.417336
+    },
+    {
+      "text": "«La",
+      "line_num": 17,
+      "left": 193,
+      "top": 1171,
+      "width": 48,
+      "height": 23,
+      "conf": 96.653053
+    },
+    {
+      "text": "gente",
+      "line_num": 17,
+      "left": 252,
+      "top": 1172,
+      "width": 79,
+      "height": 29,
+      "conf": 96.895744
+    },
+    {
+      "text": "cree",
+      "line_num": 17,
+      "left": 341,
+      "top": 1177,
+      "width": 60,
+      "height": 17,
+      "conf": 96.587013
+    },
+    {
+      "text": "que",
+      "line_num": 17,
+      "left": 412,
+      "top": 1177,
+      "width": 52,
+      "height": 23,
+      "conf": 96.812759
+    },
+    {
+      "text": "vendemos",
+      "line_num": 17,
+      "left": 474,
+      "top": 1171,
+      "width": 147,
+      "height": 23,
+      "conf": 96.823929
+    },
+    {
+      "text": "verduras»,",
+      "line_num": 17,
+      "left": 632,
+      "top": 1171,
+      "width": 144,
+      "height": 27,
+      "conf": 95.830421
+    },
+    {
+      "text": "dice",
+      "line_num": 18,
+      "left": 193,
+      "top": 1219,
+      "width": 59,
+      "height": 23,
+      "conf": 96.691376
+    },
+    {
+      "text": "María",
+      "line_num": 18,
+      "left": 264,
+      "top": 1217,
+      "width": 77,
+      "height": 25,
+      "conf": 93.77803
+    },
+    {
+      "text": "Oliveros,",
+      "line_num": 18,
+      "left": 351,
+      "top": 1218,
+      "width": 122,
+      "height": 29,
+      "conf": 96.882729
+    },
+    {
+      "text": "que",
+      "line_num": 18,
+      "left": 485,
+      "top": 1225,
+      "width": 53,
+      "height": 23,
+      "conf": 96.954689
+    },
+    {
+      "text": "atiende",
+      "line_num": 18,
+      "left": 548,
+      "top": 1219,
+      "width": 104,
+      "height": 23,
+      "conf": 96.444756
+    },
+    {
+      "text": "su",
+      "line_num": 18,
+      "left": 662,
+      "top": 1225,
+      "width": 31,
+      "height": 17,
+      "conf": 96.990028
+    },
+    {
+      "text": "puesto",
+      "line_num": 19,
+      "left": 194,
+      "top": 1268,
+      "width": 95,
+      "height": 28,
+      "conf": 96.745247
+    },
+    {
+      "text": "desde",
+      "line_num": 19,
+      "left": 300,
+      "top": 1267,
+      "width": 87,
+      "height": 23,
+      "conf": 96.745247
+    },
+    {
+      "text": "hace",
+      "line_num": 19,
+      "left": 398,
+      "top": 1267,
+      "width": 67,
+      "height": 23,
+      "conf": 96.812759
+    },
+    {
+      "text": "27",
+      "line_num": 19,
+      "left": 475,
+      "top": 1267,
+      "width": 34,
+      "height": 23,
+      "conf": 96.512108
+    },
+    {
+      "text": "años.",
+      "line_num": 19,
+      "left": 520,
+      "top": 1267,
+      "width": 75,
+      "height": 23,
+      "conf": 96.580574
+    },
+    {
+      "text": "«Lo",
+      "line_num": 19,
+      "left": 608,
+      "top": 1267,
+      "width": 48,
+      "height": 23,
+      "conf": 96.880531
+    },
+    {
+      "text": "que",
+      "line_num": 19,
+      "left": 667,
+      "top": 1273,
+      "width": 53,
+      "height": 23,
+      "conf": 96.859474
+    },
+    {
+      "text": "vendemos",
+      "line_num": 20,
+      "left": 192,
+      "top": 1315,
+      "width": 148,
+      "height": 23,
+      "conf": 96.676361
+    },
+    {
+      "text": "en",
+      "line_num": 20,
+      "left": 351,
+      "top": 1321,
+      "width": 32,
+      "height": 17,
+      "conf": 96.54335
+    },
+    {
+      "text": "realidad",
+      "line_num": 20,
+      "left": 395,
+      "top": 1315,
+      "width": 111,
+      "height": 23,
+      "conf": 96.793076
+    },
+    {
+      "text": "es",
+      "line_num": 20,
+      "left": 517,
+      "top": 1321,
+      "width": 32,
+      "height": 17,
+      "conf": 96.174316
+    },
+    {
+      "text": "un",
+      "line_num": 20,
+      "left": 560,
+      "top": 1321,
+      "width": 32,
+      "height": 17,
+      "conf": 96.174316
+    },
+    {
+      "text": "motivo",
+      "line_num": 20,
+      "left": 605,
+      "top": 1315,
+      "width": 94,
+      "height": 23,
+      "conf": 96.960007
+    },
+    {
+      "text": "para",
+      "line_num": 20,
+      "left": 711,
+      "top": 1321,
+      "width": 62,
+      "height": 23,
+      "conf": 96.523972
+    },
+    {
+      "text": "venir",
+      "line_num": 21,
+      "left": 192,
+      "top": 1363,
+      "width": 69,
+      "height": 23,
+      "conf": 96.042679
+    },
+    {
+      "text": "al",
+      "line_num": 21,
+      "left": 271,
+      "top": 1363,
+      "width": 21,
+      "height": 23,
+      "conf": 96.746368
+    },
+    {
+      "text": "centro».",
+      "line_num": 21,
+      "left": 304,
+      "top": 1364,
+      "width": 111,
+      "height": 22,
+      "conf": 96.703552
+    },
+    {
+      "text": "¿Su",
+      "line_num": 21,
+      "left": 428,
+      "top": 1362,
+      "width": 53,
+      "height": 31,
+      "conf": 96.633003
+    },
+    {
+      "text": "producto",
+      "line_num": 21,
+      "left": 493,
+      "top": 1363,
+      "width": 127,
+      "height": 29,
+      "conf": 96.633003
+    },
+    {
+      "text": "estrella?",
+      "line_num": 21,
+      "left": 631,
+      "top": 1362,
+      "width": 117,
+      "height": 24,
+      "conf": 96.769714
+    },
+    {
+      "text": "La",
+      "line_num": 22,
+      "left": 194,
+      "top": 1411,
+      "width": 33,
+      "height": 23,
+      "conf": 96.322678
+    },
+    {
+      "text": "bolsa",
+      "line_num": 22,
+      "left": 238,
+      "top": 1411,
+      "width": 75,
+      "height": 23,
+      "conf": 96.64328
+    },
+    {
+      "text": "de",
+      "line_num": 22,
+      "left": 323,
+      "top": 1411,
+      "width": 35,
+      "height": 23,
+      "conf": 96.944221
+    },
+    {
+      "text": "hojas",
+      "line_num": 22,
+      "left": 369,
+      "top": 1411,
+      "width": 74,
+      "height": 29,
+      "conf": 96.376297
+    },
+    {
+      "text": "verdes",
+      "line_num": 22,
+      "left": 453,
+      "top": 1411,
+      "width": 94,
+      "height": 23,
+      "conf": 96.344734
+    },
+    {
+      "text": "de",
+      "line_num": 22,
+      "left": 558,
+      "top": 1411,
+      "width": 35,
+      "height": 23,
+      "conf": 96.762466
+    },
+    {
+      "text": "dos",
+      "line_num": 22,
+      "left": 603,
+      "top": 1411,
+      "width": 52,
+      "height": 23,
+      "conf": 96.455727
+    },
+    {
+      "text": "euros.",
+      "line_num": 22,
+      "left": 665,
+      "top": 1417,
+      "width": 85,
+      "height": 17,
+      "conf": 96.315514
+    },
+    {
+      "text": "Las",
+      "line_num": 23,
+      "left": 194,
+      "top": 1485,
+      "width": 48,
+      "height": 23,
+      "conf": 96.042229
+    },
+    {
+      "text": "cifras",
+      "line_num": 23,
+      "left": 253,
+      "top": 1485,
+      "width": 76,
+      "height": 23,
+      "conf": 96.558037
+    },
+    {
+      "text": "le",
+      "line_num": 23,
+      "left": 340,
+      "top": 1485,
+      "width": 22,
+      "height": 23,
+      "conf": 96.945213
+    },
+    {
+      "text": "dan",
+      "line_num": 23,
+      "left": 372,
+      "top": 1485,
+      "width": 52,
+      "height": 23,
+      "conf": 96.967461
+    },
+    {
+      "text": "la",
+      "line_num": 23,
+      "left": 437,
+      "top": 1485,
+      "width": 21,
+      "height": 23,
+      "conf": 97.015099
+    },
+    {
+      "text": "razón.",
+      "line_num": 23,
+      "left": 469,
+      "top": 1483,
+      "width": 84,
+      "height": 25,
+      "conf": 96.649948
+    },
+    {
+      "text": "Los",
+      "line_num": 23,
+      "left": 567,
+      "top": 1485,
+      "width": 49,
+      "height": 23,
+      "conf": 96.718071
+    },
+    {
+      "text": "días",
+      "line_num": 23,
+      "left": 627,
+      "top": 1483,
+      "width": 57,
+      "height": 25,
+      "conf": 96.490936
+    },
+    {
+      "text": "de",
+      "line_num": 23,
+      "left": 695,
+      "top": 1485,
+      "width": 35,
+      "height": 23,
+      "conf": 96.989273
+    },
+    {
+      "text": "mercado,",
+      "line_num": 24,
+      "left": 194,
+      "top": 1533,
+      "width": 131,
+      "height": 27,
+      "conf": 96.474197
+    },
+    {
+      "text": "el",
+      "line_num": 24,
+      "left": 337,
+      "top": 1533,
+      "width": 21,
+      "height": 23,
+      "conf": 96.603897
+    },
+    {
+      "text": "tránsito",
+      "line_num": 24,
+      "left": 369,
+      "top": 1531,
+      "width": 107,
+      "height": 25,
+      "conf": 96.783821
+    },
+    {
+      "text": "peatonal",
+      "line_num": 24,
+      "left": 487,
+      "top": 1533,
+      "width": 120,
+      "height": 29,
+      "conf": 96.60672
+    },
+    {
+      "text": "es",
+      "line_num": 24,
+      "left": 619,
+      "top": 1539,
+      "width": 31,
+      "height": 17,
+      "conf": 96.876152
+    },
+    {
+      "text": "un",
+      "line_num": 24,
+      "left": 662,
+      "top": 1539,
+      "width": 32,
+      "height": 17,
+      "conf": 96.978607
+    },
+    {
+      "text": "38",
+      "line_num": 24,
+      "left": 706,
+      "top": 1533,
+      "width": 33,
+      "height": 23,
+      "conf": 93.236198
+    },
+    {
+      "text": "%",
+      "line_num": 24,
+      "left": 752,
+      "top": 1533,
+      "width": 26,
+      "height": 24,
+      "conf": 91.897743
+    },
+    {
+      "text": "mayor",
+      "line_num": 25,
+      "left": 194,
+      "top": 1587,
+      "width": 88,
+      "height": 24,
+      "conf": 96.493065
+    },
+    {
+      "text": "que",
+      "line_num": 25,
+      "left": 291,
+      "top": 1587,
+      "width": 53,
+      "height": 23,
+      "conf": 96.493065
+    },
+    {
+      "text": "el",
+      "line_num": 25,
+      "left": 354,
+      "top": 1581,
+      "width": 22,
+      "height": 23,
+      "conf": 96.554153
+    },
+    {
+      "text": "de",
+      "line_num": 25,
+      "left": 387,
+      "top": 1581,
+      "width": 35,
+      "height": 23,
+      "conf": 96.554153
+    },
+    {
+      "text": "otros",
+      "line_num": 25,
+      "left": 433,
+      "top": 1582,
+      "width": 71,
+      "height": 22,
+      "conf": 96.547783
+    },
+    {
+      "text": "sábados,",
+      "line_num": 25,
+      "left": 514,
+      "top": 1579,
+      "width": 128,
+      "height": 29,
+      "conf": 96.735245
+    },
+    {
+      "text": "y",
+      "line_num": 25,
+      "left": 654,
+      "top": 1587,
+      "width": 15,
+      "height": 24,
+      "conf": 97.020325
+    },
+    {
+      "text": "tres",
+      "line_num": 25,
+      "left": 679,
+      "top": 1582,
+      "width": 52,
+      "height": 22,
+      "conf": 96.77417
+    },
+    {
+      "text": "de",
+      "line_num": 25,
+      "left": 742,
+      "top": 1581,
+      "width": 34,
+      "height": 23,
+      "conf": 96.815239
+    },
+    {
+      "text": "cada",
+      "line_num": 26,
+      "left": 193,
+      "top": 1629,
+      "width": 69,
+      "height": 23,
+      "conf": 95.440491
+    },
+    {
+      "text": "cuatro",
+      "line_num": 26,
+      "left": 272,
+      "top": 1630,
+      "width": 89,
+      "height": 22,
+      "conf": 96.621498
+    },
+    {
+      "text": "visitantes",
+      "line_num": 26,
+      "left": 371,
+      "top": 1629,
+      "width": 134,
+      "height": 23,
+      "conf": 96.849304
+    },
+    {
+      "text": "aseguran",
+      "line_num": 26,
+      "left": 515,
+      "top": 1635,
+      "width": 130,
+      "height": 24,
+      "conf": 96.265045
+    },
+    {
+      "text": "que",
+      "line_num": 26,
+      "left": 656,
+      "top": 1635,
+      "width": 53,
+      "height": 23,
+      "conf": 96.862312
+    },
+    {
+      "text": "también",
+      "line_num": 27,
+      "left": 192,
+      "top": 1675,
+      "width": 114,
+      "height": 25,
+      "conf": 96.723557
+    },
+    {
+      "text": "pasaron",
+      "line_num": 27,
+      "left": 318,
+      "top": 1683,
+      "width": 112,
+      "height": 23,
+      "conf": 96.722839
+    },
+    {
+      "text": "por",
+      "line_num": 27,
+      "left": 443,
+      "top": 1683,
+      "width": 46,
+      "height": 23,
+      "conf": 96.637215
+    },
+    {
+      "text": "otro",
+      "line_num": 27,
+      "left": 499,
+      "top": 1678,
+      "width": 55,
+      "height": 22,
+      "conf": 96.637215
+    },
+    {
+      "text": "comercio",
+      "line_num": 27,
+      "left": 565,
+      "top": 1677,
+      "width": 130,
+      "height": 23,
+      "conf": 96.828598
+    },
+    {
+      "text": "del",
+      "line_num": 27,
+      "left": 706,
+      "top": 1677,
+      "width": 41,
+      "height": 23,
+      "conf": 96.847504
+    },
+    {
+      "text": "barrio.",
+      "line_num": 28,
+      "left": 194,
+      "top": 1725,
+      "width": 87,
+      "height": 23,
+      "conf": 96.902245
+    },
+    {
+      "text": "El",
+      "line_num": 28,
+      "left": 295,
+      "top": 1725,
+      "width": 22,
+      "height": 23,
+      "conf": 96.274368
+    },
+    {
+      "text": "Dr.",
+      "line_num": 28,
+      "left": 331,
+      "top": 1725,
+      "width": 34,
+      "height": 23,
+      "conf": 96.274368
+    },
+    {
+      "text": "Andrés",
+      "line_num": 28,
+      "left": 376,
+      "top": 1723,
+      "width": 101,
+      "height": 25,
+      "conf": 96.828445
+    },
+    {
+      "text": "Villalba,",
+      "line_num": 28,
+      "left": 486,
+      "top": 1725,
+      "width": 108,
+      "height": 27,
+      "conf": 96.84449
+    },
+    {
+      "text": "economista",
+      "line_num": 28,
+      "left": 606,
+      "top": 1725,
+      "width": 165,
+      "height": 23,
+      "conf": 96.631401
+    },
+    {
+      "text": "de",
+      "line_num": 29,
+      "left": 193,
+      "top": 1773,
+      "width": 35,
+      "height": 23,
+      "conf": 96.87368
+    },
+    {
+      "text": "la",
+      "line_num": 29,
+      "left": 239,
+      "top": 1773,
+      "width": 22,
+      "height": 23,
+      "conf": 96.965034
+    },
+    {
+      "text": "universidad",
+      "line_num": 29,
+      "left": 272,
+      "top": 1773,
+      "width": 161,
+      "height": 23,
+      "conf": 96.347031
+    },
+    {
+      "text": "estatal,",
+      "line_num": 29,
+      "left": 445,
+      "top": 1773,
+      "width": 100,
+      "height": 27,
+      "conf": 96.865402
+    },
+    {
+      "text": "lo",
+      "line_num": 29,
+      "left": 559,
+      "top": 1773,
+      "width": 22,
+      "height": 23,
+      "conf": 96.738228
+    },
+    {
+      "text": "llama",
+      "line_num": 29,
+      "left": 593,
+      "top": 1773,
+      "width": 73,
+      "height": 23,
+      "conf": 96.095741
+    },
+    {
+      "text": "«efecto",
+      "line_num": 29,
+      "left": 677,
+      "top": 1773,
+      "width": 102,
+      "height": 23,
+      "conf": 96.095741
+    },
+    {
+      "text": "derrame».",
+      "line_num": 30,
+      "left": 193,
+      "top": 1821,
+      "width": 139,
+      "height": 23,
+      "conf": 96.069511
+    },
+    {
+      "text": "No",
+      "line_num": 31,
+      "left": 850,
+      "top": 349,
+      "width": 38,
+      "height": 23,
+      "conf": 96.938141
+    },
+    {
+      "text": "todo",
+      "line_num": 31,
+      "left": 898,
+      "top": 349,
+      "width": 65,
+      "height": 23,
+      "conf": 96.864273
+    },
+    {
+      "text": "es",
+      "line_num": 31,
+      "left": 974,
+      "top": 355,
+      "width": 31,
+      "height": 17,
+      "conf": 96.37841
+    },
+    {
+      "text": "color",
+      "line_num": 31,
+      "left": 1016,
+      "top": 349,
+      "width": 71,
+      "height": 23,
+      "conf": 96.849289
+    },
+    {
+      "text": "de",
+      "line_num": 31,
+      "left": 1097,
+      "top": 349,
+      "width": 34,
+      "height": 23,
+      "conf": 96.843323
+    },
+    {
+      "text": "rosa.",
+      "line_num": 31,
+      "left": 1143,
+      "top": 355,
+      "width": 66,
+      "height": 17,
+      "conf": 96.059494
+    },
+    {
+      "text": "La",
+      "line_num": 31,
+      "left": 1223,
+      "top": 349,
+      "width": 32,
+      "height": 23,
+      "conf": 96.901665
+    },
+    {
+      "text": "tarifa",
+      "line_num": 31,
+      "left": 1264,
+      "top": 349,
+      "width": 71,
+      "height": 23,
+      "conf": 96.431236
+    },
+    {
+      "text": "por",
+      "line_num": 31,
+      "left": 1347,
+      "top": 355,
+      "width": 46,
+      "height": 23,
+      "conf": 96.431236
+    },
+    {
+      "text": "puesto",
+      "line_num": 32,
+      "left": 850,
+      "top": 398,
+      "width": 95,
+      "height": 28,
+      "conf": 96.872902
+    },
+    {
+      "text": "subió",
+      "line_num": 32,
+      "left": 956,
+      "top": 395,
+      "width": 77,
+      "height": 25,
+      "conf": 96.696136
+    },
+    {
+      "text": "de",
+      "line_num": 32,
+      "left": 1043,
+      "top": 397,
+      "width": 35,
+      "height": 23,
+      "conf": 96.696136
+    },
+    {
+      "text": "35",
+      "line_num": 32,
+      "left": 1088,
+      "top": 397,
+      "width": 34,
+      "height": 23,
+      "conf": 96.300079
+    },
+    {
+      "text": "a",
+      "line_num": 32,
+      "left": 1133,
+      "top": 403,
+      "width": 16,
+      "height": 17,
+      "conf": 96.300079
+    },
+    {
+      "text": "50",
+      "line_num": 32,
+      "left": 1159,
+      "top": 397,
+      "width": 33,
+      "height": 23,
+      "conf": 96.905968
+    },
+    {
+      "text": "euros",
+      "line_num": 32,
+      "left": 1203,
+      "top": 403,
+      "width": 78,
+      "height": 17,
+      "conf": 96.990128
+    },
+    {
+      "text": "diarios",
+      "line_num": 32,
+      "left": 1292,
+      "top": 397,
+      "width": 93,
+      "height": 23,
+      "conf": 96.657295
+    },
+    {
+      "text": "en",
+      "line_num": 32,
+      "left": 1396,
+      "top": 403,
+      "width": 32,
+      "height": 17,
+      "conf": 96.993683
+    },
+    {
+      "text": "enero,",
+      "line_num": 33,
+      "left": 849,
+      "top": 451,
+      "width": 86,
+      "height": 22,
+      "conf": 96.936363
+    },
+    {
+      "text": "y",
+      "line_num": 33,
+      "left": 947,
+      "top": 451,
+      "width": 15,
+      "height": 24,
+      "conf": 96.577713
+    },
+    {
+      "text": "varios",
+      "line_num": 33,
+      "left": 972,
+      "top": 445,
+      "width": 84,
+      "height": 23,
+      "conf": 96.341415
+    },
+    {
+      "text": "vendedores",
+      "line_num": 33,
+      "left": 1066,
+      "top": 445,
+      "width": 166,
+      "height": 23,
+      "conf": 96.479782
+    },
+    {
+      "text": "veteranos",
+      "line_num": 33,
+      "left": 1243,
+      "top": 446,
+      "width": 139,
+      "height": 22,
+      "conf": 96.471146
+    },
+    {
+      "text": "dicen",
+      "line_num": 34,
+      "left": 849,
+      "top": 493,
+      "width": 75,
+      "height": 23,
+      "conf": 95.940369
+    },
+    {
+      "text": "que",
+      "line_num": 34,
+      "left": 936,
+      "top": 499,
+      "width": 53,
+      "height": 23,
+      "conf": 96.750748
+    },
+    {
+      "text": "el",
+      "line_num": 34,
+      "left": 999,
+      "top": 493,
+      "width": 21,
+      "height": 23,
+      "conf": 96.986298
+    },
+    {
+      "text": "aumento",
+      "line_num": 34,
+      "left": 1032,
+      "top": 494,
+      "width": 124,
+      "height": 22,
+      "conf": 96.624733
+    },
+    {
+      "text": "es",
+      "line_num": 34,
+      "left": 1167,
+      "top": 499,
+      "width": 31,
+      "height": 17,
+      "conf": 97.002678
+    },
+    {
+      "text": "difícil",
+      "line_num": 34,
+      "left": 1209,
+      "top": 491,
+      "width": 71,
+      "height": 25,
+      "conf": 96.364372
+    },
+    {
+      "text": "de",
+      "line_num": 34,
+      "left": 1292,
+      "top": 493,
+      "width": 34,
+      "height": 23,
+      "conf": 96.106705
+    },
+    {
+      "text": "asumir.",
+      "line_num": 34,
+      "left": 1337,
+      "top": 493,
+      "width": 98,
+      "height": 23,
+      "conf": 96.664154
+    },
+    {
+      "text": "El",
+      "line_num": 35,
+      "left": 850,
+      "top": 541,
+      "width": 23,
+      "height": 23,
+      "conf": 96.950989
+    },
+    {
+      "text": "estacionamiento",
+      "line_num": 35,
+      "left": 884,
+      "top": 541,
+      "width": 234,
+      "height": 23,
+      "conf": 96.784126
+    },
+    {
+      "text": "sigue",
+      "line_num": 35,
+      "left": 1129,
+      "top": 541,
+      "width": 75,
+      "height": 30,
+      "conf": 96.515152
+    },
+    {
+      "text": "siendo",
+      "line_num": 35,
+      "left": 1215,
+      "top": 541,
+      "width": 93,
+      "height": 23,
+      "conf": 96.407097
+    },
+    {
+      "text": "la",
+      "line_num": 35,
+      "left": 1320,
+      "top": 541,
+      "width": 22,
+      "height": 23,
+      "conf": 96.73381
+    },
+    {
+      "text": "queja",
+      "line_num": 35,
+      "left": 1352,
+      "top": 541,
+      "width": 77,
+      "height": 29,
+      "conf": 96.73381
+    },
+    {
+      "text": "más",
+      "line_num": 36,
+      "left": 850,
+      "top": 587,
+      "width": 58,
+      "height": 25,
+      "conf": 96.569183
+    },
+    {
+      "text": "frecuente:",
+      "line_num": 36,
+      "left": 918,
+      "top": 589,
+      "width": 140,
+      "height": 23,
+      "conf": 96.582436
+    },
+    {
+      "text": "el",
+      "line_num": 36,
+      "left": 1070,
+      "top": 589,
+      "width": 21,
+      "height": 23,
+      "conf": 96.952545
+    },
+    {
+      "text": "aparcamiento",
+      "line_num": 36,
+      "left": 1103,
+      "top": 589,
+      "width": 194,
+      "height": 29,
+      "conf": 96.596886
+    },
+    {
+      "text": "público",
+      "line_num": 36,
+      "left": 1309,
+      "top": 587,
+      "width": 102,
+      "height": 31,
+      "conf": 96.925629
+    },
+    {
+      "text": "más",
+      "line_num": 37,
+      "left": 850,
+      "top": 635,
+      "width": 58,
+      "height": 25,
+      "conf": 96.583427
+    },
+    {
+      "text": "cercano",
+      "line_num": 37,
+      "left": 918,
+      "top": 643,
+      "width": 113,
+      "height": 17,
+      "conf": 96.020493
+    },
+    {
+      "text": "tiene",
+      "line_num": 37,
+      "left": 1041,
+      "top": 637,
+      "width": 69,
+      "height": 23,
+      "conf": 96.821381
+    },
+    {
+      "text": "solo",
+      "line_num": 37,
+      "left": 1120,
+      "top": 637,
+      "width": 58,
+      "height": 23,
+      "conf": 96.821381
+    },
+    {
+      "text": "220",
+      "line_num": 37,
+      "left": 1189,
+      "top": 637,
+      "width": 51,
+      "height": 23,
+      "conf": 96.84536
+    },
+    {
+      "text": "plazas",
+      "line_num": 37,
+      "left": 1252,
+      "top": 637,
+      "width": 89,
+      "height": 29,
+      "conf": 96.448082
+    },
+    {
+      "text": "y",
+      "line_num": 37,
+      "left": 1351,
+      "top": 643,
+      "width": 16,
+      "height": 24,
+      "conf": 97.01638
+    },
+    {
+      "text": "suele",
+      "line_num": 38,
+      "left": 849,
+      "top": 685,
+      "width": 74,
+      "height": 23,
+      "conf": 96.847061
+    },
+    {
+      "text": "llenarse",
+      "line_num": 38,
+      "left": 934,
+      "top": 685,
+      "width": 108,
+      "height": 23,
+      "conf": 96.536713
+    },
+    {
+      "text": "antes",
+      "line_num": 38,
+      "left": 1052,
+      "top": 686,
+      "width": 77,
+      "height": 22,
+      "conf": 96.329048
+    },
+    {
+      "text": "de",
+      "line_num": 38,
+      "left": 1139,
+      "top": 685,
+      "width": 35,
+      "height": 23,
+      "conf": 96.329048
+    },
+    {
+      "text": "las",
+      "line_num": 38,
+      "left": 1186,
+      "top": 685,
+      "width": 37,
+      "height": 23,
+      "conf": 97.008781
+    },
+    {
+      "text": "9:15.",
+      "line_num": 38,
+      "left": 1234,
+      "top": 685,
+      "width": 67,
+      "height": 23,
+      "conf": 96.705406
+    },
+    {
+      "text": "El",
+      "line_num": 39,
+      "left": 850,
+      "top": 759,
+      "width": 23,
+      "height": 23,
+      "conf": 95.445694
+    },
+    {
+      "text": "ayuntamiento",
+      "line_num": 39,
+      "left": 884,
+      "top": 759,
+      "width": 192,
+      "height": 30,
+      "conf": 95.445694
+    },
+    {
+      "text": "estudia",
+      "line_num": 39,
+      "left": 1087,
+      "top": 759,
+      "width": 103,
+      "height": 23,
+      "conf": 96.725571
+    },
+    {
+      "text": "una",
+      "line_num": 39,
+      "left": 1201,
+      "top": 765,
+      "width": 51,
+      "height": 17,
+      "conf": 96.664848
+    },
+    {
+      "text": "propuesta",
+      "line_num": 39,
+      "left": 1263,
+      "top": 760,
+      "width": 143,
+      "height": 28,
+      "conf": 96.776619
+    },
+    {
+      "text": "para",
+      "line_num": 40,
+      "left": 850,
+      "top": 813,
+      "width": 62,
+      "height": 23,
+      "conf": 96.867332
+    },
+    {
+      "text": "cerrar",
+      "line_num": 40,
+      "left": 922,
+      "top": 813,
+      "width": 83,
+      "height": 17,
+      "conf": 97.006317
+    },
+    {
+      "text": "al",
+      "line_num": 40,
+      "left": 1014,
+      "top": 807,
+      "width": 22,
+      "height": 23,
+      "conf": 96.979424
+    },
+    {
+      "text": "tráfico",
+      "line_num": 40,
+      "left": 1047,
+      "top": 805,
+      "width": 89,
+      "height": 25,
+      "conf": 96.231209
+    },
+    {
+      "text": "dos",
+      "line_num": 40,
+      "left": 1146,
+      "top": 807,
+      "width": 52,
+      "height": 23,
+      "conf": 96.124825
+    },
+    {
+      "text": "cuadras",
+      "line_num": 40,
+      "left": 1209,
+      "top": 807,
+      "width": 113,
+      "height": 23,
+      "conf": 96.466728
+    },
+    {
+      "text": "más",
+      "line_num": 40,
+      "left": 1333,
+      "top": 805,
+      "width": 58,
+      "height": 25,
+      "conf": 96.449997
+    },
+    {
+      "text": "entre",
+      "line_num": 41,
+      "left": 849,
+      "top": 856,
+      "width": 71,
+      "height": 22,
+      "conf": 96.763817
+    },
+    {
+      "text": "el",
+      "line_num": 41,
+      "left": 930,
+      "top": 855,
+      "width": 22,
+      "height": 23,
+      "conf": 96.869293
+    },
+    {
+      "text": "1",
+      "line_num": 41,
+      "left": 965,
+      "top": 855,
+      "width": 9,
+      "height": 23,
+      "conf": 95.895103
+    },
+    {
+      "text": "de",
+      "line_num": 41,
+      "left": 990,
+      "top": 855,
+      "width": 35,
+      "height": 23,
+      "conf": 96.946594
+    },
+    {
+      "text": "mayo",
+      "line_num": 41,
+      "left": 1036,
+      "top": 861,
+      "width": 76,
+      "height": 24,
+      "conf": 96.869911
+    },
+    {
+      "text": "y",
+      "line_num": 41,
+      "left": 1114,
+      "top": 851,
+      "width": 16,
+      "height": 38,
+      "conf": 96.693916
+    },
+    {
+      "text": "el",
+      "line_num": 41,
+      "left": 1148,
+      "top": 855,
+      "width": 21,
+      "height": 23,
+      "conf": 96.844856
+    },
+    {
+      "text": "31",
+      "line_num": 41,
+      "left": 1181,
+      "top": 855,
+      "width": 28,
+      "height": 23,
+      "conf": 96.995087
+    },
+    {
+      "text": "de",
+      "line_num": 41,
+      "left": 1225,
+      "top": 855,
+      "width": 35,
+      "height": 23,
+      "conf": 96.682762
+    },
+    {
+      "text": "octubre.",
+      "line_num": 41,
+      "left": 1271,
+      "top": 855,
+      "width": 115,
+      "height": 23,
+      "conf": 96.41864
+    },
+    {
+      "text": "Sus",
+      "line_num": 42,
+      "left": 849,
+      "top": 902,
+      "width": 53,
+      "height": 25,
+      "conf": 96.834534
+    },
+    {
+      "text": "defensores",
+      "line_num": 42,
+      "left": 912,
+      "top": 903,
+      "width": 157,
+      "height": 23,
+      "conf": 96.03463
+    },
+    {
+      "text": "sostienen",
+      "line_num": 42,
+      "left": 1079,
+      "top": 903,
+      "width": 135,
+      "height": 23,
+      "conf": 96.116364
+    },
+    {
+      "text": "que",
+      "line_num": 42,
+      "left": 1226,
+      "top": 909,
+      "width": 52,
+      "height": 23,
+      "conf": 96.406097
+    },
+    {
+      "text": "el",
+      "line_num": 42,
+      "left": 1289,
+      "top": 903,
+      "width": 21,
+      "height": 23,
+      "conf": 97.007988
+    },
+    {
+      "text": "cambio",
+      "line_num": 42,
+      "left": 1322,
+      "top": 903,
+      "width": 104,
+      "height": 23,
+      "conf": 96.73246
+    },
+    {
+      "text": "permitiría",
+      "line_num": 43,
+      "left": 850,
+      "top": 949,
+      "width": 131,
+      "height": 31,
+      "conf": 96.580406
+    },
+    {
+      "text": "instalar",
+      "line_num": 43,
+      "left": 992,
+      "top": 951,
+      "width": 102,
+      "height": 23,
+      "conf": 96.365364
+    },
+    {
+      "text": "40",
+      "line_num": 43,
+      "left": 1103,
+      "top": 951,
+      "width": 34,
+      "height": 23,
+      "conf": 96.317184
+    },
+    {
+      "text": "puestos",
+      "line_num": 43,
+      "left": 1149,
+      "top": 952,
+      "width": 111,
+      "height": 28,
+      "conf": 96.812401
+    },
+    {
+      "text": "nuevos;",
+      "line_num": 43,
+      "left": 1272,
+      "top": 957,
+      "width": 108,
+      "height": 21,
+      "conf": 96.710411
+    },
+    {
+      "text": "sus",
+      "line_num": 44,
+      "left": 849,
+      "top": 1005,
+      "width": 48,
+      "height": 17,
+      "conf": 96.493034
+    },
+    {
+      "text": "críticos",
+      "line_num": 44,
+      "left": 908,
+      "top": 997,
+      "width": 101,
+      "height": 25,
+      "conf": 96.589058
+    },
+    {
+      "text": "temen",
+      "line_num": 44,
+      "left": 1019,
+      "top": 1000,
+      "width": 88,
+      "height": 22,
+      "conf": 96.362373
+    },
+    {
+      "text": "por",
+      "line_num": 44,
+      "left": 1120,
+      "top": 1005,
+      "width": 46,
+      "height": 23,
+      "conf": 96.362373
+    },
+    {
+      "text": "los",
+      "line_num": 44,
+      "left": 1177,
+      "top": 999,
+      "width": 38,
+      "height": 23,
+      "conf": 97.010422
+    },
+    {
+      "text": "repartos",
+      "line_num": 44,
+      "left": 1227,
+      "top": 1000,
+      "width": 116,
+      "height": 28,
+      "conf": 96.822235
+    },
+    {
+      "text": "y",
+      "line_num": 44,
+      "left": 1353,
+      "top": 1005,
+      "width": 15,
+      "height": 24,
+      "conf": 96.838287
+    },
+    {
+      "text": "por",
+      "line_num": 44,
+      "left": 1379,
+      "top": 1005,
+      "width": 46,
+      "height": 23,
+      "conf": 96.892555
+    },
+    {
+      "text": "el",
+      "line_num": 45,
+      "left": 849,
+      "top": 1047,
+      "width": 21,
+      "height": 23,
+      "conf": 95.778259
+    },
+    {
+      "text": "acceso",
+      "line_num": 45,
+      "left": 882,
+      "top": 1053,
+      "width": 101,
+      "height": 17,
+      "conf": 96.84626
+    },
+    {
+      "text": "de",
+      "line_num": 45,
+      "left": 994,
+      "top": 1047,
+      "width": 35,
+      "height": 23,
+      "conf": 96.759293
+    },
+    {
+      "text": "los",
+      "line_num": 45,
+      "left": 1040,
+      "top": 1047,
+      "width": 39,
+      "height": 23,
+      "conf": 96.759293
+    },
+    {
+      "text": "vecinos",
+      "line_num": 45,
+      "left": 1089,
+      "top": 1047,
+      "width": 108,
+      "height": 23,
+      "conf": 96.758942
+    },
+    {
+      "text": "mayores.",
+      "line_num": 45,
+      "left": 1209,
+      "top": 1053,
+      "width": 127,
+      "height": 24,
+      "conf": 96.730072
+    },
+    {
+      "text": "Por",
+      "line_num": 46,
+      "left": 850,
+      "top": 1123,
+      "width": 48,
+      "height": 23,
+      "conf": 95.327271
+    },
+    {
+      "text": "ahora,",
+      "line_num": 46,
+      "left": 908,
+      "top": 1123,
+      "width": 86,
+      "height": 27,
+      "conf": 95.327271
+    },
+    {
+      "text": "la",
+      "line_num": 46,
+      "left": 1008,
+      "top": 1123,
+      "width": 22,
+      "height": 23,
+      "conf": 96.688049
+    },
+    {
+      "text": "rutina",
+      "line_num": 46,
+      "left": 1041,
+      "top": 1123,
+      "width": 78,
+      "height": 23,
+      "conf": 96.696129
+    },
+    {
+      "text": "continúa.",
+      "line_num": 46,
+      "left": 1129,
+      "top": 1121,
+      "width": 129,
+      "height": 25,
+      "conf": 96.811722
+    },
+    {
+      "text": "Al",
+      "line_num": 46,
+      "left": 1269,
+      "top": 1123,
+      "width": 26,
+      "height": 23,
+      "conf": 96.934715
+    },
+    {
+      "text": "mediodía",
+      "line_num": 46,
+      "left": 1308,
+      "top": 1121,
+      "width": 130,
+      "height": 25,
+      "conf": 96.674271
+    },
+    {
+      "text": "ya",
+      "line_num": 47,
+      "left": 848,
+      "top": 1177,
+      "width": 33,
+      "height": 24,
+      "conf": 96.698715
+    },
+    {
+      "text": "no",
+      "line_num": 47,
+      "left": 892,
+      "top": 1177,
+      "width": 33,
+      "height": 17,
+      "conf": 96.452614
+    },
+    {
+      "text": "queda",
+      "line_num": 47,
+      "left": 936,
+      "top": 1171,
+      "width": 89,
+      "height": 29,
+      "conf": 96.434486
+    },
+    {
+      "text": "pan,",
+      "line_num": 47,
+      "left": 1036,
+      "top": 1177,
+      "width": 58,
+      "height": 23,
+      "conf": 96.571655
+    },
+    {
+      "text": "los",
+      "line_num": 47,
+      "left": 1108,
+      "top": 1171,
+      "width": 38,
+      "height": 23,
+      "conf": 96.70842
+    },
+    {
+      "text": "cubos",
+      "line_num": 47,
+      "left": 1157,
+      "top": 1171,
+      "width": 87,
+      "height": 23,
+      "conf": 96.496239
+    },
+    {
+      "text": "de",
+      "line_num": 47,
+      "left": 1254,
+      "top": 1171,
+      "width": 35,
+      "height": 23,
+      "conf": 96.47831
+    },
+    {
+      "text": "flores",
+      "line_num": 47,
+      "left": 1299,
+      "top": 1171,
+      "width": 77,
+      "height": 23,
+      "conf": 96.859451
+    },
+    {
+      "text": "están",
+      "line_num": 48,
+      "left": 849,
+      "top": 1217,
+      "width": 75,
+      "height": 25,
+      "conf": 96.978783
+    },
+    {
+      "text": "medio",
+      "line_num": 48,
+      "left": 937,
+      "top": 1219,
+      "width": 86,
+      "height": 23,
+      "conf": 96.655907
+    },
+    {
+      "text": "vacíos",
+      "line_num": 48,
+      "left": 1033,
+      "top": 1217,
+      "width": 91,
+      "height": 25,
+      "conf": 95.085907
+    },
+    {
+      "text": "y",
+      "line_num": 48,
+      "left": 1134,
+      "top": 1225,
+      "width": 15,
+      "height": 24,
+      "conf": 96.603615
+    },
+    {
+      "text": "una",
+      "line_num": 48,
+      "left": 1160,
+      "top": 1225,
+      "width": 51,
+      "height": 17,
+      "conf": 96.085526
+    },
+    {
+      "text": "banda",
+      "line_num": 48,
+      "left": 1222,
+      "top": 1219,
+      "width": 88,
+      "height": 23,
+      "conf": 96.671303
+    },
+    {
+      "text": "de",
+      "line_num": 48,
+      "left": 1320,
+      "top": 1219,
+      "width": 35,
+      "height": 23,
+      "conf": 96.671303
+    },
+    {
+      "text": "metales",
+      "line_num": 49,
+      "left": 850,
+      "top": 1267,
+      "width": 109,
+      "height": 23,
+      "conf": 96.186378
+    },
+    {
+      "text": "(cinco",
+      "line_num": 49,
+      "left": 970,
+      "top": 1266,
+      "width": 84,
+      "height": 30,
+      "conf": 96.408806
+    },
+    {
+      "text": "maestros",
+      "line_num": 49,
+      "left": 1066,
+      "top": 1268,
+      "width": 129,
+      "height": 22,
+      "conf": 96.634605
+    },
+    {
+      "text": "jubilados",
+      "line_num": 49,
+      "left": 1204,
+      "top": 1267,
+      "width": 129,
+      "height": 29,
+      "conf": 96.741821
+    },
+    {
+      "text": "que",
+      "line_num": 49,
+      "left": 1343,
+      "top": 1273,
+      "width": 53,
+      "height": 23,
+      "conf": 96.955795
+    },
+    {
+      "text": "se",
+      "line_num": 49,
+      "left": 1406,
+      "top": 1273,
+      "width": 32,
+      "height": 17,
+      "conf": 97.013359
+    },
+    {
+      "text": "hacen",
+      "line_num": 50,
+      "left": 850,
+      "top": 1315,
+      "width": 83,
+      "height": 23,
+      "conf": 96.051651
+    },
+    {
+      "text": "llamar",
+      "line_num": 50,
+      "left": 946,
+      "top": 1315,
+      "width": 85,
+      "height": 23,
+      "conf": 96.051651
+    },
+    {
+      "text": "Segundo",
+      "line_num": 50,
+      "left": 1041,
+      "top": 1314,
+      "width": 127,
+      "height": 31,
+      "conf": 96.81002
+    },
+    {
+      "text": "Aire)",
+      "line_num": 50,
+      "left": 1177,
+      "top": 1314,
+      "width": 63,
+      "height": 30,
+      "conf": 84.090492
+    },
+    {
+      "text": "toca",
+      "line_num": 50,
+      "left": 1250,
+      "top": 1316,
+      "width": 62,
+      "height": 22,
+      "conf": 96.842697
+    },
+    {
+      "text": "junto",
+      "line_num": 50,
+      "left": 1321,
+      "top": 1315,
+      "width": 71,
+      "height": 29,
+      "conf": 96.217117
+    },
+    {
+      "text": "a",
+      "line_num": 50,
+      "left": 1402,
+      "top": 1321,
+      "width": 16,
+      "height": 17,
+      "conf": 96.217117
+    },
+    {
+      "text": "la",
+      "line_num": 51,
+      "left": 850,
+      "top": 1363,
+      "width": 22,
+      "height": 23,
+      "conf": 97.021271
+    },
+    {
+      "text": "fuente.",
+      "line_num": 51,
+      "left": 881,
+      "top": 1363,
+      "width": 96,
+      "height": 23,
+      "conf": 96.899376
+    },
+    {
+      "text": "¡A",
+      "line_num": 51,
+      "left": 991,
+      "top": 1363,
+      "width": 27,
+      "height": 29,
+      "conf": 96.983421
+    },
+    {
+      "text": "las",
+      "line_num": 51,
+      "left": 1029,
+      "top": 1363,
+      "width": 37,
+      "height": 23,
+      "conf": 96.772995
+    },
+    {
+      "text": "dos",
+      "line_num": 51,
+      "left": 1076,
+      "top": 1363,
+      "width": 52,
+      "height": 23,
+      "conf": 96.772995
+    },
+    {
+      "text": "de",
+      "line_num": 51,
+      "left": 1139,
+      "top": 1363,
+      "width": 34,
+      "height": 23,
+      "conf": 96.570305
+    },
+    {
+      "text": "la",
+      "line_num": 51,
+      "left": 1185,
+      "top": 1363,
+      "width": 22,
+      "height": 23,
+      "conf": 96.750313
+    },
+    {
+      "text": "tarde,",
+      "line_num": 51,
+      "left": 1216,
+      "top": 1363,
+      "width": 80,
+      "height": 28,
+      "conf": 96.665955
+    },
+    {
+      "text": "las",
+      "line_num": 51,
+      "left": 1309,
+      "top": 1363,
+      "width": 38,
+      "height": 23,
+      "conf": 97.008247
+    },
+    {
+      "text": "camionetas",
+      "line_num": 52,
+      "left": 849,
+      "top": 1411,
+      "width": 164,
+      "height": 23,
+      "conf": 96.2994
+    },
+    {
+      "text": "vuelven",
+      "line_num": 52,
+      "left": 1023,
+      "top": 1411,
+      "width": 106,
+      "height": 23,
+      "conf": 96.917168
+    },
+    {
+      "text": "a",
+      "line_num": 52,
+      "left": 1141,
+      "top": 1417,
+      "width": 16,
+      "height": 17,
+      "conf": 96.814651
+    },
+    {
+      "text": "estar",
+      "line_num": 52,
+      "left": 1167,
+      "top": 1412,
+      "width": 71,
+      "height": 22,
+      "conf": 96.74839
+    },
+    {
+      "text": "cargadas!",
+      "line_num": 52,
+      "left": 1247,
+      "top": 1411,
+      "width": 137,
+      "height": 30,
+      "conf": 96.756264
+    },
+    {
+      "text": "La",
+      "line_num": 53,
+      "left": 850,
+      "top": 1485,
+      "width": 33,
+      "height": 23,
+      "conf": 96.826286
+    },
+    {
+      "text": "audiencia",
+      "line_num": 53,
+      "left": 893,
+      "top": 1485,
+      "width": 136,
+      "height": 23,
+      "conf": 96.903984
+    },
+    {
+      "text": "pública",
+      "line_num": 53,
+      "left": 1040,
+      "top": 1483,
+      "width": 102,
+      "height": 31,
+      "conf": 96.916
+    },
+    {
+      "text": "sobre",
+      "line_num": 53,
+      "left": 1152,
+      "top": 1485,
+      "width": 80,
+      "height": 23,
+      "conf": 96.956863
+    },
+    {
+      "text": "el",
+      "line_num": 53,
+      "left": 1242,
+      "top": 1485,
+      "width": 21,
+      "height": 23,
+      "conf": 96.348373
+    },
+    {
+      "text": "cierre",
+      "line_num": 53,
+      "left": 1275,
+      "top": 1485,
+      "width": 78,
+      "height": 23,
+      "conf": 96.536484
+    },
+    {
+      "text": "de",
+      "line_num": 53,
+      "left": 1363,
+      "top": 1485,
+      "width": 35,
+      "height": 23,
+      "conf": 96.639488
+    },
+    {
+      "text": "calles",
+      "line_num": 54,
+      "left": 849,
+      "top": 1533,
+      "width": 80,
+      "height": 23,
+      "conf": 96.603027
+    },
+    {
+      "text": "está",
+      "line_num": 54,
+      "left": 940,
+      "top": 1531,
+      "width": 59,
+      "height": 25,
+      "conf": 96.603027
+    },
+    {
+      "text": "prevista",
+      "line_num": 54,
+      "left": 1010,
+      "top": 1533,
+      "width": 110,
+      "height": 29,
+      "conf": 95.872131
+    },
+    {
+      "text": "para",
+      "line_num": 54,
+      "left": 1131,
+      "top": 1539,
+      "width": 62,
+      "height": 23,
+      "conf": 96.755951
+    },
+    {
+      "text": "el",
+      "line_num": 54,
+      "left": 1203,
+      "top": 1533,
+      "width": 22,
+      "height": 23,
+      "conf": 97.015518
+    },
+    {
+      "text": "jueves",
+      "line_num": 54,
+      "left": 1235,
+      "top": 1533,
+      "width": 91,
+      "height": 29,
+      "conf": 96.153603
+    },
+    {
+      "text": "14",
+      "line_num": 54,
+      "left": 1338,
+      "top": 1533,
+      "width": 32,
+      "height": 23,
+      "conf": 96.801613
+    },
+    {
+      "text": "de",
+      "line_num": 54,
+      "left": 1381,
+      "top": 1533,
+      "width": 35,
+      "height": 23,
+      "conf": 96.801613
+    },
+    {
+      "text": "marzo,",
+      "line_num": 55,
+      "left": 850,
+      "top": 1587,
+      "width": 93,
+      "height": 21,
+      "conf": 96.685219
+    },
+    {
+      "text": "a",
+      "line_num": 55,
+      "left": 956,
+      "top": 1587,
+      "width": 16,
+      "height": 17,
+      "conf": 96.604843
+    },
+    {
+      "text": "las",
+      "line_num": 55,
+      "left": 983,
+      "top": 1581,
+      "width": 37,
+      "height": 23,
+      "conf": 95.938332
+    },
+    {
+      "text": "19:00,",
+      "line_num": 55,
+      "left": 1033,
+      "top": 1581,
+      "width": 83,
+      "height": 27,
+      "conf": 96.161041
+    },
+    {
+      "text": "en",
+      "line_num": 55,
+      "left": 1129,
+      "top": 1587,
+      "width": 32,
+      "height": 17,
+      "conf": 96.45491
+    },
+    {
+      "text": "la",
+      "line_num": 55,
+      "left": 1174,
+      "top": 1581,
+      "width": 22,
+      "height": 23,
+      "conf": 96.346642
+    },
+    {
+      "text": "sala",
+      "line_num": 55,
+      "left": 1206,
+      "top": 1581,
+      "width": 56,
+      "height": 23,
+      "conf": 96.225273
+    },
+    {
+      "text": "204",
+      "line_num": 55,
+      "left": 1272,
+      "top": 1581,
+      "width": 51,
+      "height": 23,
+      "conf": 96.225273
+    },
+    {
+      "text": "del",
+      "line_num": 55,
+      "left": 1334,
+      "top": 1581,
+      "width": 41,
+      "height": 23,
+      "conf": 96.380882
+    },
+    {
+      "text": "ayuntamiento.",
+      "line_num": 56,
+      "left": 849,
+      "top": 1629,
+      "width": 199,
+      "height": 30,
+      "conf": 95.825958
+    },
+    {
+      "text": "Los",
+      "line_num": 56,
+      "left": 1062,
+      "top": 1629,
+      "width": 49,
+      "height": 23,
+      "conf": 96.760063
+    },
+    {
+      "text": "comentarios",
+      "line_num": 56,
+      "left": 1122,
+      "top": 1629,
+      "width": 175,
+      "height": 23,
+      "conf": 96.140938
+    },
+    {
+      "text": "por",
+      "line_num": 56,
+      "left": 1309,
+      "top": 1635,
+      "width": 46,
+      "height": 23,
+      "conf": 96.401222
+    },
+    {
+      "text": "escrito",
+      "line_num": 57,
+      "left": 849,
+      "top": 1677,
+      "width": 95,
+      "height": 23,
+      "conf": 96.98922
+    },
+    {
+      "text": "pueden",
+      "line_num": 57,
+      "left": 955,
+      "top": 1677,
+      "width": 104,
+      "height": 29,
+      "conf": 96.263519
+    },
+    {
+      "text": "enviarse",
+      "line_num": 57,
+      "left": 1071,
+      "top": 1677,
+      "width": 118,
+      "height": 23,
+      "conf": 96.454414
+    },
+    {
+      "text": "a",
+      "line_num": 57,
+      "left": 1192,
+      "top": 1671,
+      "width": 14,
+      "height": 39,
+      "conf": 96.989807
+    },
+    {
+      "text": "la",
+      "line_num": 57,
+      "left": 1226,
+      "top": 1677,
+      "width": 22,
+      "height": 23,
+      "conf": 96.526344
+    },
+    {
+      "text": "secretaría",
+      "line_num": 57,
+      "left": 1258,
+      "top": 1675,
+      "width": 139,
+      "height": 25,
+      "conf": 96.142288
+    },
+    {
+      "text": "hasta",
+      "line_num": 58,
+      "left": 850,
+      "top": 1725,
+      "width": 76,
+      "height": 23,
+      "conf": 96.776047
+    },
+    {
+      "text": "fin",
+      "line_num": 58,
+      "left": 935,
+      "top": 1725,
+      "width": 33,
+      "height": 23,
+      "conf": 96.446815
+    },
+    {
+      "text": "de",
+      "line_num": 58,
+      "left": 979,
+      "top": 1725,
+      "width": 35,
+      "height": 23,
+      "conf": 96.859901
+    },
+    {
+      "text": "mes.",
+      "line_num": 58,
+      "left": 1025,
+      "top": 1731,
+      "width": 65,
+      "height": 17,
+      "conf": 96.844368
     },
     {
       "text": "OCR",
-      "line_num": 1,
+      "line_num": 59,
       "left": 628,
       "top": 1892,
       "width": 51,
       "height": 18,
-      "conf": 96.444824
+      "conf": 96.497147
     },
     {
       "text": "Test:",
-      "line_num": 1,
+      "line_num": 59,
       "left": 687,
       "top": 1893,
       "width": 47,
       "height": 17,
-      "conf": 96.56546
+      "conf": 96.617813
     },
     {
       "text": "spanish",
-      "line_num": 1,
+      "line_num": 59,
       "left": 742,
       "top": 1893,
       "width": 81,
       "height": 22,
-      "conf": 93.30481
+      "conf": 93.304024
     },
     {
       "text": "(two-column,",
-      "line_num": 1,
+      "line_num": 59,
       "left": 831,
       "top": 1892,
       "width": 137,
       "height": 23,
-      "conf": 92.713181
+      "conf": 92.249611
     },
     {
       "text": "ltr)",
-      "line_num": 1,
+      "line_num": 59,
       "left": 978,
       "top": 1892,
       "width": 26,
       "height": 23,
-      "conf": 85.406845
+      "conf": 85.673897
     }
   ]
 }

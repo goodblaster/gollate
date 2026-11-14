@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/csv"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -202,76 +201,88 @@ func ocrSlices(slices []slicing.Slice, langFlag, psmFlag string) ([]tesseract.Te
 	return all, nil
 }
 
+// parseTesseractTSV parses tesseract's word-level TSV output.
+//
+// The format is plain tab-separated text, NOT CSV: fields are never quoted,
+// so a word that begins with a double quote ("People) is literal text. An
+// earlier version used encoding/csv, which treated that quote as the start
+// of a quoted field, failed, and silently dropped the rest of the page.
+//
+// LineNum in the result is a page-unique running line counter. Tesseract's
+// own line_num restarts at 1 in every paragraph, so using it directly made
+// the first lines of all paragraphs share one line id.
 func parseTesseractTSV(tsvData string) ([]tesseract.TesseractWord, error) {
-	reader := csv.NewReader(strings.NewReader(tsvData))
-	reader.Comma = '\t'
-
-	// Read header
-	header, err := reader.Read()
-	if err != nil {
-		return nil, fmt.Errorf("failed to read header: %w", err)
+	rows := strings.Split(tsvData, "\n")
+	if len(rows) == 0 || strings.TrimSpace(rows[0]) == "" {
+		return nil, fmt.Errorf("empty TSV output")
 	}
 
-	// Build column index map
+	// Build column index map from the header.
+	header := strings.Split(strings.TrimRight(rows[0], "\r"), "\t")
 	colMap := make(map[string]int)
 	for i, col := range header {
 		colMap[col] = i
 	}
+	for _, required := range []string{"level", "left", "top", "width", "height", "conf", "text"} {
+		if _, ok := colMap[required]; !ok {
+			return nil, fmt.Errorf("TSV header missing %q column", required)
+		}
+	}
+	textCol := colMap["text"]
 
-	// Parse rows
-	var words []tesseract.TesseractWord
-
-	for {
-		row, err := reader.Read()
+	// field returns the named column as an int, or -1 if absent.
+	field := func(row []string, name string) int {
+		i, ok := colMap[name]
+		if !ok || i >= len(row) {
+			return -1
+		}
+		v, err := strconv.Atoi(row[i])
 		if err != nil {
-			break // EOF or error
+			return -1
+		}
+		return v
+	}
+
+	var words []tesseract.TesseractWord
+	lineNum := -1
+	var lastLine [4]int
+	for _, line := range rows[1:] {
+		line = strings.TrimRight(line, "\r")
+		if line == "" {
+			continue
+		}
+		// text is the last column; SplitN keeps any tab-free text intact.
+		row := strings.SplitN(line, "\t", len(header))
+		if len(row) <= textCol {
+			continue
 		}
 
 		// Level 5 = word level in Tesseract output
-		if len(row) <= colMap["level"] {
+		if field(row, "level") != 5 {
 			continue
 		}
-
-		level, _ := strconv.Atoi(row[colMap["level"]])
-		if level != 5 {
-			continue
-		}
-
-		// Get text
-		text := ""
-		if colMap["text"] < len(row) {
-			text = strings.TrimSpace(row[colMap["text"]])
-		}
+		text := strings.TrimSpace(row[textCol])
 		if text == "" {
 			continue
 		}
 
-		// Parse coordinates
-		left, _ := strconv.Atoi(row[colMap["left"]])
-		top, _ := strconv.Atoi(row[colMap["top"]])
-		width, _ := strconv.Atoi(row[colMap["width"]])
-		height, _ := strconv.Atoi(row[colMap["height"]])
-		conf, _ := strconv.ParseFloat(row[colMap["conf"]], 64)
-
-		// Get line number (use block_num for line grouping)
-		lineNum := 0
-		if colMap["line_num"] < len(row) && row[colMap["line_num"]] != "" {
-			lineNum, _ = strconv.Atoi(row[colMap["line_num"]])
-		} else if colMap["block_num"] < len(row) {
-			lineNum, _ = strconv.Atoi(row[colMap["block_num"]])
+		// A new (page, block, paragraph, line) tuple is a new visual line.
+		key := [4]int{field(row, "page_num"), field(row, "block_num"), field(row, "par_num"), field(row, "line_num")}
+		if lineNum == -1 || key != lastLine {
+			lineNum++
+			lastLine = key
 		}
 
-		word := tesseract.TesseractWord{
+		conf, _ := strconv.ParseFloat(row[colMap["conf"]], 64)
+		words = append(words, tesseract.TesseractWord{
 			Text:       text,
 			LineNum:    lineNum,
-			Left:       left,
-			Top:        top,
-			Width:      width,
-			Height:     height,
+			Left:       field(row, "left"),
+			Top:        field(row, "top"),
+			Width:      field(row, "width"),
+			Height:     field(row, "height"),
 			Confidence: conf,
-		}
-
-		words = append(words, word)
+		})
 	}
 
 	return words, nil

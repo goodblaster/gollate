@@ -1,18 +1,16 @@
 package sorters
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
 
 const (
-	MaxWordDistance     = 10.0
-	MaxSentenceDistance = 30.0
-	BaseSequential      = 0.1
-	BaseLineWrap        = 1.0
-	BaseNextColumn      = 25.0 // Strong penalty for column/line jumps to prefer spatial proximity
-	BaseDefault         = 100.0
+	MaxWordDistance = 10.0
+	BaseSequential  = 0.1
+	BaseLineWrap    = 1.0
+	BaseNextColumn  = 25.0 // Strong penalty for column/line jumps to prefer spatial proximity
+	BaseDefault     = 100.0
 )
 
 func MaxNextLineHeight(w1, w2 Block) float64 {
@@ -22,17 +20,6 @@ func MaxNextLineHeight(w1, w2 Block) float64 {
 
 func MaxLineGap(w1, w2 Block) float64 {
 	return math.Max(w1.Height(), w2.Height()) * 2.0
-}
-
-func (s *Sorter) PrintDistances(nodes []int) {
-	var ds []float64
-	var sum float64
-	for i := 0; i < len(nodes)-1; i++ {
-		dist := Distance(s.input[nodes[i]], s.input[nodes[i+1]])
-		ds = append(ds, dist)
-		sum += dist
-	}
-	fmt.Println(sum, ds)
 }
 
 // Distance calculates the spatial distance between two blocks.
@@ -53,9 +40,8 @@ func DistanceWithOrder(w1 Block, w2 Block, order ReadingOrder) float64 {
 // distanceWithPenalty calculates the spatial distance between two blocks
 // with a configurable column jump penalty.
 func distanceWithPenalty(w1 Block, w2 Block, order ReadingOrder, columnPenalty float64) float64 {
-	b1 := w1
-	b2 := w2
-	if w1.Engine() == "" {
+	// No previous block: the first step of a path costs nothing.
+	if w1.IsSeparator() {
 		return 0
 	}
 
@@ -67,16 +53,6 @@ func distanceWithPenalty(w1 Block, w2 Block, order ReadingOrder, columnPenalty f
 			return columnPenalty + primaryDist
 		}
 		return BaseSequential + primaryDist
-	}
-
-	debug := false
-	if debug {
-		fmt.Println("w1.Bottom()", w1.PixelBottom())
-		fmt.Println("w2.Top()", w2.PixelTop())
-		fmt.Println("w1.Right()", w1.PixelRight())
-		fmt.Println("w2.Left()", w2.PixelLeft())
-		fmt.Println("w2.Top()-w1.Bottom()", w2.PixelTop()-w1.PixelBottom())
-		fmt.Println("MaxLineGap(w1, w2)", MaxLineGap(w1, w2))
 	}
 
 	// Wrapped to next line/column based on reading order
@@ -91,10 +67,9 @@ func distanceWithPenalty(w1 Block, w2 Block, order ReadingOrder, columnPenalty f
 
 	// Default to physical distance on center with a large multiplier.
 	// These will probably be thrown out every time.
-	x1, y1 := b1.Center()
-	x2, y2 := b2.Center()
-	physical := math.Sqrt(math.Pow(x2-x1, 2) + math.Pow(y2-y1, 2))
-	return BaseDefault + physical
+	x1, y1 := w1.Center()
+	x2, y2 := w2.Center()
+	return BaseDefault + math.Hypot(x2-x1, y2-y1)
 }
 
 // distance calculates the spatial distance between two blocks using the sorter's
@@ -260,12 +235,6 @@ func isWrappedToNextColumn(w1, w2 Block, order ReadingOrder) bool {
 	default:
 		return w2.Left() > w1.Right() && w2.Bottom() < w1.Top()
 	}
-}
-
-func SentenceDistance(line1 []Block, line2 []Block) float64 {
-	blockI := line1[len(line1)-1]
-	blockJ := line2[0]
-	return Distance(blockI, blockJ)
 }
 
 func withinDistance(w1, w2 Block, maxDistance float64) bool {

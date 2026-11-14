@@ -180,7 +180,7 @@ func main() {
 		// Color by paragraph in sorted output (separated by empty blocks)
 		colorIndex := 0
 		for i, block := range blocks {
-			if block.Engine() == "" {
+			if block.IsSeparator() {
 				// Empty block = line separator, next paragraph gets new color
 				colorIndex++
 				continue

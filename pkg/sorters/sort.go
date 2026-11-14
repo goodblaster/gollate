@@ -2,11 +2,10 @@ package sorters
 
 import (
 	"cmp"
-	"fmt"
 	"sort"
 	"time"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 // Sort performs multi-pass pathfinding to reconstruct reading order from OCR blocks.
@@ -156,18 +155,6 @@ func (s *Sorter) Sort() ([]Block, error) {
 				s.fillHoles(&path, canonicalWords)
 			}
 
-			if s.debugPrintPathNodes {
-				fmt.Print("FOUND -- ")
-				for _, index := range path.Nodes {
-					if index < 0 {
-						fmt.Print("<hole> ")
-						continue
-					}
-					fmt.Print(s.input[index].Text, " ")
-				}
-				fmt.Println()
-			}
-
 			// Link the line to the found path.
 			line.FoundPath = path
 			line.Found = true
@@ -201,8 +188,7 @@ func (s *Sorter) Sort() ([]Block, error) {
 // Known limitation: if an absent word is at the beginning of a line, so
 // splitting yields a single changed line, SplitAndReset ignores the change.
 func (s *Sorter) splitLine(missingWords map[string]bool) {
-	s.metrics.LinesSplit++
-	s.lines.SplitAndReset(func(line Line) []Line {
+	split := s.lines.SplitAndReset(func(line Line) []Line {
 		segments := SplitParagraph(line.OriginalText)
 		if len(segments) <= 1 && len(missingWords) > 0 {
 			segments = s.splitByAbsentWords(line.OriginalText, missingWords)
@@ -218,6 +204,11 @@ func (s *Sorter) splitLine(missingWords map[string]bool) {
 		}
 		return lines
 	})
+	// Count only real splits: an unsplittable line is retried every pass,
+	// and counting each attempt inflated the metric.
+	if split {
+		s.metrics.LinesSplit++
+	}
 }
 
 // markIntermediateBlankLines marks blank lines as found if they appear between found content lines.
@@ -345,6 +336,7 @@ func (s *Sorter) recurse(chain [][]Block, previousBlock Block, path Path, chainP
 	s.metrics.TotalPermutationsExplored++
 	if s.perm > maxPermutations {
 		s.logger.Debug("Permutation limit reached")
+		s.limitHit = true
 		return false
 	}
 
@@ -354,17 +346,21 @@ func (s *Sorter) recurse(chain [][]Block, previousBlock Block, path Path, chainP
 
 	candidateBlocks := chain[chainPosition]
 
-	// Rotation optimization: reorder candidates to start with most likely next word
-	// This dramatically reduces the number of paths explored
+	// Rotation optimization: visit candidates starting with the most likely
+	// next word (the first block emitted after the previous one), wrapping
+	// around. This dramatically reduces the number of paths explored.
+	// Iterating from an offset - rather than building a rotated slice -
+	// avoids an allocation per node and never writes into the shared
+	// backing array of s.mapped.
+	start := 0
 	if s.config.RotationOptimization && chainPosition > 0 {
-		previousIndex := previousBlock.Index
-		rotatePos, _ := slices.BinarySearchFunc(candidateBlocks, Block{Index: previousIndex + 1}, func(a, b Block) int {
-			return cmp.Compare(a.Index, b.Index)
+		start, _ = slices.BinarySearchFunc(candidateBlocks, previousBlock.Index+1, func(b Block, index int) int {
+			return cmp.Compare(b.Index, index)
 		})
-		candidateBlocks = append(candidateBlocks[rotatePos:], candidateBlocks[:rotatePos]...)
 	}
 
-	for _, candidate := range candidateBlocks {
+	for k := range candidateBlocks {
+		candidate := candidateBlocks[(start+k)%len(candidateBlocks)]
 		if path.Contains(candidate.Index) {
 			continue
 		}

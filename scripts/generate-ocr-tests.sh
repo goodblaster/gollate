@@ -34,26 +34,31 @@ done
 # Format: "language layout direction [extra testdoc flags]"
 # Direction "-" means testdoc's default for the language (rtl for arabic).
 # English is primary and gets the extra layout archetypes.
+# Vertical Japanese uses its own content (a literary passage with kanji
+# numerals): tategaki is the form of books and essays, and real vertical
+# text does not carry the Arabic numerals and Latin acronyms the horizontal
+# article content has.
 MATRIX=(
     "english single -"
     "english two-column -"
     "english three-column -"
-    "english mixed-sizes -"
-    "english sidebar -"
+    "english mixed-sizes - -layout mixed-sizes -font-size 11"
+    "english sidebar - -layout sidebar -font-size 11"
     "english grid - -layout grid -font-size 11"
+    "english justified - -layout justified -font-size 11"
     "english-legal single -"
-    "spanish single -"
+    "spanish single - -layout single -font-size 11"
     "spanish two-column -"
-    "spanish three-column -"
+    "spanish three-column - -layout three-column -font-size 11"
     "chinese single -"
     "chinese two-column -"
     "chinese three-column -"
     "japanese single -"
     "japanese two-column - -layout two-column -font-size 10"
     "japanese three-column - -layout three-column -font-size 10"
-    "japanese single-vertical - -direction vertical -layout single -font-size 10"
-    "japanese two-column-vertical - -direction vertical -layout two-column -font-size 10"
-    "japanese book-vertical - -layout book -direction vertical -font-size 10"
+    "japanese single-vertical - -direction vertical -layout single -font-size 10 -content $CONTENT_DIR/japanese-vertical.txt"
+    "japanese two-column-vertical - -direction vertical -layout two-column -font-size 10 -content $CONTENT_DIR/japanese-vertical.txt"
+    "japanese book-vertical - -layout book -direction vertical -font-size 10 -content $CONTENT_DIR/japanese-vertical.txt"
     "arabic single -"
     "arabic two-column -"
     "arabic three-column -"

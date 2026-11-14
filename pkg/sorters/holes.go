@@ -1,7 +1,5 @@
 package sorters
 
-import "sort"
-
 // Wildcard chain holes and wrap bridging (experimental, EnableChainHoles /
 // EnableWrapBridging).
 //
@@ -38,7 +36,7 @@ func (s *Sorter) stepDistance(previous, candidate Block, pendingHoles int) (floa
 	// A structurally legitimate wrap to the next visual line: admit the step
 	// and let its real cost (already BaseLineWrap + gap) compete in path
 	// length, so paths with fewer wraps still win.
-	if s.config.EnableWrapBridging && previous.Engine() != "" &&
+	if s.config.EnableWrapBridging && !previous.IsSeparator() &&
 		isWrappedToNextLine(previous, candidate, s.config.ReadingOrder) {
 		return distance, true
 	}
@@ -108,18 +106,13 @@ func (s *Sorter) fillHoles(path *Path, canonicalWords []string) {
 		next := s.input[nextIdx]
 		word := []rune(canonicalWords[i])
 
-		// Deterministic scan: sorted keys, best candidate by tightest fit,
-		// ties broken by block Index.
-		keys := make([]string, 0, len(s.mapped))
-		for key := range s.mapped {
-			keys = append(keys, key)
-		}
-		sort.Strings(keys)
-
+		// Best candidate by tightest fit, ties broken by block Index. That
+		// is a total order, so the result is deterministic regardless of
+		// map iteration order.
 		bestIndex := -1
 		var bestCost float64
-		for _, key := range keys {
-			for _, candidate := range s.mapped[key] {
+		for _, candidates := range s.mapped {
+			for _, candidate := range candidates {
 				if path.Contains(candidate.Index) {
 					continue
 				}

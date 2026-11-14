@@ -1,5 +1,7 @@
 package language
 
+import "unicode"
+
 // CJK implements Handler for Chinese, Japanese, and Korean languages.
 type CJK struct{}
 
@@ -12,22 +14,29 @@ func (h *CJK) DetectScript(text string) float64 {
 		return 0.0
 	}
 
-	// Count CJK characters
+	// Share of the text's letters that are CJK. Digits, punctuation and
+	// whitespace say nothing about the script and are ignored: counting
+	// them made ordinary Chinese and Japanese prose - which is full of
+	// Arabic numerals and fullwidth punctuation - fall below the detection
+	// threshold and lose per-character tokenization.
 	cjkCount := 0
-	totalRunes := 0
+	letters := 0
 
 	for _, r := range text {
-		totalRunes++
+		if !unicode.IsLetter(r) {
+			continue
+		}
+		letters++
 		if isCJKChar(r) {
 			cjkCount++
 		}
 	}
 
-	if totalRunes == 0 {
+	if letters == 0 {
 		return 0.0
 	}
 
-	return float64(cjkCount) / float64(totalRunes)
+	return float64(cjkCount) / float64(letters)
 }
 
 func (h *CJK) ReadingOrder() ReadingOrder {

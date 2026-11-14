@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr">
+<html dir="ltr" lang="en">
 <head><meta charset="UTF-8"><style>
 	@page { size: letter; margin: 0; }
 	* { box-sizing: border-box; }
@@ -16,7 +16,13 @@
 	.content { flex: 1 1 auto; min-height: 0; }
 	.content.columns { column-count: 1; column-gap: 24pt; column-fill: auto; height: 100%; }
 	.content.vertical { writing-mode: vertical-rl; }
+	/* book: whole flow is vertical; spacing goes between columns (to the
+	   left in vertical-rl), not below. Scoped to .book so the existing
+	   vertical fixtures keep their committed rendering. */
+	.content.book h1 { font-size: 1.6em; margin: 0 0 0 16pt; }
+	.content.book p.colophon { font-size: 0.75em; font-style: italic; margin: 0 12pt 0 0; }
 	p { margin: 0 0 10pt 0; }
+	.content.book p { margin: 0 0 0 12pt; }
 	p.small { font-size: 0.8em; }
 	h2 { font-size: 1.4em; margin: 6pt 0 8pt 0; }
 	.footer { flex: none; text-align: center; font-size: 0.75em; font-style: italic; margin-top: 8pt; }

@@ -13,9 +13,9 @@ package ocr
 //     word level.
 //   - BoundingBox in page fractions (0-1), not pixels. PageWidth/PageHeight
 //     carry the pixel dimensions; parts of wrap detection use both.
-//   - Extractor must be non-empty. It is load-bearing: distance calculation
-//     short-circuits for blocks with no engine name, silently disabling
-//     pathfinding.
+//   - Extractor should name the source engine. It is provenance only: the
+//     sorter no longer treats a missing name as "no block" (see
+//     IsSeparator), which used to disable pathfinding silently.
 //   - Index must reflect OCR emit order (0..n-1). Emit order is an
 //     algorithmic signal - candidate rotation and leftover assembly rely on
 //     it - not an arbitrary ID.
@@ -36,7 +36,10 @@ type Block struct {
 	PageWidth     int         `json:"page_width"`
 	PageHeight    int         `json:"page_height"`
 	LineId        string      `json:"line_id,omitempty"`
-	HyphenAfter   string      `json:"hyphen_after,omitempty"` // Hyphen that came after this word (for reconstruction)
+	// HyphenAfter is the separator that followed this block in the OCR
+	// word it was split from ("-" in "four-block", "." in "$4.2", ":" in
+	// "6:30"). Output re-joins the pieces with it instead of a space.
+	HyphenAfter string `json:"hyphen_after,omitempty"`
 
 	// Spelling correction fields (populated when corrections are detected)
 	OriginalOcrText string  `json:"original_ocr_text,omitempty"` // Original OCR text before correction (if corrected)
@@ -52,6 +55,13 @@ func (b Block) String() string {
 
 func (b Block) Engine() string {
 	return b.Extractor
+}
+
+// IsSeparator reports whether b is the empty block: the line-break marker
+// in the sorter's flat output, and "no previous block" at the start of a
+// path. A block with text is never a separator, whatever its Extractor.
+func (b Block) IsSeparator() bool {
+	return b.Extractor == "" && b.Text == ""
 }
 
 type BoundingBox struct {

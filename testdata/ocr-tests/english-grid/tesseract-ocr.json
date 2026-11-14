@@ -2,48 +2,48 @@
   "words": [
     {
       "text": "The",
-      "line_num": 1,
+      "line_num": 0,
       "left": 437,
       "top": 215,
       "width": 102,
       "height": 44,
-      "conf": 96.560455
+      "conf": 96.352097
     },
     {
       "text": "Fabric",
-      "line_num": 1,
+      "line_num": 0,
       "left": 561,
       "top": 215,
       "width": 171,
       "height": 44,
-      "conf": 95.838699
+      "conf": 96.082115
     },
     {
       "text": "of",
-      "line_num": 1,
+      "line_num": 0,
       "left": 751,
       "top": 215,
       "width": 54,
       "height": 44,
-      "conf": 95.838699
+      "conf": 96.082115
     },
     {
       "text": "Everyday",
-      "line_num": 1,
+      "line_num": 0,
       "left": 824,
       "top": 215,
       "width": 253,
       "height": 54,
-      "conf": 95.935097
+      "conf": 96.383278
     },
     {
       "text": "Life",
-      "line_num": 1,
+      "line_num": 0,
       "left": 1096,
       "top": 215,
       "width": 98,
       "height": 44,
-      "conf": 95.605431
+      "conf": 95.952118
     },
     {
       "text": "Aurora",
@@ -52,7 +52,7 @@
       "top": 365,
       "width": 103,
       "height": 23,
-      "conf": 95.678978
+      "conf": 95.198471
     },
     {
       "text": "Lamp",
@@ -61,92 +61,92 @@
       "top": 365,
       "width": 84,
       "height": 29,
-      "conf": 96.847359
+      "conf": 95.198471
     },
     {
       "text": "Soft",
-      "line_num": 1,
+      "line_num": 2,
       "left": 250,
       "top": 418,
       "width": 44,
       "height": 18,
-      "conf": 96.321083
+      "conf": 96.49073
     },
     {
       "text": "northern",
-      "line_num": 1,
+      "line_num": 2,
       "left": 303,
       "top": 418,
       "width": 91,
       "height": 18,
-      "conf": 96.494316
+      "conf": 96.557198
     },
     {
       "text": "light",
-      "line_num": 1,
+      "line_num": 2,
       "left": 404,
       "top": 418,
       "width": 45,
       "height": 23,
-      "conf": 96.876633
+      "conf": 96.903824
     },
     {
       "text": "for",
-      "line_num": 1,
+      "line_num": 2,
       "left": 457,
       "top": 418,
       "width": 30,
       "height": 18,
-      "conf": 96.80687
+      "conf": 96.872963
     },
     {
       "text": "any",
-      "line_num": 1,
+      "line_num": 2,
       "left": 494,
       "top": 423,
       "width": 39,
       "height": 18,
-      "conf": 96.34095
+      "conf": 96.72612
     },
     {
       "text": "room.",
-      "line_num": 2,
+      "line_num": 3,
       "left": 360,
       "top": 461,
       "width": 62,
       "height": 13,
-      "conf": 96.36261
+      "conf": 96.308777
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 4,
       "left": 326,
       "top": 511,
       "width": 63,
       "height": 19,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 4,
       "left": 400,
       "top": 516,
       "width": 58,
       "height": 14,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 5,
       "left": 370,
       "top": 555,
       "width": 44,
       "height": 24,
-      "conf": 96.723671
+      "conf": 96.695732
     },
     {
       "text": "Drift",
-      "line_num": 1,
+      "line_num": 6,
       "left": 309,
       "top": 755,
       "width": 65,
@@ -155,7 +155,7 @@
     },
     {
       "text": "Pillow",
-      "line_num": 1,
+      "line_num": 6,
       "left": 385,
       "top": 755,
       "width": 90,
@@ -164,52 +164,52 @@
     },
     {
       "text": "Cooling",
-      "line_num": 1,
+      "line_num": 7,
       "left": 234,
       "top": 810,
       "width": 84,
       "height": 23,
-      "conf": 96.7136
+      "conf": 96.675545
     },
     {
       "text": "foam",
-      "line_num": 1,
+      "line_num": 7,
       "left": 326,
       "top": 810,
       "width": 55,
       "height": 18,
-      "conf": 96.426109
+      "conf": 96.471573
     },
     {
       "text": "that",
-      "line_num": 1,
+      "line_num": 7,
       "left": 390,
       "top": 810,
       "width": 42,
       "height": 18,
-      "conf": 96.426109
+      "conf": 96.471573
     },
     {
       "text": "shapes",
-      "line_num": 1,
+      "line_num": 7,
       "left": 440,
       "top": 810,
       "width": 79,
       "height": 23,
-      "conf": 96.431908
+      "conf": 96.034492
     },
     {
       "text": "to",
-      "line_num": 1,
+      "line_num": 7,
       "left": 527,
       "top": 811,
       "width": 21,
       "height": 17,
-      "conf": 96.443489
+      "conf": 96.034492
     },
     {
       "text": "you.",
-      "line_num": 2,
+      "line_num": 8,
       "left": 367,
       "top": 851,
       "width": 46,
@@ -218,88 +218,88 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 9,
       "left": 326,
       "top": 901,
       "width": 63,
       "height": 19,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 9,
       "left": 400,
       "top": 906,
       "width": 58,
       "height": 14,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 10,
       "left": 370,
       "top": 947,
       "width": 44,
       "height": 24,
-      "conf": 96.723671
+      "conf": 96.695732
     },
     {
       "text": "Glide",
-      "line_num": 1,
+      "line_num": 11,
       "left": 296,
       "top": 1146,
       "width": 77,
       "height": 25,
-      "conf": 96.31459
+      "conf": 96.245148
     },
     {
       "text": "Mouse",
-      "line_num": 1,
+      "line_num": 11,
       "left": 385,
       "top": 1147,
       "width": 101,
       "height": 23,
-      "conf": 95.752037
+      "conf": 95.888893
     },
     {
       "text": "Effortless",
-      "line_num": 1,
+      "line_num": 12,
       "left": 252,
       "top": 1200,
       "width": 101,
       "height": 18,
-      "conf": 96.982841
+      "conf": 96.987991
     },
     {
       "text": "tracking",
-      "line_num": 1,
+      "line_num": 12,
       "left": 361,
       "top": 1200,
       "width": 88,
       "height": 23,
-      "conf": 96.245483
+      "conf": 96.279083
     },
     {
       "text": "on",
-      "line_num": 1,
+      "line_num": 12,
       "left": 458,
       "top": 1205,
       "width": 26,
       "height": 13,
-      "conf": 96.908272
+      "conf": 96.907028
     },
     {
       "text": "any",
-      "line_num": 1,
+      "line_num": 12,
       "left": 493,
       "top": 1205,
       "width": 39,
       "height": 18,
-      "conf": 96.802567
+      "conf": 96.762894
     },
     {
       "text": "surface.",
-      "line_num": 2,
+      "line_num": 13,
       "left": 347,
       "top": 1238,
       "width": 87,
@@ -308,97 +308,97 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 14,
       "left": 326,
       "top": 1293,
       "width": 63,
       "height": 19,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 14,
       "left": 400,
       "top": 1298,
       "width": 58,
       "height": 14,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 15,
       "left": 370,
       "top": 1337,
       "width": 44,
       "height": 24,
-      "conf": 96.723671
+      "conf": 96.695732
     },
     {
       "text": "Juno",
-      "line_num": 1,
+      "line_num": 16,
       "left": 304,
       "top": 1537,
       "width": 75,
       "height": 24,
-      "conf": 96.739464
+      "conf": 96.458443
     },
     {
       "text": "Clock",
-      "line_num": 1,
+      "line_num": 16,
       "left": 390,
       "top": 1536,
       "width": 88,
       "height": 25,
-      "conf": 96.308922
+      "conf": 96.373352
     },
     {
       "text": "Sunrise",
-      "line_num": 1,
+      "line_num": 17,
       "left": 232,
       "top": 1592,
       "width": 82,
       "height": 18,
-      "conf": 96.620895
+      "conf": 96.634842
     },
     {
       "text": "alarms",
-      "line_num": 1,
+      "line_num": 17,
       "left": 322,
       "top": 1592,
       "width": 73,
       "height": 18,
-      "conf": 96.673759
+      "conf": 96.359413
     },
     {
       "text": "tuned",
-      "line_num": 1,
+      "line_num": 17,
       "left": 403,
       "top": 1592,
       "width": 62,
       "height": 18,
-      "conf": 96.466454
+      "conf": 95.841827
     },
     {
       "text": "to",
-      "line_num": 1,
+      "line_num": 17,
       "left": 473,
       "top": 1593,
       "width": 22,
       "height": 17,
-      "conf": 96.916214
+      "conf": 96.906136
     },
     {
       "text": "your",
-      "line_num": 1,
+      "line_num": 17,
       "left": 502,
       "top": 1597,
       "width": 49,
       "height": 18,
-      "conf": 96.920952
+      "conf": 96.876961
     },
     {
       "text": "sleep.",
-      "line_num": 2,
+      "line_num": 18,
       "left": 359,
       "top": 1630,
       "width": 64,
@@ -407,88 +407,88 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 19,
       "left": 326,
       "top": 1683,
       "width": 63,
       "height": 19,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 19,
       "left": 400,
       "top": 1688,
       "width": 58,
       "height": 14,
-      "conf": 96.507896
+      "conf": 96.618248
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 20,
       "left": 370,
       "top": 1729,
       "width": 44,
       "height": 24,
-      "conf": 96.723671
+      "conf": 96.695732
     },
     {
       "text": "Breeze",
-      "line_num": 1,
+      "line_num": 21,
       "left": 732,
       "top": 365,
       "width": 104,
       "height": 23,
-      "conf": 96.167107
+      "conf": 96.84729
     },
     {
       "text": "Fan",
-      "line_num": 1,
+      "line_num": 21,
       "left": 848,
       "top": 365,
       "width": 53,
       "height": 23,
-      "conf": 96.167107
+      "conf": 96.594513
     },
     {
       "text": "Quiet",
-      "line_num": 1,
+      "line_num": 22,
       "left": 669,
       "top": 418,
       "width": 58,
       "height": 19,
-      "conf": 96.269508
+      "conf": 96.012444
     },
     {
       "text": "airflow",
-      "line_num": 1,
+      "line_num": 22,
       "left": 736,
       "top": 418,
       "width": 72,
       "height": 18,
-      "conf": 96.802795
+      "conf": 96.92421
     },
     {
       "text": "with",
-      "line_num": 1,
+      "line_num": 22,
       "left": 815,
       "top": 418,
       "width": 45,
       "height": 18,
-      "conf": 96.90963
+      "conf": 96.966698
     },
     {
       "text": "adaptive",
-      "line_num": 1,
+      "line_num": 22,
       "left": 869,
       "top": 418,
       "width": 94,
       "height": 23,
-      "conf": 96.630089
+      "conf": 96.680794
     },
     {
       "text": "speed.",
-      "line_num": 2,
+      "line_num": 23,
       "left": 779,
       "top": 456,
       "width": 73,
@@ -497,25 +497,25 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 24,
       "left": 751,
       "top": 511,
       "width": 63,
       "height": 19,
-      "conf": 96.721848
+      "conf": 96.496223
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 24,
       "left": 824,
       "top": 516,
       "width": 59,
       "height": 14,
-      "conf": 96.707748
+      "conf": 96.521683
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 25,
       "left": 795,
       "top": 555,
       "width": 44,
@@ -524,88 +524,88 @@
     },
     {
       "text": "Ember",
-      "line_num": 1,
+      "line_num": 26,
       "left": 711,
       "top": 755,
       "width": 99,
       "height": 23,
-      "conf": 96.28981
+      "conf": 96.139542
     },
     {
       "text": "Heater",
-      "line_num": 1,
+      "line_num": 26,
       "left": 821,
       "top": 755,
       "width": 102,
       "height": 23,
-      "conf": 96.350311
+      "conf": 96.314377
     },
     {
       "text": "Focused",
-      "line_num": 1,
+      "line_num": 27,
       "left": 659,
       "top": 810,
       "width": 93,
       "height": 18,
-      "conf": 96.648727
+      "conf": 96.700035
     },
     {
       "text": "warmth",
-      "line_num": 1,
+      "line_num": 27,
       "left": 761,
       "top": 810,
       "width": 81,
       "height": 18,
-      "conf": 96.495316
+      "conf": 96.433533
     },
     {
       "text": "without",
-      "line_num": 1,
+      "line_num": 27,
       "left": 851,
       "top": 810,
       "width": 81,
       "height": 18,
-      "conf": 96.472527
+      "conf": 96.362488
     },
     {
       "text": "the",
-      "line_num": 1,
+      "line_num": 27,
       "left": 940,
       "top": 810,
       "width": 34,
       "height": 18,
-      "conf": 96.472527
+      "conf": 96.362488
     },
     {
       "text": "noise.",
-      "line_num": 2,
+      "line_num": 28,
       "left": 784,
       "top": 846,
       "width": 63,
       "height": 18,
-      "conf": 96.276482
+      "conf": 96.290779
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 29,
       "left": 751,
       "top": 901,
       "width": 63,
       "height": 19,
-      "conf": 96.721848
+      "conf": 96.496223
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 29,
       "left": 824,
       "top": 906,
       "width": 59,
       "height": 14,
-      "conf": 96.707748
+      "conf": 96.521683
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 30,
       "left": 795,
       "top": 947,
       "width": 44,
@@ -614,7 +614,7 @@
     },
     {
       "text": "Halo",
-      "line_num": 1,
+      "line_num": 31,
       "left": 715,
       "top": 1147,
       "width": 67,
@@ -623,7 +623,7 @@
     },
     {
       "text": "Speaker",
-      "line_num": 1,
+      "line_num": 31,
       "left": 793,
       "top": 1146,
       "width": 126,
@@ -632,52 +632,52 @@
     },
     {
       "text": "Room-filling",
-      "line_num": 1,
+      "line_num": 32,
       "left": 657,
       "top": 1200,
       "width": 131,
       "height": 23,
-      "conf": 92.907005
+      "conf": 92.778046
     },
     {
       "text": "sound",
-      "line_num": 1,
+      "line_num": 32,
       "left": 797,
       "top": 1200,
       "width": 67,
       "height": 18,
-      "conf": 96.540749
+      "conf": 96.686005
     },
     {
       "text": "in",
-      "line_num": 1,
+      "line_num": 32,
       "left": 874,
       "top": 1200,
       "width": 16,
       "height": 18,
-      "conf": 95.186279
+      "conf": 95.349121
     },
     {
       "text": "a",
-      "line_num": 1,
+      "line_num": 32,
       "left": 899,
       "top": 1205,
       "width": 13,
       "height": 13,
-      "conf": 95.186279
+      "conf": 95.349121
     },
     {
       "text": "small",
-      "line_num": 1,
+      "line_num": 32,
       "left": 920,
       "top": 1200,
       "width": 56,
       "height": 18,
-      "conf": 95.470963
+      "conf": 95.668282
     },
     {
       "text": "ring.",
-      "line_num": 2,
+      "line_num": 33,
       "left": 793,
       "top": 1238,
       "width": 46,
@@ -686,25 +686,25 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 34,
       "left": 751,
       "top": 1293,
       "width": 63,
       "height": 19,
-      "conf": 96.721848
+      "conf": 96.496223
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 34,
       "left": 824,
       "top": 1298,
       "width": 59,
       "height": 14,
-      "conf": 96.707748
+      "conf": 96.521683
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 35,
       "left": 795,
       "top": 1337,
       "width": 44,
@@ -713,7 +713,7 @@
     },
     {
       "text": "Kite",
-      "line_num": 1,
+      "line_num": 36,
       "left": 731,
       "top": 1537,
       "width": 58,
@@ -722,7 +722,7 @@
     },
     {
       "text": "Router",
-      "line_num": 1,
+      "line_num": 36,
       "left": 801,
       "top": 1537,
       "width": 103,
@@ -731,88 +731,88 @@
     },
     {
       "text": "Fast",
-      "line_num": 1,
+      "line_num": 37,
       "left": 666,
       "top": 1592,
       "width": 45,
       "height": 18,
-      "conf": 96.527489
+      "conf": 96.474831
     },
     {
       "text": "mesh",
-      "line_num": 1,
+      "line_num": 37,
       "left": 720,
       "top": 1592,
       "width": 58,
       "height": 18,
-      "conf": 96.783714
+      "conf": 96.520477
     },
     {
       "text": "coverage",
-      "line_num": 1,
+      "line_num": 37,
       "left": 787,
       "top": 1597,
       "width": 102,
       "height": 18,
-      "conf": 96.605095
+      "conf": 96.200188
     },
     {
       "text": "for",
-      "line_num": 1,
+      "line_num": 37,
       "left": 896,
       "top": 1592,
       "width": 30,
       "height": 18,
-      "conf": 96.605095
+      "conf": 95.749893
     },
     {
       "text": "the",
-      "line_num": 1,
+      "line_num": 37,
       "left": 933,
       "top": 1592,
       "width": 35,
       "height": 18,
-      "conf": 96.692314
+      "conf": 96.773781
     },
     {
       "text": "whole",
-      "line_num": 2,
+      "line_num": 38,
       "left": 745,
       "top": 1630,
       "width": 65,
       "height": 18,
-      "conf": 95.376869
+      "conf": 95.454674
     },
     {
       "text": "home.",
-      "line_num": 2,
+      "line_num": 38,
       "left": 819,
       "top": 1630,
       "width": 66,
       "height": 18,
-      "conf": 96.391441
+      "conf": 95.846954
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 39,
       "left": 751,
       "top": 1683,
       "width": 63,
       "height": 19,
-      "conf": 96.721848
+      "conf": 96.496223
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 39,
       "left": 824,
       "top": 1688,
       "width": 59,
       "height": 14,
-      "conf": 96.707748
+      "conf": 96.521683
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 40,
       "left": 795,
       "top": 1729,
       "width": 44,
@@ -821,133 +821,133 @@
     },
     {
       "text": "OCR",
-      "line_num": 1,
+      "line_num": 41,
       "left": 686,
       "top": 1896,
       "width": 47,
       "height": 16,
-      "conf": 96.788681
+      "conf": 96.77681
     },
     {
       "text": "Test:",
-      "line_num": 1,
+      "line_num": 41,
       "left": 740,
       "top": 1896,
       "width": 44,
       "height": 16,
-      "conf": 96.676552
+      "conf": 96.584839
     },
     {
       "text": "english",
-      "line_num": 1,
+      "line_num": 41,
       "left": 791,
       "top": 1896,
       "width": 68,
       "height": 21,
-      "conf": 96.870193
+      "conf": 95.549797
     },
     {
       "text": "(grid,",
-      "line_num": 1,
+      "line_num": 41,
       "left": 867,
       "top": 1896,
       "width": 46,
       "height": 21,
-      "conf": 91.821243
+      "conf": 93.182259
     },
     {
       "text": "Itr)",
-      "line_num": 1,
+      "line_num": 41,
       "left": 922,
       "top": 1896,
       "width": 24,
       "height": 20,
-      "conf": 90.254585
+      "conf": 89.621704
     },
     {
       "text": "Cascade",
-      "line_num": 1,
+      "line_num": 42,
       "left": 1124,
       "top": 364,
       "width": 133,
       "height": 25,
-      "conf": 95.991966
+      "conf": 96.112831
     },
     {
       "text": "Kettle",
-      "line_num": 1,
+      "line_num": 42,
       "left": 1269,
       "top": 365,
       "width": 89,
       "height": 23,
-      "conf": 95.451813
+      "conf": 96.040749
     },
     {
       "text": "Pour-over",
-      "line_num": 1,
+      "line_num": 43,
       "left": 1086,
       "top": 418,
       "width": 108,
       "height": 18,
-      "conf": 92.965591
+      "conf": 93.002304
     },
     {
       "text": "precision",
-      "line_num": 1,
+      "line_num": 43,
       "left": 1202,
       "top": 418,
       "width": 98,
       "height": 23,
-      "conf": 96.568375
+      "conf": 96.872444
     },
     {
       "text": "at",
-      "line_num": 1,
+      "line_num": 43,
       "left": 1309,
       "top": 419,
       "width": 20,
       "height": 17,
-      "conf": 96.967926
+      "conf": 96.985626
     },
     {
       "text": "exact",
-      "line_num": 1,
+      "line_num": 43,
       "left": 1337,
       "top": 419,
       "width": 60,
       "height": 17,
-      "conf": 96.691933
+      "conf": 96.844536
     },
     {
       "text": "temperatures.",
-      "line_num": 2,
+      "line_num": 44,
       "left": 1164,
       "top": 457,
       "width": 152,
       "height": 22,
-      "conf": 95.884933
+      "conf": 96.060928
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 45,
       "left": 1175,
       "top": 511,
       "width": 64,
       "height": 19,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 45,
       "left": 1249,
       "top": 516,
       "width": 59,
       "height": 14,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 46,
       "left": 1220,
       "top": 555,
       "width": 44,
@@ -956,88 +956,88 @@
     },
     {
       "text": "Flux",
-      "line_num": 1,
+      "line_num": 47,
       "left": 1145,
       "top": 755,
       "width": 61,
       "height": 23,
-      "conf": 96.443573
+      "conf": 96.610809
     },
     {
       "text": "Charger",
-      "line_num": 1,
+      "line_num": 47,
       "left": 1216,
       "top": 754,
       "width": 123,
       "height": 30,
-      "conf": 96.519753
+      "conf": 96.224686
     },
     {
       "text": "One",
-      "line_num": 2,
+      "line_num": 48,
       "left": 1098,
       "top": 810,
       "width": 45,
       "height": 18,
-      "conf": 94.998085
+      "conf": 94.747253
     },
     {
       "text": "pad",
-      "line_num": 2,
+      "line_num": 48,
       "left": 1152,
       "top": 810,
       "width": 40,
       "height": 23,
-      "conf": 96.92878
+      "conf": 96.910744
     },
     {
       "text": "for",
-      "line_num": 2,
+      "line_num": 48,
       "left": 1201,
       "top": 810,
       "width": 30,
       "height": 18,
-      "conf": 96.810265
+      "conf": 96.463692
     },
     {
       "text": "every",
-      "line_num": 2,
+      "line_num": 48,
       "left": 1238,
       "top": 815,
       "width": 59,
       "height": 18,
-      "conf": 96.810265
+      "conf": 96.463692
     },
     {
       "text": "device.",
-      "line_num": 2,
+      "line_num": 48,
       "left": 1305,
       "top": 810,
       "width": 77,
       "height": 18,
-      "conf": 96.348862
+      "conf": 96.257248
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 49,
       "left": 1175,
       "top": 863,
       "width": 64,
       "height": 19,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 49,
       "left": 1249,
       "top": 868,
       "width": 59,
       "height": 14,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 50,
       "left": 1220,
       "top": 909,
       "width": 44,
@@ -1046,97 +1046,97 @@
     },
     {
       "text": "lris",
-      "line_num": 1,
+      "line_num": 51,
       "left": 1154,
       "top": 1147,
       "width": 45,
       "height": 23,
-      "conf": 79.00872
+      "conf": 82.828453
     },
     {
       "text": "Camera",
-      "line_num": 1,
+      "line_num": 51,
       "left": 1210,
       "top": 1146,
       "width": 119,
       "height": 25,
-      "conf": 96.159668
+      "conf": 96.48214
     },
     {
       "text": "Sharp",
-      "line_num": 1,
+      "line_num": 52,
       "left": 1097,
       "top": 1199,
       "width": 65,
       "height": 24,
-      "conf": 96.911507
+      "conf": 96.897453
     },
     {
       "text": "detail",
-      "line_num": 1,
+      "line_num": 52,
       "left": 1171,
       "top": 1200,
       "width": 58,
       "height": 18,
-      "conf": 96.70517
+      "conf": 96.692589
     },
     {
       "text": "from",
-      "line_num": 1,
+      "line_num": 52,
       "left": 1237,
       "top": 1200,
       "width": 50,
       "height": 18,
-      "conf": 96.647011
+      "conf": 96.582161
     },
     {
       "text": "dawn",
-      "line_num": 1,
+      "line_num": 52,
       "left": 1296,
       "top": 1200,
       "width": 59,
       "height": 18,
-      "conf": 94.7397
+      "conf": 94.679207
     },
     {
       "text": "to",
-      "line_num": 1,
+      "line_num": 52,
       "left": 1363,
       "top": 1201,
       "width": 21,
       "height": 17,
-      "conf": 96.371849
+      "conf": 96.282944
     },
     {
       "text": "dusk.",
-      "line_num": 2,
+      "line_num": 53,
       "left": 1211,
       "top": 1238,
       "width": 59,
       "height": 18,
-      "conf": 96.828415
+      "conf": 96.839554
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 54,
       "left": 1175,
       "top": 1293,
       "width": 64,
       "height": 19,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 54,
       "left": 1249,
       "top": 1298,
       "width": 59,
       "height": 14,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "Buy",
-      "line_num": 2,
+      "line_num": 55,
       "left": 1220,
       "top": 1337,
       "width": 44,
@@ -1145,7 +1145,7 @@
     },
     {
       "text": "Lumen",
-      "line_num": 1,
+      "line_num": 56,
       "left": 1143,
       "top": 1537,
       "width": 102,
@@ -1154,7 +1154,7 @@
     },
     {
       "text": "Torch",
-      "line_num": 1,
+      "line_num": 56,
       "left": 1255,
       "top": 1537,
       "width": 84,
@@ -1163,61 +1163,61 @@
     },
     {
       "text": "Pocket",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1093,
       "top": 1592,
       "width": 76,
       "height": 18,
-      "conf": 96.394508
+      "conf": 96.448151
     },
     {
       "text": "light",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1178,
       "top": 1592,
       "width": 45,
       "height": 23,
-      "conf": 96.967796
+      "conf": 96.985397
     },
     {
       "text": "with",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1230,
       "top": 1592,
       "width": 45,
       "height": 18,
-      "conf": 96.065491
+      "conf": 96.323006
     },
     {
       "text": "a",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1284,
       "top": 1597,
       "width": 12,
       "height": 13,
-      "conf": 96.993378
+      "conf": 96.987488
     },
     {
       "text": "week",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1304,
       "top": 1592,
       "width": 58,
       "height": 18,
-      "conf": 96.346886
+      "conf": 96.723518
     },
     {
       "text": "of",
-      "line_num": 1,
+      "line_num": 57,
       "left": 1370,
       "top": 1592,
       "width": 21,
       "height": 18,
-      "conf": 96.396751
+      "conf": 96.789421
     },
     {
       "text": "power.",
-      "line_num": 2,
+      "line_num": 58,
       "left": 1205,
       "top": 1635,
       "width": 71,
@@ -1226,25 +1226,25 @@
     },
     {
       "text": "Learn",
-      "line_num": 1,
+      "line_num": 59,
       "left": 1175,
       "top": 1683,
       "width": 64,
       "height": 19,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "more",
-      "line_num": 1,
+      "line_num": 59,
       "left": 1249,
       "top": 1688,
       "width": 59,
       "height": 14,
-      "conf": 96.035057
+      "conf": 95.723404
     },
     {
       "text": "Buy",
-      "line_num": 1,
+      "line_num": 60,
       "left": 1220,
       "top": 1729,
       "width": 44,

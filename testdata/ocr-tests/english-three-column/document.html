@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr">
+<html dir="ltr" lang="en">
 <head><meta charset="UTF-8"><style>
 	@page { size: letter; margin: 0; }
 	* { box-sizing: border-box; }
@@ -16,7 +16,13 @@
 	.content { flex: 1 1 auto; min-height: 0; }
 	.content.columns { column-count: 3; column-gap: 24pt; column-fill: auto; height: 100%; }
 	.content.vertical { writing-mode: vertical-rl; }
+	/* book: whole flow is vertical; spacing goes between columns (to the
+	   left in vertical-rl), not below. Scoped to .book so the existing
+	   vertical fixtures keep their committed rendering. */
+	.content.book h1 { font-size: 1.6em; margin: 0 0 0 16pt; }
+	.content.book p.colophon { font-size: 0.75em; font-style: italic; margin: 0 12pt 0 0; }
 	p { margin: 0 0 10pt 0; }
+	.content.book p { margin: 0 0 0 12pt; }
 	p.small { font-size: 0.8em; }
 	h2 { font-size: 1.4em; margin: 6pt 0 8pt 0; }
 	.footer { flex: none; text-align: center; font-size: 0.75em; font-style: italic; margin-top: 8pt; }
@@ -24,14 +30,14 @@
 <body><div class="page">
 <div class="title">The Fabric of Everyday Life</div>
 <div class="content columns">
-<p class="body">The quick brown fox jumps over the lazy dog. This sentence contains every letter of the alphabet and is commonly used for testing.</p>
-<p class="body">Technology continues to advance at a rapid pace. New innovations emerge daily, transforming how we live and work in fundamental ways.</p>
-<p class="body">Ancient civilizations built monuments that still stand today. These structures demonstrate the ingenuity and determination of our ancestors.</p>
-<p class="body">Education is the foundation of progress and development. Through learning, individuals gain the tools needed to improve their communities.</p>
-<p class="body">Nature provides beauty and resources essential for life. Protecting the environment ensures future generations can enjoy Earth&#39;s wonders.</p>
-<p class="body">Communication bridges gaps between different cultures and peoples. Language allows us to share ideas and build understanding across borders.</p>
-<p class="body">Science reveals the mysteries of the universe gradually. Each discovery opens new questions and paths for exploration and innovation.</p>
-<p class="body">Art expresses emotions and ideas beyond words alone. Creative works inspire and challenge viewers to see the world differently.</p>
+<p class="body">Every Saturday at 6:30 a.m., long before the first customers arrive, the vendors of the Riverbend Market begin unloading their trucks. The market has operated on the same four-block stretch of Alder Street since 1948, and by most accounts it has never missed a week.</p>
+<p class="body">Roughly 140 stalls now fill the street, up from 85 a decade ago. According to the city&#39;s 2023 survey, the market draws about 12,000 visitors on a typical weekend and generates an estimated $4.2 million a year for the local economy (not counting nearby cafes and shops).</p>
+<p class="body">&#34;People think we sell vegetables,&#34; said Maria Okafor, who has run a produce stand here for 27 years. &#34;What we really sell is a reason to come downtown.&#34; Her best-selling item, she added, is still the two-dollar bag of mixed greens.</p>
+<p class="body">The numbers support her. Foot traffic on market days is 38% higher than on other Saturdays, and three-quarters of visitors told surveyors they also stopped somewhere else in the neighborhood. Dr. Alan Whitfield, an economist at the state university, calls this the &#34;spillover effect.&#34;</p>
+<p class="body">Not everything is rosy. Stall fees rose from $35 to $50 per day in January, and several long-time vendors say the increase is hard to absorb. Parking remains the most common complaint: the nearest public garage has only 220 spaces, and it is usually full by 9:15 a.m.</p>
+<p class="body">The city council is weighing a proposal to close two additional blocks to cars between May 1 and October 31. Supporters argue the change would add room for 40 more stalls; opponents worry about deliveries and access for older residents.</p>
+<p class="body">For now, the routine continues. By noon the bread is gone, the flower buckets are half empty, and a brass band (five retired schoolteachers who call themselves the Second Wind) is playing near the fountain. By 2 p.m., the trucks are loaded again.</p>
+<p class="body">A public hearing on the street-closure plan is scheduled for Thursday, March 14, at 7 p.m. in Room 204 of City Hall. Written comments may be sent to the clerk&#39;s office until the end of the month.</p>
 </div>
 <div class="footer">OCR Test: english (three-column, ltr)</div>
 </div></body>

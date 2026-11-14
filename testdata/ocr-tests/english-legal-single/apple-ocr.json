@@ -1596,7 +1596,7 @@
   },
   {
     "text": "OCR Test: english-legal (single, Itr)",
-    "confidence": 0.5,
+    "confidence": 1,
     "rect": {
       "top": 0.8953488371826326,
       "left": 0.3872180424338309,

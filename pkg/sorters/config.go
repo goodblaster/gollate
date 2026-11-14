@@ -7,8 +7,18 @@ import (
 
 // SorterConfig contains configurable parameters for the sorting algorithm.
 type SorterConfig struct {
-	// MaxPermutations limits recursion depth to prevent exponential blowup.
-	// Higher values allow exploring more complex paths but increase computation time.
+	// Language is the document language the config was built for (set by
+	// ConfigForLanguage; empty means unspecified). It selects the
+	// tokenizer: "chinese" and "japanese" match per character regardless
+	// of how much Latin text or how many numerals the document contains.
+	// When empty, the script is detected from the canonical text.
+	Language string
+
+	// MaxPermutations is the fallback search budget: the number of
+	// candidate steps pathfinding may explore for one canonical line. It
+	// only applies when PermutationsPerPass is 0 - every preset sets
+	// PermutationsPerPass, so there this field has no effect. See
+	// PermutationLimit for the value actually in force.
 	// Default: 500000
 	MaxPermutations int
 
@@ -43,8 +53,11 @@ type SorterConfig struct {
 	// Default: true
 	RotationOptimization bool
 
-	// PermutationsPerPass sets the permutation limit for each individual pass.
-	// If 0, uses MaxPermutations for all passes.
+	// PermutationsPerPass is the search budget: the number of candidate
+	// steps pathfinding may explore for one canonical line in one pass
+	// (the name is historical - the budget is per line, not per pass). A
+	// line that exhausts it keeps the best path found so far, or is split
+	// and retried. If 0, MaxPermutations is used instead.
 	// Default: 10000
 	PermutationsPerPass int
 
@@ -198,6 +211,15 @@ func DefaultConfig() SorterConfig {
 }
 
 // Validate checks that configuration values are reasonable.
+// PermutationLimit returns the per-line search budget actually in force:
+// PermutationsPerPass, or MaxPermutations when that is 0.
+func (c SorterConfig) PermutationLimit() int {
+	if c.PermutationsPerPass == 0 {
+		return c.MaxPermutations
+	}
+	return c.PermutationsPerPass
+}
+
 func (c SorterConfig) Validate() error {
 	if c.MaxPermutations < 1 {
 		return &ConfigError{Field: "MaxPermutations", Value: c.MaxPermutations, Message: "must be at least 1"}
@@ -254,6 +276,11 @@ func (e *ConfigError) Error() string {
 type SortMetrics struct {
 	// TotalPermutationsExplored is the total number of path permutations examined.
 	TotalPermutationsExplored int
+
+	// PermutationLimitHits counts line searches cut short by the search
+	// budget (SorterConfig.PermutationLimit). A high count relative to
+	// canonical lines means the budget, not the page, is deciding matches.
+	PermutationLimitHits int
 
 	// PassesCompleted is the number of sorting passes that were executed.
 	PassesCompleted int

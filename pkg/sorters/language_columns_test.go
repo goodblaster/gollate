@@ -11,11 +11,10 @@ import (
 // Left column, then right column. OCR returns blocks in mixed order.
 func TestEnglishTwoColumns(t *testing.T) {
 	// Canonical text: left column followed by right column
-	// Note: Duplicate word "the" may have capitalization mismatches due to pathfinding ambiguity
 	canonicalText := []string{
-		"the morning sun cast long shadows across the quiet street.",
+		"The morning sun cast long shadows across the quiet street.",
 		"Birds sang softly in the trees overhead.",
-		"Meanwhile The evening rain began to fall gently on the rooftops.",
+		"Meanwhile the evening rain began to fall gently on the rooftops.",
 		"People hurried home with umbrellas unfurled.",
 	}
 
@@ -73,11 +72,15 @@ func TestEnglishTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, optimized for clean column separation
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("english")
 	config.MaxWordDistance = 0.35       // Prevent cross-column jumps
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.RotationOptimization = true  // Re-enable for efficiency
 	config.PermutationsPerPass = 100000 // Increased to find best path for duplicate words
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
@@ -167,10 +170,14 @@ func TestSpanishTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, optimized for clean column separation
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("spanish")
 	config.MaxWordDistance = 0.35       // Prevent cross-column jumps
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.PermutationsPerPass = 100000 // Increased to find best path for duplicate words
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
@@ -274,12 +281,16 @@ func TestChineseTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, tuned for CJK character-level blocks
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("chinese")
 	// Must be > line wrap (BaseLineWrap=1.0 + gap=0.03 = 1.03)
 	// Must be < column jump (BaseNextColumn=25.0 + gap=0.51 = 25.51)
 	config.MaxWordDistance = 5.0
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.PermutationsPerPass = 100000 // Increased to find best path
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
@@ -295,7 +306,9 @@ func TestChineseTwoColumns(t *testing.T) {
 		}
 	}
 
-	expected := strings.Join(canonicalText, "\n")
+	// OCR emits each line's 。 as its own block. It carries no matchable
+	// text, so it rides along attached to the preceding character.
+	expected := strings.Join(canonicalText, "。\n") + "。"
 	actual := strings.TrimSpace(result.String())
 
 	if actual != expected {
@@ -397,12 +410,16 @@ func TestJapaneseTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, tuned for CJK character-level blocks
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("japanese")
 	// Must be > line wrap (BaseLineWrap=1.0 + gap=0.03 = 1.03)
 	// Must be < column jump (BaseNextColumn=25.0 + gap=0.51 = 25.51)
 	config.MaxWordDistance = 5.0
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.PermutationsPerPass = 100000 // Increased to find best path
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
@@ -418,7 +435,9 @@ func TestJapaneseTwoColumns(t *testing.T) {
 		}
 	}
 
-	expected := strings.Join(canonicalText, "\n")
+	// OCR emits each line's 。 as its own block. It carries no matchable
+	// text, so it rides along attached to the preceding character.
+	expected := strings.Join(canonicalText, "。\n") + "。"
 	actual := strings.TrimSpace(result.String())
 
 	if actual != expected {
@@ -477,10 +496,21 @@ func TestArabicTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, optimized for clean column separation
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("arabic")
 	config.MaxWordDistance = 0.35       // Prevent cross-column jumps
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.PermutationsPerPass = 100000 // Increased to find best path for duplicate words
+	// The coordinates above are written left-to-right for readability;
+	// mirror them so the page is laid out as Arabic really is (first word
+	// rightmost, first column on the right).
+	for i := range blocks {
+		box := &blocks[i].BoundingBox
+		box.Left = 1 - box.Left - box.Width
+	}
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
@@ -565,10 +595,14 @@ func TestHindiTwoColumns(t *testing.T) {
 	}
 
 	// Run sort with MultiColumnConfig, optimized for clean column separation
-	config := MultiColumnConfig()
+	config := ConfigForLanguage("hindi")
 	config.MaxWordDistance = 0.35       // Prevent cross-column jumps
 	config.MinWordsForEarlyPasses = 5   // Process all test lines early
 	config.PermutationsPerPass = 100000 // Increased to find best path for duplicate words
+	for i := range blocks {
+		blocks[i].Extractor = "test"
+		blocks[i].PageWidth, blocks[i].PageHeight = 1000, 1000
+	}
 	sorter := NewOcrSorterWithConfig(blocks, canonicalText, nil, config)
 	sortedBlocks, err := sorter.Sort()
 	if err != nil {
