@@ -216,10 +216,10 @@ func generateDebugOutput(sorter *sorters.Sorter, blocks []ocr.Block, log logger.
 	}
 
 	// Write sorted nodes as JSON
-	sortedNodesPath := filepath.Join(*debugDir, "sorted-nodes.txt")
+	sortedNodesPath := filepath.Join(*debugDir, "sorted-nodes.json")
 	sortedNodes, err := os.Create(sortedNodesPath)
 	if err != nil {
-		return errors.Wrap(err, "failed to create sorted-nodes.txt")
+		return errors.Wrap(err, "failed to create sorted-nodes.json")
 	}
 	defer sortedNodes.Close()
 
@@ -242,16 +242,10 @@ func generateDebugOutput(sorter *sorters.Sorter, blocks []ocr.Block, log logger.
 
 	// Generate debug images if image path provided
 	if *imagePath != "" {
-		// Raw indexed image
+		// Indexed image of the sorter's input blocks (post-normalization)
 		rawIndexedPath := filepath.Join(*debugDir, "raw-indexed.png")
 		if err := imgutil.CreateRawIndexImage(*imagePath, rawIndexedPath, sorter.InputBlocks()); err != nil {
 			log.WithError(err).Error("failed to create raw-indexed.png")
-		}
-
-		// Normalized indexed image (blocks are already normalized by the sorter)
-		normIndexedPath := filepath.Join(*debugDir, "norm-indexed.png")
-		if err := imgutil.CreateRawIndexImage(*imagePath, normIndexedPath, sorter.InputBlocks()); err != nil {
-			log.WithError(err).Error("failed to create norm-indexed.png")
 		}
 
 		// Sorted nodes image

@@ -11,7 +11,6 @@ require (
 	github.com/goodblaster/logos v0.2.0
 	github.com/goodblaster/vertigo v0.0.1
 	github.com/stretchr/testify v1.11.1
-	golang.org/x/exp v0.0.0-20251219203646-944ab1f22d93
 	golang.org/x/image v0.34.0
 	golang.org/x/text v0.32.0
 )

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 // postSortBlocks orchestrates the post-processing of sorted blocks.

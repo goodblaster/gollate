@@ -28,10 +28,6 @@ type Sorter struct {
 	elapsed        time.Duration // time it took to sort
 	perm           int           // current permutation count
 	logger         logger.Logger // logger instance
-
-	// debug
-	debugPrintPathNodes   bool
-	debugBuildDebugImages func(lineIndex int, line Line, path Path)
 }
 
 // NewOcrSorter creates a new sorter with default configuration.
@@ -91,7 +87,12 @@ func NewOcrSorterWithConfig(ocrBlocks []Block, text []string, log logger.Logger,
 
 func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines []Line) []Block {
 	var processed []Block
-	var next NextIndex
+	nextIndex := 0
+	next := func() int {
+		i := nextIndex
+		nextIndex++
+		return i
+	}
 
 	// Build a map of all words in canonical text for quick lookup
 	canonicalWords := make(map[string]bool)
@@ -122,7 +123,7 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines 
 				w.NormedText = NormalizeText(w.Text)
 				if strings.TrimSpace(w.NormedText) != "" {
 					w.OriginalIndex = w.Index
-					w.Index = next.Index()
+					w.Index = next()
 					processed = append(processed, w)
 				}
 				continue
@@ -187,7 +188,7 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines 
 				w.NormedText = NormalizeText(w.Text)
 				if strings.TrimSpace(w.NormedText) != "" {
 					w.OriginalIndex = w.Index
-					w.Index = next.Index()
+					w.Index = next()
 					processed = append(processed, w)
 				}
 				continue
@@ -216,7 +217,7 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines 
 			if size == 1 {
 				w.NormedText = NormalizeText(validParts[0].text)
 				w.OriginalIndex = originalIndex
-				w.Index = next.Index()
+				w.Index = next()
 				w.HyphenAfter = validParts[0].hyphenAfter
 				processed = append(processed, w)
 				continue
@@ -228,7 +229,7 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines 
 				newBlock.Text = part.text
 				newBlock.NormedText = NormalizeText(part.text)
 				newBlock.OriginalIndex = originalIndex // Preserve original index for all split blocks
-				newBlock.Index = next.Index()
+				newBlock.Index = next()
 				newBlock.HyphenAfter = part.hyphenAfter // Preserve hyphen for reconstruction
 
 				// Can't use the full dimensions of the original block.
@@ -253,17 +254,12 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitHyphenated bool, canonicalLines 
 		}
 		if strings.TrimSpace(w.NormedText) != "" {
 			w.OriginalIndex = w.Index // Preserve original index
-			w.Index = next.Index()
+			w.Index = next()
 			processed = append(processed, w)
 		}
 	}
 
 	return processed
-}
-
-// Debug - perform a user-defined debug function for each line where we find a path.
-func (s *Sorter) Debug(f func(lineIndex int, line Line, path Path)) {
-	s.debugBuildDebugImages = f
 }
 
 func (s *Sorter) InputBlock(i int) Block {
@@ -278,11 +274,9 @@ func (s *Sorter) MappedBlocks() map[string][]Block {
 	return s.mapped
 }
 
+// Print writes the path's normalized words to stdout (debugging aid).
 func (s *Sorter) Print(path Path) {
-	for _, index := range path.Nodes {
-		fmt.Print(s.input[index].NormedText, " ")
-	}
-	fmt.Println()
+	fmt.Println(path.String(s.input))
 }
 
 func (s *Sorter) LineCount() int {
@@ -306,19 +300,20 @@ func (s *Sorter) unmapWords(path Path) {
 
 // unmapWordIndex - remove word index so it doesn't get reused.
 func (s *Sorter) unmapWordIndex(index int) {
-	// Search through ALL mapped word lists to find and remove this block by Index.
-	for normedText, wordList := range s.mapped {
-		for i, w := range wordList {
-			if w.Index == index {
-				// Delete the word from the list.
-				s.mapped[normedText] = append(wordList[:i], wordList[i+1:]...)
+	// s.mapped is keyed by NormedText and built from s.input (after line
+	// repair rekeying), so the block's own key locates its list directly.
+	normedText := s.input[index].NormedText
+	wordList := s.mapped[normedText]
+	for i, w := range wordList {
+		if w.Index == index {
+			// Delete the word from the list.
+			s.mapped[normedText] = append(wordList[:i], wordList[i+1:]...)
 
-				// If the list is now empty, remove it from the map.
-				if len(s.mapped[normedText]) == 0 {
-					delete(s.mapped, normedText)
-				}
-				return
+			// If the list is now empty, remove it from the map.
+			if len(s.mapped[normedText]) == 0 {
+				delete(s.mapped, normedText)
 			}
+			return
 		}
 	}
 }
@@ -336,7 +331,7 @@ func (s *Sorter) UnhandledLines() []string {
 		// which may or may not have been found. We only care about lines that
 		// were neither found nor split.
 		if !line.Found && !line.Split {
-			unhandled = append(unhandled, fmt.Sprintf("%00d - %s\n", i, s.Line(i).Normalized))
+			unhandled = append(unhandled, fmt.Sprintf("%d - %s\n", i, s.Line(i).Normalized))
 		}
 	}
 	return unhandled

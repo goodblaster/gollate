@@ -5,7 +5,7 @@ import (
 	"math"
 	"sort"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 // chainBuildResult contains the result of building a candidate block chain.
@@ -121,10 +121,12 @@ func (s *Sorter) applyPrecurseOptimization(chain [][]Block, passPermutations int
 
 	// If we found a viable starting point, rotate the first word options to start there
 	if bestStartIndex > -1 {
-		rotatePos, _ := slices.BinarySearchFunc(chain[0], Block{Index: bestStartIndex}, func(a, b Block) int {
-			return cmp.Compare(a.Index, b.Index)
+		rotatePos, _ := slices.BinarySearchFunc(chain[0], bestStartIndex, func(b Block, index int) int {
+			return cmp.Compare(b.Index, index)
 		})
-		chain[0] = append(chain[0][rotatePos:], chain[0][:rotatePos]...)
+		// Fresh slice: chain[0] aliases s.mapped's backing array, which an
+		// in-place append could scribble past.
+		chain[0] = slices.Concat(chain[0][rotatePos:], chain[0][:rotatePos])
 	}
 
 	// Reset pathfinding state after precurse
