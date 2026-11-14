@@ -58,3 +58,28 @@ func TestSplitParagraphKeepsDecimalsIntact(t *testing.T) {
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
+
+// When OCR runs two canonical lines together, the leftover sentence is cut
+// at the canonical boundary - measured in space-stripped characters, like
+// every other position in that code.
+func TestSplitLeftoversCutsAtCanonicalBoundary(t *testing.T) {
+	canonical := []string{"a b c d e f g h", "iiii jjjj kkkk"}
+	var sentence []Block
+	for i, text := range []string{"a", "b", "c", "d", "e", "f", "g", "h", "iiii", "jjjj", "kkkk"} {
+		sentence = append(sentence, Block{Text: text, NormedText: text, Extractor: "test", Index: i})
+	}
+	sorter := NewOcrSorterWithConfig(nil, canonical, nil, DefaultConfig())
+
+	var got [][]string
+	for _, line := range sorter.splitLeftoversByCanonicalLines([][]Block{sentence}) {
+		var words []string
+		for _, b := range line {
+			words = append(words, b.Text)
+		}
+		got = append(got, words)
+	}
+	want := [][]string{{"a", "b", "c", "d", "e", "f", "g", "h"}, {"iiii", "jjjj", "kkkk"}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("got %q, want %q", got, want)
+	}
+}

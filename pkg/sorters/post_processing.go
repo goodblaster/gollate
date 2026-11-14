@@ -701,12 +701,14 @@ func (s *Sorter) splitLeftoversByCanonicalLines(sentences [][]Block) [][]Block {
 		normalizedSentenceNoSpaces := strings.ReplaceAll(normalizedSentence, " ", "")
 
 		for i, canLine := range unfoundLines {
-			normalized := canLine.Normalized
 			normalizedNoSpaces := unfoundNoSpaces[i]
 
 			// Check if this canonical line is contained in the sentence
 			if startIdx := strings.Index(normalizedSentenceNoSpaces, normalizedNoSpaces); startIdx != -1 {
-				endIdx := startIdx + len(normalized)
+				// Positions here are in the space-stripped string, so the
+				// end must be too (it used the with-spaces length, pushing
+				// every split boundary late by the line's space count).
+				endIdx := startIdx + len(normalizedNoSpaces)
 				matchedLines = append(matchedLines, struct {
 					line  Line
 					start int
