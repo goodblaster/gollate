@@ -48,6 +48,11 @@ temp/
 # .env
 # .env.local
 experiments/
+# Downloaded book sources and generated snapshots from older corpus runs.
+# Keep only the procedure and small accuracy thresholds in testdata/books.
+/testdata/books/meditations/*
+!/testdata/books/meditations/README.md
+!/testdata/books/meditations/baselines.json
 # Generated debug artifacts (scripts/run-ocr-tests.sh)
 testdata/ocr-tests/*/*-overlay.jpg
 testdata/ocr-tests/*/*-sorted.json

@@ -168,6 +168,44 @@ Scale is checked separately in `pkg/multipage/scale_test.go`: a synthetic
 back with 99.9% of paragraphs exact, 246 joined across page breaks, in
 about 3 seconds; a second test forces the banded search.
 
+### Real-book evaluation: Meditations (2026-11-16)
+
+The [Meditations corpus report](testdata/books/meditations/README.md) adds the
+complete George Long translation from an EPUB: all twelve books and 122
+endnotes, 49,884 words. Fresh single-column (103 pages) and double-column
+(102 pages) PDFs were rasterized and recognized by Apple Vision and Tesseract.
+PDF text extraction supplies a separate control; EPUB XHTML supplies the
+reference. The setup script downloads and generates all book artifacts under ignored
+`experiments/meditations/`; only the procedure and small accuracy thresholds
+are kept under `testdata/books/meditations/`. EPUBs, PDFs, book text, images,
+OCR blocks and generated results are not committed.
+
+Sorted token-order accuracy is 99.422/99.286% for single-column Apple/Tesseract
+and 98.460/98.366% for double-column. All six input/control scores are identical
+before and after the multi-page changes; sorting takes 28–35% less time in
+single-run A/B measurements. A real 884-word paragraph spanning three pages
+still gets assigned to only two. Greek and endnote references also expose
+recognition errors. This is a real-prose test, not a degraded-scan test.
+
+```bash
+BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
+```
+
+From a fresh checkout, `python3 -B scripts/meditations-corpus.py --jobs 4`
+downloads the checksum-pinned EPUB, prepares both layouts, runs OCR and the
+accuracy tests, and generates overlays. Rerunning resumes cached preparation
+and always reruns the accuracy gates. Use `--skip-overlays` to omit the large
+PNG series. See the corpus report for prerequisites, individual stages,
+metric definitions and lightweight tests that require no book download.
+The book suite is opt-in and enforces saved accuracy baselines; speed is
+descriptive.
+Set `BOOK_OVERLAYS=1` on that command to also save full word-number and seeded
+sentence spot-check PNGs for every page. To render existing results without
+repeating sorting or OCR, use `go run ./cmd/book-overlays`. Numbers are global,
+one-based canonical whitespace-word indexes; unlinked output is marked with
+red `U` labels. See the corpus report for filenames, continuation labels and
+sampling limitations.
+
 ### Where it stands (2026-11-13)
 
 Means over 34 pairs (Apple Vision on vertical Japanese left out - it

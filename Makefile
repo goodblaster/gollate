@@ -23,6 +23,7 @@ utils:
 	@mkdir -p bin
 	$(GO_BIN) build -o bin/ocr-util ./cmd/ocr-util
 	$(GO_BIN) build -o bin/ocr-highlight ./cmd/ocr-highlight
+	$(GO_BIN) build -o bin/book-overlays ./cmd/book-overlays
 	$(GO_BIN) build -o bin/tesseract-util ./cmd/tesseract-util
 	$(GO_BIN) build -o bin/pdftext-util ./cmd/pdftext-util
 	$(GO_BIN) build -o bin/testdoc ./cmd/testdoc
