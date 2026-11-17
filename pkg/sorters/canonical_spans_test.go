@@ -84,3 +84,20 @@ func TestDocumentTokensCarryCanonicalSpans(t *testing.T) {
 		lastStart = tok.Canonical.Start
 	}
 }
+
+// A standalone symbol is joined by normalization to its following word.
+// Its range must span both original words without dropping the paragraph's
+// other ranges, and offsets must remain bytes with accented text.
+func TestCanonicalTokenSpansAcrossWhitespace(t *testing.T) {
+	text := "El tránsito subió un 38 % más."
+	got := canonicalTokenSpans(text, &language.English{})
+	want := []string{"El", "tránsito", "subió", "un", "38", "% más."}
+	if len(got) != len(want) {
+		t.Fatalf("got %d spans, want %d: %+v", len(got), len(want), got)
+	}
+	for i, token := range got {
+		if selected := text[token.span.Start:token.span.End]; selected != want[i] {
+			t.Errorf("token %d selects %q, want %q", i, selected, want[i])
+		}
+	}
+}

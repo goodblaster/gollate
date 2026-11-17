@@ -132,15 +132,15 @@
   "japanese-vertical/tesseract#paragraphs": 98.32,
   "japanese-vertical/tesseract#precision": 98.73,
   "spanish-book/apple": 99.24,
-  "spanish-book/apple#localized": 86.83,
+  "spanish-book/apple#localized": 99.24,
   "spanish-book/apple#paragraphs": 99.33,
   "spanish-book/apple#precision": 98.98,
   "spanish-book/pdftext": 99.74,
-  "spanish-book/pdftext#localized": 87.34,
+  "spanish-book/pdftext#localized": 99.74,
   "spanish-book/pdftext#paragraphs": 99.77,
   "spanish-book/pdftext#precision": 99.74,
   "spanish-book/tesseract": 99.24,
-  "spanish-book/tesseract#localized": 86.83,
+  "spanish-book/tesseract#localized": 99.24,
   "spanish-book/tesseract#paragraphs": 99.2,
   "spanish-book/tesseract#precision": 99.49
 }

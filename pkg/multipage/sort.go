@@ -1,7 +1,11 @@
 package multipage
 
 import (
+	"fmt"
+	"sort"
 	"strings"
+	"unicode"
+	"unicode/utf8"
 
 	"github.com/goodblaster/gollate/pkg/language"
 	"github.com/goodblaster/gollate/pkg/logger"
@@ -87,8 +91,20 @@ type Result struct {
 	// to the canonical lines given to Sort.
 	Assignments []Assignment
 
-	// Unhandled lists canonical lines matched on no page.
+	// Unhandled lists uncovered canonical token runs (including partially
+	// matched lines), in input order. Repeated occurrences are retained.
 	Unhandled []string
+
+	// Unmatched identifies uncovered canonical token runs by line and byte
+	// range. Repeated text retains separate occurrences. Unhandled is the
+	// readable text of these ranges, in canonical order.
+	Unmatched []UnmatchedSpan
+}
+
+// UnmatchedSpan is a half-open byte range within a canonical input line.
+type UnmatchedSpan struct {
+	CanonicalLine int          `json:"canonical_line"`
+	Span          sorters.Span `json:"span"`
 }
 
 // Sort sorts a multi-page document against its canonical text.
@@ -113,7 +129,7 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 	for p := range pages {
 		pages[p].Blocks = append([]ocr.Block(nil), pages[p].Blocks...)
 	}
-	furniture := stripFurniture(pages)
+	furniture := stripFurniture(pages, canonical...)
 
 	// Canonical vocabulary, for re-joining a word hyphenated across a
 	// page break.
@@ -127,8 +143,10 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 
 	// Segment: which canonical lines are on which page.
 	lineTokens := make([][]string, len(canonical))
+	lineSpans := make([][]sorters.Span, len(canonical))
 	for i, line := range canonical {
 		lineTokens[i] = tokenize(line)
+		lineSpans[i] = sorters.CanonicalTokenSpans(line, handler)
 	}
 	pageTokens := make([][]string, len(pages))
 	for p, page := range pages {
@@ -139,16 +157,13 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 	assignments := Segment(lineTokens, pageTokens)
 
 	result := &Result{Document: &Document{}, Assignments: assignments}
-	merged := &merger{handler: handler, byLine: make(map[int]*mergedParagraph)}
-	unhandledSeen := make(map[string]bool)
+	merged := &merger{handler: handler, canonical: canonical, byLine: make(map[int]*mergedParagraph)}
 
 	for p, page := range pages {
-		// This page's lines: those placed here, plus the tail of a line
-		// that straddles in from the previous page. A straddling line is
-		// offered in two parts - its head here, its tail on the next
-		// page - so neither page can claim words that belong to the
-		// other. Blank lines between come along to keep paragraph
-		// structure.
+		// Offer only this page's token ranges, including fragments of a
+		// paragraph spanning several pages. No page can claim tokens
+		// assigned elsewhere. Blank separators between selected lines
+		// come along to retain paragraph structure.
 		var selected []int
 		part := make(map[int]string)    // canonical index -> text offered to this page
 		partOffset := make(map[int]int) // where that text starts in the canonical line
@@ -156,14 +171,17 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 			if len(lineTokens[i]) == 0 {
 				continue
 			}
-			switch {
-			case a.Page == p && a.Straddle:
-				part[i], _, _ = splitAtToken(canonical[i], a.Cut, tokenize)
-			case a.Page == p:
-				part[i] = canonical[i]
-			case a.Straddle && a.Page == p-1:
-				_, part[i], partOffset[i] = splitAtToken(canonical[i], a.Cut, tokenize)
-			default:
+			for _, fragment := range a.Fragments {
+				if fragment.Page != p {
+					continue
+				}
+				piece, offset, ok := canonicalFragmentFromSpans(canonical[i], fragment, lineSpans[i], len(lineTokens[i]))
+				if !ok {
+					return nil, fmt.Errorf("canonical line %d: cannot map token range [%d,%d) to bytes", i, fragment.Start, fragment.End)
+				}
+				part[i], partOffset[i] = piece, offset
+			}
+			if _, ok := part[i]; !ok {
 				continue
 			}
 			selected = append(selected, i)
@@ -202,12 +220,6 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 		if _, err := sorter.Sort(); err != nil {
 			return nil, err
 		}
-		for _, text := range sorter.UnhandledText() {
-			if !unhandledSeen[text] {
-				unhandledSeen[text] = true
-				result.Unhandled = append(result.Unhandled, text)
-			}
-		}
 
 		metrics := sorter.Metrics()
 		info := PageInfo{
@@ -221,11 +233,8 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 		merged.addPage(p, sorter.Document(), global, offsets)
 		result.Document.Pages = append(result.Document.Pages, info)
 	}
-	if result.Unhandled == nil {
-		result.Unhandled = []string{}
-	}
-
 	merged.write(result.Document)
+	result.findUnmatched(canonical, lineSpans)
 	return result, nil
 }
 
@@ -248,6 +257,7 @@ type mergedParagraph struct {
 // merger accumulates per-page documents into one, in page order.
 type merger struct {
 	handler    language.Handler
+	canonical  []string
 	paragraphs []*mergedParagraph
 	byLine     map[int]*mergedParagraph // canonical line -> its paragraph so far
 }
@@ -289,7 +299,7 @@ func (m *merger) addPage(page int, doc *sorters.Document, global, offsets []int)
 
 		if earlier, ok := m.byLine[line]; ok && line >= 0 {
 			last := &earlier.tokens[len(earlier.tokens)-1]
-			if m.handler.NeedsSpaceBetween(last.text, tokens[0].text) {
+			if m.handler.NeedsSpaceBetween(last.text, tokens[0].text) && !m.compoundSeam(line, *last, tokens[0]) {
 				last.separator = " "
 			}
 			earlier.tokens = append(earlier.tokens, tokens...)
@@ -303,29 +313,106 @@ func (m *merger) addPage(page int, doc *sorters.Document, global, offsets []int)
 	}
 }
 
-// splitAtToken divides text so that the head holds its first cut tokens
-// and the tail the rest. The split falls on a word boundary where the text
-// has them, otherwise between characters. tailOffset is the byte offset of
-// tail within text.
-func splitAtToken(text string, cut int, tokenize func(string) []string) (head, tail string, tailOffset int) {
-	if cut <= 0 {
-		return "", text, 0
+// canonicalFragment maps matching-token boundaries back to the original
+// bytes once, including punctuation between adjacent token spans. Unlike
+// whitespace splitting, this handles compounds and mixed CJK/Latin text.
+func canonicalFragment(text string, fragment Fragment, handler language.Handler) (string, int, bool) {
+	return canonicalFragmentFromSpans(text, fragment, sorters.CanonicalTokenSpans(text, handler), len(handler.Tokenize(sorters.NormalizeText(text))))
+}
+
+func canonicalFragmentFromSpans(text string, fragment Fragment, spans []sorters.Span, tokenCount int) (string, int, bool) {
+	// A whole line needs no internal boundary, even if normalization could
+	// not supply exact token spans (it can still be sorted normally).
+	if fragment.Start == 0 && fragment.End == tokenCount {
+		left := strings.TrimLeftFunc(text, unicode.IsSpace)
+		return strings.TrimSpace(left), len(text) - len(left), true
 	}
-	bySpace := strings.ContainsAny(strings.TrimSpace(text), " \t")
-	for i, r := range text {
-		if i == 0 {
+	start, end := 0, len(text)
+	if fragment.Start < 0 || fragment.End > len(spans) || fragment.Start >= fragment.End {
+		return "", 0, false
+	}
+	if fragment.Start > 0 {
+		start = spans[fragment.Start].Start
+		if start < spans[fragment.Start-1].End {
+			return "", 0, false
+		}
+	}
+	if fragment.End < len(spans) {
+		end = spans[fragment.End].Start
+		if end < spans[fragment.End-1].End {
+			return "", 0, false
+		}
+	}
+	piece := text[start:end]
+	trimmed := strings.TrimLeftFunc(piece, unicode.IsSpace)
+	start += len(piece) - len(trimmed)
+	return strings.TrimSpace(trimmed), start, true
+}
+
+// Keep the punctuation joining a compound without adding a space at a
+// page seam. Ordinary word boundaries retain their normal spacing.
+func (m *merger) compoundSeam(line int, a, b mergedToken) bool {
+	if a.canonical == nil || b.canonical == nil || line < 0 || line >= len(m.canonical) {
+		return false
+	}
+	text := m.canonical[line]
+	end, start := a.canonical.End, b.canonical.Start
+	if end > start || end < 0 || start > len(text) {
+		return false
+	}
+	lastRune, _ := utf8.DecodeLastRuneInString(a.text)
+	return !strings.ContainsFunc(text[end:start], unicode.IsSpace) && strings.ContainsRune(lineBreakHyphens, lastRune)
+}
+
+// findUnmatched derives diagnostics from final canonical coverage, not
+// temporary per-page failures. Missing occurrences never collapse by text.
+func (r *Result) findUnmatched(canonical []string, lineSpans [][]sorters.Span) {
+	covered := make([][]sorters.Span, len(canonical))
+	for _, para := range r.Document.Paragraphs {
+		if para.CanonicalLine == nil {
 			continue
 		}
-		if bySpace && !(r == ' ' || r == '\t') {
-			continue
-		}
-		if len(tokenize(text[:i])) >= cut {
-			rest := text[i:]
-			tail = strings.TrimLeft(rest, " \t")
-			return strings.TrimSpace(text[:i]), strings.TrimSpace(tail), i + len(rest) - len(tail)
+		i := *para.CanonicalLine
+		for _, tok := range para.Tokens {
+			if tok.Canonical != nil {
+				covered[i] = append(covered[i], *tok.Canonical)
+			}
 		}
 	}
-	return text, "", len(text)
+	r.Unhandled = []string{}
+	r.Unmatched = []UnmatchedSpan{}
+	for i, line := range canonical {
+		spans := lineSpans[i]
+		if spans == nil && strings.TrimSpace(sorters.NormalizeText(line)) != "" {
+			r.Unmatched = append(r.Unmatched, UnmatchedSpan{CanonicalLine: i, Span: sorters.Span{Start: 0, End: len(line)}})
+			r.Unhandled = append(r.Unhandled, strings.TrimSpace(line))
+			continue
+		}
+		ranges := covered[i]
+		sort.Slice(ranges, func(a, b int) bool { return ranges[a].Start < ranges[b].Start })
+		pos, end, missing := 0, -1, -1
+		flush := func(until int) {
+			if missing < 0 {
+				return
+			}
+			span := sorters.Span{Start: spans[missing].Start, End: spans[until-1].End}
+			r.Unmatched = append(r.Unmatched, UnmatchedSpan{CanonicalLine: i, Span: span})
+			r.Unhandled = append(r.Unhandled, strings.TrimSpace(line[span.Start:span.End]))
+			missing = -1
+		}
+		for j, span := range spans {
+			for pos < len(ranges) && ranges[pos].Start <= span.Start {
+				end = max(end, ranges[pos].End)
+				pos++
+			}
+			if end >= span.End {
+				flush(j)
+			} else if missing < 0 {
+				missing = j
+			}
+		}
+		flush(len(spans))
+	}
 }
 
 // lineBreakHyphens mirrors the sorter's set: the marks left at the end of

@@ -20,9 +20,10 @@ import (
 // api.SortResponse, with the multi-page document in place of the
 // single-page one.
 type multipageResponse struct {
-	Document  *multipage.Document `json:"document"`
-	Unhandled []string            `json:"unhandled"`
-	Meta      multipageMeta       `json:"meta"`
+	Document  *multipage.Document       `json:"document"`
+	Unhandled []string                  `json:"unhandled"`
+	Unmatched []multipage.UnmatchedSpan `json:"unmatched,omitempty"`
+	Meta      multipageMeta             `json:"meta"`
 }
 
 type multipageMeta struct {
@@ -37,7 +38,7 @@ type multipageStats struct {
 	Paragraphs     int   `json:"paragraphs"`
 	Straddles      int   `json:"straddles"`       // paragraphs joined across a page break
 	FurnitureRuns  int   `json:"furniture_runs"`  // page numbers / running heads set aside
-	LinesUnhandled int   `json:"lines_unhandled"` // canonical lines matched on no page
+	LinesUnhandled int   `json:"lines_unhandled"` // canonical lines with uncovered tokens
 	ElapsedMs      int64 `json:"elapsed_ms"`
 }
 
@@ -91,9 +92,13 @@ func runMultipage(log logger.Logger) error {
 		CanonicalLines: len(canonical),
 		InputBlocks:    blocks,
 		Paragraphs:     len(result.Document.Paragraphs),
-		LinesUnhandled: len(result.Unhandled),
 		ElapsedMs:      time.Since(start).Milliseconds(),
 	}
+	unhandledLines := make(map[int]bool)
+	for _, missing := range result.Unmatched {
+		unhandledLines[missing.CanonicalLine] = true
+	}
+	stats.LinesUnhandled = len(unhandledLines)
 	for _, a := range result.Assignments {
 		if a.Straddle {
 			stats.Straddles++
@@ -121,6 +126,7 @@ func runMultipage(log logger.Logger) error {
 	return encoder.Encode(multipageResponse{
 		Document:  result.Document,
 		Unhandled: result.Unhandled,
+		Unmatched: result.Unmatched,
 		Meta: multipageMeta{
 			Stats: stats,
 			Source: api.Source{

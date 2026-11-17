@@ -5,7 +5,7 @@ what the known algorithm issues are. Suite mechanics live in
 [testdata/ocr-tests/README.md](testdata/ocr-tests/README.md); this file is
 the context you'd otherwise have to rediscover.
 
-Last updated: 2026-11-13.
+Last updated: 2026-11-16.
 
 ## Quick reference
 
@@ -167,6 +167,88 @@ Scale is checked separately in `pkg/multipage/scale_test.go`: a synthetic
 300-page book (1,351 paragraphs of Zipf-distributed pseudo-words) comes
 back with 99.9% of paragraphs exact, 246 joined across page breaks, in
 about 3 seconds; a second test forces the banded search.
+
+### 2026-11-16: adversarial page alignment and localization
+
+Added 13 challenge scenarios in `pkg/multipage/challenge_test.go`, including
+8 small authored inputs in `pkg/multipage/testdata/challenges.json`. These
+are synthetic blocks with known positions, not new OCR measurements. The
+location score checks the canonical occurrence **and** the physical page
+and box; identical words on the wrong page cannot earn credit.
+
+Compared with commit `4a97ff2`, using identical test inputs:
+
+| Challenge | Before | After |
+|---|---:|---:|
+| Repeated body lines: text order / exact location | 66.67 / 66.67 | 100 / 100 |
+| Repeated canonical lines in margins: text order / exact location | 66.67 / 66.67 | 100 / 100 |
+| Compound across a page break (ASCII and Unicode hyphens) | 90 / 90 | 100 / 100 |
+| Four-page paragraph: text order / exact location | 100 / 50 | 100 / 100 |
+| Three content pages separated by a blank: text order / exact location | 100 / 66.67 | 100 / 100 |
+| Mixed Japanese/Latin with a page break inside the Japanese run | 100 / 73.91 | 100 / 100 |
+| Five-page paragraph, blank sheet, 5 misreads + 5 drops in 300 words | 56.67 / 20.67 | 96.67 / 96.67 |
+| 400-page edition drift: correct body-line page | 20.95 | 100 |
+
+The noisy paragraph reaches its 96.67% surviving-input ceiling; all ten
+uncovered positions are reported. The drift case contains 9,925 body lines,
+2,500 canonical-only lines (prefix, middle and suffix), and three scan-only
+pages. All 2,500 absent lines now remain unassigned. Additional tests check
+an intervening blank page between only two fragments, title/header
+ambiguity, empty input, and separately identified repeated missing lines.
+
+The existing 36 multi-page fixture/source pairs still pass every gate.
+Excluding Apple Vision on vertical Japanese, mean text-order accuracy is
+unchanged at **98.38%**, paragraph recovery **98.18%**, and precision
+**98.10%**. Canonical-span coverage rises **96.69% → 97.75%**: standalone
+symbols such as `38 % mayor` no longer cause a whole Spanish paragraph to
+lose its spans. The three Spanish localization baselines were ratcheted
+up; no baseline was lowered. This existing span-coverage metric does not
+verify physical location; the new challenge metric does.
+
+The original 301-page synthetic book (300-page target plus final spill)
+still recovers **99.93% of its 1,351 paragraphs exactly**, with 246 straddles
+and 602 furniture runs.
+
+Performance on Apple M4 Pro, darwin/arm64, Go 1.24.4; medians of three
+`-benchtime=1x` runs, fixture creation excluded:
+
+| Operation | Before | After | Change |
+|---|---:|---:|---:|
+| Full 301-page sort | 2.911 s | 1.687 s | 42.1% less time |
+| Allocated bytes per book sort | 2.588 GB | 1.249 GB | 51.8% fewer bytes |
+| 400-page drift segmentation | 70.0 ms | 48.7 ms | 30.4% less time |
+| Allocated bytes per segmentation | 67.7 MB | 26.7 MB | 60.6% fewer bytes |
+
+Allocated bytes are cumulative allocations, not peak resident memory.
+Small documents can incur extra work from canonical spans and conservative
+furniture decisions. In three `-benchtime=200ms` runs, the repeated-body
+case rises from 104 to 148 microseconds (it now retains all the words), and
+the mixed-script case from 158 to 197 microseconds. Compounds fall from
+121 to 116 microseconds and the four-page case from 192 to 171 microseconds.
+These changes are not a universal speedup.
+
+```bash
+go test ./pkg/multipage -run Challenge -v
+go test ./pkg/multipage -run '^$' -bench 'Benchmark(Book300|Challenge)' -benchtime=1x -count=3
+```
+
+Implementation: distinctive three-token sequences anchor segmentation in
+physical token positions; long unsupported runs consume no alignment cost;
+weak search bands widen. Word counts and rarity weights are cached, and
+backtracking stores only searched band cells. Furniture needs a separated
+margin location and respects canonical occurrences, while still removing
+running copies of a title found in the body. Fragment token ranges replace
+the single-boundary assumption internally; `Page`, `Straddle`, and `Cut`
+remain as compatibility summaries. Original byte spans locate compound and
+mixed-script cuts. Multi-page results now expose `Unmatched` (`unmatched`
+in CLI JSON), with canonical line and byte range; `Unhandled` retains the
+readable missing runs without deduplicating repeated occurrences.
+
+Limits: sequence anchors still need recognizable, reasonably ordered text.
+Heavy corruption and ambiguous repetitions can remain unassigned or be
+misplaced. Furniture detection is conservative and can retain unusual
+headers. Pages are still loaded in memory; this is not a streaming reader.
+The added synthetic cases do not establish accuracy on unseen scanned books.
 
 ### Real-book evaluation: Meditations (2026-11-16)
 

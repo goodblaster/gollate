@@ -114,7 +114,28 @@ func findEdgeLine(blocks []ocr.Block, top bool) (edgeLine, bool) {
 
 // stripFurniture removes page furniture from every page and returns it,
 // per page. Pages are modified in place (their Blocks slices are replaced).
-func stripFurniture(pages []Page) [][]Furniture {
+func stripFurniture(pages []Page, canonical ...string) [][]Furniture {
+	// Canonical text wins over a layout heuristic. Repetition alone is
+	// not enough to distinguish running heads from dialogue or headings.
+	canonicalCounts := make(map[string]int)
+	for _, line := range canonical {
+		canonicalCounts[sorters.NormalizeText(line)]++
+	}
+	// Count body occurrences independently of the candidate margin lines.
+	// A real title inside the body permits its repeated running heads to
+	// be removed; a title printed only in a margin must be preserved.
+	var body strings.Builder
+	for _, page := range pages {
+		var words []string
+		for _, b := range page.Blocks {
+			if b.Top() >= .08 && b.Bottom() <= .86 {
+				words = append(words, b.Text)
+			}
+		}
+		body.WriteString(" " + sorters.NormalizeText(strings.Join(words, " ")) + " ")
+	}
+	bodyText := body.String()
+	protected := make(map[string]int)
 	found := make([][]Furniture, len(pages))
 	if len(pages) < 2 {
 		return found
@@ -124,6 +145,33 @@ func stripFurniture(pages []Page) [][]Furniture {
 		ok := make([]bool, len(pages))
 		for p := range pages {
 			lines[p], ok[p] = findEdgeLine(pages[p].Blocks, top)
+			if !ok[p] {
+				continue
+			}
+			line := lines[p]
+			// Require an actual margin and a gap to the body. In particular,
+			// an ordinary topmost body line is not automatically a header.
+			if (top && line.bounds.Top+line.bounds.Height > 0.08) ||
+				(!top && line.bounds.Top < 0.86) {
+				ok[p] = false
+				continue
+			}
+			edge := make(map[int]bool, len(line.blocks))
+			for _, i := range line.blocks {
+				edge[i] = true
+			}
+			gap := math.Inf(1)
+			for i, b := range pages[p].Blocks {
+				if edge[i] || strings.TrimSpace(b.Text) == "" {
+					continue
+				}
+				if top {
+					gap = min(gap, b.Top()-line.bounds.Top-line.bounds.Height)
+				} else {
+					gap = min(gap, line.bounds.Top-b.Bottom())
+				}
+			}
+			ok[p] = gap > 0
 		}
 		isFurniture := make([]bool, len(pages))
 		for p := range pages {
@@ -143,6 +191,18 @@ func stripFurniture(pages []Page) [][]Furniture {
 		}
 		for p := range pages {
 			if !isFurniture[p] {
+				continue
+			}
+			text := lines[p].text
+			if _, known := protected[text]; !known {
+				count := canonicalCounts[text]
+				if count > 0 {
+					count = max(0, count-strings.Count(bodyText, " "+text+" "))
+				}
+				protected[text] = count
+			}
+			if protected[text] > 0 {
+				protected[text]--
 				continue
 			}
 			drop := make(map[int]bool, len(lines[p].blocks))
