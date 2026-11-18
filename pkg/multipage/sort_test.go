@@ -28,6 +28,50 @@ func layout(top float64, lines ...string) []ocr.Block {
 	return blocks
 }
 
+func TestPageBreakAnotherKeepsBothLocations(t *testing.T) {
+	canonical := []string{"An observer receives anything from another; other choices remain."}
+	pages := []Page{page(layout(.4, "An observer receives anything from an-")), page(layout(.1, "other; other choices remain."))}
+	head := pages[0].Blocks[len(pages[0].Blocks)-1].BoundingBox
+	tail := pages[1].Blocks[0].BoundingBox
+	r, err := Sort(pages, canonical, sorters.ConfigForLanguage("english"), logger.Noop{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Document.Text != canonical[0] {
+		t.Fatalf("got %q, want %q", r.Document.Text, canonical[0])
+	}
+	found := false
+	for _, p := range r.Document.Paragraphs {
+		for _, tok := range p.Tokens {
+			if r.Document.Text[tok.Span.Start:tok.Span.End] != "another;" {
+				continue
+			}
+			found = true
+			if tok.Canonical == nil || canonical[0][tok.Canonical.Start:tok.Canonical.End] != "another;" {
+				t.Fatalf("missing canonical span: %+v", tok)
+			}
+			if tok.Page != 0 || tok.Bounds != head || tok.Continuation == nil || tok.Continuation.Page != 1 || tok.Continuation.Bounds != tail {
+				t.Fatalf("lost cross-page locations: %+v", tok)
+			}
+		}
+	}
+	if !found {
+		t.Fatal("another was not emitted as one word")
+	}
+}
+
+func TestPageBreakPreservesCanonicalCompound(t *testing.T) {
+	canonical := []string{"A long-time friend met a longtime colleague."}
+	pages := []Page{page(layout(.4, "A long-")), page(layout(.1, "time friend met a longtime colleague."))}
+	r, err := Sort(pages, canonical, sorters.ConfigForLanguage("english"), logger.Noop{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Document.Text != canonical[0] {
+		t.Fatalf("changed a real compound: got %q, want %q", r.Document.Text, canonical[0])
+	}
+}
+
 // at places a single run of text at an exact position (page furniture).
 func at(text string, left, top float64) []ocr.Block {
 	var blocks []ocr.Block

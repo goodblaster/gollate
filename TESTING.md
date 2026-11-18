@@ -269,6 +269,15 @@ single-run A/B measurements. A real 884-word paragraph spanning three pages
 still gets assigned to only two. Greek and endnote references also expose
 recognition errors. This is a real-prose test, not a degraded-scan test.
 
+Follow-up (2026-11-17): page 6 exposed a dehyphenation guard that rejected
+`an-` / `other;` because both halves appeared independently in the vocabulary.
+Checking adjacent canonical pairs instead restores word 2734 and both source
+boxes, including equivalent splits across pages. Regression tests protect true
+compounds and ambiguous separate phrases. All six book inputs improve: sorted
+order is now 99.441/99.306% for single-column Apple/Tesseract and
+98.492/98.402% for double-column. PDF controls reach 99.942/99.080%.
+The corpus report records the full comparison; no baseline was lowered.
+
 ```bash
 BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
 ```

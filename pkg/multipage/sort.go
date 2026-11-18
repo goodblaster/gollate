@@ -134,12 +134,19 @@ func Sort(pages []Page, canonical []string, config sorters.SorterConfig, log log
 	// Canonical vocabulary, for re-joining a word hyphenated across a
 	// page break.
 	vocabulary := make(map[string]bool)
+	pairs := make(map[[2]string]bool)
+	previous := ""
 	for _, line := range canonical {
-		for _, token := range tokenize(line) {
+		tokens := tokenize(line)
+		for _, token := range tokens {
 			vocabulary[token] = true
+			if previous != "" {
+				pairs[[2]string{previous, token}] = true
+			}
+			previous = token
 		}
 	}
-	joinSeamHyphens(pages, vocabulary)
+	joinSeamHyphens(pages, vocabulary, pairs)
 
 	// Segment: which canonical lines are on which page.
 	lineTokens := make([][]string, len(canonical))
@@ -421,10 +428,11 @@ const lineBreakHyphens = "-\u2010\u00AD\u00AC"
 
 // joinSeamHyphens re-joins a word hyphenated across a page break: the last
 // block of one page ends in a hyphen, and with the first block of the next
-// it spells a canonical word that neither half is. The joined word stays
+// it spells a canonical word, without evidence for the two parts as an
+// adjacent canonical pair. The joined word stays
 // on the first page; the second half is removed from the next. Run after
 // furniture is stripped, so the page number is not in the way.
-func joinSeamHyphens(pages []Page, vocabulary map[string]bool) {
+func joinSeamHyphens(pages []Page, vocabulary map[string]bool, pairs map[[2]string]bool) {
 	for p := 0; p+1 < len(pages); p++ {
 		if len(pages[p].Blocks) == 0 || len(pages[p+1].Blocks) == 0 {
 			continue
@@ -436,8 +444,8 @@ func joinSeamHyphens(pages []Page, vocabulary map[string]bool) {
 			continue
 		}
 		joined := sorters.NormalizeText(stem + first.Text)
-		bothWords := vocabulary[sorters.NormalizeText(stem)] && vocabulary[sorters.NormalizeText(first.Text)]
-		if !vocabulary[joined] || bothWords {
+		separatePair := pairs[[2]string{sorters.NormalizeText(stem), sorters.NormalizeText(first.Text)}]
+		if !vocabulary[joined] || separatePair {
 			continue
 		}
 		last.OriginalOcrText = last.Text + " " + first.Text

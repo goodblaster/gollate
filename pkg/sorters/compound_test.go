@@ -192,6 +192,82 @@ func TestJoinLineBreakHyphens(t *testing.T) {
 	}
 }
 
+func TestJoinAmbiguousWordParts(t *testing.T) {
+	for _, tt := range []struct {
+		name, canonical, head, tail, want string
+		sameLine                          bool
+	}{
+		{"another", "an example from another; other choices remain", "an-", "other;", "another;", false},
+		{"unicode hyphen", "an example from another; other choices remain", "an‐", "other;", "another;", false},
+		{"compound also has joined form", "a long-time friend and a longtime colleague", "long-", "time", "long- time", false},
+		{"compound across canonical lines", "a long-\ntime friend and a longtime colleague", "long-", "time", "long- time", false},
+		{"separate phrase also has joined form", "some body was found by somebody", "some-", "body", "some- body", false},
+		{"joined form absent", "an example with other choices", "an-", "other", "an- other", false},
+		{"no line break", "an example from another; other choices remain", "an-", "other;", "an- other;", true},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			head, tail := word(tt.head, .8, .1, .06), word(tt.tail, .1, .14, .08)
+			head.LineId, tail.LineId = "first", "second"
+			if tt.sameLine {
+				tail = word(tt.tail, .87, .1, .08)
+				tail.LineId = "first"
+			}
+			out := normalizeOcrBlocks([]Block{head, tail}, true, ParseLines(strings.Split(tt.canonical, "\n")))
+			var text []string
+			for _, b := range out {
+				text = append(text, b.Text)
+			}
+			if got := strings.Join(text, " "); got != tt.want {
+				t.Fatalf("got %q, want %q", got, tt.want)
+			}
+		})
+	}
+}
+
+// Both halves are common words elsewhere in the same canonical paragraph.
+// This reproduces Meditations' an-/other without depending on the download.
+func TestLineBreakAnotherKeepsBothLocations(t *testing.T) {
+	canonical := "An observer receives anything from another; other choices remain."
+	var blocks []Block
+	for row, line := range []string{"An observer receives anything from an-", "other; other choices remain."} {
+		left := .1
+		for _, text := range strings.Fields(line) {
+			b := word(text, left, .1+.04*float64(row), .012*float64(len(text)))
+			b.Index = len(blocks)
+			b.LineId = string(rune('a' + row))
+			blocks = append(blocks, b)
+			left += b.Width() + .01
+		}
+	}
+	head, tail := blocks[5].BoundingBox, blocks[6].BoundingBox
+	s := NewOcrSorterWithConfig(blocks, []string{canonical}, logger.Noop{}, ConfigForLanguage("english"))
+	if _, err := s.Sort(); err != nil {
+		t.Fatal(err)
+	}
+	doc := s.Document()
+	if doc.Text != canonical {
+		t.Fatalf("got %q, want %q", doc.Text, canonical)
+	}
+	found := false
+	for _, p := range doc.Paragraphs {
+		for _, tok := range p.Tokens {
+			if doc.Text[tok.Span.Start:tok.Span.End] != "another;" {
+				continue
+			}
+			found = true
+			if tok.Canonical == nil || canonical[tok.Canonical.Start:tok.Canonical.End] != "another;" {
+				t.Fatalf("missing canonical span: %+v", tok)
+			}
+			if tok.Bounds != head || tok.Continuation == nil || tok.Continuation.Bounds != tail {
+				t.Fatalf("lost source locations: %+v", tok)
+			}
+		}
+	}
+	if !found {
+		t.Fatal("another was not emitted as one word")
+	}
+}
+
 // Vertical text whose columns arrive left to right is put back in reading
 // order (right to left), and each column becomes its own line.
 func TestReverseLeftToRightColumns(t *testing.T) {

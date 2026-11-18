@@ -135,13 +135,22 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 
 	// Canonical vocabulary: what a split or a re-joined word must produce.
 	canonicalWords := make(map[string]bool)
+	canonicalPairs := make(map[[2]string]bool)
+	// Canonical lines can themselves be visual wraps, so keep adjacency
+	// across their boundaries as well.
+	previous := ""
 	for _, line := range canonicalLines {
-		for _, word := range strings.Fields(line.Normalized) {
+		words := strings.Fields(line.Normalized)
+		for _, word := range words {
 			canonicalWords[word] = true
+			if previous != "" {
+				canonicalPairs[[2]string{previous, word}] = true
+			}
+			previous = word
 		}
 	}
 
-	for _, w := range joinLineBreakHyphens(attachPunctuation(ocrBlocks), canonicalWords) {
+	for _, w := range joinLineBreakHyphens(attachPunctuation(ocrBlocks), canonicalWords, canonicalPairs) {
 		if strings.TrimSpace(w.NormedText) == "" {
 			continue
 		}
@@ -286,11 +295,14 @@ const lineBreakHyphens = "-\u2010\u00AD\u00AC"
 //
 // Two consecutive blocks are joined when the first ends in a hyphen, the
 // second starts a new line, their concatenation is a canonical word and
-// at least one of them is not (so "long-" / "time" from a genuine
-// compound is left for compound splitting). The joined block takes the
+// the two parts do not occur as an adjacent canonical pair. Merely finding
+// both parts somewhere in the vocabulary is too broad: "an-" / "other"
+// must join even if "an" and "other" occur independently elsewhere. An
+// actual "long-time" or "long time" pair still prevents joining when
+// "longtime" is also present. The joined block takes the
 // first part's position; what OCR actually read is kept in
 // OriginalOcrText.
-func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool) []Block {
+func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool, canonicalPairs map[[2]string]bool) []Block {
 	if len(canonicalWords) == 0 {
 		return blocks
 	}
@@ -306,8 +318,8 @@ func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool) []Bloc
 			}
 			if stem != strings.TrimSpace(b.Text) && stem != "" && onNextLine {
 				joined := NormalizeText(stem + next.Text)
-				bothWords := canonicalWords[NormalizeText(stem)] && canonicalWords[next.NormedText]
-				if canonicalWords[joined] && !bothWords {
+				separatePair := canonicalPairs[[2]string{NormalizeText(stem), next.NormedText}]
+				if canonicalWords[joined] && !separatePair {
 					b.OriginalOcrText = b.Text + " " + next.Text
 					b.CorrectionType = "dehyphenated"
 					b.Continuation = &ocr.BlockPart{Page: next.Page, Bounds: next.BoundingBox}

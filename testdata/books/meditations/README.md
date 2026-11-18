@@ -50,7 +50,7 @@ The full generated data lives in the ignored `experiments/meditations/` director
 
 ## Accuracy
 
-Order accuracy is normalized-token longest-common-subsequence length divided by reference length. Raw order follows page then extractor emission order; sorted order uses gollate output. Precision divides the same matches by output length. These scores are not character-level OCR accuracy and do not score punctuation or typography.
+Order accuracy is normalized-token longest-common-subsequence length divided by reference length. Raw order follows page then extractor emission order; sorted order uses gollate output. Precision divides the same matches by output length. These scores are not character-level OCR accuracy and do not score punctuation or typography. The following table records the initial 2026-11-16 evaluation.
 
 | Layout | Input | Raw order | Sorted order | Sorted precision | Mean paragraph recovery |
 |---|---|---:|---:|---:|---:|
@@ -64,6 +64,23 @@ Order accuracy is normalized-token longest-common-subsequence length divided by 
 The previous committed code (`4a97ff2`) and the working tree after the multi-page changes produce **identical accuracy, precision, paragraph recovery and canonical-span coverage on all six inputs**. The earlier changes improve speed here, but do not improve book accuracy. Matching code was not tuned during this evaluation.
 
 The report also records input bag recall and canonical-span coverage. Dehyphenation can make sorted accuracy exceed raw bag recall. Span coverage counts distinct reference units linked to matching output text; it does not independently verify physical page coordinates. Mean paragraph recovery weights short and long canonical lines equally.
+
+### Hyphenation correction (2026-11-17)
+
+Visual review of single-column page 6 found `an-` / `other;` labeled as unlinked output near canonical words 2733 and 2735. The print splits `another;` across two lines, and OCR reads both pieces correctly. The join guard rejected them because both `an` and `other` occur independently in the canonical vocabulary. It now protects adjacent canonical pairs instead: `an-` / `other;` joins, while a genuine `long-time` remains separate matcher tokens even when `longtime` also occurs. The same correction applies across page breaks. Cases where both the joined word and the separate pair occur remain conservatively unjoined.
+
+The corrected token links to canonical word **2734**, retaining both original boxes; the overlay labels them **2734** and **2734+**. Download-free regression tests cover line and page breaks, source coordinates, Unicode hyphens, true compounds, and ambiguous separate phrases.
+
+| Layout | Input | Previous sorted order | Corrected sorted order | Additional matched units |
+|---|---|---:|---:|---:|
+| Single | Apple Vision | 99.422% | 99.441% | 10 |
+| Single | Tesseract | 99.286% | 99.306% | 10 |
+| Single | PDF text control | 99.922% | 99.942% | 10 |
+| Double | Apple Vision | 98.460% | 98.492% | 16 |
+| Double | Tesseract | 98.366% | 98.402% | 18 |
+| Double | PDF text control | 99.047% | 99.080% | 17 |
+
+All six inputs also improve precision, paragraph recovery and canonical-span coverage. Baselines were raised; none were lowered. Whole-book sorting in the validation run takes 1.92–2.24 seconds per input; these timings are descriptive, not a controlled speed comparison for this fix. Rerun `--stage evaluate` followed by `--stage overlays` to refresh existing local results and images without repeating rendering or OCR.
 
 ## Speed
 
