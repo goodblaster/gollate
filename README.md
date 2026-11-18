@@ -4,9 +4,17 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/goodblaster/gollate.svg)](https://pkg.go.dev/github.com/goodblaster/gollate)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**gollate** sorts ocr-extracted data using supplied, canonical text. 
-It analyzes the text and ocr blocks, tries to determine the most logical order for those blocks, 
-and then returns them to a user for further use.
+**gollate** puts OCR words back in reading order by matching them to reference
+text you already have. It preserves each word's original page coordinates,
+so you can highlight the source even when text crosses columns or pages.
+
+![Numbered OCR word boxes in two cropped columns of Meditations. Green and purple distinguish sentences; an arrow connects word 8805, “ca-”, to its continuation 8805+, “pacity”, in the next column.](docs/images/reading-order.png)
+
+Actual output from the [Meditations OCR test](testdata/books/meditations/README.md).
+Numbers are word positions in the reference text; colors separate sentences.
+The two excerpts show the bottom of the left column and the top of the right.
+The split word **“ca-” / “pacity”** becomes **“capacity”**, with both source
+locations retained. [Reproduce this illustration](docs/images/README.md).
 
 ## Features
 - Go library for sorting OCR blocks using canonical text

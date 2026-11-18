@@ -5,7 +5,11 @@ what the known algorithm issues are. Suite mechanics live in
 [testdata/ocr-tests/README.md](testdata/ocr-tests/README.md); this file is
 the context you'd otherwise have to rediscover.
 
-Last updated: 2026-11-13.
+Language, RTL/vertical geometry, and OCR continuation follow-ups are tracked
+in [TEXT_HANDLING_PLAN.md](TEXT_HANDLING_PLAN.md), including the current
+hyphen-recovery limitations.
+
+Last updated: 2026-11-17.
 
 ## Quick reference
 
@@ -167,6 +171,156 @@ Scale is checked separately in `pkg/multipage/scale_test.go`: a synthetic
 300-page book (1,351 paragraphs of Zipf-distributed pseudo-words) comes
 back with 99.9% of paragraphs exact, 246 joined across page breaks, in
 about 3 seconds; a second test forces the banded search.
+
+### 2026-11-16: adversarial page alignment and localization
+
+Added 13 challenge scenarios in `pkg/multipage/challenge_test.go`, including
+8 small authored inputs in `pkg/multipage/testdata/challenges.json`. These
+are synthetic blocks with known positions, not new OCR measurements. The
+location score checks the canonical occurrence **and** the physical page
+and box; identical words on the wrong page cannot earn credit.
+
+Compared with commit `4a97ff2`, using identical test inputs:
+
+| Challenge | Before | After |
+|---|---:|---:|
+| Repeated body lines: text order / exact location | 66.67 / 66.67 | 100 / 100 |
+| Repeated canonical lines in margins: text order / exact location | 66.67 / 66.67 | 100 / 100 |
+| Compound across a page break (ASCII and Unicode hyphens) | 90 / 90 | 100 / 100 |
+| Four-page paragraph: text order / exact location | 100 / 50 | 100 / 100 |
+| Three content pages separated by a blank: text order / exact location | 100 / 66.67 | 100 / 100 |
+| Mixed Japanese/Latin with a page break inside the Japanese run | 100 / 73.91 | 100 / 100 |
+| Five-page paragraph, blank sheet, 5 misreads + 5 drops in 300 words | 56.67 / 20.67 | 96.67 / 96.67 |
+| 400-page edition drift: correct body-line page | 20.95 | 100 |
+
+The noisy paragraph reaches its 96.67% surviving-input ceiling; all ten
+uncovered positions are reported. The drift case contains 9,925 body lines,
+2,500 canonical-only lines (prefix, middle and suffix), and three scan-only
+pages. All 2,500 absent lines now remain unassigned. Additional tests check
+an intervening blank page between only two fragments, title/header
+ambiguity, empty input, and separately identified repeated missing lines.
+
+The existing 36 multi-page fixture/source pairs still pass every gate.
+Excluding Apple Vision on vertical Japanese, mean text-order accuracy is
+unchanged at **98.38%**, paragraph recovery **98.18%**, and precision
+**98.10%**. Canonical-span coverage rises **96.69% → 97.75%**: standalone
+symbols such as `38 % mayor` no longer cause a whole Spanish paragraph to
+lose its spans. The three Spanish localization baselines were ratcheted
+up; no baseline was lowered. This existing span-coverage metric does not
+verify physical location; the new challenge metric does.
+
+The original 301-page synthetic book (300-page target plus final spill)
+still recovers **99.93% of its 1,351 paragraphs exactly**, with 246 straddles
+and 602 furniture runs.
+
+Performance on Apple M4 Pro, darwin/arm64, Go 1.24.4; medians of three
+`-benchtime=1x` runs, fixture creation excluded:
+
+| Operation | Before | After | Change |
+|---|---:|---:|---:|
+| Full 301-page sort | 2.911 s | 1.687 s | 42.1% less time |
+| Allocated bytes per book sort | 2.588 GB | 1.249 GB | 51.8% fewer bytes |
+| 400-page drift segmentation | 70.0 ms | 48.7 ms | 30.4% less time |
+| Allocated bytes per segmentation | 67.7 MB | 26.7 MB | 60.6% fewer bytes |
+
+Allocated bytes are cumulative allocations, not peak resident memory.
+Small documents can incur extra work from canonical spans and conservative
+furniture decisions. In three `-benchtime=200ms` runs, the repeated-body
+case rises from 104 to 148 microseconds (it now retains all the words), and
+the mixed-script case from 158 to 197 microseconds. Compounds fall from
+121 to 116 microseconds and the four-page case from 192 to 171 microseconds.
+These changes are not a universal speedup.
+
+```bash
+go test ./pkg/multipage -run Challenge -v
+go test ./pkg/multipage -run '^$' -bench 'Benchmark(Book300|Challenge)' -benchtime=1x -count=3
+```
+
+Implementation: distinctive three-token sequences anchor segmentation in
+physical token positions; long unsupported runs consume no alignment cost;
+weak search bands widen. Word counts and rarity weights are cached, and
+backtracking stores only searched band cells. Furniture needs a separated
+margin location and respects canonical occurrences, while still removing
+running copies of a title found in the body. Fragment token ranges replace
+the single-boundary assumption internally; `Page`, `Straddle`, and `Cut`
+remain as compatibility summaries. Original byte spans locate compound and
+mixed-script cuts. Multi-page results now expose `Unmatched` (`unmatched`
+in CLI JSON), with canonical line and byte range; `Unhandled` retains the
+readable missing runs without deduplicating repeated occurrences.
+
+Limits: sequence anchors still need recognizable, reasonably ordered text.
+Heavy corruption and ambiguous repetitions can remain unassigned or be
+misplaced. Furniture detection is conservative and can retain unusual
+headers. Pages are still loaded in memory; this is not a streaming reader.
+The added synthetic cases do not establish accuracy on unseen scanned books.
+
+### Real-book evaluation: Meditations (2026-11-16)
+
+The [Meditations corpus report](testdata/books/meditations/README.md) adds the
+complete George Long translation from an EPUB: all twelve books and 122
+endnotes, 49,884 words. Fresh single-column (103 pages) and double-column
+(102 pages) PDFs were rasterized and recognized by Apple Vision and Tesseract.
+PDF text extraction supplies a separate control; EPUB XHTML supplies the
+reference. The setup script downloads and generates all book artifacts under ignored
+`experiments/meditations/`; only the procedure and small accuracy thresholds
+are kept under `testdata/books/meditations/`. EPUBs, PDFs, book text, images,
+OCR blocks and generated results are not committed.
+
+Sorted token-order accuracy is 99.422/99.286% for single-column Apple/Tesseract
+and 98.460/98.366% for double-column. All six input/control scores are identical
+before and after the multi-page changes; sorting takes 28–35% less time in
+single-run A/B measurements. Initially, a real 884-word paragraph spanning three
+pages was assigned to only two (fixed by the later anchor-consensus change below).
+Greek and endnote references also expose
+recognition errors. This is a real-prose test, not a degraded-scan test.
+
+Follow-up (2026-11-17): page 6 exposed a dehyphenation guard that rejected
+`an-` / `other;` because both halves appeared independently in the vocabulary.
+Checking adjacent canonical pairs instead restores word 2734 and both source
+boxes, including equivalent splits across pages. Regression tests protect true
+compounds and ambiguous separate phrases. All six book inputs improve: sorted
+order is now 99.441/99.306% for single-column Apple/Tesseract and
+98.492/98.402% for double-column. PDF controls reach 99.942/99.080%.
+The corpus report records the full comparison; no baseline was lowered.
+
+Word-boundary follow-up: Apple OCR now uses Vision's per-word rectangles
+instead of distributing line width by character count. The authored
+`TestVisionWordBounds` checks real OCR against known drawing coordinates;
+renderer tests preserve sentence edges while connecting adjacent highlights.
+Rerun the corpus OCR stage to invalidate old coordinates automatically.
+`go run ./cmd/book-overlays -layouts double-column -sources apple -all-sentences`
+writes all 102 pages and a local gallery under
+`experiments/meditations/double-column/current/apple-highlights/`.
+
+Unlinked-word follow-up: generic visual-line dehyphenation handles interleaved
+columns, preserves valid adjacent OCR joins, and uses exact flanking context
+to distinguish ambiguous joins. Long paragraphs use corroborated monotone
+phrase anchors instead of rejecting all evidence after one conflicting match.
+The three-page paragraph now recovers 99.66/99.44/99.89% for Apple/Tesseract/PDF.
+Two-column Apple unlinked tokens fall from 636 to 185; page 2 has none.
+Sorted order reaches 99.370/99.096/99.777% on the three two-column inputs.
+All six book inputs improve, and the existing language/layout gates pass.
+Tests use authored examples rather than document-specific exceptions; remaining
+Greek, note-reference and ambiguous matching errors stay visible in the gallery.
+
+```bash
+BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
+```
+
+From a fresh checkout, `python3 -B scripts/meditations-corpus.py --jobs 4`
+downloads the checksum-pinned EPUB, prepares both layouts, runs OCR and the
+accuracy tests, and generates overlays. Rerunning resumes cached preparation
+and always reruns the accuracy gates. Use `--skip-overlays` to omit the large
+PNG series. See the corpus report for prerequisites, individual stages,
+metric definitions and lightweight tests that require no book download.
+The book suite is opt-in and enforces saved accuracy baselines; speed is
+descriptive.
+Set `BOOK_OVERLAYS=1` on that command to also save full word-number and seeded
+sentence spot-check PNGs for every page. To render existing results without
+repeating sorting or OCR, use `go run ./cmd/book-overlays`. Numbers are global,
+one-based canonical whitespace-word indexes; unlinked output is marked with
+red `U` labels. See the corpus report for filenames, continuation labels and
+sampling limitations.
 
 ### Where it stands (2026-11-13)
 

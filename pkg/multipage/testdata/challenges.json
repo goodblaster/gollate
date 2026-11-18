@@ -1,0 +1,218 @@
+[
+  {
+    "name": "repeated-body",
+    "language": "english",
+    "canonical": [
+      "Never again.",
+      "The river froze overnight.",
+      "Never again.",
+      "Several boats remained trapped."
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "Never again.",
+        "top": 0.3
+      },
+      {
+        "line": 1,
+        "page": 0,
+        "text": "The river froze overnight.",
+        "top": 0.34
+      },
+      {
+        "line": 2,
+        "page": 1,
+        "text": "Never again.",
+        "top": 0.3
+      },
+      {
+        "line": 3,
+        "page": 1,
+        "text": "Several boats remained trapped.",
+        "top": 0.34
+      }
+    ]
+  },
+  {
+    "name": "repeated-canonical-margin",
+    "language": "english",
+    "canonical": [
+      "Never again.",
+      "The river froze overnight.",
+      "Never again.",
+      "Several boats remained trapped."
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "Never again.",
+        "top": 0.03
+      },
+      {
+        "line": 1,
+        "page": 0,
+        "text": "The river froze overnight.",
+        "top": 0.15
+      },
+      {
+        "line": 2,
+        "page": 1,
+        "text": "Never again.",
+        "top": 0.03
+      },
+      {
+        "line": 3,
+        "page": 1,
+        "text": "Several boats remained trapped.",
+        "top": 0.15
+      }
+    ]
+  },
+  {
+    "name": "compound-seam",
+    "language": "english",
+    "canonical": [
+      "alpha beta gamma delta four-block epsilon zeta eta theta"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "alpha beta gamma delta four-",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 1,
+        "text": "block epsilon zeta eta theta",
+        "top": 0.1
+      }
+    ]
+  },
+  {
+    "name": "unicode-compound-seam",
+    "language": "english",
+    "canonical": [
+      "alpha beta gamma delta four-block epsilon zeta eta theta"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "alpha beta gamma delta four‐",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 1,
+        "text": "block epsilon zeta eta theta",
+        "top": 0.1
+      }
+    ]
+  },
+  {
+    "name": "four-pages",
+    "language": "english",
+    "canonical": [
+      "alpha beta the river gamma delta the river epsilon zeta the river eta theta the river"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "alpha beta the river",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 1,
+        "text": "gamma delta the river",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 2,
+        "text": "epsilon zeta the river",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 3,
+        "text": "eta theta the river",
+        "top": 0.1
+      }
+    ]
+  },
+  {
+    "name": "blank-page-in-paragraph",
+    "language": "english",
+    "canonical": [
+      "alpha beta the river gamma delta the river epsilon zeta the river"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "alpha beta the river",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 2,
+        "text": "gamma delta the river",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 3,
+        "text": "epsilon zeta the river",
+        "top": 0.1
+      }
+    ]
+  },
+  {
+    "name": "two-pages-with-blank-between",
+    "language": "english",
+    "canonical": [
+      "alpha beta gamma delta epsilon zeta eta theta"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "alpha beta gamma delta",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 2,
+        "text": "epsilon zeta eta theta",
+        "top": 0.1
+      }
+    ]
+  },
+  {
+    "name": "mixed-cjk-seam",
+    "language": "japanese",
+    "canonical": [
+      "朝は五時に起こされた。 Tokyo の空は明るかった。"
+    ],
+    "parts": [
+      {
+        "line": 0,
+        "page": 0,
+        "text": "朝は五時",
+        "top": 0.1
+      },
+      {
+        "line": 0,
+        "page": 1,
+        "text": "に起こされた。 Tokyo の空は明るかった。",
+        "top": 0.1
+      }
+    ]
+  }
+]

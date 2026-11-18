@@ -4,6 +4,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/goodblaster/gollate/pkg/language"
 	"github.com/goodblaster/gollate/pkg/logger"
 	"github.com/goodblaster/gollate/pkg/ocr"
 	"github.com/goodblaster/gollate/pkg/sorters"
@@ -25,6 +26,50 @@ func layout(top float64, lines ...string) []ocr.Block {
 		}
 	}
 	return blocks
+}
+
+func TestPageBreakAnotherKeepsBothLocations(t *testing.T) {
+	canonical := []string{"An observer receives anything from another; other choices remain."}
+	pages := []Page{page(layout(.4, "An observer receives anything from an-")), page(layout(.1, "other; other choices remain."))}
+	head := pages[0].Blocks[len(pages[0].Blocks)-1].BoundingBox
+	tail := pages[1].Blocks[0].BoundingBox
+	r, err := Sort(pages, canonical, sorters.ConfigForLanguage("english"), logger.Noop{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Document.Text != canonical[0] {
+		t.Fatalf("got %q, want %q", r.Document.Text, canonical[0])
+	}
+	found := false
+	for _, p := range r.Document.Paragraphs {
+		for _, tok := range p.Tokens {
+			if r.Document.Text[tok.Span.Start:tok.Span.End] != "another;" {
+				continue
+			}
+			found = true
+			if tok.Canonical == nil || canonical[0][tok.Canonical.Start:tok.Canonical.End] != "another;" {
+				t.Fatalf("missing canonical span: %+v", tok)
+			}
+			if tok.Page != 0 || tok.Bounds != head || tok.Continuation == nil || tok.Continuation.Page != 1 || tok.Continuation.Bounds != tail {
+				t.Fatalf("lost cross-page locations: %+v", tok)
+			}
+		}
+	}
+	if !found {
+		t.Fatal("another was not emitted as one word")
+	}
+}
+
+func TestPageBreakPreservesCanonicalCompound(t *testing.T) {
+	canonical := []string{"A long-time friend met a longtime colleague."}
+	pages := []Page{page(layout(.4, "A long-")), page(layout(.1, "time friend met a longtime colleague."))}
+	r, err := Sort(pages, canonical, sorters.ConfigForLanguage("english"), logger.Noop{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Document.Text != canonical[0] {
+		t.Fatalf("changed a real compound: got %q, want %q", r.Document.Text, canonical[0])
+	}
 }
 
 // at places a single run of text at an exact position (page furniture).
@@ -207,28 +252,22 @@ func TestStripFurnitureLeavesBodyAlone(t *testing.T) {
 	}
 }
 
-func TestSplitAtToken(t *testing.T) {
-	words := func(s string) []string { return strings.Fields(sorters.NormalizeText(s)) }
-	head, tail, _ := splitAtToken("It was the harbormaster who explained it, the following morning.", 7, words)
-	if head != "It was the harbormaster who explained it," || tail != "the following morning." {
-		t.Errorf("got %q | %q", head, tail)
+func TestCanonicalFragment(t *testing.T) {
+	cases := []struct {
+		text, lang string
+		start, end int
+		want       string
+		offset     int
+	}{
+		{"a four-block stretch of road", "english", 0, 2, "a four-", 0},
+		{"a four-block stretch of road", "english", 2, 6, "block stretch of road", 7},
+		{"朝は五時に起こされた。 Tokyo", "japanese", 0, 3, "朝は五", 0},
+		{"  alpha\u00a0beta gamma", "english", 1, 3, "beta gamma", 9},
 	}
-	// A hyphenated compound is two tokens but one word: never split inside it.
-	head, tail, _ = splitAtToken("a four-block stretch of road", 2, words)
-	if head != "a four-block" || tail != "stretch of road" {
-		t.Errorf("got %q | %q", head, tail)
-	}
-	chars := func(s string) []string {
-		var out []string
-		for _, r := range sorters.NormalizeText(s) {
-			if r != ' ' {
-				out = append(out, string(r))
-			}
+	for _, c := range cases {
+		got, offset, ok := canonicalFragment(c.text, Fragment{Start: c.start, End: c.end}, language.ForLanguage(c.lang, c.text))
+		if !ok || got != c.want || offset != c.offset {
+			t.Errorf("%q: got %q at %d (%v), want %q at %d", c.text, got, offset, ok, c.want, c.offset)
 		}
-		return out
-	}
-	head, tail, _ = splitAtToken("朝は五時に起こされた。", 3, chars)
-	if head != "朝は五" || tail != "時に起こされた。" {
-		t.Errorf("got %q | %q", head, tail)
 	}
 }

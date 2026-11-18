@@ -1,6 +1,7 @@
 package sorters
 
 import (
+	"strings"
 	"unicode"
 
 	"github.com/goodblaster/gollate/pkg/language"
@@ -104,15 +105,64 @@ func canonicalTokenSpans(text string, handler language.Handler) []canonicalToken
 	// The ranges are only trustworthy if tokenizing word by word gives the
 	// same tokens as tokenizing the line.
 	whole := handler.Tokenize(NormalizeText(text))
-	if len(whole) != len(out) {
-		return nil
-	}
-	for i := range whole {
-		if whole[i] != out[i].token {
-			return nil
+	if len(whole) == len(out) {
+		same := true
+		for i := range whole {
+			if whole[i] != out[i].token {
+				same = false
+				break
+			}
+		}
+		if same {
+			return out
 		}
 	}
+	// Normalization can join a standalone symbol to the following word
+	// ("38 % mayor" -> "38 %mayor"). Merge those original ranges rather
+	// than losing every canonical span in the paragraph.
+	var merged []canonicalToken
+	next := 0
+	for _, token := range whole {
+		if next >= len(out) {
+			return nil
+		}
+		first := next
+		key := out[next].token
+		for key != token {
+			if !strings.HasPrefix(token, key) || next+1 >= len(out) {
+				return nil
+			}
+			next++
+			keys := handler.Tokenize(NormalizeText(text[out[first].span.Start:out[next].span.End]))
+			if len(keys) != 1 {
+				return nil
+			}
+			key = keys[0]
+		}
+		merged = append(merged, canonicalToken{token, Span{out[first].span.Start, out[next].span.End}})
+		next++
+	}
+	if next != len(out) {
+		return nil
+	}
+	out = merged
 	return out
+}
+
+// CanonicalTokenSpans returns byte ranges in the original text, in matching
+// token order. Nil means tokenization could not be mapped back reliably.
+// A range can overlap its neighbor when normalization expands a character;
+// callers splitting text must reject a boundary inside such a range.
+func CanonicalTokenSpans(text string, handler language.Handler) []Span {
+	tokens := canonicalTokenSpans(text, handler)
+	if tokens == nil {
+		return nil
+	}
+	spans := make([]Span, len(tokens))
+	for i, token := range tokens {
+		spans[i] = token.span
+	}
+	return spans
 }
 
 // alignToCanonical aligns each block's matching tokens to the canonical

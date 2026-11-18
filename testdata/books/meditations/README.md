@@ -1,0 +1,198 @@
+# Meditations: real-book OCR evaluation
+
+Downloaded the George Long translation from [Public Domain Library](https://publicdomainlibrary.org/en/ebooks/meditations#formats). The repository keeps the setup script, tests, this procedure and small accuracy thresholds. The EPUB, extracted book text, PDFs, images, OCR blocks, measurements and sorted results are local generated data and are not committed.
+
+The corpus contains all twelve books and 122 endnotes: 49,884 whitespace-separated words, 681 canonical lines, and 50,134 normalized scoring units. Cover art, publisher notices and navigation backlinks are excluded. Greek quotations, verse, citations, superscript references and long paragraphs are retained. Endnote list numbers appear explicitly in both reference and rendering. The reference comes from EPUB XHTML in spine order, independently of PDF extraction and OCR. A separate HTML-body validator checks that visible source text was not omitted; this caught five standalone citations during preparation.
+
+## Run from a fresh checkout
+
+Prerequisites: macOS (Apple Vision), Go 1.24.4 or newer, Python 3, Google Chrome, Poppler (`pdftoppm`, `pdftotext`) and Tesseract available on `PATH`. The default Chrome path is `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`; override it with `--chrome /path/to/chrome` if needed. The first run needs network access for the EPUB and any missing Go modules.
+
+From the repository root:
+
+```sh
+python3 -B scripts/meditations-corpus.py --jobs 4
+```
+
+This single command:
+
+1. Downloads the pinned EPUB into `experiments/meditations/source/` and verifies its SHA-256 before publishing the file.
+2. Extracts the reference and prepares both layouts.
+3. Produces the PDFs and every rasterized page.
+4. Builds missing OCR utilities and runs Apple Vision, Tesseract and the PDF text control.
+5. Runs the six book accuracy tests against the current code, enforcing the committed baselines.
+6. Produces the numbered and sentence-sample overlay series from the saved results.
+
+Run the same command again to resume or verify the corpus. Content hashes cover inputs and outputs: valid downloads, renders, OCR pages and overlays are reused; missing or changed artifacts are regenerated. OCR checkpoints are saved per completed page. Accuracy tests always run, even when preparation is fully cached. Cached stages preserve their original timing records. Interrupted stages do not count as complete. The script never automatically updates accuracy baselines.
+
+Overlay PNGs use about 2.2 GB for this edition; add `--skip-overlays` to prepare and test without them. Use `--out experiments/meditations-other` for a separate corpus. Tool upgrades, recognition-language changes or font changes require a fresh output directory to measure their effects; existing caches intentionally retain the prior rendered/OCR inputs. To rebuild existing utility binaries after changing their source, run `make utils`.
+
+## Local artifacts and method
+
+All new downloaded/generated material lives under the ignored output directory. With the default output path:
+
+| Path under `experiments/meditations/` | Contents |
+|---|---|
+| `source/meditations.epub` | Original, checksum-verified download |
+| `source/canonical.txt`, `source/canonical-map.json`, `source/provenance.json` | Reference text, source locations and provenance |
+| `single-column/document.pdf` | Single-column PDF (103 pages in the recorded run) |
+| `double-column/document.pdf` | Double-column PDF (102 pages in the recorded run) |
+| `<layout>/page-N.png` | Original page images |
+| `<layout>/<source>-N.json` | OCR or PDF text blocks |
+| `<layout>/current/` | Sorted results, paragraph failures and overlays |
+| `report-current.json` | Current accuracy and timing measurements |
+
+The small [regression baselines](baselines.json) are committed. Legacy `source/`, `renders/` and measurement files under this testdata directory are also ignored, so existing local copies cannot be accidentally included by `git add .`.
+
+Both versions use 7-by-9-inch pages, 11-point Georgia, 1.35 line spacing, running titles and page numbers. Chrome printed the HTML; Poppler rasterized every page at 144 dpi (1008 by 1296 pixels). Apple Vision and Tesseract each recognized all 205 images: 410 OCR page runs. Both used the existing utilities with slicing disabled and default recognition settings. A third input uses Poppler PDF text blocks as a control; it is not an OCR result.
+
+The full generated data lives in the ignored `experiments/meditations/` directory: HTML, PDFs, every PNG, OCR/control blocks, logs, sorted text/JSON, and per-paragraph failures. Each layout has `current/` evaluation artifacts; `before/` is present only if a separate A/B run was performed. This is real published prose freshly typeset into test pages, not a historical scan with stains, skew or damaged type.
+
+## Accuracy
+
+Order accuracy is normalized-token longest-common-subsequence length divided by reference length. Raw order follows page then extractor emission order; sorted order uses gollate output. Precision divides the same matches by output length. These scores are not character-level OCR accuracy and do not score punctuation or typography. The following table records the initial 2026-11-16 evaluation.
+
+| Layout | Input | Raw order | Sorted order | Sorted precision | Mean paragraph recovery |
+|---|---|---:|---:|---:|---:|
+| Single | Apple Vision | 98.586% | 99.422% | 99.507% | 98.168% |
+| Single | Tesseract | 98.446% | 99.286% | 99.504% | 98.052% |
+| Double | Apple Vision | 92.466% | 98.460% | 98.247% | 97.957% |
+| Double | Tesseract | 97.303% | 98.366% | 98.535% | 97.680% |
+| Single | PDF text control | 99.078% | 99.922% | 99.866% | 99.855% |
+| Double | PDF text control | 67.938% | 99.047% | 98.922% | 99.694% |
+
+The previous committed code (`4a97ff2`) and the working tree after the multi-page changes produce **identical accuracy, precision, paragraph recovery and canonical-span coverage on all six inputs**. The earlier changes improve speed here, but do not improve book accuracy. Matching code was not tuned during this evaluation.
+
+The report also records input bag recall and canonical-span coverage. Dehyphenation can make sorted accuracy exceed raw bag recall. Span coverage counts distinct reference units linked to matching output text; it does not independently verify physical page coordinates. Mean paragraph recovery weights short and long canonical lines equally.
+
+### Hyphenation correction (2026-11-17)
+
+Visual review of single-column page 6 found `an-` / `other;` labeled as unlinked output near canonical words 2733 and 2735. The print splits `another;` across two lines, and OCR reads both pieces correctly. The join guard rejected them because both `an` and `other` occur independently in the canonical vocabulary. It now protects adjacent canonical pairs instead: `an-` / `other;` joins, while a genuine `long-time` remains separate matcher tokens even when `longtime` also occurs. The same correction applies across page breaks. Cases where both the joined word and the separate pair occur remain conservatively unjoined.
+
+The corrected token links to canonical word **2734**, retaining both original boxes; the overlay labels them **2734** and **2734+**. Download-free regression tests cover line and page breaks, source coordinates, Unicode hyphens, true compounds, and ambiguous separate phrases.
+
+| Layout | Input | Previous sorted order | Corrected sorted order | Additional matched units |
+|---|---|---:|---:|---:|
+| Single | Apple Vision | 99.422% | 99.441% | 10 |
+| Single | Tesseract | 99.286% | 99.306% | 10 |
+| Single | PDF text control | 99.922% | 99.942% | 10 |
+| Double | Apple Vision | 98.460% | 98.492% | 16 |
+| Double | Tesseract | 98.366% | 98.402% | 18 |
+| Double | PDF text control | 99.047% | 99.080% | 17 |
+
+All six inputs also improve precision, paragraph recovery and canonical-span coverage. Baselines were raised; none were lowered. Whole-book sorting in the validation run takes 1.92–2.24 seconds per input; these timings are descriptive, not a controlled speed comparison for this fix. Rerun `--stage evaluate` followed by `--stage overlays` to refresh existing local results and images without repeating rendering or OCR.
+
+### Unlinked-word and long-paragraph recovery (2026-11-17)
+
+Review of the complete numbered book exposed two generic failure modes. Alternating OCR rows from different columns separated the two halves of hyphenated words in emission order. Also, one conflicting unique phrase match could cause the multi-page segmenter to discard otherwise consistent evidence for a long paragraph.
+
+Dehyphenation now considers the next visual line in the same column, using row membership, word geometry and the canonical vocabulary. Valid adjacent OCR joins remain preferred within a column. Exact flanking words can resolve an ambiguous split such as `be-` / `cause`; competing contexts remain unresolved. Genuine compounds can also wrap, as in `great-un-` / `cle`. Both source locations are retained. Long-paragraph placement uses a monotone sequence of corroborated phrase anchors, excludes repeated reference phrases, and discards isolated page outliers. None of these rules uses book titles, page numbers, particular words or document-specific layouts.
+
+All **13** unlinked tokens on two-column Apple page 2 are resolved, including the former U900 (`much;`), U901 (`be-`), U606 (`tion,`) and U614 (`erned`). Across the book, unlinked Apple output falls from **636 to 185** (70.9% fewer). There are no unlinked output tokens on pages 3–5. Remaining errors are visible rather than assigned invented matches: 122 of the 185 unlinked tokens are on pages 93–102, including garbled Greek quotations and note references; earlier pages still contain some ambiguous joins, missed matches and recognition errors. A canonical span or absence of red boxes does not by itself prove correct recognition or correct occurrence selection.
+
+| Layout | Input | Previous sorted order | Corrected sorted order |
+|---|---|---:|---:|
+| Single | Apple Vision | 99.445% | 99.447% |
+| Single | Tesseract | 99.306% | 99.308% |
+| Single | PDF text control | 99.942% | 99.944% |
+| Double | Apple Vision | 98.494% | 99.370% |
+| Double | Tesseract | 98.402% | 99.096% |
+| Double | PDF text control | 99.080% | 99.777% |
+
+The validation run sorts each complete input in 1.82–2.04 seconds; earlier saved measurements were 1.98–2.31 seconds. These are descriptive timings, not repeated benchmark medians. All 24 book accuracy gates and 12 existing multi-page fixture gates increased; none decreased. Authored regression cases cover interleaved columns with repeated suffixes, missing line IDs, intervening lines, ambiguous contexts, wrapped compounds, unrelated quoted phrases and isolated false page anchors. The existing context-based spelling repair is also tested to preserve the original OCR text and box while linking to the supported canonical word.
+
+Refresh saved results with `--stage evaluate`, then rerun the complete highlight command below. No OCR rerun is needed for these matching changes.
+
+## Speed
+
+The following historical measurements used Apple M4 Pro, Go 1.24.4, macOS. Fresh runs save timings in each layout’s `timing.json` and in `report-current.json`. OCR used four concurrent page workers and one Tesseract thread per process. Times below are whole-book wall times.
+
+| Layout / input | OCR | Previous sort | Current sort | Sort time reduction |
+|---|---:|---:|---:|---:|
+| Single / Apple | 23.48 s | 2.914 s | 1.912 s | 34.4% |
+| Single / Tesseract | 22.58 s | 2.945 s | 1.927 s | 34.6% |
+| Double / Apple | 25.63 s | 3.083 s | 2.211 s | 28.3% |
+| Double / Tesseract | 23.95 s | 3.083 s | 2.212 s | 28.3% |
+
+PDF-control sorting took 1.890 s single-column and 2.186 s double-column, down from 2.905 s and 3.074 s. Rendering plus rasterization took 21.93 s and 26.79 s respectively. Scoring took about 0.13 s per input, outside sort timing. These are single A/B runs on identical saved input, not repeated benchmark medians; small timing differences are not significant.
+
+## Failures exposed
+
+The 884-word Book I paragraph beginning “In my father” (canonical line index 19, file line 20) spans physical pages 3–5 in the double-column PDF. Initially all three inputs assigned it only to pages 3–4, with recovery of 62.32% for Apple, 60.52% for Tesseract and 60.97% for PDF text. The generic anchor-consensus fix described above now assigns all three pages, with recovery of **99.66%, 99.44% and 99.89%**, respectively. The last sentence ends with “the illness of Maximus” on page 5.
+
+Other concentrated failures involve Greek quotations/endnotes, small note references, and the paragraph-reference symbol ¶. For example, Tesseract joins the double-column heading “Book I” into “BookI”. The PDF control's remaining errors show that recognition alone does not explain the full accuracy gap. Per-paragraph failure files preserve reference and recovered text for inspection.
+
+## Reproduce
+
+### Numbered page overlays
+
+Every saved result can produce two image series:
+
+- `current/<source>-overlays/order/page-NNN.png`: boxes around every final output token, labeled with its **one-based canonical word number across the whole book**.
+- `current/<source>-overlays/spotcheck/page-NNN.png`: the same labels for up to two randomly selected sentences per page, colored green and purple. The default seed is 117, so reruns with the same input choose the same samples.
+
+For example, inspect `<layout>/current/apple-overlays/order/page-006.png` and `spotcheck/page-006.png` after setup. These PNGs are generated locally, not checked in.
+
+Numbering counts whitespace-separated canonical words, including the title, headings and note references: the complete book has 49,884 word IDs. Compounds count as one word, so multiple matcher tokens can share a number. `117+` identifies a continuation of word 117 on another line or page. A number range means one output token maps to several canonical words. Red `U117` means an unlinked output token at **output position** 117; it does not claim to be canonical word 117. Removed running headers and page numbers are not numbered.
+
+Images preserve the page layout at twice the source resolution, with the legend and sampled source text beside the page. They display the final sorter's links, including mistakes; they do not realign the text or invent coordinates for missing words. Drawing connects adjacent words in the same sentence and visual line by dividing interior whitespace and sharing a vertical extent. The first/last word edges remain fixed, and smoothing never bridges column gutters. `manifest.json` retains the unsmoothed source boxes, source words and byte spans, sentence text, final output token order, sampled sentence IDs and all unlinked canonical word IDs. A word counts as linked if any output token overlaps its source span; this is not a recognition-accuracy score.
+
+Sentence splitting uses punctuation and paragraph boundaries. Samples come from sentences with at least one canonical-linked word on the page, without requiring full recognition. Cross-page sentences may be only partly highlighted, and pages without links have no sample. This is a visual review aid rather than an independent or unbiased accuracy audit.
+
+Generate from the existing saved results without rerunning OCR or sorting:
+
+```sh
+go run ./cmd/book-overlays -corpus experiments/meditations
+```
+
+The default generates both views for every page in both layouts, for Apple, Tesseract and the PDF text control: **1,230 PNGs**. Large overlays stay in the ignored experiment directory. Use `-layouts double-column -sources apple -pages 1,6,102` for a preview; omit `-pages` for the complete series. `-seed 42 -sentences 1` changes sampling. `-label before` renders another saved evaluation. Previews replace only the requested PNGs, so use a full render after changing the seed to keep the whole series consistent.
+
+### Complete book highlights and word boundaries (2026-11-17)
+
+The page-6 spot check exposed a separate geometry error: canonical word 2885 (`But`) began inside the printed word. The Apple adapter previously divided each line's width by character count. It now requests [Vision's box for each word's string range](https://developer.apple.com/documentation/vision/vnrecognizedtext/boundingboxforrange%3Aerror%3A?language=objc), searching forward through repeated words with UTF-16 ranges. OCR JSON records `bounds_source` as `vision`, or `estimated` if Vision cannot provide a box. These remain OCR estimates, not guaranteed glyph-perfect outlines.
+
+All 205 pages were recognized again: all 101,580 word boxes came from Vision, with no estimated fallbacks. On page 6, `But` begins at x=505.25 pixels versus the independent PDF control's x=506.20; previously it began at x=526.35 (source image width 1008). Display smoothing preserves that corrected sentence edge. All six book accuracy gates pass; Apple sorted order reaches 99.445% single-column and 98.494% double-column. Other sources are unchanged.
+
+To refresh existing OCR after the adapter change, then highlight **all 102 two-column pages**:
+
+```bash
+python3 -B scripts/meditations-corpus.py --stage ocr --jobs 4
+python3 -B scripts/meditations-corpus.py --stage evaluate
+go run ./cmd/book-overlays -layouts double-column -sources apple -all-sentences
+```
+
+The OCR stage rebuilds utilities through Go's build cache and includes executable hashes in page cache keys. Updated code invalidates stale coordinates; unchanged runs reuse them. A fresh checkout must run the full setup command first.
+
+Open `experiments/meditations/double-column/current/apple-highlights/index.html` for the complete gallery. `highlight/page-001.png` through `page-102.png` show all linked sentences with alternating green/purple colors, stable across columns and pages; unlinked output is red. Canonical words without matched boxes remain listed as missing in the manifest. `sentence_selection: "all"` means the manifest's `sampled_sentences` field contains every linked sentence on each page. Full-book output lives separately from sampled overlays and is ignored by Git.
+
+`TestVisionWordBounds` renders authored proportional text with repeated words and non-ASCII text and checks Vision's word edges against known drawing positions. Smoothing tests assert connected bands, unchanged sentence edges, open gutters and unchanged stored boxes. Run these with `go test ./pkg/ocr/apple ./internal/bookoverlay` on macOS; `-short` skips the live Vision test. Pipeline tests cover executable changes invalidating only the affected engine's cached pages.
+
+To generate overlays as part of evaluation (outside the recorded sort/scoring timing):
+
+```sh
+BOOK_CORPUS="$PWD/experiments/meditations" BOOK_OVERLAYS=1 go test ./integration -run '^TestBookCorpus$' -v -count=1
+```
+
+`make build utils` also builds `bin/book-overlays`. Overlay-specific tests cover canonical word 117, UTF-8 byte offsets, blank source lines, compounds, cross-page continuations, unmapped tokens, deterministic sampling and PNG coordinate placement.
+
+### Individual stages and tests
+
+`--stage prepare`, `render`, `ocr`, `evaluate` and `overlays` run one stage; the default `all` runs them in that order. A stage assumes its preceding stages are ready. For example, rerun accuracy without rendering or OCR:
+
+```sh
+python3 -B scripts/meditations-corpus.py --stage evaluate
+# Equivalent direct invocation:
+BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
+```
+
+Run the lightweight checks without downloading the book or installing OCR/rendering tools:
+
+```sh
+python3 -B -m unittest discover -s scripts -p test_meditations_corpus.py -v
+go test ./...
+go vet ./...
+```
+
+The Python tests use a tiny authored EPUB and mocked external tools. They check source extraction, atomic/checksummed downloads, repeat-run caching, repair of missing files, and invalidation when inputs change. They do not read any local real-book artifact. Go overlay tests check numbering and coordinates; the exact book LCS scorer is checked against the existing quadratic scorer.
+
+`TestBookCorpus` is opt-in; ordinary `go test ./...` skips the large corpus. Set `BOOK_LABEL` on the direct Go command to keep separate evaluation artifacts; `before` bypasses the current-code accuracy gate. Current-label scores enforce four accuracy metrics with a 0.05 percentage-point tolerance. Only an explicit `UPDATE_BASELINES=1` on a direct Go test command should ratchet passing accuracy thresholds upward; timings are descriptive and are not gates. Different operating-system OCR or rendering versions can change scores, so inspect failures before updating thresholds.

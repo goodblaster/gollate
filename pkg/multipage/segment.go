@@ -13,29 +13,42 @@ package multipage
 
 import "math"
 
+// Fragment is a half-open token range [Start, End) of a canonical line
+// assigned to one page. Token indices use Segment's input tokenization.
+type Fragment struct {
+	Page  int
+	Start int
+	End   int
+}
+
 // Assignment places one canonical line on a page.
 type Assignment struct {
+	// Fragments covers the line in canonical order, on any number of pages.
+	// Empty for unassigned lines and paragraph separators. The legacy fields
+	// below summarize the first fragment and first boundary.
+	Fragments []Fragment
+
 	// Page is the 0-based page the line is on, or where it starts if it
-	// straddles. -1 when there are no pages.
+	// straddles. -1 when unassigned (including when there are no pages).
 	Page int
 
 	// Straddle is true when the line starts on Page and finishes on
-	// Page+1 (a paragraph broken by the page boundary).
+	// another page (possibly across several page boundaries).
 	Straddle bool
 
 	// Cut is, for a straddling line, the index of its first token that
-	// falls on Page+1.
+	// falls on the second fragment's page.
 	Cut int
 
 	// Coverage is the rarity-weighted share of the line's tokens found on
-	// its page (both pages, for a straddle). Near zero means the line was
-	// found nowhere and was placed by its neighbors.
+	// its assigned pages. Near zero means there is little placement
+	// evidence; the line may be unassigned or placed by its neighbors.
 	Coverage float64
 }
 
 const (
 	// positionWeight is the cost, in coverage units, of placing a line one
-	// page away from where the document's proportions predict. It is a
+	// page away from where the anchors (or proportions) predict. It is a
 	// tiebreaker: real coverage differences between the right page and a
 	// wrong one are an order of magnitude larger.
 	positionWeight = 0.02
@@ -58,7 +71,8 @@ const (
 
 // bandThreshold and bandWidth bound the work on long documents: past this
 // many line-page pairs, each line is only scored against pages within
-// bandWidth of its expected position. (Variables so tests can force the
+// bandWidth of its expected position, widening if unsupported. (Variables
+// so tests can force the
 // banded path on a small document.)
 var (
 	bandThreshold = 4_000_000
@@ -68,18 +82,19 @@ var (
 // Segment assigns each canonical line to a page.
 //
 // lines[i] and pages[p] are token lists (matching keys, as the sorter
-// would tokenize them). The assignment is monotone - a later line is never
+// would tokenize them). Assigned lines are monotone - a later line is never
 // on an earlier page - because canonical order is reading order; that is
 // the one structural guarantee available, and it is what places repeated
 // lines and lines found nowhere.
 //
-// Each line is scored against each page by how many of its tokens the page
+// Unique token sequences anchor the positional estimate; unsupported runs
+// can remain unassigned (Page -1). Each line is scored by how many tokens a page
 // holds, weighted by rarity so that "the" says little and a proper noun
-// says a lot, with a small penalty for straying from where the page sizes
-// predict the line should fall. A dynamic program picks the monotone
+// says a lot, with a small penalty for straying from the anchored position. A dynamic program picks the monotone
 // assignment with the best total. Lines at page boundaries are then tested
-// for straddling: a head on one page and a tail on the next that together
-// cover the line clearly better than either page alone.
+// for straddling. Unique sequences also locate paragraphs spanning three or
+// more pages. Fragments, rather than the legacy first-boundary summary,
+// describe every page of those paragraphs.
 func Segment(lines, pages [][]string) []Assignment {
 	out := make([]Assignment, len(lines))
 	if len(pages) == 0 {
@@ -103,30 +118,46 @@ func Segment(lines, pages [][]string) []Assignment {
 		}
 		pageTokens += len(tokens)
 	}
-	weight := func(token string) float64 {
-		df := docFreq[token]
-		if df == 0 {
-			df = len(pages) // absent everywhere: carries no placement signal
-		}
-		return math.Log(1 + float64(len(pages))/float64(df))
+	weights := make(map[string]float64, len(docFreq))
+	for token, df := range docFreq {
+		weights[token] = math.Log(1 + float64(len(pages))/float64(df))
 	}
-
-	// coverage is the weighted share of the line's tokens present on page.
-	coverage := func(line []string, page int) float64 {
-		need := make(map[string]int, len(line))
+	weight := func(token string) float64 {
+		if w, ok := weights[token]; ok {
+			return w
+		}
+		return math.Ln2 // absent everywhere: no placement signal
+	}
+	// Build each line's multiset once, in token order. Previously every
+	// line/page score rebuilt it and recomputed every logarithm.
+	type needToken struct {
+		text   string
+		count  int
+		weight float64
+	}
+	needs := make([][]needToken, len(lines))
+	totals := make([]float64, len(lines))
+	for i, line := range lines {
+		positions := make(map[string]int, len(line))
 		for _, t := range line {
-			need[t]++
+			if j, ok := positions[t]; ok {
+				needs[i][j].count++
+			} else {
+				positions[t] = len(needs[i])
+				needs[i] = append(needs[i], needToken{t, 1, weight(t)})
+			}
+			totals[i] += weight(t)
 		}
-		var hit, total float64
-		for t, n := range need {
-			w := weight(t)
-			total += w * float64(n)
-			hit += w * float64(min(n, counts[page][t]))
-		}
-		if total == 0 {
+	}
+	coverage := func(line, page int) float64 {
+		if totals[line] == 0 {
 			return 0
 		}
-		return hit / total
+		hit := 0.0
+		for _, t := range needs[line] {
+			hit += t.weight * float64(min(t.count, counts[page][t.text]))
+		}
+		return hit / totals[line]
 	}
 
 	// Expected page of each line, from cumulative proportions: the line's
@@ -160,19 +191,42 @@ func Segment(lines, pages [][]string) []Assignment {
 		running += len(line)
 	}
 
+	gramIndex := indexGrams(pages)
+	skip := anchoredPositions(lines, pages, expected, docFreq, gramIndex, coverage)
 	banded := len(lines)*len(pages) > bandThreshold
 
 	// Monotone alignment. best[p] is the best total for the lines so far
-	// with the current line on page p; from[i][p] records the previous
-	// line's page on that best route.
+	// with the current line on page p; from stores the previous page only
+	// inside each row's searched band.
 	neg := math.Inf(-1)
 	best := make([]float64, len(pages))
 	from := make([][]int32, len(lines))
+	rowStart := make([]int, len(lines))
+	next := make([]float64, len(pages))
 	for i, line := range lines {
+		if skip[i] {
+			continue
+		}
 		// Short lines are weak evidence; do not let "Buy" outvote a paragraph.
 		confidence := math.Min(1, float64(len(line))/5)
-		next := make([]float64, len(pages))
-		from[i] = make([]int32, len(pages))
+		lo, hi := 0, len(pages)
+		if banded {
+			lo = max(0, expected[i]-bandWidth)
+			hi = min(len(pages), expected[i]+bandWidth+1)
+		}
+		// Widen an unsupported band instead of making an exclusion final.
+		// Strong sequences normally keep the narrow path sufficient.
+		if banded {
+			evidence := 0.0
+			for p := lo; p < hi; p++ {
+				evidence = max(evidence, coverage(i, p))
+			}
+			if evidence < .35 {
+				lo, hi = 0, len(pages)
+			}
+		}
+		rowStart[i] = lo
+		from[i] = make([]int32, hi-lo)
 		runBest, runArg := neg, 0
 		for p := range pages {
 			prev := 0.0
@@ -182,15 +236,15 @@ func Segment(lines, pages [][]string) []Assignment {
 			if prev > runBest {
 				runBest, runArg = prev, p
 			}
-			if banded && (p < expected[i]-bandWidth || p > expected[i]+bandWidth) {
+			if p < lo || p >= hi {
 				next[p] = neg
 				continue
 			}
-			score := confidence*coverage(line, p) - positionWeight*math.Abs(float64(p-expected[i]))
+			score := confidence*coverage(i, p) - positionWeight*math.Abs(float64(p-expected[i]))
 			next[p] = runBest + score
-			from[i][p] = int32(runArg)
+			from[i][p-lo] = int32(runArg)
 		}
-		best = next
+		best, next = next, best
 	}
 	end := 0
 	for p := range pages {
@@ -199,9 +253,36 @@ func Segment(lines, pages [][]string) []Assignment {
 		}
 	}
 	for i := len(lines) - 1; i >= 0; i-- {
+		if skip[i] {
+			out[i].Page = -1
+			continue
+		}
 		out[i].Page = end
-		out[i].Coverage = coverage(lines[i], end)
-		end = int(from[i][end])
+		out[i].Coverage = coverage(i, end)
+		end = int(from[i][end-rowStart[i]])
+	}
+
+	// Pin long paragraphs before the one-seam search, which would otherwise
+	// claim only two pages and can spend cubic time trying all tail cuts.
+	for i, line := range lines {
+		if skip[i] {
+			continue
+		}
+		if fragments := longFragments(line, pages, gramIndex); fragments != nil {
+			out[i].Fragments = fragments
+			out[i].Page, out[i].Straddle, out[i].Cut = fragments[0].Page, true, fragments[0].End
+			hit := 0.0
+			for _, f := range fragments {
+				used := make(map[string]int)
+				for _, token := range line[f.Start:f.End] {
+					if used[token] < counts[f.Page][token] {
+						hit += weight(token)
+						used[token]++
+					}
+				}
+			}
+			out[i].Coverage = hit / totals[i]
+		}
 	}
 
 	// Straddles. Only a line at a page boundary can be one: the last
@@ -209,7 +290,7 @@ func Segment(lines, pages [][]string) []Assignment {
 	firstOn := make(map[int]int)
 	lastOn := make(map[int]int)
 	for i, line := range lines {
-		if len(line) == 0 {
+		if len(line) == 0 || out[i].Page < 0 {
 			continue
 		}
 		p := out[i].Page
@@ -371,12 +452,24 @@ func Segment(lines, pages [][]string) []Assignment {
 		}
 	}
 
+	for i, line := range lines {
+		a := &out[i]
+		if a.Page < 0 || len(line) == 0 || len(a.Fragments) > 0 {
+			continue
+		}
+		if a.Straddle {
+			a.Fragments = []Fragment{{a.Page, 0, a.Cut}, {a.Page + 1, a.Cut, len(line)}}
+		} else {
+			a.Fragments = []Fragment{{a.Page, 0, len(line)}}
+		}
+	}
+
 	// Empty lines (paragraph separators) follow the line before them.
 	for i, line := range lines {
 		if len(line) == 0 && i > 0 {
 			out[i] = Assignment{Page: out[i-1].Page}
 			if out[i-1].Straddle {
-				out[i].Page++
+				out[i].Page = out[i-1].Fragments[len(out[i-1].Fragments)-1].Page
 			}
 		}
 	}
