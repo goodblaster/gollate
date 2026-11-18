@@ -3,6 +3,7 @@ package bookoverlay
 import (
 	"encoding/json"
 	"fmt"
+	"html"
 	"image"
 	"image/color"
 	"image/png"
@@ -20,11 +21,12 @@ import (
 )
 
 type Options struct {
-	ImageDir  string
-	OutputDir string
-	Title     string
-	Seed      int64
-	Samples   int
+	ImageDir     string
+	OutputDir    string
+	Title        string
+	Seed         int64
+	Samples      int
+	AllSentences bool
 	// Pages optionally restricts rendering to these one-based page numbers.
 	Pages []int
 }
@@ -36,6 +38,11 @@ var sampleColors = []color.RGBA{{0, 114, 86, 255}, {146, 62, 156, 255}}
 // Write renders both views using existing normalized boxes. Each PNG doubles
 // the source resolution for legible labels and adds a legend outside the page.
 func Write(doc *multipage.Document, canonical []string, opts Options) error {
+	modes := []string{"order", "spotcheck"}
+	if opts.AllSentences {
+		opts.Samples = 0
+		modes = []string{"highlight"}
+	}
 	m, err := Build(doc, canonical, opts.Seed, opts.Samples)
 	if err != nil {
 		return err
@@ -51,7 +58,7 @@ func Write(doc *multipage.Document, canonical []string, opts Options) error {
 			return fmt.Errorf("page %d out of range", n)
 		}
 	}
-	for _, mode := range []string{"order", "spotcheck"} {
+	for _, mode := range modes {
 		if err := os.MkdirAll(filepath.Join(opts.OutputDir, mode), 0755); err != nil {
 			return err
 		}
@@ -67,7 +74,7 @@ func Write(doc *multipage.Document, canonical []string, opts Options) error {
 		if err != nil {
 			return fmt.Errorf("%s: %w", path, err)
 		}
-		for _, mode := range []string{"order", "spotcheck"} {
+		for _, mode := range modes {
 			out, err := render(img, m, m.Pages[n-1], opts.Title, mode)
 			if err != nil {
 				return err
@@ -95,6 +102,25 @@ func Write(doc *multipage.Document, canonical []string, opts Options) error {
 		return err
 	}
 	readme := fmt.Sprintf("# %s overlays\n\nRendered pages: %v\n\n- order/page-NNN.png: every final output token with its canonical word number.\n- spotcheck/page-NNN.png: up to %d seeded sentence samples per page (seed %d).\n- manifest.json: all canonical words and byte spans, sentences, per-page boxes, final output token order, samples, and unlinked canonical word IDs.\n\nNumbers start at 1 across the complete canonical text and count whitespace-separated words, including headings and note numbers. Compounds count as one word; split tokens may repeat that number. A range means one token maps to several canonical words. A + marks a continuation of the same word on another line/page. U123 is an unlinked output token at final output position 123, not canonical word 123. Running headers and page numbers removed by the sorter have no labels.\n\nBoxes show the sorter's saved coordinates and canonical links, including incorrect links. They are not independent ground truth or new OCR. Missing canonical words have no inferred coordinates and are listed in the manifest. A word is considered linked if any token overlaps its canonical span; this does not establish full recognition. Sentence boundaries are a punctuation-based heuristic. Samples are drawn from sentences with at least one linked word on that page, without requiring complete recognition; pages with no links cannot be sampled. Sentence fragments on other pages are counted separately in the sidebar. Full source sentences are preserved in the manifest.\n", opts.Title, pages, opts.Samples, opts.Seed)
+	if opts.AllSentences {
+		readme = fmt.Sprintf("# %s — complete sentence highlights\n\nRendered pages: %v\n\n`highlight/page-NNN.png` highlights every linked sentence, using alternating green and purple by global sentence ID (stable across columns and pages). Red U boxes show unlinked output. Canonical words with no matched box cannot be drawn; they are listed in `manifest.json`. Its `sampled_sentences` lists every linked sentence when `sentence_selection` is `all`.\n\n", opts.Title, pages)
+	}
+	readme += "\nSource word boxes are retained in manifest.json. Display smoothing connects only neighboring words in the same sentence and visual line, dividing interior whitespace and sharing a vertical extent. Sentence starts/ends, line breaks and column gutters are not extended.\n"
+	if opts.AllSentences {
+		var gallery strings.Builder
+		fmt.Fprintf(&gallery, "<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>%s</title><style>body{font-family:system-ui;margin:24px;background:#f2f4f7;color:#172033}nav{display:flex;flex-wrap:wrap;gap:10px}img{display:block;max-width:100%%;height:auto;background:white}section{margin:32px 0}a{color:#204c99}</style><h1>%s</h1><p>Every linked sentence, across both columns and all rendered pages. Green and purple alternate by sentence; red boxes mark unlinked output. Click an image for full resolution.</p><nav>", html.EscapeString(opts.Title), html.EscapeString(opts.Title))
+		for _, n := range pages {
+			fmt.Fprintf(&gallery, "<a href=\"#page-%d\">%d</a> ", n, n)
+		}
+		gallery.WriteString("</nav>")
+		for _, n := range pages {
+			fmt.Fprintf(&gallery, "<section id=\"page-%d\"><h2>Page %d</h2><a href=\"highlight/page-%03d.png\"><img loading=\"lazy\" src=\"highlight/page-%03d.png\" alt=\"Page %d with numbered sentence highlights\"></a></section>", n, n, n, n, n)
+		}
+		gallery.WriteString("</html>\n")
+		if err := os.WriteFile(filepath.Join(opts.OutputDir, "index.html"), []byte(gallery.String()), 0644); err != nil {
+			return err
+		}
+	}
 	return os.WriteFile(filepath.Join(opts.OutputDir, "README.md"), []byte(readme), 0644)
 }
 
@@ -136,6 +162,9 @@ func render(img image.Image, m *Manifest, page Page, title, mode string) (image.
 	dc.DrawString("Canonical word numbers, starting at 1. Boxes use the final sorter's saved positions.", 24, 66)
 	palette := make(map[int]color.RGBA)
 	for i, id := range page.Sentences {
+		if mode == "highlight" {
+			i = id - 1 // A sentence keeps its color across columns and pages.
+		}
 		palette[id] = sampleColors[i%len(sampleColors)]
 	}
 	markColor := func(mark Mark) (color.RGBA, bool) {
@@ -150,7 +179,7 @@ func render(img image.Image, m *Manifest, page Page, title, mode string) (image.
 		return blue, false
 	}
 	// Paint all boxes before badges, so later boxes cannot cover earlier labels.
-	marks := append([]Mark(nil), page.Marks...)
+	marks := SmoothMarks(page.Marks, m, float64(w), float64(h))
 	sort.SliceStable(marks, func(i, j int) bool {
 		a, b := math.Round(marks[i].Bounds.Top*500), math.Round(marks[j].Bounds.Top*500)
 		if a == b {
@@ -240,7 +269,11 @@ func render(img image.Image, m *Manifest, page Page, title, mode string) (image.
 	dark := color.RGBA{35, 43, 57, 255}
 	paragraph("HOW TO READ", 22, dark)
 	paragraph("117 = canonical word 117\n117+ = continuation of the same word\nU117 = unlinked output token 117", 19, blue)
-	paragraph("Green / purple = sampled sentences. Red U labels = output without a canonical link. Removed running headers and page numbers are unnumbered.", 18, dark)
+	if mode == "highlight" {
+		paragraph("Green / purple = every linked sentence, alternating by sentence number across columns and pages. Red U labels = output without a canonical link.", 18, dark)
+	} else {
+		paragraph("Green / purple = sampled sentences. Red U labels = output without a canonical link. Removed running headers and page numbers are unnumbered.", 18, dark)
+	}
 	linked, unlinked := 0, 0
 	seen := make(map[int]bool)
 	for _, mark := range page.Marks {
@@ -254,6 +287,12 @@ func render(img image.Image, m *Manifest, page Page, title, mode string) (image.
 		}
 	}
 	paragraph(fmt.Sprintf("This page: %d linked boxes, %d unlinked boxes. Whole book: %d canonical words have no link.", linked, unlinked, len(m.Missing)), 18, dark)
+	paragraph("Highlights connect neighboring words within a sentence and line. Outer word edges are retained; source boxes are saved in manifest.json.", 17, dark)
+	if mode == "highlight" {
+		paragraph(fmt.Sprintf("ALL %d LINKED SENTENCES ON THIS PAGE", len(page.Sentences)), 21, dark)
+		paragraph("Sentence text and word ranges are in manifest.json. Missing canonical words have no guessed positions. These are OCR/matcher results, not verified ground truth.", 18, dark)
+		return dc.Image(), nil
+	}
 	paragraph(fmt.Sprintf("SENTENCE SPOT CHECKS / seed %d", m.Seed), 21, dark)
 	for _, id := range page.Sentences {
 		s := m.Sentences[id-1]

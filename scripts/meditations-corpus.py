@@ -290,9 +290,10 @@ def render(out, chrome):
 
 def utility(name):
     binary = ROOT / "bin" / name
-    if not binary.exists():
-        binary.parent.mkdir(exist_ok=True)
-        subprocess.run(["go", "build", "-o", str(binary), "./cmd/" + name], cwd=ROOT, check=True)
+    # Go's cache avoids unnecessary compilation while ensuring source changes
+    # reach the executable even when an older bin/ utility already exists.
+    binary.parent.mkdir(exist_ok=True)
+    subprocess.run(["go", "build", "-o", str(binary), "./cmd/" + name], cwd=ROOT, check=True)
     return binary
 
 
@@ -319,20 +320,22 @@ def ocr(out, jobs):
         # Engines share a temporary output filename, so finish one engine
         # before starting the next. Cache each successful page independently.
         for engine, binary in [("apple", "ocr-util"), ("tesseract", "tesseract-util")]:
+            executable = utility(binary)
+            executable_sha256 = digest(executable)
             state_path = dest / ("." + engine + "-state.json")
             state = read_json(state_path) or {}
             pending = []
             for image in images:
                 n = int(image.stem.split("-")[-1])
                 target = dest / f"{engine}-{n}.json"
-                inputs = {"image_sha256": digest(image), "slice": False, "pipeline": 1}
+                inputs = {"image_sha256": digest(image), "slice": False, "pipeline": 1,
+                          "executable_sha256": executable_sha256}
                 saved = state.get(str(n), {})
                 if saved.get("inputs") != inputs or not outputs_match(dest, saved.get("outputs")):
                     pending.append((image, n, target, inputs))
             if not pending:
                 print(f"{name}: {engine} all pages cached; preserving OCR timings", flush=True)
                 continue
-            executable = utility(binary)
             start = time.perf_counter()
             def recognize(item):
                 image, n, target, inputs = item

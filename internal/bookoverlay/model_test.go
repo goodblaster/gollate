@@ -100,6 +100,10 @@ func TestWord117AndDeterministicSampling(t *testing.T) {
 	if len(m.Pages[0].Sentences) != 2 {
 		t.Fatal("expected two samples")
 	}
+	all, err := Build(doc, []string{canonical}, 117, 0)
+	if err != nil || all.Selection != "all" || len(all.Pages[0].Sentences) != 120 {
+		t.Fatalf("all-sentence mode omitted sentences: %v", err)
+	}
 }
 
 func TestRenderWritesPageViewsAtOriginalPositions(t *testing.T) {
@@ -163,6 +167,19 @@ func TestRenderWritesPageViewsAtOriginalPositions(t *testing.T) {
 	}
 	if len(m.Pages) != 1 || label(m.Pages[0].Marks[0]) != "1" {
 		t.Fatal("bad manifest")
+	}
+	allOut := filepath.Join(dir, "highlights")
+	if err := Write(doc, []string{"word"}, Options{ImageDir: dir, OutputDir: allOut, Title: "<test>", AllSentences: true}); err != nil {
+		t.Fatal(err)
+	}
+	for _, name := range []string{"highlight/page-001.png", "manifest.json", "index.html"} {
+		if _, err := os.Stat(filepath.Join(allOut, name)); err != nil {
+			t.Fatal(err)
+		}
+	}
+	gallery, _ := os.ReadFile(filepath.Join(allOut, "index.html"))
+	if strings.Contains(string(gallery), "<test>") || !strings.Contains(string(gallery), "&lt;test&gt;") {
+		t.Fatal("gallery title not escaped")
 	}
 	doc.Paragraphs[0].Tokens[0].Page = 1
 	if _, err := Build(doc, []string{"word"}, 117, 2); err == nil {

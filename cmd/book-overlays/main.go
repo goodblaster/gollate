@@ -30,6 +30,7 @@ func run() error {
 	label := flag.String("label", "current", "Saved evaluation label")
 	seed := flag.Int64("seed", 117, "Reproducible sentence sampling seed")
 	samples := flag.Int("sentences", 2, "Sentence samples per page (1 or 2)")
+	all := flag.Bool("all-sentences", false, "Highlight every sentence; writes a separate SOURCE-highlights directory")
 	pages := flag.String("pages", "", "Optional comma-separated 1-based page numbers for a preview")
 	jobs := flag.Int("jobs", 2, "Concurrent layout/source renders")
 	flag.Parse()
@@ -78,8 +79,11 @@ func run() error {
 						return fmt.Errorf("%s: %w", path, err)
 					}
 					out := filepath.Join(dir, *label, source+"-overlays")
+					if *all {
+						out = filepath.Join(dir, *label, source+"-highlights")
+					}
 					fmt.Printf("Rendering %s/%s -> %s\n", layout, source, out)
-					if err := bookoverlay.Write(result.Document, bookoverlay.Lines(string(text)), bookoverlay.Options{ImageDir: dir, OutputDir: out, Title: layout + " / " + source, Seed: *seed, Samples: *samples, Pages: selected}); err != nil {
+					if err := bookoverlay.Write(result.Document, bookoverlay.Lines(string(text)), bookoverlay.Options{ImageDir: dir, OutputDir: out, Title: layout + " / " + source, Seed: *seed, Samples: *samples, Pages: selected, AllSentences: *all}); err != nil {
 						return err
 					}
 					fmt.Printf("Finished %s/%s in %.1fs\n", layout, source, time.Since(start).Seconds())

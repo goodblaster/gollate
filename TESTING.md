@@ -278,6 +278,15 @@ order is now 99.441/99.306% for single-column Apple/Tesseract and
 98.492/98.402% for double-column. PDF controls reach 99.942/99.080%.
 The corpus report records the full comparison; no baseline was lowered.
 
+Word-boundary follow-up: Apple OCR now uses Vision's per-word rectangles
+instead of distributing line width by character count. The authored
+`TestVisionWordBounds` checks real OCR against known drawing coordinates;
+renderer tests preserve sentence edges while connecting adjacent highlights.
+Rerun the corpus OCR stage to invalidate old coordinates automatically.
+`go run ./cmd/book-overlays -layouts double-column -sources apple -all-sentences`
+writes all 102 pages and a local gallery under
+`experiments/meditations/double-column/current/apple-highlights/`.
+
 ```bash
 BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
 ```

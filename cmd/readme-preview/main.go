@@ -68,7 +68,7 @@ func preview(corpus, output string) error {
 	w, h := img.Bounds().Dx(), img.Bounds().Dy()
 	var marks []bookoverlay.Mark
 	seen := make(map[int]bool)
-	for _, mark := range m.Pages[page-1].Marks {
+	for _, mark := range bookoverlay.SmoothMarks(m.Pages[page-1].Marks, m, float64(w), float64(h)) {
 		for _, n := range mark.Words {
 			if n >= first && n <= last {
 				marks = append(marks, mark)

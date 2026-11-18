@@ -141,9 +141,14 @@ const char *performAppleVisionOCR(const void *imageBytes, size_t length, const c
                     totalWordChars += word.length;
                 }
 
-                // Use proportional widths based on character count of each word
+                // Request the real word rectangle, using NSString's UTF-16
+                // ranges. Search forward so repeated words select their own
+                // occurrence, including after non-ASCII text and whitespace.
+                // Proportional placement is only a fallback if Vision cannot
+                // supply a rectangle; expose that provenance in the JSON.
                 NSMutableArray *words = [NSMutableArray array];
                 CGFloat currentX = observation.boundingBox.origin.x;
+                NSUInteger cursor = 0;
                 for (NSString *word in wordsArray) {
                     CGFloat wordFraction = (totalWordChars > 0) ? ((CGFloat)word.length / totalWordChars) : 0;
                     CGFloat wordWidth = observation.boundingBox.size.width * wordFraction;
@@ -155,8 +160,22 @@ const char *performAppleVisionOCR(const void *imageBytes, size_t length, const c
                     );
                     currentX += wordWidth; // Move to the next word position
 
+                    NSRange range = [text.string rangeOfString:word options:NSLiteralSearch
+                        range:NSMakeRange(cursor, text.string.length - cursor)];
+                    NSString *boundsSource = @"estimated";
+                    if (range.location != NSNotFound) {
+                        cursor = NSMaxRange(range);
+                        NSError *boundsError = nil;
+                        VNRectangleObservation *rectangle = [text boundingBoxForRange:range error:&boundsError];
+                        if (rectangle && !boundsError && !CGRectIsEmpty(rectangle.boundingBox)) {
+                            wordBox = rectangle.boundingBox;
+                            boundsSource = @"vision";
+                        }
+                    }
+
                     NSDictionary *wordInfo = @{
                         @"text": word,
+                        @"bounds_source": boundsSource,
                         @"left": @(wordBox.origin.x),
                         @"top": @(1.0 - wordBox.origin.y - wordBox.size.height),
                         @"width": @(wordBox.size.width),

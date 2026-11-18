@@ -47,6 +47,7 @@ type Page struct {
 }
 
 type Manifest struct {
+	Selection string     `json:"sentence_selection"`
 	Numbering string     `json:"numbering"`
 	Seed      int64      `json:"seed"`
 	Words     []Word     `json:"canonical_words"`
@@ -112,10 +113,14 @@ func Build(doc *multipage.Document, canonical []string, seed int64, samples int)
 	if doc == nil || len(doc.Pages) == 0 {
 		return nil, fmt.Errorf("document has no pages")
 	}
-	if samples < 1 || samples > 2 {
-		return nil, fmt.Errorf("sentences per page must be 1 or 2")
+	if samples < 0 || samples > 2 {
+		return nil, fmt.Errorf("sentences per page must be 0 (all), 1 or 2")
 	}
 	m := &Manifest{Numbering: "1-based whitespace words across the complete canonical text, including headings and note numbers; output_order is the 1-based final OCR token order; source lines and byte spans are 0-based", Seed: seed}
+	m.Selection = "sample"
+	if samples == 0 {
+		m.Selection = "all"
+	}
 	byLine := make([][]int, len(canonical))
 	for line, text := range canonical {
 		spans := whitespaceSpans(text)
@@ -197,6 +202,10 @@ func Build(doc *multipage.Document, canonical []string, seed int64, samples int)
 			candidates = append(candidates, n)
 		}
 		sort.Ints(candidates) // Never let map iteration affect a seeded sample.
+		if samples == 0 {
+			m.Pages[i].Sentences = candidates
+			continue
+		}
 		rng := rand.New(rand.NewSource(seed + int64(i)*1000003))
 		rng.Shuffle(len(candidates), func(a, b int) { candidates[a], candidates[b] = candidates[b], candidates[a] })
 		m.Pages[i].Sentences = candidates[:min(samples, len(candidates))]

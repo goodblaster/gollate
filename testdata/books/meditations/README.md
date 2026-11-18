@@ -114,7 +114,7 @@ For example, inspect `<layout>/current/apple-overlays/order/page-006.png` and `s
 
 Numbering counts whitespace-separated canonical words, including the title, headings and note references: the complete book has 49,884 word IDs. Compounds count as one word, so multiple matcher tokens can share a number. `117+` identifies a continuation of word 117 on another line or page. A number range means one output token maps to several canonical words. Red `U117` means an unlinked output token at **output position** 117; it does not claim to be canonical word 117. Removed running headers and page numbers are not numbered.
 
-Images preserve the page layout at twice the source resolution, with the legend and sampled source text beside the page. They display the final sorter's existing boxes and links, including mistakes; they do not realign the text or invent coordinates for missing words. `manifest.json` contains source words and byte spans, sentence text, per-page boxes, final output token order, sampled sentence IDs and all unlinked canonical word IDs. A word counts as linked if any output token overlaps its source span; this is not a recognition-accuracy score.
+Images preserve the page layout at twice the source resolution, with the legend and sampled source text beside the page. They display the final sorter's links, including mistakes; they do not realign the text or invent coordinates for missing words. Drawing connects adjacent words in the same sentence and visual line by dividing interior whitespace and sharing a vertical extent. The first/last word edges remain fixed, and smoothing never bridges column gutters. `manifest.json` retains the unsmoothed source boxes, source words and byte spans, sentence text, final output token order, sampled sentence IDs and all unlinked canonical word IDs. A word counts as linked if any output token overlaps its source span; this is not a recognition-accuracy score.
 
 Sentence splitting uses punctuation and paragraph boundaries. Samples come from sentences with at least one canonical-linked word on the page, without requiring full recognition. Cross-page sentences may be only partly highlighted, and pages without links have no sample. This is a visual review aid rather than an independent or unbiased accuracy audit.
 
@@ -125,6 +125,26 @@ go run ./cmd/book-overlays -corpus experiments/meditations
 ```
 
 The default generates both views for every page in both layouts, for Apple, Tesseract and the PDF text control: **1,230 PNGs**. Large overlays stay in the ignored experiment directory. Use `-layouts double-column -sources apple -pages 1,6,102` for a preview; omit `-pages` for the complete series. `-seed 42 -sentences 1` changes sampling. `-label before` renders another saved evaluation. Previews replace only the requested PNGs, so use a full render after changing the seed to keep the whole series consistent.
+
+### Complete book highlights and word boundaries (2026-11-17)
+
+The page-6 spot check exposed a separate geometry error: canonical word 2885 (`But`) began inside the printed word. The Apple adapter previously divided each line's width by character count. It now requests [Vision's box for each word's string range](https://developer.apple.com/documentation/vision/vnrecognizedtext/boundingboxforrange%3Aerror%3A?language=objc), searching forward through repeated words with UTF-16 ranges. OCR JSON records `bounds_source` as `vision`, or `estimated` if Vision cannot provide a box. These remain OCR estimates, not guaranteed glyph-perfect outlines.
+
+All 205 pages were recognized again: all 101,580 word boxes came from Vision, with no estimated fallbacks. On page 6, `But` begins at x=505.25 pixels versus the independent PDF control's x=506.20; previously it began at x=526.35 (source image width 1008). Display smoothing preserves that corrected sentence edge. All six book accuracy gates pass; Apple sorted order reaches 99.445% single-column and 98.494% double-column. Other sources are unchanged.
+
+To refresh existing OCR after the adapter change, then highlight **all 102 two-column pages**:
+
+```bash
+python3 -B scripts/meditations-corpus.py --stage ocr --jobs 4
+python3 -B scripts/meditations-corpus.py --stage evaluate
+go run ./cmd/book-overlays -layouts double-column -sources apple -all-sentences
+```
+
+The OCR stage rebuilds utilities through Go's build cache and includes executable hashes in page cache keys. Updated code invalidates stale coordinates; unchanged runs reuse them. A fresh checkout must run the full setup command first.
+
+Open `experiments/meditations/double-column/current/apple-highlights/index.html` for the complete gallery. `highlight/page-001.png` through `page-102.png` show all linked sentences with alternating green/purple colors, stable across columns and pages; unlinked output is red. Canonical words without matched boxes remain listed as missing in the manifest. `sentence_selection: "all"` means the manifest's `sampled_sentences` field contains every linked sentence on each page. Full-book output lives separately from sampled overlays and is ignored by Git.
+
+`TestVisionWordBounds` renders authored proportional text with repeated words and non-ASCII text and checks Vision's word edges against known drawing positions. Smoothing tests assert connected bands, unchanged sentence edges, open gutters and unchanged stored boxes. Run these with `go test ./pkg/ocr/apple ./internal/bookoverlay` on macOS; `-short` skips the live Vision test. Pipeline tests cover executable changes invalidating only the affected engine's cached pages.
 
 To generate overlays as part of evaluation (outside the recorded sort/scoring timing):
 

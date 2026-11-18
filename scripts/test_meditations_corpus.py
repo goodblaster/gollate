@@ -129,6 +129,10 @@ class CorpusTest(unittest.TestCase):
 
     def test_ocr_cache_resumes_individual_pages(self):
         self.rendered_fixture()
+        binaries = self.root / "bin"
+        binaries.mkdir()
+        for name in ("ocr-util", "tesseract-util", "pdftext-util"):
+            (binaries / name).write_bytes(b"executable v1")
         def fake_ocr(command, log, env=None):
             binary = Path(command[0]).name
             source = Path(command[-1])
@@ -138,7 +142,7 @@ class CorpusTest(unittest.TestCase):
             else:
                 source.with_name(source.stem + "-ocr.json").write_text("[]")
             return 1.0
-        with patch.object(corpus, "utility", side_effect=lambda name: Path(name)), patch.object(corpus, "run", side_effect=fake_ocr) as run:
+        with patch.object(corpus, "utility", side_effect=lambda name: binaries / name), patch.object(corpus, "run", side_effect=fake_ocr) as run:
             corpus.ocr(self.root, 2)
             self.assertEqual(run.call_count, 10)
             timing = (self.root / "single-column/timing.json").read_bytes()
@@ -154,6 +158,10 @@ class CorpusTest(unittest.TestCase):
             (self.root / "single-column/page-1.png").write_bytes(b"changed image")
             corpus.ocr(self.root, 2)
             self.assertEqual(run.call_count, 2)
+            run.reset_mock()
+            (binaries / "ocr-util").write_bytes(b"updated word boundary code")
+            corpus.ocr(self.root, 2)
+            self.assertEqual(run.call_count, 4)  # Apple only, both layouts.
 
     def test_overlay_cache_tracks_results_and_page_images(self):
         self.rendered_fixture()
