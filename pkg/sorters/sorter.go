@@ -136,11 +136,13 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 	// Canonical vocabulary: what a split or a re-joined word must produce.
 	canonicalWords := make(map[string]bool)
 	canonicalPairs := make(map[[2]string]bool)
+	var canonicalSequences [][]string
 	// Canonical lines can themselves be visual wraps, so keep adjacency
 	// across their boundaries as well.
 	previous := ""
 	for _, line := range canonicalLines {
 		words := strings.Fields(line.Normalized)
+		canonicalSequences = append(canonicalSequences, words)
 		for _, word := range words {
 			canonicalWords[word] = true
 			if previous != "" {
@@ -150,7 +152,7 @@ func normalizeOcrBlocks(ocrBlocks []Block, splitCompound bool, canonicalLines []
 		}
 	}
 
-	for _, w := range joinLineBreakHyphens(attachPunctuation(ocrBlocks), canonicalWords, canonicalPairs) {
+	for _, w := range joinLineBreakHyphens(attachPunctuation(ocrBlocks), canonicalWords, canonicalPairs, canonicalSequences) {
 		if strings.TrimSpace(w.NormedText) == "" {
 			continue
 		}
@@ -293,43 +295,99 @@ const lineBreakHyphens = "-\u2010\u00AD\u00AC"
 // word, so both went unmatched - on a printed book page, a word or two in
 // most paragraphs.
 //
-// Two consecutive blocks are joined when the first ends in a hyphen, the
-// second starts a new line, their concatenation is a canonical word and
-// the two parts do not occur as an adjacent canonical pair. Merely finding
+// A line end and its continuation are joined when the first ends in a hyphen,
+// the second starts the next visual line, their concatenation is a canonical word and
+// the two parts do not occur as an adjacent canonical pair (unless exact
+// flanking context uniquely supports the joined form). Merely finding
 // both parts somewhere in the vocabulary is too broad: "an-" / "other"
 // must join even if "an" and "other" occur independently elsewhere. An
 // actual "long-time" or "long time" pair still prevents joining when
 // "longtime" is also present. The joined block takes the
 // first part's position; what OCR actually read is kept in
 // OriginalOcrText.
-func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool, canonicalPairs map[[2]string]bool) []Block {
+func joinLineBreakHyphens(blocks []Block, canonicalWords map[string]bool, canonicalPairs map[[2]string]bool, sequences [][]string) []Block {
 	if len(canonicalWords) == 0 {
 		return blocks
 	}
-	out := blocks[:0:0]
-	for i := 0; i < len(blocks); i++ {
+	var heads []int
+	for i, b := range blocks {
+		text := strings.TrimSpace(b.Text)
+		if strings.TrimRight(text, lineBreakHyphens) != text && b.Continuation == nil {
+			heads = append(heads, i)
+		}
+	}
+	if len(heads) == 0 {
+		return blocks
+	}
+	wrapped := wrappedSuccessors(blocks, heads)
+	knownJoin := func(text string) bool {
+		key := NormalizeText(text)
+		if canonicalWords[key] {
+			return true
+		}
+		// A genuine compound can itself wrap: great-un- / cle becomes
+		// great-uncle, then normal compound splitting preserves its hyphen.
+		parts := strings.Fields(key)
+		return len(parts) == 2 && canonicalPairs[[2]string{parts[0], parts[1]}]
+	}
+	joins, claims := make(map[int]int), make(map[int]int)
+	for _, i := range heads {
 		b := blocks[i]
-		if i+1 < len(blocks) {
-			next := blocks[i+1]
-			stem := strings.TrimRight(strings.TrimSpace(b.Text), lineBreakHyphens)
+		j := i + 1 // Preserve adjacent column/page-wrap behavior when geometry is inconclusive.
+		stem := strings.TrimRight(strings.TrimSpace(b.Text), lineBreakHyphens)
+		// Keep an already valid adjacent join within the same column:
+		// glyph heights can make geometry choose a different visual row.
+		// An interleaved column can also start with the same suffix, so
+		// use geometry when the competing line starts are far apart.
+		if next, ok := wrapped[i]; ok {
+			sameColumn := j < len(blocks) && max(blocks[j].Left(), blocks[next].Left())-min(blocks[j].Left(), blocks[next].Left()) <= 2*max(blocks[j].Height(), blocks[next].Height())
+			anchoredAdjacent := j < len(blocks) && knownJoin(stem+blocks[j].Text) && hyphenContextAgrees(blocks, i, j, sequences, NormalizeText(stem+blocks[j].Text))
+			if !anchoredAdjacent && (!sameColumn || (knownJoin(stem+blocks[next].Text) && !knownJoin(stem+blocks[j].Text))) {
+				j = next
+			}
+		}
+		if j < len(blocks) {
+			next := blocks[j]
 			onNextLine := next.Top() >= b.Bottom()-b.Height()/2 || next.Left() < b.Left()
 			if b.LineId != "" && next.LineId != "" {
 				onNextLine = b.LineId != next.LineId
 			}
 			if stem != strings.TrimSpace(b.Text) && stem != "" && onNextLine {
-				joined := NormalizeText(stem + next.Text)
 				separatePair := canonicalPairs[[2]string{NormalizeText(stem), next.NormedText}]
-				if canonicalWords[joined] && !separatePair {
-					b.OriginalOcrText = b.Text + " " + next.Text
-					b.CorrectionType = "dehyphenated"
-					b.Continuation = &ocr.BlockPart{Page: next.Page, Bounds: next.BoundingBox}
-					b.Text = stem + next.Text
-					b.NormedText = joined
-					out = append(out, b)
-					i++ // next is consumed
-					continue
+				if separatePair && hyphenContextAgrees(blocks, i, j, sequences, NormalizeText(stem+next.Text)) {
+					separatePair = false
+				}
+				if knownJoin(stem+next.Text) && !separatePair && next.Continuation == nil && !strings.Contains(next.NormedText, " ") {
+					joins[i] = j
+					claims[j]++
 				}
 			}
+		}
+	}
+	consumed := make(map[int]bool)
+	invalid := make(map[int]bool)
+	for i, j := range joins {
+		if _, head := joins[j]; claims[j] != 1 || head {
+			invalid[i] = true // Ambiguous or multi-part chains need more than one continuation box.
+		} else {
+			consumed[j] = true
+		}
+	}
+	for i := range invalid {
+		delete(joins, i)
+	}
+	var out []Block
+	for i, b := range blocks {
+		if consumed[i] {
+			continue
+		}
+		if j, ok := joins[i]; ok {
+			next := blocks[j]
+			b.OriginalOcrText = b.Text + " " + next.Text
+			b.CorrectionType = "dehyphenated"
+			b.Continuation = &ocr.BlockPart{Page: next.Page, Bounds: next.BoundingBox}
+			b.Text = strings.TrimRight(strings.TrimSpace(b.Text), lineBreakHyphens) + next.Text
+			b.NormedText = NormalizeText(b.Text)
 		}
 		out = append(out, b)
 	}

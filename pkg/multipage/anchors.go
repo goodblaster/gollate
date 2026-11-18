@@ -184,31 +184,51 @@ func anchoredPositions(lines, pages [][]string, expected []int, docFreq map[stri
 }
 
 // longFragments recognizes paragraphs traversing several seams or a blank
-// page using unique sequence anchors in emit order. Ordinary one-seam
+// page using a monotone consensus of unique sequence anchors. Ordinary one-seam
 // cases retain
 // the established bag/sequence arbitration in Segment. Page edges pin
 // the cuts; unsupported or crossing anchors do not manufacture fragments.
 func longFragments(line []string, pages [][]string, index map[gram]occurrence) []Fragment {
 	type run struct{ page, first, last, firstOffset, lastOffset int }
 	var runs []run
+	// A phrase unique in OCR is not necessarily unique in the reference:
+	// another occurrence may have been damaged or broken across lines.
+	counts := make(map[gram]int)
 	for i := 0; i+3 <= len(line); i++ {
-		a, ok := index[gram{line[i], line[i+1], line[i+2]}]
-		if !ok || a.page < 0 {
+		counts[gram{line[i], line[i+1], line[i+2]}]++
+	}
+	var candidates []anchor
+	for i := 0; i+3 <= len(line); i++ {
+		key := gram{line[i], line[i+1], line[i+2]}
+		a, ok := index[key]
+		if !ok || a.page < 0 || counts[key] != 1 {
 			continue
 		}
+		candidates = append(candidates, anchor{page: a.page, canonicalOffset: float64(i), pageOffset: float64(a.offset)})
+	}
+	// A displaced quotation or one accidental match must not veto hundreds
+	// of consistent anchors on the actual pages.
+	for _, a := range monotoneAnchors(candidates) {
+		i, offset := int(a.canonicalOffset), int(a.pageOffset)
 		if len(runs) > 0 {
 			last := &runs[len(runs)-1]
-			if a.page < last.page {
-				return nil
-			}
 			if a.page == last.page {
 				last.last = i
-				last.lastOffset = a.offset
+				last.lastOffset = offset
 				continue
 			}
 		}
-		runs = append(runs, run{a.page, i, i, a.offset, a.offset})
+		runs = append(runs, run{a.page, i, i, offset, offset})
 	}
+	// Require two distinct anchors per page; isolated matches at the
+	// ends of the monotone chain are not evidence for an extra fragment.
+	strong := runs[:0]
+	for _, r := range runs {
+		if r.last > r.first {
+			strong = append(strong, r)
+		}
+	}
+	runs = strong
 	if len(runs) < 2 || (len(runs) == 2 && runs[1].page == runs[0].page+1) {
 		return nil
 	}

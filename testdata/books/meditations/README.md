@@ -82,6 +82,27 @@ The corrected token links to canonical word **2734**, retaining both original bo
 
 All six inputs also improve precision, paragraph recovery and canonical-span coverage. Baselines were raised; none were lowered. Whole-book sorting in the validation run takes 1.92–2.24 seconds per input; these timings are descriptive, not a controlled speed comparison for this fix. Rerun `--stage evaluate` followed by `--stage overlays` to refresh existing local results and images without repeating rendering or OCR.
 
+### Unlinked-word and long-paragraph recovery (2026-11-17)
+
+Review of the complete numbered book exposed two generic failure modes. Alternating OCR rows from different columns separated the two halves of hyphenated words in emission order. Also, one conflicting unique phrase match could cause the multi-page segmenter to discard otherwise consistent evidence for a long paragraph.
+
+Dehyphenation now considers the next visual line in the same column, using row membership, word geometry and the canonical vocabulary. Valid adjacent OCR joins remain preferred within a column. Exact flanking words can resolve an ambiguous split such as `be-` / `cause`; competing contexts remain unresolved. Genuine compounds can also wrap, as in `great-un-` / `cle`. Both source locations are retained. Long-paragraph placement uses a monotone sequence of corroborated phrase anchors, excludes repeated reference phrases, and discards isolated page outliers. None of these rules uses book titles, page numbers, particular words or document-specific layouts.
+
+All **13** unlinked tokens on two-column Apple page 2 are resolved, including the former U900 (`much;`), U901 (`be-`), U606 (`tion,`) and U614 (`erned`). Across the book, unlinked Apple output falls from **636 to 185** (70.9% fewer). There are no unlinked output tokens on pages 3–5. Remaining errors are visible rather than assigned invented matches: 122 of the 185 unlinked tokens are on pages 93–102, including garbled Greek quotations and note references; earlier pages still contain some ambiguous joins, missed matches and recognition errors. A canonical span or absence of red boxes does not by itself prove correct recognition or correct occurrence selection.
+
+| Layout | Input | Previous sorted order | Corrected sorted order |
+|---|---|---:|---:|
+| Single | Apple Vision | 99.445% | 99.447% |
+| Single | Tesseract | 99.306% | 99.308% |
+| Single | PDF text control | 99.942% | 99.944% |
+| Double | Apple Vision | 98.494% | 99.370% |
+| Double | Tesseract | 98.402% | 99.096% |
+| Double | PDF text control | 99.080% | 99.777% |
+
+The validation run sorts each complete input in 1.82–2.04 seconds; earlier saved measurements were 1.98–2.31 seconds. These are descriptive timings, not repeated benchmark medians. All 24 book accuracy gates and 12 existing multi-page fixture gates increased; none decreased. Authored regression cases cover interleaved columns with repeated suffixes, missing line IDs, intervening lines, ambiguous contexts, wrapped compounds, unrelated quoted phrases and isolated false page anchors. The existing context-based spelling repair is also tested to preserve the original OCR text and box while linking to the supported canonical word.
+
+Refresh saved results with `--stage evaluate`, then rerun the complete highlight command below. No OCR rerun is needed for these matching changes.
+
 ## Speed
 
 The following historical measurements used Apple M4 Pro, Go 1.24.4, macOS. Fresh runs save timings in each layout’s `timing.json` and in `report-current.json`. OCR used four concurrent page workers and one Tesseract thread per process. Times below are whole-book wall times.
@@ -97,7 +118,7 @@ PDF-control sorting took 1.890 s single-column and 2.186 s double-column, down f
 
 ## Failures exposed
 
-The 884-word Book I paragraph beginning “In my father” (canonical line index 19, file line 20) spans physical pages 3–5 in the double-column PDF. All three inputs assign it only to pages 3–4. Its recovery is 62.32% for Apple, 60.52% for Tesseract and 60.97% for PDF text; the third-page tail is not correctly linked into the paragraph. This remains a real multi-page segmentation failure despite the synthetic three-plus-page tests passing. The last sentence ends with “the illness of Maximus” on page 5.
+The 884-word Book I paragraph beginning “In my father” (canonical line index 19, file line 20) spans physical pages 3–5 in the double-column PDF. Initially all three inputs assigned it only to pages 3–4, with recovery of 62.32% for Apple, 60.52% for Tesseract and 60.97% for PDF text. The generic anchor-consensus fix described above now assigns all three pages, with recovery of **99.66%, 99.44% and 99.89%**, respectively. The last sentence ends with “the illness of Maximus” on page 5.
 
 Other concentrated failures involve Greek quotations/endnotes, small note references, and the paragraph-reference symbol ¶. For example, Tesseract joins the double-column heading “Book I” into “BookI”. The PDF control's remaining errors show that recognition alone does not explain the full accuracy gap. Per-paragraph failure files preserve reference and recovered text for inspection.
 

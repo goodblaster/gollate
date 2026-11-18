@@ -23,7 +23,7 @@ func repairRow(words []string, lineId string, top float64, startIndex int) []ocr
 func repairConfig() SorterConfig {
 	config := DefaultConfig()
 	config.MinWordsForEarlyPasses = 3
-	config.DisableLineRepair = false // opt in (held back from default; see config.go)
+	config.DisableLineRepair = false // explicit so this test always exercises context repair
 	return config
 }
 
@@ -67,6 +67,22 @@ func TestLineRepairRekeysMisreadWord(t *testing.T) {
 	want := "ancient civilizations built rnonuments that still stand"
 	if got := strings.Join(texts, " "); got != want {
 		t.Errorf("output = %q, want %q", got, want)
+	}
+	doc := sorter.Document()
+	linked := false
+	for _, p := range doc.Paragraphs {
+		for _, tok := range p.Tokens {
+			if doc.Text[tok.Span.Start:tok.Span.End] != "rnonuments" {
+				continue
+			}
+			linked = true
+			if tok.Canonical == nil || canonical[0][tok.Canonical.Start:tok.Canonical.End] != "monuments" || tok.Bounds != blocks[3].BoundingBox {
+				t.Fatalf("context repair lost canonical identity or source box: %+v", tok)
+			}
+		}
+	}
+	if !linked {
+		t.Fatal("context-repaired OCR token missing from document")
 	}
 }
 

@@ -5,7 +5,11 @@ what the known algorithm issues are. Suite mechanics live in
 [testdata/ocr-tests/README.md](testdata/ocr-tests/README.md); this file is
 the context you'd otherwise have to rediscover.
 
-Last updated: 2026-11-16.
+Language, RTL/vertical geometry, and OCR continuation follow-ups are tracked
+in [TEXT_HANDLING_PLAN.md](TEXT_HANDLING_PLAN.md), including the current
+hyphen-recovery limitations.
+
+Last updated: 2026-11-17.
 
 ## Quick reference
 
@@ -265,8 +269,9 @@ OCR blocks and generated results are not committed.
 Sorted token-order accuracy is 99.422/99.286% for single-column Apple/Tesseract
 and 98.460/98.366% for double-column. All six input/control scores are identical
 before and after the multi-page changes; sorting takes 28–35% less time in
-single-run A/B measurements. A real 884-word paragraph spanning three pages
-still gets assigned to only two. Greek and endnote references also expose
+single-run A/B measurements. Initially, a real 884-word paragraph spanning three
+pages was assigned to only two (fixed by the later anchor-consensus change below).
+Greek and endnote references also expose
 recognition errors. This is a real-prose test, not a degraded-scan test.
 
 Follow-up (2026-11-17): page 6 exposed a dehyphenation guard that rejected
@@ -286,6 +291,17 @@ Rerun the corpus OCR stage to invalidate old coordinates automatically.
 `go run ./cmd/book-overlays -layouts double-column -sources apple -all-sentences`
 writes all 102 pages and a local gallery under
 `experiments/meditations/double-column/current/apple-highlights/`.
+
+Unlinked-word follow-up: generic visual-line dehyphenation handles interleaved
+columns, preserves valid adjacent OCR joins, and uses exact flanking context
+to distinguish ambiguous joins. Long paragraphs use corroborated monotone
+phrase anchors instead of rejecting all evidence after one conflicting match.
+The three-page paragraph now recovers 99.66/99.44/99.89% for Apple/Tesseract/PDF.
+Two-column Apple unlinked tokens fall from 636 to 185; page 2 has none.
+Sorted order reaches 99.370/99.096/99.777% on the three two-column inputs.
+All six book inputs improve, and the existing language/layout gates pass.
+Tests use authored examples rather than document-specific exceptions; remaining
+Greek, note-reference and ambiguous matching errors stay visible in the gallery.
 
 ```bash
 BOOK_CORPUS="$PWD/experiments/meditations" go test ./integration -run '^TestBookCorpus$' -v -count=1
